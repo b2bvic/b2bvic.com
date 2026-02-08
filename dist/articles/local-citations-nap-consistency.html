@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Citations and NAP Consistency for Multi-Location Businesses | B2B Vic</title>
+    <meta name="description" content="How to build citation infrastructure that boosts local search visibility, avoid duplicate listings that fragment rankings, and maintain NAP consistency across hundreds of directories." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Local Citations and NAP Consistency for Multi-Location Businesses" />
+    <meta property="og:description" content="How to build citation infrastructure that boosts local search visibility, avoid duplicate listings that fragment rankings, and maintain NAP consistency across hundreds of directories." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/local-citations-nap-consistency.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Local Citations and NAP Consistency for Multi-Location Businesses" />
+    <meta name="twitter:description" content="How to build citation infrastructure that boosts local search visibility, avoid duplicate listings that fragment rankings, and maintain NAP consistency across hundreds of directories." />
+    <link rel="canonical" href="https://b2bvic.com/articles/local-citations-nap-consistency.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Local Citations and NAP Consistency for Multi-Location Businesses",
+      "description": "How to build citation infrastructure that boosts local search visibility, avoid duplicate listings that fragment rankings, and maintain NAP consistency across hundreds of directories.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/local-citations-nap-consistency.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Local Citations and NAP Consistency for Multi-Location Businesses"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Local Citations and NAP Consistency for Multi-Location Businesses</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Local Citations and NAP Consistency for Multi-Location Businesses</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Local Citations and NAP Consistency for Multi-Location Businesses</h1>
+<p>Local search rankings collapse when citation data fragments. Your business appears in 40 directories but with 12 different phone number variations, three address formats, and inconsistent business names. <strong>Google My Business</strong> lists &quot;ABC Plumbing Inc&quot; while <strong>Yelp</strong> shows &quot;ABC Plumbing&quot; and <strong>YellowPages</strong> displays &quot;ABC Plumbing &amp; Heating.&quot; Google&#39;s algorithm can&#39;t confidently match these listings to a single entity, so it dilutes ranking signals across all variations instead of consolidating them.</p>
+<p><strong>NAP consistency</strong> (Name, Address, Phone) is the foundation of local SEO. Citations—mentions of your business NAP on other websites—act as votes of confidence. The more consistent citations you have across authoritative directories, the more Google trusts your business data and rewards you with higher local pack rankings.</p>
+<p>For multi-location businesses, citation management multiplies in complexity. Each location requires its own citation profile. Inconsistencies at the location level (branch office using a regional phone number instead of the local one) cascade into ranking failures. A location that should rank #1 for &quot;plumber downtown Raleigh&quot; ranks #7 because its citations point to a PO box instead of the street address.</p>
+<p>This framework builds citation infrastructure that consolidates ranking signals, eliminates duplicate listings, and maintains NAP consistency at scale.</p>
+<h2>What NAP Consistency Means</h2>
+<p><strong>NAP</strong> stands for Name, Address, Phone. Consistency means these three data points appear identically across every platform where your business is listed.</p>
+<p><strong>Name consistency:</strong></p>
+<p>If your legal business name is &quot;Acme Plumbing Services, Inc.&quot; but you market as &quot;Acme Plumbing,&quot; choose ONE variation and use it everywhere. Mixing variations creates ambiguity.</p>
+<p><strong>Bad:</strong></p>
+<ul>
+<li>Google My Business: &quot;Acme Plumbing Services, Inc.&quot;</li>
+<li>Yelp: &quot;Acme Plumbing&quot;</li>
+<li>Facebook: &quot;Acme Plumbing Services&quot;</li>
+<li>YellowPages: &quot;Acme Plumbing &amp; Heating&quot;</li>
+</ul>
+<p><strong>Good:</strong></p>
+<ul>
+<li>All platforms: &quot;Acme Plumbing Services&quot;</li>
+</ul>
+<p><strong>Address consistency:</strong></p>
+<p>Format addresses identically. Google treats &quot;123 Main Street&quot; and &quot;123 Main St&quot; as potentially different addresses.</p>
+<p><strong>Bad:</strong></p>
+<ul>
+<li>Google: &quot;123 Main Street, Suite 200, Raleigh, NC 27601&quot;</li>
+<li>Yelp: &quot;123 Main St, Ste 200, Raleigh, North Carolina 27601&quot;</li>
+<li>Facebook: &quot;123 Main Street #200, Raleigh 27601&quot;</li>
+</ul>
+<p><strong>Good:</strong></p>
+<ul>
+<li>All platforms: &quot;123 Main Street, Suite 200, Raleigh, NC 27601&quot;</li>
+</ul>
+<p><strong>Phone consistency:</strong></p>
+<p>Use the same phone number format. Google distinguishes between &quot;(919) 555-1234&quot; and &quot;919-555-1234&quot; even though they&#39;re the same number.</p>
+<p><strong>Bad:</strong></p>
+<ul>
+<li>Google: &quot;(919) 555-1234&quot;</li>
+<li>Yelp: &quot;919-555-1234&quot;</li>
+<li>Facebook: &quot;+1-919-555-1234&quot;</li>
+</ul>
+<p><strong>Good:</strong></p>
+<ul>
+<li>All platforms: &quot;(919) 555-1234&quot;</li>
+</ul>
+<h2>Why NAP Consistency Matters for Rankings</h2>
+<p>Google&#39;s local ranking algorithm evaluates three factors: relevance, distance, and prominence. Citations impact <strong>prominence</strong>—how well-known your business is.</p>
+<p><strong>How citations affect rankings:</strong></p>
+<p><strong>Trust signals</strong> — Consistent NAP across 50+ directories tells Google your business data is reliable. Inconsistent NAP suggests low-quality or fraudulent businesses.</p>
+<p><strong>Entity resolution</strong> — Google&#39;s Knowledge Graph links all mentions of your business across the web. Inconsistent NAP confuses entity resolution, fragmenting your ranking signals across multiple partial entities.</p>
+<p><strong>Local pack rankings</strong> — Businesses with strong citation profiles rank higher in the local 3-pack (the three businesses displayed in Google Maps results).</p>
+<p><strong>Review aggregation</strong> — Reviews on third-party platforms (Yelp, Facebook, industry directories) contribute to overall review count and star rating. But only if Google can match those platforms to your GMB listing via NAP consistency.</p>
+<p>Inconsistent NAP doesn&#39;t just fail to help—it actively harms rankings by creating duplicate listings that compete against each other and dilute authority.</p>
+<h2>Citation Audit: Finding Inconsistencies</h2>
+<p>Before building new citations, audit existing ones. You likely have citations you don&#39;t know about—previous employees submitted listings, customers added you to directories, or data aggregators pulled info from outdated sources.</p>
+<p><strong>Audit process:</strong></p>
+<ol>
+<li><p><strong>Manual Google search</strong> — Search <code>&quot;your business name&quot; + &quot;your city&quot;</code> in quotes. Review first 10 pages of results. Note every directory where you appear.</p>
+</li>
+<li><p><strong>Use citation tracking tools</strong> — <strong>BrightLocal</strong>, <strong>Moz Local</strong>, <strong>Whitespark</strong>, or <strong>Yext</strong> scan hundreds of directories and report where you&#39;re listed and whether NAP is consistent.</p>
+</li>
+<li><p><strong>Check data aggregators</strong> — Four major aggregators feed data to thousands of directories: <strong>Neustar/Localeze</strong>, <strong>Acxiom</strong>, <strong>Infogroup</strong>, and <strong>Foursquare</strong>. Ensure your data is correct at the aggregator level.</p>
+</li>
+<li><p><strong>Export results</strong> — Create a spreadsheet listing every citation found: Directory name, URL, Name (as listed), Address (as listed), Phone (as listed), Status (correct/incorrect/duplicate).</p>
+</li>
+</ol>
+<p><strong>Common inconsistency patterns:</strong></p>
+<ul>
+<li>Old addresses from previous locations</li>
+<li>Generic phone numbers (company main line instead of location-specific line)</li>
+<li>Abbreviated vs. full business names</li>
+<li>Suite/apartment number variations</li>
+<li>Outdated contact info after relocations</li>
+</ul>
+<p>Flag inconsistencies for correction. Prioritize high-authority directories (<strong>Google My Business</strong>, <strong>Yelp</strong>, <strong>Facebook</strong>, <strong>Apple Maps</strong>, <strong>BBB</strong>, <strong>Bing Places</strong>) and industry-specific directories relevant to your niche.</p>
+<h2>Core Citation Platforms</h2>
+<p>Not all citations are equal. Focus on platforms with high domain authority and high user traffic.</p>
+<p><strong>Tier 1 (must-have):</strong></p>
+<ul>
+<li><strong>Google My Business</strong> — Primary local ranking factor. Claim and verify immediately.</li>
+<li><strong>Bing Places</strong> — Second-largest search engine. Free listing.</li>
+<li><strong>Apple Maps</strong> — Powers Siri, Apple device searches. Connect via Apple Business Connect.</li>
+<li><strong>Facebook</strong> — High DA, massive user base. List under &quot;Local Business&quot; category.</li>
+<li><strong>Yelp</strong> — Consumer reviews, high visibility for service businesses.</li>
+<li><strong>YellowPages</strong> — Legacy directory, still indexed by Google.</li>
+<li><strong>BBB (Better Business Bureau)</strong> — High trust signal, especially for professional services.</li>
+</ul>
+<p><strong>Tier 2 (industry-specific):</strong></p>
+<p>Choose 10-20 based on your industry:</p>
+<ul>
+<li><strong>HomeAdvisor, Angi</strong> — Home services (plumbing, HVAC, contractors)</li>
+<li><strong>Avvo, FindLaw</strong> — Legal services</li>
+<li><strong>Healthgrades, Vitals</strong> — Healthcare</li>
+<li><strong>TripAdvisor, OpenTable</strong> — Restaurants, hospitality</li>
+<li><strong>Zillow, Realtor.com</strong> — Real estate</li>
+<li><strong>Houzz</strong> — Home improvement, interior design</li>
+</ul>
+<p><strong>Tier 3 (local/niche):</strong></p>
+<ul>
+<li>Chamber of Commerce websites</li>
+<li>Local business associations</li>
+<li>Niche industry directories</li>
+<li>City-specific directories (e.g., &quot;Visit Raleigh&quot; for Raleigh businesses)</li>
+</ul>
+<p><strong>Tier 4 (general directories):</strong></p>
+<ul>
+<li>Foursquare</li>
+<li>Superpages</li>
+<li>Citysearch</li>
+<li>Manta</li>
+<li>MapQuest</li>
+</ul>
+<p>Aim for 50-100 total citations for single-location businesses. For multi-location, aim for 30-50 per location across a consistent core set of directories.</p>
+<h2>Building Citations: Manual vs. Services</h2>
+<p><strong>Manual citation building:</strong></p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Free (just time investment)</li>
+<li>Full control over data accuracy</li>
+<li>Learn which directories matter for your niche</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Labor-intensive (2-3 hours per location for 30 citations)</li>
+<li>Requires creating accounts on dozens of platforms</li>
+<li>Ongoing maintenance burden</li>
+</ul>
+<p><strong>Citation services:</strong></p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Fast (bulk submissions to 50+ directories in days)</li>
+<li>Automated monitoring for inconsistencies</li>
+<li>Less manual work</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Costs $50-$300/location/year</li>
+<li>Less control (services use template data)</li>
+<li>Some services create &quot;syndication&quot; issues (they own the listings, not you—if you stop paying, listings may disappear)</li>
+</ul>
+<p><strong>Popular citation services:</strong></p>
+<ul>
+<li><strong>BrightLocal</strong> — $29-$79/month, builds and monitors citations</li>
+<li><strong>Yext</strong> — $199-$499/location/year, syndicates to 100+ directories</li>
+<li><strong>Moz Local</strong> — $129/location/year, distributes to major aggregators</li>
+<li><strong>Whitespark</strong> — Manual citation building service, $20-$50/citation</li>
+</ul>
+<p><strong>Recommendation:</strong> For 1-3 locations, build manually. For 4+ locations, use a service to scale.</p>
+<h2>Claiming and Optimizing Google My Business</h2>
+<p><strong>Google My Business</strong> (now called Google Business Profile) is the highest-impact citation. Optimize every field:</p>
+<p><strong>Business name:</strong> Use your official business name. Don&#39;t keyword-stuff (&quot;Best Raleigh Plumber Acme Plumbing&quot; violates guidelines).</p>
+<p><strong>Address:</strong> Use your physical street address. PO boxes aren&#39;t allowed unless you&#39;re a delivery-only business. Service-area businesses (plumbers, electricians who travel to clients) can hide the address and specify service areas instead.</p>
+<p><strong>Phone:</strong> Use a local phone number (not 1-800 numbers unless it&#39;s your primary contact method). Track calls with call tracking software if needed, but ensure the displayed number is consistent across all citations.</p>
+<p><strong>Website:</strong> Link to your homepage or location-specific landing page.</p>
+<p><strong>Categories:</strong> Select primary category (most specific to your business) and up to 9 additional categories. Examples: &quot;Plumber,&quot; &quot;Emergency Plumbing Service,&quot; &quot;Water Heater Repair.&quot;</p>
+<p><strong>Business hours:</strong> Update accurately. Google shows &quot;closed&quot; in search results if current time is outside listed hours.</p>
+<p><strong>Attributes:</strong> Add relevant attributes (wheelchair accessible, free estimates, veteran-owned, etc.).</p>
+<p><strong>Description:</strong> 750-character business description. Include keywords naturally but don&#39;t spam. Describe services, areas served, years in business.</p>
+<p><strong>Photos:</strong> Upload 10+ photos (exterior, interior, team, work samples). Listings with photos get 42% more direction requests and 35% more clicks.</p>
+<p><strong>Posts:</strong> Publish Google Posts weekly (updates, offers, events). Boosts engagement signals.</p>
+<p><strong>Q&amp;A:</strong> Monitor and answer questions. Pre-seed Q&amp;A by having team members ask and answer common questions.</p>
+<p><strong>Reviews:</strong> Encourage customers to leave reviews. Respond to all reviews (positive and negative). 4.0+ star average with 50+ reviews is the threshold for competitive visibility.</p>
+<h2>Managing Multi-Location Citations</h2>
+<p>Multi-location businesses face unique challenges: keeping 10, 50, or 100 location listings consistent while allowing location-specific details (address, phone, hours).</p>
+<p><strong>Location-specific landing pages:</strong></p>
+<p>Create a dedicated landing page for each location:</p>
+<ul>
+<li>URL: <code>yoursite.com/locations/raleigh-nc/</code></li>
+<li>Content: Location-specific address, phone, hours, services, team bios</li>
+<li>Schema markup: LocalBusiness schema with location-specific NAP</li>
+</ul>
+<p>Link to these pages from your GMB listings and citations. This reinforces location-specific SEO and gives users location-specific info.</p>
+<p><strong>Standardized NAP format:</strong></p>
+<p>Define a company-wide NAP format and enforce it:</p>
+<ul>
+<li>Name: Always use full legal name or consistent DBA</li>
+<li>Address: Always use full format (Street, Suite, City, State ZIP)</li>
+<li>Phone: Always use same format (e.g., (XXX) XXX-XXXX)</li>
+</ul>
+<p><strong>Centralized data management:</strong></p>
+<p>Use a spreadsheet or database as the &quot;source of truth&quot; for all location data. Columns:</p>
+<ul>
+<li>Location ID</li>
+<li>Business Name</li>
+<li>Address (Street, Suite, City, State, ZIP as separate fields)</li>
+<li>Phone</li>
+<li>Website URL</li>
+<li>Email</li>
+<li>Hours (Monday-Sunday, open/close times)</li>
+<li>Manager Name</li>
+</ul>
+<p><strong>Citation distribution strategy:</strong></p>
+<p>For 10+ locations, submit all locations to Tier 1 platforms (GMB, Bing, Facebook, Yelp). For Tier 2 and Tier 3, prioritize locations based on strategic importance (highest revenue locations, new locations needing visibility).</p>
+<p><strong>Monitoring for drift:</strong></p>
+<p>Citation data drifts over time (hours change, phone numbers get updated, addresses change after relocations). Audit quarterly:</p>
+<ol>
+<li>Run citation scans via <strong>BrightLocal</strong> or <strong>Whitespark</strong></li>
+<li>Flag inconsistencies</li>
+<li>Update incorrect listings</li>
+<li>Remove duplicate listings</li>
+</ol>
+<h2>Handling Duplicate Listings</h2>
+<p>Duplicate listings are common and destructive. They split reviews, fragment ranking signals, and confuse customers.</p>
+<p><strong>Types of duplicates:</strong></p>
+<ul>
+<li><strong>Exact duplicates</strong> — Same name, address, phone. Often created by customers or data aggregators.</li>
+<li><strong>Near-duplicates</strong> — Slight variations (abbreviated names, suite number differences). Google may treat as separate entities.</li>
+<li><strong>Merged listings</strong> — Two businesses that merged but both listings still exist.</li>
+</ul>
+<p><strong>How to remove duplicates:</strong></p>
+<p><strong>Google My Business:</strong></p>
+<ol>
+<li>Claim both listings</li>
+<li>Report the duplicate via GMB dashboard → Info → &quot;Mark as duplicate&quot;</li>
+<li>Google reviews and merges them (takes 1-4 weeks)</li>
+</ol>
+<p><strong>Other directories:</strong></p>
+<ol>
+<li>Contact directory support and request merge or deletion</li>
+<li>Provide proof of ownership (business license, utility bill)</li>
+<li>Follow up if not resolved in 2 weeks</li>
+</ol>
+<p><strong>Preventing duplicates:</strong></p>
+<ul>
+<li>Claim your GMB listing immediately (unclaimed listings attract duplicate submissions)</li>
+<li>Monitor monthly for new duplicate listings via citation tracking tools</li>
+<li>Educate employees not to create new listings if one already exists</li>
+</ul>
+<h2>Schema Markup for NAP</h2>
+<p><strong>Schema.org LocalBusiness markup</strong> encodes your NAP data in machine-readable format. This helps Google parse and trust your data.</p>
+<p>Example schema markup for homepage:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;LocalBusiness&quot;,
+  &quot;name&quot;: &quot;Acme Plumbing Services&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;123 Main Street, Suite 200&quot;,
+    &quot;addressLocality&quot;: &quot;Raleigh&quot;,
+    &quot;addressRegion&quot;: &quot;NC&quot;,
+    &quot;postalCode&quot;: &quot;27601&quot;,
+    &quot;addressCountry&quot;: &quot;US&quot;
+  },
+  &quot;telephone&quot;: &quot;(919) 555-1234&quot;,
+  &quot;url&quot;: &quot;https://www.acmeplumbing.com&quot;,
+  &quot;priceRange&quot;: &quot;$$&quot;,
+  &quot;openingHours&quot;: &quot;Mo-Fr 08:00-17:00&quot;
+}
+</code></pre>
+<p>Add this to your site&#39;s <code>&lt;head&gt;</code> or footer. For multi-location businesses, add LocalBusiness schema to each location-specific landing page with that location&#39;s NAP.</p>
+<p>Validate schema using <strong>Google&#39;s Rich Results Test</strong> or <strong>Schema.org Validator</strong>.</p>
+<h2>Citation Velocity and Freshness</h2>
+<p><strong>Citation velocity</strong> (rate of new citation acquisition) signals business growth and legitimacy. Natural velocity: 5-10 new citations per month for established businesses, 15-25 for new businesses.</p>
+<p>Avoid sudden spikes (submitting to 100 directories overnight). Google may flag this as spam. Spread submissions over 4-8 weeks.</p>
+<p><strong>Citation freshness</strong> matters for directories that display &quot;last updated&quot; dates. Update citations annually even if data hasn&#39;t changed (refresh description, add new photos, update hours). This signals active management.</p>
+<h2>Tracking Citation Impact</h2>
+<p>Monitor metrics to verify citation work drives results:</p>
+<p><strong>Local pack rankings:</strong> Track rankings for target keywords in target cities. Use <strong>BrightLocal</strong>, <strong>Whitespark</strong>, or <strong>Local Falcon</strong> for local rank tracking.</p>
+<p><strong>GMB insights:</strong> Google My Business provides data on search impressions, clicks, calls, direction requests. Rising trends indicate improving visibility.</p>
+<p><strong>Referral traffic:</strong> Google Analytics → Acquisition → All Traffic → Referrals. Track traffic from citation directories (Yelp, YellowPages, etc.).</p>
+<p><strong>Phone calls:</strong> Use call tracking to attribute calls to specific citations. If Yelp generates 20 calls/month, prioritize maintaining that listing.</p>
+<p><strong>Baseline before citation work:</strong> Record rankings, GMB impressions, and referral traffic. Compare 60-90 days after citations are built.</p>
+<h2>FAQ</h2>
+<p><strong>How many citations do I need?</strong></p>
+<p>50-100 for single-location businesses in competitive markets. 30-50 per location for multi-location businesses. Prioritize quality over quantity—30 citations on high-DA directories beat 100 citations on low-quality directories.</p>
+<p><strong>What if I can&#39;t edit a citation (directory won&#39;t let me)?</strong></p>
+<p>Contact directory support. Provide proof of ownership. If they refuse, submit a new correct listing and report the old one as a duplicate or outdated.</p>
+<p><strong>Do citations from low-DA directories hurt?</strong></p>
+<p>No, but they don&#39;t help much. Focus effort on Tier 1 and Tier 2 directories. Ignore low-value directories unless you have excess capacity.</p>
+<p><strong>Should I use tracking phone numbers or real numbers?</strong></p>
+<p>Use real numbers for GMB and major directories to maintain strict NAP consistency. Use tracking numbers for paid ads and low-priority directories if you need call attribution. Never use different tracking numbers across high-authority directories—it breaks consistency.</p>
+<p><strong>How do I handle multiple phone numbers (main line + location-specific)?</strong></p>
+<p>Use location-specific numbers for location-specific listings. Use main line only for corporate/headquarters listings. Consistency per location matters more than consistency across all locations.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

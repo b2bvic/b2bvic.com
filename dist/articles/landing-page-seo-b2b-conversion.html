@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page SEO for B2B Conversion Optimization | B2B Vic</title>
+    <meta name="description" content="How to architect landing pages that rank for commercial intent keywords while maintaining conversion-focused design, copy, and user experience." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Landing Page SEO for B2B Conversion Optimization" />
+    <meta property="og:description" content="How to architect landing pages that rank for commercial intent keywords while maintaining conversion-focused design, copy, and user experience." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/landing-page-seo-b2b-conversion.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Landing Page SEO for B2B Conversion Optimization" />
+    <meta name="twitter:description" content="How to architect landing pages that rank for commercial intent keywords while maintaining conversion-focused design, copy, and user experience." />
+    <link rel="canonical" href="https://b2bvic.com/articles/landing-page-seo-b2b-conversion.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Landing Page SEO for B2B Conversion Optimization",
+      "description": "How to architect landing pages that rank for commercial intent keywords while maintaining conversion-focused design, copy, and user experience.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/landing-page-seo-b2b-conversion.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Landing Page SEO for B2B Conversion Optimization"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Landing Page SEO for B2B Conversion Optimization</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Landing Page SEO for B2B Conversion Optimization</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Landing Page SEO for B2B Conversion Optimization</h1>
+<p>Most B2B landing pages optimize for one thing or the other: they rank but don&#39;t convert, or they convert paid traffic but never appear in organic search. The tension is structural. <strong>SEO-friendly pages</strong> require content volume, internal links, and semantic depth. <strong>Conversion-optimized pages</strong> demand brevity, singular CTAs, and minimal distractions.</p>
+<p>You can satisfy both. The framework requires deliberate architecture — balancing on-page SEO signals with persuasion mechanics, structuring content to serve crawlers without diluting focus, and using schema markup to claim SERP real estate before visitors even click.</p>
+<p>This matters because B2B purchase cycles stretch across months. A prospect searching &quot;enterprise CRM implementation checklist&quot; isn&#39;t ready to buy. They&#39;re researching. If your landing page ranks for that query, loads with a hard-pitch CTA and zero educational content, they bounce. If it ranks with 4,000 words of comprehensive guidance but buries the demo request form at word 3,800, they exit before converting.</p>
+<p>The solution isn&#39;t compromise. It&#39;s intentional structure that feeds search engines what they need while guiding visitors toward conversion without friction.</p>
+<h2>The Dual Mandate: Ranking vs. Converting</h2>
+<p>Google ranks pages based on relevance, authority, and user experience signals. Relevance comes from keyword targeting, semantic coverage, and topical depth. Authority flows from backlinks and internal link equity. User experience manifests through Core Web Vitals, mobile usability, and engagement metrics.</p>
+<p>Conversion depends on clarity, credibility, and friction reduction. Clarity means a singular value proposition and obvious next action. Credibility requires proof elements — testimonials, case studies, recognizable client logos. Friction reduction eliminates unnecessary form fields, loads pages fast, and removes navigation that tempts exits.</p>
+<p>These mandates conflict when implemented naively:</p>
+<ul>
+<li><strong>SEO demands content depth</strong> → Conversion prefers brevity</li>
+<li><strong>SEO rewards internal links</strong> → Conversion minimizes exit paths</li>
+<li><strong>SEO values keyword variations</strong> → Conversion wants message singularity</li>
+<li><strong>SEO benefits from broad topics</strong> → Conversion requires specificity</li>
+</ul>
+<p>The reconciliation strategy: <strong>modular page architecture</strong> that satisfies SEO imperatives above the fold and conversion imperatives below it, with content structure that allows crawlers to extract relevance without forcing visitors to read 2,000 words before seeing the CTA.</p>
+<h2>Keyword Targeting for Commercial Intent</h2>
+<p>Landing pages must rank for keywords with commercial intent — searches indicating the user is evaluating solutions, not just learning. These keywords cluster around:</p>
+<ul>
+<li><strong>Problem + solution format</strong> — &quot;how to reduce inventory carrying costs&quot;</li>
+<li><strong>Comparison queries</strong> — &quot;ERP vs MRP systems&quot;</li>
+<li><strong>Feature-specific searches</strong> — &quot;CRM with sales automation&quot;</li>
+<li><strong>Implementation queries</strong> — &quot;enterprise software migration checklist&quot;</li>
+</ul>
+<p>Avoid informational keywords unless they ladder into commercial intent. Ranking for &quot;what is supply chain management&quot; brings top-of-funnel traffic that doesn&#39;t convert. Ranking for &quot;supply chain management software for manufacturers&quot; brings qualified prospects.</p>
+<p>Use keyword research tools (<strong>Ahrefs</strong>, <strong>Semrush</strong>, <strong>Google Keyword Planner</strong>) to identify commercial-intent keywords with:</p>
+<ul>
+<li>Search volume 100-5,000/month (too low = wasted effort, too high = unwinnable competition)</li>
+<li>High CPC in paid search (signals advertiser intent, proxy for conversion potential)</li>
+<li>SERP features like &quot;People Also Ask&quot; boxes (indicates Google sees the query as question-focused, requires content depth)</li>
+<li>Competitor landing pages in top 10 (validates that landing pages can rank, not just blog posts)</li>
+</ul>
+<p>Map keywords to landing page URLs. Each landing page targets a primary keyword and 3-5 semantic variations. Example:</p>
+<p><strong>Primary:</strong> &quot;enterprise CRM implementation&quot;
+<strong>Variations:</strong> &quot;CRM deployment for large organizations,&quot; &quot;how to implement CRM at scale,&quot; &quot;enterprise CRM migration guide,&quot; &quot;B2B CRM rollout strategy&quot;</p>
+<p>Structure content to cover variations without keyword stuffing. Use variations in headings, body copy, and image alt text naturally.</p>
+<h2>Modular Page Architecture</h2>
+<p>The core tension: SEO needs 1,500+ words to establish topical relevance, but conversion-focused landing pages traditionally clock in at 300-500 words. Resolve this with a <strong>modular structure</strong> that front-loads conversion elements and back-loads SEO content.</p>
+<p><strong>Above the fold (conversion zone):</strong></p>
+<ul>
+<li>Headline that states value proposition (not a tagline, a clear outcome)</li>
+<li>Subheadline that qualifies the audience (who this is for)</li>
+<li>CTA button (primary action: &quot;Schedule Demo,&quot; &quot;Get Pricing,&quot; &quot;Download Guide&quot;)</li>
+<li>Hero image or short explainer video (30-60 seconds max)</li>
+<li>Trust indicators (client logos, testimonial snippet, certification badges)</li>
+</ul>
+<p><strong>Mid-page (credibility zone):</strong></p>
+<ul>
+<li>Problem/solution framework (3-4 sections, each 100-150 words)</li>
+<li>Feature breakdown (bulleted, scannable, benefit-focused)</li>
+<li>Social proof (case study snippet, testimonial carousel, ROI stat)</li>
+<li>Secondary CTA (reinforces primary action)</li>
+</ul>
+<p><strong>Lower-page (SEO content zone):</strong></p>
+<ul>
+<li>Long-form content addressing keyword variations and related queries</li>
+<li>FAQ section targeting &quot;People Also Ask&quot; boxes</li>
+<li>Comparison tables (your solution vs. alternatives)</li>
+<li>Implementation guides or checklists (valuable for link acquisition)</li>
+<li>Related resources (internal links to blog posts, whitepapers, case studies)</li>
+</ul>
+<p><strong>Footer (utility zone):</strong></p>
+<ul>
+<li>Final CTA</li>
+<li>Footer navigation (minimal, no navigation menu clutter)</li>
+<li>Schema markup (Organization, FAQPage, Product/Service)</li>
+</ul>
+<p>This structure lets visitors who arrive from paid ads or direct traffic convert immediately without scrolling. Visitors who arrive from organic search and need education scroll down to consume content. Crawlers parse the full page, extract semantic relevance from long-form sections, and reward topical depth.</p>
+<h2>On-Page SEO Elements</h2>
+<p>Landing pages must satisfy technical SEO requirements without sacrificing conversion-focused design.</p>
+<p><strong>Title tag</strong> — 60 characters max. Include primary keyword and value proposition. Example: &quot;Enterprise CRM Implementation Guide | [Brand]&quot; not &quot;Welcome to [Brand] | CRM Software.&quot;</p>
+<p><strong>Meta description</strong> — 155 characters max. Include primary keyword, benefit statement, and CTA. Example: &quot;Deploy enterprise CRM in 90 days with our proven implementation framework. Reduce ramp time by 50%. Schedule a consultation.&quot; This won&#39;t impact rankings but improves CTR from search results.</p>
+<p><strong>H1 tag</strong> — One per page. Must match or closely align with title tag. Include primary keyword. Example: &quot;Enterprise CRM Implementation: Deploy in 90 Days, Not 9 Months.&quot;</p>
+<p><strong>H2-H3 structure</strong> — Use keyword variations in subheadings. Example H2s: &quot;Why Enterprise CRM Implementations Fail,&quot; &quot;Our Proven CRM Deployment Framework,&quot; &quot;Enterprise CRM Migration Checklist.&quot;</p>
+<p><strong>Image alt text</strong> — Describe images functionally, include keywords where natural. &quot;Enterprise CRM dashboard showing sales pipeline and forecasting tools&quot; not &quot;dashboard screenshot.&quot;</p>
+<p><strong>URL structure</strong> — Keep URLs short, include primary keyword. <code>/enterprise-crm-implementation/</code> not <code>/solutions/crm/enterprise-level-deployment-services/</code>.</p>
+<p><strong>Internal links</strong> — Link to 3-5 related resources: blog posts, case studies, whitepapers. Use descriptive anchor text. &quot;See our CRM migration case study&quot; not &quot;click here.&quot;</p>
+<p><strong>External links</strong> — Link to authoritative sources if citing data or research. Signals credibility to both users and crawlers.</p>
+<p><strong>Page speed</strong> — Target Core Web Vitals: LCP under 2.5s, FID under 100ms, CLS under 0.1. Compress images, minimize JavaScript, use lazy loading.</p>
+<p><strong>Mobile optimization</strong> — Ensure CTA buttons are thumb-sized (44x44px minimum), text is readable without zooming (16px minimum), and forms are easy to complete on mobile.</p>
+<h2>Content Structure for Dual Optimization</h2>
+<p>The long-form content zone must satisfy SEO without creating conversion friction. Use these techniques:</p>
+<p><strong>Expandable sections</strong> — Wrap long-form content in collapsible accordions. Crawlers parse hidden content, but visitors aren&#39;t overwhelmed by walls of text. Place FAQs, implementation checklists, and comparison tables in expandable sections.</p>
+<p><strong>Tabs</strong> — Separate content into tabs (Overview, Features, Pricing, Case Studies). Crawlers index all tabs, visitors navigate only to relevant sections. Reduces perceived page length.</p>
+<p><strong>Sticky CTA</strong> — As visitors scroll into long-form content, trigger a sticky CTA bar at the top or bottom of the viewport. Ensures conversion opportunity is always visible without requiring scroll-back.</p>
+<p><strong>Content upgrades</strong> — Offer downloadable PDFs (checklists, templates, guides) in exchange for email capture. Placed within long-form content, these act as micro-conversions for visitors not ready for demo requests.</p>
+<p><strong>Visual hierarchy</strong> — Use bold text, bullet points, and callout boxes to make long-form sections scannable. Most visitors won&#39;t read every word — make key points extractable at a glance.</p>
+<p><strong>Internal anchor links</strong> — Create a table of contents at the top of long-form sections with jump links. Improves UX and generates sitelinks in SERPs (Google may show jump links as sub-results in search).</p>
+<h2>Schema Markup for Enhanced Visibility</h2>
+<p><strong>Schema.org</strong> structured data helps search engines understand page content and can trigger rich results — review stars, FAQ dropdowns, breadcrumbs, organization info.</p>
+<p>Implement these schema types on B2B landing pages:</p>
+<p><strong>Organization schema</strong> — Include on every page. Defines your company, logo, contact info, social profiles. Appears in Knowledge Graph panels.</p>
+<p><strong>Product or Service schema</strong> — Describes your offering. Include name, description, provider, category. Add <code>offers</code> property with pricing if applicable (triggers price display in SERPs).</p>
+<p><strong>FAQPage schema</strong> — Mark up your FAQ section. Google may display FAQ answers directly in search results as expandable dropdowns, increasing SERP real estate.</p>
+<p><strong>BreadcrumbList schema</strong> — Encode breadcrumb navigation. Appears in search results as clickable breadcrumb trail, improves CTR.</p>
+<p><strong>Review or AggregateRating schema</strong> — If you have testimonials with star ratings, mark them up. Can trigger review stars in SERPs (Google is increasingly restrictive about what qualifies).</p>
+<p>Validate schema using Google&#39;s Rich Results Test. Common mistakes: missing required fields, mismatched data between visible content and schema, using schema types that don&#39;t match page content.</p>
+<h2>Conversion Rate Optimization Techniques</h2>
+<p>SEO brings traffic. CRO converts it. Apply these tactics without harming rankings:</p>
+<p><strong>Singular CTA</strong> — One primary action per page. &quot;Schedule Demo&quot; or &quot;Get Pricing&quot; or &quot;Download Guide,&quot; not all three. Multiple CTAs create decision paralysis.</p>
+<p><strong>Above-the-fold CTA</strong> — Visitor should see the primary CTA without scrolling. Repeat CTA 2-3 times down the page (after problem/solution section, after case study, in footer).</p>
+<p><strong>Frictionless forms</strong> — Ask for minimum required information. Name and email only for content downloads. Add phone/company fields only for demo requests. Each additional field reduces conversion rate 5-10%.</p>
+<p><strong>Social proof placement</strong> — Testimonials and client logos near CTAs. &quot;Join 500+ companies using [Product]&quot; above the CTA button.</p>
+<p><strong>Benefit-focused copy</strong> — Headlines and CTAs state outcomes, not features. &quot;Reduce implementation time by 50%&quot; not &quot;Advanced deployment tools.&quot;</p>
+<p><strong>Trust signals</strong> — Security badges, compliance certifications (SOC 2, GDPR, ISO), guarantees, free trial offers. Reduces perceived risk.</p>
+<p><strong>Urgency without dishonesty</strong> — &quot;Book a demo this week and receive onboarding consultation&quot; is fine. &quot;Only 3 spots left!&quot; when there&#39;s no real scarcity is not.</p>
+<p>Run A/B tests on CTA copy, headline variations, form field counts, and page length. Use tools like <strong>Google Optimize</strong>, <strong>Optimizely</strong>, or <strong>VWO</strong>. Test one variable at a time to isolate impact.</p>
+<h2>Link Building for Landing Pages</h2>
+<p>Landing pages rarely attract links organically — they&#39;re commercial, not informational. Build links through:</p>
+<p><strong>Guest posting</strong> — Write for industry publications, include contextual link to your landing page in author bio or within content where relevant.</p>
+<p><strong>Case studies</strong> — Publish client success stories on your blog, link to landing page for the featured product/service. Reach out to the client&#39;s marketing team and ask them to link to the case study from their site.</p>
+<p><strong>Resource pages</strong> — Identify industry resource roundups and suggest your landing page as an addition (only works if your page provides substantial educational content, not just a sales pitch).</p>
+<p><strong>Partnerships</strong> — Co-marketing with complementary vendors. They link to your landing page, you link to theirs.</p>
+<p><strong>PR and media mentions</strong> — Press releases, interviews, podcasts. Include link to landing page in show notes or article.</p>
+<p><strong>Digital PR</strong> — Create linkable assets (research reports, industry surveys, infographics) hosted on your landing page or linked from it.</p>
+<p>Track link acquisition in <strong>Ahrefs</strong> or <strong>Semrush</strong>. Monitor referring domains, anchor text distribution, and link equity flow to landing pages. Disavow spammy or low-quality links to protect domain authority.</p>
+<h2>Analytics and Performance Tracking</h2>
+<p>Measure both SEO and conversion metrics to validate optimization efforts:</p>
+<p><strong>SEO metrics:</strong></p>
+<ul>
+<li>Organic rankings for target keywords (track in <strong>Semrush</strong> or <strong>Ahrefs</strong>)</li>
+<li>Organic traffic to landing page (Google Analytics)</li>
+<li>Click-through rate from SERPs (Google Search Console)</li>
+<li>Impressions and average position (Google Search Console)</li>
+<li>Backlinks and referring domains (Ahrefs)</li>
+<li>Core Web Vitals (Google Search Console, PageSpeed Insights)</li>
+</ul>
+<p><strong>Conversion metrics:</strong></p>
+<ul>
+<li>Conversion rate (GA4: sessions → goal completions)</li>
+<li>Form submission rate (GA4 event tracking)</li>
+<li>Bounce rate (high bounce suggests mismatch between search intent and landing page content)</li>
+<li>Time on page (low time suggests visitors aren&#39;t engaging with content)</li>
+<li>Scroll depth (GA4 event tracking to measure how far visitors scroll into long-form content)</li>
+<li>Assisted conversions (GA4 multi-touch attribution to measure landing page&#39;s role in longer customer journeys)</li>
+</ul>
+<p>Set up goal tracking in GA4 for primary conversion actions (demo requests, downloads, free trial signups). Use UTM parameters to differentiate organic traffic from paid campaigns.</p>
+<h2>Common Pitfalls and How to Avoid Them</h2>
+<p><strong>Keyword stuffing in conversion copy</strong> — Forcing keywords into headlines and CTAs sounds unnatural and reduces conversion. Place keywords in long-form content, keep conversion copy benefit-focused.</p>
+<p><strong>Conflicting CTAs</strong> — Multiple competing CTAs (demo + download + newsletter signup) confuse visitors. Stick to one primary action, add secondary CTAs only in lower-page zones.</p>
+<p><strong>Thin content with conversion focus</strong> — 300-word pages with a form rarely rank. Add educational content below the fold to satisfy SEO without diluting conversion zones.</p>
+<p><strong>Over-optimization</strong> — Using exact-match keywords in every heading, alt text, and URL creates spammy signals. Use synonyms and natural language.</p>
+<p><strong>Neglecting mobile</strong> — 60%+ of B2B searches happen on mobile. If your landing page is desktop-only optimized, you&#39;re losing conversions and rankings (Google uses mobile-first indexing).</p>
+<p><strong>Ignoring load speed</strong> — Pages that load in 5+ seconds lose 50%+ of visitors before they see the content. Compress images, lazy load below-the-fold content, minimize JavaScript.</p>
+<p><strong>Generic testimonials</strong> — &quot;Great product!&quot; adds zero credibility. Use specific, outcome-focused testimonials with name, company, and ideally a photo. &quot;Reduced onboarding time from 6 weeks to 10 days&quot; is proof.</p>
+<p><strong>No clear value proposition</strong> — Vague headlines like &quot;Transform Your Business&quot; don&#39;t communicate what you do or why it matters. Be specific: &quot;Enterprise CRM That Deploys in 90 Days.&quot;</p>
+<h2>FAQ</h2>
+<p><strong>How long should a B2B landing page be for SEO?</strong></p>
+<p>1,500-2,500 words minimum to establish topical depth. Use modular structure to keep conversion zones concise while adding educational content below the fold.</p>
+<p><strong>Should landing pages have navigation menus?</strong></p>
+<p>Minimize navigation to reduce exit paths. Include logo linking to homepage and a single &quot;Contact&quot; or &quot;About&quot; link in the header. Avoid full site navigation that tempts visitors away from the conversion path.</p>
+<p><strong>Can I rank a landing page without backlinks?</strong></p>
+<p>Possible for low-competition keywords with strong on-page SEO and internal linking. For competitive commercial keywords, backlinks are required to outrank established competitors.</p>
+<p><strong>What&#39;s the ideal CTA placement?</strong></p>
+<p>Above the fold (visible without scrolling), repeated 2-3 times down the page at natural break points (after problem/solution section, after social proof, in footer).</p>
+<p><strong>How do I optimize landing pages for voice search?</strong></p>
+<p>Target question-based keywords, use FAQ schema, and write conversational copy that mirrors how people speak queries aloud. Example: optimize for &quot;what&#39;s the best CRM for small businesses&quot; not just &quot;small business CRM.&quot;</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
