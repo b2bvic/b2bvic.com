@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Workflow Automation: Building Systems That Scale Without Supervision | B2B Vic</title>
+    <meta name="description" content="Design CRM workflows that eliminate manual busywork and compound institutional knowledge. Step-by-step automation architecture for B2B sales teams." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="CRM Workflow Automation: Building Systems That Scale Without Supervision" />
+    <meta property="og:description" content="Design CRM workflows that eliminate manual busywork and compound institutional knowledge. Step-by-step automation architecture for B2B sales teams." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/crm-workflow-automation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CRM Workflow Automation: Building Systems That Scale Without Supervision" />
+    <meta name="twitter:description" content="Design CRM workflows that eliminate manual busywork and compound institutional knowledge. Step-by-step automation architecture for B2B sales teams." />
+    <link rel="canonical" href="https://b2bvic.com/articles/crm-workflow-automation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "CRM Workflow Automation: Building Systems That Scale Without Supervision",
+      "description": "Design CRM workflows that eliminate manual busywork and compound institutional knowledge. Step-by-step automation architecture for B2B sales teams.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/crm-workflow-automation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM Workflow Automation: Building Systems That Scale Without Supervision"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">CRM Workflow Automation: Building Systems That Scale Without Supervision</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">CRM Workflow Automation: Building Systems That Scale Without Supervision</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>CRM Workflow Automation: Building Systems That Scale Without Supervision</h1>
+<p>Manual CRM work doesn&#39;t scale. You can hire more reps, but if every lead requires 8 touches of data entry, 4 reminder emails, and 3 status updates, you&#39;ve built a labor-intensive machine that breaks under growth.</p>
+<p>Automation inverts that equation. Build the workflow once, let it run forever. A well-architected automation system handles repetitive decision-making, routes intelligence to the right people, and prevents leads from falling into the void between &quot;contacted&quot; and &quot;closed.&quot;</p>
+<p>Most CRM automation fails because people automate the wrong things. They build elaborate workflows around edge cases while ignoring the 80% of pipeline activity that&#39;s identical every time. Or they over-automate, stripping human judgment from moments where it matters.</p>
+<p>This guide covers the architecture: which processes to automate, how to build workflows that don&#39;t break, and how to maintain systems that compound instead of decay.</p>
+<h2>The Automation Hierarchy: What to Build First</h2>
+<p>Not all automations deliver equal value. Start with high-frequency, low-variability tasks. These are processes that happen dozens of times per week with predictable inputs and outputs.</p>
+<p><strong>Tier 1: Lifecycle automation (build these first)</strong></p>
+<ul>
+<li>Lead capture → auto-assign to rep based on territory/vertical</li>
+<li>First contact logged → trigger welcome sequence</li>
+<li>Stage change → update task queue + notify stakeholders</li>
+<li>Deal closed → initiate onboarding workflow</li>
+<li>Contact goes cold → move to reactivation list</li>
+</ul>
+<p><strong>Tier 2: Data hygiene automation (prevents entropy)</strong></p>
+<ul>
+<li>Duplicate detection → flag for manual merge</li>
+<li>Missing required fields → notify rep to complete</li>
+<li>Contact inactive &gt; 90 days → tag for review or archive</li>
+<li>Company domain detected → enrich with Clearbit/ZoomInfo</li>
+<li>Email bounced → mark invalid, suppress from campaigns</li>
+</ul>
+<p><strong>Tier 3: Intelligence routing (surfaces insights)</strong></p>
+<ul>
+<li>High engagement score → notify sales manager</li>
+<li>Pain point mentioned in notes → apply tag, trigger content sequence</li>
+<li>Competitor mentioned → add to competitive intel list</li>
+<li>Budget/timeline discovered → escalate priority</li>
+<li>Champion identified → flag for contract review</li>
+</ul>
+<p><strong>Tier 4: Reporting automation (visibility without meetings)</strong></p>
+<ul>
+<li>Daily pipeline summary → Slack</li>
+<li>Weekly deal velocity report → leadership</li>
+<li>Monthly tag health audit → CRM admin</li>
+<li>Quarterly churn analysis → product team</li>
+</ul>
+<p>Build tier 1 before anything else. A rep shouldn&#39;t manually assign leads or update tasks—those are zero-judgment operations. Tier 2 prevents the system from degrading. Tier 3 and 4 add sophistication, but only after the foundation is solid.</p>
+<h2>Trigger Design: When to Fire Workflows</h2>
+<p>Workflows activate on <strong>triggers</strong> (an event happens) and execute <strong>actions</strong> (something changes). Trigger design determines whether automations feel helpful or intrusive.</p>
+<p><strong>Common trigger types:</strong></p>
+<p><strong>Record created</strong></p>
+<ul>
+<li>New lead enters system → assign owner, send first touch</li>
+<li>New company added → enrich data, categorize by size/vertical</li>
+<li>New deal created → populate checklist, set follow-up cadence</li>
+</ul>
+<p><strong>Field updated</strong></p>
+<ul>
+<li>Status changed to &quot;Qualified&quot; → move to hot prospects list, notify manager</li>
+<li>Email address updated → validate deliverability, resume email sequences</li>
+<li>Company size upgraded → recalculate discount tier, update proposal template</li>
+</ul>
+<p><strong>Date-based</strong></p>
+<ul>
+<li>7 days since last contact → create follow-up task</li>
+<li>Contract renewal in 30 days → trigger renewal sequence</li>
+<li>Trial expires tomorrow → send upgrade offer, notify account manager</li>
+</ul>
+<p><strong>Score threshold crossed</strong></p>
+<ul>
+<li>Engagement score &gt; 50 → escalate to sales, personalize outreach</li>
+<li>Lead score &lt; 10 after 60 days → move to long-term nurture or archive</li>
+<li>Churn risk score &gt; 70 → alert customer success, deploy retention campaign</li>
+</ul>
+<p><strong>Tag applied/removed</strong></p>
+<ul>
+<li>&quot;Pain: Budget Constraints&quot; added → send ROI calculator, suppress premium pricing</li>
+<li>&quot;Champion Identified&quot; added → update deal confidence, flag for expedited review</li>
+<li>&quot;Competitor Lock-In&quot; removed → resume standard pitch, remove objection-handling materials</li>
+</ul>
+<p><strong>The trigger question:</strong> &quot;What&#39;s the earliest reliable signal that this action is needed?&quot;</p>
+<p>Don&#39;t wait for perfect information. If 90% of qualified leads need a follow-up task, trigger it on qualification. The 10% that don&#39;t can delete the task. That&#39;s cheaper than forcing reps to remember to create it.</p>
+<h2>Action Chains: Building Multi-Step Workflows</h2>
+<p>Single-action automations are useful. Multi-step workflows are transformative.</p>
+<p><strong>Example: New inbound lead workflow</strong></p>
+<p><strong>Trigger:</strong> Contact created with source = &quot;Inbound&quot;</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Assign owner (round-robin by availability)</li>
+<li>Tag with <code>SOURCE - Inbound</code></li>
+<li>Tag with <code>STAGE - Prospect</code></li>
+<li>Send welcome email (template: &quot;Thanks for reaching out&quot;)</li>
+<li>Create task: &quot;Qualify lead within 24 hours&quot; (due: tomorrow)</li>
+<li>Add to Smart List: &quot;New Inbound - This Week&quot;</li>
+<li>Post to Slack: &quot;#sales — New inbound lead: [Name] at [Company]&quot;</li>
+<li>Set follow-up reminder (3 days if no response)</li>
+</ol>
+<p><strong>Eight actions, zero manual input.</strong> The rep sees a task in their queue, a Slack notification, and a pre-written email ready to personalize. They focus on judgment (is this qualified?), not process (did I remember to tag and notify everyone?).</p>
+<p><strong>Example: Deal stage progression workflow</strong></p>
+<p><strong>Trigger:</strong> Deal stage changed to &quot;Proposal Sent&quot;</p>
+<p><strong>Actions:</strong></p>
+<ol>
+<li>Tag with <code>ACTION: Proposal Sent</code></li>
+<li>Set follow-up task: &quot;Check on proposal&quot; (due: 3 days)</li>
+<li>Update deal probability to 60%</li>
+<li>Notify sales manager if deal value &gt; $25K</li>
+<li>Start proposal follow-up sequence (3 emails over 7 days)</li>
+<li>Add to Smart List: &quot;Proposals Out - This Month&quot;</li>
+<li>Create Google Calendar event: &quot;Proposal follow-up call&quot; (7 days out)</li>
+<li>Log activity note: &quot;Proposal sent via email on [date]&quot;</li>
+</ol>
+<p>The system handles ceremony. The rep handles persuasion.</p>
+<h2>Conditional Logic: Decision Trees in Automation</h2>
+<p>Not every workflow should treat all contacts the same. Conditional logic branches execution based on data.</p>
+<p><strong>Example: Lead assignment with routing rules</strong></p>
+<p><strong>Trigger:</strong> New lead created</p>
+<p><strong>Condition 1:</strong> If <code>Company Size = Enterprise</code> → assign to enterprise team (round-robin)</p>
+<p><strong>Condition 2:</strong> Else if <code>Lead Source = Referral</code> → assign to referring rep&#39;s manager</p>
+<p><strong>Condition 3:</strong> Else if <code>Vertical = Real Estate</code> → assign to real estate specialist</p>
+<p><strong>Condition 4:</strong> Else → assign to general inbound team (round-robin)</p>
+<p><strong>Example: Engagement-based follow-up cadence</strong></p>
+<p><strong>Trigger:</strong> Email sent</p>
+<p><strong>Condition 1:</strong> If opened within 24 hours → send follow-up #2 in 2 days</p>
+<p><strong>Condition 2:</strong> Else if opened within 72 hours → send follow-up #2 in 5 days</p>
+<p><strong>Condition 3:</strong> Else if not opened after 5 days → send re-engagement email with new subject line</p>
+<p><strong>Condition 4:</strong> Else if not opened after 10 days → pause sequence, tag as &quot;Low Engagement&quot;</p>
+<p><strong>Example: Deal value-based approval routing</strong></p>
+<p><strong>Trigger:</strong> Deal moved to &quot;Negotiation&quot;</p>
+<p><strong>Condition 1:</strong> If deal value &lt; $10K → rep can close independently</p>
+<p><strong>Condition 2:</strong> Else if deal value $10K-$50K → require manager approval</p>
+<p><strong>Condition 3:</strong> Else if deal value &gt; $50K → require VP approval + legal review</p>
+<p>Conditional logic prevents one-size-fits-all automation from feeling robotic. The system adapts to context.</p>
+<h2>Timing and Delays: When Not to Act Immediately</h2>
+<p>Instant automation can feel aggressive. Strategic delays smooth the experience.</p>
+<p><strong>Use delays for:</strong></p>
+<p><strong>Pacing multi-touch sequences</strong></p>
+<ul>
+<li>Email 1: immediate</li>
+<li>Email 2: wait 3 days</li>
+<li>Email 3: wait 5 days</li>
+<li>Email 4: wait 7 days</li>
+</ul>
+<p><strong>Giving humans time to intervene</strong></p>
+<ul>
+<li>Lead assigned → wait 2 hours → if no contact logged, send reminder</li>
+</ul>
+<p><strong>Preventing notification fatigue</strong></p>
+<ul>
+<li>Don&#39;t post to Slack immediately on every stage change—batch updates and post once daily at 9am</li>
+</ul>
+<p><strong>Respecting business hours</strong></p>
+<ul>
+<li>If workflow triggers at 11pm, delay task creation until 8am next business day</li>
+</ul>
+<p><strong>Allowing for second-order changes</strong></p>
+<ul>
+<li>If deal closes, wait 24 hours before starting onboarding workflow (gives time to process refunds/cancellations)</li>
+</ul>
+<p><strong>The delay question:</strong> &quot;If this action happened instantly, would it feel premature or intrusive?&quot;</p>
+<h2>Error Handling: What Happens When Automations Break</h2>
+<p>Workflows fail. Fields don&#39;t exist. API calls timeout. Contacts get deleted mid-workflow. A system without error handling generates silent failures—leads slip through, emails don&#39;t send, tasks vanish.</p>
+<p><strong>Build in failure modes:</strong></p>
+<p><strong>Fallback assignments</strong></p>
+<ul>
+<li>If round-robin assignment fails (all reps at capacity) → assign to manager</li>
+</ul>
+<p><strong>Notification on failure</strong></p>
+<ul>
+<li>If data enrichment API fails → post error to #ops Slack, tag contact as <code>INTERNAL: Enrichment Failed</code></li>
+</ul>
+<p><strong>Retry logic</strong></p>
+<ul>
+<li>If email send fails → retry 3 times with 1-hour delay between attempts</li>
+</ul>
+<p><strong>Manual review queues</strong></p>
+<ul>
+<li>If automation encounters missing required field → add contact to &quot;Manual Review Needed&quot; Smart List</li>
+</ul>
+<p><strong>Logging and monitoring</strong></p>
+<ul>
+<li>Track workflow execution count, failure rate, average completion time</li>
+<li>Alert if failure rate &gt; 10% or execution count drops unexpectedly</li>
+</ul>
+<p><strong>The error question:</strong> &quot;If this workflow breaks at 2am, will I know by 9am?&quot;</p>
+<h2>Automation Maintenance: Preventing Decay</h2>
+<p>Workflows compound or decay. Without maintenance, they drift out of alignment with reality.</p>
+<p><strong>Monthly maintenance checklist:</strong></p>
+<p><strong>Review execution logs</strong></p>
+<ul>
+<li>Which workflows fire most often?</li>
+<li>Which have high failure rates?</li>
+<li>Which haven&#39;t fired in 60 days? (Delete or investigate)</li>
+</ul>
+<p><strong>Audit trigger accuracy</strong></p>
+<ul>
+<li>Are triggers firing on the right events?</li>
+<li>Are there false positives? (Workflow fires when it shouldn&#39;t)</li>
+<li>Are there false negatives? (Workflow should fire but doesn&#39;t)</li>
+</ul>
+<p><strong>Validate action relevance</strong></p>
+<ul>
+<li>Are automated emails still accurate?</li>
+<li>Are task templates still relevant?</li>
+<li>Are Smart List filters still meaningful?</li>
+</ul>
+<p><strong>Check for orphaned workflows</strong></p>
+<ul>
+<li>Workflows that reference deleted tags, fields, or users</li>
+<li>Workflows that send emails to suppressed addresses</li>
+<li>Workflows tied to deprecated processes</li>
+</ul>
+<p><strong>Monitor performance impact</strong></p>
+<ul>
+<li>Are workflows slowing down the CRM?</li>
+<li>Are too many automations firing on the same trigger?</li>
+<li>Are there circular dependencies? (Workflow A triggers Workflow B which triggers Workflow A)</li>
+</ul>
+<p><strong>The maintenance question:</strong> &quot;If I onboarded a new rep today, would these automations help or confuse them?&quot;</p>
+<h2>Real-World Example: Follow Up Boss Lead Routing System</h2>
+<p>I manage CRM operations for a real estate brokerage with 40 agents. When I started, lead assignment was manual—office manager logged into <strong>Follow Up Boss</strong>, checked lead source, assigned to whoever was &quot;due&quot; based on a rotation spreadsheet.</p>
+<p><strong>Problems:</strong></p>
+<ul>
+<li>15-30 minute lag between lead arrival and assignment</li>
+<li>Rotation spreadsheet out of sync with actual capacity</li>
+<li>No accountability tracking (Who assigned what? When?)</li>
+<li>Leads assigned to agents on vacation or out sick</li>
+<li>No automated first touch—agents had to remember to reach out</li>
+</ul>
+<p><strong>The automation fix:</strong></p>
+<p><strong>Built a multi-step lead routing workflow:</strong></p>
+<p><strong>Trigger:</strong> New lead enters system</p>
+<p><strong>Step 1: Source-based routing</strong></p>
+<ul>
+<li>If <code>Source = Zillow</code> → route to Zillow specialist team (3 agents)</li>
+<li>If <code>Source = Realtor.com</code> → route to Realtor.com team (4 agents)</li>
+<li>If <code>Source = Website</code> → route to inbound team (all agents)</li>
+<li>If <code>Source = Referral</code> → route to referring agent</li>
+</ul>
+<p><strong>Step 2: Round-robin assignment within team</strong></p>
+<ul>
+<li>Check agent status (if &quot;Vacation&quot; mode → skip)</li>
+<li>Check agent capacity (if &gt; 20 active leads → skip to next)</li>
+<li>Assign to agent with fewest leads assigned this week</li>
+</ul>
+<p><strong>Step 3: First touch automation</strong></p>
+<ul>
+<li>Send SMS within 60 seconds: &quot;Hi [Name], got your info from [Source]. I&#39;ll call you shortly. - [Agent Name]&quot;</li>
+<li>Create task: &quot;Call new lead within 15 minutes&quot; (due: today, high priority)</li>
+<li>Post to agent&#39;s Slack DM: &quot;New lead assigned: [Name], [Phone], [Source]&quot;</li>
+</ul>
+<p><strong>Step 4: Backup assignment</strong></p>
+<ul>
+<li>If lead not contacted within 1 hour → reassign to team lead</li>
+<li>Post to #sales-alerts: &quot;Lead not contacted: [Name] originally assigned to [Agent]&quot;</li>
+</ul>
+<p><strong>Results after 60 days:</strong></p>
+<ul>
+<li>Speed to contact: 30 min avg → 8 min avg</li>
+<li>Lead assignment errors: 12/week → 0</li>
+<li>Agent complaints about missed leads: constant → none</li>
+<li>First-touch SMS response rate: n/a → 34%</li>
+</ul>
+<p>The system runs unsupervised. Agents focus on conversations, not logistics.</p>
+<h2>Platform-Specific Considerations</h2>
+<p>Different CRMs have different automation capabilities. Know your constraints.</p>
+<p><strong>HubSpot</strong></p>
+<ul>
+<li>Workflows are visual drag-and-drop</li>
+<li>Can trigger on almost any property change</li>
+<li>Strong email integration (sequences, personalization)</li>
+<li>Conditional logic via &quot;if/then branches&quot;</li>
+<li>Limitations: can&#39;t trigger on external API events without middleware</li>
+</ul>
+<p><strong>Salesforce</strong></p>
+<ul>
+<li>Process Builder for simple workflows, Flow Builder for complex logic</li>
+<li>Apex code for custom automation (requires developer)</li>
+<li>Can integrate with external systems via webhooks</li>
+<li>Limitations: steep learning curve, easy to build unmaintainable workflows</li>
+</ul>
+<p><strong>Follow Up Boss</strong></p>
+<ul>
+<li>Action Plans for multi-step sequences</li>
+<li>Smart Lists for dynamic segmentation</li>
+<li>Zapier integration for external triggers</li>
+<li>Limitations: no native conditional logic (use Zapier for branching)</li>
+</ul>
+<p><strong>Pipedrive</strong></p>
+<ul>
+<li>Workflow Automation for stage-based triggers</li>
+<li>Email sequences built-in</li>
+<li>Webhooks for external integrations</li>
+<li>Limitations: fewer trigger types than HubSpot/Salesforce</li>
+</ul>
+<p><strong>ActiveCampaign</strong></p>
+<ul>
+<li>Best-in-class email automation</li>
+<li>CRM automations tied to deal stages</li>
+<li>Site tracking triggers workflows based on behavior</li>
+<li>Limitations: CRM features less mature than dedicated platforms</li>
+</ul>
+<p><strong>The platform question:</strong> &quot;Can I build this workflow natively, or do I need Zapier/Make/n8n as middleware?&quot;</p>
+<h2>Integration Workflows: Cross-Platform Automation</h2>
+<p>CRM workflows become exponentially more powerful when they reach outside the CRM.</p>
+<p><strong>Example integrations:</strong></p>
+<p><strong>CRM → Slack</strong></p>
+<ul>
+<li>New deal closed → post to #wins channel</li>
+<li>Deal stalled &gt; 14 days → post to #pipeline-review</li>
+<li>High-value lead assigned → DM sales manager</li>
+</ul>
+<p><strong>CRM → Email marketing platform</strong></p>
+<ul>
+<li>Contact tagged &quot;Newsletter Subscriber&quot; → add to <strong>Mailchimp</strong> list</li>
+<li>Contact moves to &quot;Customer&quot; stage → trigger onboarding email series</li>
+<li>Contact engagement score &gt; 50 → sync to &quot;Hot Leads&quot; segment</li>
+</ul>
+<p><strong>CRM → Calendar</strong></p>
+<ul>
+<li>Meeting scheduled → create Google Calendar event with Zoom link</li>
+<li>Proposal sent → set follow-up reminder 3 days out</li>
+<li>Contract signed → schedule kickoff call with customer success</li>
+</ul>
+<p><strong>CRM → Project management</strong></p>
+<ul>
+<li>Deal closed → create <strong>Asana</strong> project with onboarding checklist</li>
+<li>Custom project request → create <strong>ClickUp</strong> task assigned to delivery team</li>
+<li>Client feedback received → create <strong>Linear</strong> issue for product team</li>
+</ul>
+<p><strong>External tool → CRM</strong></p>
+<ul>
+<li>Form submission → create lead with prefilled data</li>
+<li>Payment received (<strong>Stripe</strong>) → update deal stage to &quot;Closed-Won&quot;</li>
+<li>Support ticket created (<strong>Zendesk</strong>) → tag CRM contact as &quot;Active Support Issue&quot;</li>
+<li>Email opened (<strong>Mailchimp</strong>) → increment engagement score in CRM</li>
+</ul>
+<p><strong>The integration question:</strong> &quot;What data lives outside the CRM that should influence workflows inside it?&quot;</p>
+<h2>Avoiding Over-Automation: When to Keep Humans in the Loop</h2>
+<p>Automation eliminates busywork. Over-automation eliminates judgment.</p>
+<p><strong>Keep humans in the loop for:</strong></p>
+<p><strong>High-stakes decisions</strong></p>
+<ul>
+<li>Discounting beyond standard authority levels</li>
+<li>Contract redlines or non-standard terms</li>
+<li>Escalations from angry customers</li>
+<li>Decisions involving legal/compliance risk</li>
+</ul>
+<p><strong>Relationship-critical moments</strong></p>
+<ul>
+<li>First outreach to high-value prospects (don&#39;t send canned email)</li>
+<li>Apologies or service recovery (don&#39;t automate empathy)</li>
+<li>Renewals for strategic accounts (don&#39;t treat like transactional upsell)</li>
+</ul>
+<p><strong>Edge cases with high variability</strong></p>
+<ul>
+<li>Unusual lead sources (conference VIP, investor introduction)</li>
+<li>Contacts with complex histories (former customer, churned and returned)</li>
+<li>Deals with unique structures (multi-year, usage-based, partnership terms)</li>
+</ul>
+<p><strong>Creative or strategic work</strong></p>
+<ul>
+<li>Proposal writing (automate template, not persuasion)</li>
+<li>Discovery call prep (automate research aggregation, not question design)</li>
+<li>Competitive positioning (automate data pull, not narrative)</li>
+</ul>
+<p><strong>The human-in-the-loop question:</strong> &quot;If this goes wrong, will the damage be greater than the time saved by automating it?&quot;</p>
+<h2>FAQ</h2>
+<p><strong>Q: How do I know if I&#39;m over-automating?</strong></p>
+<p>If reps complain that the system is doing things they don&#39;t understand or creating work they don&#39;t need, you&#39;ve over-automated. Good automation is invisible until it&#39;s missing. Test: turn off a workflow for a week. If nobody notices, it&#39;s either perfect or pointless.</p>
+<p><strong>Q: Should I build automations in the CRM or use Zapier/Make?</strong></p>
+<p>Use native CRM automation when possible—it&#39;s faster, more reliable, and easier to troubleshoot. Use Zapier/Make for cross-platform workflows or when the CRM lacks necessary triggers. Don&#39;t build Zapier workflows that duplicate native functionality just because you prefer the interface.</p>
+<p><strong>Q: How do I prevent workflows from conflicting with each other?</strong></p>
+<p>Map dependencies before building. If Workflow A changes a field that triggers Workflow B, which changes a field that triggers Workflow A, you have a loop. Use execution logs to trace conflicts. Build a workflow registry doc that lists all automations, their triggers, and their actions.</p>
+<p><strong>Q: What&#39;s the biggest mistake people make with CRM automation?</strong></p>
+<p>Automating broken processes. If a manual process doesn&#39;t work, automating it just scales the dysfunction faster. Fix the process first, then automate.</p>
+<p><strong>Q: How long does it take to build a mature automation system?</strong></p>
+<p>For a small team (&lt; 10 reps), 4-8 weeks to build Tier 1 and 2 automations. For larger teams or complex sales cycles, 3-6 months. Maintenance is ongoing—budget 4-6 hours per month.</p>
+<p><strong>Q: Can I hire someone to build this for me?</strong></p>
+<p>Yes, but make sure they understand your sales process, not just the CRM platform. The best CRM automation consultant spends more time in discovery (understanding your workflow) than in configuration (building the automation). Beware of &quot;best practices&quot; that don&#39;t fit your business model.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

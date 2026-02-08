@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editorial Workflow for B2B Content Teams: Shipping Quality at Scale | B2B Vic</title>
+    <meta name="description" content="Design editorial workflows that eliminate bottlenecks and compound content velocity. Framework for agencies, in-house teams, and solo operators scaling production." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Editorial Workflow for B2B Content Teams: Shipping Quality at Scale" />
+    <meta property="og:description" content="Design editorial workflows that eliminate bottlenecks and compound content velocity. Framework for agencies, in-house teams, and solo operators scaling production." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/editorial-workflow-b2b-teams.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Editorial Workflow for B2B Content Teams: Shipping Quality at Scale" />
+    <meta name="twitter:description" content="Design editorial workflows that eliminate bottlenecks and compound content velocity. Framework for agencies, in-house teams, and solo operators scaling production." />
+    <link rel="canonical" href="https://b2bvic.com/articles/editorial-workflow-b2b-teams.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Editorial Workflow for B2B Content Teams: Shipping Quality at Scale",
+      "description": "Design editorial workflows that eliminate bottlenecks and compound content velocity. Framework for agencies, in-house teams, and solo operators scaling production.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/editorial-workflow-b2b-teams.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Editorial Workflow for B2B Content Teams: Shipping Quality at Scale"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Editorial Workflow for B2B Content Teams: Shipping Quality at Scale</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Editorial Workflow for B2B Content Teams: Shipping Quality at Scale</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Editorial Workflow for B2B Content Teams: Shipping Quality at Scale</h1>
+<p>Most B2B content operations break at 10 articles/month. Not because writers can&#39;t produce—because the workflow can&#39;t handle volume. Drafts sit waiting for review. Feedback loops take 4 days. Revisions bounce between 3 people. By the time an article publishes, it&#39;s 6 weeks old and half the brief is outdated.</p>
+<p>Quality at scale requires workflow architecture, not just faster writers. The goal isn&#39;t to push people harder—it&#39;s to remove friction between &quot;draft complete&quot; and &quot;published.&quot;</p>
+<p>An editorial workflow defines how content moves from idea to publication: who does what, when, in what order, and what triggers the next step. Good workflows are invisible—content flows without manual coordination. Bad workflows require constant Slack pings: &quot;Did you review this?&quot; &quot;Where&#39;s the doc?&quot; &quot;Who&#39;s publishing?&quot;</p>
+<p>This guide covers how to build editorial workflows that scale: brief templates, production stages, review protocols, quality gates, and automation that eliminates coordination overhead.</p>
+<h2>Why Editorial Workflows Matter</h2>
+<p><strong>Without a defined workflow:</strong></p>
+<ul>
+<li>Drafts disappear into Google Docs, never seen again</li>
+<li>Writers don&#39;t know what &quot;done&quot; looks like (first draft? final draft? publish-ready?)</li>
+<li>Reviewers don&#39;t know what they&#39;re reviewing for (strategy? grammar? SEO?)</li>
+<li>Bottlenecks hide (founder approves everything, becomes the constraint)</li>
+<li>Status requires asking (no visibility into what&#39;s in progress)</li>
+</ul>
+<p><strong>With a defined workflow:</strong></p>
+<ul>
+<li>Every piece moves through predictable stages (Brief → Draft → Review → Edit → Publish)</li>
+<li>Each stage has clear entry/exit criteria (what needs to be true to move forward?)</li>
+<li>Handoffs are automated (draft complete → notify reviewer)</li>
+<li>Bottlenecks surface immediately (16 articles stuck in review = reviewer is the constraint)</li>
+<li>Status is visible (dashboard shows what&#39;s where)</li>
+</ul>
+<p><strong>The shift:</strong> From &quot;I&#39;ll handle this&quot; to &quot;the system handles this.&quot;</p>
+<h2>The Five-Stage Editorial Workflow</h2>
+<p><strong>Stage 1: Briefing (strategy)</strong></p>
+<p><strong>Who:</strong> Strategist, SEO lead, or client</p>
+<p><strong>Output:</strong> Content brief with target keyword, audience, structure, research links</p>
+<p><strong>Entry criteria:</strong> Topic approved, keyword validated</p>
+<p><strong>Exit criteria:</strong> Brief complete with 8-10 required sections (see below)</p>
+<p><strong>Stage 2: Drafting (production)</strong></p>
+<p><strong>Who:</strong> Writer or AI + editor</p>
+<p><strong>Output:</strong> First draft, 80% complete</p>
+<p><strong>Entry criteria:</strong> Brief accepted by writer</p>
+<p><strong>Exit criteria:</strong> Word count hit, all H2s covered, internal links added</p>
+<p><strong>Stage 3: Review (quality gate)</strong></p>
+<p><strong>Who:</strong> Editor, subject matter expert, or QA lead</p>
+<p><strong>Output:</strong> Feedback doc or inline comments</p>
+<p><strong>Entry criteria:</strong> Draft marked &quot;Ready for Review&quot;</p>
+<p><strong>Exit criteria:</strong> Feedback delivered within 24 hours</p>
+<p><strong>Stage 4: Revision (polish)</strong></p>
+<p><strong>Who:</strong> Writer or editor</p>
+<p><strong>Output:</strong> Final draft, publish-ready</p>
+<p><strong>Entry criteria:</strong> Feedback received</p>
+<p><strong>Exit criteria:</strong> All feedback addressed, formatting applied, meta fields complete</p>
+<p><strong>Stage 5: Publishing (deployment)</strong></p>
+<p><strong>Who:</strong> Publisher, web admin, or automated system</p>
+<p><strong>Output:</strong> Live article</p>
+<p><strong>Entry criteria:</strong> Final draft approved</p>
+<p><strong>Exit criteria:</strong> Published, indexed, promoted</p>
+<p><strong>The rule:</strong> No skipping stages. Every piece goes through all five, even &quot;simple&quot; posts.</p>
+<h2>Brief Templates: The Foundation of Quality</h2>
+<p>Garbage brief = garbage article. A good brief eliminates 80% of revision cycles.</p>
+<p><strong>Standard B2B content brief (template):</strong></p>
+<pre><code># Content Brief: [Title]
+
+**Target Keyword:** [Primary keyword]
+**Secondary Keywords:** [2-3 related keywords]
+**Search Intent:** [Informational / Commercial / Transactional]
+**Target Audience:** [Job title, pain point, stage in buyer journey]
+**Word Count:** [2,500 / 3,000 / 3,500]
+**Tone:** [Professional / Conversational / Technical]
+**Deadline:** [Date]
+
+---
+
+## Objective
+[1-2 sentences: What should the reader be able to do after reading this?]
+
+## Key Takeaways (3-5 bullets)
+- [Main point 1]
+- [Main point 2]
+- [Main point 3]
+
+## Target SERPs (Top 5 Ranking Articles)
+1. [URL + key strengths to beat]
+2. [URL + key strengths to beat]
+3. [URL + key strengths to beat]
+4. [URL + key strengths to beat]
+5. [URL + key strengths to beat]
+
+## Required Sections (H2 Structure)
+1. [H2: What is X?]
+2. [H2: Why X matters]
+3. [H2: How to implement X]
+4. [H2: Common mistakes]
+5. [H2: Real-world examples]
+6. [H2: FAQ]
+
+## Internal Links (3-5 minimum)
+- [Anchor text] → [Target URL]
+- [Anchor text] → [Target URL]
+- [Anchor text] → [Target URL]
+
+## External Links (Authority Sources)
+- [Industry study, peer-reviewed research, or high-DA source]
+- [Tool/platform reference]
+
+## SEO Requirements
+- **Meta Title:** [50-60 chars, include keyword]
+- **Meta Description:** [150-160 chars, include keyword + CTA]
+- **Featured Snippet Target:** [Yes/No — if yes, structure answer in 40-60 words]
+- **Schema Markup:** [FAQ / How-To / Article]
+
+## Visual Assets Needed
+- [Hero image, infographic, screenshot, diagram]
+
+## CTA
+- [Primary CTA: Download, Book a call, Try tool, etc.]
+- [Placement: End of article / mid-article / both]
+
+## Notes / Special Instructions
+[Anything else the writer needs to know]
+</code></pre>
+<p><strong>Why this works:</strong></p>
+<ul>
+<li><strong>Eliminates ambiguity</strong> (writer knows exactly what to produce)</li>
+<li><strong>Encodes SEO best practices</strong> (keyword, structure, links)</li>
+<li><strong>Provides research</strong> (writer doesn&#39;t start from zero)</li>
+<li><strong>Sets expectations</strong> (word count, deadline, quality bar)</li>
+</ul>
+<p><strong>Brief checklist (before sending to writer):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Keyword validated (search volume &gt; 100/month, ranking difficulty feasible)</li>
+<li><input disabled="" type="checkbox"> SERP analysis complete (top 5 articles reviewed)</li>
+<li><input disabled="" type="checkbox"> Structure defined (H2s mapped)</li>
+<li><input disabled="" type="checkbox"> Internal links identified (URLs ready)</li>
+<li><input disabled="" type="checkbox"> Visual assets specified</li>
+</ul>
+<p><strong>If any checkbox is empty, brief isn&#39;t ready.</strong></p>
+<h2>Draft-to-Review Handoff: Eliminating the Black Hole</h2>
+<p>The most common workflow failure: draft sits in Google Doc, writer thinks editor has it, editor doesn&#39;t know it exists.</p>
+<p><strong>Solution: Explicit handoff protocol.</strong></p>
+<p><strong>When writer finishes draft:</strong></p>
+<ol>
+<li>Mark document status: <strong>&quot;Ready for Review&quot;</strong> (use doc title, comment, or status field)</li>
+<li>Move doc to <strong>&quot;Review Queue&quot;</strong> folder (or update project management tool)</li>
+<li>Tag reviewer in comment: &quot;@Editor — draft complete, ready for your review&quot;</li>
+<li>Set deadline reminder: &quot;Review needed by [date]&quot;</li>
+</ol>
+<p><strong>Automation:</strong></p>
+<ul>
+<li><strong>Zapier</strong>/<strong>Make</strong>: When Google Doc title changes to &quot;[REVIEW] Title,&quot; send Slack notification to editor</li>
+<li><strong>Notion</strong>/<strong>Asana</strong>: When task moves to &quot;Review&quot; column, assign to reviewer + set due date</li>
+<li><strong>Email</strong>: Auto-send summary to reviewer: &quot;3 articles ready for review: [titles]&quot;</li>
+</ul>
+<p><strong>The rule:</strong> Writer&#39;s responsibility ends when handoff is explicit. Editor&#39;s responsibility starts when notified.</p>
+<h2>Review Protocols: What to Check For</h2>
+<p>Not all reviews are created equal. Define what each reviewer checks.</p>
+<p><strong>Content review (editor):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Thesis is clear (reader knows what they&#39;ll learn in first 2 paragraphs)</li>
+<li><input disabled="" type="checkbox"> Structure flows (each H2 builds on previous)</li>
+<li><input disabled="" type="checkbox"> Examples are specific (no generic &quot;for example, companies do X&quot;)</li>
+<li><input disabled="" type="checkbox"> Tone matches brand voice</li>
+<li><input disabled="" type="checkbox"> No fluff (cut &quot;it&#39;s worth noting,&quot; &quot;let&#39;s dive in,&quot; &quot;at the end of the day&quot;)</li>
+<li><input disabled="" type="checkbox"> CTA is clear and relevant</li>
+</ul>
+<p><strong>SEO review (SEO lead):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Target keyword in H1, first 100 words, 2-3 H2s, meta title</li>
+<li><input disabled="" type="checkbox"> Keyword density 0.5-1.5% (not stuffed)</li>
+<li><input disabled="" type="checkbox"> Internal links present (3-5 minimum)</li>
+<li><input disabled="" type="checkbox"> External links to authority sources (2-3 minimum)</li>
+<li><input disabled="" type="checkbox"> Meta title 50-60 chars, meta description 150-160 chars</li>
+<li><input disabled="" type="checkbox"> Alt text on images (descriptive, includes keyword where natural)</li>
+</ul>
+<p><strong>Technical review (subject matter expert - optional):</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Facts are accurate (no outdated stats, incorrect methodologies)</li>
+<li><input disabled="" type="checkbox"> Claims are supported (data, case studies, expert quotes)</li>
+<li><input disabled="" type="checkbox"> Jargon is explained (assume reader is smart but not expert)</li>
+<li><input disabled="" type="checkbox"> Edge cases acknowledged (article doesn&#39;t over-promise)</li>
+</ul>
+<p><strong>Each reviewer has a different lens.</strong> Don&#39;t ask one person to check everything—that&#39;s how things get missed.</p>
+<p><strong>Review turnaround SLAs:</strong></p>
+<ul>
+<li><strong>Content review:</strong> 24 hours</li>
+<li><strong>SEO review:</strong> 12 hours (checklist-based, faster)</li>
+<li><strong>Technical review:</strong> 48 hours (requires domain expertise)</li>
+</ul>
+<p><strong>If reviewer misses SLA:</strong> Escalate to operations lead. Reviewer bottlenecks kill velocity.</p>
+<h2>Revision Process: Feedback That Compounds Quality</h2>
+<p>Vague feedback generates vague revisions.</p>
+<p><strong>Bad feedback:</strong></p>
+<ul>
+<li>&quot;This doesn&#39;t feel right&quot;</li>
+<li>&quot;Make it better&quot;</li>
+<li>&quot;Add more examples&quot;</li>
+</ul>
+<p><strong>Good feedback:</strong></p>
+<ul>
+<li>&quot;Thesis buried in paragraph 3 — move to opening sentence&quot;</li>
+<li>&quot;Section on X lacks specificity — add a case study or data point&quot;</li>
+<li>&quot;Tone is too formal for our audience — rewrite using 2nd person (&#39;you&#39;) instead of 3rd person (&#39;they&#39;)&quot;</li>
+</ul>
+<p><strong>Feedback framework:</strong></p>
+<p><strong>Tag severity:</strong></p>
+<ul>
+<li><strong>[CRITICAL]:</strong> Breaks the article, must fix (factual error, missing key section)</li>
+<li><strong>[IMPORTANT]:</strong> Weakens the article, should fix (vague example, awkward structure)</li>
+<li><strong>[NICE-TO-HAVE]:</strong> Preference, fix if time allows (word choice, minor polish)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<blockquote>
+<p><strong>[CRITICAL]</strong> Paragraph 4 claims &quot;90% of companies use X&quot; but source link is broken. Verify stat or remove.</p>
+<p><strong>[IMPORTANT]</strong> Section &quot;How to implement X&quot; is high-level. Add step-by-step instructions or link to detailed guide.</p>
+<p><strong>[NICE-TO-HAVE]</strong> Word &quot;leverage&quot; appears 8 times. Rotate vocabulary (use, apply, deploy).</p>
+</blockquote>
+<p><strong>Writer knows what to prioritize.</strong> Critical items block publishing. Nice-to-haves can be deferred.</p>
+<p><strong>Revision SLA:</strong> 24 hours for CRITICAL, 48 hours for IMPORTANT, next revision cycle for NICE-TO-HAVE.</p>
+<h2>Publishing Checklist: The Final Gate</h2>
+<p>Even polished drafts need pre-flight checks.</p>
+<p><strong>Pre-publish checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Formatting applied (H2s, H3s, bold, bullets, images)</li>
+<li><input disabled="" type="checkbox"> Internal links functional (no 404s)</li>
+<li><input disabled="" type="checkbox"> External links functional (no 404s, open in new tab)</li>
+<li><input disabled="" type="checkbox"> Images optimized (&lt; 200KB per image, alt text added)</li>
+<li><input disabled="" type="checkbox"> Meta fields complete (title, description, focus keyword)</li>
+<li><input disabled="" type="checkbox"> CTA present (button, link, form)</li>
+<li><input disabled="" type="checkbox"> Author bio/byline added</li>
+<li><input disabled="" type="checkbox"> Publish date set (schedule if publishing later)</li>
+<li><input disabled="" type="checkbox"> URL slug clean (lowercase, hyphens, includes keyword)</li>
+<li><input disabled="" type="checkbox"> Mobile preview checked (50%+ traffic is mobile)</li>
+</ul>
+<p><strong>If any checkbox is empty, don&#39;t publish.</strong></p>
+<p><strong>Post-publish checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Article live on site (URL resolves)</li>
+<li><input disabled="" type="checkbox"> Indexed by Google (submit to Search Console or wait 24 hours)</li>
+<li><input disabled="" type="checkbox"> Promoted (social, email, Slack, LinkedIn)</li>
+<li><input disabled="" type="checkbox"> Internal links updated (add links from older articles to new one)</li>
+<li><input disabled="" type="checkbox"> Analytics tracking verified (page views registering)</li>
+</ul>
+<p><strong>The rule:</strong> Publishing isn&#39;t done when the article goes live. It&#39;s done when it&#39;s promoted and indexed.</p>
+<h2>Bottleneck Detection: Surfacing Constraints</h2>
+<p>Workflows break when one stage becomes a bottleneck. Visibility surfaces the constraint.</p>
+<p><strong>Use a Kanban board:</strong></p>
+<p>Columns: <strong>Briefing / Drafting / Review / Revision / Publishing</strong></p>
+<p>Cards: Each article</p>
+<p><strong>What to watch:</strong></p>
+<ul>
+<li><strong>Column depth:</strong> If &quot;Review&quot; has 15 articles and &quot;Drafting&quot; has 2, review is the bottleneck</li>
+<li><strong>Card age:</strong> If an article sits in &quot;Review&quot; for 7 days, something&#39;s wrong</li>
+<li><strong>Cycle time:</strong> From &quot;Briefing&quot; to &quot;Published&quot; should be 7-14 days for standard content</li>
+</ul>
+<p><strong>When bottleneck detected:</strong></p>
+<p><strong>Immediate fix:</strong></p>
+<ul>
+<li>Reassign work (add reviewer, redistribute load)</li>
+<li>Simplify review (use checklist instead of freeform feedback)</li>
+<li>Escalate to manager (get blocker resolved)</li>
+</ul>
+<p><strong>Systemic fix:</strong></p>
+<ul>
+<li>Hire additional capacity (another editor, freelance reviewer)</li>
+<li>Automate parts of review (AI pre-check for SEO, grammar)</li>
+<li>Adjust input rate (pause new briefs until queue clears)</li>
+</ul>
+<p><strong>The bottleneck question:</strong> &quot;Which stage has the most work waiting and the longest dwell time?&quot;</p>
+<h2>Automation: Reducing Coordination Overhead</h2>
+<p>Manual coordination doesn&#39;t scale. Automate handoffs, notifications, and status updates.</p>
+<p><strong>Automation opportunities:</strong></p>
+<p><strong>Brief → Draft handoff:</strong></p>
+<ul>
+<li><strong>Trigger:</strong> Brief marked &quot;Complete&quot; in <strong>Notion</strong>/<strong>Asana</strong></li>
+<li><strong>Action:</strong> Assign to writer, send Slack notification, set deadline</li>
+</ul>
+<p><strong>Draft → Review handoff:</strong></p>
+<ul>
+<li><strong>Trigger:</strong> Google Doc title changes to &quot;[REVIEW] Title&quot;</li>
+<li><strong>Action:</strong> Move to Review Queue, assign to editor, send Slack notification</li>
+</ul>
+<p><strong>Review → Revision handoff:</strong></p>
+<ul>
+<li><strong>Trigger:</strong> Editor marks review &quot;Complete&quot; in project management tool</li>
+<li><strong>Action:</strong> Reassign to writer, send notification with feedback link</li>
+</ul>
+<p><strong>Revision → Publishing handoff:</strong></p>
+<ul>
+<li><strong>Trigger:</strong> Writer marks &quot;Final draft ready&quot;</li>
+<li><strong>Action:</strong> Assign to publisher, add to publishing calendar</li>
+</ul>
+<p><strong>Post-publish actions:</strong></p>
+<ul>
+<li><strong>Trigger:</strong> Article published (URL live)</li>
+<li><strong>Action 1:</strong> Submit to Google Search Console for indexing</li>
+<li><strong>Action 2:</strong> Post to <strong>Buffer</strong>/<strong>Hootsuite</strong> for social promotion</li>
+<li><strong>Action 3:</strong> Send email to internal team: &quot;New article live: [link]&quot;</li>
+<li><strong>Action 4:</strong> Update content calendar (mark as &quot;Published&quot;)</li>
+</ul>
+<p><strong>Tools:</strong></p>
+<ul>
+<li><strong>Zapier/Make/n8n:</strong> Connect Google Docs, Notion, Slack, Buffer</li>
+<li><strong>Asana/ClickUp automations:</strong> Built-in rules (when status changes, assign + notify)</li>
+<li><strong>Google Apps Script:</strong> Custom automations for Docs/Sheets</li>
+</ul>
+<p><strong>The goal:</strong> 80% of handoffs happen without human coordination.</p>
+<h2>Real-World Example: Agency Editorial Workflow</h2>
+<p>SEO agency producing 40 articles/month for 5 clients. Without workflow, chaos: missed deadlines, inconsistent quality, founder bottleneck (reviewed every article).</p>
+<p><strong>Built a five-stage workflow:</strong></p>
+<p><strong>Stage 1: Briefing (strategist)</strong></p>
+<ul>
+<li>Client submits topic request via form</li>
+<li>Strategist creates brief in Notion (using template)</li>
+<li>Brief assigned to writer via Slack automation</li>
+</ul>
+<p><strong>Stage 2: Drafting (writer or AI + editor)</strong></p>
+<ul>
+<li>Writer pulls from &quot;Drafting Queue&quot; when capacity allows</li>
+<li>First draft produced (2,500-3,000 words)</li>
+<li>Writer marks &quot;Ready for Review&quot; in Notion</li>
+</ul>
+<p><strong>Stage 3: Review (editor)</strong></p>
+<ul>
+<li><strong>Zapier</strong> notifies editor when draft ready</li>
+<li>Editor reviews within 24 hours (content + SEO checklist)</li>
+<li>Feedback delivered via Google Doc comments</li>
+</ul>
+<p><strong>Stage 4: Revision (writer)</strong></p>
+<ul>
+<li>Writer addresses feedback</li>
+<li>Marks &quot;Final draft ready&quot; in Notion</li>
+<li><strong>Zapier</strong> notifies publisher</li>
+</ul>
+<p><strong>Stage 5: Publishing (publisher)</strong></p>
+<ul>
+<li>Publisher runs pre-publish checklist</li>
+<li>Schedules in WordPress</li>
+<li>Submits to Search Console for indexing</li>
+<li>Promotes via Buffer (social) + email</li>
+</ul>
+<p><strong>Results after 90 days:</strong></p>
+<ul>
+<li><strong>Cycle time:</strong> 21 days → 9 days (57% faster)</li>
+<li><strong>Bottleneck eliminated:</strong> Founder no longer reviews every article (only spot-checks 20%)</li>
+<li><strong>Quality consistent:</strong> Checklist-based review catches 90% of issues</li>
+<li><strong>Missed deadlines:</strong> 30% of articles → 5% of articles</li>
+<li><strong>Team clarity:</strong> Writers know exactly what&#39;s expected at each stage</li>
+</ul>
+<p><strong>Cost:</strong> $0 (Notion + Zapier free tiers sufficient)</p>
+<h2>Scaling from 10 to 50 Articles/Month</h2>
+<p><strong>At 10 articles/month:</strong></p>
+<ul>
+<li>1 strategist writes briefs</li>
+<li>1-2 writers produce drafts</li>
+<li>1 editor reviews everything</li>
+<li>Manual handoffs work (small volume)</li>
+</ul>
+<p><strong>At 50 articles/month:</strong></p>
+<ul>
+<li>1 strategist writes briefs (or AI generates + strategist edits)</li>
+<li>5-6 writers (or AI + editors)</li>
+<li>2 editors (split by client or content type)</li>
+<li>1 publisher</li>
+<li>Automation required (manual handoffs break)</li>
+</ul>
+<p><strong>Scaling checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Hire before bottleneck hits (when editor reviews 30+ articles/month, hire second editor)</li>
+<li><input disabled="" type="checkbox"> Specialize roles (don&#39;t ask writers to also publish)</li>
+<li><input disabled="" type="checkbox"> Automate handoffs (Slack notifications, task assignments)</li>
+<li><input disabled="" type="checkbox"> Use AI for first drafts (editors polish instead of writing from scratch)</li>
+<li><input disabled="" type="checkbox"> Monitor cycle time weekly (catch slowdowns early)</li>
+</ul>
+<p><strong>The rule:</strong> Workflow should scale linearly with volume. If doubling output requires tripling team size, workflow is broken.</p>
+<h2>FAQ</h2>
+<p><strong>Q: Should writers also publish, or should that be a separate role?</strong></p>
+<p><strong>Separate.</strong> Writing and publishing require different skill sets. Writers focus on content quality. Publishers focus on formatting, SEO metadata, promotion. Mixing roles slows both down.</p>
+<p><strong>Q: How do I handle urgent content that needs to skip the queue?</strong></p>
+<p>Build an &quot;Express Lane&quot; workflow: Brief → Draft → Light Review → Publish (24-48 hour turnaround). Use sparingly—if 30% of content is &quot;urgent,&quot; nothing is.</p>
+<p><strong>Q: What if feedback cycles take too long and delay publishing?</strong></p>
+<p>Set hard SLA: reviewer has 24 hours, writer has 24 hours for revisions. If either party misses SLA, escalate to operations lead. Delays compound—catch them early.</p>
+<p><strong>Q: Can AI replace editors in this workflow?</strong></p>
+<p>AI can handle some review (grammar, SEO checklist, formatting). But strategic review (is this valuable? does it match brand voice? does it answer the question?) still requires human judgment. Use AI for pre-checks, humans for final approval.</p>
+<p><strong>Q: How do I prevent workflow from feeling bureaucratic?</strong></p>
+<p>Keep stages simple (5 max). Make handoffs automated (no manual pinging). Use checklists, not essays. The workflow should be invisible—if people complain it&#39;s slowing them down, it&#39;s overdesigned.</p>
+<p><strong>Q: What&#39;s the biggest mistake teams make with editorial workflows?</strong></p>
+<p>Skipping stages for &quot;simple&quot; content. Every piece goes through all five stages, even short posts. Skipping review &quot;just this once&quot; is how quality degrades and errors slip through.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

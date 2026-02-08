@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work | B2B Vic</title>
+    <meta name="description" content="Design a daily standup ritual that surfaces priorities and eliminates decision fatigue. Framework for solo operators who don&#39;t have a team to report to." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work" />
+    <meta property="og:description" content="Design a daily standup ritual that surfaces priorities and eliminates decision fatigue. Framework for solo operators who don&#39;t have a team to report to." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/daily-standup-solo-operators.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work" />
+    <meta name="twitter:description" content="Design a daily standup ritual that surfaces priorities and eliminates decision fatigue. Framework for solo operators who don&#39;t have a team to report to." />
+    <link rel="canonical" href="https://b2bvic.com/articles/daily-standup-solo-operators.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work",
+      "description": "Design a daily standup ritual that surfaces priorities and eliminates decision fatigue. Framework for solo operators who don't have a team to report to.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/daily-standup-solo-operators.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Daily Standup for Solo Operators: Self-Accountability Systems That Actually Work</h1>
+<p>Teams have standups to synchronize priorities. Solo operators have nobody to synchronize with. The standup becomes an internal negotiation: what matters today, what can wait, what&#39;s falling through the cracks.</p>
+<p>Most solo operators skip this step. They wake up, check Slack, respond to whatever&#39;s loudest, realize at 3pm they&#39;ve done six hours of reactive work and zero strategic work. The day passes, nothing important ships, and tomorrow starts the same way.</p>
+<p>A daily standup for one isn&#39;t performative ritual—it&#39;s a forcing function that externalizes priorities before the day hijacks them. You create a contract with yourself: here&#39;s what matters, here&#39;s what I&#39;ll ignore, here&#39;s how I&#39;ll know if today was successful.</p>
+<p>This guide covers how to structure a solo standup that actually changes behavior: what questions to ask, how to surface hidden priorities, how to track patterns over time, and how to build accountability when you&#39;re the only person watching.</p>
+<h2>Why Teams Have Standups (And Why Solo Operators Need Them More)</h2>
+<p>Team standups exist to prevent coordination failures. Without them, people duplicate work, block each other, drift out of alignment. The standup surfaces dependencies: &quot;I&#39;m blocked on X,&quot; &quot;I&#39;m waiting for Y,&quot; &quot;I finished Z, who needs it next?&quot;</p>
+<p><strong>Solo operators have a different failure mode:</strong> No one blocks you, no one duplicates your work, no one asks what you&#39;re doing. You&#39;re free to spend all day optimizing the wrong thing. Freedom without direction is entropy.</p>
+<p><strong>The solo standup serves three functions:</strong></p>
+<p><strong>Priority clarification</strong></p>
+<ul>
+<li>Forces you to rank tasks before urgency hijacks the day</li>
+<li>Surfaces the gap between what you planned yesterday and what actually happened</li>
+<li>Makes procrastination visible (same task listed 5 days in a row)</li>
+</ul>
+<p><strong>Cognitive offloading</strong></p>
+<ul>
+<li>Externalizes the task list so you stop holding it in working memory</li>
+<li>Creates a snapshot of &quot;state of the business&quot; so you don&#39;t have to recompute it every morning</li>
+<li>Documents decisions (&quot;I&#39;m deprioritizing X because Y matters more&quot;)</li>
+</ul>
+<p><strong>Pattern detection</strong></p>
+<ul>
+<li>Reveals chronic blockers (same obstacle showing up weekly)</li>
+<li>Exposes capacity mismatches (consistently listing 8 hours of work, completing 4)</li>
+<li>Surfaces energy patterns (mornings productive, afternoons wasteland)</li>
+</ul>
+<p><strong>The test:</strong> If you skipped standups for a week, would you ship the same things? If yes, the standup is performative. If no, it&#39;s infrastructure.</p>
+<h2>The Core Questions: What to Ask Yourself</h2>
+<p>A good standup answers three questions: What did I ship? What am I shipping today? What&#39;s blocking me?</p>
+<p><strong>For solo operators, add two more:</strong></p>
+<p><strong>1. What did I ship yesterday?</strong></p>
+<p>Not &quot;what did I work on&quot;—what actually shipped? Finished, delivered, closed, published. Work in progress doesn&#39;t count.</p>
+<p><strong>Why this matters:</strong> Exposes the gap between activity and output. If you worked 8 hours but shipped nothing, something&#39;s wrong. Either scope is too big, blockers are unresolved, or you&#39;re avoiding hard decisions.</p>
+<p><strong>2. What am I committing to ship today?</strong></p>
+<p>One to three things maximum. These are non-negotiable. If the day ends and these aren&#39;t done, the day failed.</p>
+<p><strong>Why this matters:</strong> Constraints force prioritization. Unlimited task lists enable diffusion. Three commitments mean everything else is optional.</p>
+<p><strong>3. What&#39;s blocking me?</strong></p>
+<p>Not generic &quot;I&#39;m busy&quot;—specific obstacles preventing progress. Missing information, external dependency, unclear decision criteria, emotional resistance.</p>
+<p><strong>Why this matters:</strong> Naming the blocker makes it solvable. &quot;I&#39;m stuck on the proposal&quot; is vague. &quot;I&#39;m stuck because I don&#39;t know what pricing tier to offer this client&quot; is actionable.</p>
+<p><strong>4. What&#39;s the highest-leverage decision I need to make today?</strong></p>
+<p>What choice, if made correctly, would unlock the most progress? What fork in the road determines the next week of work?</p>
+<p><strong>Why this matters:</strong> Most days don&#39;t hinge on task completion—they hinge on making the right call. &quot;Should I build feature X or market product Y?&quot; determines the next month. Identify the decision early, make it by noon, execute afterward.</p>
+<p><strong>5. What am I deliberately ignoring today?</strong></p>
+<p>What tasks exist but you&#39;re choosing not to do? What&#39;s loud but not important? What can wait without consequence?</p>
+<p><strong>Why this matters:</strong> Saying yes to everything is saying yes to nothing. Explicitly naming what you&#39;re ignoring gives you permission to let it sit. It also prevents the guilt spiral of &quot;I should be doing X&quot; while doing Y.</p>
+<h2>Output Format: Structured vs. Freeform</h2>
+<p>Standups can be text logs, voice memos, structured forms, or dashboard snapshots. Format matters less than consistency, but structure helps pattern detection.</p>
+<p><strong>Option 1: Markdown log (simple, portable)</strong></p>
+<pre><code>## 2026.02.08 - Daily Standup
+
+**Shipped yesterday:**
+- Finished CRM workflow automation article (2,800 words)
+- Set up Tyler&#39;s Webflow DNS
+- Processed 12 inbox emails to zero
+
+**Committing to ship today:**
+1. Complete 5 more B2B articles (dispatch system, email warmup, entity SEO, firing clients, fractional positioning)
+2. Call Ke&#39;ale re: Webflow fix timeline
+3. File 2025 taxes (refund: ~$4,674)
+
+**Blockers:**
+- Tyler retainer contract not signed yet (following up today)
+- Cryo follow-up pending (need to send proposal)
+
+**High-leverage decision:**
+- Which SWS client gets priority: Tyler (new revenue) or Ke&#39;ale (obligation)?
+- Decision: Tyler priority, Ke&#39;ale by Feb 15 deadline
+
+**Deliberately ignoring:**
+- Skool community engagement (low ROI this week)
+- Personal site redesign (not revenue-critical)
+- Inbox cleanup beyond today&#39;s batch
+</code></pre>
+<p><strong>Option 2: Notion database (structured, queryable)</strong></p>
+<p>Create a database with fields:</p>
+<ul>
+<li>Date (date field)</li>
+<li>Shipped Yesterday (text)</li>
+<li>Committing Today (text, numbered list)</li>
+<li>Blockers (text)</li>
+<li>Key Decision (text)</li>
+<li>Ignoring (text)</li>
+<li>Mood / Energy (1-5 scale)</li>
+<li>Day Success (boolean, checked at EOD)</li>
+</ul>
+<p>Query by week to see patterns: How often do blockers repeat? How often do commitments ship?</p>
+<p><strong>Option 3: Voice memo → transcription (fastest input)</strong></p>
+<p>Record 2-minute voice memo answering the five questions. Use <strong>Descript</strong> or <strong>Whisper</strong> to transcribe. Paste into log. Useful for morning commutes or when typing feels like friction.</p>
+<p><strong>Option 4: AI-generated dashboard (automated)</strong></p>
+<p>Pull data from:</p>
+<ul>
+<li>Calendar (meetings scheduled today)</li>
+<li>CRM (deals in pipeline, tasks due)</li>
+<li>Project management (<strong>Asana</strong>, <strong>ClickUp</strong>, tasks due today)</li>
+<li>Email (unread count, flagged items)</li>
+<li>Financial (cash balance, revenue this month)</li>
+</ul>
+<p>AI synthesizes into dashboard + suggested priorities. Example:</p>
+<pre><code>**Today&#39;s Context:**
+- 3 meetings scheduled (2pm discovery call, 4pm client check-in, 5pm internal planning)
+- 8 CRM tasks due (5 follow-ups, 2 proposals, 1 contract review)
+- Inbox: 14 unread (3 flagged for reply)
+- Cash: $1,500 liquid, $4,674 tax refund pending
+- Revenue MTD: $3,200 (goal: $8,000)
+
+**Suggested Priorities:**
+1. Send Tyler contract (blocks $2,500/mo retainer start)
+2. File taxes (unlocks $4,674 refund)
+3. Prep discovery call (2pm, high-value lead)
+
+**Watch Out For:**
+- GEICO payment due Feb 12 ($182) - only 4 days out
+- Corwyn mediation Feb 25 - strategy doc needs review
+</code></pre>
+<p><strong>The format test:</strong> Can you review last week&#39;s standups in 5 minutes and spot patterns? If not, structure is wrong.</p>
+<h2>Timing: When to Run the Standup</h2>
+<p>Most people default to &quot;first thing in the morning.&quot; That works if your mornings are consistent. For many solo operators, mornings are chaotic—kids, commute, urgent client fires.</p>
+<p><strong>Better heuristic: Run the standup at the decision boundary.</strong></p>
+<p><strong>If you work standard hours (9-5):</strong> Standup at 8:45am, before the workday starts. Review priorities, make decisions, then execute.</p>
+<p><strong>If you have a commute:</strong> Voice memo standup during the drive. Arrive at the office with priorities locked.</p>
+<p><strong>If mornings are reactive:</strong> Standup at the first natural break (10am after morning emails, noon after first meeting). Don&#39;t force it at 6am if your brain isn&#39;t online yet.</p>
+<p><strong>If you work async hours:</strong> Standup the night before. Review the next day&#39;s context, set priorities, wake up knowing what matters.</p>
+<p><strong>The timing test:</strong> Do you finish the standup with clarity, or does it feel like one more thing to check off?</p>
+<h2>Accountability: How to Make It Stick</h2>
+<p>Teams have social accountability—you say you&#39;ll do something, others expect it done. Solo operators need manufactured accountability.</p>
+<p><strong>External accountability mechanisms:</strong></p>
+<p><strong>Public commitment</strong></p>
+<ul>
+<li>Post standup to Twitter, LinkedIn, personal Slack</li>
+<li>Doesn&#39;t need to be detailed—&quot;Shipping 3 things today: X, Y, Z&quot; is enough</li>
+<li>Social pressure works even if nobody replies</li>
+</ul>
+<p><strong>Accountability partner</strong></p>
+<ul>
+<li>Find another solo operator, trade standups daily</li>
+<li>5-minute call or async text exchange</li>
+<li>&quot;Did you ship what you committed?&quot; forces honesty</li>
+</ul>
+<p><strong>Paid coach or mastermind</strong></p>
+<ul>
+<li>Weekly review of daily standups</li>
+<li>Coach holds you to patterns: &quot;You said this would be done by Wednesday, it&#39;s Friday, what happened?&quot;</li>
+</ul>
+<p><strong>Financial stakes</strong></p>
+<ul>
+<li>Bet a friend $50 you&#39;ll hit your commitments 5/7 days this week</li>
+<li>Lose enough times, behavior changes</li>
+</ul>
+<p><strong>Internal accountability mechanisms:</strong></p>
+<p><strong>End-of-day review</strong></p>
+<ul>
+<li>At 5pm (or end of workday), revisit morning standup</li>
+<li>Mark commitments: ✅ Done, ⏳ In Progress, ❌ Didn&#39;t Start</li>
+<li>Write one sentence: &quot;Today succeeded because ___&quot; or &quot;Today failed because ___&quot;</li>
+</ul>
+<p><strong>Weekly pattern review</strong></p>
+<ul>
+<li>Every Friday or Monday, review last 7 standups</li>
+<li>Count: How many days hit commitments? How many blockers repeated? How often did high-leverage decisions get made?</li>
+<li>Adjust: If only 3/7 days hit commitments, commitments are too ambitious or blockers aren&#39;t being resolved</li>
+</ul>
+<p><strong>Streaks and gamification</strong></p>
+<ul>
+<li>Track consecutive days of shipping commitments</li>
+<li>Goal: 30-day streak of hitting 2/3 daily commitments</li>
+<li>Break the streak, start over</li>
+</ul>
+<p><strong>The accountability test:</strong> If you skipped a commitment, would anyone notice (including you)? If not, there&#39;s no accountability.</p>
+<h2>Blocker Triage: What to Do When Stuck</h2>
+<p>Blockers fall into four categories. Each requires a different intervention.</p>
+<p><strong>1. Information blockers</strong></p>
+<p><strong>Pattern:</strong> &quot;I can&#39;t proceed because I don&#39;t know X&quot;</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Waiting on client to provide specs</li>
+<li>Need pricing approval from manager (if you have one)</li>
+<li>Don&#39;t know which vendor to choose</li>
+</ul>
+<p><strong>Fix:</strong> Make the request explicit. Don&#39;t wait passively. Email the client: &quot;I need X by Y to proceed.&quot; Set a deadline. If they miss it, escalate or move on.</p>
+<p><strong>2. Decision blockers</strong></p>
+<p><strong>Pattern:</strong> &quot;I don&#39;t know which option to choose&quot;</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Should I prioritize client A or client B?</li>
+<li>Should I build feature X or market product Y?</li>
+<li>Should I hire contractor C or do it myself?</li>
+</ul>
+<p><strong>Fix:</strong> Set a decision deadline (noon today, end of week). Use a framework (ROI, urgency, strategic alignment). Make the call, document reasoning, move forward. Indecision is more expensive than wrong decisions you can correct.</p>
+<p><strong>3. Skill blockers</strong></p>
+<p><strong>Pattern:</strong> &quot;I don&#39;t know how to do X&quot;</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Need to set up Facebook Ads but never have</li>
+<li>Need to write legal contract but no legal background</li>
+<li>Need to design logo but not a designer</li>
+</ul>
+<p><strong>Fix:</strong> Hire, learn, or delegate. If it&#39;s one-time and high-stakes (legal contract), hire. If it&#39;s recurring and learnable (Facebook Ads), invest 4 hours in a course. If it&#39;s low-stakes (logo design), use Fiverr or AI tools.</p>
+<p><strong>4. Emotional blockers</strong></p>
+<p><strong>Pattern:</strong> &quot;I know what to do, but I&#39;m not doing it&quot;</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Avoiding a difficult client conversation</li>
+<li>Procrastinating on cold outreach (fear of rejection)</li>
+<li>Delaying financial review (fear of bad news)</li>
+</ul>
+<p><strong>Fix:</strong> Name the emotion. &quot;I&#39;m avoiding this because I&#39;m anxious about X.&quot; Then apply forcing functions: schedule the call, set a 30-minute timer, enlist an accountability partner to watch you do it. Emotions don&#39;t go away, but behavior can override them.</p>
+<p><strong>The blocker test:</strong> If a blocker shows up in standups 3+ times, it&#39;s not a blocker—it&#39;s a systemic issue you&#39;re avoiding.</p>
+<h2>Real-World Example: My Daily Standup System</h2>
+<p>I run two jobs: CRM operations for a real estate brokerage (8am-5pm in Raleigh) and my own SEO/AI consulting business (evenings, weekends). Without a standup, the urgent (JAG database fires) would consume the important (SWS revenue growth).</p>
+<p><strong>My system:</strong></p>
+<p><strong>Timing:</strong> 5:30am (before I leave for the office at 6am)</p>
+<p><strong>Format:</strong> AI-generated dashboard pulling from:</p>
+<ul>
+<li><strong>Obsidian vault</strong> (tasks tagged <code>#today</code>)</li>
+<li><strong>Google Calendar</strong> (meetings scheduled)</li>
+<li><strong>Follow Up Boss</strong> (CRM tasks due)</li>
+<li><strong>Email</strong> (flagged items)</li>
+<li><strong>Bank balance</strong> (cash position)</li>
+</ul>
+<p><strong>Output:</strong> 1-page Markdown file in <code>/Users/vic/Documents/SubtleBodhi/04 - VVR/Standups/2026.02.08.md</code></p>
+<p><strong>Structure:</strong></p>
+<pre><code>## Daily Standup - 2026.02.08
+
+**Context:**
+- JAG: 3 CRM tasks due (Beza follow-up, Jake data fix, smart list build)
+- SWS: Tyler contract unsigned, Ke&#39;ale Webflow due Feb 15, Cryo follow-up pending
+- VVR: Taxes due (refund ~$4,674), GEICO payment Feb 12 ($182), Corwyn mediation Feb 25
+- Cash: $1,500 liquid
+
+**Committing to ship today:**
+1. Complete 10 B2B articles for b2bvic.com (revenue-generating)
+2. Call Tyler re: contract (blocks $2,500/mo retainer start)
+3. File 2025 taxes (unlocks $4,674 refund)
+
+**High-leverage decision:**
+- Which SWS client gets attention: Tyler (revenue) or Ke&#39;ale (obligation)?
+- Decision: Tyler priority, Ke&#39;ale by deadline
+
+**Deliberately ignoring:**
+- JAG smart list build (Erin gave 2-week timeline, not urgent)
+- Personal site redesign (not revenue-critical)
+- Skool community engagement (low ROI this week)
+
+**End-of-day checkpoint (filled at 7pm):**
+- [ ] 10 articles done?
+- [ ] Tyler called?
+- [ ] Taxes filed?
+</code></pre>
+<p><strong>At 7pm, I revisit and mark checkboxes.</strong> If 2/3 are done, day succeeded. If 0/3, I write a postmortem: what derailed the day?</p>
+<p><strong>Results after 90 days:</strong></p>
+<ul>
+<li>Hit commitments: 68/90 days (75% success rate)</li>
+<li>Chronic blocker identified: Tyler contract delays (now resolved)</li>
+<li>Pattern detected: Mornings 3x more productive than evenings (adjusted SWS work to weekends)</li>
+<li>Revenue impact: $8,500 closed in Q1 (vs. $3,200 prior quarter without standup discipline)</li>
+</ul>
+<p>The standup doesn&#39;t make me work harder. It makes me work on the right things.</p>
+<h2>Advanced: Weekly and Monthly Standups</h2>
+<p>Daily standups handle tactics. Weekly and monthly standups handle strategy.</p>
+<p><strong>Weekly standup (every Friday, 15 minutes):</strong></p>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>What shipped this week?</li>
+<li>What didn&#39;t ship that I thought would?</li>
+<li>What patterns emerged? (blockers, energy dips, task misjudgments)</li>
+<li>What&#39;s the one thing I&#39;m committing to ship next week?</li>
+<li>What experiment am I running next week?</li>
+</ol>
+<p><strong>Why:</strong> Zooms out from daily noise. Reveals whether you&#39;re making progress on strategic goals or just treading water.</p>
+<p><strong>Monthly standup (first Monday of month, 30 minutes):</strong></p>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>Revenue: actual vs. target?</li>
+<li>Pipeline: what deals are progressing, what&#39;s stalled?</li>
+<li>Systems: what&#39;s working, what&#39;s breaking?</li>
+<li>Energy: am I burning out, coasting, or in flow?</li>
+<li>What&#39;s the one decision I&#39;ve been avoiding that would unlock next month?</li>
+</ol>
+<p><strong>Why:</strong> Forces strategic recalibration. Daily standups keep you on the path. Monthly standups check if it&#39;s the right path.</p>
+<h2>FAQ</h2>
+<p><strong>Q: How long should a daily standup take?</strong></p>
+<p>5-10 minutes max. If it&#39;s taking 30 minutes, you&#39;re overthinking. The standup is a snapshot, not a strategy session. Make decisions fast, document them, move on.</p>
+<p><strong>Q: What if I don&#39;t hit my commitments?</strong></p>
+<p>That&#39;s data. Either commitments are too ambitious (adjust scope), blockers are unresolved (fix them), or you&#39;re avoiding hard work (accountability problem). Track success rate. If below 60%, something&#39;s broken.</p>
+<p><strong>Q: Should I include personal tasks (errands, household stuff) in standups?</strong></p>
+<p>Yes, if they&#39;re time-bound or high-stakes. &quot;File taxes&quot; belongs in a standup. &quot;Clean the garage someday&quot; doesn&#39;t. Personal tasks compete for the same time/energy as work tasks—ignoring them creates false plans.</p>
+<p><strong>Q: What if my day gets hijacked by emergencies?</strong></p>
+<p>Review the standup at the interruption point. Ask: &quot;Is this emergency more important than my commitments?&quot; If yes, pivot. If no, delegate or defer. The standup gives you a reference point to evaluate urgency vs. importance.</p>
+<p><strong>Q: Can I automate standups with AI?</strong></p>
+<p>Partially. AI can pull data (calendar, CRM, email) and generate suggested priorities. But the high-leverage decision, the blocker triage, the deliberate ignoring—those require human judgment. AI scaffolds the standup, you execute it.</p>
+<p><strong>Q: What&#39;s the biggest mistake people make with solo standups?</strong></p>
+<p>Making them performative instead of operational. If you&#39;re writing standups for an imaginary audience, you&#39;re wasting time. Standups are for you. They should be ugly, honest, and useful—not polished, impressive, or shareable.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
