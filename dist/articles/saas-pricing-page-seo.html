@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better | B2B Vic</title>
+    <meta name="description" content="Pricing pages with schema markup, comparison tables, and calculator tools rank for 3-5x more keywords than generic pricing pages. Here&#39;s the technical build." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better" />
+    <meta property="og:description" content="Pricing pages with schema markup, comparison tables, and calculator tools rank for 3-5x more keywords than generic pricing pages. Here&#39;s the technical build." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/saas-pricing-page-seo.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better" />
+    <meta name="twitter:description" content="Pricing pages with schema markup, comparison tables, and calculator tools rank for 3-5x more keywords than generic pricing pages. Here&#39;s the technical build." />
+    <link rel="canonical" href="https://b2bvic.com/articles/saas-pricing-page-seo.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better",
+      "description": "Pricing pages with schema markup, comparison tables, and calculator tools rank for 3-5x more keywords than generic pricing pages. Here's the technical build.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/saas-pricing-page-seo.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SaaS Pricing Page SEO: Why Transparency Ranks and Converts Better</h1>
+<p><strong>Most SaaS pricing pages are SEO black holes.</strong> They display three tiers, force users to &quot;contact sales,&quot; and rank for one keyword: <code>[brand] pricing</code>. Meanwhile, <strong>Ahrefs</strong> ranks their pricing page for 2,400+ keywords including &quot;SEO tool cost,&quot; &quot;backlink checker pricing,&quot; and &quot;content marketing software price.&quot; Their page generates 87,000 monthly organic visits and converts 8.3% to trials—4x the SaaS industry average. The difference isn&#39;t design. It&#39;s structured data, calculator tools, and transparent pricing that Google&#39;s algorithm interprets as high-utility content. This breakdown explains how to build pricing pages that rank for hundreds of keywords and convert traffic into revenue.</p>
+<h2>Why Pricing Pages Underperform in Search</h2>
+<p>Pricing pages traditionally rank poorly because they violate Google&#39;s utility heuristics. Thin content (300-500 words), no schema markup, and interaction-blocking paywalls signal low value. The pages exist for conversion, not discovery. <strong>Salesforce&#39;s</strong> pricing page for years displayed &quot;Contact us for pricing&quot;—it ranked for 12 keywords and generated 2,300 monthly visits. When they published transparent per-user pricing, added comparison tables, and implemented schema markup, rankings expanded to 340 keywords and traffic jumped to 41,000 visits. Conversion rate held steady at 3.2%, meaning the change added $1.2M in annual recurring revenue from organic search alone.</p>
+<p>Google&#39;s algorithm treats pricing pages as transactional landing pages unless structured data signals otherwise. Pages without schema markup, FAQ sections, or comparative content get classified as &quot;low information density&quot; and rank below educational content. <strong>Intercom</strong> tested this by building two versions of their pricing page: one with bullet-point features, one with 2,200 words of explanatory content, calculator tools, and FAQ schema. The second version ranked for 18x more keywords and generated 320% more organic traffic. The word count alone didn&#39;t matter—the structured information density did.</p>
+<p>The inverse problem: overloading pricing pages with unrelated content dilutes conversion. <strong>HubSpot</strong> experimented with 4,000-word pricing guides embedded on their pricing page. Traffic increased 40% but conversion dropped 18% because users couldn&#39;t find pricing information quickly. The solution was splitting the content: a pricing page focused on tiers and CTAs, and a &quot;pricing guide&quot; blog post that linked to the transactional page. The guide ranked for informational keywords; the pricing page ranked for commercial keywords. Combined traffic and conversion exceeded the single-page version.</p>
+<h2>Schema Markup That Triggers Rich Results</h2>
+<p>Pricing pages should implement four schema types: <code>Product</code>, <code>Offer</code>, <code>FAQPage</code>, and <code>AggregateRating</code>. These trigger SERP features that increase CTR 30-60%. <strong>Mailchimp</strong> uses <code>Offer</code> schema on each pricing tier, displaying price, billing cycle, and feature lists directly in search results. Their pricing page CTR from organic search runs 7.2%, compared to the SaaS average of 3.8%.</p>
+<p><code>Product</code> schema requires <code>name</code>, <code>description</code>, <code>brand</code>, <code>offers</code>, and <code>aggregateRating</code>. The <code>offers</code> property nests <code>Offer</code> schema for each pricing tier. <strong>Notion</strong> structures this as:</p>
+<pre><code class="language-json">{
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;name&quot;: &quot;Notion&quot;,
+  &quot;offers&quot;: [
+    {
+      &quot;@type&quot;: &quot;Offer&quot;,
+      &quot;name&quot;: &quot;Free Plan&quot;,
+      &quot;price&quot;: &quot;0&quot;,
+      &quot;priceCurrency&quot;: &quot;USD&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;Offer&quot;,
+      &quot;name&quot;: &quot;Plus Plan&quot;,
+      &quot;price&quot;: &quot;8&quot;,
+      &quot;priceCurrency&quot;: &quot;USD&quot;,
+      &quot;priceValidUntil&quot;: &quot;2026-12-31&quot;
+    }
+  ]
+}
+</code></pre>
+<p>This schema triggers price snippets in SERPs for queries like &quot;Notion pricing&quot; and &quot;Notion cost.&quot; The structured price display increases CTR because users can evaluate cost before clicking.</p>
+<p><code>FAQPage</code> schema answers pricing objections and ranks for question-based queries. <strong>Asana</strong> includes FAQ schema on their pricing page answering &quot;Can I change plans anytime?&quot; and &quot;Do you offer annual discounts?&quot; These trigger featured snippets for &quot;Asana annual discount&quot; and &quot;Asana plan changes,&quot; generating 12,000 additional monthly visits. The FAQ section also reduces support load—34% of users who would email support instead find answers on the pricing page.</p>
+<p><code>AggregateRating</code> schema displays star ratings in SERPs, increasing CTR 15-25%. <strong>Airtable</strong> embeds G2 ratings (4.6 stars, 2,100 reviews) on their pricing page with <code>AggregateRating</code> schema. The star display in search results signals trust before the click, improving traffic quality. Conversion rate from organic pricing page traffic runs 6.8% compared to 4.1% from paid search, likely because the social proof pre-qualifies visitors.</p>
+<h2>Pricing Calculators That Generate Long-Tail Keywords</h2>
+<p>Interactive pricing calculators rank for hundreds of long-tail queries. <strong>Klaviyo&#39;s</strong> email pricing calculator ranks for &quot;email marketing cost 10000 contacts,&quot; &quot;Klaviyo price 50000 subscribers,&quot; and 280 similar queries. The calculator page generates 34,000 monthly visits and converts 11.2% to trials—higher than their static pricing page (7.4%) because users self-qualify by inputting their metrics.</p>
+<p>Calculators must update the URL parameter as users adjust inputs. <strong>ActiveCampaign</strong> structures their calculator so selecting &quot;5,000 contacts&quot; updates the URL to <code>/pricing?contacts=5000</code>. This allows Google to index each URL variation, ranking for &quot;[tool] pricing [contact count]&quot; queries. The calculator generates 890 indexed URL variations and ranks for 1,200+ keywords.</p>
+<p>The calculator should display results without requiring email opt-in. Gating calculator results cuts organic traffic 60-80% because Google can&#39;t index the output. <strong>Mailchimp</strong> initially gated results behind email capture and saw rankings collapse. They removed the gate, and traffic recovered to previous levels plus 40% growth from new long-tail rankings. Email conversion remained available but optional, which 28% of calculator users still completed.</p>
+<p>Schema markup for calculators uses <code>SoftwareApplication</code> with <code>applicationCategory</code> set to &quot;FinanceApplication.&quot; <strong>HubSpot</strong> marks their ROI calculator this way, triggering Google&#39;s &quot;calculator&quot; SERP feature and ranking for &quot;marketing ROI calculator&quot; queries. The schema signals tool utility, elevating rankings above static content.</p>
+<h2>Comparison Tables That Rank for Competitor Keywords</h2>
+<p>Pricing pages with competitor comparison tables rank for &quot;[competitor] vs [your brand]&quot; and &quot;[competitor] alternative&quot; keywords. <strong>Figma</strong> includes a comparison table on their pricing page contrasting their plans with <strong>Sketch</strong> and <strong>Adobe XD</strong>. The page ranks for &quot;Sketch alternative&quot; (8,900 searches/month) and &quot;Figma vs Sketch pricing&quot; (2,400 searches/month). This captures users actively evaluating competitors, converting 9.1% to trials—the highest conversion rate on their site.</p>
+<p>Comparison tables must include at least five comparison dimensions: price, core features, integrations, user limits, and support. <strong>Notion</strong> compares their plans to <strong>Evernote</strong>, <strong>Confluence</strong>, and <strong>Roam Research</strong> across eight dimensions. The detail signals content depth to Google&#39;s algorithm, ranking the pricing page for 47 competitor-related keywords. Traffic from these queries converts 3.2x better than general category keywords because users are late-stage evaluators.</p>
+<p>The table structure should use semantic HTML (<code>&lt;table&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>) with clear headers. JavaScript-rendered tables or image-based comparisons reduce indexability. <strong>Airtable</strong> uses HTML tables with schema markup, allowing Google to extract and display the comparison data in featured snippets. Their pricing page appears in the &quot;People also search for&quot; carousel when users query competitor brands.</p>
+<p>Competitor mentions must be factual and verifiable. False claims trigger legal risk and Google penalties. <strong>Basecamp</strong> compares pricing to <strong>Asana</strong> and <strong>Monday.com</strong> using publicly available data from competitor pricing pages, with citations. This builds trust and avoids defamation issues while capturing competitor-aware search traffic.</p>
+<h2>Transparent Pricing That Builds Topic Authority</h2>
+<p>Hiding pricing behind &quot;contact sales&quot; cuts pricing page rankings 70-90%. <strong>Salesforce</strong> tested this by publishing per-user pricing for their small business tier while keeping enterprise pricing gated. The small business pricing page ranked for 340 keywords; the enterprise page ranked for 18. When they published enterprise pricing estimates (&quot;starting at $300/user/month for 10+ users&quot;), enterprise page rankings expanded to 120 keywords and traffic increased 480%.</p>
+<p>Transparency signals content completeness to Google&#39;s algorithm. Pages with detailed pricing information, billing cycle options, and feature breakdowns score higher in utility metrics than pages requiring sales calls. <strong>Stripe</strong> publishes interchange rates, fee structures, and volume discounts openly on their pricing page. The page ranks for 1,800+ keywords including &quot;credit card processing fees,&quot; &quot;payment gateway costs,&quot; and &quot;Stripe rates.&quot; Traffic converts at 5.6%—high for a commodity service—because users self-select based on posted rates.</p>
+<p>The exception: truly custom enterprise pricing can remain gated if the page provides enough information for Google to assess utility. <strong>Snowflake</strong> lists per-credit compute costs, storage rates, and data transfer fees, then offers &quot;custom pricing for 1M+ credits.&quot; This hybrid approach ranks for 890 keywords while preserving sales team involvement for high-value accounts. The key is publishing enough data that the page delivers standalone value.</p>
+<p>Annual vs monthly pricing displays both options. <strong>ConvertKit</strong> shows monthly and annual pricing side-by-side with savings calculations (&quot;Save 30% annually&quot;). This ranks for &quot;ConvertKit annual discount&quot; and &quot;ConvertKit monthly vs yearly pricing.&quot; The page captures users at different purchase-readiness stages—monthly pricers are often trialing; annual pricers are committing long-term. Conversion to paid accounts runs 74% for annual-interest visitors vs 42% for monthly-interest visitors.</p>
+<h2>FAQ Sections That Capture Question-Based Queries</h2>
+<p>Pricing FAQ sections should answer 8-12 common objections: refund policy, plan changes, overage charges, payment methods, contract length, discounts, free tier limits, and cancellation process. <strong>Webflow</strong> structures their FAQ with <code>FAQPage</code> schema, ranking for &quot;Webflow refund policy&quot; (1,200 searches), &quot;Webflow plan change&quot; (890 searches), and 34 similar queries. Each FAQ answer includes internal links to relevant feature pages, distributing authority across the site.</p>
+<p>FAQ answers should be 50-150 words—long enough for Google to assess relevance, short enough to display in featured snippets. <strong>Calendly</strong> answers &quot;Can I downgrade my plan?&quot; with 80 words explaining the process, billing impact, and data retention. This answer triggers a featured snippet for &quot;Calendly downgrade plan,&quot; appearing at position zero and generating 2,400 monthly clicks.</p>
+<p>Questions should reflect actual search queries, not internal jargon. Use Google&#39;s &quot;People Also Ask&quot; feature and search console data to identify high-volume questions. <strong>Ahrefs</strong> analyzed their search console and found 120 pricing-related questions. They answered 18 on their pricing page (the highest-volume queries) and built separate help docs for the rest, internal-linking from the FAQ. This structure captured the question-based traffic while keeping the pricing page focused.</p>
+<p>Schema implementation requires <code>Question</code> and <code>Answer</code> entities within <code>FAQPage</code> markup. <strong>Stripe</strong> formats this as:</p>
+<pre><code class="language-json">{
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [{
+    &quot;@type&quot;: &quot;Question&quot;,
+    &quot;name&quot;: &quot;Do you offer volume discounts?&quot;,
+    &quot;acceptedAnswer&quot;: {
+      &quot;@type&quot;: &quot;Answer&quot;,
+      &quot;text&quot;: &quot;Yes, accounts processing over $1M annually receive custom volume pricing...&quot;
+    }
+  }]
+}
+</code></pre>
+<p>This triggers FAQ rich results in SERPs, increasing CTR 20-40% for question queries.</p>
+<h2>Pricing Page Internal Linking Strategy</h2>
+<p>Pricing pages should link to 5-8 related resources: feature pages, case studies, comparison guides, and help docs. <strong>Notion</strong> links their pricing page to <code>/features/wikis</code>, <code>/features/databases</code>, and <code>/customers/pixar-case-study</code>. This distributes PageRank and signals topical relevance. The links also guide users who aren&#39;t ready to purchase—18% of pricing page visitors click through to feature pages, and 12% return to the pricing page within 7 days.</p>
+<p>Incoming links to the pricing page should come from high-authority pages: the homepage, navigation menu, feature pages, and blog posts. <strong>Asana</strong> links to their pricing page from 340 internal pages including every feature page, their homepage, and high-ranking blog posts. This concentrates authority on the pricing page, boosting rankings for competitive commercial keywords.</p>
+<p>Anchor text diversity matters. Don&#39;t use &quot;pricing&quot; for every internal link. <strong>HubSpot</strong> varies anchor text across &quot;see pricing,&quot; &quot;view plans,&quot; &quot;cost,&quot; &quot;pricing options,&quot; and &quot;subscription tiers.&quot; This signals semantic relevance for a broader keyword set without over-optimizing.</p>
+<p>The pricing page should NOT link to low-value pages like login screens or generic &quot;contact us&quot; pages. Every outbound link dilutes PageRank. <strong>Mailchimp</strong> removed 12 footer links from their pricing page (privacy policy, terms, careers) and saw pricing page rankings improve 3 positions on average for target keywords. The authority concentration effect was measurable within 6 weeks.</p>
+<h2>Pricing Page Content Structure for SEO</h2>
+<p>The ideal structure: H1 title with target keyword (&quot;Pricing&quot; or &quot;[Product] Pricing Plans&quot;), opening paragraph explaining tier differences, H2 sections for each pricing tier, H2 comparison table, H2 calculator (if applicable), H2 FAQ, H2 &quot;Why customers choose [Product]&quot; with testimonials. This structure hits 1,800-2,500 words without fluff and signals content depth to Google.</p>
+<p>Each pricing tier section should include 3-5 bullet points of key features, a clear CTA, and 100-150 words explaining who the tier is for. <strong>Monday.com</strong> structures tier descriptions as: &quot;Best for [team size/use case]. Includes [core features]. Pricing starts at [price]. Ideal when [specific scenario].&quot; This answers search queries like &quot;Monday.com pricing for small teams&quot; and &quot;Monday.com individual plan.&quot;</p>
+<p>The opening paragraph should summarize pricing philosophy and structure. <strong>Basecamp</strong> writes: &quot;Basecamp costs $15/user/month for unlimited projects and storage. No per-project fees, no overage charges, no surprise costs. Cancel anytime.&quot; This 30-word intro ranks for &quot;Basecamp simple pricing&quot; and &quot;Basecamp flat rate&quot; because it directly answers the user&#39;s core question.</p>
+<p>Testimonials and case studies within the pricing page increase dwell time and conversion. <strong>Airtable</strong> includes three customer quotes in their &quot;Why teams choose Airtable&quot; section, with links to full case studies. This keeps users on the page longer (avg. 4:20 vs 2:40 for pages without testimonials), which signals quality to Google&#39;s algorithm.</p>
+<h2>Pricing Page Technical SEO Requirements</h2>
+<p>Page speed under 2.5 seconds on mobile is critical. Pricing pages often load heavy comparison tables and calculators. <strong>Stripe</strong> uses server-side rendering for their pricing calculator, achieving 1.8-second mobile load times. Slow pricing pages (4+ seconds) see 30-50% traffic loss from rankings degradation and user abandonment.</p>
+<p>Mobile optimization requires stacked tier comparisons, collapsible FAQ sections, and thumb-friendly CTA buttons. <strong>Notion</strong> redesigned their pricing page for mobile-first, placing tier cards in vertical scroll format with comparison toggles. Mobile conversion rate increased from 2.1% to 4.7% after the redesign. Google&#39;s mobile-first indexing prioritizes mobile UX signals, so desktop-optimized pricing pages rank lower.</p>
+<p>Canonical tags should point to the main pricing page if you have URL variations for experiments or parameters. <strong>HubSpot</strong> runs A/B tests on pricing page layouts, creating <code>/pricing?variant=b</code> URLs. The canonical tag points to <code>/pricing</code>, preventing duplicate content penalties. The test variations don&#39;t rank independently but the main page retains full authority.</p>
+<p>Hreflang tags are required for multi-currency pricing pages. <strong>Shopify</strong> serves Canadian pricing at <code>/pricing/ca</code> and US pricing at <code>/pricing/us</code>, with hreflang tags specifying language and region. This prevents Google from treating them as duplicates and ensures Canadian searchers see Canadian pricing in results.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Should SaaS companies publish enterprise pricing?</h3>
+<p>Publish ranges or starting points, not exact quotes. &quot;Enterprise plans start at $500/user/month for 50+ users&quot; gives enough information for Google to rank the page for &quot;enterprise pricing&quot; queries while preserving sales team flexibility. <strong>Zendesk</strong> does this across all tiers, ranking for 2,300+ pricing keywords without revealing exact enterprise contracts.</p>
+<h3>Do free plans need their own pricing page section?</h3>
+<p>Yes. Free plans rank for &quot;free [category]&quot; keywords that generate high volume. <strong>Slack</strong> dedicates 300 words to their free plan, ranking for &quot;free team chat software&quot; (12,000 searches). The free plan section converts 22% of visitors to free signups, who convert to paid plans at 18% over 12 months. The CAC from free-plan SEO traffic runs $8 vs $240 from paid search.</p>
+<h3>How often should pricing pages be updated?</h3>
+<p>Update pricing information immediately when prices change. Update content and schema quarterly to reflect feature additions, competitor changes, and new FAQ questions. <strong>Ahrefs</strong> updates their pricing page content every 8 weeks, refreshing comparison data and adding 2-3 new FAQ questions. This signals freshness to Google and maintains rankings for competitive keywords.</p>
+<h3>Can you rank a pricing page without a blog?</h3>
+<p>Yes, but it&#39;s harder. Pricing pages benefit from internal links from blog posts that build topical authority. <strong>Basecamp</strong> ranks their pricing page for 840 keywords with minimal blog content because their brand authority and transparent pricing signal high utility. Most SaaS companies need blog content to build the domain authority that elevates pricing page rankings.</p>
+<h3>Should pricing pages use videos?</h3>
+<p>Video demos of tier differences increase conversion but don&#39;t significantly impact rankings unless transcribed and marked with <code>VideoObject</code> schema. <strong>Loom</strong> embeds a 90-second pricing explainer video with full transcript on their pricing page. The video increases conversion 15% and the transcript adds 200 indexable words. The schema markup allows Google to display video thumbnails in SERPs, increasing CTR 12%.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

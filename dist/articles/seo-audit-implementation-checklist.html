@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO Audit Implementation Checklist: Fix High-Impact Issues First | B2B Vic</title>
+    <meta name="description" content="SEO audits identify 300+ issues but fixing everything wastes time. Prioritize technical crawlability issues, then content gaps, then optimization. Here&#39;s the execution order." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SEO Audit Implementation Checklist: Fix High-Impact Issues First" />
+    <meta property="og:description" content="SEO audits identify 300+ issues but fixing everything wastes time. Prioritize technical crawlability issues, then content gaps, then optimization. Here&#39;s the execution order." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/seo-audit-implementation-checklist.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SEO Audit Implementation Checklist: Fix High-Impact Issues First" />
+    <meta name="twitter:description" content="SEO audits identify 300+ issues but fixing everything wastes time. Prioritize technical crawlability issues, then content gaps, then optimization. Here&#39;s the execution order." />
+    <link rel="canonical" href="https://b2bvic.com/articles/seo-audit-implementation-checklist.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SEO Audit Implementation Checklist: Fix High-Impact Issues First",
+      "description": "SEO audits identify 300+ issues but fixing everything wastes time. Prioritize technical crawlability issues, then content gaps, then optimization. Here's the execution order.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/seo-audit-implementation-checklist.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO Audit Implementation Checklist: Fix High-Impact Issues First"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SEO Audit Implementation Checklist: Fix High-Impact Issues First</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SEO Audit Implementation Checklist: Fix High-Impact Issues First</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SEO Audit Implementation Checklist: Fix High-Impact Issues First</h1>
+<p><strong>SEO audits generate 300-page reports listing every broken link, missing meta tag, and image without alt text—then teams fix them alphabetically and rankings don&#39;t improve.</strong> Issue severity matters more than issue count. A site with 4-second mobile load times won&#39;t rank well regardless of whether meta descriptions are optimized. <strong>Shopify</strong> audited their site, found 1,200 issues, and prioritized the 12 issues blocking crawlability and page speed. Fixing those 12 issues increased organic traffic 28% within 8 weeks. The remaining 1,188 issues had negligible impact. Meanwhile, sites fixing cosmetic issues (duplicate meta tags, missing H1s on low-traffic pages) see minimal gains despite weeks of effort. The implementation hierarchy: crawlability issues (prevent Google from indexing), speed/performance (user experience ranking factor), content quality (relevance and authority), then optimization details (meta tags, schema). This checklist explains how to triage audit findings and implement fixes in order of business impact.</p>
+<h2>Priority Tier 1: Crawlability and Indexation Blockers</h2>
+<p>Crawlability issues prevent Google from discovering, accessing, or indexing pages. These have immediate, severe impact—pages blocked from indexing generate zero traffic. Fix these first regardless of other issues. <strong>Ahrefs</strong> identifies critical crawl errors using <strong>Screaming Frog</strong> or <strong>Sitemap Auditor</strong>: blocked by robots.txt, noindex tags on important pages, broken internal links, redirect chains, and orphaned pages.</p>
+<p><strong>Robots.txt misconfiguration</strong> blocks entire sections. <strong>Best Buy</strong> accidentally blocked <code>/products/</code> in robots.txt during a site migration, removing 12,000 product pages from Google&#39;s index. Organic traffic dropped 60% within 2 weeks. The fix took 5 minutes (removing the Disallow rule) but recovery took 8 weeks as Google re-crawled. Check robots.txt for accidental blocks: CSS/JS files (Google needs these for rendering), important directories, or wildcard rules that over-match. <strong>Google Search Console</strong> → Settings → robots.txt Tester validates syntax.</p>
+<p><strong>Noindex tags on ranking pages</strong> silently kill traffic. <strong>Moz</strong> audits reveal 15-20% of sites have noindex tags on pages they intend to rank. This happens during development (staging environments use noindex) when tags accidentally stay live. <strong>Wix</strong> found 340 pages with noindex tags post-audit—removing them recovered 28,000 monthly visits within 6 weeks. Check: view-source on key pages and search for <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;</code> or check page headers for <code>X-Robots-Tag: noindex</code>.</p>
+<p><strong>Broken internal links</strong> (404 errors) waste crawl budget and break user experience. <strong>HubSpot</strong> found 1,800 internal 404 links post-migration. Google&#39;s crawler encountered dead ends, reducing the number of pages crawled daily. Traffic on affected sections dropped 18%. The fix: <strong>Screaming Frog</strong> export of broken links, bulk-update links to correct URLs, or implement 301 redirects if old URLs no longer exist. Prioritize fixing links from high-authority pages (homepage, top landing pages) to maximize crawl efficiency.</p>
+<h2>Priority Tier 2: Site Speed and Core Web Vitals</h2>
+<p>Site speed directly impacts rankings via Core Web Vitals (LCP, FID, CLS) and user experience. Google&#39;s mobile-first indexing prioritizes mobile speed—slow sites rank lower. <strong>Amazon</strong> found that every 100ms of load time decreased revenue 1%. <strong>Portent</strong> reports that sites loading in 1 second convert 3x better than sites loading in 5 seconds. Speed isn&#39;t optional—it&#39;s foundational.</p>
+<p><strong>Largest Contentful Paint (LCP)</strong> measures how long the main content takes to load. Target: &lt;2.5 seconds. Common fixes: optimize images (compress to WebP, lazy-load below-fold images), reduce server response time (upgrade hosting, implement CDN), eliminate render-blocking JavaScript. <strong>Shopify</strong> reduced LCP from 4.2s to 1.8s by compressing product images (average 800KB → 200KB) and implementing Cloudflare CDN. Organic traffic increased 12% within 4 weeks as Google&#39;s algorithm rewarded the improvement.</p>
+<p><strong>First Input Delay (FID)</strong> measures interactivity—how long before users can click buttons or type. Target: &lt;100ms. Common fixes: defer non-critical JavaScript, remove unused JavaScript libraries, optimize third-party scripts (ads, analytics, chat widgets). <strong>HubSpot</strong> reduced FID from 280ms to 60ms by deferring non-critical JS and removing legacy tracking codes. Bounce rate dropped from 58% to 41%, indirectly improving rankings via user engagement signals.</p>
+<p><strong>Cumulative Layout Shift (CLS)</strong> measures visual stability—whether page elements jump during loading. Target: &lt;0.1. Common fixes: specify image dimensions in HTML (width and height attributes), reserve space for ads and embeds, avoid inserting content above existing content. <strong>Reddit</strong> fixed CLS issues by adding image dimensions site-wide, improving CLS from 0.34 to 0.08. Google confirmed visual stability improvements correlate with higher rankings for affected pages.</p>
+<h2>Priority Tier 3: Mobile Optimization and Usability</h2>
+<p>Google&#39;s mobile-first indexing means mobile UX determines rankings. Sites that are slow, unreadable, or difficult to navigate on mobile rank lower regardless of desktop experience. <strong>Google Search Console</strong> → Experience → Mobile Usability Report identifies critical issues: text too small, clickable elements too close, viewport not set, content wider than screen.</p>
+<p><strong>Viewport configuration</strong> is foundational. Pages without <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code> don&#39;t scale to mobile screens—text appears tiny, users must pinch-zoom. <strong>Moz</strong> estimates 8% of small business sites lack viewport tags. The fix is trivial (add one meta tag) but impact is severe—unscalable sites rank page 3+ on mobile searches regardless of content quality.</p>
+<p><strong>Touch target sizing</strong> prevents misclicks. Buttons and links must be 44×44px minimum (48×48px recommended). <strong>Baymard Institute</strong> usability testing shows that 47% of users accidentally click wrong elements when touch targets are &lt;40px. This frustration increases bounce rates, signaling low quality to Google. <strong>Shopify</strong> redesigned mobile CTAs from 32px to 48px height, reducing misclick rates 60% and improving mobile conversion 18%.</p>
+<p><strong>Font size and readability</strong> matter. Text below 16px is hard to read on mobile, causing users to abandon pages. <strong>Google</strong> recommends 16px base font size with 1.5em line spacing. <strong>Medium</strong> uses 21px font size for body text—prioritizing readability over content density. Their 8-minute average reading time (high engagement) contributes to strong rankings despite high competition.</p>
+<h2>Priority Tier 4: Content Quality and Relevance</h2>
+<p>Google&#39;s Helpful Content algorithm (launched 2022, updated continuously) penalizes thin, AI-generated, or non-expert content. Content audits identify pages with &lt;300 words, duplicate content, keyword stuffing, or lack of depth relative to competitors. <strong>Ahrefs</strong> categorizes content issues by traffic impact: high-traffic pages need immediate improvement, low-traffic pages can be consolidated or pruned.</p>
+<p><strong>Thin content pruning</strong> removes pages that don&#39;t serve users. <strong>HubSpot</strong> deleted 3,000 blog posts with &lt;200 words, &lt;10 monthly visits, or duplicate topics. Organic traffic dropped 2% initially (losing the low-value pages) but rebounded to +8% within 12 weeks as Google reassessed the site&#39;s overall quality. The pruning signaled content standards, lifting remaining pages&#39; authority.</p>
+<p><strong>Content consolidation</strong> merges multiple weak pages into one strong page. <strong>Moz</strong> combined 12 articles on &quot;keyword research&quot; (each 400-800 words, ranking page 2-3) into one comprehensive guide (3,600 words). They 301-redirected old URLs to the new guide. Result: the guide reached position 1, generating 8,400 monthly visits vs the original 12 pages&#39; combined 1,800 visits. Consolidation concentrates authority and reduces keyword cannibalization.</p>
+<p><strong>Content depth relative to competitors</strong> determines rankings. <strong>Backlinko</strong> found the average top-10 result is 2,416 words. Shallow content (&lt;1,000 words) rarely ranks for competitive keywords unless targeting specific question queries. <strong>Siege Media</strong> audits identify &quot;thin&quot; pages ranking page 2-3 and expands them to match or exceed top-3 content depth. Average improvement: 5-8 position gain within 8-12 weeks post-expansion.</p>
+<h2>Priority Tier 5: Technical SEO Foundations</h2>
+<p>Structured data, HTTPS, and XML sitemaps don&#39;t directly improve rankings but enable rich results and efficient crawling. These are table-stakes optimizations—missing them prevents competing for SERP features. Implementing them rarely moves rankings dramatically but unlocks opportunities that higher-tier fixes enable.</p>
+<p><strong>Schema markup</strong> triggers rich results (FAQ boxes, star ratings, breadcrumbs). <strong>Google</strong> reports that pages with schema don&#39;t rank higher but receive 30-40% higher CTR when they do rank due to visual enhancement. Implement schema on high-traffic pages first: homepage (Organization), service pages (Service), product pages (Product), articles (Article), and FAQ pages (FAQPage). Validation: Google&#39;s Rich Results Test confirms markup triggers enhanced displays.</p>
+<p><strong>HTTPS migration</strong> is mandatory. Google confirmed HTTPS as a ranking signal in 2014 and now labels HTTP sites &quot;Not Secure,&quot; killing conversion. <strong>Baidu</strong> research shows &quot;Not Secure&quot; warnings cause 60% of visitors to exit immediately. SSL certificates cost $50-$200 annually (free via Let&#39;s Encrypt). Migration requires careful 301 redirects (HTTP → HTTPS) to preserve authority. <strong>Moz</strong> guide covers migration steps to avoid traffic loss.</p>
+<p><strong>XML sitemap optimization</strong> guides crawlers to important pages. Sitemaps should include only canonical, indexable pages—not redirects, noindex pages, or paginated duplicates. <strong>Shopify</strong> reduced their sitemap from 80,000 URLs (including filters, tags, duplicates) to 12,000 (core product/category pages). Google crawled important pages more frequently, refreshing product data faster and improving ranking freshness signals. Submit sitemaps via Google Search Console for monitoring.</p>
+<h2>Priority Tier 6: Content Optimization (Meta Tags, Headers)</h2>
+<p>Title tags and meta descriptions don&#39;t directly influence rankings but impact CTR, which indirectly affects rankings via engagement metrics. Optimize these after higher-tier issues are resolved. <strong>Moz</strong> estimates title tag optimization improves CTR 5-15% on average, translating to 5-15% traffic increase without ranking changes.</p>
+<p><strong>Title tag optimization</strong> follows SERP analysis patterns. Analyze top 3 results&#39; title formats and match expectations. Query-based patterns: &quot;How to&quot; queries favor complete question matches (&quot;How to Build Backlinks: 10 Proven Methods&quot;). Product queries favor brand-first titles (&quot;Asana: Project Management Software&quot;). Service queries favor location + service (&quot;Chicago SEO Services | Local Rankings&quot;). <strong>Ahrefs</strong> tested title variations and found matching SERP conventions increased CTR 18% on average.</p>
+<p><strong>Meta description optimization</strong> drives CTR via benefit communication. <strong>Backlinko</strong> format: &quot;Problem → Solution → Benefit. [Data point supporting claim].&quot; Example: &quot;Struggling to rank? Our SEO audit checklist prioritizes high-impact fixes first. 1,200+ sites improved rankings using this framework.&quot; The pattern addresses pain, offers solution, cites proof. Test using Google Search Console: compare CTR before/after description changes on key pages.</p>
+<p><strong>Header hierarchy (H1-H6)</strong> structures content for readability and SEO. One H1 per page (matching primary keyword), multiple H2s (section headers matching subtopics), H3s for subsections. <strong>Yoast</strong> recommends 8-12 headers per 2,000-word article. <strong>Content Marketing Institute</strong> uses descriptive headers (&quot;Why Title Tags Matter for CTR&quot; vs generic &quot;Title Tags&quot;) to target long-tail queries—headers often appear in featured snippets, generating additional traffic.</p>
+<h2>Priority Tier 7: Link Profile Cleanup and Building</h2>
+<p>Internal linking and backlink profile health support rankings but require foundational issues to be fixed first. Links to broken pages waste authority; links from spammy sites trigger penalties. Audit and fix after technical/content issues are resolved so link equity flows to quality pages.</p>
+<p><strong>Internal linking optimization</strong> distributes authority to priority pages. <strong>HubSpot</strong> identifies &quot;orphan pages&quot; (no internal links) and adds contextual links from high-authority pages. The formula: 3-5 internal links per article, linking to related content and priority conversion pages. <strong>Moz</strong> found that increasing internal links to target pages from 2 avg to 8 avg improved target page rankings by 3 positions on average within 12 weeks.</p>
+<p><strong>Toxic backlink disavowal</strong> protects against penalty risk. <strong>Google&#39;s</strong> manual actions penalize sites with spammy backlinks (link schemes, PBN links, paid links). Audit using <strong>Ahrefs</strong> or <strong>SEMrush</strong>: flag links from non-English sites (irrelevant), adult content, gambling sites, or sites with DR &lt;10 and spam scores &gt;60%. Export toxic links, upload to Google Disavow Tool. <strong>Moz</strong> case study: client disavowed 4,200 spammy links, manual action lifted within 8 weeks, rankings recovered to pre-penalty levels.</p>
+<p><strong>Strategic link building</strong> fills gaps vs competitors. <strong>Ahrefs</strong> &quot;Link Intersect&quot; tool identifies sites linking to 2+ competitors but not to you. Outreach to these sites with superior content offers (&quot;We created a more comprehensive guide on [topic]—would you consider linking?&quot;). <strong>Backlinko</strong> built 1,200+ links this way over 3 years, growing DR from 38 to 89. The strategy targets sites already interested in your topic niche.</p>
+<h2>Implementation Timeline and Resource Allocation</h2>
+<p>Tier 1 (crawlability) requires 1-3 days for most sites: fix robots.txt, remove incorrect noindex tags, resolve critical 404s. <strong>Ahrefs</strong> recommends weekly crawls using <strong>Screaming Frog</strong> until no critical errors remain. Tier 2 (speed) requires 1-2 weeks: image optimization, CDN setup, code minification. <strong>Shopify</strong> allocates 20% of dev sprint capacity to speed improvements quarterly.</p>
+<p>Tier 3 (mobile) requires 2-4 weeks depending on design complexity: responsive templates, touch target resizing, font adjustments. <strong>HubSpot</strong> redesigned 40 landing pages for mobile-first, dedicating 1 designer and 1 developer for 3 weeks. Tier 4 (content) is ongoing: plan 8-12 article updates/expansions per month. <strong>Moz</strong> dedicates 1 FTE to content updates, cycling through top 100 pages quarterly.</p>
+<p>Tier 5-7 (technical optimization, meta tags, links) require 5-10 hours weekly for ongoing maintenance. <strong>Siege Media</strong> allocates 25% of SEO team time to technical tasks, 50% to content, 25% to link building. The balance reflects modern algorithm priorities: content quality and UX matter most, technical foundations enable them, links amplify authority.</p>
+<h2>Tracking Implementation Progress and Impact</h2>
+<p>Create an audit tracking spreadsheet: Issue | Priority Tier | Status | Owner | Deadline | Traffic Impact. <strong>Ahrefs</strong> template includes 300-row audit findings with status columns (Not Started, In Progress, Completed, Tested). Teams update weekly during sprint reviews. This visibility prevents issues from languishing in backlog and ensures high-priority items complete first.</p>
+<p>Measure impact per tier using Google Analytics and Search Console. Set date markers when tiers complete, compare traffic/rankings 4-8 weeks post-completion vs baseline. <strong>HubSpot</strong> case study: Tier 1 fixes (crawlability) increased indexed pages 18% and traffic 12% within 6 weeks. Tier 2 (speed) increased traffic 8% and conversion 14% within 4 weeks. Tier 3-7 showed 2-5% cumulative improvements—validating the prioritization model.</p>
+<p>A/B testing major changes prevents full-site risk. <strong>Etsy</strong> tested page speed optimizations on 10% of pages, measured impact (15% traffic increase), then rolled out site-wide. This staged approach catches unforeseen issues (JavaScript conflicts, display bugs) before they affect all pages. Use this approach for template changes, URL structure changes, or aggressive content pruning.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How long until audit fixes improve rankings?</h3>
+<p>Tier 1 fixes (crawlability) show results in 2-4 weeks—Google re-crawls and indexes previously blocked pages quickly. Tier 2 (speed) shows results in 4-6 weeks as Core Web Vitals data accumulates. Tier 4 (content) takes 8-12 weeks for Google to re-assess page quality and adjust rankings. Lower-tier fixes (meta tags, schema) show minimal ranking impact but improve CTR immediately.</p>
+<h3>Should we fix all issues or just high-priority ones?</h3>
+<p>Fix Tier 1-2 completely, Tier 3-4 for high-traffic pages, Tier 5-7 opportunistically. <strong>Shopify</strong> fixed 100% of critical errors (Tier 1-2), 60% of content issues (focused on top 100 pages), and 30% of optimization issues (diminishing returns). The 80/20 rule applies—20% of fixes generate 80% of impact. Perfectionism wastes resources on marginal gains.</p>
+<h3>What if the audit identifies 1,000+ issues?</h3>
+<p>Triage ruthlessly. <strong>Moz</strong> buckets issues: Critical (blocks indexing or kills UX) → High (impacts rankings or conversion) → Medium (best practices) → Low (nice-to-have). Fix critical issues immediately, high issues within 60 days, medium when capacity allows, low never (opportunity cost exceeds benefit). Most 1,000-issue audits contain 50-100 impactful issues; the rest are noise.</p>
+<h3>Can we implement audit fixes in-house or do we need developers?</h3>
+<p>Tier 1-3 require developer access (robots.txt, site speed, mobile templates). Tier 4-7 are often manageable by marketing teams (content updates, meta tags, internal linking). <strong>HubSpot</strong> recommends: critical technical fixes via developers, content/optimization fixes via marketing. Use audit findings to negotiate dev resources: &quot;These 8 issues block 40,000 monthly visits—priority over feature work?&quot;</p>
+<h3>How often should we re-audit?</h3>
+<p>Quarterly audits catch new issues from site changes, content additions, or algorithm updates. <strong>Ahrefs</strong> recommends continuous monitoring using <strong>Google Search Console</strong> (weekly) and full audits (<strong>Screaming Frog</strong>, <strong>Sitemap Auditor</strong>) quarterly. Sites undergoing migrations, redesigns, or large content additions need monthly audits until stability returns. Mature sites with minimal changes can audit semi-annually.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

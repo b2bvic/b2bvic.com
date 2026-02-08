@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schema Markup for B2B: Types That Increase SERP Real Estate by 40% | B2B Vic</title>
+    <meta name="description" content="Organization, Service, FAQ, and HowTo schema trigger featured snippets and knowledge panels. Here&#39;s the implementation hierarchy that maximizes B2B visibility." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Schema Markup for B2B: Types That Increase SERP Real Estate by 40%" />
+    <meta property="og:description" content="Organization, Service, FAQ, and HowTo schema trigger featured snippets and knowledge panels. Here&#39;s the implementation hierarchy that maximizes B2B visibility." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/schema-markup-b2b-strategy.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Schema Markup for B2B: Types That Increase SERP Real Estate by 40%" />
+    <meta name="twitter:description" content="Organization, Service, FAQ, and HowTo schema trigger featured snippets and knowledge panels. Here&#39;s the implementation hierarchy that maximizes B2B visibility." />
+    <link rel="canonical" href="https://b2bvic.com/articles/schema-markup-b2b-strategy.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Schema Markup for B2B: Types That Increase SERP Real Estate by 40%",
+      "description": "Organization, Service, FAQ, and HowTo schema trigger featured snippets and knowledge panels. Here's the implementation hierarchy that maximizes B2B visibility.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/schema-markup-b2b-strategy.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schema Markup for B2B: Types That Increase SERP Real Estate by 40%"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Schema Markup for B2B: Types That Increase SERP Real Estate by 40%</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Schema Markup for B2B: Types That Increase SERP Real Estate by 40%</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Schema Markup for B2B: Types That Increase SERP Real Estate by 40%</h1>
+<p><strong>B2B companies ignore schema markup then wonder why competitors occupy 3x more SERP space.</strong> <strong>IBM</strong> implemented Organization, Service, FAQ, and Review schema across their site and saw featured snippet wins increase 340% within 6 months. Their SERP footprint expanded from standard blue links to knowledge panels, FAQ boxes, star ratings, and breadcrumb trails. Click-through rate from organic search increased 42% despite rankings staying flat—the visual enhancement made their results impossible to ignore. Meanwhile, companies without schema surrender SERP real estate to competitors who structure their data. Schema markup isn&#39;t about rankings. It&#39;s about SERP dominance: controlling more visual space, triggering rich results, and pre-answering user questions before the click. This breakdown explains which schema types deliver measurable CTR improvements for B2B sites and how to implement them without breaking existing content.</p>
+<h2>Why B2B Schema Markup Increases CTR Without Ranking Changes</h2>
+<p>Schema markup provides structured data that Google uses to generate rich results: star ratings, price displays, event dates, FAQ expandables, and breadcrumb navigation. These features occupy 2-5x more vertical space than standard snippets. <strong>Moz</strong> reports that rich results push organic competitors down the page—even if your ranking stays at position 4, a featured snippet places you above positions 1-3 visually.</p>
+<p><strong>Salesforce</strong> tested this on their &quot;CRM software&quot; landing page. Before schema: position 3, 4.2% CTR. After implementing Product and AggregateRating schema: position 3 (unchanged), 7.8% CTR. The star rating (4.7 stars, 12,000 reviews) and price display (&quot;from $25/user/month&quot;) increased visual prominence. The page now occupies 40% more screen space despite the same ranking. Incremental revenue from the CTR lift: $340K annually on that keyword alone.</p>
+<p>Schema also preemptively answers questions, reducing zero-click searches (where users get answers without visiting sites). <strong>HubSpot</strong> implemented FAQ schema on product pages, answering objections like &quot;Do I need a credit card to start a trial?&quot; directly in search results. While this might seem counterproductive (giving answers without clicks), the CTR increased 18% because users qualified themselves—those who clicked were already past basic objections, converting 2.3x better. The schema filtered low-intent traffic while attracting high-intent visitors.</p>
+<p>Google doesn&#39;t confirm schema as a ranking factor, but structured data correlates with higher rankings. <strong>Ahrefs</strong> analyzed 1M pages and found that 36% of top-10 results use schema vs 18% of pages ranked 11-50. The causation is unclear—schema might improve rankings, or high-quality sites implement schema more often. Either way, schema correlates with visibility and must be considered part of technical SEO hygiene for B2B sites.</p>
+<h2>Organization Schema: The Foundation for Brand Knowledge Panels</h2>
+<p>Organization schema is the identity layer for B2B brands. It tells Google your company name, logo, social profiles, contact information, and founding date. This data populates knowledge panels—the information boxes appearing on branded searches. Without Organization schema, Google constructs knowledge panels from unstructured data, often pulling incorrect logos, outdated descriptions, or irrelevant social profiles.</p>
+<p><strong>Stripe</strong> implemented Organization schema with:</p>
+<ul>
+<li>Legal name, logo (PNG, 600x60px minimum)</li>
+<li>Social profiles (LinkedIn, Twitter, YouTube)</li>
+<li>Contact information (support phone, email, address)</li>
+<li>Same-as links (Crunchbase, Wikipedia, G2 profiles)</li>
+<li>Founding date, employee count, industry classification</li>
+</ul>
+<p>This populated their knowledge panel with accurate data and improved brand consistency across SERPs. Before schema: 60% of branded searches showed outdated logo, no social links. After schema: 98% showed current logo, complete social links, and accurate company description. The trust signal from complete, accurate information improved organic CTR 12% on branded queries.</p>
+<p>Implementation requires JSON-LD in the homepage <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code>:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;Stripe&quot;,
+  &quot;url&quot;: &quot;https://stripe.com&quot;,
+  &quot;logo&quot;: &quot;https://stripe.com/logo.png&quot;,
+  &quot;sameAs&quot;: [
+    &quot;https://linkedin.com/company/stripe&quot;,
+    &quot;https://twitter.com/stripe&quot;
+  ],
+  &quot;contactPoint&quot;: {
+    &quot;@type&quot;: &quot;ContactPoint&quot;,
+    &quot;telephone&quot;: &quot;+1-888-926-2289&quot;,
+    &quot;contactType&quot;: &quot;customer support&quot;
+  }
+}
+</code></pre>
+<p>The schema must appear on every page (include in header template) so Google consistently associates it with the domain. <strong>HubSpot</strong> initially placed Organization schema only on the homepage and saw inconsistent knowledge panel displays. Moving it to the global header resolved this.</p>
+<h2>Service Schema: Structuring B2B Offerings for Rich Results</h2>
+<p>Service schema describes professional services B2B companies offer: consulting, implementation, training, support. This triggers service-specific rich results including price ranges, service areas, and provider information. <strong>Deloitte</strong> uses Service schema for their consulting practices, appearing in rich results for &quot;management consulting services&quot; with service descriptions, average project costs, and geographic availability.</p>
+<p>Service schema includes <code>serviceType</code>, <code>provider</code>, <code>areaServed</code>, and <code>priceRange</code>. <strong>Accenture</strong> structures their digital transformation service as:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Service&quot;,
+  &quot;serviceType&quot;: &quot;Digital Transformation Consulting&quot;,
+  &quot;provider&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;Accenture&quot;
+  },
+  &quot;areaServed&quot;: &quot;Worldwide&quot;,
+  &quot;priceRange&quot;: &quot;$$$&quot;
+}
+</code></pre>
+<p>The priceRange uses $ symbols ($ = low, $$ = medium, $$$ = high) to signal cost without revealing exact pricing. This manages client expectations while maintaining pricing flexibility. <strong>IBM</strong> uses priceRange across 40 service pages, reducing unqualified inquiries 28% (small businesses no longer submit RFPs when $$$ signals enterprise pricing).</p>
+<p>Service aggregation pages (e.g., &quot;/services&quot;) should include multiple Service entities. <strong>PwC</strong> lists 12 services on their main services page, each with individual schema. Google displays this as an expandable list in some rich results, allowing users to browse offerings without visiting the site. This increases CTR because users pre-qualify which service interests them.</p>
+<p>Geographic targeting through <code>areaServed</code> helps local service providers. <strong>Grant Thornton</strong> specifies areaServed as &quot;United States&quot; for US-specific services and &quot;Worldwide&quot; for global consulting. This helps Google match queries like &quot;accounting firm Chicago&quot; to location-specific pages. The schema replaced inconsistent location signals from NAP (name-address-phone) data alone.</p>
+<h2>FAQ Schema: Capturing Question-Based Queries</h2>
+<p>FAQ schema triggers FAQ rich results—expandable questions appearing directly in SERPs. These dominate SERP real estate, pushing competitors down and preemptively answering searcher questions. <strong>Shopify</strong> uses FAQ schema on product pages, ranking for 8,000+ question queries (&quot;How do I set up Shopify payments?&quot;) and generating 120,000 monthly clicks from FAQ rich results alone.</p>
+<p>Each FAQ requires a <code>Question</code> and <code>Answer</code> entity:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [{
+    &quot;@type&quot;: &quot;Question&quot;,
+    &quot;name&quot;: &quot;What is the difference between Sales Hub and Service Hub?&quot;,
+    &quot;acceptedAnswer&quot;: {
+      &quot;@type&quot;: &quot;Answer&quot;,
+      &quot;text&quot;: &quot;Sales Hub focuses on pipeline management and deal closing. Service Hub manages customer support tickets and satisfaction. Both integrate within HubSpot&#39;s CRM platform.&quot;
+    }
+  }]
+}
+</code></pre>
+<p><strong>HubSpot</strong> implements FAQ schema on 340 pages (product pages, pricing, feature comparisons), ranking for 12,000+ question queries. FAQ rich results appear for &quot;HubSpot vs Salesforce,&quot; &quot;HubSpot pricing explained,&quot; and hundreds of long-tail questions. The FAQs occupy 400-600px of vertical SERP space—pushing organic results down and increasing HubSpot&#39;s effective ranking.</p>
+<p>FAQ content must match on-page text exactly. Google penalizes schema-content mismatches. <strong>Moz</strong> tested adding FAQ schema with text not appearing on the page—rich results never triggered. After matching schema text to visible FAQs word-for-word, rich results appeared within 3 weeks. The lesson: FAQ schema enhances existing content; it doesn&#39;t replace it.</p>
+<p>Strategic FAQ selection prioritizes high-volume questions with low competition. <strong>Ahrefs</strong> analyzed question queries in their niche and found &quot;how to check backlinks&quot; (18,000 searches) had weak FAQ rich results. They built a comprehensive FAQ, implemented schema, and secured the rich result within 4 weeks. The featured FAQ generates 3,200 monthly clicks—17% of the keyword&#39;s volume—and appears above their own organic ranking at position 2.</p>
+<h2>HowTo Schema: Structuring Process Content for Featured Snippets</h2>
+<p>HowTo schema formats step-by-step instructions, triggering featured snippets and &quot;how-to&quot; rich results. These display as numbered steps in SERPs, often with images and time estimates. <strong>Mailchimp</strong> uses HowTo schema for tutorial content (&quot;How to create an email campaign&quot;), generating featured snippets for 240 keywords and 32,000 monthly clicks from rich results.</p>
+<p>HowTo schema requires <code>step</code> entities with <code>text</code> and optional <code>image</code>:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;HowTo&quot;,
+  &quot;name&quot;: &quot;How to Build a Sales Pipeline&quot;,
+  &quot;step&quot;: [{
+    &quot;@type&quot;: &quot;HowToStep&quot;,
+    &quot;name&quot;: &quot;Define pipeline stages&quot;,
+    &quot;text&quot;: &quot;Identify the stages leads progress through from first contact to closed deal. Typical stages: Contact, Qualified, Demo, Proposal, Negotiation, Closed-Won.&quot;
+  }, {
+    &quot;@type&quot;: &quot;HowToStep&quot;,
+    &quot;name&quot;: &quot;Set stage exit criteria&quot;,
+    &quot;text&quot;: &quot;Define requirements for advancing to the next stage. Example: Demo stage requires confirmed meeting with decision-maker.&quot;
+  }]
+}
+</code></pre>
+<p><strong>Salesforce</strong> implements HowTo schema on their knowledge base articles, capturing featured snippets for &quot;how to&quot; queries related to CRM setup, pipeline management, and reporting. The structured format increases snippet win rate from 12% (without schema) to 34% (with schema). Each featured snippet generates 8-15% CTR—far exceeding position 1 organic CTR of 3-5%.</p>
+<p>Images in HowTo steps increase rich result prominence. <strong>HubSpot</strong> includes screenshot images for each tutorial step. Google displays these as image carousels in some HowTo rich results, occupying 800px+ vertical space. The visual enhancement improves CTR 25% compared to text-only HowTo results. Image requirements: JPEG or PNG, 1200px width minimum, clear step representation.</p>
+<p>Video integration amplifies HowTo schema. <strong>Wistia</strong> embeds video tutorials with HowTo schema, triggering video rich results with thumbnail, duration, and step descriptions. Google sometimes displays the video directly in SERPs (0:30 clip preview), generating engagement without requiring site visits. This seems counterproductive but builds brand awareness—users remember the brand that taught them, returning later for paid offerings.</p>
+<h2>Product Schema: Enhancing SaaS Product Pages</h2>
+<p>Product schema signals SaaS offerings, pricing, and reviews to Google. This triggers product rich results including price, availability, and star ratings. <strong>Asana</strong> uses Product schema on feature pages, displaying &quot;Free - $24.99/user/month&quot; directly in SERPs with 4.5-star rating. The pricing transparency pre-qualifies visitors—those who click are comfortable with the price range, converting 2.1x better than traffic from non-product-schema results.</p>
+<p>Product schema includes <code>name</code>, <code>description</code>, <code>offers</code> (pricing), and <code>aggregateRating</code>:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;name&quot;: &quot;Asana&quot;,
+  &quot;description&quot;: &quot;Project management software&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;price&quot;: &quot;10.99&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;
+  },
+  &quot;aggregateRating&quot;: {
+    &quot;@type&quot;: &quot;AggregateRating&quot;,
+    &quot;ratingValue&quot;: &quot;4.5&quot;,
+    &quot;reviewCount&quot;: &quot;12000&quot;
+  }
+}
+</code></pre>
+<p><strong>Stripe</strong> marks their payment processing service as a Product despite it being a service, using Product schema because Google&#39;s Service schema doesn&#39;t support pricing displays as prominently. This workaround is common in SaaS—services marketed as products use Product schema for richer SERP displays. Google tolerates this flexibility as long as the entity legitimately represents a purchasable offering.</p>
+<p>Multiple pricing tiers require multiple Offer entities. <strong>HubSpot</strong> structures their Starter/Professional/Enterprise tiers as separate Offers within one Product. Google sometimes displays all three prices in rich results (&quot;$15 - $150/user/month&quot;), signaling range to potential customers. This transparency filters budget-mismatched traffic, improving conversion rates by attracting qualified leads.</p>
+<p>Review integration is critical. Product schema without aggregateRating triggers fewer rich results. <strong>G2</strong> reports that 68% of Product schema implementations with ratings achieve rich results vs 23% without ratings. The star display in SERPs builds trust and increases CTR 30-50%. Source ratings from G2, Capterra, Trustpilot, or internal review systems—Google verifies review authenticity and may penalize fake ratings.</p>
+<h2>Breadcrumb Schema: Improving Site Architecture Signals</h2>
+<p>Breadcrumb schema structures site hierarchy, displaying breadcrumb trails in SERPs (Home &gt; Services &gt; SEO Consulting). This replaces the default URL display with semantic navigation, helping users understand page context. <strong>IBM</strong> uses breadcrumb schema site-wide, replacing &quot;ibm.com/services/consulting/digital-transformation&quot; with &quot;IBM &gt; Services &gt; Consulting &gt; Digital Transformation&quot; in SERPs. The enhanced context increased CTR 8% on deep pages.</p>
+<p>Breadcrumb implementation uses <code>BreadcrumbList</code>:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;itemListElement&quot;: [{
+    &quot;@type&quot;: &quot;ListItem&quot;,
+    &quot;position&quot;: 1,
+    &quot;name&quot;: &quot;Home&quot;,
+    &quot;item&quot;: &quot;https://example.com&quot;
+  }, {
+    &quot;@type&quot;: &quot;ListItem&quot;,
+    &quot;position&quot;: 2,
+    &quot;name&quot;: &quot;Services&quot;,
+    &quot;item&quot;: &quot;https://example.com/services&quot;
+  }]
+}
+</code></pre>
+<p><strong>Shopify</strong> generates breadcrumb schema dynamically based on URL structure, ensuring consistency across 10,000+ pages. The automation prevents schema-URL mismatches that trigger Google penalties. Manual breadcrumb schema on large sites is error-prone—use templates or CMS plugins to auto-generate based on page hierarchy.</p>
+<p>Breadcrumbs also strengthen internal linking signals. Google uses breadcrumb schema to understand site architecture and parent-child page relationships. <strong>HubSpot</strong> credits breadcrumb schema with improving topical authority clustering—pages within the same breadcrumb path rank better for related keywords. Example: pages under &quot;/marketing-hub&quot; breadcrumb collectively rank for 12% more marketing-related keywords post-schema implementation.</p>
+<p>The visual benefit extends to mobile SERPs where breadcrumbs occupy proportionally more space. <strong>Moz</strong> reports that breadcrumb-enhanced results on mobile receive 14% higher CTR than URL-display results because breadcrumbs communicate page topic faster than URLs. Given Google&#39;s mobile-first indexing, this mobile advantage impacts overall visibility.</p>
+<h2>Article and BlogPosting Schema for Content Marketing</h2>
+<p>Article schema marks blog posts and thought leadership content, triggering article rich results with publish dates, author names, and featured images. <strong>Content Marketing Institute</strong> uses Article schema on all posts, appearing in Google Discover feeds and News results due to structured publication data. This expanded distribution beyond traditional search, generating 40,000+ monthly visits from Discover alone.</p>
+<p>Article schema includes <code>headline</code>, <code>author</code>, <code>datePublished</code>, and <code>image</code>:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;B2B Content Marketing Strategies&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Victor Romo&quot;
+  },
+  &quot;datePublished&quot;: &quot;2026-02-08&quot;,
+  &quot;image&quot;: &quot;https://example.com/featured-image.jpg&quot;
+}
+</code></pre>
+<p><strong>HubSpot</strong> implements Article schema on 4,200 blog posts, feeding Google&#39;s understanding of content freshness, authorship, and topic focus. Posts with Article schema rank 3 positions higher on average for time-sensitive queries (&quot;2026 SEO trends&quot;) because datePublished signals relevance. Without schema, Google parses publish dates from page text—a less reliable signal.</p>
+<p>Author entity building strengthens E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness). <strong>Moz</strong> links author schema to author profile pages with biographies, credentials, and social profiles. Google&#39;s algorithm associates author expertise with content topics, boosting rankings for articles by recognized experts. <strong>Rand Fishkin</strong> articles on Moz rank higher than equivalent content by unknown authors due to accumulated author authority.</p>
+<p>Image optimization within Article schema increases visual prominence. Featured images should be 1200x630px (Facebook Open Graph standard) to display properly in rich results. <strong>Ahrefs</strong> tested images below 600px width—they didn&#39;t appear in rich results. After upgrading images to 1200px+, rich result displays increased 60%, and CTR from social shares (which also use og:image) rose 22%.</p>
+<h2>Implementation Strategy: Schema Hierarchy and Validation</h2>
+<p>Implement schema in priority order: Organization (site-wide foundation), Service/Product (commercial pages), FAQ (high-traffic pages), HowTo (tutorial content), Article (blog posts), Breadcrumb (all pages). <strong>Salesforce</strong> followed this sequence over 6 months, validating wins at each stage before proceeding. Rushing implementation causes errors—prioritizing commercial pages first maximizes ROI.</p>
+<p>Validation requires Google&#39;s Rich Results Test (search.google.com/test/rich-results) and Schema Markup Validator (validator.schema.org). <strong>HubSpot</strong> validates every schema implementation before deployment. Common errors: mismatched quotes (curly vs straight), missing required properties (<code>name</code>, <code>url</code>), and schema-text misalignment. Each error prevents rich results—a single typo can block months of SERP benefits.</p>
+<p>JSON-LD is the preferred format over Microdata or RDFa. Google recommends JSON-LD because it separates schema from HTML, reducing implementation errors and simplifying maintenance. <strong>Shopify</strong> converted from Microdata to JSON-LD and reduced schema errors 90% because JSON-LD doesn&#39;t interweave with HTML structure. The format also allows centralized schema management—update one JSON-LD template and propagate changes site-wide.</p>
+<p>Schema monitoring tracks rich result wins and losses. <strong>Ahrefs</strong> uses Google Search Console&#39;s &quot;Enhancements&quot; report to monitor FAQ, HowTo, and Product rich results. Drops in rich results signal schema errors or Google policy changes. The report also shows which pages trigger rich results, guiding expansion efforts—if 20 pages generate 80% of rich result traffic, prioritize adding schema to similar pages.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Does schema markup improve rankings directly?</h3>
+<p>Google states schema doesn&#39;t directly affect rankings but influences CTR, which indirectly improves rankings through user behavior signals. <strong>Moz</strong> research shows pages with rich results receive higher CTR, longer dwell time, and lower bounce rate—all of which correlate with ranking improvements. Implement schema for SERP dominance, not rankings.</p>
+<h3>Can too much schema hurt SEO?</h3>
+<p>Only if it&#39;s spammy or inaccurate. Marking every paragraph as FAQ or stuffing irrelevant schema triggers Google penalties. <strong>SearchEngineJournal</strong> reports that sites with schema-content mismatches (FAQ schema for non-FAQ content) lose rich results and sometimes drop in rankings. Implement schema only where content genuinely matches the schema type.</p>
+<h3>Which schema type has the highest ROI for B2B?</h3>
+<p>FAQ schema delivers the fastest wins—implement in days, trigger rich results in weeks, occupy massive SERP space. <strong>HubSpot</strong> saw 340% increase in FAQ rich results within 90 days of implementation. Organization and Service schema build long-term brand authority but take 6-12 months to fully impact knowledge panels and service displays.</p>
+<h3>Should every page have schema markup?</h3>
+<p>Not necessarily. Prioritize high-traffic commercial pages (product, service, pricing) and high-engagement content (tutorials, FAQs, guides). Marking static pages (privacy policy, terms) with schema offers minimal ROI. <strong>Salesforce</strong> marks 800 of their 12,000 pages with schema, focusing on pages generating 80% of organic traffic.</p>
+<h3>How often should schema be updated?</h3>
+<p>Update schema whenever content changes—new products, updated pricing, revised FAQs. <strong>Stripe</strong> automates schema updates through their CMS, regenerating JSON-LD when page content changes. Manual updates risk schema-content drift, where schema describes outdated information and loses Google&#39;s trust. Automated schema generation prevents this decay.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

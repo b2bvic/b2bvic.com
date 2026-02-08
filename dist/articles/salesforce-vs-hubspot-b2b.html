@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison | B2B Vic</title>
+    <meta name="description" content="Salesforce offers deeper customization for complex sales processes. HubSpot delivers faster implementation and integrated marketing tools. Here&#39;s the TCO math that determines which platform wins for your team size and deal complexity." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison" />
+    <meta property="og:description" content="Salesforce offers deeper customization for complex sales processes. HubSpot delivers faster implementation and integrated marketing tools. Here&#39;s the TCO math that determines which platform wins for your team size and deal complexity." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/salesforce-vs-hubspot-b2b.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison" />
+    <meta name="twitter:description" content="Salesforce offers deeper customization for complex sales processes. HubSpot delivers faster implementation and integrated marketing tools. Here&#39;s the TCO math that determines which platform wins for your team size and deal complexity." />
+    <link rel="canonical" href="https://b2bvic.com/articles/salesforce-vs-hubspot-b2b.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison",
+      "description": "Salesforce offers deeper customization for complex sales processes. HubSpot delivers faster implementation and integrated marketing tools. Here's the TCO math that determines which platform wins for your team size and deal complexity.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/salesforce-vs-hubspot-b2b.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Salesforce vs HubSpot for B2B: TCO and Workflow Architecture Comparison</h1>
+<p><strong>B2B teams choose CRMs based on sticker price when total cost of ownership differs by 3-5x.</strong> <strong>Salesforce</strong> advertises $75/user/month but requires $30K-$80K implementation, custom development at $150/hour, and AppExchange apps adding $25-$50/user/month. Actual TCO for a 25-person sales team: $4,200/month ($50K annually including implementation amortized over 3 years). <strong>HubSpot</strong> lists Professional at $90/user/month with $3K-$8K implementation, no development, and native features replacing most apps. TCO for the same team: $2,600/month ($31K annually). Yet Salesforce dominates enterprise sales (28% market share) while HubSpot leads SMB and mid-market (15% share). The deciding factors aren&#39;t price or features—they&#39;re workflow complexity, deal cycle length, and whether your team can implement without developers. This comparison explains when each platform delivers better ROI based on sales process architecture.</p>
+<h2>Platform Philosophy: Customization Depth vs Implementation Speed</h2>
+<p><strong>Salesforce</strong> is a development platform disguised as a CRM. It provides objects, fields, relationships, and Apex code—allowing custom-built workflows for unique sales processes. <strong>GE Healthcare</strong> uses Salesforce to manage 18-month sales cycles with 200+ touchpoints per deal, custom approval chains spanning 12 departments, and integration with SAP ERP. The system required 600 developer hours and $90K implementation but handles complexity no off-the-shelf CRM could. This philosophy wins when sales processes are too complex for pre-built workflows.</p>
+<p><strong>HubSpot</strong> is a marketing-sales-service platform with opinionated workflows. It provides pipelines, sequences, deal stages, and automation recipes designed for standard B2B sales. <strong>Drift</strong> implemented HubSpot in 8 days without developers, migrating 45,000 contacts and building email sequences, lead scoring, and reporting. The system cost $8K implementation and handles 90% of their needs natively. This philosophy wins when speed-to-value and team usability outweigh customization depth.</p>
+<p>The trade-off appears in edge cases. <strong>Salesforce</strong> users can build anything—multi-currency quoting with regional tax rules, contract renewal workflows with auto-escalation, and territory management with 12 assignment variables. <strong>HubSpot</strong> users hit limits faster—complex CPQ requires third-party tools, advanced territory logic needs workarounds, and multi-entity accounting requires integrations. The question: does your sales process require those capabilities, or does it fit within opinionated workflows?</p>
+<p>Customization also creates technical debt. <strong>G2</strong> reports that Salesforce orgs with 100+ custom objects require 40+ hours/month of admin maintenance—updating workflows, fixing broken integrations, and managing user permissions. HubSpot&#39;s limited customization reduces this burden—users report 5-10 hours/month of admin work. The ongoing maintenance cost compounds over years: 3 years of Salesforce admin time = $72K-$108K (at $50/hour blended rate) vs $9K-$18K for HubSpot.</p>
+<h2>Total Cost of Ownership: Sticker Price vs Actual Spend</h2>
+<p><strong>Salesforce</strong> pricing starts at $25/user/month (Essentials, max 10 users) but most B2B teams need Professional ($75) or Enterprise ($150). Enterprise includes workflow automation, API access, and custom app building. Lightning Enterprise costs $150/user/month, or $45,000/year for 25 users. Add implementation ($30K-$80K), AppExchange apps for CPQ, marketing automation, and customer success ($25-$75/user/month), and ongoing admin/development ($2K-$5K/month). Three-year TCO: $350K-$600K for 25 users.</p>
+<p><strong>HubSpot</strong> pricing tiers are Professional ($90/user/month for sales, $800/month for marketing hub) and Enterprise ($150/user/month sales, $3,200/month marketing). A 25-person sales team with integrated marketing pays $2,250/month (sales) + $800/month (marketing) = $3,050/month. Implementation runs $3K-$8K. No AppExchange equivalents needed—email marketing, landing pages, workflows, and reporting are native. Three-year TCO: $115K-$135K for 25 users. HubSpot&#39;s bundled approach cuts TCO 50-60% compared to equivalent Salesforce functionality.</p>
+<p>Hidden Salesforce costs multiply quickly: data storage ($50/month per 10GB over limit), sandbox environments ($15/user/month for testing), API call overages ($40/1M calls), and Salesforce Shield for encryption ($100/user/month). <strong>PandaDoc</strong> calculates that average Salesforce customers pay 180% of list price after add-ons, storage, and overages. HubSpot includes these elements—10M contacts, unlimited users on marketing hub (seat pricing applies only to sales hub), and no API limits.</p>
+<p>The break-even analysis: if your sales process requires custom objects, Apex code, or complex CPQ, Salesforce&#39;s higher cost is justified. If your process fits within standard pipeline stages, email sequences, and deal tracking, HubSpot&#39;s lower TCO and faster implementation win. <strong>G2</strong> reviews show that teams with 15-month+ sales cycles and multi-stakeholder approval chains choose Salesforce; teams with 30-90 day cycles and straightforward deal progression choose HubSpot.</p>
+<h2>Workflow Automation: No-Code vs Apex Development</h2>
+<p><strong>HubSpot</strong> workflows use visual automation: &quot;When deal stage changes to Proposal, send email to decision-maker, create task for rep, and update deal probability.&quot; Building this takes 5 minutes with drag-and-drop. The system supports 300+ triggers and actions. <strong>Intercom</strong> automated lead assignment, follow-up sequences, and pipeline stage updates without technical staff. The limitation: workflows can&#39;t execute complex logic beyond if/then statements and simple calculations.</p>
+<p><strong>Salesforce</strong> workflows (Process Builder, Flow Builder) handle similar tasks but scale to multi-step approvals, field calculations, and external API calls. <strong>Stripe</strong> built a renewal workflow that checks contract end date, calculates discount eligibility, generates renewal quote, sends to procurement, tracks approvals across 3 departments, and updates financial systems—all within Salesforce Flow. This complexity requires Salesforce expertise but eliminates manual work costing 20+ hours per renewal.</p>
+<p>Apex code (Salesforce&#39;s programming language) enables custom business logic. <strong>DocuSign</strong> uses Apex to auto-generate contracts from deal data, apply regional terms based on customer location, route for approvals based on deal size, and update deal stages upon signature. This requires developers ($150/hour) but handles workflows no visual builder supports. HubSpot users would need middleware (Zapier, Workato) and external services to achieve the same outcome.</p>
+<p>The decision criterion: if your workflow is linear (trigger → action → result), HubSpot&#39;s visual tools suffice. If workflows branch based on multiple conditions, interact with external systems, or require calculations beyond simple arithmetic, Salesforce&#39;s development environment delivers ROI. <strong>Gartner</strong> reports that 60% of B2B sales teams operate linear workflows—suggesting HubSpot meets most needs without development.</p>
+<h2>Marketing and Sales Alignment Architecture</h2>
+<p><strong>HubSpot</strong> bundles marketing, sales, and service hubs—creating unified customer records. Marketing campaigns automatically create contacts in sales hub; sales emails and calls appear in marketing attribution reports; support tickets link to deal records. <strong>Lattice</strong> uses this integration to track campaign → lead → opportunity → customer → support ticket lifecycles without integration costs. The unified platform eliminates data sync issues and double data entry.</p>
+<p><strong>Salesforce</strong> requires <strong>Pardot</strong> (B2B marketing automation, $1,250/month for 10K contacts) or <strong>Marketing Cloud</strong> (enterprise, $15K+/month) for equivalent functionality. These systems integrate with Salesforce but require separate logins, data models, and admin expertise. <strong>Adobe</strong> runs Salesforce + Marketing Cloud and employs 4 FTEs just to manage the integration, syncing campaign data, lead scoring rules, and attribution models. The cost: $400K/year in salaries plus platform fees.</p>
+<p>Marketing attribution differs fundamentally. HubSpot natively tracks first touch, last touch, and multi-touch attribution across email, ads, content, and sales activities. <strong>G2</strong> reports that 78% of HubSpot users rely on native attribution; 85% of Salesforce users purchase third-party attribution tools (<strong>Bizible</strong>, <strong>Full Circle Insights</strong>, $2K-$5K/month) because Salesforce lacks built-in multi-touch models.</p>
+<p>The advantage compounds for inbound-heavy businesses. Companies generating 60%+ pipeline from content marketing, SEO, and paid ads benefit from HubSpot&#39;s unified platform. <strong>Ahrefs</strong> moved from Salesforce + Marketo to HubSpot and reduced marketing-sales tech stack costs from $9,800/month to $3,400/month while improving lead handoff speed from 3 days to same-day. The single platform eliminated CRM-MAP integration bugs that previously lost 8% of inbound leads.</p>
+<h2>Deal Complexity: Multi-Stage Approvals and CPQ</h2>
+<p><strong>Salesforce CPQ</strong> (Configure-Price-Quote, $75-$150/user/month) handles complex pricing: product bundles, volume discounts, regional pricing, contract amendments, and renewal quoting. <strong>Oracle</strong> uses Salesforce CPQ for deals with 50+ line items, tiered pricing based on user count and feature selection, and multi-year contracts with escalation clauses. The system auto-calculates pricing, applies approval rules (deals &gt;$100K require VP approval), and generates quotes in 12 languages. Building this natively in Salesforce took 200 developer hours but saves 4 hours per quote.</p>
+<p><strong>HubSpot</strong> includes basic quoting (line items, discounts, taxes, payment terms) but lacks advanced CPQ. Multi-product bundles with interdependencies, usage-based pricing, and contract modifications require third-party tools (<strong>PandaDoc</strong>, <strong>Proposify</strong>, $40-$100/user/month). <strong>Slack</strong> uses HubSpot for simple deals (&lt;5 products) and integrates PandaDoc for enterprise deals requiring custom terms. The integration works but adds cost and complexity.</p>
+<p>Approval workflows differ in depth. <strong>Salesforce</strong> supports multi-step approvals: $10K-$50K requires manager approval, $50K-$150K requires director, $150K+ requires VP, and &gt;$500K requires C-suite. Approvers receive notifications, can reject with comments, and approvals auto-route based on rep&#39;s hierarchy. <strong>GE</strong> has 7-stage approval workflows spanning sales, legal, finance, and executive teams—requiring Salesforce&#39;s depth.</p>
+<p><strong>HubSpot</strong> approvals are simpler: manager approves/rejects deals over $X threshold. Multi-stage approvals require workarounds (multiple workflows triggering sequentially). <strong>G2</strong> reviews show that companies needing 3+ approval layers struggle with HubSpot and eventually migrate to Salesforce or implement external approval tools. The pivot point: if 20%+ of deals require multi-department approvals, Salesforce&#39;s approval engine justifies the cost.</p>
+<h2>Reporting and Analytics: Pre-Built vs Custom</h2>
+<p><strong>HubSpot</strong> provides 100+ pre-built reports: pipeline by stage, deal forecast, rep activity, email performance, marketing attribution, and revenue analytics. Reports load in seconds and require no technical setup. <strong>Drift</strong> built executive dashboards in 30 minutes using drag-and-drop. The limitation: custom reports beyond pre-built templates require workarounds (calculated properties, workflow hacks) or external BI tools.</p>
+<p><strong>Salesforce</strong> reporting is infinitely customizable but complex. Custom report types, cross-object formulas, and Einstein Analytics (AI-powered insights, $75/user/month) deliver deep analysis. <strong>Snowflake</strong> built revenue forecasting models using Salesforce data, Tableau integration, and custom SQL queries. The reports predict quarterly performance within 5% accuracy but required 60 hours of analyst time to build.</p>
+<p>Dashboards follow the same pattern. HubSpot dashboards are easy—select metrics, arrange widgets, share with team. Customization is limited to pre-defined widgets. Salesforce dashboards support custom components, real-time data, and external data sources but require Salesforce admin or developer skills. <strong>G2</strong> reports that 45% of Salesforce users hire consultants to build dashboards; 5% of HubSpot users do.</p>
+<p>Real-time reporting matters for sales velocity. <strong>HubSpot</strong> updates dashboards every 15 minutes. <strong>Salesforce</strong> updates vary—standard reports refresh hourly, custom reports update on-demand but can take minutes to run on large datasets. <strong>Einstein Analytics</strong> provides near-real-time data but costs $75/user/month. For teams needing instant pipeline visibility, HubSpot&#39;s speed advantage is measurable.</p>
+<h2>Integration Ecosystems: AppExchange vs HubSpot Marketplace</h2>
+<p><strong>Salesforce AppExchange</strong> offers 7,000+ apps covering every business function: CPQ, marketing automation, customer success, accounting integrations, and industry-specific solutions. <strong>Oracle</strong> integrates Salesforce with SAP ERP, NetSuite, Workday, DocuSign, Gong, and Outreach—creating a unified tech stack. The cost: $50-$150/user/month across apps plus integration maintenance.</p>
+<p><strong>HubSpot Marketplace</strong> offers 1,400+ integrations including Shopify, Stripe, Slack, Zoom, and Google Workspace. The ecosystem is smaller but covers core B2B needs. <strong>Webflow</strong> integrates HubSpot with Stripe (payments), Slack (notifications), and Google Workspace (calendar sync) for $0 additional cost—native integrations handle these connections. The limitation: niche industry tools often lack HubSpot connectors.</p>
+<p>Integration maintenance is the hidden cost. <strong>Salesforce</strong> integrations break when API versions update, custom code changes, or app vendors push updates. <strong>G2</strong> reports that Salesforce users spend 10-15 hours/month troubleshooting integrations. HubSpot&#39;s native integrations and Operations Hub (data sync tool, $720/month) reduce this burden—users report 2-5 hours/month of integration maintenance.</p>
+<p>API flexibility gives Salesforce an edge for custom integrations. Salesforce&#39;s REST API, SOAP API, and Bulk API support complex data operations. <strong>Snowflake</strong> syncs 14M records nightly from Salesforce to their data warehouse using Bulk API. HubSpot&#39;s API is simpler and has rate limits (150 requests/10 seconds)—sufficient for most use cases but restrictive for large-scale data operations.</p>
+<h2>Team Size and Complexity Inflection Points</h2>
+<p><strong>HubSpot</strong> wins for teams under 50 reps with straightforward sales processes: single product or simple product lines, 30-120 day sales cycles, and standard pipeline stages. <strong>Lattice</strong> (35 reps, 60-day cycle, 3-tier product) operates entirely on HubSpot with no custom development. TCO: $2,400/month. The system handles lead management, email sequences, pipeline tracking, and forecasting without technical staff.</p>
+<p><strong>Salesforce</strong> wins for teams over 100 reps, multi-product portfolios, 6-18 month sales cycles, and custom sales processes. <strong>SAP</strong> (800 sales reps, 12-month avg cycle, 50+ products with complex bundling) requires Salesforce Enterprise + CPQ + Pardot. TCO: $180K/month. The system manages territory assignment, multi-currency quoting, contract lifecycle, and forecasting across 40 countries. The complexity justifies the cost.</p>
+<p>The gray zone: 50-100 reps with moderate complexity. <strong>G2</strong> data shows this segment splits 50/50 between platforms. Teams prioritizing speed and ease choose HubSpot; teams needing deep customization choose Salesforce. <strong>PagerDuty</strong> (70 reps, 90-day cycle) chose HubSpot and later migrated to Salesforce when contract renewal workflows exceeded HubSpot&#39;s capabilities. The migration cost $50K and 4 months—a cautionary tale for under-scoping complexity.</p>
+<p>Revenue volume also matters. Companies with $10M-$50M revenue typically succeed on HubSpot unless industry regulations (healthcare, finance) require custom compliance workflows. Companies over $100M revenue typically adopt Salesforce for scale, customization, and ecosystem depth. <strong>Stripe</strong> crossed $50M revenue on HubSpot, migrated to Salesforce at $150M when CPQ complexity exceeded HubSpot&#39;s capabilities.</p>
+<h2>Migration Complexity and Vendor Lock-In</h2>
+<p>Migrating from HubSpot to Salesforce costs $30K-$80K and takes 3-6 months. Data export is straightforward (CSV exports of all objects), but rebuilding workflows, email templates, and custom properties requires manual work. <strong>Asana</strong> migrated 180,000 contacts and 45,000 deals from HubSpot to Salesforce in 4 months, spending $65K on consultants and 200 internal hours. The main pain: recreating 80 HubSpot workflows as Salesforce Process Builder flows.</p>
+<p>Migrating from Salesforce to HubSpot costs $20K-$50K and takes 2-4 months. The complexity is lower—HubSpot&#39;s simpler data model accepts Salesforce data easily. The challenge: Salesforce customizations often can&#39;t transfer. <strong>Intercom</strong> migrated from Salesforce to HubSpot and lost 40% of their custom workflows—functionality they either rebuilt differently or abandoned. The decision came down to: &quot;Do we need this complexity, or did we over-customize?&quot;</p>
+<p>Lock-in risk is higher with Salesforce due to customization depth. Companies with 500+ hours of Apex code, custom objects, and integrated apps face $150K-$300K migration costs. <strong>Oracle</strong> considered migrating from Salesforce but determined the effort would exceed $2M due to custom CPQ logic, integrations with SAP and NetSuite, and Apex code managing approval chains. They chose to optimize their existing Salesforce investment instead.</p>
+<p>HubSpot lock-in is lower because less customization exists to replicate. Companies using HubSpot for 3-5 years typically spend $20K-$40K to migrate out—affordable for most organizations. The lesson: build with migration in mind. Avoid excessive customization unless it delivers clear ROI. Document workflows and integrations so future teams can rebuild them.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Can HubSpot handle enterprise sales?</h3>
+<p>Yes, but with limitations. HubSpot Enterprise supports unlimited users, advanced permissions, and custom objects. <strong>Slack</strong> uses HubSpot Enterprise for 200+ users. The constraint: complex CPQ, multi-entity accounting, and 10+ step approval chains push HubSpot&#39;s limits. If 30%+ of deals require these features, Salesforce is safer.</p>
+<h3>Is Salesforce overkill for startups?</h3>
+<p>Usually yes. Salesforce Essentials ($25/user/month, max 10 users) works for startups needing CRM basics, but most find HubSpot CRM (free) or Sales Hub Starter ($15/user/month) faster to implement. <strong>Y Combinator</strong> companies use HubSpot 3:1 over Salesforce because speed-to-value matters more than customization in early stages.</p>
+<h3>Which platform has better mobile apps?</h3>
+<p><strong>Salesforce</strong> mobile app is more feature-complete—supporting Chatter (internal collaboration), approval workflows, and offline access. <strong>HubSpot</strong> mobile app handles core tasks (logging calls, updating deals, viewing contacts) but lacks workflow management. For field sales teams needing full CRM access on mobile, Salesforce wins. For inside sales logging activities, HubSpot suffices.</p>
+<h3>Can you use both platforms?</h3>
+<p>Some companies do. <strong>GitHub</strong> uses HubSpot for marketing and inbound sales (fast-moving, low-touch deals) and Salesforce for enterprise sales (long cycles, custom terms). The systems sync via middleware (<strong>Zapier</strong>, <strong>Workato</strong>). This dual-CRM strategy costs more ($5K-$8K/month) but optimizes for different buyer journeys.</p>
+<h3>What about Salesforce Essentials vs HubSpot Starter?</h3>
+<p><strong>Salesforce Essentials</strong> ($25/user, max 10 users) is stripped-down Salesforce—limited customization, no API access, basic reporting. <strong>HubSpot Starter</strong> ($15/user) includes email sequences, meeting scheduling, and basic automation. For small teams, HubSpot Starter delivers more functionality at lower cost. Salesforce Essentials makes sense only if you plan to upgrade to Professional/Enterprise within 12 months.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

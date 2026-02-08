@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaaS Feature Pages vs Blog Content: When Each Drives More Revenue | B2B Vic</title>
+    <meta name="description" content="Feature pages convert product-aware visitors. Blogs capture early-stage search. Here&#39;s the revenue math that determines which format wins for each keyword." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SaaS Feature Pages vs Blog Content: When Each Drives More Revenue" />
+    <meta property="og:description" content="Feature pages convert product-aware visitors. Blogs capture early-stage search. Here&#39;s the revenue math that determines which format wins for each keyword." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/saas-feature-pages-vs-blog.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS Feature Pages vs Blog Content: When Each Drives More Revenue" />
+    <meta name="twitter:description" content="Feature pages convert product-aware visitors. Blogs capture early-stage search. Here&#39;s the revenue math that determines which format wins for each keyword." />
+    <link rel="canonical" href="https://b2bvic.com/articles/saas-feature-pages-vs-blog.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SaaS Feature Pages vs Blog Content: When Each Drives More Revenue",
+      "description": "Feature pages convert product-aware visitors. Blogs capture early-stage search. Here's the revenue math that determines which format wins for each keyword.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/saas-feature-pages-vs-blog.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SaaS Feature Pages vs Blog Content: When Each Drives More Revenue"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SaaS Feature Pages vs Blog Content: When Each Drives More Revenue</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SaaS Feature Pages vs Blog Content: When Each Drives More Revenue</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SaaS Feature Pages vs Blog Content: When Each Drives More Revenue</h1>
+<p><strong>SaaS companies waste budget ranking blog posts for keywords that should live on feature pages—and vice versa.</strong> The distinction isn&#39;t about &quot;product vs education.&quot; It&#39;s about search intent, conversion architecture, and where Google expects answers to live. <strong>HubSpot</strong> ranks feature pages for &quot;marketing automation platform&quot; and blog posts for &quot;how to automate email campaigns.&quot; <strong>Slack</strong> owns &quot;team communication software&quot; with <code>/features/channels</code> but captures &quot;improve team collaboration&quot; with blog content. The format you choose determines whether you generate trials or newsletter signups. This breakdown explains when each format maximizes revenue per visitor.</p>
+<h2>Why Format Choice Determines Conversion Rate</h2>
+<p>Search result click-through rate and on-page conversion rate compound. A blog post ranking for &quot;project management software&quot; might pull 3% CTR because users expect product pages. That same post might convert 0.5% of visitors to trials because the navigation, CTA placement, and trust signals signal &quot;education&quot; not &quot;evaluation.&quot; Feature pages reverse this. They pull higher CTR for product-aware keywords (5-8%) and convert 2-4x better because schema markup, comparison tables, and demo CTAs match searcher expectations.</p>
+<p><strong>Ahrefs</strong> captures 12,000+ monthly visits for &quot;backlink checker&quot; with a feature page. Conversion rate sits near 8% (trial signups). Their blog post &quot;what are backlinks&quot; generates 45,000 visits but converts 0.9%. The feature page produces more revenue from one-fifth the traffic because format aligns with intent. When users search product categories, they&#39;re qualifying vendors. Blog content feels like a detour.</p>
+<p>The inverse applies to early-funnel queries. &quot;How to measure website traffic&quot; has 18,000 monthly searches. A feature page titled &quot;Website Analytics Software&quot; would rank poorly and convert worse—users aren&#39;t ready to evaluate tools. <strong>Google Analytics</strong> ranks their blog post, captures the traffic, and nurtures through email. Format mismatch kills both visibility and monetization.</p>
+<h2>Feature Pages Win Product-Aware Keywords</h2>
+<p>Product-aware keywords include tool categories (&quot;CRM software&quot;), feature-specific searches (&quot;two-factor authentication&quot;), and comparison queries (&quot;Asana vs Monday&quot;). Users searching these terms are evaluating solutions. They want schema-marked feature lists, pricing transparency, and demo access. Blog posts can&#39;t deliver this architecture without breaking their format.</p>
+<p><strong>Notion</strong> ranks <code>/product/wikis</code> for &quot;wiki software&quot; (33,000 searches/month). The page includes feature tables, video demos, template galleries, and direct trial CTAs. A blog post titled &quot;Best Wiki Software&quot; would require competitor mentions, buying guides, and neutral tone—diluting Notion&#39;s pitch. The feature page converts 6.2% of visitors. Their blog post &quot;how to build a company wiki&quot; targets earlier intent (14,000 searches) and converts 1.1%, but costs one-tenth the acquisition spend because it requires no paid amplification.</p>
+<p>Feature pages also dominate schema-rich results. Google displays comparison tables, FAQ panels, and video carousels for product queries. Blog posts rarely trigger these SERP features because their structured data signals informational intent. <strong>Shopify</strong> owns &quot;ecommerce platform&quot; with <code>/features/online-store</code>, capturing featured snippets through schema-marked feature lists. Their blog ranks separately for &quot;how to start an online store&quot;—different audience, different monetization path.</p>
+<p>The signal quality from feature page traffic compounds in retargeting. Users who visit <code>/features/reporting</code> have higher intent than blog readers. Ad conversion rates from feature page audiences run 3-5x blog audiences. <strong>Intercom</strong> spends 70% of retargeting budget on feature page visitors despite them representing 40% of site traffic. CAC from that segment runs $180 vs $340 from blog retargeting.</p>
+<h2>Blog Content Captures Early-Stage Search Volume</h2>
+<p>Informational keywords (&quot;how to improve sales conversion,&quot; &quot;what is CAC&quot;) generate 10-20x the search volume of product keywords but convert 10-20x lower. Blog posts win these queries because Google&#39;s algorithm expects educational formatting: H2 sections answering sub-questions, neutral tone, external citations, and author bylines. Feature pages trigger &quot;thin content&quot; penalties when targeting these keywords because they lack the depth and structure Google expects for learning queries.</p>
+<p><strong>Salesforce</strong> ranks blog posts for 47,000+ keywords in the &quot;how to [business process]&quot; category. These posts generate 890,000 monthly visits but convert 0.4% to demos. The revenue model depends on email capture (28% of visitors) followed by 6-month nurture sequences. Feature pages couldn&#39;t execute this model—the CTA architecture differs, and users would bounce if product pitches appeared in content promising education.</p>
+<p>Blog content also builds topical authority that lifts feature page rankings. Google&#39;s algorithm clusters content by topic and rewards sites demonstrating expertise across a knowledge domain. <strong>HubSpot&#39;s</strong> 4,200 blog posts on marketing automation create semantic connections that boost their feature page rankings for &quot;marketing automation software.&quot; Sites with thin blog coverage rank lower for product keywords even with superior feature pages because they lack topical depth signals.</p>
+<p>The distribution advantage compounds this. Blog posts earn backlinks 8-12x more frequently than feature pages because they provide citation-worthy information. <strong>Moz</strong> accumulated 12,000+ backlinks to their blog post &quot;Beginner&#39;s Guide to SEO,&quot; which passes authority to their <code>/features/keyword-research</code> page through internal links. Feature pages rarely earn editorial links because other sites won&#39;t promote commercial pages.</p>
+<h2>Keyword Intent Signals That Determine Format</h2>
+<p>Search modifiers reveal intent and dictate format. Queries including &quot;software,&quot; &quot;tool,&quot; &quot;platform,&quot; &quot;solution,&quot; or brand names signal product evaluation—feature page territory. Modifiers like &quot;how to,&quot; &quot;what is,&quot; &quot;guide,&quot; &quot;tips,&quot; or &quot;best practices&quot; signal learning intent—blog content. The exception: &quot;best [category]&quot; queries. These feel informational but users expect product roundups, which perform better as blog posts with affiliate disclosure than as feature pages.</p>
+<p><strong>Zapier</strong> targets &quot;workflow automation software&quot; with <code>/features/multi-step-zaps</code> (product page) but &quot;how to automate workflows&quot; with blog content. The keyword overlap is semantic but intent diverges. The first query implies tool evaluation; the second implies education. Ranking the wrong format for either keyword would cut traffic 40-60% and conversion 60-80%.</p>
+<p>Volume-to-difficulty ratio also guides format choice. High-difficulty product keywords (DR 60+) often require feature page authority to rank. <strong>Mailchimp</strong> can&#39;t rank blog posts for &quot;email marketing platform&quot; (difficulty 71) because the top 10 results are all product pages with massive backlink profiles. They rank blog posts for &quot;email marketing tips&quot; (difficulty 34) where informational content dominates SERPs.</p>
+<p>SERP analysis overrides keyword assumptions. If eight of the top 10 results are blog posts, Google has classified the query as informational regardless of your interpretation. <strong>SEMrush</strong> initially built feature pages for &quot;keyword research&quot; but Google ranked blog posts. They shifted strategy, published a blog post, and reached position 3. The lesson: Google&#39;s SERP composition is the ground truth for format selection.</p>
+<h2>Conversion Architecture Differences That Compound Revenue</h2>
+<p>Feature pages prioritize trial signups, demo bookings, and direct purchases. CTAs appear above the fold, in sticky headers, and after every feature section. The navigation includes pricing links, customer logos, and trust badges. The content structure assumes high intent: bullet-pointed benefits, comparison tables, ROI calculators, and video demos. <strong>Calendly&#39;s</strong> feature pages convert 11% of visitors to free trials because every section ends with &quot;Start scheduling meetings&quot; CTAs.</p>
+<p>Blog posts prioritize email capture, resource downloads, and session depth. CTAs appear mid-content and at article end. The navigation emphasizes related articles, not product features. The content structure assumes low purchase intent: narrative flow, external links, author bios, and related post modules. <strong>Ahrefs&#39;</strong> blog posts convert 3% of visitors to email subscribers, who then receive 12 weeks of educational content before seeing trial pitches.</p>
+<p>The schema markup differs fundamentally. Feature pages use <code>Product</code>, <code>Offer</code>, <code>AggregateRating</code>, and <code>FAQPage</code> schema to trigger rich results. Blog posts use <code>Article</code>, <code>Person</code> (author), <code>Organization</code> (publisher), and <code>HowTo</code> schema. Google displays these formats differently in SERPs—product schema generates price snippets and star ratings; article schema generates publish dates and author names. <strong>Stripe</strong> uses product schema on <code>/payments</code> and article schema on blog posts. The SERP real estate and CTR differ by 40%.</p>
+<p>Internal linking patterns also diverge. Feature pages link to other feature pages, pricing, and case studies—keeping users in the product evaluation loop. Blog posts link to other blog posts, guides, and glossary terms—keeping users in the education loop. <strong>Canva</strong> structures their site so feature pages create a conversion-focused cluster and blog posts create an authority-focused cluster. The separation prevents dilution of both intents.</p>
+<h2>The Revenue Math That Guides Format Selection</h2>
+<p>A keyword generating 10,000 monthly searches at 5% CTR yields 500 visitors. If a feature page converts 4% to trials at $50/month LTV, that&#39;s 20 trials = $1,000 MRR. If a blog post converts 1% to trials but also captures 25% as email subscribers (125 emails), and 8% of subscribers convert to trials over six months (10 trials), total MRR reaches $1,500. The blog post wins despite lower immediate conversion because the email nurture recovers lost revenue and extends customer LTV through education.</p>
+<p><strong>ConvertKit</strong> targets &quot;email marketing for creators&quot; with a blog post, not a feature page, because the keyword has informational overlap. Immediate conversion runs 0.8%, but email capture hits 32%. The 12-week nurture converts 11% of subscribers. The blog post generates 2.1x more trials than a feature page would. The format choice wasn&#39;t about content quality—it was about aligning monetization architecture with searcher intent.</p>
+<p>The inverse calculation applies to high-intent keywords. &quot;CRM for real estate agents&quot; generates 3,400 searches. A feature page converts 7% to demos at $100/month LTV. A blog post might convert 1.5% to demos but email capture is pointless—these users are ready to buy. The feature page generates $23,800 MRR; the blog post generates $5,100. The 4.6x revenue delta comes from format alignment, not content depth.</p>
+<p>The breakeven equation: if a keyword has product intent and your feature page converts 3x better than a blog post, the blog post must generate 3x more email subscribers who convert at equivalent LTV. Most SaaS companies find feature pages win for keywords with clear product intent (buyer LTV justifies low capture rates) and blog posts win for keywords with ambiguous intent (email nurture recovers conversion losses).</p>
+<h2>Multi-Format Strategies for High-Value Keywords</h2>
+<p>Some keywords justify both formats. &quot;Project management software&quot; is product-focused, but &quot;project management software guide&quot; is educational. <strong>Monday.com</strong> ranks a feature page for the first query and a blog post for the second. The blog post links to the feature page; the feature page links to the blog guide. This captures both audiences without forcing a format compromise.</p>
+<p>The hub-and-spoke model extends this. A pillar blog post on &quot;sales automation&quot; links to individual feature pages on &quot;email sequencing,&quot; &quot;lead scoring,&quot; and &quot;pipeline management.&quot; The blog post ranks for the broad informational query and distributes authority to product pages targeting narrower commercial queries. <strong>Pipedrive</strong> uses this structure to rank 1,200+ keywords across both formats, generating 340,000 monthly visits that split between immediate conversion (feature pages) and email nurture (blog posts).</p>
+<p>The blog-to-feature funnel also works in reverse. A feature page targeting &quot;time tracking software&quot; includes a resources section linking to blog posts on &quot;how to track billable hours&quot; and &quot;time tracking best practices.&quot; Users who aren&#39;t ready to trial can shift to educational content without leaving the site. <strong>Toggl</strong> reports that 18% of feature page visitors click through to blog posts, and 9% of those return to the feature page within 30 days. The round-trip conversion rate (2.7%) exceeds direct feature page conversion (2.1%) because the blog content builds trust.</p>
+<p>The key is never mixing formats within a single page. A feature page that includes 2,000 words of &quot;how-to&quot; content confuses Google&#39;s intent classifier and underperforms both formats. <strong>Asana</strong> tested hybrid pages and saw rankings drop 30% compared to format-pure pages. The algorithm expects feature pages to look like feature pages and blog posts to look like blog posts. Blending signals triggers ranking penalties.</p>
+<h2>When to Rebuild Blog Posts as Feature Pages</h2>
+<p>If a blog post ranks top 5 for a product keyword but converts below 1%, it&#39;s a format mismatch. The solution isn&#39;t CTA optimization—it&#39;s rebuilding the content as a feature page. <strong>Webflow</strong> did this for &quot;website builder,&quot; shifting from a blog post (&quot;What is a Website Builder?&quot;) to a feature page (<code>/features/designer</code>). Rankings held at position 4, but conversion jumped from 0.7% to 5.3%. The traffic quality didn&#39;t change—the format finally matched searcher intent.</p>
+<p>SERP drift is the signal. If your blog post ranks for a keyword where nine other top 10 results are product pages, Google is tolerating your mismatch but user behavior metrics (CTR, dwell time, conversion) are suffering. <strong>Airtable</strong> rebuilt 14 blog posts as feature pages when SERP analysis showed product-page dominance. Average ranking improved 2.3 positions and conversion rate increased 380% because the format now matched the competitive set.</p>
+<p>The rebuild process preserves URL equity. Set up 301 redirects from the old blog URL to the new feature page URL. Transfer inbound links by reaching out to linking domains and requesting URL updates. Rewrite the content with feature-focused structure: comparison tables, schema markup, demo CTAs, and customer testimonials. <strong>Notion</strong> retained 90% of rankings when migrating blog posts to feature pages because they maintained backlink profiles and improved content-query alignment.</p>
+<p>The inverse applies less often but still matters. If a feature page ranks for an informational keyword but generates high bounce rates and low engagement, the content is misaligned with intent. <strong>Slack</strong> moved several feature pages to blog format when analytics showed users were seeking education, not evaluation. Rankings improved because Google&#39;s algorithm rewards format-intent alignment more than domain authority.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Can a feature page rank for &quot;how to&quot; keywords?</h3>
+<p>Feature pages can rank for procedural keywords if the feature <em>is</em> the solution. <strong>Loom</strong> ranks <code>/features/screen-recording</code> for &quot;how to record your screen&quot; because the feature directly answers the query. The page includes step-by-step instructions within the feature demo. This works when the product <em>is</em> the answer, not when users need conceptual education.</p>
+<h3>Should comparison keywords use blog posts or feature pages?</h3>
+<p>&quot;[Your Product] vs [Competitor]&quot; comparisons work as blog posts with disclosure. &quot;[Product Category] Comparison&quot; pages work as feature pages if you&#39;re highlighting your product. <strong>Figma</strong> publishes blog posts for &quot;Figma vs Sketch&quot; (neutral tone, backlink magnet) and a feature page for &quot;design collaboration tools&quot; (product-focused). The distinction is objectivity—blog posts can claim neutrality; feature pages can&#39;t.</p>
+<h3>How do you handle keywords with mixed intent?</h3>
+<p>Build both formats and internal-link them. A blog post on &quot;marketing automation guide&quot; links to your feature page on &quot;email automation software.&quot; The blog captures educational searches; the feature page captures product searches. <strong>ActiveCampaign</strong> uses this for 80+ keyword clusters, generating 2.1M monthly visits by covering both intents without forcing a format compromise.</p>
+<h3>Do feature pages need word counts as high as blog posts?</h3>
+<p>Feature pages rarely exceed 2,000 words because the content is visual and structural: feature lists, comparison tables, screenshots, videos. Blog posts targeting competitive keywords often require 2,500-3,500 words to cover subtopics Google expects. <strong>Asana&#39;s</strong> feature pages average 1,400 words; their blog posts average 2,800. The format dictates depth, not an arbitrary word count target.</p>
+<h3>What happens if you build a feature page but Google ranks your blog post instead?</h3>
+<p>Google ranks whatever page it believes best matches intent. If your blog post outranks your feature page for a product keyword, SERP analysis likely shows mixed intent—some users want education, others want products. The solution is optimizing the feature page (better schema, CTAs, comparisons) and internal-linking from the blog post. <strong>HubSpot</strong> saw this with &quot;CRM software&quot; and solved it by strengthening their feature page&#39;s technical SEO while keeping the blog post live. Both now rank in the top 5 for related queries.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

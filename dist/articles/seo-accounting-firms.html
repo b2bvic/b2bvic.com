@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients | B2B Vic</title>
+    <meta name="description" content="Accounting firm SEO requires service-specific landing pages, local schema markup, and seasonal content aligned with tax deadlines. Here&#39;s the technical implementation." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients" />
+    <meta property="og:description" content="Accounting firm SEO requires service-specific landing pages, local schema markup, and seasonal content aligned with tax deadlines. Here&#39;s the technical implementation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/seo-accounting-firms.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients" />
+    <meta name="twitter:description" content="Accounting firm SEO requires service-specific landing pages, local schema markup, and seasonal content aligned with tax deadlines. Here&#39;s the technical implementation." />
+    <link rel="canonical" href="https://b2bvic.com/articles/seo-accounting-firms.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients",
+      "description": "Accounting firm SEO requires service-specific landing pages, local schema markup, and seasonal content aligned with tax deadlines. Here's the technical implementation.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/seo-accounting-firms.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SEO for Accounting Firms: Service Pages That Rank and Convert Local Clients</h1>
+<p><strong>Accounting firms lose clients to competitors ranked 3 spots lower because those competitors answer the actual search query.</strong> Users searching &quot;small business CPA near me&quot; want tax preparation, bookkeeping, or advisory services—not generic &quot;accounting services&quot; pages listing 15 offerings without detail. <strong>Deloitte</strong> ranks individual pages for &quot;tax consulting,&quot; &quot;audit services,&quot; and &quot;financial advisory&quot;—each with service-specific content, case studies, and clear pricing signals. Their service pages generate 340,000 monthly organic visits and convert 8.2% to consultations. Meanwhile, firms with single &quot;Services&quot; pages convert 1.3% because users can&#39;t determine specialization or relevance. The difference isn&#39;t brand recognition—it&#39;s content architecture that matches search intent with service-specific landing pages, local SEO optimization, and seasonal content aligned with tax cycles. This breakdown explains how accounting firms build SEO systems that generate qualified local leads year-round.</p>
+<h2>Service-Specific Landing Pages That Rank for Commercial Keywords</h2>
+<p>Generic &quot;accounting services&quot; pages rank for nothing. <strong>RSM</strong> (8th-largest US accounting firm) targets &quot;business tax preparation&quot; with a dedicated page covering entity types (LLC, S-Corp, C-Corp), deduction strategies, estimated tax payments, and IRS audit representation. The page ranks position 2 (14,000 searches/month) and converts 6.8% to consultation requests. Their generic services page ranks for zero keywords.</p>
+<p>Each service requires a dedicated page: tax preparation, bookkeeping, payroll services, CFO advisory, audit preparation, financial planning, estate planning, nonprofit accounting. <strong>BDO</strong> maintains 40 service pages, each 1,800-2,200 words with H2 sections answering specific questions. The breadth signals topical authority—Google&#39;s algorithm rewards sites demonstrating comprehensive expertise. Their organic traffic (1.2M monthly visits) exceeds competitors with half the page count.</p>
+<p>Service pages must include process explanations. Users searching &quot;business bookkeeping services&quot; want to understand deliverables and timelines. <strong>Bench</strong> structures their bookkeeping page as: &quot;What&#39;s Included&quot; (daily transaction categorization, monthly financial statements, tax prep support), &quot;How It Works&quot; (secure data import, dedicated bookkeeper, monthly review call), and &quot;Pricing&quot; (starting at $299/month). This transparency pre-qualifies leads—those who convert understand deliverables, reducing onboarding friction and client churn.</p>
+<p>Pricing transparency increases conversion 40-60% despite perceived risk of competitors seeing rates. <strong>Pilot</strong> publishes bookkeeping pricing ($549-$999/month based on transaction volume). The transparency filters budget-mismatched leads and attracts price-conscious clients who value clarity. Revenue per lead increased 28% post-publication because sales calls focused on fit, not price discovery. Firms nervous about full disclosure use ranges: &quot;tax preparation $500-$2,500 depending on entity complexity.&quot;</p>
+<h2>Local SEO Optimization for Geographic Service Areas</h2>
+<p>Accounting services are location-based—clients prefer local firms for in-person meetings and state-specific expertise. <strong>Google Business Profile</strong> optimization is foundational: complete profile, 20+ photos, weekly posts, review generation, and accurate NAP (name-address-phone) consistency. <strong>CohnReznick</strong> maintains profiles for 30 offices, generating 28,000 monthly GBP views and 2,400 direction requests. Their multi-location strategy captures &quot;accountant near me&quot; searches in each market.</p>
+<p>Location pages for multi-office firms require unique content per location. <strong>Baker Tilly</strong> maintains pages for each office: &quot;[City] Accounting Services&quot; with local team photos, office address, service offerings, and 3-5 client success stories from that region. The pages rank for &quot;[city] CPA firm&quot; and &quot;[city] tax preparation&quot; queries. Cookie-cutter location pages (identical content with city name swapped) trigger Google&#39;s duplicate content penalties and rank poorly.</p>
+<p>Schema markup for local businesses includes <code>LocalBusiness</code>, <code>AccountingService</code>, and <code>PostalAddress</code>. <strong>Grant Thornton</strong> implements:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;AccountingService&quot;,
+  &quot;name&quot;: &quot;Grant Thornton Chicago&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;171 N Clark St&quot;,
+    &quot;addressLocality&quot;: &quot;Chicago&quot;,
+    &quot;addressRegion&quot;: &quot;IL&quot;,
+    &quot;postalCode&quot;: &quot;60601&quot;
+  },
+  &quot;telephone&quot;: &quot;+1-312-856-0200&quot;,
+  &quot;priceRange&quot;: &quot;$$$&quot;
+}
+</code></pre>
+<p>This triggers local pack results—the map-based listings appearing above organic results. Local pack generates 44% of clicks for &quot;near me&quot; and city-specific queries. <strong>Plante Moran</strong> appears in local pack for 340 keyword variations across their markets, generating 18,000 monthly clicks.</p>
+<p>NAP consistency across directories (Yelp, Yellow Pages, Better Business Bureau, Clutch) strengthens local rankings. <strong>Armanino</strong> maintains identical NAP across 60+ directories using <strong>Yext</strong> ($500/month for 50 locations). Inconsistencies (abbreviations, suite number variations, phone format differences) confuse Google&#39;s entity resolution and dilute local authority. Consistency costs time but delivers measurable ranking lifts—3-5 positions on average for local queries.</p>
+<h2>Review Generation Strategy That Builds Trust Signals</h2>
+<p>Google reviews directly impact local pack rankings and conversion rates. <strong>Moss Adams</strong> (4.6 stars, 890 reviews) ranks in local pack for 89% of target markets. Competitors with 4.2 stars and 200 reviews rank outside pack despite equivalent domain authority. The review volume and recency signal active, reputable service. Conversion rate from local pack traffic: 11.2% (vs 6.8% from organic results) because reviews pre-qualify firm credibility.</p>
+<p>Automated review requests post-engagement improve response rates 5x. <strong>Aprio</strong> sends review request emails 48 hours after tax return delivery: &quot;Thanks for trusting us with your taxes. If you&#39;re satisfied, would you share your experience?&quot; The email includes direct Google review link. Response rate: 23% (vs 4% for manual requests). The automation scales review generation without sales team involvement.</p>
+<p>Responding to reviews (positive and negative) increases conversion 18-30%. <strong>CliftonLarsonAllen</strong> responds to every review within 48 hours. Positive reviews get personalized thanks; negative reviews get professional responses and offline resolution offers. Prospective clients reading reviews see active reputation management, building trust. <strong>Harvard Business Review</strong> research shows that 89% of consumers read business responses to reviews before deciding.</p>
+<p>Review content matters as much as ratings. Reviews mentioning specific services (&quot;excellent tax planning&quot;) help rank for those service keywords. <strong>EisnerAmper</strong> encourages detailed reviews by asking: &quot;What service did we provide?&quot; and &quot;What did you appreciate most?&quot; This generates review text containing &quot;estate planning,&quot; &quot;business valuation,&quot; and &quot;audit services&quot;—keywords reinforcing service page relevance to Google&#39;s algorithm.</p>
+<h2>Content Calendar Aligned with Tax Season and Deadlines</h2>
+<p>Tax deadline content ranks predictably—traffic for &quot;tax deadline extension&quot; spikes March-April. <strong>TurboTax</strong> publishes tax deadline content in January, allowing 8-12 weeks for Google to index and rank. By March, their articles dominate page 1 for deadline queries, generating 890,000 visits during peak season. Firms publishing content in March compete with established articles and rank page 2-3, missing 70% of traffic.</p>
+<p>Seasonal content topics by quarter:</p>
+<ul>
+<li><strong>Q1 (Jan-Mar)</strong>: Tax preparation tips, deduction guides, estimated tax payments</li>
+<li><strong>Q2 (Apr-Jun)</strong>: Tax deadline extensions, quarterly estimated taxes, mid-year planning</li>
+<li><strong>Q3 (Jul-Sep)</strong>: Business entity formation, retirement contributions, Q3 estimated taxes</li>
+<li><strong>Q4 (Oct-Dec)</strong>: Year-end tax planning, charitable giving strategies, benefit elections</li>
+</ul>
+<p><strong>Withum</strong> publishes 40 seasonal articles annually, capturing 180,000 visits during tax season and maintaining 40,000 monthly baseline traffic. The content also builds topical authority that lifts service page rankings year-round.</p>
+<p>Content repurposing extends ROI. <strong>BDO</strong> converts seasonal blog posts into email newsletters (18% open rate), social posts (4,200 avg reach), and client webinars (340 avg attendees). A single $800 blog post generates $12K+ in attributed pipeline through multi-channel distribution. The initial SEO investment becomes a content hub feeding marketing channels.</p>
+<p>Evergreen content mixed with seasonal content stabilizes traffic. <strong>Grant Thornton</strong> balances seasonal articles (50% of content) with evergreen topics (business bookkeeping, CFO advisory, financial modeling). The evergreen content generates consistent 60,000 monthly visits while seasonal content spikes to 180,000 during tax season. The mix prevents revenue volatility from seasonal traffic fluctuations.</p>
+<h2>Technical SEO Requirements for Professional Services Sites</h2>
+<p>Page speed under 2.5 seconds (mobile) is critical for local search rankings. <strong>CohnReznick&#39;s</strong> site loads in 1.8 seconds on mobile, ranking local pack consistently. Competitors with 4+ second load times rank 3-5 positions lower despite comparable content. Google&#39;s mobile-first indexing prioritizes mobile UX—slow sites lose rankings and users (53% of mobile visitors abandon sites taking 3+ seconds to load).</p>
+<p>Mobile optimization requires tap-friendly CTAs, readable fonts (16px+), and click-to-call phone numbers. <strong>Armanino</strong> restructured their site for mobile-first: enlarged CTA buttons (44px minimum height), increased line spacing, and implemented sticky &quot;Call Now&quot; buttons. Mobile conversion rate increased from 2.1% to 5.7%. Desktop conversion stayed flat, but mobile now represents 62% of traffic—the optimization directly impacted revenue.</p>
+<p>SSL certificates (HTTPS) are mandatory for local rankings. Google demotes HTTP sites in local pack and displays &quot;Not Secure&quot; warnings that kill conversion. <strong>Baker Tilly</strong> migrated to HTTPS site-wide (cost: $200 annually for wildcard SSL). Rankings improved 2-3 positions on average within 8 weeks. The security signal also prevents browser warnings that cause 40-60% of visitors to exit immediately.</p>
+<p>Structured data beyond local schema includes <code>FAQPage</code>, <code>Service</code>, and <code>Review</code> schema. <strong>EisnerAmper</strong> implements FAQ schema on service pages, triggering FAQ rich results for question queries (&quot;do I need a CPA for my LLC?&quot;). The rich results occupy 400px of SERP space, pushing competitors down and increasing CTR 35%. Schema implementation costs 4-8 hours per page but delivers years of SERP advantage.</p>
+<h2>Niche Specialization Content That Differentiates Positioning</h2>
+<p>Industry-specific content attracts higher-value clients. <strong>Aprio</strong> targets &quot;healthcare practice accounting&quot; with content addressing medical billing, insurance reimbursements, and provider contracts. The specialization generates 8,400 monthly visits from healthcare searches and converts at 9.1% (vs 5.8% for general content). Healthcare practices pay 2.3x general clients due to complexity—niche content attracts premium clients.</p>
+<p>Entity-type specialization works similarly. <strong>Withum</strong> creates content for S-Corps, C-Corps, LLCs, and nonprofits separately. &quot;S-Corp tax deductions&quot; gets 12,000 searches with commercial intent. Their S-Corp page ranks position 2, generating 1,800 monthly visits at 7.2% conversion. Mixing entity types on one page dilutes relevance—Google struggles to determine primary topic, ranking the page lower for all queries.</p>
+<p>Pain-point content captures long-tail searches. <strong>Moss Adams</strong> targets &quot;how to handle IRS audit notice&quot; (4,400 searches). The article walks through notice types, response deadlines, and documentation requirements. It ranks position 1 and converts 8.9% to consultation bookings. Users in IRS trouble have high urgency and willingness to pay—pain-point content attracts motivated clients.</p>
+<p>Comparison content positions against competitors and alternatives. <strong>Pilot</strong> publishes &quot;bookkeeping software vs bookkeeping service&quot; explaining when businesses need human bookkeepers vs DIY software. The content ranks for &quot;QuickBooks vs bookkeeper&quot; and similar queries, capturing 8,900 monthly visits from users evaluating options. Conversion rate: 6.2%—users reading comparison content are qualified evaluators, not early researchers.</p>
+<h2>Link Building Strategies for Local and Professional Authority</h2>
+<p>Local citations from chambers of commerce, industry associations (AICPA, state CPA societies), and business directories build local authority. <strong>Grant Thornton</strong> maintains profiles on 80+ local and professional directories. Each citation reinforces NAP consistency and passes minor authority. The cumulative effect: 8-12 position improvement in local pack rankings. Individual citations matter little; the collective weight is significant.</p>
+<p>Guest posting on business publications builds topical authority. <strong>BDO</strong> publishes quarterly articles in <strong>Inc</strong>, <strong>Forbes</strong>, and <strong>Entrepreneur</strong> covering tax strategies, financial planning, and business advisory. Each article includes an author bio with backlink to their site. The links pass domain authority and signal expertise to Google. The PR value also generates 2,000-4,000 direct visits per article from engaged business audiences.</p>
+<p>Industry partnerships create natural backlink opportunities. <strong>RSM</strong> partners with software providers (<strong>Intuit</strong>, <strong>Xero</strong>, <strong>NetSuite</strong>) and gets listed on partner directories. These .com links from high-authority domains (DR 80+) pass significant authority. The partnership also generates referral traffic—Xero users searching for accountants see RSM listed prominently.</p>
+<p>Local sponsorships generate geo-targeted backlinks. <strong>CohnReznick</strong> sponsors Chamber of Commerce events, youth sports teams, and business conferences in their markets. Sponsorships earn backlinks from event sites, local news coverage, and chamber websites. These location-specific links strengthen local pack rankings—Google&#39;s algorithm values links from entities in the target geography.</p>
+<h2>Landing Page Optimization for Consultation Conversion</h2>
+<p>Consultation request forms should require minimal fields: name, email, phone, service interest, brief description. <strong>Aprio</strong> reduced form fields from 12 to 5 and increased conversion 47%. Every additional field decreases completion rates 5-10%. The sales team prefers rich data, but empty forms convert zero—lean forms win.</p>
+<p>Trust signals on landing pages include: credentials (CPA, licenses), client logos, testimonials, industry recognitions, and security badges. <strong>Plante Moran</strong> displays &quot;Top 25 Accounting Firm&quot; badge, 8 client logos, and 2 testimonials on consultation pages. These signals increase conversion 22% compared to bare forms. Prospects vet firms before sharing contact information—trust signals reduce friction.</p>
+<p>Call tracking numbers measure offline conversion. <strong>Baker Tilly</strong> uses <strong>CallRail</strong> ($45/month) to assign unique phone numbers to each service page. This attributes phone inquiries to specific pages and keywords. Their bookkeeping page generates 40 monthly calls (11% call-to-consultation conversion) vs tax planning page generating 12 calls. The data guides content investment toward high-converting topics.</p>
+<p>Click-to-call buttons on mobile increase conversion 60-80%. <strong>Withum</strong> implemented sticky &quot;Call Now&quot; buttons on mobile service pages. Mobile conversion (form + call) increased from 3.1% to 8.4%. Mobile users prefer phone calls over form fills—friction is lower. Desktop users prefer forms. Device-specific CTA optimization accommodates these preferences.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How long does SEO take for accounting firms to see results?</h3>
+<p>Local SEO improvements (GBP optimization, citations) show results in 4-8 weeks. Content marketing and service page optimization take 3-6 months to rank competitively. <strong>Grant Thornton</strong> saw first-page rankings for 40% of target keywords within 6 months, with traffic growing 280% by month 12. Firms should budget 12-18 months for full SEO maturity.</p>
+<h3>Should accounting firms blog regularly?</h3>
+<p>Yes, 2-4x monthly. Blogs build topical authority and capture informational searches that nurture into clients. <strong>BDO</strong> publishes 4 articles monthly, generating 80,000 blog visits that convert 1.8% to newsletter signups. Newsletter subscribers convert to clients at 6% over 18 months. The blog is a long-game lead generation engine.</p>
+<h3>What&#39;s a realistic SEO budget for a 5-person accounting firm?</h3>
+<p>$2,000-$4,000/month for professional SEO (content, technical optimization, link building) or 20-30 hours/month internal effort. <strong>Armanino</strong> allocates $3,200/month to SEO, generating 3,200 monthly organic visits and 180 consultation requests (5.6% conversion). Their CAC from SEO: $280 vs $1,200 from paid ads. SEO requires patience but delivers superior ROI after 12 months.</p>
+<h3>Do accounting firms need video content for SEO?</h3>
+<p>Video helps but isn&#39;t required. <strong>Moss Adams</strong> embeds service explainer videos (2-3 min) on key pages, increasing dwell time 40% and conversion 12%. Google&#39;s algorithm interprets longer dwell time as quality signal, boosting rankings. Videos also increase social sharing and backlink potential. Start with 3-5 key service videos before expanding.</p>
+<h3>How important are Google reviews vs organic rankings?</h3>
+<p>Both matter, but reviews impact conversion more than rankings. <strong>CliftonLarsonAllen</strong> ranks position 4 locally but has 4.8 stars (620 reviews) vs position 1 competitor with 4.1 stars (80 reviews). CLA converts 9.2% from position 4; competitor converts 6.1% from position 1. Reviews overcome ranking gaps by building trust. Prioritize review generation alongside ranking efforts.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
