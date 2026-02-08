@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools | B2B Vic</title>
+    <meta name="description" content="Build no-code CRM automation workflows in Google Sheets using Apps Script. Lead scoring, email sequencing, pipeline tracking, and data enrichment for B2B teams without $10K/year platforms." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools" />
+    <meta property="og:description" content="Build no-code CRM automation workflows in Google Sheets using Apps Script. Lead scoring, email sequencing, pipeline tracking, and data enrichment for B2B teams without $10K/year platforms." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/google-sheets-crm-automation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools" />
+    <meta name="twitter:description" content="Build no-code CRM automation workflows in Google Sheets using Apps Script. Lead scoring, email sequencing, pipeline tracking, and data enrichment for B2B teams without $10K/year platforms." />
+    <link rel="canonical" href="https://b2bvic.com/articles/google-sheets-crm-automation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools",
+      "description": "Build no-code CRM automation workflows in Google Sheets using Apps Script. Lead scoring, email sequencing, pipeline tracking, and data enrichment for B2B teams without $10K/year platforms.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/google-sheets-crm-automation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Google Sheets CRM Automation: Build Custom Workflows Without Enterprise Tools</h1>
+<p><strong>Google Sheets</strong> isn&#39;t a CRM. But for B2B teams generating &lt;500 leads/month, it&#39;s the most underrated automation platform available. While competitors pay $10K-$50K/year for <strong>Salesforce</strong> or <strong>HubSpot</strong>, operators who master <strong>Google Apps Script</strong> build custom CRM workflows with zero licensing costs and infinite flexibility.</p>
+<p>This guide dissects how B2B teams automate lead scoring, email sequencing, pipeline tracking, and data enrichment using only Sheets and Apps Script. You&#39;ll see production-grade implementations that handle real revenue operations without ever leaving Google Workspace.</p>
+<h2>Why Sheets Beats Traditional CRMs for Small Teams</h2>
+<p>Traditional CRMs optimize for enterprise scale. They assume:</p>
+<ol>
+<li>Dedicated CRM admin (0.5-1.0 FTE)</li>
+<li>Complex multi-department workflows</li>
+<li>Integration with 10+ marketing/sales tools</li>
+<li>Six-figure annual contract value to justify overhead</li>
+</ol>
+<p>B2B teams with 1-3 salespeople don&#39;t need this. They need:</p>
+<ul>
+<li>Lead capture automation (web forms → centralized database)</li>
+<li>Follow-up sequencing (email drip campaigns)</li>
+<li>Pipeline visualization (deal stage tracking)</li>
+<li>Basic lead scoring (prioritization logic)</li>
+</ul>
+<p>Sheets delivers all four with ~10 hours of setup time and zero recurring costs.</p>
+<h2>Core Architecture: How Sheets Replaces a CRM</h2>
+<h3>The Three-Sheet System</h3>
+<p><strong>Sheet 1: Leads (Contact Database)</strong></p>
+<p>Columns:</p>
+<ul>
+<li>Timestamp, Name, Email, Phone, Company, Lead Source, Lead Score, Stage, Owner, Notes, Last Contacted, Next Follow-Up</li>
+</ul>
+<p>This is your contact table. Every lead lives here. Apps Script populates it via form submissions, webhook imports, or manual entry.</p>
+<p><strong>Sheet 2: Activities (Interaction Log)</strong></p>
+<p>Columns:</p>
+<ul>
+<li>Timestamp, Contact Email, Activity Type (Email Sent, Call Made, Meeting Booked), Notes, Outcome</li>
+</ul>
+<p>This tracks every touchpoint. Apps Script logs activities automatically when you send emails or manually when you make calls.</p>
+<p><strong>Sheet 3: Pipeline (Deal Tracking)</strong></p>
+<p>Columns:</p>
+<ul>
+<li>Deal ID, Contact Name, Company, Deal Value, Stage (Discovery, Proposal, Negotiation, Closed Won, Closed Lost), Probability, Created Date, Close Date, Owner</li>
+</ul>
+<p>This mirrors traditional CRM pipeline views. Apps Script calculates weighted pipeline value and forecasts monthly close rates.</p>
+<h3>Data Flow Logic</h3>
+<ol>
+<li><strong>Lead Capture</strong>: Google Form submission → Apps Script trigger → populate Leads sheet → send Slack notification</li>
+<li><strong>Lead Scoring</strong>: Apps Script runs nightly → calculates lead score based on company size, industry, engagement → updates Lead Score column</li>
+<li><strong>Follow-Up Sequencing</strong>: Apps Script checks Next Follow-Up date daily → sends templated email if date matches → logs activity in Activities sheet</li>
+<li><strong>Pipeline Tracking</strong>: Apps Script summarizes Pipeline sheet → generates weekly forecast report → emails to team</li>
+</ol>
+<h2>Implementation 1: Automated Lead Capture</h2>
+<h3>Google Form Setup</h3>
+<p>Create a form with:</p>
+<ul>
+<li>Name (Short answer)</li>
+<li>Email (Email validation)</li>
+<li>Company (Short answer)</li>
+<li>Phone (Short answer)</li>
+<li>Message (Paragraph)</li>
+</ul>
+<p>Connect form to Sheets (Responses → Create Spreadsheet).</p>
+<h3>Apps Script Trigger</h3>
+<p>Open the Sheets file → Extensions → Apps Script. Paste:</p>
+<pre><code class="language-javascript">function onFormSubmit(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Leads&#39;);
+  const responses = e.values;
+
+  // Extract form data
+  const timestamp = responses[0];
+  const name = responses[1];
+  const email = responses[2];
+  const company = responses[3];
+  const phone = responses[4];
+  const message = responses[5];
+
+  // Calculate initial lead score
+  const leadScore = calculateLeadScore(company, email);
+
+  // Append to Leads sheet
+  sheet.appendRow([
+    timestamp,
+    name,
+    email,
+    phone,
+    company,
+    &#39;Website Form&#39;, // Lead Source
+    leadScore,
+    &#39;New&#39;, // Stage
+    &#39;&#39;, // Owner
+    message,
+    &#39;&#39;, // Last Contacted
+    &#39;&#39; // Next Follow-Up
+  ]);
+
+  // Send Slack notification
+  sendSlackNotification(name, email, company, leadScore);
+}
+
+function calculateLeadScore(company, email) {
+  let score = 50; // Base score
+
+  // Domain scoring
+  if (email.includes(&#39;.edu&#39;)) score += 10; // Educational institutions
+  if (email.includes(&#39;.gov&#39;)) score += 20; // Government entities
+  if (email.endsWith(&#39;@gmail.com&#39;)) score -= 20; // Generic email domains
+
+  // Company name heuristics
+  if (company.toLowerCase().includes(&#39;inc&#39;) || company.toLowerCase().includes(&#39;llc&#39;)) {
+    score += 15; // Formal business entity
+  }
+
+  return Math.min(100, Math.max(0, score)); // Clamp between 0-100
+}
+
+function sendSlackNotification(name, email, company, score) {
+  const webhookUrl = &#39;YOUR_SLACK_WEBHOOK_URL&#39;;
+
+  const message = {
+    text: `🚨 New Lead: ${name} (${company}) - Score: ${score}\nEmail: ${email}`
+  };
+
+  UrlFetchApp.fetch(webhookUrl, {
+    method: &#39;post&#39;,
+    contentType: &#39;application/json&#39;,
+    payload: JSON.stringify(message)
+  });
+}
+</code></pre>
+<h3>Setup Trigger</h3>
+<p>In Apps Script:</p>
+<ol>
+<li>Click clock icon (Triggers)</li>
+<li>Add Trigger → onFormSubmit → From spreadsheet → On form submit</li>
+<li>Save</li>
+</ol>
+<p>Now every form submission auto-populates Leads, scores the lead, and notifies Slack.</p>
+<h2>Implementation 2: Email Drip Sequences</h2>
+<h3>Automated Follow-Up Emails</h3>
+<p>Apps Script can send personalized emails based on lead stage.</p>
+<pre><code class="language-javascript">function sendFollowUpEmails() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Leads&#39;);
+  const data = sheet.getDataRange().getValues();
+  const today = new Date().toDateString();
+
+  for (let i = 1; i &lt; data.length; i++) { // Skip header row
+    const nextFollowUp = data[i][11]; // Next Follow-Up column
+
+    if (nextFollowUp &amp;&amp; new Date(nextFollowUp).toDateString() === today) {
+      const name = data[i][1];
+      const email = data[i][2];
+      const stage = data[i][7];
+
+      // Select email template based on stage
+      const emailBody = getEmailTemplate(stage, name);
+
+      // Send email
+      GmailApp.sendEmail(email, `Following Up: ${name}`, &#39;&#39;, {
+        htmlBody: emailBody,
+        name: &#39;Your Company Name&#39;
+      });
+
+      // Log activity
+      logActivity(email, &#39;Email Sent&#39;, `Automated follow-up - Stage: ${stage}`);
+
+      // Update Last Contacted
+      sheet.getRange(i + 1, 11).setValue(new Date());
+
+      // Clear Next Follow-Up
+      sheet.getRange(i + 1, 12).setValue(&#39;&#39;);
+    }
+  }
+}
+
+function getEmailTemplate(stage, name) {
+  const templates = {
+    &#39;New&#39;: `
+      &lt;p&gt;Hi ${name},&lt;/p&gt;
+      &lt;p&gt;Thanks for reaching out. I&#39;d love to learn more about your goals and see if we&#39;re a fit.&lt;/p&gt;
+      &lt;p&gt;Are you available for a 15-minute call this week?&lt;/p&gt;
+      &lt;p&gt;Best,&lt;br&gt;Victor&lt;/p&gt;
+    `,
+    &#39;Qualified&#39;: `
+      &lt;p&gt;Hi ${name},&lt;/p&gt;
+      &lt;p&gt;Following up on our conversation. I&#39;ve prepared a proposal outline based on what we discussed.&lt;/p&gt;
+      &lt;p&gt;Can we schedule 30 minutes to review it together?&lt;/p&gt;
+      &lt;p&gt;Best,&lt;br&gt;Victor&lt;/p&gt;
+    `,
+    &#39;Proposal Sent&#39;: `
+      &lt;p&gt;Hi ${name},&lt;/p&gt;
+      &lt;p&gt;Just checking in on the proposal I sent last week. Do you have any questions I can clarify?&lt;/p&gt;
+      &lt;p&gt;Happy to jump on a quick call if that&#39;s easier.&lt;/p&gt;
+      &lt;p&gt;Best,&lt;br&gt;Victor&lt;/p&gt;
+    `
+  };
+
+  return templates[stage] || templates[&#39;New&#39;];
+}
+
+function logActivity(email, type, notes) {
+  const activitySheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Activities&#39;);
+  activitySheet.appendRow([
+    new Date(),
+    email,
+    type,
+    notes,
+    &#39;&#39; // Outcome
+  ]);
+}
+</code></pre>
+<h3>Setup Daily Trigger</h3>
+<p>In Apps Script → Triggers → Add Trigger:</p>
+<ul>
+<li>Function: <code>sendFollowUpEmails</code></li>
+<li>Event source: Time-driven</li>
+<li>Type: Day timer</li>
+<li>Time of day: 9am to 10am</li>
+</ul>
+<p>Now the script checks daily at 9am and auto-sends follow-ups.</p>
+<h2>Implementation 3: Lead Scoring Engine</h2>
+<h3>Behavioral Scoring Model</h3>
+<p>This script scores leads based on engagement signals.</p>
+<pre><code class="language-javascript">function updateLeadScores() {
+  const leadsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Leads&#39;);
+  const activitiesSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Activities&#39;);
+
+  const leads = leadsSheet.getDataRange().getValues();
+  const activities = activitiesSheet.getDataRange().getValues();
+
+  for (let i = 1; i &lt; leads.length; i++) {
+    const email = leads[i][2];
+    let score = leads[i][6]; // Current lead score
+
+    // Count activities for this lead
+    const emailsSent = activities.filter(a =&gt; a[1] === email &amp;&amp; a[2] === &#39;Email Sent&#39;).length;
+    const callsMade = activities.filter(a =&gt; a[1] === email &amp;&amp; a[2] === &#39;Call Made&#39;).length;
+    const meetingsBooked = activities.filter(a =&gt; a[1] === email &amp;&amp; a[2] === &#39;Meeting Booked&#39;).length;
+
+    // Adjust score based on engagement
+    score += emailsSent * 5; // Each email sent adds 5 points
+    score += callsMade * 10; // Each call adds 10 points
+    score += meetingsBooked * 25; // Each meeting adds 25 points
+
+    // Decay score for stale leads
+    const lastContacted = leads[i][10];
+    if (lastContacted) {
+      const daysSinceContact = (new Date() - new Date(lastContacted)) / (1000 * 60 * 60 * 24);
+      if (daysSinceContact &gt; 30) score -= 10;
+      if (daysSinceContact &gt; 60) score -= 20;
+    }
+
+    // Clamp score
+    score = Math.min(100, Math.max(0, score));
+
+    // Update sheet
+    leadsSheet.getRange(i + 1, 7).setValue(score);
+  }
+}
+</code></pre>
+<p>Run this weekly via time-driven trigger. Scores auto-adjust based on engagement and recency.</p>
+<h2>Implementation 4: Pipeline Forecasting</h2>
+<h3>Weighted Pipeline Calculator</h3>
+<pre><code class="language-javascript">function generatePipelineForecast() {
+  const pipelineSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Pipeline&#39;);
+  const data = pipelineSheet.getDataRange().getValues();
+
+  let totalWeightedValue = 0;
+  const stageMultipliers = {
+    &#39;Discovery&#39;: 0.1,
+    &#39;Proposal&#39;: 0.3,
+    &#39;Negotiation&#39;: 0.6,
+    &#39;Closed Won&#39;: 1.0,
+    &#39;Closed Lost&#39;: 0.0
+  };
+
+  const forecast = {};
+
+  for (let i = 1; i &lt; data.length; i++) {
+    const dealValue = data[i][3];
+    const stage = data[i][4];
+    const closeDate = data[i][8];
+
+    if (!closeDate || stage === &#39;Closed Lost&#39;) continue;
+
+    const monthYear = Utilities.formatDate(new Date(closeDate), &#39;America/New_York&#39;, &#39;MMM yyyy&#39;);
+    const weightedValue = dealValue * (stageMultipliers[stage] || 0);
+
+    if (!forecast[monthYear]) forecast[monthYear] = 0;
+    forecast[monthYear] += weightedValue;
+    totalWeightedValue += weightedValue;
+  }
+
+  // Output forecast
+  let forecastText = `📊 Pipeline Forecast\n\nTotal Weighted Pipeline: $${totalWeightedValue.toLocaleString()}\n\nBy Month:\n`;
+
+  for (const [month, value] of Object.entries(forecast)) {
+    forecastText += `${month}: $${value.toLocaleString()}\n`;
+  }
+
+  // Send email report
+  GmailApp.sendEmail(&#39;your-email@example.com&#39;, &#39;Weekly Pipeline Forecast&#39;, forecastText);
+}
+</code></pre>
+<p>Run this weekly. Sales leadership gets automated pipeline forecasts without manual calculation.</p>
+<h2>Advanced Use Cases</h2>
+<h3>Lead Enrichment via API</h3>
+<p>Integrate <strong>Clearbit</strong> or <strong>Hunter.io</strong> to auto-enrich leads:</p>
+<pre><code class="language-javascript">function enrichLead(email) {
+  const apiKey = &#39;YOUR_CLEARBIT_API_KEY&#39;;
+  const url = `https://person.clearbit.com/v2/combined/find?email=${email}`;
+
+  try {
+    const response = UrlFetchApp.fetch(url, {
+      headers: { &#39;Authorization&#39;: `Bearer ${apiKey}` }
+    });
+
+    const data = JSON.parse(response.getContentText());
+    return {
+      company: data.company.name,
+      title: data.person.employment.title,
+      location: data.geo.city
+    };
+  } catch (error) {
+    Logger.log(`Enrichment failed for ${email}: ${error}`);
+    return null;
+  }
+}
+</code></pre>
+<p>Run this on form submission to auto-populate company data.</p>
+<h3>Meeting Scheduler Integration</h3>
+<p>Connect to <strong>Calendly</strong> API to log booked meetings:</p>
+<pre><code class="language-javascript">function syncCalendlyBookings() {
+  const apiKey = &#39;YOUR_CALENDLY_API_KEY&#39;;
+  const url = &#39;https://api.calendly.com/scheduled_events&#39;;
+
+  const response = UrlFetchApp.fetch(url, {
+    headers: { &#39;Authorization&#39;: `Bearer ${apiKey}` }
+  });
+
+  const events = JSON.parse(response.getContentText()).collection;
+
+  events.forEach(event =&gt; {
+    const email = event.invitees[0].email;
+    logActivity(email, &#39;Meeting Booked&#39;, `Scheduled: ${event.start_time}`);
+  });
+}
+</code></pre>
+<h3>Slack Integration for Team Alerts</h3>
+<p>Notify team when high-value deals progress:</p>
+<pre><code class="language-javascript">function monitorPipelineChanges() {
+  const pipelineSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;Pipeline&#39;);
+  const data = pipelineSheet.getDataRange().getValues();
+
+  for (let i = 1; i &lt; data.length; i++) {
+    const dealValue = data[i][3];
+    const stage = data[i][4];
+
+    if (dealValue &gt; 25000 &amp;&amp; stage === &#39;Negotiation&#39;) {
+      const company = data[i][2];
+      sendSlackNotification(`🔥 High-value deal: ${company} ($${dealValue}) entered Negotiation stage`);
+    }
+  }
+}
+</code></pre>
+<h2>When to Migrate to a Traditional CRM</h2>
+<p>Sheets works until:</p>
+<ol>
+<li><strong>Lead volume exceeds 1,000/month</strong> — Sheets performance degrades, queries slow down</li>
+<li><strong>Team size exceeds 10 people</strong> — Collaboration features (role-based permissions, audit logs) become critical</li>
+<li><strong>Integration requirements exceed 5 tools</strong> — Native CRM integrations (Zapier, HubSpot, Salesforce) handle complexity better</li>
+<li><strong>Compliance requirements emerge</strong> — SOC 2, GDPR, HIPAA need enterprise-grade data governance</li>
+</ol>
+<p>Until you hit these thresholds, Sheets + Apps Script delivers 80% of CRM functionality at 2% of the cost.</p>
+<h2>Common Mistakes That Break Sheets CRMs</h2>
+<h3>Mistake 1: No Data Validation</h3>
+<p>Without validation, users enter &quot;john@email&quot; instead of &quot;<a href="mailto:john@email.com">john@email.com</a>.&quot; Sheets breaks.</p>
+<p><strong>Fix:</strong> Data → Data validation → Text contains @ for email columns.</p>
+<h3>Mistake 2: Manual Script Execution</h3>
+<p>If you rely on manually running scripts, the system decays. Automate everything via triggers.</p>
+<h3>Mistake 3: No Backup Strategy</h3>
+<p>Sheets has version history, but accidental deletions happen.</p>
+<p><strong>Fix:</strong> Apps Script daily backup to Google Drive:</p>
+<pre><code class="language-javascript">function backupSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const backupFolder = DriveApp.getFolderById(&#39;YOUR_FOLDER_ID&#39;);
+  const file = DriveApp.getFileById(ss.getId());
+
+  file.makeCopy(`Backup - ${new Date().toDateString()}`, backupFolder);
+}
+</code></pre>
+<h3>Mistake 4: Ignoring Script Quotas</h3>
+<p>Apps Script has daily quotas (100 emails/day for free accounts, 1,500 for Workspace). Monitor usage.</p>
+<p><strong>Fix:</strong> Log script executions, track approaching limits, upgrade to Workspace if needed.</p>
+<h2>Tools That Extend Sheets CRM Functionality</h2>
+<h3>Form Builders</h3>
+<ul>
+<li><strong>Typeform</strong> / <strong>Jotform</strong>: More advanced form logic than Google Forms</li>
+<li><strong>Paperform</strong>: Payment integration for lead capture with deposits</li>
+</ul>
+<h3>Automation Platforms</h3>
+<ul>
+<li><strong>Zapier</strong>: Connect Sheets to 5,000+ apps without coding</li>
+<li><strong>Make</strong> (formerly Integrabely): More complex multi-step workflows</li>
+</ul>
+<h3>Visualization Tools</h3>
+<ul>
+<li><strong>Google Data Studio</strong> (now Looker Studio): Build dashboards from Sheets data</li>
+<li><strong>Coefficient</strong>: Sync Sheets with Salesforce, HubSpot for hybrid setups</li>
+</ul>
+<h3>Email Sequencing</h3>
+<ul>
+<li><strong>Lemlist</strong> / <strong>Woodpecker</strong>: Dedicated cold email platforms that integrate with Sheets</li>
+<li><strong>GMass</strong>: Gmail-native mail merge with Sheets integration</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<p><strong>Q: Is Google Sheets secure enough for CRM data?</strong></p>
+<p>For B2B contact data (names, emails, companies), yes. Sheets supports 2FA, SSO, and role-based access control. Don&#39;t store payment info or SSNs. For PHI (healthcare) or financial data, use enterprise CRM with compliance certifications.</p>
+<p><strong>Q: How many leads can Sheets handle before performance degrades?</strong></p>
+<p>Practically, 5,000-10,000 rows. Beyond that, load times increase and Apps Script execution slows. Use <strong>Google BigQuery</strong> for larger datasets and query via Sheets connector.</p>
+<p><strong>Q: Can I build a Sheets CRM without coding experience?</strong></p>
+<p>Yes, but with limitations. Use Zapier or Make for no-code automation. For custom logic (lead scoring, forecasting), you&#39;ll need basic JavaScript or hire a freelancer ($500-$2,000 for full setup).</p>
+<p><strong>Q: How do I prevent multiple team members from editing the same record simultaneously?</strong></p>
+<p>Use <strong>protected ranges</strong> (Data → Protect sheets and ranges). Lock columns like Lead Score and Stage so only Apps Script can modify them. Or migrate to <strong>Google AppSheet</strong> for form-based editing with conflict resolution.</p>
+<p><strong>Q: Can I migrate from Sheets to a traditional CRM later?</strong></p>
+<p>Yes. Export Sheets as CSV, import to HubSpot/Salesforce. Map columns during import. Plan for 2-4 hours of cleanup (duplicate detection, formatting adjustments). Most CRMs offer migration services.</p>
+<p><strong>Q: What&#39;s the total time investment to build a Sheets CRM?</strong></p>
+<p>Initial setup: 8-12 hours (build sheets, write scripts, test automation). Maintenance: 1-2 hours/month (fix bugs, add features). Compare to CRM implementation (40-80 hours) + ongoing admin (10-20 hours/month).</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

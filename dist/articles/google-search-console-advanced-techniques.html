@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Search Console Advanced Techniques for B2B Marketers | B2B Vic</title>
+    <meta name="description" content="Master advanced GSC filtering, API automation, and data analysis techniques to uncover B2B SEO opportunities competitors miss. Enterprise-grade tactics for fractional teams." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Google Search Console Advanced Techniques for B2B Marketers" />
+    <meta property="og:description" content="Master advanced GSC filtering, API automation, and data analysis techniques to uncover B2B SEO opportunities competitors miss. Enterprise-grade tactics for fractional teams." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/google-search-console-advanced-techniques.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Google Search Console Advanced Techniques for B2B Marketers" />
+    <meta name="twitter:description" content="Master advanced GSC filtering, API automation, and data analysis techniques to uncover B2B SEO opportunities competitors miss. Enterprise-grade tactics for fractional teams." />
+    <link rel="canonical" href="https://b2bvic.com/articles/google-search-console-advanced-techniques.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Google Search Console Advanced Techniques for B2B Marketers",
+      "description": "Master advanced GSC filtering, API automation, and data analysis techniques to uncover B2B SEO opportunities competitors miss. Enterprise-grade tactics for fractional teams.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/google-search-console-advanced-techniques.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Search Console Advanced Techniques for B2B Marketers"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Google Search Console Advanced Techniques for B2B Marketers</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Google Search Console Advanced Techniques for B2B Marketers</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Google Search Console Advanced Techniques for B2B Marketers</h1>
+<p><strong>Google Search Console</strong> (GSC) is the most underutilized intelligence platform in B2B SEO. Most teams export CSV files, sort by impressions, and call it analysis. Meanwhile, advanced operators extract pipeline velocity signals, detect content decay before traffic drops, and automate reporting workflows that surface opportunities worth $50K+ in annual contract value.</p>
+<p>This guide dissects the techniques that separate amateur GSC usage from enterprise-grade intelligence extraction. You&#39;ll learn regex filtering patterns, API automation scripts, and multi-dimensional analysis frameworks that turn raw search data into board-ready insights.</p>
+<h2>Why Most GSC Analysis Fails</h2>
+<p>The default GSC interface encourages shallow pattern recognition. You see impressions trending up, assume the strategy works, and move on. But B2B buying cycles span 6-18 months. The queries that matter aren&#39;t high-volume informational searches—they&#39;re low-volume, high-intent commercial phrases that signal budget authority and timeline urgency.</p>
+<p>Traditional GSC analysis misses:</p>
+<ol>
+<li><strong>Query intent drift</strong> — When &quot;compare [your product]&quot; shifts to &quot;implement [your product],&quot; that&#39;s a leading indicator of deal velocity, not just traffic quality</li>
+<li><strong>Position volatility clustering</strong> — Sudden rank drops across semantically related queries indicate algorithmic reassessment of topical authority, not individual keyword fluctuations</li>
+<li><strong>Impression-to-click conversion decay</strong> — When CTR drops while maintaining position, your meta descriptions or branded perception degraded, not your technical SEO</li>
+<li><strong>Device-specific conversion signals</strong> — Mobile queries with desktop conversion rates suggest your mobile experience leaks revenue, not that mobile traffic is &quot;lower quality&quot;</li>
+</ol>
+<h2>Advanced Filtering Techniques</h2>
+<p>GSC&#39;s regex filter is the gateway to precision analysis. Most users never touch it. Here&#39;s what they miss:</p>
+<h3>Commercial Intent Query Isolation</h3>
+<p>Use this regex pattern to surface every query containing buying signals:</p>
+<pre><code>(pricing|cost|vs|versus|alternative|review|best|top|compare|demo|trial|buy|purchase|contract|enterprise|implement)
+</code></pre>
+<p>Export this subset monthly. Track position and CTR trends. When commercial queries gain impressions but lose position, your competitors are outbidding you in content depth or entity authority.</p>
+<h3>Long-Tail Discovery Mining</h3>
+<p>Filter for queries with 5+ words and &lt;100 impressions:</p>
+<pre><code>\b\w+\b\s+\b\w+\b\s+\b\w+\b\s+\b\w+\b\s+\b\w+\b
+</code></pre>
+<p>These ultra-specific queries reveal actual customer language patterns. One B2B SaaS client discovered &quot;how to migrate from [competitor] to [their product] without downtime&quot; generated zero impressions because they never published migration documentation. That content gap represented $200K in annual lost conversions.</p>
+<h3>Branded vs. Non-Branded Segmentation</h3>
+<p>Create separate filters:</p>
+<p><strong>Branded:</strong></p>
+<pre><code>(your-brand-name|ceo-name|product-name|acronym)
+</code></pre>
+<p><strong>Non-branded:</strong></p>
+<pre><code>^((?!your-brand-name|ceo-name|product-name).)*$
+</code></pre>
+<p>Track the ratio. B2B brands should maintain 60-70% non-branded traffic. If branded queries dominate, your demand generation engine stalled—you&#39;re capturing existing awareness, not creating new pipeline.</p>
+<h3>Geographic Intent Mapping</h3>
+<p>For multi-location service businesses:</p>
+<pre><code>(city-name|state-name|region-name|near me|in [location])
+</code></pre>
+<p>Cross-reference with CRM data. If <strong>San Francisco</strong> generates 3x the GSC impressions of <strong>Austin</strong> but Austin closes 2x more deals, your content strategy misaligns with sales territory effectiveness.</p>
+<h2>API Automation for Continuous Intelligence</h2>
+<p>The GSC interface limits you to 1,000 rows and 16 months of data. The <strong>Search Analytics API</strong> removes both constraints.</p>
+<h3>Python Script: Weekly Position Change Alerting</h3>
+<p>This script surfaces queries that dropped 3+ positions week-over-week:</p>
+<pre><code class="language-python">from google.oauth2 import service_account
+from googleapiclient.discovery import build
+import pandas as pd
+from datetime import datetime, timedelta
+
+SCOPES = [&#39;https://www.googleapis.com/auth/webmasters.readonly&#39;]
+SERVICE_ACCOUNT_FILE = &#39;path/to/credentials.json&#39;
+
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+service = build(&#39;searchconsole&#39;, &#39;v1&#39;, credentials=credentials)
+
+site_url = &#39;sc-domain:yourdomain.com&#39;
+
+def fetch_data(start_date, end_date):
+    request = {
+        &#39;startDate&#39;: start_date,
+        &#39;endDate&#39;: end_date,
+        &#39;dimensions&#39;: [&#39;query&#39;],
+        &#39;rowLimit&#39;: 25000
+    }
+    response = service.searchanalytics().query(siteUrl=site_url, body=request).execute()
+    return pd.DataFrame(response.get(&#39;rows&#39;, []))
+
+this_week = fetch_data((datetime.now() - timedelta(days=7)).strftime(&#39;%Y-%m-%d&#39;),
+                        datetime.now().strftime(&#39;%Y-%m-%d&#39;))
+last_week = fetch_data((datetime.now() - timedelta(days=14)).strftime(&#39;%Y-%m-%d&#39;),
+                        (datetime.now() - timedelta(days=7)).strftime(&#39;%Y-%m-%d&#39;))
+
+merged = this_week.merge(last_week, on=&#39;keys&#39;, suffixes=(&#39;_now&#39;, &#39;_prev&#39;))
+merged[&#39;position_change&#39;] = merged[&#39;position_now&#39;] - merged[&#39;position_prev&#39;]
+alerts = merged[merged[&#39;position_change&#39;] &gt; 3].sort_values(&#39;position_change&#39;, ascending=False)
+
+print(alerts[[&#39;keys&#39;, &#39;position_now&#39;, &#39;position_prev&#39;, &#39;position_change&#39;]])
+</code></pre>
+<p>Run this via cron job every Monday. Feed output into Slack. When &quot;enterprise CRM integration&quot; drops from position 4 to 11, that&#39;s a $30K/year content decay signal.</p>
+<h3>Google Sheets Integration for Client Dashboards</h3>
+<p>Use <strong>Google Apps Script</strong> to pull GSC data into Sheets for stakeholder reporting:</p>
+<pre><code class="language-javascript">function fetchGSCData() {
+  const siteUrl = &#39;sc-domain:yourdomain.com&#39;;
+  const startDate = &#39;2026-01-01&#39;;
+  const endDate = &#39;2026-02-08&#39;;
+
+  const request = {
+    startDate: startDate,
+    endDate: endDate,
+    dimensions: [&#39;page&#39;, &#39;query&#39;],
+    rowLimit: 10000
+  };
+
+  const response = UrlFetchApp.fetch(
+    `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`,
+    {
+      method: &#39;post&#39;,
+      headers: { &#39;Authorization&#39;: &#39;Bearer &#39; + ScriptApp.getOAuthToken() },
+      contentType: &#39;application/json&#39;,
+      payload: JSON.stringify(request)
+    }
+  );
+
+  const data = JSON.parse(response.getContentText()).rows;
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#39;GSC Data&#39;);
+
+  sheet.clearContents();
+  sheet.appendRow([&#39;Page&#39;, &#39;Query&#39;, &#39;Clicks&#39;, &#39;Impressions&#39;, &#39;CTR&#39;, &#39;Position&#39;]);
+
+  data.forEach(row =&gt; {
+    sheet.appendRow([
+      row.keys[0],
+      row.keys[1],
+      row.clicks,
+      row.impressions,
+      row.ctr,
+      row.position
+    ]);
+  });
+}
+</code></pre>
+<p>Schedule this to refresh every Sunday night. Clients see live data without manual CSV exports.</p>
+<h2>Multi-Dimensional Analysis Frameworks</h2>
+<p>Clicks and impressions are lagging indicators. Advanced operators layer GSC data with external signals to predict performance shifts.</p>
+<h3>Page-Level Content Decay Scoring</h3>
+<p>Create a scoring model:</p>
+<pre><code>Decay Score = (Position Change × 0.4) + (CTR Change × 0.3) + (Impression Change × 0.3)
+</code></pre>
+<p>Apply this to every page monthly. Pages with Decay Score &gt;20 need immediate intervention. One real estate client discovered their &quot;best neighborhoods&quot; content decayed 23 points over 90 days—Google shifted toward video and local pack results. They pivoted to YouTube shorts and GBP optimization, recovering 40% of lost traffic in 8 weeks.</p>
+<h3>Query Intent Clustering with NLP</h3>
+<p>Export all queries. Run them through <strong>spaCy</strong> or <strong>BERT</strong> embeddings to cluster by semantic similarity:</p>
+<pre><code class="language-python">from sentence_transformers import SentenceTransformer
+from sklearn.cluster import KMeans
+import numpy as np
+
+model = SentenceTransformer(&#39;all-MiniLM-L6-v2&#39;)
+queries = df[&#39;query&#39;].tolist()
+embeddings = model.encode(queries)
+
+kmeans = KMeans(n_clusters=10, random_state=42)
+clusters = kmeans.fit_predict(embeddings)
+
+df[&#39;cluster&#39;] = clusters
+print(df.groupby(&#39;cluster&#39;)[&#39;impressions&#39;].sum().sort_values(ascending=False))
+</code></pre>
+<p>This surfaces hidden topical gaps. One B2B SaaS client discovered a 2,000-query cluster around &quot;API rate limiting best practices&quot; with zero corresponding content. They published a technical guide, captured 40% of that impression volume, and converted 12 enterprise leads in Q1.</p>
+<h3>CTR Benchmarking by Position</h3>
+<p>Google&#39;s average CTR curves don&#39;t apply to B2B. Extract your actual CTR-by-position data:</p>
+<pre><code class="language-python">position_ctr = df.groupby(&#39;position&#39;).agg({&#39;clicks&#39;: &#39;sum&#39;, &#39;impressions&#39;: &#39;sum&#39;})
+position_ctr[&#39;ctr&#39;] = position_ctr[&#39;clicks&#39;] / position_ctr[&#39;impressions&#39;]
+print(position_ctr)
+</code></pre>
+<p>If your position 3 CTR is 8% but industry average is 12%, your meta descriptions underperform. A/B test different CTAs, social proof mentions, or year markers (&quot;2026 Guide&quot;).</p>
+<h2>Enterprise GSC Workflows</h2>
+<p>Large B2B organizations need governance around GSC access and analysis.</p>
+<h3>Role-Based Data Segmentation</h3>
+<p>Create separate <strong>Search Console properties</strong> for:</p>
+<ol>
+<li><strong>Corporate site</strong> (<a href="http://www.domain.com">www.domain.com</a>)</li>
+<li><strong>Blog subdomain</strong> (blog.domain.com)</li>
+<li><strong>Product documentation</strong> (docs.domain.com)</li>
+<li><strong>Regional sites</strong> (uk.domain.com, de.domain.com)</li>
+</ol>
+<p>Grant product marketers access only to docs. Grant content team access only to blog. This prevents data overload and sharpens accountability.</p>
+<h3>Automated Anomaly Detection</h3>
+<p>Set up <strong>Google Cloud Functions</strong> to monitor GSC API for statistical anomalies:</p>
+<pre><code class="language-python">import numpy as np
+from scipy import stats
+
+def detect_anomalies(data):
+    mean = np.mean(data)
+    std = np.std(data)
+    z_scores = [(x - mean) / std for x in data]
+
+    anomalies = []
+    for i, z in enumerate(z_scores):
+        if abs(z) &gt; 2.5:  # 2.5 standard deviations
+            anomalies.append(i)
+
+    return anomalies
+
+clicks_series = df[&#39;clicks&#39;].tolist()
+anomaly_indices = detect_anomalies(clicks_series)
+
+for idx in anomaly_indices:
+    print(f&quot;Anomaly detected on {df.iloc[idx][&#39;date&#39;]}: {df.iloc[idx][&#39;clicks&#39;]} clicks&quot;)
+</code></pre>
+<p>Deploy this as a daily function. When clicks spike 3x without corresponding impression growth, investigate for traffic quality issues (bot traffic, misattributed referrals).</p>
+<h2>Competitive Intelligence via GSC</h2>
+<p>Your GSC data reveals competitor strategy shifts.</p>
+<h3>Query Gap Analysis</h3>
+<p>Export competitor queries via <strong>SEMrush</strong> or <strong>Ahrefs</strong>. Cross-reference with your GSC data:</p>
+<pre><code class="language-python">competitor_queries = set(competitor_df[&#39;query&#39;])
+your_queries = set(gsc_df[&#39;query&#39;])
+
+gaps = competitor_queries - your_queries
+print(f&quot;Competitor ranks for {len(gaps)} queries you don&#39;t appear for&quot;)
+</code></pre>
+<p>Prioritize gaps with &gt;500 monthly search volume and commercial intent. These are uncontested content opportunities.</p>
+<h3>SERP Feature Displacement Tracking</h3>
+<p>Filter GSC for queries where you hold position 1-3. Export monthly. Track if featured snippets, People Also Ask, or video carousels displace your listing.</p>
+<p>When <strong>Google</strong> introduces new SERP features, organic CTR drops 20-40%. If your position holds but CTR declines, optimize for the new feature format (add FAQ schema, embed video, restructure for snippet extraction).</p>
+<h2>Common GSC Mistakes That Leak Revenue</h2>
+<h3>Mistake 1: Ignoring Low-Impression, High-Position Queries</h3>
+<p>A query at position 2 with 10 impressions/month isn&#39;t &quot;low value&quot;—it&#39;s a signal that the topic lacks search demand but you dominate it. If that query is commercial (&quot;enterprise API documentation platform&quot;), it represents a content moat. Expand it into a pillar page, internal link aggressively, and monitor for impression growth.</p>
+<h3>Mistake 2: Over-Indexing on Branded Query Performance</h3>
+<p>Branded queries inflate vanity metrics. Separate reporting entirely. One consulting client celebrated 40% traffic growth—100% from branded queries after a PR hit. Non-branded traffic declined 15%. They were losing market share while celebrating noise.</p>
+<h3>Mistake 3: Not Tracking Query-to-CRM Attribution</h3>
+<p>GSC doesn&#39;t connect to <strong>HubSpot</strong> or <strong>Salesforce</strong> natively. Build the bridge manually:</p>
+<ol>
+<li>Tag all organic landing pages with UTM parameters: <code>?utm_source=organic&amp;utm_content=[page-slug]</code></li>
+<li>Capture query parameter via JavaScript: <code>new URLSearchParams(window.location.search).get(&#39;utm_content&#39;)</code></li>
+<li>Pass to CRM as custom field</li>
+<li>Cross-reference GSC queries with closed deals</li>
+</ol>
+<p>This reveals which queries generate pipeline, not just traffic. &quot;Integration pricing&quot; might drive 1/10th the traffic of &quot;what is CRM&quot; but close at 5x the rate.</p>
+<h2>Tools That Extend GSC Functionality</h2>
+<h3>Looker Studio for Visual Dashboards</h3>
+<p>Connect GSC to <strong>Looker Studio</strong> (formerly Data Studio) for stakeholder reporting. Create calculated fields:</p>
+<ul>
+<li><strong>CTR vs. Expected CTR</strong> (compare your CTR to position-based benchmarks)</li>
+<li><strong>Impression Share</strong> (your impressions / total estimated search volume)</li>
+<li><strong>Query Value Score</strong> (clicks × avg deal size × close rate)</li>
+</ul>
+<h3>Python Libraries for Deep Analysis</h3>
+<ul>
+<li><strong>google-auth</strong> + <strong>google-api-python-client</strong>: Official GSC API access</li>
+<li><strong>pandas</strong>: Data manipulation and time-series analysis</li>
+<li><strong>matplotlib</strong> / <strong>seaborn</strong>: Visualization for trend identification</li>
+<li><strong>scikit-learn</strong>: Clustering and anomaly detection</li>
+</ul>
+<h3>Third-Party GSC Enhancers</h3>
+<ul>
+<li><strong>SearchAnalytics for Sheets</strong>: Free Google Sheets add-on with advanced filtering</li>
+<li><strong>GSC Insights Chrome Extension</strong>: In-browser regex filtering and export</li>
+<li><strong>Screaming Frog</strong>: Crawl your site, merge with GSC data to identify orphan pages</li>
+</ul>
+<h2>B2B-Specific GSC Strategies</h2>
+<h3>Lead Magnet Performance Tracking</h3>
+<p>Tag all lead magnet landing pages (<code>/resources/</code>, <code>/whitepapers/</code>, <code>/templates/</code>). Track queries that drive traffic. If &quot;CRM implementation checklist&quot; generates 500 impressions but 2% CTR, your meta description undersells the value. Test variations:</p>
+<ul>
+<li>&quot;Free 47-Point CRM Implementation Checklist (2026 Edition)&quot;</li>
+<li>&quot;CRM Implementation Checklist Used by 1,200+ B2B Teams&quot;</li>
+<li>&quot;Avoid 12 Fatal CRM Mistakes—Free Checklist Download&quot;</li>
+</ul>
+<h3>Sales Enablement Content Identification</h3>
+<p>Filter for queries containing &quot;template,&quot; &quot;checklist,&quot; &quot;framework,&quot; &quot;example,&quot; &quot;case study.&quot; These signal bottom-funnel intent. Create a priority content queue from this list. Publish one per month. Track which pieces generate the most <strong>LinkedIn</strong> shares from your sales team—that&#39;s your highest-leverage enablement content.</p>
+<h3>Thought Leadership Opportunity Mining</h3>
+<p>Search for queries containing &quot;why,&quot; &quot;how,&quot; &quot;what is,&quot; &quot;guide to,&quot; &quot;ultimate,&quot; &quot;complete.&quot; These indicate conceptual interest, not transactional intent. Publish long-form opinion pieces and framework content. Track impressions over 6 months. B2B thought leadership compounds—it won&#39;t drive immediate conversions but builds the brand authority that makes cold outreach work.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>Q: How often should I check Google Search Console?</strong></p>
+<p>For B2B sites with &lt;10K monthly sessions, weekly is sufficient. For enterprise sites (&gt;100K sessions), daily monitoring with automated alerts for anomalies. Set up email notifications for manual actions, security issues, and coverage errors.</p>
+<p><strong>Q: Why do my GSC impressions not match keyword research tool estimates?</strong></p>
+<p>Keyword tools (<strong>Ahrefs</strong>, <strong>SEMrush</strong>) estimate total search volume. GSC shows impressions your site received. If you rank on page 3, you&#39;ll capture &lt;1% of total volume. The gap indicates ranking opportunity, not data inaccuracy.</p>
+<p><strong>Q: Should I optimize for every query in GSC?</strong></p>
+<p>No. Filter for queries with commercial intent, sufficient volume (&gt;50 impressions/month for B2B), and achievable position improvement (currently ranking 6-20). Ignore informational queries unless they map to a documented content strategy.</p>
+<p><strong>Q: How do I handle branded queries that aren&#39;t my brand?</strong></p>
+<p>If you rank for &quot;Competitor Brand vs Your Brand,&quot; that&#39;s high-value comparison traffic. Create dedicated comparison pages. If you rank for just &quot;Competitor Brand,&quot; you&#39;re capturing spillover traffic—create &quot;Best Alternatives to [Competitor]&quot; content to convert it.</p>
+<p><strong>Q: Can I use GSC data to predict future traffic?</strong></p>
+<p>Impressions are a leading indicator. If impressions grow 20% month-over-month while position holds steady, clicks will follow within 30-60 days as seasonal trends and content recency factors normalize. Track impression trends as a pipeline health metric.</p>
+<p><strong>Q: How do I export more than 1,000 rows from GSC?</strong></p>
+<p>Use the Search Analytics API (see Python script above) or connect GSC to <strong>Looker Studio</strong> or <strong>BigQuery</strong>. Both allow unlimited row export and historical data retention beyond the 16-month GSC interface limit.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
