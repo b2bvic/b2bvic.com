@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work | B2B Vic</title>
+    <meta name="description" content="Automate reporting, data processing, and workflow triggers using Google Apps Script. Practical examples for B2B operators managing spreadsheets, emails, calendars, and forms without hiring developers." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work" />
+    <meta property="og:description" content="Automate reporting, data processing, and workflow triggers using Google Apps Script. Practical examples for B2B operators managing spreadsheets, emails, calendars, and forms without hiring developers." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/google-apps-script-business-automation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work" />
+    <meta name="twitter:description" content="Automate reporting, data processing, and workflow triggers using Google Apps Script. Practical examples for B2B operators managing spreadsheets, emails, calendars, and forms without hiring developers." />
+    <link rel="canonical" href="https://b2bvic.com/articles/google-apps-script-business-automation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work",
+      "description": "Automate reporting, data processing, and workflow triggers using Google Apps Script. Practical examples for B2B operators managing spreadsheets, emails, calendars, and forms without hiring developers.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/google-apps-script-business-automation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Google Apps Script for Business Automation — No-Code Solutions for Repetitive Work</h1>
+<p><strong>Google Apps Script</strong> is JavaScript for Google Workspace. It automates tasks across Gmail, Sheets, Docs, Calendar, and Forms. For B2B operators—consultants, agency owners, operations managers—it replaces manual data entry, repetitive reporting, and copy-paste workflows with code that runs automatically.</p>
+<p>The power: Apps Script is free, requires no server infrastructure, and integrates natively with tools you already use. The learning curve is gentler than Python or full-stack development. If you can write basic formulas in Google Sheets, you can learn Apps Script fundamentals in a weekend.</p>
+<p>Common use cases: auto-generate weekly reports, send triggered emails based on spreadsheet changes, populate CRM data from forms, scrape web data into sheets, schedule calendar events programmatically. These tasks take 15-30 minutes manually. Apps Script does them in seconds, triggered automatically.</p>
+<h2>Core Concepts: Scripts, Triggers, and Services</h2>
+<p><strong>Scripts</strong> are JavaScript functions stored in Google Workspace files (Sheets, Docs, Forms). They access Google services via built-in APIs.</p>
+<p><strong>Example: Send email when form submitted</strong></p>
+<pre><code class="language-javascript">function onFormSubmit(e) {
+  var email = e.values[1];  // Form respondent&#39;s email
+  var name = e.values[2];   // Form respondent&#39;s name
+
+  GmailApp.sendEmail(
+    email,
+    &quot;Thanks for your inquiry&quot;,
+    &quot;Hi &quot; + name + &quot;, we received your form and will respond within 24 hours.&quot;
+  );
+}
+</code></pre>
+<p><strong>Triggers</strong> execute scripts automatically on events:</p>
+<ul>
+<li><strong>Time-based</strong> — run every hour, daily at 9am, weekly on Mondays</li>
+<li><strong>Event-based</strong> — run when form submitted, sheet edited, email received</li>
+</ul>
+<p><strong>Services</strong> are Google APIs accessible from Apps Script:</p>
+<ul>
+<li><strong>SpreadsheetApp</strong> — read/write Google Sheets</li>
+<li><strong>GmailApp</strong> — send/read emails</li>
+<li><strong>CalendarApp</strong> — create/modify calendar events</li>
+<li><strong>DriveApp</strong> — access Google Drive files</li>
+<li><strong>UrlFetchApp</strong> — make HTTP requests to external APIs</li>
+<li><strong>DocumentApp</strong> — modify Google Docs</li>
+</ul>
+<h2>Setup and First Script</h2>
+<p><strong>Accessing Apps Script:</strong></p>
+<ol>
+<li>Open Google Sheets → Extensions → Apps Script</li>
+<li>You&#39;re in the editor. Default function is <code>myFunction()</code>.</li>
+</ol>
+<p><strong>Hello World example:</strong></p>
+<pre><code class="language-javascript">function myFunction() {
+  Logger.log(&quot;Hello World&quot;);
+}
+</code></pre>
+<p>Click Run → View execution log → &quot;Hello World&quot; appears.</p>
+<p><strong>Practical example: Auto-timestamp when row updated</strong></p>
+<pre><code class="language-javascript">function onEdit(e) {
+  var sheet = e.source.getActiveSheet();
+  var range = e.range;
+
+  // Only run on edits to column A
+  if (range.getColumn() == 1) {
+    var timestampCell = sheet.getRange(range.getRow(), 2);
+    timestampCell.setValue(new Date());
+  }
+}
+</code></pre>
+<p>This runs automatically whenever column A is edited, adding timestamp in column B.</p>
+<p><strong>Setting up trigger:</strong></p>
+<p>Apps Script editor → Triggers (clock icon) → Add Trigger → Choose function: <code>onEdit</code> → Event type: On edit → Save.</p>
+<h2>Use Case 1: Automated Weekly Reporting</h2>
+<p><strong>Scenario:</strong> You track client metrics in Google Sheets. Every Monday, you manually email a summary to stakeholders.</p>
+<p><strong>Solution:</strong> Apps Script sends the email automatically.</p>
+<p><strong>Script:</strong></p>
+<pre><code class="language-javascript">function sendWeeklyReport() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;Metrics&quot;);
+
+  // Get data from last 7 days (rows 2-8)
+  var data = sheet.getRange(&quot;A2:D8&quot;).getValues();
+
+  // Build email body
+  var body = &quot;Weekly Report:\n\n&quot;;
+  body += &quot;Client | Leads | Conversions | Revenue\n&quot;;
+
+  for (var i = 0; i &lt; data.length; i++) {
+    body += data[i][0] + &quot; | &quot; + data[i][1] + &quot; | &quot; + data[i][2] + &quot; | $&quot; + data[i][3] + &quot;\n&quot;;
+  }
+
+  // Send email
+  GmailApp.sendEmail(
+    &quot;stakeholder@company.com&quot;,
+    &quot;Weekly Metrics Report&quot;,
+    body
+  );
+}
+</code></pre>
+<p><strong>Trigger setup:</strong></p>
+<p>Triggers → Add → Function: <code>sendWeeklyReport</code> → Time-based → Week timer → Every Monday → 9am-10am.</p>
+<p>Every Monday at 9am, stakeholders receive the report. Zero manual work.</p>
+<h2>Use Case 2: CRM Data Population from Forms</h2>
+<p><strong>Scenario:</strong> Prospects submit Google Form. You manually copy responses to CRM (Follow Up Boss, HubSpot, Salesforce).</p>
+<p><strong>Solution:</strong> Apps Script auto-creates CRM entry via API.</p>
+<p><strong>Script (HubSpot example):</strong></p>
+<pre><code class="language-javascript">function onFormSubmit(e) {
+  var responses = e.values;
+  var name = responses[1];
+  var email = responses[2];
+  var phone = responses[3];
+
+  // HubSpot API request
+  var url = &quot;https://api.hubapi.com/contacts/v1/contact&quot;;
+  var apiKey = &quot;YOUR_HUBSPOT_API_KEY&quot;;
+
+  var payload = {
+    &quot;properties&quot;: [
+      {&quot;property&quot;: &quot;email&quot;, &quot;value&quot;: email},
+      {&quot;property&quot;: &quot;firstname&quot;, &quot;value&quot;: name},
+      {&quot;property&quot;: &quot;phone&quot;, &quot;value&quot;: phone}
+    ]
+  };
+
+  var options = {
+    &quot;method&quot;: &quot;post&quot;,
+    &quot;contentType&quot;: &quot;application/json&quot;,
+    &quot;payload&quot;: JSON.stringify(payload),
+    &quot;headers&quot;: {&quot;Authorization&quot;: &quot;Bearer &quot; + apiKey}
+  };
+
+  UrlFetchApp.fetch(url, options);
+}
+</code></pre>
+<p><strong>Trigger:</strong> Form → Triggers → On form submit → Run <code>onFormSubmit</code>.</p>
+<p>When form submitted, contact instantly appears in HubSpot. No manual data entry.</p>
+<h2>Use Case 3: Scheduled Email Campaigns</h2>
+<p><strong>Scenario:</strong> You manage email outreach in Sheets. Column E indicates &quot;Send Date&quot;. You manually send each email on schedule.</p>
+<p><strong>Solution:</strong> Apps Script checks daily, sends emails when date matches.</p>
+<p><strong>Script:</strong></p>
+<pre><code class="language-javascript">function sendScheduledEmails() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;Outreach&quot;);
+  var data = sheet.getDataRange().getValues();
+  var today = new Date().toDateString();
+
+  for (var i = 1; i &lt; data.length; i++) {  // Skip header row
+    var sendDate = new Date(data[i][4]).toDateString();
+    var sent = data[i][5];
+
+    if (sendDate == today &amp;&amp; sent != &quot;Yes&quot;) {
+      var email = data[i][1];
+      var subject = data[i][2];
+      var body = data[i][3];
+
+      GmailApp.sendEmail(email, subject, body);
+
+      // Mark as sent
+      sheet.getRange(i + 1, 6).setValue(&quot;Yes&quot;);
+    }
+  }
+}
+</code></pre>
+<p><strong>Trigger:</strong> Time-based → Day timer → 9am-10am daily.</p>
+<p>Every day at 9am, script checks spreadsheet and sends scheduled emails.</p>
+<h2>Use Case 4: Web Scraping to Sheets</h2>
+<p><strong>Scenario:</strong> You track competitor pricing manually by visiting their website weekly.</p>
+<p><strong>Solution:</strong> Apps Script scrapes pricing page, populates sheet automatically.</p>
+<p><strong>Script:</strong></p>
+<pre><code class="language-javascript">function scrapeCompetitorPricing() {
+  var url = &quot;https://competitor.com/pricing&quot;;
+  var html = UrlFetchApp.fetch(url).getContentText();
+
+  // Extract price using regex (adjust to competitor&#39;s HTML)
+  var match = html.match(/\$([0-9,]+)\/month/);
+  var price = match ? match[1] : &quot;N/A&quot;;
+
+  // Write to sheet
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;Competitor Pricing&quot;);
+  var lastRow = sheet.getLastRow();
+  sheet.appendRow([new Date(), price]);
+}
+</code></pre>
+<p><strong>Trigger:</strong> Time-based → Week timer → Every Monday → 8am.</p>
+<p>Weekly pricing data auto-populates. No manual checking.</p>
+<p><strong>Note:</strong> Web scraping may violate terms of service. Use for personal research, not commercial data collection.</p>
+<h2>Use Case 5: Automated Calendar Invites</h2>
+<p><strong>Scenario:</strong> When new client added to Sheets, you manually create onboarding meeting.</p>
+<p><strong>Solution:</strong> Apps Script creates calendar event automatically.</p>
+<p><strong>Script:</strong></p>
+<pre><code class="language-javascript">function onEdit(e) {
+  var sheet = e.source.getActiveSheet();
+  var range = e.range;
+
+  // Check if edit is in &quot;New Client&quot; column
+  if (sheet.getName() == &quot;Clients&quot; &amp;&amp; range.getColumn() == 1) {
+    var clientName = range.getValue();
+    var clientEmail = sheet.getRange(range.getRow(), 2).getValue();
+
+    // Create calendar event
+    var calendar = CalendarApp.getDefaultCalendar();
+    var startTime = new Date();
+    startTime.setDate(startTime.getDate() + 3);  // 3 days from now
+    startTime.setHours(10, 0, 0);  // 10am
+
+    var event = calendar.createEvent(
+      &quot;Onboarding Call - &quot; + clientName,
+      startTime,
+      new Date(startTime.getTime() + 60*60*1000),  // 1 hour duration
+      {guests: clientEmail}
+    );
+
+    Logger.log(&quot;Created event: &quot; + event.getId());
+  }
+}
+</code></pre>
+<p>When client name added to sheet, calendar invite sent automatically.</p>
+<h2>Use Case 6: Data Validation and Error Alerts</h2>
+<p><strong>Scenario:</strong> Team members input data in Sheets. Errors (missing fields, invalid formats) go unnoticed.</p>
+<p><strong>Solution:</strong> Apps Script validates data, sends email alert when errors found.</p>
+<p><strong>Script:</strong></p>
+<pre><code class="language-javascript">function validateData() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;Leads&quot;);
+  var data = sheet.getDataRange().getValues();
+  var errors = [];
+
+  for (var i = 1; i &lt; data.length; i++) {
+    var email = data[i][2];
+    var phone = data[i][3];
+
+    // Validate email format
+    if (!email.includes(&quot;@&quot;)) {
+      errors.push(&quot;Row &quot; + (i+1) + &quot;: Invalid email&quot;);
+    }
+
+    // Validate phone format (10 digits)
+    if (phone.replace(/\D/g, &#39;&#39;).length != 10) {
+      errors.push(&quot;Row &quot; + (i+1) + &quot;: Invalid phone number&quot;);
+    }
+  }
+
+  // Send alert if errors found
+  if (errors.length &gt; 0) {
+    GmailApp.sendEmail(
+      &quot;manager@company.com&quot;,
+      &quot;Data Validation Errors&quot;,
+      &quot;Found &quot; + errors.length + &quot; errors:\n\n&quot; + errors.join(&quot;\n&quot;)
+    );
+  }
+}
+</code></pre>
+<p><strong>Trigger:</strong> Time-based → Day timer → Every day at 5pm.</p>
+<p>Daily validation catches data entry errors before they propagate.</p>
+<h2>Best Practices and Limitations</h2>
+<p><strong>Execution limits:</strong></p>
+<p>Google imposes quotas on Apps Script:</p>
+<ul>
+<li><strong>Email sends:</strong> 100/day (free Gmail), 1,500/day (Workspace)</li>
+<li><strong>Script runtime:</strong> 6 minutes per execution</li>
+<li><strong>Triggers:</strong> 90 time-based triggers per user</li>
+</ul>
+<p>Design scripts to stay within limits. For high-volume needs (1,000+ emails/day), use dedicated services (SendGrid, Mailchimp).</p>
+<p><strong>Error handling:</strong></p>
+<p>Wrap API calls in try-catch to prevent script failure:</p>
+<pre><code class="language-javascript">function sendEmail() {
+  try {
+    GmailApp.sendEmail(&quot;user@example.com&quot;, &quot;Subject&quot;, &quot;Body&quot;);
+  } catch (e) {
+    Logger.log(&quot;Error: &quot; + e.message);
+  }
+}
+</code></pre>
+<p><strong>Security:</strong></p>
+<ul>
+<li>Store API keys in Script Properties (not hardcoded):</li>
+</ul>
+<pre><code class="language-javascript">var apiKey = PropertiesService.getScriptProperties().getProperty(&quot;API_KEY&quot;);
+</code></pre>
+<p>Set via: Apps Script editor → Project Settings → Script Properties → Add.</p>
+<ul>
+<li>Grant minimum necessary permissions (don&#39;t request Calendar access if script only uses Sheets).</li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Batch operations instead of looping API calls:</li>
+</ul>
+<p><strong>Bad (slow):</strong></p>
+<pre><code class="language-javascript">for (var i = 0; i &lt; 100; i++) {
+  sheet.getRange(i, 1).setValue(i);  // 100 API calls
+}
+</code></pre>
+<p><strong>Good (fast):</strong></p>
+<pre><code class="language-javascript">var values = [];
+for (var i = 0; i &lt; 100; i++) {
+  values.push([i]);
+}
+sheet.getRange(1, 1, 100, 1).setValues(values);  // 1 API call
+</code></pre>
+<p>Batch operations reduce execution time from minutes to seconds.</p>
+<h2>Learning Resources and Community</h2>
+<p><strong>Official documentation:</strong></p>
+<ul>
+<li><a href="https://developers.google.com/apps-script">Google Apps Script Guide</a></li>
+<li><a href="https://developers.google.com/apps-script/reference">Service Reference</a></li>
+</ul>
+<p><strong>Communities:</strong></p>
+<ul>
+<li>Stack Overflow (<code>google-apps-script</code> tag) — 50K+ questions</li>
+<li>Reddit: r/GoogleAppsScript</li>
+<li>Apps Script Discord servers</li>
+</ul>
+<p><strong>Boilerplate templates:</strong></p>
+<p>Search GitHub for &quot;Google Apps Script [use case]&quot; — thousands of open-source scripts for common tasks.</p>
+<h2>When to Use Apps Script vs. Other Tools</h2>
+<p><strong>Use Apps Script when:</strong></p>
+<ul>
+<li>Automating Google Workspace tasks (Sheets, Gmail, Calendar)</li>
+<li>Free solution preferred</li>
+<li>Low-to-medium complexity (under 500 lines of code)</li>
+<li>No need for external databases or complex logic</li>
+</ul>
+<p><strong>Use Zapier/Make when:</strong></p>
+<ul>
+<li>Connecting non-Google services (Salesforce, Slack, Airtable)</li>
+<li>Need visual workflow builder (no coding)</li>
+<li>Higher cost acceptable ($20-$100/month)</li>
+</ul>
+<p><strong>Use Python/custom code when:</strong></p>
+<ul>
+<li>Complex data processing (machine learning, heavy computation)</li>
+<li>Need external databases (PostgreSQL, MongoDB)</li>
+<li>Execution time exceeds 6 minutes</li>
+</ul>
+<p>For most B2B automation (reporting, CRM integration, email workflows), Apps Script is sufficient and free.</p>
+<h2>FAQ</h2>
+<p><strong>Do I need to know JavaScript to use Apps Script?</strong></p>
+<p>Basic JavaScript helps but isn&#39;t required. Start with simple examples (copy-paste from documentation), modify values, and iterate. Most B2B use cases require 20-50 lines of code.</p>
+<p><strong>Can Apps Script access external APIs?</strong></p>
+<p>Yes, via <code>UrlFetchApp.fetch()</code>. This allows integration with CRMs (HubSpot, Salesforce), payment processors (Stripe), or any service with a REST API.</p>
+<p><strong>Is Apps Script secure for sensitive data?</strong></p>
+<p>Yes, if configured correctly. Use Script Properties for API keys, limit script sharing, and review authorized permissions. Google Workspace admins can audit script activity.</p>
+<p><strong>Can I sell Apps Script solutions?</strong></p>
+<p>Yes. Many consultants build custom scripts for clients ($500-$5,000/project depending on complexity). Package as Google Workspace add-ons for recurring revenue.</p>
+<p><strong>What happens if my script breaks?</strong></p>
+<p>Apps Script sends email notifications when scripts fail. Check execution log (Apps Script editor → Executions) to diagnose errors. Most failures are API quota limits or incorrect data formats.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

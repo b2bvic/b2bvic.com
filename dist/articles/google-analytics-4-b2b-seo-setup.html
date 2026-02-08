@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter | B2B Vic</title>
+    <meta name="description" content="Configure GA4 to track organic search performance, content engagement, and lead attribution for B2B websites. Move beyond pageviews to measure what drives pipeline and revenue from SEO efforts." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter" />
+    <meta property="og:description" content="Configure GA4 to track organic search performance, content engagement, and lead attribution for B2B websites. Move beyond pageviews to measure what drives pipeline and revenue from SEO efforts." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/google-analytics-4-b2b-seo-setup.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter" />
+    <meta name="twitter:description" content="Configure GA4 to track organic search performance, content engagement, and lead attribution for B2B websites. Move beyond pageviews to measure what drives pipeline and revenue from SEO efforts." />
+    <link rel="canonical" href="https://b2bvic.com/articles/google-analytics-4-b2b-seo-setup.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter",
+      "description": "Configure GA4 to track organic search performance, content engagement, and lead attribution for B2B websites. Move beyond pageviews to measure what drives pipeline and revenue from SEO efforts.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/google-analytics-4-b2b-seo-setup.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Google Analytics 4 for B2B SEO — Setup, Events, and Attribution That Actually Matter</h1>
+<p><strong>Google Analytics 4</strong> (GA4) replaced Universal Analytics in July 2023, forcing every website to migrate. The transition was painful—familiar reports disappeared, the interface changed, and event tracking required custom configuration. For B2B SEO, GA4 is simultaneously more powerful and more complex than its predecessor.</p>
+<p>The power: GA4&#39;s event-based model tracks user journeys across sessions, devices, and channels. You can measure how an organic blog visitor returns via direct search three weeks later and converts. Universal Analytics couldn&#39;t connect these dots without custom implementations.</p>
+<p>The complexity: GA4 doesn&#39;t track anything meaningful out of the box. Pageviews and sessions are default events. <strong>Lead form submissions</strong>, <strong>content downloads</strong>, <strong>video plays</strong>, <strong>scroll depth</strong>—these require manual configuration. Most B2B companies install GA4, see traffic data, and assume it&#39;s working. It&#39;s not. They&#39;re tracking visits, not outcomes.</p>
+<p>This guide configures GA4 for B2B SEO specifically: tracking organic traffic quality, content engagement, and attribution from first touch (organic) to conversion (lead, demo, trial).</p>
+<h2>Initial Setup: Property Configuration and Data Streams</h2>
+<p><strong>Step 1: Create GA4 property</strong></p>
+<p>Navigate to Google Analytics → Admin → Create Property → Property Name (e.g., &quot;YourCompany.com GA4&quot;) → Select timezone and currency → Create.</p>
+<p><strong>Step 2: Add data stream</strong></p>
+<p>Click &quot;Data Streams&quot; → Add Stream → Web → Enter website URL → Enable &quot;Enhanced Measurement&quot; (tracks scrolls, outbound clicks, site search, video engagement automatically).</p>
+<p><strong>Step 3: Install tracking code</strong></p>
+<p>Copy the Measurement ID (format: G-XXXXXXXXXX). Install via:</p>
+<ul>
+<li><strong>Google Tag Manager (recommended):</strong> Create new tag → GA4 Configuration → Paste Measurement ID → Trigger: All Pages</li>
+<li><strong>Direct embed:</strong> Paste tracking code in <code>&lt;head&gt;</code> section of all pages (not recommended; harder to maintain)</li>
+</ul>
+<p><strong>Step 4: Link to Google Search Console</strong></p>
+<p>Admin → Product Links → Search Console Links → Link. This imports search query data (impressions, clicks, CTR, position) into GA4 for organic keyword analysis.</p>
+<p><strong>Step 5: Configure attribution settings</strong></p>
+<p>Admin → Attribution Settings → Set <strong>data-driven attribution</strong> as default model. This uses machine learning to credit touchpoints based on actual conversion patterns (more accurate than last-click or first-click).</p>
+<h2>Custom Events for B2B Conversions</h2>
+<p>GA4&#39;s default events don&#39;t track B2B-specific conversions. Configure these manually:</p>
+<p><strong>Lead form submissions:</strong></p>
+<p><strong>Using Google Tag Manager:</strong></p>
+<ol>
+<li>Create trigger: Form Submission → All Forms (or specific form ID)</li>
+<li>Create tag: GA4 Event → Event Name: <code>generate_lead</code> → Event Parameters:<ul>
+<li><code>form_name</code> (e.g., &quot;Contact Us&quot;, &quot;Demo Request&quot;)</li>
+<li><code>form_location</code> (page URL)</li>
+</ul>
+</li>
+<li>Assign trigger, publish</li>
+</ol>
+<p><strong>Alternative (code-based):</strong></p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;generate_lead&#39;, {
+  &#39;form_name&#39;: &#39;Contact Us&#39;,
+  &#39;form_location&#39;: window.location.href
+});
+</code></pre>
+<p><strong>File downloads (whitepapers, case studies):</strong></p>
+<p>Track PDF, DOCX, or other resource downloads:</p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;file_download&#39;, {
+  &#39;file_name&#39;: &#39;whitepaper-seo-strategy.pdf&#39;,
+  &#39;file_type&#39;: &#39;PDF&#39;,
+  &#39;link_url&#39;: &#39;https://yoursite.com/downloads/whitepaper.pdf&#39;
+});
+</code></pre>
+<p><strong>Video engagement:</strong></p>
+<p>GA4 Enhanced Measurement tracks YouTube embeds automatically. For custom videos (Vimeo, Wistia):</p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;video_progress&#39;, {
+  &#39;video_title&#39;: &#39;Product Demo&#39;,
+  &#39;video_percent&#39;: 50  // 25%, 50%, 75%, 100%
+});
+</code></pre>
+<p><strong>Scroll depth:</strong></p>
+<p>Enhanced Measurement tracks 90% scroll automatically. For custom thresholds (25%, 50%, 75%):</p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;scroll&#39;, {
+  &#39;percent_scrolled&#39;: 50
+});
+</code></pre>
+<p><strong>Outbound link clicks (to CRM, demo booking):</strong></p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;click&#39;, {
+  &#39;link_text&#39;: &#39;Book a Demo&#39;,
+  &#39;link_url&#39;: &#39;https://calendly.com/yourcompany&#39;,
+  &#39;outbound&#39;: true
+});
+</code></pre>
+<p><strong>Mark conversions:</strong></p>
+<p>Admin → Events → Mark as Conversion (toggle) for <code>generate_lead</code>, <code>file_download</code>, <code>purchase</code>, etc. This allows GA4 to track conversion paths and attribute revenue.</p>
+<h2>Tracking Organic Search Performance</h2>
+<p><strong>Built-in reports:</strong></p>
+<ul>
+<li><strong>Acquisition → Traffic Acquisition</strong> — organic search sessions, users, engagement rate</li>
+<li><strong>Acquisition → User Acquisition</strong> — first-touch organic traffic (how users first discovered your site)</li>
+</ul>
+<p><strong>Custom report for organic landing pages:</strong></p>
+<p>Explorations → Blank → Dimensions: Landing Page, Session Source/Medium → Metrics: Sessions, Engaged Sessions, Conversions → Filter: Session Source/Medium = &quot;organic / google&quot;</p>
+<p>This shows which blog posts or pages drive organic conversions, not just traffic.</p>
+<p><strong>Keyword performance (via Search Console integration):</strong></p>
+<p>Acquisition → Search Console → Queries → Shows organic queries, impressions, clicks, CTR, avg position.</p>
+<p>Identify:</p>
+<ul>
+<li><strong>High-impression, low-CTR queries</strong> (optimize meta titles/descriptions)</li>
+<li><strong>Position 5-10 keywords</strong> (push to position 1-3 for traffic gains)</li>
+<li><strong>High-CTR, low-conversion queries</strong> (traffic quality issue; refine content or targeting)</li>
+</ul>
+<h2>Content Engagement Scoring</h2>
+<p>GA4&#39;s <strong>engagement rate</strong> (percentage of sessions lasting 10+ seconds, viewing 2+ pages, or triggering conversion event) is better than bounce rate for measuring content quality.</p>
+<p><strong>Custom engagement metrics:</strong></p>
+<p>Create calculated metrics (Admin → Custom Definitions → Calculated Metrics):</p>
+<p><strong>Content engagement score:</strong></p>
+<pre><code>(Engaged sessions / Sessions) * 100
+</code></pre>
+<p>Track per landing page to identify high/low-engagement content.</p>
+<p><strong>Conversion rate by content type:</strong></p>
+<pre><code>(Conversions / Sessions) * 100
+</code></pre>
+<p>Compare blog posts, case studies, product pages to see which content types drive leads.</p>
+<p><strong>Reading depth:</strong></p>
+<p>Use scroll depth events to measure how far users read articles. If 80% of visitors scroll &lt;25%, the content likely isn&#39;t delivering value.</p>
+<h2>Attribution Modeling for Multi-Touch Journeys</h2>
+<p>B2B buyers rarely convert on first visit. They research across multiple sessions, channels, and devices. GA4&#39;s attribution modeling connects these touchpoints.</p>
+<p><strong>Path analysis:</strong></p>
+<p>Explorations → Path Exploration → Starting Point: Session Source/Medium = &quot;google / organic&quot; → Ending Point: Conversion Event = <code>generate_lead</code></p>
+<p>This visualizes the journey from organic visit to conversion, revealing:</p>
+<ul>
+<li>How many sessions before conversion (avg: 3-5 for B2B)</li>
+<li>Which channels users engage between organic and conversion (direct, email, paid)</li>
+<li>Drop-off points (users who read blog, never convert)</li>
+</ul>
+<p><strong>Attribution comparison:</strong></p>
+<p>Advertising → Attribution → Model Comparison → Compare data-driven vs. last-click vs. first-click</p>
+<p><strong>Example findings:</strong></p>
+<ul>
+<li><strong>Last-click:</strong> Organic gets 30% credit (most conversions attributed to direct or email)</li>
+<li><strong>First-click:</strong> Organic gets 60% credit (most journeys start with organic search)</li>
+<li><strong>Data-driven:</strong> Organic gets 45% credit (balanced view based on actual impact)</li>
+</ul>
+<p>Use data-driven attribution for accurate ROI measurement. Last-click under-credits organic&#39;s role in initiating buyer journeys.</p>
+<h2>Segment Organic Traffic by Quality</h2>
+<p>Not all organic traffic is equal. GA4 allows segmentation by behavior to identify high-intent visitors.</p>
+<p><strong>Create segment for &quot;High-Quality Organic Visitors&quot;:</strong></p>
+<p>Explorations → User Segment → Conditions:</p>
+<ul>
+<li>Session Source/Medium = &quot;google / organic&quot;</li>
+<li>AND Session Duration &gt; 2 minutes</li>
+<li>AND Pages per Session &gt; 3</li>
+<li>AND Event: <code>generate_lead</code> or <code>file_download</code> or <code>video_progress</code></li>
+</ul>
+<p>Compare this segment vs. all organic traffic:</p>
+<ul>
+<li><strong>Conversion rate:</strong> High-quality organic converts 10x better</li>
+<li><strong>Landing pages:</strong> Which pages attract high-quality visitors?</li>
+<li><strong>Keywords (via Search Console):</strong> Which queries drive high-quality traffic?</li>
+</ul>
+<p>Optimize content for queries driving high-quality segments, not just traffic volume.</p>
+<h2>Lead Attribution and CRM Integration</h2>
+<p>GA4 tracks conversions (form submissions), but B2B companies need to connect conversions to <strong>pipeline and revenue</strong>. This requires CRM integration.</p>
+<p><strong>Option 1: Manual import</strong></p>
+<p>Export GA4 conversion data → match to CRM leads by email/timestamp → calculate close rate and revenue by source.</p>
+<p>Tedious but functional for companies without integration budget.</p>
+<p><strong>Option 2: Zapier integration</strong></p>
+<p>GA4 → Zapier → CRM (HubSpot, Salesforce, Pipedrive)</p>
+<p>When GA4 detects <code>generate_lead</code> event, Zapier creates/updates CRM contact with:</p>
+<ul>
+<li>Source: Organic</li>
+<li>Landing page: [URL]</li>
+<li>First-touch date: [timestamp]</li>
+</ul>
+<p><strong>Option 3: Native CRM integration</strong></p>
+<ul>
+<li><strong>HubSpot:</strong> Automatically integrates with GA4, attributes contacts to source/campaign</li>
+<li><strong>Salesforce:</strong> Use GA4 + Salesforce Marketing Cloud integration</li>
+<li><strong>Pipedrive:</strong> Use Zapier or third-party connectors</li>
+</ul>
+<p><strong>Close-loop reporting:</strong></p>
+<p>Once CRM integration exists, track:</p>
+<ul>
+<li><strong>Organic MQL rate:</strong> % of organic leads that become marketing-qualified</li>
+<li><strong>Organic SQL rate:</strong> % that become sales-qualified</li>
+<li><strong>Organic close rate:</strong> % that close into customers</li>
+<li><strong>Organic CAC:</strong> Cost to acquire customer from organic (content production costs / closed customers)</li>
+</ul>
+<p>This reveals true SEO ROI, not just traffic or lead volume.</p>
+<h2>Technical SEO Monitoring via GA4</h2>
+<p>GA4 can surface technical SEO issues if configured correctly.</p>
+<p><strong>Page speed monitoring:</strong></p>
+<p>Admin → Custom Definitions → Custom Metrics → Create:</p>
+<ul>
+<li><strong>Avg page load time:</strong> <code>page_view.page_load_time</code> (requires GTM data layer)</li>
+</ul>
+<p>Filter by landing page to identify slow pages harming SEO.</p>
+<p><strong>404 error tracking:</strong></p>
+<p>Create custom event when 404 page loads:</p>
+<pre><code class="language-javascript">gtag(&#39;event&#39;, &#39;page_not_found&#39;, {
+  &#39;page_location&#39;: window.location.href,
+  &#39;page_referrer&#39;: document.referrer
+});
+</code></pre>
+<p>Explorations → Show 404 events by referrer → identify broken internal/external links.</p>
+<p><strong>Site search analysis:</strong></p>
+<p>Enhanced Measurement tracks site search automatically (if URL contains <code>?q=</code> or <code>?s=</code>).</p>
+<p>Reports → Engagement → Pages and Screens → Filter: Page Title contains &quot;Search Results&quot;</p>
+<p>Analyze:</p>
+<ul>
+<li><strong>Top search queries:</strong> What are users looking for? (Content gaps to fill)</li>
+<li><strong>Zero-result searches:</strong> Queries with no results (prioritize content creation)</li>
+<li><strong>Search exits:</strong> Users who search, don&#39;t find answer, leave (UX/content problem)</li>
+</ul>
+<h2>Dashboard Setup for SEO Teams</h2>
+<p>Create custom report (Explorations → Free Form) with these metrics:</p>
+<p><strong>Organic Performance Overview:</strong></p>
+<ul>
+<li>Sessions (organic)</li>
+<li>Users (organic)</li>
+<li>Engagement rate</li>
+<li>Conversions (<code>generate_lead</code>, <code>file_download</code>)</li>
+<li>Conversion rate</li>
+</ul>
+<p><strong>Top Organic Landing Pages:</strong></p>
+<ul>
+<li>Landing Page (dimension)</li>
+<li>Sessions, Conversions, Conversion Rate (metrics)</li>
+<li>Filter: Source/Medium = &quot;google / organic&quot;</li>
+</ul>
+<p><strong>Keyword Performance (via Search Console):</strong></p>
+<ul>
+<li>Query (dimension)</li>
+<li>Impressions, Clicks, CTR, Avg Position (metrics)</li>
+</ul>
+<p><strong>Content Engagement:</strong></p>
+<ul>
+<li>Page Title or Page Path (dimension)</li>
+<li>Engaged Sessions, Avg Engagement Time, Scroll Depth (metrics)</li>
+</ul>
+<p>Save as &quot;SEO Dashboard&quot; and share with team.</p>
+<h2>Common GA4 Mistakes for B2B SEO</h2>
+<p><strong>1. Not marking events as conversions</strong></p>
+<p>GA4 won&#39;t track conversion paths unless events are marked as conversions. Check Admin → Events → toggle Conversion.</p>
+<p><strong>2. Using last-click attribution</strong></p>
+<p>Last-click under-credits organic&#39;s role in initiating buyer journeys. Use data-driven attribution.</p>
+<p><strong>3. Ignoring engagement rate</strong></p>
+<p>Pageviews are vanity metrics. Engagement rate measures quality. A page with 1,000 sessions and 10% engagement is worse than 500 sessions at 40% engagement.</p>
+<p><strong>4. Not segmenting traffic</strong></p>
+<p>All organic traffic isn&#39;t equal. Segment by behavior (engaged vs. bounced) and keywords (branded vs. non-branded) to optimize effectively.</p>
+<p><strong>5. No CRM integration</strong></p>
+<p>GA4 shows leads, not closed deals. Without CRM integration, you can&#39;t calculate SEO ROI accurately.</p>
+<h2>FAQ</h2>
+<p><strong>Can I use Universal Analytics and GA4 simultaneously?</strong></p>
+<p>No. Universal Analytics stopped processing data July 1, 2023. GA4 is the only option.</p>
+<p><strong>How long does GA4 take to start showing data?</strong></p>
+<p>24-48 hours after installation. Historical data from Universal Analytics doesn&#39;t migrate (export reports before cutoff if needed).</p>
+<p><strong>What&#39;s the difference between &quot;users&quot; and &quot;sessions&quot; in GA4?</strong></p>
+<p>Users = unique individuals. Sessions = visits (one user can have multiple sessions). For SEO, focus on sessions and engagement rate.</p>
+<p><strong>How do I track organic traffic from Bing, DuckDuckGo, etc.?</strong></p>
+<p>GA4 tracks all search engines. Filter reports by Source = &quot;bing&quot;, &quot;duckduckgo&quot;, etc. For aggregate, use Source/Medium contains &quot;organic&quot;.</p>
+<p><strong>Can GA4 track phone calls from organic visitors?</strong></p>
+<p>Yes, with call tracking integration (CallRail, CallTrackingMetrics). These platforms inject unique phone numbers per source and log calls as GA4 events.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
