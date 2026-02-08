@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns | B2B Vic</title>
+    <meta name="description" content="Site migrations destroy 40-60% of organic traffic when executed poorly. Here&#39;s the exact checklist for preserving SEO value through redesigns and platform changes." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns" />
+    <meta property="og:description" content="Site migrations destroy 40-60% of organic traffic when executed poorly. Here&#39;s the exact checklist for preserving SEO value through redesigns and platform changes." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/site-migration-seo-checklist.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns" />
+    <meta name="twitter:description" content="Site migrations destroy 40-60% of organic traffic when executed poorly. Here&#39;s the exact checklist for preserving SEO value through redesigns and platform changes." />
+    <link rel="canonical" href="https://b2bvic.com/articles/site-migration-seo-checklist.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns",
+      "description": "Site migrations destroy 40-60% of organic traffic when executed poorly. Here's the exact checklist for preserving SEO value through redesigns and platform changes.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/site-migration-seo-checklist.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Site Migration SEO Checklist: How to Preserve Rankings During Website Redesigns</h1>
+<p><strong>Forty-seven percent of website redesigns result in significant organic traffic loss.</strong> Companies spend $50,000-$200,000 rebuilding sites only to watch rankings collapse within 30 days of launch. The culprit isn&#39;t new design or technology—it&#39;s SEO negligence during migration planning. URL changes without redirects, content deletions, broken internal links, and technical architecture shifts torpedo years of accumulated search authority.</p>
+<p>The pattern repeats: marketing team collaborates with design agency, developers rebuild on new CMS, site launches, organic traffic drops 40-60%, everyone panics. Six months of recovery work follows—reimplementing redirects, restoring deleted content, fixing crawl errors. This chaos is entirely preventable with proper pre-launch SEO protocol.</p>
+<h2>Pre-Migration: Baseline Documentation</h2>
+<p><strong>Crawl existing site completely before any changes.</strong> Use Screaming Frog, Sitebulb, or Ahrefs Site Audit to document current state:</p>
+<ul>
+<li><strong>Full URL inventory</strong> (every page, image, PDF, asset—not just main navigation pages)</li>
+<li><strong>Indexed page count</strong> (query <code>site:yourdomain.com</code> in Google, record number of results)</li>
+<li><strong>Ranking keyword mapping</strong> (which pages rank for which keywords—use GSC or rank tracking tools)</li>
+<li><strong>Backlink profile</strong> (which pages have inbound links from external sites)</li>
+<li><strong>Internal link structure</strong> (which pages are most internally linked, authority distribution)</li>
+</ul>
+<p>Without baseline documentation, you can&#39;t measure what broke. &quot;Traffic dropped&quot; is useless feedback. &quot;Rankings for &#39;enterprise CRM software&#39; fell from position 3 to 18 because we deleted the comparison guide&quot; enables targeted fixing.</p>
+<p><strong>Export Google Search Console data for trailing 12 months.</strong> Download:</p>
+<ul>
+<li><strong>Performance report</strong> (queries, pages, impressions, clicks, positions)</li>
+<li><strong>Index coverage report</strong> (which pages are indexed, errors, warnings)</li>
+<li><strong>Sitemaps report</strong> (which sitemaps exist, page counts, error rates)</li>
+<li><strong>Core Web Vitals report</strong> (current LCP, FID, CLS performance by page group)</li>
+</ul>
+<p>GSC data retention is 16 months. After that, historical data disappears. Export before starting migration work.</p>
+<p><strong>Document existing technical infrastructure.</strong> Record current state:</p>
+<ul>
+<li><strong>CMS platform</strong> (WordPress, Drupal, custom build, static site generator)</li>
+<li><strong>Hosting environment</strong> (shared, VPS, dedicated, cloud platform)</li>
+<li><strong>CDN configuration</strong> (Cloudflare, Fastly, AWS CloudFront, none)</li>
+<li><strong>SSL certificate setup</strong> (provider, implementation method, redirect configuration)</li>
+<li><strong>Robots.txt rules</strong> (which sections are blocked from crawling)</li>
+<li><strong>Sitemap locations</strong> (XML sitemaps, image sitemaps, video sitemaps)</li>
+</ul>
+<p>Technical environment changes impact crawlability and indexing. If you migrate from Apache to Nginx and forget to configure URL rewrites, all existing rankings vanish.</p>
+<p><strong>Create page-level priority matrix.</strong> Not all pages matter equally. Classify every page:</p>
+<ul>
+<li><strong>Tier 1 (critical):</strong> Product pages, high-traffic blog posts, ranking top 10 for money keywords</li>
+<li><strong>Tier 2 (important):</strong> Supporting content, moderate traffic pages, ranking top 30 for target keywords</li>
+<li><strong>Tier 3 (keep):</strong> Low-traffic but complete archives, old blog posts, resource libraries</li>
+<li><strong>Tier 4 (eliminate):</strong> Outdated content, thin pages, duplicate information</li>
+</ul>
+<p>This matrix informs URL preservation decisions. Tier 1 pages require perfect migration. Tier 4 pages can be deleted with 410 status codes.</p>
+<h2>URL Structure Planning</h2>
+<p><strong>Maintain existing URLs wherever possible.</strong> Every URL change requires a redirect. Every redirect risks ranking loss. The safest migration preserves URLs:</p>
+<ul>
+<li>Old URL: <code>/blog/project-management-tips</code></li>
+<li>New URL: <code>/blog/project-management-tips</code> (unchanged)</li>
+</ul>
+<p>If new CMS or site architecture forces URL changes, map old → new meticulously:</p>
+<ul>
+<li>Old URL: <code>/blog/project-management-tips</code></li>
+<li>New URL: <code>/resources/guides/project-management-tips</code></li>
+<li>Redirect: 301 from old to new</li>
+</ul>
+<p><strong>Create comprehensive redirect mapping spreadsheet.</strong> Three columns minimum:</p>
+<ol>
+<li><strong>Old URL</strong> (complete path: <code>/blog/project-management-tips/</code>)</li>
+<li><strong>New URL</strong> (complete path: <code>/resources/guides/project-management-tips/</code>)</li>
+<li><strong>Redirect type</strong> (301 permanent, 302 temporary, 410 gone)</li>
+</ol>
+<p>Advanced mapping includes:</p>
+<ul>
+<li><strong>Priority tier</strong> (1-4 classification from earlier)</li>
+<li><strong>Current rankings</strong> (which keywords rank, positions)</li>
+<li><strong>Backlink count</strong> (how many external links point to this URL)</li>
+<li><strong>Traffic volume</strong> (trailing 90-day organic sessions)</li>
+</ul>
+<p>This spreadsheet becomes the migration blueprint. Developers implement every redirect before launch.</p>
+<p><strong>Avoid redirect chains at all costs.</strong> Redirect chains occur when:</p>
+<ul>
+<li>Page A redirects to Page B</li>
+<li>Page B redirects to Page C</li>
+<li>Page C is the final destination</li>
+</ul>
+<p>Google follows redirect chains, but each hop dilutes authority transfer. Maximum two redirects tolerable; three or more cause ranking suppression. Audit for chains:</p>
+<ul>
+<li>Check if new URLs match URLs that already redirect elsewhere</li>
+<li>Verify no temporary redirects (302) in existing infrastructure</li>
+<li>Test redirect paths before launch (use redirect checker tools)</li>
+</ul>
+<p><strong>Plan for trailing slash consistency.</strong> URLs with and without trailing slashes are technically different:</p>
+<ul>
+<li><code>yourdomain.com/page</code> (no trailing slash)</li>
+<li><code>yourdomain.com/page/</code> (trailing slash)</li>
+</ul>
+<p>Pick one convention and enforce it everywhere:</p>
+<ul>
+<li>Set canonical tags to preferred version</li>
+<li>Configure server to redirect non-preferred to preferred</li>
+<li>Update all internal links to use consistent format</li>
+</ul>
+<p>Inconsistency creates duplicate content issues and splits link equity between URL variations.</p>
+<h2>Content Preservation Strategy</h2>
+<p><strong>Never delete content ranking in top 20 positions.</strong> Even if content seems outdated, rankings represent accumulated authority. Better options than deletion:</p>
+<ul>
+<li><strong>Update and refresh</strong> (new statistics, expanded sections, improved formatting)</li>
+<li><strong>Consolidate into larger guides</strong> (merge three thin articles into comprehensive resource)</li>
+<li><strong>Archive with 410 status</strong> (only if content is factually wrong, legally problematic, or completely irrelevant)</li>
+</ul>
+<p>If you must delete, implement 301 redirects to most relevant replacement content—don&#39;t return 404 errors for pages with backlinks or rankings.</p>
+<p><strong>Preserve on-page optimization elements.</strong> During redesign, content often gets reformatted. Ensure migration maintains:</p>
+<ul>
+<li><strong>Title tags</strong> (should match or improve existing optimized titles)</li>
+<li><strong>Meta descriptions</strong> (preserve messaging unless deliberately improving)</li>
+<li><strong>Header hierarchy</strong> (H1, H2, H3 structure matching existing on-page SEO)</li>
+<li><strong>Image alt text</strong> (transfer all alt attributes to new implementation)</li>
+<li><strong>Internal links</strong> (maintain contextual links within body content)</li>
+</ul>
+<p>Redesigns often strip these elements accidentally. Developers rebuild templates without preserving SEO metadata, resulting in ranking drops despite content remaining &quot;the same.&quot;</p>
+<p><strong>Maintain or improve content depth.</strong> If existing article is 2,400 words, new version shouldn&#39;t be 800 words. Google interprets content reduction as quality decrease. Better approaches:</p>
+<ul>
+<li><strong>Match or exceed existing word count</strong> (maintain comprehensiveness)</li>
+<li><strong>Expand thin content</strong> (opportunity to strengthen weak pages during migration)</li>
+<li><strong>Add multimedia</strong> (images, videos, infographics enhance without reducing text)</li>
+</ul>
+<p><strong>Transfer structured data (schema markup).</strong> Existing site might have:</p>
+<ul>
+<li><strong>Article schema</strong> (publishing date, author, headline)</li>
+<li><strong>Product schema</strong> (pricing, availability, ratings)</li>
+<li><strong>FAQPage schema</strong> (structured Q&amp;A triggering featured snippets)</li>
+<li><strong>HowTo schema</strong> (step-by-step instructional content)</li>
+</ul>
+<p>Redesigned templates must reimple these. Losing structured data removes you from rich snippet opportunities—featured snippets disappear, star ratings vanish from SERPs, product information no longer displays.</p>
+<h2>Technical Migration Execution</h2>
+<p><strong>Implement redirects at server level, not via JavaScript.</strong> Proper redirect hierarchy:</p>
+<ol>
+<li><strong>Server configuration (best):</strong> Apache .htaccess, Nginx conf, hosting control panel redirects</li>
+<li><strong>CMS-level plugins (acceptable):</strong> WordPress redirect plugins, Drupal path redirects</li>
+<li><strong>JavaScript redirects (problematic):</strong> <code>window.location</code> or <code>meta refresh</code> — Google may not follow these reliably</li>
+</ol>
+<p>Server-level redirects execute before page loads. JavaScript redirects require page rendering, delaying transfer and risking crawl budget waste.</p>
+<p><strong>Set up 301 redirects, not 302.</strong> Redirect types signal different intentions:</p>
+<ul>
+<li><strong>301 (permanent):</strong> &quot;This page moved forever, transfer all authority to new URL&quot;</li>
+<li><strong>302 (temporary):</strong> &quot;This page moved temporarily, keep authority on old URL&quot;</li>
+<li><strong>307 (temporary):</strong> HTTP/1.1 equivalent of 302</li>
+</ul>
+<p>For site migrations, use 301 exclusively unless you genuinely plan to reverse the change (rare). 302 redirects don&#39;t pass full link equity—they&#39;re for temporary situations like A/B testing.</p>
+<p><strong>Test redirects in staging environment before launch.</strong> Deploy redirects on staging site first:</p>
+<ul>
+<li>Verify every redirect resolves to correct destination</li>
+<li>Check redirect type (301 versus 302)</li>
+<li>Confirm no redirect chains exist</li>
+<li>Test sample of high-priority pages manually</li>
+</ul>
+<p>Use Screaming Frog&#39;s &quot;List&quot; mode to test specific URLs. Input old URLs, verify they return 301 status and resolve to expected new URLs.</p>
+<p><strong>Maintain robots.txt access during migration.</strong> Common mistake: developer blocks entire staging site from crawling (<code>Disallow: /</code>), then accidentally deploys that robots.txt to production. Result: Google stops crawling your entire site.</p>
+<p>Verify production robots.txt:</p>
+<ul>
+<li>Allows access to critical sections (<code>Allow: /</code>)</li>
+<li>Blocks only intended sections (admin areas, search results, development folders)</li>
+<li>Doesn&#39;t accidentally block CSS/JavaScript (prevents rendering, hurts rankings)</li>
+</ul>
+<p><strong>Update and resubmit XML sitemaps.</strong> After migration:</p>
+<ul>
+<li>Generate new sitemap reflecting new URL structure</li>
+<li>Remove deleted pages from sitemap</li>
+<li>Submit updated sitemap via Google Search Console</li>
+<li>Monitor Index Coverage report for errors</li>
+</ul>
+<p>Sitemaps guide Google to new URLs faster. Without updated sitemap, Google discovers changes slowly via link crawling—delaying ranking recovery.</p>
+<p><strong>Implement canonical tags consistently.</strong> Canonical tags declare preferred URL version:</p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://yourdomain.com/preferred-url&quot; /&gt;
+</code></pre>
+<p>Set canonical tags on every page pointing to itself (self-referential canonicals) or to preferred version if duplicates exist. Inconsistent or missing canonicals cause indexation confusion.</p>
+<h2>Post-Migration Monitoring</h2>
+<p><strong>Track indexation status daily for first 30 days.</strong> Monitor Google Search Console Index Coverage report:</p>
+<ul>
+<li><strong>Indexed page count</strong> (should match or exceed pre-migration count within 7-14 days)</li>
+<li><strong>Excluded page count</strong> (investigate spikes—likely redirect or crawl errors)</li>
+<li><strong>Error count</strong> (4xx errors indicate broken links, 5xx errors show server problems)</li>
+</ul>
+<p>Set up GSC email alerts for validation errors. Address issues immediately—waiting weeks to fix problems extends recovery time.</p>
+<p><strong>Monitor ranking positions for Tier 1 keywords.</strong> Use rank tracking tools (Ahrefs, SEMrush, AccuRanker) to track daily positions:</p>
+<ul>
+<li>Focus on top 20 keywords generating most traffic</li>
+<li>Expect minor fluctuations (±3 positions) during migration—normal</li>
+<li>Investigate drops of 10+ positions immediately—signals problems</li>
+</ul>
+<p>Small ranking fluctuations (position 4 to 6, or 12 to 9) happen constantly. Large drops (position 3 to 23) indicate migration errors requiring immediate attention.</p>
+<p><strong>Check Core Web Vitals for performance regression.</strong> New designs often add bloat:</p>
+<ul>
+<li><strong>Largest Contentful Paint (LCP):</strong> Should stay under 2.5 seconds</li>
+<li><strong>First Input Delay (FID):</strong> Should stay under 100ms</li>
+<li><strong>Cumulative Layout Shift (CLS):</strong> Should stay under 0.1</li>
+</ul>
+<p>Performance regression hurts rankings. If new design loads slower than old site, optimize before suffering prolonged traffic loss.</p>
+<p><strong>Audit backlinks for redirect issues.</strong> External sites link to your old URLs. If redirects break:</p>
+<ul>
+<li>Valuable backlinks point to 404 errors (link equity wasted)</li>
+<li>Referral traffic drops (visitors hit errors instead of content)</li>
+</ul>
+<p>Use Ahrefs or Majestic to identify:</p>
+<ul>
+<li>Which external sites link to your domain</li>
+<li>Which specific URLs receive backlinks</li>
+<li>Whether those URLs resolve correctly (follow redirects to new URLs)</li>
+</ul>
+<p>Contact high-authority sites if redirects break valuable backlinks—ask them to update links to new URLs.</p>
+<p><strong>Monitor organic traffic by landing page.</strong> Google Analytics 4 or similar:</p>
+<ul>
+<li><strong>Compare landing page traffic:</strong> New URL versus old URL pre-migration traffic</li>
+<li><strong>Identify pages losing traffic:</strong> Indicates redirect issues or content quality problems</li>
+<li><strong>Check traffic sources:</strong> Organic search versus direct versus referral</li>
+</ul>
+<p>Landing page view comparisons reveal which redirects failed or which content lost relevance during migration.</p>
+<h2>Recovery Protocol for Traffic Loss</h2>
+<p><strong>If organic traffic drops 20%+ post-launch, immediately:</strong></p>
+<ol>
+<li><strong>Verify redirects implemented correctly:</strong> Test sample of old URLs, confirm they 301 redirect to new URLs</li>
+<li><strong>Check robots.txt hasn&#39;t blocked crawling:</strong> Ensure no accidental <code>Disallow: /</code> rules</li>
+<li><strong>Confirm sitemap submitted and error-free:</strong> Look for 4xx/5xx errors preventing indexation</li>
+<li><strong>Review GSC Index Coverage report:</strong> Identify which pages dropped from index, why</li>
+<li><strong>Audit title tags and meta descriptions:</strong> Confirm SEO metadata transferred correctly</li>
+<li><strong>Check for canonical tag errors:</strong> Self-referential canonicals on all pages, no conflicts</li>
+<li><strong>Verify internal links functional:</strong> Run crawl checking for broken internal links (404s)</li>
+<li><strong>Test page speed:</strong> Confirm Core Web Vitals didn&#39;t regress significantly</li>
+</ol>
+<p>Most traffic drops stem from redirect failures, robots.txt errors, or missing metadata. Systematic audit surfaces root cause.</p>
+<p><strong>If rankings dropped for specific high-value keywords:</strong></p>
+<ol>
+<li><strong>Compare old versus new page content:</strong> Did content get shortened, simplified, or removed?</li>
+<li><strong>Check on-page SEO elements:</strong> Title tag, H1, header structure, keyword usage</li>
+<li><strong>Review internal link context:</strong> Did other pages stop linking to this page?</li>
+<li><strong>Verify schema markup:</strong> Was structured data lost in migration?</li>
+<li><strong>Analyze backlink anchor text:</strong> Do redirects cause anchor text mismatches?</li>
+</ol>
+<p>Keyword-specific ranking drops usually indicate content or on-page optimization degradation during migration.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How long does it take for rankings to recover after site migration?</h3>
+<p><strong>Expect 4-8 weeks for rankings to stabilize after flawless migration.</strong> Google must recrawl old URLs, discover redirects, transfer authority to new URLs, and recalculate rankings. Even perfectly executed migrations experience 10-15% temporary traffic dips for 2-3 weeks as Google processes changes. If traffic hasn&#39;t recovered by week 8, migration errors likely occurred requiring investigation and correction.</p>
+<h3>Should you migrate during slow season or busy season?</h3>
+<p><strong>Migrate during slow traffic periods if possible.</strong> If your business has seasonal peaks (e-commerce during holidays, tax software in spring), avoid migrating during high-traffic months. Migration-related traffic drops hurt less when baseline traffic is lower. However, don&#39;t delay migrations indefinitely waiting for &quot;perfect timing&quot;—there&#39;s always some risk, and delaying costs opportunity.</p>
+<h3>Do you need to keep old URLs redirecting forever?</h3>
+<p><strong>Maintain redirects minimum 12 months, ideally indefinitely.</strong> After 12 months, most link equity transfers and external sites update links. However, older backlinks and bookmarks persist years later. Redirect infrastructure costs are minimal—server storage for redirect rules is negligible. Unless you have tens of thousands of redirects causing performance issues, keep them permanently.</p>
+<h3>How do you handle migrating from HTTP to HTTPS during redesign?</h3>
+<p><strong>HTTPS migration follows same redirect principles—301 redirect all HTTP URLs to HTTPS equivalents.</strong> Add SSL certificate installation and redirect configuration:</p>
+<ol>
+<li>Install SSL certificate on hosting/CDN</li>
+<li>Configure server to redirect all <code>http://</code> requests to <code>https://</code> (site-wide redirect)</li>
+<li>Update internal links to use HTTPS (prevents redirect chains)</li>
+<li>Update canonical tags to HTTPS versions</li>
+<li>Update sitemap to list HTTPS URLs</li>
+<li>Submit HTTPS sitemap to GSC</li>
+</ol>
+<p>HTTPS migration is lower risk than URL structure changes—redirects are straightforward and authority transfer is reliable.</p>
+<h3>What if you need to migrate domain (not just redesign)?</h3>
+<p><strong>Domain migrations are highest-risk SEO changes requiring extreme caution.</strong> In addition to all checklist items above:</p>
+<ol>
+<li><strong>Set up 301 redirects at DNS level:</strong> Forward old domain to new domain</li>
+<li><strong>Maintain old domain ownership:</strong> Don&#39;t let it expire for minimum 12 months post-migration</li>
+<li><strong>Implement page-level redirects:</strong> Old domain&#39;s specific pages redirect to corresponding new domain pages</li>
+<li><strong>Submit Change of Address in GSC:</strong> Tells Google you&#39;re moving domains permanently</li>
+<li><strong>Update all branded mentions:</strong> Update listings on G2, Capterra, review sites, directories</li>
+<li><strong>Contact high-value backlink sources:</strong> Request they update links to new domain</li>
+</ol>
+<p>Domain migrations lose 30-40% traffic even when executed perfectly. Avoid unless absolutely necessary (rebranding, acquisition, legal requirement).</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution | B2B Vic</title>
+    <meta name="description" content="B2B SEO attribution requires connecting long sales cycles to organic search touchpoints. Here&#39;s the exact framework for measuring SEO ROI accurately." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution" />
+    <meta property="og:description" content="B2B SEO attribution requires connecting long sales cycles to organic search touchpoints. Here&#39;s the exact framework for measuring SEO ROI accurately." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/seo-roi-measurement-b2b.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution" />
+    <meta name="twitter:description" content="B2B SEO attribution requires connecting long sales cycles to organic search touchpoints. Here&#39;s the exact framework for measuring SEO ROI accurately." />
+    <link rel="canonical" href="https://b2bvic.com/articles/seo-roi-measurement-b2b.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution",
+      "description": "B2B SEO attribution requires connecting long sales cycles to organic search touchpoints. Here's the exact framework for measuring SEO ROI accurately.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/seo-roi-measurement-b2b.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SEO ROI Measurement for B2B: How to Prove Organic Search Revenue Attribution</h1>
+<p><strong>Seventy-eight percent of B2B marketing leaders can&#39;t accurately attribute revenue to SEO efforts.</strong> They know organic traffic increased, they suspect SEO contributes to pipeline, but they can&#39;t quantify ROI with the precision finance teams demand. This measurement gap causes chronic SEO underinvestment—executives fund channels with clear attribution (Google Ads, LinkedIn) while superior-ROI organic search starves for resources.</p>
+<p>The attribution problem compounds in B2B: six-month sales cycles, multi-stakeholder buying committees, touchpoints spanning 15+ interactions across channels. A prospect discovers your company through organic search, returns via email newsletter, attends a webinar, receives sales outreach, then closes 180 days later. What portion of revenue should SEO receive credit for? Without rigorous attribution frameworks, the answer defaults to &quot;none&quot;—and SEO budgets get cut.</p>
+<h2>Why B2B SEO Attribution Is Complex</h2>
+<p><strong>Multi-touch buyer journeys make single-source attribution impossible.</strong> B2B customers don&#39;t Google &quot;enterprise CRM software,&quot; click an ad, and purchase. They research for weeks or months, consuming 8-12 pieces of content before sales contact. A typical journey:</p>
+<ol>
+<li>Organic search: &quot;best CRM for manufacturing companies&quot; → lands on comparison guide</li>
+<li>Returns via direct traffic 3 days later → reads implementation case study</li>
+<li>Downloads gated ROI calculator via email opt-in</li>
+<li>Receives 3-email nurture sequence over 10 days</li>
+<li>Attends product demo webinar</li>
+<li>Engages with sales rep via phone/email over 45 days</li>
+<li>Closes $45,000 annual contract</li>
+</ol>
+<p>Which channel gets credit? First-touch attribution gives 100% to organic search (discovered via Google). Last-touch gives 100% to sales (final interaction). Neither reflects reality—multiple touchpoints contributed.</p>
+<p><strong>Long sales cycles separate SEO actions from revenue results.</strong> You publish an article today. It ranks in 4 months. A prospect discovers it in month 5, enters your pipeline in month 6, and closes in month 12. That&#39;s 12 months from content publication to revenue. Meanwhile, you&#39;ve published 40 more articles, run multiple campaigns, and possibly changed attribution systems. Connecting February&#39;s article to next January&#39;s closed deal requires infrastructure most organizations lack.</p>
+<p><strong>Anonymous traffic delays attribution until form submission.</strong> Someone researching &quot;construction project management software&quot; lands on your blog. You don&#39;t know who they are until they fill out a form—potentially after 5-8 anonymous visits. Google Analytics shows those anonymous sessions, but can&#39;t connect them to future revenue until the prospect identifies themselves. This creates attribution blind spots: SEO drove awareness, but tracking begins at the demo request, making SEO&#39;s contribution invisible.</p>
+<p><strong>Multiple stakeholders within buying accounts fragment touchpoints.</strong> B2B purchases involve 6-8 decision-makers. The operations director discovers your solution via organic search. The CFO researches independently (separate sessions) after internal discussion. The IT director evaluates technical documentation. Each generates separate analytics sessions from potentially different companies/ISPs. Attribution systems treating these as unrelated visitors undercount SEO&#39;s influence.</p>
+<h2>The Multi-Touch Attribution Framework for B2B SEO</h2>
+<p><strong>Position-based attribution balances discovery and conversion.</strong> This model assigns:</p>
+<ul>
+<li><strong>40% credit to first touch</strong> (acknowledges SEO&#39;s role in awareness/discovery)</li>
+<li><strong>40% credit to last touch</strong> (recognizes final conversion catalyst)</li>
+<li><strong>20% distributed across middle touches</strong> (honors nurturing touchpoints)</li>
+</ul>
+<p>Example: Prospect discovers via organic search (40% credit), returns via email twice (5% each), attends webinar (5%), engages with sales (5%), then closes after LinkedIn retargeting ad (40% credit). If deal value is $50,000, organic search receives $20,000 attribution.</p>
+<p><strong>Why position-based works for B2B SEO:</strong> It honors SEO&#39;s primary value—introducing prospects to your solution—without ignoring the sales and marketing touches that move deals forward. Pure first-touch over-credits SEO; pure last-touch erases it. Position-based reflects reality.</p>
+<p><strong>Time-decay attribution weights recent touchpoints higher.</strong> This model applies exponential decay:</p>
+<ul>
+<li>Touchpoints closer to conversion receive more credit</li>
+<li>Earlier interactions get fractional attribution</li>
+<li>Useful for organizations prioritizing deal acceleration over initial discovery</li>
+</ul>
+<p>Example timeline:</p>
+<ul>
+<li>Day 1: Organic search discovery → 10% credit</li>
+<li>Day 30: Email engagement → 15% credit</li>
+<li>Day 60: Webinar attendance → 20% credit</li>
+<li>Day 75: Sales demo → 25% credit</li>
+<li>Day 90: Closing call → 30% credit</li>
+</ul>
+<p>Time-decay suits organizations measuring &quot;What closed this deal?&quot; versus &quot;What discovered this prospect?&quot; If your sales team struggles with long cycles, time-decay highlights which touchpoints accelerate decisions.</p>
+<p><strong>Linear attribution equalizes all touchpoints.</strong> Every interaction receives identical credit regardless of position or timing. A five-touch journey gives 20% to each touchpoint.</p>
+<p>When linear makes sense: Early-stage organizations without clear understanding of which touchpoints drive outcomes. Distributing credit equally prevents over-indexing on assumptions. After 6-12 months of data, graduate to position-based or time-decay models once patterns emerge.</p>
+<p><strong>Custom attribution models adapt to your sales process.</strong> Build models reflecting actual buyer behavior:</p>
+<ul>
+<li>If case study downloads predict 60% close rate versus 18% average, weight case study touches higher</li>
+<li>If prospects attending demos close at 3x rate of those who don&#39;t, amplify demo credit</li>
+<li>If organic blog readers who also engage with pricing pages close faster, create rules boosting that sequence</li>
+</ul>
+<p>Google Analytics 4 allows custom attribution via data-driven models trained on your historical conversion data. After 12 months of tracked conversions, GA4 can recommend credit distribution based on what actually precedes closes in your data.</p>
+<h2>Technical Implementation: Building Attribution Infrastructure</h2>
+<p><strong>UTM parameter discipline captures source data.</strong> Every link must carry source tracking:</p>
+<ul>
+<li><strong>utm_source:</strong> Identifies traffic origin (google, linkedin, email, newsletter)</li>
+<li><strong>utm_medium:</strong> Categorizes channel type (organic, cpc, social, referral)</li>
+<li><strong>utm_campaign:</strong> Names specific initiatives (q2-comparison-content, case-study-nurture)</li>
+<li><strong>utm_content:</strong> Differentiates variations (cta-button-red, sidebar-form)</li>
+</ul>
+<p>Critical for SEO: While organic search traffic automatically tags as source=google/medium=organic, internal links and email campaigns require manual UTM tagging. When prospects click from your nurture email to a case study, that link must include UTM parameters or you lose attribution visibility.</p>
+<p><strong>First-party cookies enable cross-session tracking.</strong> When anonymous visitors return, cookies identify them as the same user (not who they are, but that they&#39;re returning). This allows:</p>
+<ul>
+<li>Session stitching (connecting visit 1, 3, and 7 as the same prospect)</li>
+<li>Anonymous journey mapping (tracking content consumption before form submission)</li>
+<li>Multi-day attribution (crediting organic search discovery even if conversion happens weeks later)</li>
+</ul>
+<p>Without persistent tracking, each session appears as a new visitor—making multi-touch attribution impossible. Google Analytics 4, Adobe Analytics, and marketing automation platforms (HubSpot, Marketo, Pardot) all rely on first-party cookies for this functionality.</p>
+<p><strong>CRM integration closes the attribution loop.</strong> Marketing automation and CRM must connect:</p>
+<ol>
+<li><strong>Prospect fills form</strong> → Creates contact record in CRM</li>
+<li><strong>Marketing automation passes source data</strong> → Original utm_source, utm_medium, utm_campaign, landing page</li>
+<li><strong>Contact converts to opportunity</strong> → Source data persists through pipeline stages</li>
+<li><strong>Opportunity closes</strong> → Revenue attributes back to original source</li>
+</ol>
+<p>Without this integration, you can measure form submissions by source (marketing attribution) but not closed revenue by source (true ROI attribution). The hand-off from marketing automation to CRM is where most attribution breaks—ensure opportunity records maintain source fields.</p>
+<p><strong>Data warehouse consolidation unifies disparate sources.</strong> Complete B2B attribution requires:</p>
+<ul>
+<li><strong>Google Analytics 4</strong> (website behavior, anonymous and known session data)</li>
+<li><strong>Google Search Console</strong> (organic keyword and impression data)</li>
+<li><strong>Marketing automation</strong> (email engagement, content downloads, progressive profiling)</li>
+<li><strong>CRM</strong> (opportunity stages, close dates, deal values, sales cycle length)</li>
+<li><strong>Ad platforms</strong> (Google Ads, LinkedIn, retargeting spend and performance)</li>
+</ul>
+<p>These systems don&#39;t naturally talk to each other. Data warehouses (BigQuery, Snowflake, Redshift) or business intelligence platforms (Tableau, Looker, Power BI) consolidate data, enabling unified attribution reporting.</p>
+<p><strong>Identity resolution connects anonymous and known states.</strong> Advanced attribution requires linking:</p>
+<ul>
+<li>Anonymous session 1 (prospect researching, hasn&#39;t identified)</li>
+<li>Anonymous session 2 (returns, still anonymous)</li>
+<li>Anonymous session 3 (fills form, now known)</li>
+<li>Known session 4 (logged in, identified behavior)</li>
+</ul>
+<p>Identity resolution platforms (mParticle, Segment, Treasure Data) stitch these sessions into unified customer profiles, attributing all anonymous behavior to the now-known contact. This reveals SEO&#39;s full contribution—not just the final session before form submission, but all prior research sessions.</p>
+<h2>Metrics That Matter for B2B SEO ROI</h2>
+<p><strong>Organic revenue attributed (closed-won).</strong> The ultimate SEO metric: How much closed revenue originated from organic search? Calculate as:</p>
+<ul>
+<li>Identify all closed-won deals where first touch = organic search</li>
+<li>Apply attribution model (position-based, time-decay, linear)</li>
+<li>Sum attributed revenue</li>
+<li>Compare to SEO investment</li>
+</ul>
+<p>Example: $450,000 closed revenue attributed to organic search this quarter / $35,000 quarterly SEO spend = 1,286% ROI.</p>
+<p><strong>Organic pipeline generated.</strong> Leading indicator of future revenue—how much pipeline entered your CRM with organic search attribution this period? Since B2B sales cycles span 6-12 months, pipeline generation shows current SEO performance while revenue lags by months.</p>
+<p>Track: Dollar value of new opportunities created, segmented by:</p>
+<ul>
+<li><strong>Early-stage pipeline</strong> (MQLs, SQLs, discovery calls scheduled)</li>
+<li><strong>Mid-stage pipeline</strong> (demos completed, proposals submitted)</li>
+<li><strong>Late-stage pipeline</strong> (contracts under negotiation, awaiting signature)</li>
+</ul>
+<p>Monitor pipeline conversion rates by source—if organic-sourced opportunities close at 22% versus 14% for paid sources, organic isn&#39;t just cheaper, it&#39;s higher quality.</p>
+<p><strong>Organic cost per acquisition (CPA).</strong> Total SEO investment divided by customers acquired. Compare to paid channel CPA:</p>
+<ul>
+<li><strong>SEO CPA calculation:</strong> (Annual SEO retainer + tools + internal salary allocation) / organic-attributed customers</li>
+<li><strong>Paid search CPA:</strong> Total Google Ads spend / customers acquired from paid search</li>
+<li><strong>Paid social CPA:</strong> LinkedIn + Facebook spend / customers acquired from paid social</li>
+</ul>
+<p>Example: $72,000 annual SEO investment / 24 customers = $3,000 organic CPA versus $6,200 Google Ads CPA and $8,400 LinkedIn CPA. SEO delivers customers at 52% lower cost than next-best channel.</p>
+<p><strong>Customer lifetime value by source.</strong> Not all acquisition channels generate equal customer quality. Measure LTV segmented by original source:</p>
+<ul>
+<li>Do organically acquired customers have higher/lower retention rates?</li>
+<li>Do they expand contracts faster or slower?</li>
+<li>What&#39;s average customer tenure by source?</li>
+</ul>
+<p>If organic customers have 40% higher LTV than paid customers, your true organic ROI is 40% higher than simple revenue attribution suggests—these customers are more valuable long-term.</p>
+<p><strong>Time to close by source.</strong> B2B sales cycles vary by source:</p>
+<ul>
+<li>Organic prospects often self-educate longer before sales contact (already product-aware)</li>
+<li>Paid leads may require more nurturing (clicked an ad, less committed)</li>
+<li>Referral leads might close fastest (pre-validated by referrer)</li>
+</ul>
+<p>Track median days from opportunity creation to close by source. If organic opportunities close in 48 days versus 74 days for paid, organic not only costs less but accelerates revenue recognition.</p>
+<p><strong>Sales cycle touch count by source.</strong> How many sales interactions (emails, calls, demos) does each source require before closing?</p>
+<ul>
+<li>Organic leads consuming educational content may need fewer touches (they educated themselves)</li>
+<li>Cold outbound leads might need 12+ touches (building awareness from zero)</li>
+</ul>
+<p>If organic leads close with 6 touches versus 11 for other sources, organic delivers both cost efficiency (lower acquisition cost) and sales efficiency (less sales resource consumption per deal).</p>
+<h2>Measuring SEO ROI Without Perfect Attribution</h2>
+<p><strong>Most organizations lack sophisticated attribution infrastructure.</strong> If you can&#39;t implement multi-touch attribution, data warehouse consolidation, and identity resolution immediately, use proxy metrics demonstrating SEO value:</p>
+<p><strong>Organic form submissions as leading indicator.</strong> Track demo requests, content downloads, and contact form submissions where source = organic search. While this doesn&#39;t prove closed revenue, it establishes that organic search drives pipeline entry—a prerequisite for revenue attribution. Compare organic form submission volume and cost per form to paid channels.</p>
+<p><strong>Assisted conversions from Google Analytics.</strong> GA4&#39;s assisted conversions report shows how often organic search appears <em>anywhere</em> in the conversion path, even if not first or last touch. This surfaces SEO&#39;s contribution to deals attributed to other channels under simpler models. If organic search appears in 45% of all conversion paths, it&#39;s contributing to nearly half your revenue—even if last-touch attribution gives it credit for only 18%.</p>
+<p><strong>Organic traffic to high-intent pages.</strong> Monitor organic visits to:</p>
+<ul>
+<li>Pricing pages (strong purchase intent)</li>
+<li>Demo/trial signup pages (evaluation stage)</li>
+<li>Product comparison pages (active consideration)</li>
+<li>Case study pages (seeking validation)</li>
+</ul>
+<p>High traffic volume to these pages indicates SEO is reaching prospects near purchase decisions, even if attribution system doesn&#39;t connect them to closed revenue yet.</p>
+<p><strong>Sales team anecdotal feedback.</strong> Ask sales reps: &quot;How many prospects mention finding us through Google?&quot; or &quot;Do prospects who found us organically seem more educated?&quot; While not quantitative, consistent feedback that organic leads are higher quality validates SEO investment when attribution data is absent.</p>
+<p><strong>Closed deal origin survey.</strong> Add a single question to your new customer onboarding: &quot;How did you first learn about us?&quot; Options: Organic search, referral, paid ad, event, other. This self-reported data is less reliable than tracking data (people misremember) but better than no attribution. After 6 months, you&#39;ll have directional data on organic&#39;s contribution.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>What attribution model should B2B companies use for SEO?</h3>
+<p><strong>Position-based attribution (40% first touch, 40% last touch, 20% middle touches) balances discovery and conversion credit.</strong> This model honors SEO&#39;s primary strength—introducing prospects to your solution—while acknowledging that sales and other marketing touches move deals forward. Pure first-touch over-credits SEO for deals that required significant sales effort. Pure last-touch erases SEO&#39;s awareness contribution. Position-based reflects B2B reality: multiple touchpoints matter, but discovery and closing moments carry extra weight.</p>
+<h3>How long should attribution windows be for B2B SEO?</h3>
+<p><strong>90-180 days for most B2B organizations, aligned with your sales cycle length.</strong> If median time from first touch to close is 120 days, set attribution windows to 120-150 days. Shorter windows (30-60 days) under-credit SEO because prospects discovered organically months before converting. Longer windows (365+ days) over-credit SEO for deals where the prospect went dormant and reactivated via different channels. Set windows to 1.2-1.5x your median sales cycle.</p>
+<h3>Should you attribute partial revenue or 100% to each touchpoint?</h3>
+<p><strong>Use fractional attribution (position-based or time-decay) rather than duplicative 100% attribution.</strong> If you assign 100% credit to every touchpoint, a five-touch deal generates 500% attributed revenue—mathematical nonsense that prevents comparing channel efficiency. Fractional models sum to 100%, allowing meaningful ROI comparisons. Exception: For understanding touchpoint frequency, you can report &quot;organic search appears in 64% of closed deals&quot; alongside fractional revenue attribution.</p>
+<h3>How do you prove SEO ROI to executives without attribution systems?</h3>
+<p><strong>Use assisted conversions and organic form submissions as proxies.</strong> GA4&#39;s assisted conversions report reveals how often organic appears in conversion paths. If organic search participates in 50% of conversions, it&#39;s contributing to half your revenue—even if last-touch attribution credits other channels. Supplement with organic form submission data (demo requests, trial signups) and cost per form versus paid channels. These proxy metrics demonstrate SEO value until you implement full closed-loop attribution.</p>
+<h3>What if sales cycle is 18+ months?</h3>
+<p><strong>Use pipeline generation and opportunity creation as success metrics instead of closed revenue.</strong> With 18-month cycles, SEO efforts today won&#39;t show in closed revenue for 1.5 years—too long to wait for ROI validation. Track: (1) Organic-attributed opportunities created, (2) Pipeline dollar value generated, (3) Opportunity stage progression speed by source. If organic opportunities progress through pipeline at similar or better rates than paid leads, extrapolate expected closed revenue based on historical close rates. Supplement with content engagement metrics—if target accounts are consuming organic content, SEO is working even if deals haven&#39;t closed yet.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

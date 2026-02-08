@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search | B2B Vic</title>
+    <meta name="description" content="Static sites rank faster and higher than database-driven CMSs. Here&#39;s why JAMstack architecture delivers superior SEO performance." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search" />
+    <meta property="og:description" content="Static sites rank faster and higher than database-driven CMSs. Here&#39;s why JAMstack architecture delivers superior SEO performance." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/static-site-seo-advantages.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search" />
+    <meta name="twitter:description" content="Static sites rank faster and higher than database-driven CMSs. Here&#39;s why JAMstack architecture delivers superior SEO performance." />
+    <link rel="canonical" href="https://b2bvic.com/articles/static-site-seo-advantages.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search",
+      "description": "Static sites rank faster and higher than database-driven CMSs. Here's why JAMstack architecture delivers superior SEO performance.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/static-site-seo-advantages.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Static Site SEO Advantages: Why JAMstack Sites Outrank WordPress in Organic Search</h1>
+<p><strong>Static sites load in 400-800 milliseconds while WordPress sites average 2-4 seconds.</strong> This speed differential directly impacts rankings—Google&#39;s algorithm prioritizes fast-loading pages in Core Web Vitals assessment. Beyond speed, static site architecture eliminates plugin vulnerabilities, database query overhead, and server-side rendering delays that plague traditional CMSs. The result: better rankings, higher traffic, lower hosting costs.</p>
+<p>JAMstack (JavaScript, APIs, Markup) represents a fundamental shift from server-rendered dynamic sites to pre-built static HTML served via CDN. Instead of generating pages on-demand when users visit, static site generators (Eleventy, Hugo, Astro, Next.js) build all pages at compile time. This architecture removes performance bottlenecks that hurt SEO while improving security, scalability, and developer experience.</p>
+<h2>Why Static Sites Have Built-In SEO Advantages</h2>
+<p><strong>Page speed is a direct ranking factor.</strong> Google&#39;s Core Web Vitals measure:</p>
+<ul>
+<li><strong>Largest Contentful Paint (LCP):</strong> Time until main content renders (target: &lt;2.5 seconds)</li>
+<li><strong>First Input Delay (FID):</strong> Time until page becomes interactive (target: &lt;100ms)</li>
+<li><strong>Cumulative Layout Shift (CLS):</strong> Visual stability during load (target: &lt;0.1)</li>
+</ul>
+<p>Static sites serve pre-rendered HTML instantly—no database queries, no server-side PHP execution, no plugin initialization. WordPress sites running 15+ plugins spend 400-800ms just initializing plugins before rendering content. Static sites eliminate this overhead entirely.</p>
+<p><strong>CDN distribution reduces global latency.</strong> Static HTML, CSS, and JavaScript files deploy to content delivery networks (Cloudflare, Netlify, Vercel) with edge servers worldwide. When someone in Tokyo visits your site:</p>
+<ul>
+<li><strong>Static site:</strong> Serves from Tokyo edge node (30-50ms latency)</li>
+<li><strong>WordPress site:</strong> Queries database in US data center (180-250ms latency)</li>
+</ul>
+<p>Geographic latency impacts rankings for location-specific searches. Faster global delivery improves international SEO performance.</p>
+<p><strong>Reduced server load enables instant scalability.</strong> Static sites handle traffic spikes without performance degradation:</p>
+<ul>
+<li><strong>Static site:</strong> 10,000 simultaneous visitors = 10,000 CDN file serves (trivial load)</li>
+<li><strong>WordPress site:</strong> 10,000 simultaneous visitors = 10,000 database queries + PHP executions (server crash)</li>
+</ul>
+<p>Google monitors site availability. Sites that slow or crash during traffic spikes get downranked. Static architecture makes crashes nearly impossible.</p>
+<p><strong>Elimination of plugin vulnerabilities improves security.</strong> WordPress sites average 24 security vulnerabilities annually—mostly plugin-related. Hacked sites display:</p>
+<ul>
+<li>Injected spam links (destroys authority, triggers manual penalties)</li>
+<li>Malware warnings (Google blocks from search results entirely)</li>
+<li>Redirect chains (dilutes link equity, confuses crawlers)</li>
+</ul>
+<p>Static sites have minimal attack surface—no database to SQL inject, no PHP to exploit, no plugin code to compromise. Better security protects accumulated SEO value.</p>
+<h2>Technical SEO Advantages of Static Architecture</h2>
+<p><strong>HTML pre-rendering eliminates JavaScript SEO challenges.</strong> Single-page applications (SPAs) built with React/Vue/Angular often struggle with SEO:</p>
+<ul>
+<li><strong>Client-side rendering:</strong> Content doesn&#39;t exist until JavaScript executes (Google can render but it&#39;s slower and less reliable)</li>
+<li><strong>Dynamic routing:</strong> URLs may not exist as distinct HTML pages (breaks canonical URL concepts)</li>
+<li><strong>Meta tag challenges:</strong> Title and description tags generated by JS aren&#39;t reliably indexed</li>
+</ul>
+<p>Static site generators solve this by building full HTML pages at compile time. Every URL corresponds to real HTML file with proper meta tags, headers, and content—exactly what Google&#39;s crawler expects.</p>
+<p><strong>Structured URL architecture by default.</strong> Static site generators encourage clean URL hierarchies:</p>
+<pre><code>/blog/seo-strategy/
+/blog/technical-seo/
+/services/consulting/
+/services/training/
+</code></pre>
+<p>Database-driven CMSs often generate URLs like:</p>
+<pre><code>/?p=12345
+/index.php?page=about
+</code></pre>
+<p>Clean URLs improve user experience and keyword relevance—both ranking factors.</p>
+<p><strong>Automatic sitemap generation.</strong> Static site build tools auto-generate XML sitemaps reflecting exact site structure:</p>
+<pre><code class="language-xml">&lt;url&gt;
+  &lt;loc&gt;https://example.com/blog/seo-strategy/&lt;/loc&gt;
+  &lt;lastmod&gt;2026-02-08&lt;/lastmod&gt;
+  &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+  &lt;priority&gt;0.8&lt;/priority&gt;
+&lt;/url&gt;
+</code></pre>
+<p>WordPress requires plugins for sitemap generation—introducing another potential failure point and performance overhead.</p>
+<p><strong>Version control and audit history.</strong> Static sites live in git repositories (GitHub, GitLab). Every content change is:</p>
+<ul>
+<li>Tracked with commit history (who changed what, when, why)</li>
+<li>Reversible (rollback to any previous version instantly)</li>
+<li>Diffable (see exactly what changed between versions)</li>
+</ul>
+<p>This prevents SEO disasters:</p>
+<ul>
+<li>Accidentally deleted page? Restore from git history.</li>
+<li>Developer broke meta tags? Revert to last working commit.</li>
+<li>Content regression? Compare current versus prior version to identify issues.</li>
+</ul>
+<p>WordPress lacks native version control—content changes are opaque and difficult to reverse.</p>
+<p><strong>Build-time optimization and validation.</strong> Static site generators check for errors during build:</p>
+<ul>
+<li>Broken internal links (build fails, preventing deployment)</li>
+<li>Missing images (caught before going live)</li>
+<li>Invalid HTML (linters verify markup correctness)</li>
+<li>Duplicate meta descriptions (audited during compilation)</li>
+</ul>
+<p>WordPress publishes changes immediately without validation—broken links and errors go live instantly.</p>
+<h2>Performance Comparison: Static vs WordPress</h2>
+<p><strong>Real-world speed benchmarks.</strong> Testing identical content on both architectures:</p>
+<p><strong>Static site (Eleventy + Netlify):</strong></p>
+<ul>
+<li>Time to First Byte (TTFB): 45ms</li>
+<li>First Contentful Paint (FCP): 380ms</li>
+<li>Largest Contentful Paint (LCP): 620ms</li>
+<li>Time to Interactive (TTI): 680ms</li>
+<li><strong>Lighthouse Score: 98/100</strong></li>
+</ul>
+<p><strong>WordPress site (standard hosting + 8 plugins):</strong></p>
+<ul>
+<li>Time to First Byte (TTFB): 420ms</li>
+<li>First Contentful Paint (FCP): 1,240ms</li>
+<li>Largest Contentful Paint (LCP): 2,840ms</li>
+<li>Time to Interactive (TTI): 3,620ms</li>
+<li><strong>Lighthouse Score: 67/100</strong></li>
+</ul>
+<p>The static site is 4-5x faster across every metric—translating directly to better rankings.</p>
+<p><strong>Database query overhead.</strong> WordPress generates pages dynamically:</p>
+<ol>
+<li>User requests <code>/blog/seo-tips/</code></li>
+<li>WordPress queries database for post content</li>
+<li>Queries database for comments on post</li>
+<li>Queries database for sidebar widgets</li>
+<li>Queries database for navigation menu</li>
+<li>Assembles HTML from PHP templates</li>
+<li>Serves completed page</li>
+</ol>
+<p>This happens on every single page load. Database queries add 200-600ms per request. Static sites skip all of this—HTML is pre-built and served instantly.</p>
+<p><strong>Plugin performance tax.</strong> Typical WordPress SEO stack:</p>
+<ul>
+<li>Yoast SEO (adds 120-180ms load time)</li>
+<li>WP Rocket (caching plugin, 40-60ms)</li>
+<li>Contact Form 7 (50-80ms)</li>
+<li>Google Analytics plugin (30-50ms)</li>
+<li>Security plugin (60-90ms)</li>
+</ul>
+<p>Total plugin overhead: 300-460ms before rendering any content. Static sites need zero plugins—functionality comes from build-time processing and JavaScript-based APIs.</p>
+<h2>Content Management Without Traditional CMS</h2>
+<p><strong>Headless CMS options for non-technical editors.</strong> Static sites can pair with headless CMSs:</p>
+<ul>
+<li><strong>Sanity:</strong> Real-time collaborative editing, structured content</li>
+<li><strong>Contentful:</strong> Enterprise-grade, localization support</li>
+<li><strong>Strapi:</strong> Open-source, self-hosted option</li>
+<li><strong>Decap CMS (formerly Netlify CMS):</strong> Git-based, free, integrates directly</li>
+</ul>
+<p>Editors use familiar WYSIWYG interfaces. Content saves to git repository. Static site rebuilds automatically. Best of both worlds: editor-friendly interface with static site performance.</p>
+<p><strong>Markdown-based workflows for technical teams.</strong> Developers prefer Markdown:</p>
+<pre><code class="language-markdown">---
+title: SEO Strategy Guide
+description: Comprehensive SEO tactics for B2B
+date: 2026-02-08
+---
+
+# SEO Strategy Guide
+
+Content here in Markdown format...
+</code></pre>
+<p>Markdown files live in git repository. Commit new content, push to GitHub, site auto-deploys. No database, no admin interface, complete version control.</p>
+<p><strong>Automated deployment pipelines.</strong> Modern workflow:</p>
+<ol>
+<li>Content team writes in headless CMS or Markdown</li>
+<li>Commit triggers build on Netlify/Vercel</li>
+<li>Static site generator compiles HTML</li>
+<li>Deploy preview generates for review</li>
+<li>Approved changes deploy to production CDN</li>
+<li>Entire process takes 2-4 minutes</li>
+</ol>
+<p>WordPress edits publish instantly without review—increasing error risk. Static workflows enforce review before deployment.</p>
+<h2>SEO-Specific Static Site Features</h2>
+<p><strong>Programmatic meta tag generation.</strong> Generate optimized meta tags at build time:</p>
+<pre><code class="language-javascript">// Eleventy template example
+module.exports = {
+  layout: &quot;post.njk&quot;,
+  eleventyComputed: {
+    metaDescription: data =&gt; {
+      // Auto-generate 155-char description from first paragraph
+      return data.content.substring(0, 155) + &quot;...&quot;;
+    },
+    ogImage: data =&gt; {
+      // Auto-generate social share images
+      return `/og-images/${data.slug}.png`;
+    }
+  }
+};
+</code></pre>
+<p>WordPress requires manual meta tag entry or plugin automation (slower, less flexible).</p>
+<p><strong>Image optimization pipeline.</strong> Static site build tools auto-optimize images:</p>
+<pre><code class="language-javascript">// Next.js Image component
+&lt;Image
+  src=&quot;/photos/hero.jpg&quot;
+  width={1200}
+  height={630}
+  alt=&quot;SEO strategy workshop&quot;
+  loading=&quot;lazy&quot;
+  formats={[&#39;webp&#39;, &#39;avif&#39;]}
+/&gt;
+</code></pre>
+<p>This automatically:</p>
+<ul>
+<li>Resizes to multiple dimensions (responsive images)</li>
+<li>Converts to modern formats (WebP, AVIF)</li>
+<li>Implements lazy loading</li>
+<li>Generates srcset attributes</li>
+</ul>
+<p>WordPress requires plugins for image optimization—adding performance overhead and potential compatibility issues.</p>
+<p><strong>Built-in code splitting and lazy loading.</strong> Modern static site generators split JavaScript:</p>
+<ul>
+<li><strong>Critical JS:</strong> Inlined in HTML (instant interactive features)</li>
+<li><strong>Route-level chunks:</strong> Loaded only for specific pages</li>
+<li><strong>Component-level chunks:</strong> Loaded only when components render</li>
+</ul>
+<p>This minimizes initial JavaScript payload (improves FID) while maintaining rich functionality.</p>
+<p><strong>Automatic schema markup generation.</strong> Template-level schema injection:</p>
+<pre><code class="language-javascript">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BlogPosting&quot;,
+  &quot;headline&quot;: &quot;{{ title }}&quot;,
+  &quot;description&quot;: &quot;{{ description }}&quot;,
+  &quot;datePublished&quot;: &quot;{{ date }}&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Victor Valentine Romo&quot;
+  }
+}
+</code></pre>
+<p>Every blog post gets proper Article schema without manual input. WordPress requires schema plugins or manual implementation.</p>
+<h2>Migration Strategy: WordPress to Static</h2>
+<p><strong>Content export and transformation.</strong> Extract existing content:</p>
+<ol>
+<li><strong>Export from WordPress:</strong> Use WP All Export plugin or REST API</li>
+<li><strong>Convert to Markdown:</strong> Tools like wordpress-export-to-markdown transform posts</li>
+<li><strong>Clean up formatting:</strong> Remove shortcodes, fix image paths, standardize frontmatter</li>
+<li><strong>Preserve URL structure:</strong> Map old URLs to new URLs exactly (critical for maintaining rankings)</li>
+</ol>
+<p><strong>Redirect mapping for SEO preservation.</strong> Generate redirect file:</p>
+<pre><code># Netlify _redirects format
+/old-blog-url-structure/post-title  /new-blog-url-structure/post-title  301
+/about-us.php                        /about/                              301
+/wp-content/uploads/image.jpg        /images/image.jpg                    301
+</code></pre>
+<p>Every old URL must redirect to corresponding new URL. Missing redirects = broken backlinks = lost rankings.</p>
+<p><strong>Staged migration approach.</strong> Don&#39;t switch everything at once:</p>
+<ol>
+<li><strong>Phase 1:</strong> Build static site, deploy to staging subdomain (test.example.com)</li>
+<li><strong>Phase 2:</strong> Migrate blog section only, keep main site on WordPress</li>
+<li><strong>Phase 3:</strong> Monitor rankings and traffic for 30 days</li>
+<li><strong>Phase 4:</strong> Migrate remaining sections if blog migration succeeds</li>
+<li><strong>Phase 5:</strong> Sunset WordPress, full static site live</li>
+</ol>
+<p>Staged approach limits risk—if rankings drop, you can revert quickly.</p>
+<p><strong>Technical considerations during migration.</strong> Ensure:</p>
+<ul>
+<li><strong>Sitemap submitted to Google Search Console</strong> (new static site sitemap)</li>
+<li><strong>Robots.txt properly configured</strong> (allow crawling, reference new sitemap location)</li>
+<li><strong>Canonical tags pointing to correct URLs</strong> (self-referential canonicals on all pages)</li>
+<li><strong>Internal links updated</strong> (no 301 redirect chains, direct links to new URLs)</li>
+<li><strong>Schema markup preserved or improved</strong> (maintain or enhance structured data)</li>
+</ul>
+<h2>Cost and Hosting Comparison</h2>
+<p><strong>Static site hosting costs.</strong> Monthly pricing:</p>
+<ul>
+<li><strong>Netlify:</strong> Free tier includes 100GB bandwidth, 300 build minutes, unlimited sites</li>
+<li><strong>Vercel:</strong> Free tier includes 100GB bandwidth, 6,000 build minutes</li>
+<li><strong>Cloudflare Pages:</strong> Free tier includes unlimited bandwidth, 500 builds/month</li>
+<li><strong>AWS S3 + CloudFront:</strong> ~$1-5/month for typical traffic levels</li>
+</ul>
+<p><strong>WordPress hosting costs.</strong> Monthly pricing:</p>
+<ul>
+<li><strong>Shared hosting:</strong> $10-30/month (WP Engine, SiteGround, Bluehost)</li>
+<li><strong>Managed WordPress:</strong> $30-100/month (Kinsta, Flywheel, Pressable)</li>
+<li><strong>VPS hosting:</strong> $20-80/month (DigitalOcean, Linode, Vultr)</li>
+<li><strong>Enterprise:</strong> $200-500+/month (custom infrastructure, dedicated resources)</li>
+</ul>
+<p>Static hosting is 90-95% cheaper. A site costing $50/month on WordPress costs $0-5/month on Netlify.</p>
+<p><strong>Performance at scale.</strong> Traffic handling:</p>
+<ul>
+<li><strong>Static site:</strong> CDN serves unlimited requests with zero performance degradation</li>
+<li><strong>WordPress site:</strong> Requires load balancing, caching layers, database optimization at scale</li>
+</ul>
+<p>Scaling WordPress to handle 100,000 daily visitors costs $200-500/month. Static sites handle this on free tier.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Can static sites handle dynamic features like search and comments?</h3>
+<p><strong>Yes, via JavaScript and APIs.</strong> Static doesn&#39;t mean basic:</p>
+<ul>
+<li><strong>Search:</strong> Algolia, Fuse.js, or Pagefind (static search index)</li>
+<li><strong>Comments:</strong> Disqus, Commento, Utterances (GitHub Issues as comments)</li>
+<li><strong>Forms:</strong> Netlify Forms, Formspree, Basin</li>
+<li><strong>E-commerce:</strong> Snipcart, Stripe Checkout, Commerce.js</li>
+</ul>
+<p>The page is static HTML, but JavaScript adds interactivity without server-side code.</p>
+<h3>Do static sites work for large content libraries?</h3>
+<p><strong>Yes, with smart build optimization.</strong> Sites with 10,000+ pages can build in under 10 minutes using:</p>
+<ul>
+<li><strong>Incremental builds:</strong> Only rebuild changed pages (Gatsby, Next.js)</li>
+<li><strong>Parallel processing:</strong> Multi-core builds (Hugo handles 10K+ pages in seconds)</li>
+<li><strong>Build caching:</strong> Reuse unchanged assets between builds</li>
+</ul>
+<p>Largest known static site: 50,000+ pages, builds in under 5 minutes.</p>
+<h3>How do you handle frequent content updates?</h3>
+<p><strong>Rebuild on every change—it&#39;s fast.</strong> Workflow:</p>
+<ol>
+<li>Editor publishes new post in CMS</li>
+<li>Webhook triggers build on Netlify/Vercel</li>
+<li>Site rebuilds in 1-3 minutes</li>
+<li>New content live</li>
+</ol>
+<p>For sites needing more frequent updates, incremental builds update only changed content without full rebuild.</p>
+<h3>What about SEO plugins like Yoast?</h3>
+<p><strong>Static site generators have built-in SEO features Yoast provides:</strong></p>
+<ul>
+<li>Meta tags: Templated at build time</li>
+<li>Sitemaps: Auto-generated during build</li>
+<li>Schema markup: Injected via templates</li>
+<li>Readability analysis: Use browser extensions or standalone tools during writing</li>
+</ul>
+<p>You don&#39;t &quot;lose&quot; Yoast functionality—you gain native implementations without performance overhead.</p>
+<h3>Can non-technical teams manage static sites?</h3>
+<p><strong>Yes, with headless CMS.</strong> Pair static site with Sanity, Contentful, or Decap CMS. Editors use familiar WYSIWYG interface, never touch code. Changes trigger automatic rebuilds. Technical complexity is hidden from content team while preserving static site performance benefits.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

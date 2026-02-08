@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content | B2B Vic</title>
+    <meta name="description" content="Technical SEO errors suppress 40% of B2B sites regardless of content quality. Here&#39;s the complete audit checklist for identifying and fixing ranking blockers." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content" />
+    <meta property="og:description" content="Technical SEO errors suppress 40% of B2B sites regardless of content quality. Here&#39;s the complete audit checklist for identifying and fixing ranking blockers." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/technical-seo-checklist-b2b-websites.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content" />
+    <meta name="twitter:description" content="Technical SEO errors suppress 40% of B2B sites regardless of content quality. Here&#39;s the complete audit checklist for identifying and fixing ranking blockers." />
+    <link rel="canonical" href="https://b2bvic.com/articles/technical-seo-checklist-b2b-websites.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content",
+      "description": "Technical SEO errors suppress 40% of B2B sites regardless of content quality. Here's the complete audit checklist for identifying and fixing ranking blockers.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/technical-seo-checklist-b2b-websites.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Technical SEO Checklist for B2B Websites: 47 Issues That Kill Rankings Even With Great Content</h1>
+<p><strong>Forty-three percent of B2B websites have technical SEO issues preventing their content from ranking.</strong> You&#39;ve published comprehensive guides, built backlinks, and targeted the right keywords—yet rankings plateau. The problem isn&#39;t content quality; it&#39;s technical infrastructure. Slow page speeds, broken redirects, duplicate content, and crawl errors silently suppress rankings while you focus on publishing more content that can&#39;t rank either.</p>
+<p>Technical SEO operates beneath the content layer—the foundation determining whether Google can crawl, index, and rank your pages. A perfect article published on a site with poor technical health might reach position 30-50 when it should rank top 10. Fix the technical foundation and watch existing content rise without changing a word.</p>
+<h2>Site Speed and Core Web Vitals</h2>
+<p><strong>Largest Contentful Paint (LCP) - Target: &lt;2.5 seconds</strong></p>
+<p>What it measures: Time until main content renders on screen.</p>
+<p>Common issues:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Unoptimized images (large file sizes, wrong formats)</li>
+<li><input disabled="" type="checkbox"> Render-blocking CSS and JavaScript</li>
+<li><input disabled="" type="checkbox"> Slow server response time (TTFB &gt;600ms)</li>
+<li><input disabled="" type="checkbox"> Missing resource preloading for critical assets</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Compress images using WebP/AVIF formats (80-90% size reduction versus JPG/PNG)</li>
+<li>Implement lazy loading for below-fold images (only load when scrolling near them)</li>
+<li>Inline critical CSS (first viewport styles embedded in HTML)</li>
+<li>Use CDN for static asset delivery (Cloudflare, Fastly, AWS CloudFront)</li>
+<li>Upgrade hosting if TTFB consistently exceeds 400ms</li>
+</ul>
+<p><strong>First Input Delay (FID) - Target: &lt;100ms</strong></p>
+<p>What it measures: Time until page responds to first user interaction (click, tap, key press).</p>
+<p>Common issues:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Large JavaScript bundles blocking main thread</li>
+<li><input disabled="" type="checkbox"> Unoptimized third-party scripts (analytics, chat widgets, ads)</li>
+<li><input disabled="" type="checkbox"> Synchronous script loading</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Code-split JavaScript (load only what&#39;s needed per page)</li>
+<li>Defer non-critical JavaScript (use defer or async attributes)</li>
+<li>Audit third-party scripts—remove unused ones, lazy-load remainder</li>
+<li>Use web workers for heavy JavaScript operations (offload from main thread)</li>
+</ul>
+<p><strong>Cumulative Layout Shift (CLS) - Target: &lt;0.1</strong></p>
+<p>What it measures: Visual stability—how much content shifts during load.</p>
+<p>Common issues:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Images without width/height attributes (browser doesn&#39;t reserve space)</li>
+<li><input disabled="" type="checkbox"> Ads or embeds injected without placeholder</li>
+<li><input disabled="" type="checkbox"> Web fonts causing FOIT/FOUT (flash of invisible/unstyled text)</li>
+<li><input disabled="" type="checkbox"> Dynamically injected content pushing existing content down</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Add explicit width and height to all images (<code>&lt;img width=&quot;800&quot; height=&quot;600&quot;&gt;</code>)</li>
+<li>Reserve space for ads/embeds using CSS aspect-ratio or min-height</li>
+<li>Use font-display: swap with preload for web fonts</li>
+<li>Avoid inserting content above existing content (append below or use fixed positioning)</li>
+</ul>
+<p><strong>Page size and request count</strong></p>
+<p>Targets:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Total page size &lt;3MB (ideally &lt;1.5MB)</li>
+<li><input disabled="" type="checkbox"> Total HTTP requests &lt;50 (ideally &lt;25)</li>
+</ul>
+<p>Common issues:</p>
+<ul>
+<li>Dozens of external scripts (analytics, tracking, widgets)</li>
+<li>Uncompressed CSS/JS files</li>
+<li>Multiple font variations loaded (8+ font files)</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Audit with WebPageTest or Lighthouse to identify heavy resources</li>
+<li>Combine CSS/JS files where possible (balance against HTTP/2 multiplexing)</li>
+<li>Subset web fonts (include only characters used, only weights needed)</li>
+<li>Remove redundant scripts—do you really need 5 analytics platforms?</li>
+</ul>
+<h2>Crawlability and Indexation</h2>
+<p><strong>Robots.txt configuration</strong></p>
+<p>Critical checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Robots.txt doesn&#39;t accidentally block CSS/JavaScript (prevents rendering)</li>
+<li><input disabled="" type="checkbox"> Doesn&#39;t block critical sections (product pages, blog)</li>
+<li><input disabled="" type="checkbox"> Sitemap location declared correctly</li>
+</ul>
+<p>Test: Google Search Console &gt; robots.txt Tester tool.</p>
+<p><strong>XML sitemap health</strong></p>
+<p>Checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Sitemap exists and is submitted to GSC</li>
+<li><input disabled="" type="checkbox"> Sitemap contains only indexable URLs (200 status, not blocked by robots.txt)</li>
+<li><input disabled="" type="checkbox"> Sitemap excludes paginated pages or uses rel=canonical correctly</li>
+<li><input disabled="" type="checkbox"> Image sitemap exists for image-heavy sites</li>
+<li><input disabled="" type="checkbox"> Video sitemap exists if you host videos</li>
+<li><input disabled="" type="checkbox"> Last modified dates are accurate and recently updated</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Generate sitemap using CMS plugin or static site generator</li>
+<li>Submit via GSC and monitor Index Coverage report for errors</li>
+<li>Update sitemap whenever site structure changes</li>
+</ul>
+<p><strong>Indexation status</strong></p>
+<p>Critical checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> <code>site:yourdomain.com</code> query shows expected page count (not 10x more or 50% less)</li>
+<li><input disabled="" type="checkbox"> Important pages are indexed (spot-check top 50 pages)</li>
+<li><input disabled="" type="checkbox"> Duplicate pages aren&#39;t multiply indexed (check for www vs non-www, http vs https, trailing slash variants)</li>
+</ul>
+<p>Diagnosis via GSC:</p>
+<ul>
+<li>Navigate to Index &gt; Coverage report</li>
+<li>Identify &quot;Excluded&quot; and &quot;Error&quot; pages</li>
+<li>Common issues: Duplicate content, soft 404s, redirect errors, crawl anomalies</li>
+</ul>
+<p><strong>Canonical tag implementation</strong></p>
+<p>Every page should have canonical tag:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Self-referential canonical on unique pages (<code>&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/page&quot; /&gt;</code>)</li>
+<li><input disabled="" type="checkbox"> Cross-domain canonical if syndicating content</li>
+<li><input disabled="" type="checkbox"> Canonical tags point to preferred HTTPS version</li>
+<li><input disabled="" type="checkbox"> Paginated pages canonicalize to view-all page OR use rel=next/prev</li>
+</ul>
+<p>Common mistakes:</p>
+<ul>
+<li>Missing canonical tags entirely (creates ambiguity for Google)</li>
+<li>Canonical pointing to wrong page (Google ignores canonical chain)</li>
+<li>Conflict between canonical and robots meta tag (one says index, other says noindex)</li>
+</ul>
+<p><strong>Internal link structure</strong></p>
+<p>Health checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> All pages reachable within 3 clicks from homepage</li>
+<li><input disabled="" type="checkbox"> No broken internal links (404s)</li>
+<li><input disabled="" type="checkbox"> Important pages have 10+ internal links pointing to them</li>
+<li><input disabled="" type="checkbox"> Orphan pages (zero internal links) are either intentional or reconnected</li>
+</ul>
+<p>Tools: Screaming Frog, Sitebulb, Ahrefs Site Audit.</p>
+<p>Fixes:</p>
+<ul>
+<li>Add navigation links, related content modules, contextual in-body links</li>
+<li>Fix broken links (update to correct URL or remove link)</li>
+<li>Prune or redirect orphan pages that should be connected</li>
+</ul>
+<p><strong>Duplicate content resolution</strong></p>
+<p>Common B2B duplicate content scenarios:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Product pages accessible via multiple category URLs</li>
+<li><input disabled="" type="checkbox"> Blog posts syndicated on Medium/LinkedIn without canonical back to origin</li>
+<li><input disabled="" type="checkbox"> Printer-friendly versions creating duplicate URLs</li>
+<li><input disabled="" type="checkbox"> Session IDs or tracking parameters in URLs creating infinite variations</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Use canonical tags to declare preferred version</li>
+<li>Implement parameter handling in GSC (tell Google to ignore session IDs)</li>
+<li>Use 301 redirects to consolidate duplicate URLs to single canonical version</li>
+<li>Block low-value pages with robots meta noindex if they shouldn&#39;t rank</li>
+</ul>
+<h2>Mobile Optimization</h2>
+<p><strong>Mobile-friendly test</strong></p>
+<p>Critical checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Passes Google&#39;s Mobile-Friendly Test (search &quot;Google mobile friendly test&quot;)</li>
+<li><input disabled="" type="checkbox"> Text readable without zooming (minimum 16px font size)</li>
+<li><input disabled="" type="checkbox"> Tap targets adequately spaced (minimum 48px × 48px, 8px spacing)</li>
+<li><input disabled="" type="checkbox"> No horizontal scrolling required</li>
+<li><input disabled="" type="checkbox"> Content fits viewport width</li>
+</ul>
+<p>Mobile-specific issues:</p>
+<ul>
+<li>Desktop-only features (hover effects required for navigation)</li>
+<li>Interstitials and popups that cover content on mobile</li>
+<li>Mobile-unfriendly forms (tiny input fields, no autofill support)</li>
+</ul>
+<p><strong>Responsive design vs separate mobile site</strong></p>
+<p>Google&#39;s stance: Responsive design preferred over separate mobile site (m.example.com).</p>
+<p>If using separate mobile site:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Implement rel=alternate and rel=canonical correctly (desktop to mobile, mobile to desktop)</li>
+<li><input disabled="" type="checkbox"> Ensure feature parity (mobile site has same content as desktop)</li>
+<li><input disabled="" type="checkbox"> Configure mobile sitemap correctly</li>
+</ul>
+<p>Better approach: Use responsive design. Single URL simplifies technical SEO and consolidates link equity.</p>
+<h2>HTTPS and Security</h2>
+<p><strong>SSL certificate</strong></p>
+<p>Non-negotiable checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Entire site serves via HTTPS (not just homepage)</li>
+<li><input disabled="" type="checkbox"> No mixed content warnings (HTTP assets on HTTPS pages)</li>
+<li><input disabled="" type="checkbox"> Certificate is valid (not expired, not self-signed)</li>
+<li><input disabled="" type="checkbox"> HTTP redirects to HTTPS via 301 (not 302)</li>
+</ul>
+<p>Diagnosis: Check Chrome DevTools Console for mixed content errors.</p>
+<p>Fixes:</p>
+<ul>
+<li>Install SSL certificate via hosting provider (often free with Let&#39;s Encrypt)</li>
+<li>Update all internal links to HTTPS</li>
+<li>Use protocol-relative URLs or HTTPS URLs for external resources</li>
+<li>Implement HSTS header (forces HTTPS in browsers)</li>
+</ul>
+<p><strong>Security headers</strong></p>
+<p>Advanced technical SEO for security and performance:</p>
+<ul>
+<li><input disabled="" type="checkbox"> HSTS (HTTP Strict Transport Security)</li>
+<li><input disabled="" type="checkbox"> Content Security Policy (CSP)</li>
+<li><input disabled="" type="checkbox"> X-Content-Type-Options: nosniff</li>
+<li><input disabled="" type="checkbox"> X-Frame-Options: DENY or SAMEORIGIN</li>
+</ul>
+<p>Test via securityheaders.com. These don&#39;t directly affect rankings but prevent attacks that could compromise site (and destroy SEO).</p>
+<h2>URL Structure and Redirects</h2>
+<p><strong>Clean URL architecture</strong></p>
+<p>Best practices:</p>
+<ul>
+<li><input disabled="" type="checkbox"> URLs use hyphens, not underscores (hyphens are word separators, underscores aren&#39;t)</li>
+<li><input disabled="" type="checkbox"> URLs are lowercase (avoids case-sensitivity issues)</li>
+<li><input disabled="" type="checkbox"> URLs are descriptive (<code>/seo-consulting/</code> not <code>/services/page2/</code>)</li>
+<li><input disabled="" type="checkbox"> URL structure reflects site hierarchy (<code>/blog/category/post-title/</code>)</li>
+</ul>
+<p><strong>Redirect hygiene</strong></p>
+<p>Critical checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> No redirect chains (A → B → C) — consolidate to direct redirect (A → C)</li>
+<li><input disabled="" type="checkbox"> No redirect loops (A → B → A) — breaks crawling entirely</li>
+<li><input disabled="" type="checkbox"> 301 (permanent) used for moved pages, not 302 (temporary)</li>
+<li><input disabled="" type="checkbox"> Old URLs from site migrations still redirect correctly</li>
+</ul>
+<p>Diagnosis: Crawl site with Screaming Frog, review &quot;Redirect Chains&quot; and &quot;Redirect Loops&quot; tabs.</p>
+<p><strong>Parameter handling</strong></p>
+<p>Common B2B parameter issues:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Tracking parameters create duplicate content (<code>?utm_source=email</code> versus <code>?utm_source=linkedin</code>)</li>
+<li><input disabled="" type="checkbox"> Sorting/filtering creates infinite URL variations (<code>?sort=price&amp;filter=category</code>)</li>
+</ul>
+<p>Fixes:</p>
+<ul>
+<li>Configure parameter handling in GSC (tell Google which parameters to ignore)</li>
+<li>Use canonical tags to declare parameter-free URL as preferred</li>
+<li>Block parameter variations in robots.txt if they shouldn&#39;t be indexed</li>
+</ul>
+<h2>Schema Markup and Structured Data</h2>
+<p><strong>Organization schema</strong></p>
+<p>Essential for brand visibility:</p>
+<pre><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;Your Company&quot;,
+  &quot;url&quot;: &quot;https://example.com&quot;,
+  &quot;logo&quot;: &quot;https://example.com/logo.png&quot;,
+  &quot;contactPoint&quot;: {
+    &quot;@type&quot;: &quot;ContactPoint&quot;,
+    &quot;telephone&quot;: &quot;+1-555-555-5555&quot;,
+    &quot;contactType&quot;: &quot;Sales&quot;
+  },
+  &quot;sameAs&quot;: [
+    &quot;https://linkedin.com/company/yourcompany&quot;,
+    &quot;https://twitter.com/yourcompany&quot;
+  ]
+}
+&lt;/script&gt;
+</code></pre>
+<p>Implement on homepage and about page.</p>
+<p><strong>Article schema for blog posts</strong></p>
+<p>Helps Google display rich snippets:</p>
+<pre><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;BlogPosting&quot;,
+  &quot;headline&quot;: &quot;Your Post Title&quot;,
+  &quot;description&quot;: &quot;Meta description&quot;,
+  &quot;image&quot;: &quot;https://example.com/featured-image.jpg&quot;,
+  &quot;datePublished&quot;: &quot;2026-02-08&quot;,
+  &quot;dateModified&quot;: &quot;2026-02-08&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Victor Valentine Romo&quot;
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>FAQPage schema</strong></p>
+<p>Enables FAQ rich snippets in SERPs:</p>
+<pre><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [{
+    &quot;@type&quot;: &quot;Question&quot;,
+    &quot;name&quot;: &quot;What is technical SEO?&quot;,
+    &quot;acceptedAnswer&quot;: {
+      &quot;@type&quot;: &quot;Answer&quot;,
+      &quot;text&quot;: &quot;Technical SEO ensures search engines can crawl, index, and rank your site effectively...&quot;
+    }
+  }]
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>Product schema for B2B SaaS/products</strong></p>
+<p>Displays pricing and ratings in search:</p>
+<pre><code class="language-html">&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Product&quot;,
+  &quot;name&quot;: &quot;Your SaaS Product&quot;,
+  &quot;description&quot;: &quot;Product description&quot;,
+  &quot;brand&quot;: &quot;Your Company&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;price&quot;: &quot;99.00&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;
+  },
+  &quot;aggregateRating&quot;: {
+    &quot;@type&quot;: &quot;AggregateRating&quot;,
+    &quot;ratingValue&quot;: &quot;4.8&quot;,
+    &quot;reviewCount&quot;: &quot;127&quot;
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>Test all schema with Google&#39;s Rich Results Test tool.</p>
+<h2>JavaScript and Rendering</h2>
+<p><strong>Server-side rendering (SSR) vs client-side rendering (CSR)</strong></p>
+<p>SEO implications:</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSR (React/Vue/Angular without SSR): Google must execute JavaScript to see content—slower indexing, potential rendering failures</li>
+<li><input disabled="" type="checkbox"> SSR (Next.js, Nuxt.js, Angular Universal): Content exists in HTML immediately—better for SEO</li>
+</ul>
+<p>If using CSR-only framework:</p>
+<ul>
+<li>Implement dynamic rendering (serve pre-rendered HTML to bots, interactive version to users)</li>
+<li>OR migrate to SSR framework</li>
+<li>Test with Google&#39;s Mobile-Friendly Test (uses rendering engine, reveals if content is visible to Google)</li>
+</ul>
+<p><strong>Critical rendering path optimization</strong></p>
+<p>Checks:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Minimize render-blocking JavaScript (defer non-critical scripts)</li>
+<li><input disabled="" type="checkbox"> Inline critical CSS (first-paint styles embedded in HTML)</li>
+<li><input disabled="" type="checkbox"> Preload key resources (<code>&lt;link rel=&quot;preload&quot; href=&quot;font.woff2&quot; as=&quot;font&quot;&gt;</code>)</li>
+</ul>
+<h2>Internationalization (if applicable)</h2>
+<p><strong>Hreflang implementation</strong></p>
+<p>For multi-language or multi-region sites:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Hreflang tags declare language/region versions</li>
+<li><input disabled="" type="checkbox"> Tags are reciprocal (if page A links to page B, page B must link to page A)</li>
+<li><input disabled="" type="checkbox"> Self-referential hreflang included (<code>&lt;link rel=&quot;alternate&quot; hreflang=&quot;en-us&quot; href=&quot;...&quot; /&gt;</code>)</li>
+</ul>
+<p>Common mistakes:</p>
+<ul>
+<li>Missing return links (hreflang must be bidirectional)</li>
+<li>Wrong language codes (use ISO 639-1 format: &quot;en-US&quot;, &quot;es-MX&quot;)</li>
+<li>Hreflang pointing to redirecting URLs (must point to final destination)</li>
+</ul>
+<p>Test with Ahrefs Site Audit or Screaming Frog hreflang validation.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How often should you run technical SEO audits?</h3>
+<p><strong>Quarterly for most B2B sites; monthly for high-traffic or frequently updated sites.</strong> Technical issues accumulate over time—new pages launch, developers make changes, plugins update. Quarterly audits catch problems before they compound. Use Screaming Frog, Sitebulb, or Ahrefs Site Audit to crawl entire site, then prioritize fixes by impact (issues affecting 100+ pages &gt; issues affecting 5 pages).</p>
+<h3>What&#39;s the fastest technical SEO fix with highest impact?</h3>
+<p><strong>Implement HTTPS if you haven&#39;t, then fix Core Web Vitals.</strong> HTTPS is mandatory (non-HTTPS sites get &quot;Not Secure&quot; warnings, users bounce, rankings suffer). After HTTPS: optimize images and implement lazy loading—these two actions alone improve LCP by 40-60% on most sites. Quick wins that Google measures directly.</p>
+<h3>Should you fix all technical issues or prioritize?</h3>
+<p><strong>Prioritize by impact and effort.</strong> Use 2x2 matrix: High Impact + Low Effort = do immediately (optimize images, fix broken links). High Impact + High Effort = schedule deliberately (migrate to SSR, redesign URL structure). Low Impact = defer indefinitely unless trivial. Don&#39;t let perfectionism delay launching fixes for critical issues.</p>
+<h3>How do you know if technical issues are actually hurting rankings?</h3>
+<p><strong>Compare similar content on healthy versus unhealthy pages.</strong> If one blog post with great technical health ranks position 4 and another with poor Core Web Vitals ranks position 28—despite similar content quality and backlinks—technical SEO is the differentiator. Use GSC to compare impressions and average position for groups of pages, segmented by Core Web Vitals status.</p>
+<h3>Can you rank well despite technical SEO issues?</h3>
+<p><strong>Temporarily yes, long-term no.</strong> If you have dominant authority and minimal competition, you can rank despite technical problems—for a while. As competitors improve their technical foundations, they&#39;ll overtake you. Technical SEO is the tie-breaker when content quality and backlinks are roughly equal. Better to fix proactively than scramble when rankings suddenly drop due to algorithm update targeting technical issues.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

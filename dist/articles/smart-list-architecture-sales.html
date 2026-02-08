@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used | B2B Vic</title>
+    <meta name="description" content="Sales teams ignore 73% of CRM segments because they&#39;re poorly designed. Here&#39;s how to architect smart lists that drive consistent prospecting behavior." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used" />
+    <meta property="og:description" content="Sales teams ignore 73% of CRM segments because they&#39;re poorly designed. Here&#39;s how to architect smart lists that drive consistent prospecting behavior." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/smart-list-architecture-sales.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used" />
+    <meta name="twitter:description" content="Sales teams ignore 73% of CRM segments because they&#39;re poorly designed. Here&#39;s how to architect smart lists that drive consistent prospecting behavior." />
+    <link rel="canonical" href="https://b2bvic.com/articles/smart-list-architecture-sales.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used",
+      "description": "Sales teams ignore 73% of CRM segments because they're poorly designed. Here's how to architect smart lists that drive consistent prospecting behavior.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/smart-list-architecture-sales.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Smart List Architecture for Sales Teams: How to Build CRM Segmentation That Actually Gets Used</h1>
+<p><strong>Seventy-three percent of CRM smart lists get ignored by sales teams.</strong> Organizations spend weeks building sophisticated segmentation—lead scoring models, engagement tracking, firmographic filters—then watch reps default to manual spreadsheets or work their own ad-hoc contact queries. The problem isn&#39;t sales resistance; it&#39;s architecture failure. Smart lists become useful when they answer one question: &quot;Who should I call right now?&quot;</p>
+<p>The gap between CRM capability and sales adoption stems from misaligned design principles. Marketing operations teams build lists around data hygiene and attribution tracking. Sales teams need lists around action triggers and time sensitivity. A list titled &quot;MQLs 30+ Engagement Score&quot; means nothing to a rep deciding who to dial. A list titled &quot;Hot Prospects—Last Touch Within 7 Days&quot; drives immediate action.</p>
+<h2>Why Traditional Smart Lists Fail Sales Adoption</h2>
+<p><strong>Complex filter logic creates maintenance nightmares.</strong> Lists with 8+ filter conditions break when:</p>
+<ul>
+<li>Custom field definitions change (&quot;Product Interest&quot; field gets replaced with &quot;Solution Category&quot;)</li>
+<li>Tag structures evolve (company shifts from &quot;Hot Lead&quot; to tiered interest scoring)</li>
+<li>Integration data streams interruption (Salesforce sync pauses, data stops flowing)</li>
+</ul>
+<p>By the time someone notices the list stopped updating correctly, reps have abandoned it for weeks. They learn smart lists are unreliable—so they stop checking entirely.</p>
+<p><strong>Static segments don&#39;t reflect deal stage progression.</strong> A prospect moves through stages: awareness → consideration → decision → negotiation. Lists organized by lead source (&quot;Webinar Attendees,&quot; &quot;Trade Show Contacts&quot;) don&#39;t adapt to this progression. A webinar attendee from 6 months ago who&#39;s now evaluating proposals shouldn&#39;t be in the same list as yesterday&#39;s attendee who just learned you exist.</p>
+<p><strong>Vanity metrics masquerade as action triggers.</strong> Lists titled &quot;High Engagement Score&quot; or &quot;A+ Lead Grade&quot; sound sophisticated but lack tactical guidance. What does &quot;high engagement&quot; mean? Opened 3 emails? Downloaded 2 whitepapers? Visited pricing page? And more importantly—what should the rep DO about it? If the list doesn&#39;t imply next action, it&#39;s useless.</p>
+<p><strong>One-size-fits-all segments ignore sales role specialization.</strong> BDRs qualify leads. AEs close deals. Account managers expand accounts. Each role needs different list architecture:</p>
+<ul>
+<li><strong>BDRs need:</strong> Uncontacted leads, re-engagement targets, response tracking</li>
+<li><strong>AEs need:</strong> Active pipeline by close date, stalled deals, contract renewals approaching</li>
+<li><strong>AMs need:</strong> Expansion opportunities, at-risk accounts, upsell triggers</li>
+</ul>
+<p>Building generic &quot;All Leads&quot; lists serves nobody well. Role-specific segmentation drives adoption.</p>
+<h2>Principles of Effective Smart List Architecture</h2>
+<p><strong>Time sensitivity creates urgency.</strong> The best smart lists answer &quot;What needs attention today?&quot; with clear recency filters:</p>
+<ul>
+<li>&quot;Leads Added Last 7 Days&quot; (fresh prospects requiring first touch)</li>
+<li>&quot;Opportunities Not Contacted in 14 Days&quot; (stalled deals needing nudge)</li>
+<li>&quot;Customers Inactive 45+ Days&quot; (retention risk requiring check-in)</li>
+</ul>
+<p>Time-based logic automatically reprioritizes lists daily. Yesterday&#39;s 6-day-old lead becomes today&#39;s 7-day-old lead—moving into &quot;needs contact&quot; territory without manual list updates.</p>
+<p><strong>Action-oriented naming drives behavior.</strong> Compare:</p>
+<ul>
+<li><strong>Weak:</strong> &quot;Q1 Webinar Registrants&quot; (describes origin, not action)</li>
+<li><strong>Strong:</strong> &quot;Webinar Follow-Up—Call Within 48 Hours&quot; (specifies action and timeline)</li>
+</ul>
+<p>Strong list names tell reps exactly what to do and when. No interpretation required. &quot;Call Within 48 Hours&quot; is unambiguous instruction.</p>
+<p><strong>Single-purpose lists prevent decision paralysis.</strong> Each list should drive ONE action:</p>
+<ul>
+<li>&quot;Schedule Discovery Call&quot; (not &quot;Nurture or Call or Email&quot;)</li>
+<li>&quot;Send Pricing Proposal&quot; (not &quot;Proposals and Negotiations&quot;)</li>
+<li>&quot;Request Renewal Meeting&quot; (not &quot;Customer Engagement&quot;)</li>
+</ul>
+<p>Multi-purpose lists force reps to evaluate which action fits each contact—that&#39;s cognitive overhead. Single-purpose lists eliminate thinking: everyone in this list gets this action.</p>
+<p><strong>Exclusion filters prevent wasted touches.</strong> Smart lists should automatically exclude:</p>
+<ul>
+<li><strong>Already contacted:</strong> If list purpose is &quot;First Touch Outreach,&quot; exclude contacts with existing activities</li>
+<li><strong>Unsubscribed:</strong> Don&#39;t surface email unsubscribes in email campaign lists</li>
+<li><strong>Lost/Dead deals:</strong> Remove closed-lost opportunities from active pipeline lists</li>
+<li><strong>Wrong territory:</strong> Filter to rep&#39;s assigned geographic or vertical territory</li>
+</ul>
+<p>Exclusions prevent reps from wasting time on contacts who shouldn&#39;t receive the list&#39;s intended action.</p>
+<p><strong>Size constraints force prioritization.</strong> Unlimited list sizes overwhelm. A list with 1,200 &quot;Hot Prospects&quot; isn&#39;t actionable—no rep can work 1,200 people today. Better approach:</p>
+<ul>
+<li>Rank by priority score (engagement recency, deal size, account tier)</li>
+<li>Display top 50-100 only</li>
+<li>Force focus on highest-value contacts</li>
+</ul>
+<p>When list reaches top size limit, new entries displace lowest-priority existing entries. This creates healthy pressure: &quot;If this contact isn&#39;t top 50, they&#39;re not actually hot.&quot;</p>
+<h2>Architecture Patterns by Sales Role</h2>
+<h3>BDR/SDR Smart Lists: Prospecting Focus</h3>
+<p><strong>Uncontacted Leads by Age:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Lead status = New, Days Since Created = 0-7, Contact Attempts = 0</li>
+<li><strong>Action:</strong> Initial outreach (phone + email)</li>
+<li><strong>Size limit:</strong> 25 per rep</li>
+<li><strong>Refresh:</strong> Hourly</li>
+<li><strong>Exclusions:</strong> Unsubscribed, opted out, wrong territory</li>
+</ul>
+<p><strong>Re-Engagement Targets:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Lead status = Worked, Days Since Last Activity = 30-90, Previous Response = Yes</li>
+<li><strong>Action:</strong> Re-engagement campaign</li>
+<li><strong>Size limit:</strong> 50 per rep</li>
+<li><strong>Refresh:</strong> Daily</li>
+<li><strong>Exclusions:</strong> Unsubscribed, marked &quot;Do Not Contact,&quot; lost opportunities</li>
+</ul>
+<p><strong>Speed-to-Lead—Immediate Follow-Up:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Lead created in last 4 hours, Source = high-intent (demo request, trial signup, pricing inquiry)</li>
+<li><strong>Action:</strong> Phone call within 5 minutes</li>
+<li><strong>Size limit:</strong> Real-time notification, not batch list</li>
+<li><strong>Refresh:</strong> Continuous</li>
+<li><strong>Exclusions:</strong> None (prioritize speed over filtering)</li>
+</ul>
+<p><strong>Response Tracking—Awaiting Reply:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Last activity by rep = outbound email/call, Days since last touch = 3-5, Contact response = None</li>
+<li><strong>Action:</strong> Follow-up touch</li>
+<li><strong>Size limit:</strong> 40 per rep</li>
+<li><strong>Refresh:</strong> Daily</li>
+<li><strong>Exclusions:</strong> Auto-responses, out-of-office replies</li>
+</ul>
+<h3>AE Smart Lists: Deal Progression Focus</h3>
+<p><strong>Active Pipeline by Close Date:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Opportunity stage = Proposal/Negotiation, Expected Close Date = next 30 days, Last Activity = 7+ days ago</li>
+<li><strong>Action:</strong> Status check call</li>
+<li><strong>Size limit:</strong> All qualifying opportunities (shouldn&#39;t exceed 20-30 per rep)</li>
+<li><strong>Refresh:</strong> Daily</li>
+<li><strong>Exclusions:</strong> Closed-won, closed-lost</li>
+</ul>
+<p><strong>Stalled Deals Requiring Intervention:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Opportunity stage = any active stage, Days in current stage = 2x expected duration, Last Activity = 14+ days</li>
+<li><strong>Action:</strong> Executive alignment call, pricing adjustment, or close-lost qualification</li>
+<li><strong>Size limit:</strong> 15 per rep</li>
+<li><strong>Refresh:</strong> Weekly</li>
+<li><strong>Exclusions:</strong> Deals awaiting customer decision (marked accordingly)</li>
+</ul>
+<p><strong>Contract Renewals—60 Day Window:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Customer status = Active, Contract End Date = 30-90 days out, Renewal Conversation Started = No</li>
+<li><strong>Action:</strong> Schedule renewal discussion</li>
+<li><strong>Size limit:</strong> All qualifying accounts</li>
+<li><strong>Refresh:</strong> Weekly</li>
+<li><strong>Exclusions:</strong> Already in renewal process, churned customers</li>
+</ul>
+<p><strong>High-Value Opportunities:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Deal value &gt; $50K (adjust threshold), Opportunity stage = Proposal or later, Decision timeframe = next 60 days</li>
+<li><strong>Action:</strong> Weekly status checks, executive sponsorship</li>
+<li><strong>Size limit:</strong> All qualifying (typically 5-10 per rep)</li>
+<li><strong>Refresh:</strong> Daily</li>
+<li><strong>Exclusions:</strong> None (high value justifies frequent review)</li>
+</ul>
+<h3>Account Manager Smart Lists: Expansion and Retention Focus</h3>
+<p><strong>Expansion Opportunities—Feature Adoption Trigger:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Customer = Active, Product usage = 75%+ of licensed volume, Add-on feature usage = 0%, Account tenure = 6+ months</li>
+<li><strong>Action:</strong> Upsell conversation for additional features</li>
+<li><strong>Size limit:</strong> 20 per AM</li>
+<li><strong>Refresh:</strong> Weekly</li>
+<li><strong>Exclusions:</strong> Accounts with active expansion deals, churned customers</li>
+</ul>
+<p><strong>At-Risk Accounts—Engagement Drop:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Customer = Active, Product logins last 30 days &lt; 50% of prior 30 days, Support tickets = 2+ in last 30 days</li>
+<li><strong>Action:</strong> Health check call, identify blockers</li>
+<li><strong>Size limit:</strong> 10 per AM</li>
+<li><strong>Refresh:</strong> Weekly</li>
+<li><strong>Exclusions:</strong> Known temporary situations (customer on leave, seasonal business)</li>
+</ul>
+<p><strong>Quarterly Business Reviews Due:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Customer tier = Strategic/Enterprise, Last QBR date = 90+ days ago, Account status = Active</li>
+<li><strong>Action:</strong> Schedule QBR meeting</li>
+<li><strong>Size limit:</strong> All qualifying</li>
+<li><strong>Refresh:</strong> Monthly</li>
+<li><strong>Exclusions:</strong> Accounts scheduled but not yet held</li>
+</ul>
+<p><strong>Usage Milestone Celebrations:</strong></p>
+<ul>
+<li><strong>Filter logic:</strong> Customer = Active, Milestone reached = Yes (e.g., 1000th project created, 50th integration added), Congratulations sent = No</li>
+<li><strong>Action:</strong> Recognition email, request testimonial/case study</li>
+<li><strong>Size limit:</strong> All qualifying</li>
+<li><strong>Refresh:</strong> Daily</li>
+<li><strong>Exclusions:</strong> Customers already contacted about this milestone</li>
+</ul>
+<h2>Technical Implementation in Popular CRMs</h2>
+<h3>Salesforce Smart List (Report) Setup</h3>
+<p><strong>Create action-oriented reports:</strong></p>
+<ol>
+<li>Navigate to Reports → New Report</li>
+<li>Select report type (Leads, Opportunities, Accounts)</li>
+<li>Add filter logic:<ul>
+<li>Lead Status equals &quot;New&quot;</li>
+<li>Created Date equals &quot;THIS WEEK&quot;</li>
+<li>Owner equals [Current User] (makes report user-specific)</li>
+</ul>
+</li>
+<li>Add columns: Name, Company, Phone, Email, Lead Source, Days Since Created</li>
+<li>Sort by Days Since Created (oldest first—highest priority)</li>
+<li>Set row limit: 25 (forces prioritization)</li>
+<li>Save with action-oriented name: &quot;Uncontacted Leads—Call Today&quot;</li>
+<li>Add to dashboard or list view</li>
+</ol>
+<p><strong>Schedule automatic list refresh:</strong></p>
+<ul>
+<li>Navigate to report → Subscribe</li>
+<li>Set frequency: Daily at 6:00 AM</li>
+<li>Configure delivery: Email or Slack notification</li>
+<li>Enable &quot;Only send if results&quot; (avoids empty list notifications)</li>
+</ul>
+<h3>HubSpot Smart List Configuration</h3>
+<p><strong>Build dynamic lists:</strong></p>
+<ol>
+<li>Navigate to Contacts → Lists → Create List → Active List</li>
+<li>Set list name: &quot;Re-Engagement Targets—Last Touch 30-90 Days&quot;</li>
+<li>Add filter criteria:<ul>
+<li>Lifecycle stage is &quot;Lead&quot;</li>
+<li>Last contacted date is between 30 and 90 days ago</li>
+<li>Email response is &quot;Yes&quot; (previously engaged)</li>
+<li>Unsubscribed from all email is &quot;False&quot;</li>
+</ul>
+</li>
+<li>Add enrollment triggers: Automatically add contacts meeting criteria</li>
+<li>Set re-evaluation: Daily (list updates automatically)</li>
+<li>Create associated workflow:<ul>
+<li>Enrollment trigger: List membership</li>
+<li>Action: Create task for assigned rep: &quot;Re-engage this lead&quot;</li>
+<li>Delay: Immediate</li>
+</ul>
+</li>
+</ol>
+<p><strong>Integrate with sequences:</strong></p>
+<ul>
+<li>Create re-engagement email sequence (3-5 touch sequence)</li>
+<li>Enroll list members automatically</li>
+<li>Track replies and remove from list when engagement occurs</li>
+</ul>
+<h3>Pipedrive Smart Filter Setup</h3>
+<p><strong>Configure custom filters:</strong></p>
+<ol>
+<li>Navigate to Deals → Add Filter</li>
+<li>Name filter: &quot;Stalled Deals—No Activity 14+ Days&quot;</li>
+<li>Set conditions:<ul>
+<li>Stage is not &quot;Won&quot; or &quot;Lost&quot;</li>
+<li>Last activity date is more than 14 days ago</li>
+<li>Owner is [Current User]</li>
+</ul>
+</li>
+<li>Set as default view: Pin to sidebar for daily visibility</li>
+<li>Enable notifications: Alert when deals enter this filter</li>
+<li>Color-code: Red (urgency indicator)</li>
+</ol>
+<p><strong>Create filter combinations:</strong></p>
+<ul>
+<li>High value + closing soon</li>
+<li>Low engagement + high value (rescue priority)</li>
+<li>New this week + uncontacted</li>
+</ul>
+<h3>Follow Up Boss (Real Estate CRM) Action Plans</h3>
+<p><strong>Build &quot;Get to Zero&quot; smart lists:</strong></p>
+<ol>
+<li>Navigate to Action Plans → Create Plan</li>
+<li>Name: &quot;Hot Prospects—Last Touch Within 30 Days&quot;</li>
+<li>Criteria:<ul>
+<li>Stage = Active Lead</li>
+<li>Last text/call/email within 30 days</li>
+<li>Lead source = High-intent (website inquiry, listing alert response)</li>
+</ul>
+</li>
+<li>Auto-assign tasks:<ul>
+<li>Day 0: Call within 2 hours</li>
+<li>Day 3: Follow-up call if no contact</li>
+<li>Day 7: Check-in text</li>
+<li>Day 14: Value-add email (market update)</li>
+<li>Day 30: Final attempt before moving to nurture</li>
+</ul>
+</li>
+</ol>
+<p><strong>Nurture 90 list configuration:</strong></p>
+<ol>
+<li>Criteria:<ul>
+<li>Stage = Nurture</li>
+<li>Last contact 30-90 days ago</li>
+<li>Email engagement in last 90 days = Yes</li>
+</ul>
+</li>
+<li>Auto-assign monthly touchpoint tasks</li>
+<li>Automatically move to &quot;Dead&quot; if no engagement after 90 days</li>
+</ol>
+<h2>Measuring Smart List Effectiveness</h2>
+<p><strong>Track list usage rates by rep.</strong> Monitor:</p>
+<ul>
+<li><strong>View frequency:</strong> How often does each rep open each list?</li>
+<li><strong>Action completion:</strong> When list generates tasks, what percentage get completed?</li>
+<li><strong>Time-to-action:</strong> How quickly do reps act after list updates?</li>
+</ul>
+<p>Low usage indicates list isn&#39;t serving rep needs—redesign or eliminate.</p>
+<p><strong>Measure conversion rates by list source.</strong> Compare:</p>
+<ul>
+<li>Contact-to-opportunity rate for each list</li>
+<li>Opportunity-to-close rate by originating list</li>
+<li>Average deal size by list source</li>
+</ul>
+<p>High-converting lists deserve more rep attention. Low-converting lists need filter refinement or elimination.</p>
+<p><strong>Calculate time savings versus manual workflows.</strong> Before smart lists, how long did reps spend:</p>
+<ul>
+<li>Building daily call lists manually</li>
+<li>Searching CRM for follow-up targets</li>
+<li>Tracking renewal dates in spreadsheets</li>
+</ul>
+<p>Multiply time saved per rep × number of reps × hourly rate = ROI of smart list architecture investment.</p>
+<p><strong>Monitor list size trends over time.</strong> Healthy list sizes:</p>
+<ul>
+<li>Increase gradually (pipeline growth)</li>
+<li>Decrease after rep action (list drives behavior)</li>
+<li>Stabilize within target ranges (50-100 contacts per list)</li>
+</ul>
+<p>Unhealthy patterns:</p>
+<ul>
+<li>Rapid uncontrolled growth (filters too broad, not actionable)</li>
+<li>Zero fluctuation (list isn&#39;t being worked)</li>
+<li>Empty lists (filters too restrictive, missing opportunities)</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>How many smart lists should each sales rep have?</h3>
+<p><strong>Maximum 5-8 lists per rep to prevent decision paralysis.</strong> More lists means more choices, slowing daily workflow. Better approach: 3-5 core action lists (uncontacted leads, follow-up targets, stalled deals) plus 1-3 role-specific lists. Prioritize ruthlessly—if a list isn&#39;t driving weekly actions, archive it.</p>
+<h3>Should smart lists be territory-specific or company-wide?</h3>
+<p><strong>Always filter to rep territory/assignments unless building manager visibility lists.</strong> Company-wide lists overwhelm individual contributors with contacts they can&#39;t act on. Exception: Leadership dashboards showing aggregate pipeline across all reps benefit from company-wide views, but these aren&#39;t action lists—they&#39;re reporting.</p>
+<h3>How often should smart lists refresh?</h3>
+<p><strong>Refresh frequency matches action urgency.</strong> Speed-to-lead lists: real-time (continuous). Daily prospecting lists: overnight batch refresh at 6 AM. Weekly strategic reviews: Sunday evening refresh. Monthly account reviews: first of month. Over-refreshing wastes system resources. Under-refreshing makes lists stale.</p>
+<h3>What&#39;s the right smart list size limit?</h3>
+<p><strong>50-100 contacts per list for daily action lists, unlimited for reference lists.</strong> Daily prospecting lists must fit within a rep&#39;s capacity—50 calls is a full day&#39;s work. Pipeline tracking lists (all active opportunities) shouldn&#39;t have artificial limits because reps need complete visibility. The test: &quot;Can I work through this entire list this week?&quot; If no, size limit is too high.</p>
+<h3>How do you prevent smart lists from becoming stale?</h3>
+<p><strong>Build self-cleaning logic with automatic exclusions.</strong> Add filters removing contacts after action completion (e.g., remove from &quot;Uncontacted Leads&quot; after first call attempt) or time expiration (e.g., remove from &quot;Re-Engagement 30-90 Days&quot; after 91 days—these move to longer-term nurture). Lists that don&#39;t self-clean accumulate dead contacts, losing credibility with reps who stop trusting them.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

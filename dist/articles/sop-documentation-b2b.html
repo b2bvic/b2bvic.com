@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used | B2B Vic</title>
+    <meta name="description" content="Eighty-one percent of SOPs sit unused in forgotten folders. Here&#39;s how to document processes that teams follow, reducing errors and onboarding time." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used" />
+    <meta property="og:description" content="Eighty-one percent of SOPs sit unused in forgotten folders. Here&#39;s how to document processes that teams follow, reducing errors and onboarding time." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/sop-documentation-b2b.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used" />
+    <meta name="twitter:description" content="Eighty-one percent of SOPs sit unused in forgotten folders. Here&#39;s how to document processes that teams follow, reducing errors and onboarding time." />
+    <link rel="canonical" href="https://b2bvic.com/articles/sop-documentation-b2b.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used",
+      "description": "Eighty-one percent of SOPs sit unused in forgotten folders. Here's how to document processes that teams follow, reducing errors and onboarding time.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/sop-documentation-b2b.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SOP Documentation for B2B Operations: How to Build Standard Operating Procedures That Actually Get Used</h1>
+<p><strong>Eighty-one percent of companies have SOPs that nobody follows.</strong> Organizations spend months documenting procedures, training teams on them, then watch employees revert to their own methods within weeks. The documentation sits in SharePoint or Notion, gradually aging into obsolescence as processes evolve but documents don&#39;t. The problem isn&#39;t team discipline—it&#39;s documentation design.</p>
+<p>SOPs fail when they&#39;re written for management review rather than field use. A 40-page operations manual formatted as dense paragraphs serves the audit requirement (&quot;We have documented procedures&quot;) while failing the operational requirement (&quot;Our team executes consistently&quot;). Useful SOPs are built for the moment someone&#39;s stuck and thinks &quot;How do I do this again?&quot;</p>
+<h2>Why Traditional SOPs Don&#39;t Get Used</h2>
+<p><strong>They&#39;re too long.</strong> A 12-page SOP for &quot;How to Process Invoices&quot; will never get referenced. By the time someone reads page 3, they&#39;ve given up and guessed their way through the process. Length correlates inversely with usage: the longer the document, the less likely anyone reads it.</p>
+<p><strong>They&#39;re written in paragraph form.</strong> Wall-of-text documentation forces reading comprehension when users need rapid reference. Compare:</p>
+<ul>
+<li><strong>Paragraph:</strong> &quot;When processing an invoice, first verify that the vendor name matches our approved vendor list found in the accounting system vendor module under the approved vendors tab, then cross-reference the purchase order number…&quot;</li>
+<li><strong>Checklist:</strong> &quot;☐ Verify vendor on approved list (Accounting &gt; Vendors &gt; Approved tab) ☐ Confirm PO number matches PO system…&quot;</li>
+</ul>
+<p>Checklist format is scannable, actionable, and error-proof. Paragraph format requires focused reading.</p>
+<p><strong>They lack visual aids.</strong> Text-only SOPs make complex processes harder than necessary. Screenshots showing &quot;Click here, then here, then here&quot; clarify in 5 seconds what takes 200 words to explain. Video walkthroughs demonstrate workflows that resist static description.</p>
+<p><strong>They&#39;re organized by topic, not by job role.</strong> A general &quot;Sales Operations SOP Manual&quot; covering lead management, opportunity tracking, forecasting, and reporting might span 80 pages. A sales rep needing quick reference for &quot;How to create opportunities&quot; doesn&#39;t want to hunt through 80 pages. Role-specific SOPs (BDR procedures, AE procedures, manager procedures) get used. Universal manuals get ignored.</p>
+<p><strong>They&#39;re disconnected from tools.</strong> The best SOPs embed directly where work happens:</p>
+<ul>
+<li>Tooltips in software explaining field purposes</li>
+<li>In-app checklists guiding multi-step processes</li>
+<li>Template fields with example text showing what goes where</li>
+</ul>
+<p>SOPs living in separate documentation systems require context-switching (leave tool, open SOP, read, return to tool). This friction kills adoption.</p>
+<p><strong>They&#39;re never updated.</strong> Process changes, documentation doesn&#39;t. After encountering 3-4 outdated instructions, teams stop trusting SOPs entirely. &quot;The SOP is wrong again&quot; becomes team knowledge, and everyone reverts to tribal knowledge and guesswork.</p>
+<h2>Principles of Effective SOP Documentation</h2>
+<p><strong>Optimize for the 80/20 use case.</strong> Don&#39;t document every edge case. Write for the most common scenario first:</p>
+<ul>
+<li><strong>Primary SOP:</strong> Covers standard happy-path process (80% of cases)</li>
+<li><strong>Edge case addendum:</strong> Separate document handling exceptions (20% of cases)</li>
+</ul>
+<p>Someone executing the process for the 50th time shouldn&#39;t wade through rare exception handling to find the normal steps. Separate common from uncommon.</p>
+<p><strong>Use hierarchical progressive disclosure.</strong> Structure information in layers:</p>
+<ol>
+<li><strong>Quick reference checklist:</strong> High-level steps (for experienced users needing reminder)</li>
+<li><strong>Detailed walkthrough:</strong> Step-by-step instructions with screenshots (for new users or complex steps)</li>
+<li><strong>Troubleshooting appendix:</strong> Common errors and solutions (reference when something breaks)</li>
+</ol>
+<p>Users consume the layer they need. Experienced team members use checklist only. New hires read detailed walkthrough. Both groups access appropriate information depth.</p>
+<p><strong>Embed decision trees for conditional processes.</strong> Many processes branch based on conditions:</p>
+<ul>
+<li>&quot;If customer type = Enterprise, follow approval path A. If customer type = SMB, follow approval path B.&quot;</li>
+</ul>
+<p>Paragraph descriptions of conditional logic confuse. Flowcharts clarify instantly. Use tools like Miro, Lucidchart, or Whimsical to create visual decision trees embedded in SOPs.</p>
+<p><strong>Write in second-person imperative voice.</strong> Compare:</p>
+<ul>
+<li><strong>Weak (passive third-person):</strong> &quot;The invoice should be reviewed by the team member to confirm accuracy before submission.&quot;</li>
+<li><strong>Strong (imperative second-person):</strong> &quot;Review the invoice for accuracy before submitting.&quot;</li>
+</ul>
+<p>Imperative voice is direct, clear, and action-oriented—perfect for operational documentation.</p>
+<p><strong>Include time estimates per step.</strong> Knowing a process takes 2 minutes versus 30 minutes changes prioritization:</p>
+<ul>
+<li>&quot;Update customer record in CRM (2 minutes)&quot;</li>
+<li>&quot;Complete monthly reconciliation (30-45 minutes)&quot;</li>
+</ul>
+<p>Time estimates help teams plan workload and identify bottlenecks. If a &quot;simple&quot; process actually takes 45 minutes, that&#39;s documentation feedback surfacing operational reality.</p>
+<p><strong>Version control with visible change logs.</strong> When processes change, update SOPs immediately and document what changed:</p>
+<ul>
+<li><strong>Version 2.1 (2026-02-08):</strong> Updated approval thresholds from $5K to $10K (Step 4)</li>
+<li><strong>Version 2.0 (2025-11-15):</strong> Added expense category validation step (new Step 3)</li>
+</ul>
+<p>Change logs let users quickly identify what&#39;s new versus what they already know, preventing them from re-reading entire SOPs to find one updated paragraph.</p>
+<h2>SOP Architecture by Use Case</h2>
+<h3>Onboarding New Hires</h3>
+<p><strong>Role-specific onboarding checklists.</strong> Don&#39;t create universal &quot;New Employee Onboarding&quot;—build:</p>
+<ul>
+<li>Sales Rep Onboarding (first 30 days)</li>
+<li>Customer Success Manager Onboarding (first 45 days)</li>
+<li>Marketing Coordinator Onboarding (first 30 days)</li>
+</ul>
+<p>Each checklist includes:</p>
+<ul>
+<li><strong>Week 1:</strong> System access setup, tool training, shadow calls, review core SOPs</li>
+<li><strong>Week 2:</strong> First independent tasks, feedback sessions, additional tool training</li>
+<li><strong>Week 3-4:</strong> Progressive responsibility increase, completion of certification/training</li>
+</ul>
+<p>Format as daily checklists with task assignments, resource links, and expected completion times.</p>
+<p><strong>Training module structure.</strong> Break complex systems into digestible modules:</p>
+<ul>
+<li><strong>Module 1:</strong> CRM basics (contacts, accounts, activities)—30 minutes</li>
+<li><strong>Module 2:</strong> Opportunity management (stages, forecasting)—45 minutes</li>
+<li><strong>Module 3:</strong> Reporting and dashboards—30 minutes</li>
+</ul>
+<p>Each module includes:</p>
+<ul>
+<li>Loom/video walkthrough (watch at own pace)</li>
+<li>Written step-by-step guide (reference during execution)</li>
+<li>Practical exercise (apply learning immediately)</li>
+<li>Quiz or checklist confirmation (verify comprehension)</li>
+</ul>
+<h3>Operational Workflows</h3>
+<p><strong>Process checklist format.</strong> For repeating operational tasks:</p>
+<p><strong>Title:</strong> Monthly Invoice Processing
+<strong>Frequency:</strong> Monthly (first 5 business days)
+<strong>Owner:</strong> Accounting team
+<strong>Time Required:</strong> 2-3 hours</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> All vendor invoices received and uploaded to shared folder</li>
+<li><input disabled="" type="checkbox"> Previous month&#39;s reconciliation completed</li>
+<li><input disabled="" type="checkbox"> Budget allocations confirmed with department heads</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li><input disabled="" type="checkbox"> Download invoices from shared folder (Location: Finance &gt; Invoices &gt; [Month])</li>
+<li><input disabled="" type="checkbox"> Verify vendor information against approved vendor list (Accounting System &gt; Vendors &gt; Approved tab)</li>
+<li><input disabled="" type="checkbox"> Match invoice to PO number in purchasing system (System &gt; Purchase Orders &gt; Search)</li>
+<li><input disabled="" type="checkbox"> For invoices &gt;$10K: Route to VP Finance for approval (Email template: &quot;Invoice Approval Request&quot;)</li>
+<li><input disabled="" type="checkbox"> Enter approved invoices into accounting system (System &gt; AP &gt; New Entry)</li>
+<li><input disabled="" type="checkbox"> Generate batch payment file (System &gt; AP &gt; Batch Payments &gt; Export)</li>
+<li><input disabled="" type="checkbox"> Submit payment file to bank portal (Bank Portal &gt; Business Banking &gt; Upload)</li>
+<li><input disabled="" type="checkbox"> Archive processed invoices (Finance &gt; Invoices &gt; Processed &gt; [Month])</li>
+</ol>
+<p><strong>Common Issues:</strong></p>
+<ul>
+<li><em>Issue:</em> Vendor not on approved list → <em>Solution:</em> Submit vendor approval form (Finance &gt; Forms &gt; New Vendor Approval)</li>
+<li><em>Issue:</em> PO number doesn&#39;t match → <em>Solution:</em> Contact purchasing department to verify correct PO</li>
+<li><em>Issue:</em> Invoice amount differs from PO → <em>Solution:</em> Request manager approval for variance via email</li>
+</ul>
+<p>This format is scannable, action-oriented, and anticipates problems.</p>
+<h3>Tool-Specific Guides</h3>
+<p><strong>Software configuration guides.</strong> When setting up tools:</p>
+<p><strong>Title:</strong> Salesforce Opportunity Configuration
+<strong>Purpose:</strong> Standardize how opportunities are created and tracked</p>
+<p><strong>Required Fields (must be completed):</strong></p>
+<ul>
+<li><strong>Opportunity Name:</strong> [Customer Name] - [Product] - [Month Year] (Example: &quot;Acme Corp - Enterprise Plan - Feb 2026&quot;)</li>
+<li><strong>Amount:</strong> Expected contract value (enter as annual value for multi-year deals)</li>
+<li><strong>Close Date:</strong> Expected signature date (update weekly if timeline shifts)</li>
+<li><strong>Stage:</strong> Current position in sales process (see stage definitions below)</li>
+<li><strong>Lead Source:</strong> Original source of opportunity (webinar, cold outreach, inbound, referral)</li>
+</ul>
+<p><strong>Stage Definitions:</strong></p>
+<ul>
+<li><strong>Qualification (10%):</strong> Initial conversation, needs identified, budget confirmed</li>
+<li><strong>Discovery (25%):</strong> Detailed needs analysis, stakeholders identified, timeline discussed</li>
+<li><strong>Proposal (50%):</strong> Formal proposal submitted, pricing shared</li>
+<li><strong>Negotiation (75%):</strong> Contract terms under discussion, legal review in progress</li>
+<li><strong>Closed Won (100%):</strong> Contract signed, deal complete</li>
+<li><strong>Closed Lost (0%):</strong> Lost to competitor or customer decided not to purchase (required: loss reason)</li>
+</ul>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Update opportunity stage weekly minimum</li>
+<li>Add notes after every customer interaction</li>
+<li>Attach proposal documents to opportunity record</li>
+<li>Set follow-up tasks for all open opportunities</li>
+</ul>
+<p>This guide lives in Salesforce as internal wiki article or pinned document—accessible without leaving the tool.</p>
+<h3>Troubleshooting Guides</h3>
+<p><strong>Error resolution documentation.</strong> When systems break:</p>
+<p><strong>Title:</strong> CRM Integration Sync Failures
+<strong>Symptoms:</strong> Contacts not syncing between marketing automation and CRM</p>
+<p><strong>Diagnosis Steps:</strong></p>
+<ol>
+<li>Check integration status (Marketing Automation &gt; Settings &gt; Integrations &gt; CRM Status)<ul>
+<li>Green = connected, Yellow = degraded, Red = disconnected</li>
+</ul>
+</li>
+<li>Review sync error log (Marketing Automation &gt; Settings &gt; Integrations &gt; Error Log)</li>
+<li>Identify error pattern:<ul>
+<li>&quot;Missing required field&quot; → Field mapping issue</li>
+<li>&quot;Authentication failed&quot; → Credentials expired</li>
+<li>&quot;Rate limit exceeded&quot; → API throttling</li>
+</ul>
+</li>
+</ol>
+<p><strong>Resolution Paths:</strong></p>
+<p><strong>If Error = &quot;Missing required field&quot;:</strong></p>
+<ol>
+<li>Navigate to field mapping (Settings &gt; Integrations &gt; Field Mappings)</li>
+<li>Identify which field is unmapped (highlighted in red)</li>
+<li>Map field to corresponding CRM field</li>
+<li>Test sync with single contact (Contacts &gt; Select one &gt; Actions &gt; Manual Sync)</li>
+<li>If successful, trigger bulk re-sync (Settings &gt; Integrations &gt; Sync Now)</li>
+</ol>
+<p><strong>If Error = &quot;Authentication failed&quot;:</strong></p>
+<ol>
+<li>Re-authenticate integration (Settings &gt; Integrations &gt; CRM &gt; Re-authenticate)</li>
+<li>Enter admin credentials when prompted</li>
+<li>Verify permissions granted (must include Read/Write access to Contacts, Accounts, Opportunities)</li>
+<li>Test connection (Settings &gt; Integrations &gt; Test Connection)</li>
+</ol>
+<p><strong>If Error = &quot;Rate limit exceeded&quot;:</strong></p>
+<ol>
+<li>Check current API usage (Settings &gt; Integrations &gt; API Usage)</li>
+<li>If &gt;80% of limit: Contact CRM admin to increase limits OR reduce sync frequency (Settings &gt; Integrations &gt; Sync Schedule &gt; Change to hourly instead of real-time)</li>
+<li>Monitor for 24 hours to confirm resolution</li>
+</ol>
+<p><strong>Escalation:</strong> If above steps don&#39;t resolve, contact Support with error log export (Settings &gt; Support &gt; Export Error Log)</p>
+<h2>Implementation: How to Build SOP Library</h2>
+<p><strong>Start with high-impact, high-frequency processes.</strong> Don&#39;t document everything at once. Prioritize:</p>
+<ul>
+<li><strong>High frequency:</strong> Daily/weekly recurring tasks (these create most errors and confusion)</li>
+<li><strong>High impact:</strong> Processes where errors are costly (financial transactions, customer-facing actions)</li>
+<li><strong>High turnover:</strong> Tasks with frequent new team members (onboarding processes, common support tickets)</li>
+</ul>
+<p>Create 5-10 core SOPs before expanding. Get feedback, refine format, then scale.</p>
+<p><strong>Assign SOP ownership to process owners.</strong> Each SOP needs an owner responsible for:</p>
+<ul>
+<li>Initial documentation accuracy</li>
+<li>Updating when process changes</li>
+<li>Training team members on procedures</li>
+<li>Responding to questions/clarifications</li>
+</ul>
+<p>Without ownership, SOPs decay. With ownership, they remain living documents.</p>
+<p><strong>Use a centralized, searchable repository.</strong> Tools that work well:</p>
+<ul>
+<li><strong>Notion:</strong> Flexible formatting, good search, easy embedding of media</li>
+<li><strong>Confluence:</strong> Enterprise-grade, version control, permissions management</li>
+<li><strong>Google Docs/Drive:</strong> Simple, accessible, familiar interface</li>
+<li><strong>Trainual:</strong> Purpose-built for SOPs, includes testing and tracking</li>
+</ul>
+<p>Whatever tool you choose, ensure:</p>
+<ul>
+<li>Full-text search works reliably</li>
+<li>Edit access for owners, view access for team</li>
+<li>Change notifications (team sees when SOPs update)</li>
+</ul>
+<p><strong>Build SOP creation templates.</strong> Standardize SOP structure so all documentation follows consistent format:</p>
+<pre><code># SOP Title
+**Purpose:** [Why this process exists]
+**Owner:** [Who maintains this SOP]
+**Last Updated:** [Date]
+**Frequency:** [How often this process runs]
+**Time Required:** [Estimated duration]
+
+## Prerequisites
+- [Required access/tools/data]
+
+## Steps
+1. [Action step with clear outcome]
+2. [Action step with clear outcome]
+
+## Common Issues
+- **Issue:** [Description] → **Solution:** [Resolution]
+
+## Related SOPs
+- [Link to related process documentation]
+</code></pre>
+<p>This template ensures consistency across all documentation.</p>
+<p><strong>Implement feedback loops.</strong> Add feedback mechanism to every SOP:</p>
+<ul>
+<li>&quot;Was this SOP helpful? Yes/No&quot;</li>
+<li>&quot;What&#39;s unclear or missing?&quot; [Text field]</li>
+<li>&quot;Last used: [Auto-populate date when accessed]&quot;</li>
+</ul>
+<p>Review feedback monthly. Low &quot;helpful&quot; ratings or &quot;never used&quot; SOPs need revision or elimination.</p>
+<p><strong>Schedule quarterly SOP audits.</strong> Assign team to review all SOPs every 90 days:</p>
+<ul>
+<li>Verify accuracy (have processes changed?)</li>
+<li>Update screenshots (has UI changed?)</li>
+<li>Prune outdated content (are these steps still relevant?)</li>
+<li>Consolidate redundant SOPs (can three separate docs merge into one?)</li>
+</ul>
+<p>Audits prevent documentation decay—the primary reason SOPs lose credibility.</p>
+<h2>Measuring SOP Effectiveness</h2>
+<p><strong>Track error rates for documented processes.</strong> Before SOP: How often did errors occur? After SOP: Did errors decrease? Useful SOPs reduce mistakes. If error rates stay constant post-SOP, documentation isn&#39;t solving the problem.</p>
+<p><strong>Measure onboarding time to productivity.</strong> How long before new hires execute processes independently?</p>
+<ul>
+<li>Without SOPs: 4-6 weeks to full productivity</li>
+<li>With good SOPs: 2-3 weeks to full productivity</li>
+</ul>
+<p>Faster onboarding proves SOPs effectively transfer knowledge.</p>
+<p><strong>Monitor SOP usage analytics.</strong> If your platform tracks document views:</p>
+<ul>
+<li>Which SOPs get accessed most? (These are high-value, ensure they stay current)</li>
+<li>Which SOPs never get viewed? (Eliminate or improve discoverability)</li>
+<li>Which SOPs get accessed but rated unhelpful? (Rewrite or add detail)</li>
+</ul>
+<p>Usage data reveals what&#39;s working and what&#39;s wasting storage space.</p>
+<p><strong>Survey team satisfaction with documentation.</strong> Quarterly pulse check:</p>
+<ul>
+<li>&quot;How often do you reference SOPs when unsure of process?&quot; (Daily/Weekly/Rarely/Never)</li>
+<li>&quot;Rate SOP quality: 1-5&quot; (5 = always accurate and helpful, 1 = outdated and useless)</li>
+<li>&quot;What process needs better documentation?&quot; (Open text)</li>
+</ul>
+<p>Satisfaction scores below 3.5/5 indicate systemic issues needing attention.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How detailed should SOPs be?</h3>
+<p><strong>Write for your least experienced team member who will use them.</strong> If new hires use the SOP, include screenshots and assume no prior knowledge. If only experienced team members reference them, briefer checklists suffice. The test: Can someone unfamiliar with the process execute it correctly using only the SOP? If no, add detail.</p>
+<h3>Should you document one-off processes?</h3>
+<p><strong>No—focus on recurring processes only.</strong> One-off projects don&#39;t benefit from SOP investment. If a process runs less than quarterly, document it lightly (meeting notes or project brief) rather than full SOP treatment. SOPs justify their maintenance cost only for repeating workflows.</p>
+<h3>How do you get teams to actually use SOPs?</h3>
+<p><strong>Embed them in workflows rather than separating them.</strong> Instead of &quot;SOPs live in Notion, go reference them when needed,&quot; integrate documentation into tools where work happens: tooltips in Salesforce, checklist fields in project management tools, help articles embedded in software. Remove friction between documentation and execution.</p>
+<h3>What if process changes frequently?</h3>
+<p><strong>Document the current process, mark it as &quot;evolving,&quot; and commit to weekly updates.</strong> Unstable processes still benefit from documentation—it forces clarity about current state even if that state is temporary. Better to have slightly stale SOPs than no documentation during rapid iteration. Once process stabilizes, formalize documentation.</p>
+<h3>Who should write SOPs—managers or team members?</h3>
+<p><strong>Team members who execute the process should draft, managers should review and approve.</strong> The people doing the work know the actual steps, gotchas, and workarounds. Managers ensure documentation aligns with business requirements and isn&#39;t just codifying bad habits. Collaborative creation produces best SOPs.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
