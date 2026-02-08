@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which | B2B Vic</title>
+    <meta name="description" content="How to choose and implement B2B sales qualification frameworks. Covers BANT, MEDDIC, CHAMP, GPCT, and when each framework fits your sales process." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which" />
+    <meta property="og:description" content="How to choose and implement B2B sales qualification frameworks. Covers BANT, MEDDIC, CHAMP, GPCT, and when each framework fits your sales process." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-sales-qualification-frameworks.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which" />
+    <meta name="twitter:description" content="How to choose and implement B2B sales qualification frameworks. Covers BANT, MEDDIC, CHAMP, GPCT, and when each framework fits your sales process." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-sales-qualification-frameworks.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which",
+      "description": "How to choose and implement B2B sales qualification frameworks. Covers BANT, MEDDIC, CHAMP, GPCT, and when each framework fits your sales process.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-sales-qualification-frameworks.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>B2B Sales Qualification Frameworks: BANT, MEDDIC, and When to Use Which</h1>
+<p>Sales reps waste time on unqualified prospects because they can&#39;t distinguish between polite interest and buying intent. A prospect who says &quot;this looks interesting, send me some information&quot; isn&#39;t qualified — they&#39;re being polite. A prospect who says &quot;we&#39;re implementing Q2, budget approved, I&#39;m the decision-maker&quot; is qualified. Qualification frameworks provide systematic criteria for separating real opportunities from time wasters.</p>
+<p>The problem: most companies use BANT (Budget, Authority, Need, Timeline) by default without questioning whether it fits their sales cycle. BANT works for transactional sales but fails for complex enterprise deals requiring multiple stakeholders. <strong>MEDDIC</strong> (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) works for enterprise but overcomplicate for SMB. This article explains 5 qualification frameworks, when to use each, and how to implement them in <a href="/articles/crm-optimization-b2b-sales.html">CRM systems</a> for consistent execution.</p>
+<h2>Framework 1: BANT (Budget, Authority, Need, Timeline)</h2>
+<p><strong>Best for:</strong> Transactional B2B sales ($5K-$50K deals), short sales cycles (30-60 days), single decision-maker</p>
+<p><strong>Origin:</strong> IBM, 1960s</p>
+<h3>The Four Criteria</h3>
+<p><strong>Budget:</strong> Does the prospect have money allocated for this purchase?
+<strong>Authority:</strong> Are you speaking with the person who can sign the contract?
+<strong>Need:</strong> Does the prospect have a problem your solution solves?
+<strong>Timeline:</strong> When are they looking to implement?</p>
+<h3>Discovery Questions</h3>
+<p><strong>Budget:</strong></p>
+<ul>
+<li>&quot;Have you allocated budget for this project?&quot;</li>
+<li>&quot;What range are you working within?&quot;</li>
+<li>&quot;If the solution delivers [desired outcome], can you secure budget within [timeframe]?&quot;</li>
+</ul>
+<p><strong>Authority:</strong></p>
+<ul>
+<li>&quot;Who else is involved in this decision?&quot;</li>
+<li>&quot;What&#39;s your role in the purchasing process?&quot;</li>
+<li>&quot;Do you have approval authority, or does this need to go up the chain?&quot;</li>
+</ul>
+<p><strong>Need:</strong></p>
+<ul>
+<li>&quot;What&#39;s driving you to look for a solution now?&quot;</li>
+<li>&quot;What happens if you don&#39;t solve this problem?&quot;</li>
+<li>&quot;What have you tried so far?&quot;</li>
+</ul>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li>&quot;When do you need this implemented?&quot;</li>
+<li>&quot;What&#39;s driving that timeline?&quot;</li>
+<li>&quot;Are there any events or deadlines creating urgency?&quot;</li>
+</ul>
+<h3>Qualification Scorecard</h3>
+<p>Assign 1-5 points per criterion:</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>5 points</th>
+<th>3 points</th>
+<th>1 point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Budget</td>
+<td>Approved and allocated</td>
+<td>Available but needs approval</td>
+<td>No budget, must build business case</td>
+</tr>
+<tr>
+<td>Authority</td>
+<td>Speaking with final decision-maker</td>
+<td>Influencer with access to decision-maker</td>
+<td>Low-level contact, no access</td>
+</tr>
+<tr>
+<td>Need</td>
+<td>Urgent problem, high impact</td>
+<td>Moderate problem, nice-to-have</td>
+<td>Vague interest, no clear pain</td>
+</tr>
+<tr>
+<td>Timeline</td>
+<td>Implementing within 30 days</td>
+<td>30-90 days</td>
+<td>No timeline</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum qualification score:</strong> 12/20 (3 average per criterion)</p>
+<h3>When BANT Fails</h3>
+<p><strong>Scenario 1: Complex buying committees</strong>
+BANT assumes single decision-maker. Enterprise deals involve 5-10 stakeholders (IT, procurement, finance, operations). &quot;Authority&quot; becomes meaningless.</p>
+<p><strong>Scenario 2: Long sales cycles</strong>
+BANT&#39;s &quot;Timeline&quot; criterion assumes prospects know when they&#39;ll buy. In 6-12 month sales cycles, timelines shift constantly.</p>
+<p><strong>Scenario 3: Strategic partnerships</strong>
+BANT optimizes for transactional efficiency. Strategic deals require relationship building, not rapid qualification.</p>
+<p><strong>When to use BANT:</strong> SMB deals, SaaS subscriptions under $50K annually, short sales cycles.</p>
+<h2>Framework 2: MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion)</h2>
+<p><strong>Best for:</strong> Enterprise B2B sales ($100K+ deals), complex buying committees, 6-12 month sales cycles</p>
+<p><strong>Origin:</strong> PTC (Parametric Technology Corporation), 1990s</p>
+<h3>The Six Criteria</h3>
+<p><strong>Metrics:</strong> What quantifiable business outcomes does the prospect need?
+<strong>Economic Buyer:</strong> Who controls the budget and has final approval authority?
+<strong>Decision Criteria:</strong> What factors will the prospect use to evaluate solutions?
+<strong>Decision Process:</strong> What steps must happen before a contract is signed?
+<strong>Identify Pain:</strong> What specific problem is costing them money, time, or opportunity?
+<strong>Champion:</strong> Who inside the organization is advocating for your solution?</p>
+<h3>Discovery Questions</h3>
+<p><strong>Metrics:</strong></p>
+<ul>
+<li>&quot;What does success look like in measurable terms?&quot;</li>
+<li>&quot;If we could reduce [cost/time/errors] by X%, would that justify the investment?&quot;</li>
+<li>&quot;How are you currently measuring this problem?&quot;</li>
+</ul>
+<p><strong>Economic Buyer:</strong></p>
+<ul>
+<li>&quot;Who ultimately signs off on investments of this size?&quot;</li>
+<li>&quot;Have you worked with [Economic Buyer] on similar projects?&quot;</li>
+<li>&quot;What&#39;s [Economic Buyer&#39;s] top priority this year?&quot;</li>
+</ul>
+<p><strong>Decision Criteria:</strong></p>
+<ul>
+<li>&quot;What factors are most important in choosing a vendor?&quot;</li>
+<li>&quot;How will you compare our solution to alternatives?&quot;</li>
+<li>&quot;Are there any non-negotiable requirements?&quot;</li>
+</ul>
+<p><strong>Decision Process:</strong></p>
+<ul>
+<li>&quot;Walk me through your typical procurement process.&quot;</li>
+<li>&quot;Who needs to approve before a contract is signed?&quot;</li>
+<li>&quot;Are there any legal, security, or compliance reviews required?&quot;</li>
+</ul>
+<p><strong>Identify Pain:</strong></p>
+<ul>
+<li>&quot;What&#39;s this problem costing you per month/quarter/year?&quot;</li>
+<li>&quot;What happens if you don&#39;t solve this in the next 6 months?&quot;</li>
+<li>&quot;What&#39;s the political cost of this problem? (Who&#39;s getting blamed?)&quot;</li>
+</ul>
+<p><strong>Champion:</strong></p>
+<ul>
+<li>&quot;Who internally would benefit most from solving this?&quot;</li>
+<li>&quot;If I weren&#39;t in this meeting, who would push this project forward?&quot;</li>
+<li>&quot;Can you introduce me to [stakeholder] who owns this pain point?&quot;</li>
+</ul>
+<h3>MEDDIC Qualification Checklist</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Qualified</th>
+<th>Not Qualified</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Metrics</td>
+<td>Clear, measurable ROI identified</td>
+<td>Vague goals, no numbers</td>
+</tr>
+<tr>
+<td>Economic Buyer</td>
+<td>Identified and engaged</td>
+<td>Unknown or inaccessible</td>
+</tr>
+<tr>
+<td>Decision Criteria</td>
+<td>Understood and we meet them</td>
+<td>Unclear or we don&#39;t meet them</td>
+</tr>
+<tr>
+<td>Decision Process</td>
+<td>Mapped with timeline</td>
+<td>Unknown or constantly changing</td>
+</tr>
+<tr>
+<td>Identify Pain</td>
+<td>Urgent, expensive problem</td>
+<td>Nice-to-have, low urgency</td>
+</tr>
+<tr>
+<td>Champion</td>
+<td>Active internal advocate</td>
+<td>No champion or passive support</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum to proceed:</strong> 4/6 criteria must be &quot;Qualified&quot;</p>
+<h3>When MEDDIC Fails</h3>
+<p><strong>Scenario 1: SMB deals</strong>
+MEDDIC is overkill for $10K SaaS subscriptions. SMBs don&#39;t have complex decision processes or political champions.</p>
+<p><strong>Scenario 2: Founder-led companies</strong>
+Startups with founder decision-makers don&#39;t need multi-stakeholder mapping. The founder is Economic Buyer, Champion, and Decision Process.</p>
+<p><strong>When to use MEDDIC:</strong> Enterprise sales, deals &gt;$100K, multi-stakeholder environments.</p>
+<h2>Framework 3: CHAMP (Challenges, Authority, Money, Prioritization)</h2>
+<p><strong>Best for:</strong> Consultative B2B sales, solution selling, when relationship matters more than speed</p>
+<p><strong>Origin:</strong> InsightSquared, 2010s</p>
+<h3>The Four Criteria</h3>
+<p><strong>Challenges:</strong> What problems keep the prospect up at night?
+<strong>Authority:</strong> Who can make this decision happen?
+<strong>Money:</strong> Can they afford the solution?
+<strong>Prioritization:</strong> Is solving this problem a priority <em>right now</em>?</p>
+<h3>Why CHAMP &gt; BANT for Consultative Sales</h3>
+<p><strong>BANT starts with Budget.</strong> Asking about money first creates transactional dynamic.</p>
+<p><strong>CHAMP starts with Challenges.</strong> Understanding problems first builds trust and positions you as advisor, not vendor.</p>
+<p><strong>BANT assumes budget exists.</strong> Many prospects don&#39;t have budget allocated but can secure it for the right solution.</p>
+<p><strong>CHAMP assumes budget can be created.</strong> If the challenge is urgent enough, money appears.</p>
+<h3>Discovery Questions</h3>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>&quot;What&#39;s the biggest challenge you&#39;re facing with [area]?&quot;</li>
+<li>&quot;How is this challenge impacting your team/revenue/customers?&quot;</li>
+<li>&quot;What have you tried already?&quot;</li>
+</ul>
+<p><strong>Authority:</strong></p>
+<ul>
+<li>&quot;Who else is affected by this challenge?&quot;</li>
+<li>&quot;If we solve this, who gets the credit?&quot;</li>
+<li>&quot;Who needs to sign off?&quot;</li>
+</ul>
+<p><strong>Money:</strong></p>
+<ul>
+<li>&quot;If we can solve [challenge] and deliver [outcome], what would that be worth?&quot;</li>
+<li>&quot;Have you solved similar problems before? What did you invest?&quot;</li>
+</ul>
+<p><strong>Prioritization:</strong></p>
+<ul>
+<li>&quot;Where does this rank among your top 3 priorities this quarter?&quot;</li>
+<li>&quot;What happens if you don&#39;t solve this in the next 90 days?&quot;</li>
+<li>&quot;Are there other projects competing for resources?&quot;</li>
+</ul>
+<h3>When to use CHAMP</h3>
+<ul>
+<li>Consultative sales (professional services, fractional roles, advisory)</li>
+<li>Relationship-based sales (long-term partnerships, not transactions)</li>
+<li>When educating the market (new category, prospects don&#39;t know they have a problem)</li>
+</ul>
+<h2>Framework 4: GPCT (Goals, Plans, Challenges, Timeline)</h2>
+<p><strong>Best for:</strong> Inbound leads, content-driven sales, when prospects are already educated</p>
+<p><strong>Origin:</strong> HubSpot, 2010s</p>
+<h3>The Four Criteria</h3>
+<p><strong>Goals:</strong> What is the prospect trying to achieve?
+<strong>Plans:</strong> What&#39;s their current plan to achieve it?
+<strong>Challenges:</strong> What&#39;s preventing them from executing the plan?
+<strong>Timeline:</strong> When do they need to achieve the goal?</p>
+<h3>Discovery Questions</h3>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>&quot;What are you trying to accomplish this year?&quot;</li>
+<li>&quot;What does success look like?&quot;</li>
+<li>&quot;How will hitting this goal impact the business?&quot;</li>
+</ul>
+<p><strong>Plans:</strong></p>
+<ul>
+<li>&quot;What&#39;s your current approach?&quot;</li>
+<li>&quot;What resources are you dedicating to this?&quot;</li>
+<li>&quot;What&#39;s working and what&#39;s not?&quot;</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>&quot;What&#39;s stopping you from executing the plan?&quot;</li>
+<li>&quot;Where are the gaps?&quot;</li>
+<li>&quot;What would need to change for the plan to succeed?&quot;</li>
+</ul>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li>&quot;When do you need to hit this goal?&quot;</li>
+<li>&quot;What happens if you miss the deadline?&quot;</li>
+<li>&quot;Are there external pressures (board, investors, competitors) driving timing?&quot;</li>
+</ul>
+<h3>When GPCT Works Best</h3>
+<p><strong>Inbound leads</strong> who downloaded content, attended webinar, or requested demo are already educated. They have goals and plans. Your job: identify gaps in their plan and position your solution as the missing piece.</p>
+<p><strong>GPCT assumes prospect is proactive.</strong> They&#39;re already trying to solve the problem. You&#39;re not creating urgency — you&#39;re capitalizing on existing urgency.</p>
+<h2>Framework 5: ANUM (Authority, Need, Urgency, Money)</h2>
+<p><strong>Best for:</strong> Cold outreach, outbound sales, when you need to disqualify fast</p>
+<p><strong>Origin:</strong> Sales training community, 2000s</p>
+<h3>The Four Criteria (Reordered for Efficiency)</h3>
+<p><strong>Authority:</strong> Are you talking to the decision-maker?
+<strong>Need:</strong> Do they have a problem you solve?
+<strong>Urgency:</strong> Do they need to solve it now?
+<strong>Money:</strong> Can they afford your solution?</p>
+<h3>Why ANUM Reorders BANT</h3>
+<p><strong>ANUM puts Authority first.</strong> If you&#39;re talking to someone who can&#39;t buy, nothing else matters. Disqualify immediately.</p>
+<p><strong>ANUM puts Money last.</strong> If they have authority, need, and urgency, money can be figured out. Don&#39;t disqualify prematurely based on budget.</p>
+<h3>When to use ANUM</h3>
+<ul>
+<li>Outbound sales (cold calling, cold email)</li>
+<li>High-volume sales (qualify fast, move on)</li>
+<li>When time is your constraint (can&#39;t afford long discovery calls with tire-kickers)</li>
+</ul>
+<h2>Choosing the Right Framework</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Deal Size</th>
+<th>Sales Cycle</th>
+<th>Buying Committee</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BANT</td>
+<td>$5K-$50K</td>
+<td>30-60 days</td>
+<td>Single decision-maker</td>
+<td>Transactional SMB</td>
+</tr>
+<tr>
+<td>MEDDIC</td>
+<td>$100K+</td>
+<td>6-12 months</td>
+<td>5-10 stakeholders</td>
+<td>Enterprise</td>
+</tr>
+<tr>
+<td>CHAMP</td>
+<td>$25K-$150K</td>
+<td>60-120 days</td>
+<td>2-4 stakeholders</td>
+<td>Consultative</td>
+</tr>
+<tr>
+<td>GPCT</td>
+<td>$10K-$100K</td>
+<td>30-90 days</td>
+<td>1-3 stakeholders</td>
+<td>Inbound, educated prospects</td>
+</tr>
+<tr>
+<td>ANUM</td>
+<td>$5K-$50K</td>
+<td>30-60 days</td>
+<td>Single decision-maker</td>
+<td>Outbound, high-volume</td>
+</tr>
+</tbody></table>
+<h2>Implementing Qualification in CRM</h2>
+<p>Qualification frameworks fail if they live in training documents instead of daily workflows. Implementation requires CRM fields, scorecards, and automation.</p>
+<h3>CRM Custom Fields (BANT Example)</h3>
+<p><strong>Budget:</strong></p>
+<ul>
+<li>Budget allocated? (Yes/No/Unknown)</li>
+<li>Budget range: ($0-$10K / $10K-$25K / $25K-$50K / $50K+)</li>
+</ul>
+<p><strong>Authority:</strong></p>
+<ul>
+<li>Decision-maker identified? (Yes/No)</li>
+<li>Decision-maker engaged? (Yes/No)</li>
+<li>Role: (C-level / VP / Director / Manager / Individual contributor)</li>
+</ul>
+<p><strong>Need:</strong></p>
+<ul>
+<li>Pain level: (Critical / High / Medium / Low)</li>
+<li>Impact if unsolved: (Text field)</li>
+</ul>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li>Target implementation date: (Date field)</li>
+<li>Timeline confidence: (Confirmed / Likely / Uncertain)</li>
+</ul>
+<h3>Automated Qualification Scoring</h3>
+<p>Assign point values to each criterion. CRM calculates score automatically.</p>
+<p><strong>Example BANT scoring:</strong></p>
+<ul>
+<li>Budget allocated = 5 points</li>
+<li>Budget available but needs approval = 3 points</li>
+<li>No budget = 0 points</li>
+<li>Decision-maker engaged = 5 points</li>
+<li>Influencer with access = 3 points</li>
+<li>Low-level contact = 1 point</li>
+<li>Critical pain = 5 points</li>
+<li>High pain = 4 points</li>
+<li>Medium pain = 2 points</li>
+<li>Low pain = 1 point</li>
+<li>Timeline &lt;30 days = 5 points</li>
+<li>Timeline 30-90 days = 3 points</li>
+<li>No timeline = 0 points</li>
+</ul>
+<p><strong>Qualification threshold:</strong> 12+ points = Qualified, &lt;12 points = Disqualified</p>
+<h3>Qualification Alerts</h3>
+<p><strong>Alert 1:</strong> Lead enters CRM → Notify rep to complete qualification within 48 hours
+<strong>Alert 2:</strong> Lead marked Qualified with score &lt;12 → Alert sales manager for review
+<strong>Alert 3:</strong> Qualified lead stalls for 14 days → Trigger re-qualification (has anything changed?)</p>
+<h2>Common Mistakes in Qualification</h2>
+<h3>Mistake 1: Qualifying Too Early</h3>
+<p>Asking budget questions in first 5 minutes of first conversation creates transactional dynamic and triggers prospect defensiveness. Solution: Build rapport, understand challenges, demonstrate value <em>before</em> qualifying on budget.</p>
+<h3>Mistake 2: Accepting Vague Answers</h3>
+<p>Prospect: &quot;We&#39;re definitely interested.&quot;
+Rep: (marks as Qualified)</p>
+<p>&quot;Interested&quot; isn&#39;t qualified. Qualified requires specifics: timeline, budget, decision process.</p>
+<h3>Mistake 3: Ignoring Red Flags</h3>
+<p>Prospect misses 3 scheduled calls, doesn&#39;t respond to emails for 2 weeks, but rep keeps them in pipeline as &quot;Qualified&quot; because they once expressed interest. Solution: Re-qualify regularly. Interest fades. Disqualify decisively.</p>
+<h3>Mistake 4: One-Size-Fits-All</h3>
+<p>Using BANT for enterprise deals or MEDDIC for $5K SMB sales. Match framework to sales context.</p>
+<h2>FAQ</h2>
+<h3>Can I combine multiple frameworks?</h3>
+<p>Yes. Many companies use hybrid models (e.g., BANT + Champion from MEDDIC). Tailor to your sales process.</p>
+<h3>How often should I re-qualify?</h3>
+<p>Every 30 days for long sales cycles. Budgets change, timelines shift, stakeholders leave. What was qualified in Q1 might be disqualified in Q2.</p>
+<h3>What if prospect refuses to answer qualification questions?</h3>
+<p>Either they&#39;re not serious (disqualify) or you haven&#39;t built enough trust (focus on value delivery, try again later). Don&#39;t proceed without qualification — you&#39;ll waste months on dead deals.</p>
+<h3>Should I disqualify if they fail one criterion?</h3>
+<p>Depends. Failing &quot;Authority&quot; (talking to intern with no access) = immediate disqualify. Failing &quot;Timeline&quot; (no urgency) = nurture for later. Use judgment.</p>
+<h3>How do I train reps to qualify consistently?</h3>
+<p>Role play discovery calls, review CRM data for qualification accuracy, tie qualification scores to forecast accuracy (hold reps accountable for inflated pipelines).</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

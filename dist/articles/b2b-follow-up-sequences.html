@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying | B2B Vic</title>
+    <meta name="description" content="How to build B2B follow-up sequences that maintain contact without triggering unsubscribes. Covers email cadence, message variation, and when to stop." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying" />
+    <meta property="og:description" content="How to build B2B follow-up sequences that maintain contact without triggering unsubscribes. Covers email cadence, message variation, and when to stop." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-follow-up-sequences.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying" />
+    <meta name="twitter:description" content="How to build B2B follow-up sequences that maintain contact without triggering unsubscribes. Covers email cadence, message variation, and when to stop." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-follow-up-sequences.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying",
+      "description": "How to build B2B follow-up sequences that maintain contact without triggering unsubscribes. Covers email cadence, message variation, and when to stop.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-follow-up-sequences.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>B2B Follow-Up Sequences: The Cadence Between Persistent and Annoying</h1>
+<p>Most B2B deals die in the follow-up gap. A prospect expresses interest, you send a proposal, they go silent. You wait 3 days, send a &quot;just checking in&quot; email, get no response. You wait another week, send another email. Still nothing. After 3 attempts, you assume they&#39;re not interested and move on. Meanwhile, the prospect was legitimately busy, intended to respond, and assumed you&#39;d follow up again. The deal died not because they rejected your offer, but because neither party established clear next steps.</p>
+<p>The solution isn&#39;t more follow-ups. It&#39;s structured follow-up sequences with defined cadence, message variation, and exit conditions. This article documents the <a href="/articles/cold-outreach-email-sequences.html">follow-up framework</a> used to maintain contact with 500+ prospects monthly across deal stages without triggering spam filters, unsubscribes, or relationship damage. The Operator doesn&#39;t &quot;check in&quot; — every follow-up delivers value or requests specific action.</p>
+<h2>The Core Problem: Persistence vs. Annoyance</h2>
+<p>B2B salespeople fear being annoying more than they fear losing deals. This fear causes premature abandonment. Research (Brevet, 2023) shows:</p>
+<ul>
+<li>80% of sales require 5+ follow-ups to close</li>
+<li>44% of salespeople give up after 1 follow-up</li>
+<li>22% give up after 2 follow-ups</li>
+<li>Only 8% make 5+ follow-up attempts</li>
+</ul>
+<p>The gap between what works (persistence) and what salespeople do (2 follow-ups then quit) creates massive opportunity loss.</p>
+<p><strong>Why salespeople quit early:</strong></p>
+<ol>
+<li>&quot;I don&#39;t want to be annoying&quot;</li>
+<li>&quot;They would&#39;ve responded if they were interested&quot;</li>
+<li>&quot;I&#39;m bothering them&quot;</li>
+</ol>
+<p><strong>Why prospects don&#39;t respond:</strong></p>
+<ol>
+<li>Legitimately busy (not rejecting, just prioritizing)</li>
+<li>Email buried in inbox (didn&#39;t see it)</li>
+<li>Waiting for internal approval to proceed (can&#39;t respond yet)</li>
+<li>Forgot to respond (intended to, then forgot)</li>
+</ol>
+<p>Persistence isn&#39;t annoying <em>if each follow-up provides value or advances the conversation</em>. Annoyance comes from repetitive, valueless &quot;checking in&quot; emails that demand attention without offering anything in return.</p>
+<h2>The 3-Phase Follow-Up Framework</h2>
+<p>Follow-up sequences vary by deal stage. Post-demo follow-ups differ from post-proposal follow-ups. The framework below adapts cadence and messaging to context.</p>
+<h3>Phase 1: Post-First Contact (Days 1-14)</h3>
+<p><strong>Context:</strong> Prospect filled out lead form, attended webinar, or downloaded resource. No sales conversation yet.</p>
+<p><strong>Goal:</strong> Convert interest into discovery call</p>
+<p><strong>Sequence:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Email Type</th>
+<th>Content</th>
+<th>Exit Condition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Thank you + resource delivery</td>
+<td>Deliver promised resource (whitepaper, case study). Ask: &quot;When can we schedule 15 minutes to discuss [specific pain point]?&quot;</td>
+<td>Books meeting</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Value delivery</td>
+<td>Share related resource (video, article) addressing adjacent pain point. No ask.</td>
+<td>Opens + clicks</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Social proof</td>
+<td>Send case study of similar company. Ask: &quot;Does [outcome] resonate with your goals?&quot;</td>
+<td>Replies</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Direct ask</td>
+<td>&quot;I know you&#39;re evaluating [solution category]. Can I answer any questions before you move forward?&quot;</td>
+<td>Replies or unsubscribes</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Final attempt</td>
+<td>&quot;Should I close your file? If now&#39;s not the right time, I&#39;ll follow up in [3/6/12] months.&quot;</td>
+<td>Replies, unsubscribes, or goes dormant</td>
+</tr>
+</tbody></table>
+<p><strong>Cadence:</strong> 2-3 day gaps early, expanding to 4-5 day gaps later. Total: 5 touches over 12 days.</p>
+<p><strong>Why this works:</strong> Prospect is still warm. Rapid early follow-up capitalizes on initial interest before they engage with competitors.</p>
+<h3>Phase 2: Post-Discovery Call (Days 1-21)</h3>
+<p><strong>Context:</strong> Discovery call completed. Prospect is evaluating solution fit. Decision timeline is 30-90 days.</p>
+<p><strong>Goal:</strong> Keep deal progressing toward proposal stage</p>
+<p><strong>Sequence:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Email Type</th>
+<th>Content</th>
+<th>Exit Condition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Recap + next steps</td>
+<td>Summarize call (pain points discussed, objectives confirmed). Confirm next step: &quot;I&#39;ll send proposal by [date]. Can you confirm [stakeholder names] should be included?&quot;</td>
+<td>Confirms next step</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Value add</td>
+<td>Send resource related to pain point discussed (ROI calculator, implementation guide). No ask.</td>
+<td>Opens + engages</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Proposal delivery</td>
+<td>Send proposal. Ask: &quot;Can we schedule 30 minutes on [date] to walk through this together?&quot;</td>
+<td>Books proposal review meeting</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Proposal follow-up</td>
+<td>&quot;Have you had a chance to review the proposal? Any questions I can clarify?&quot;</td>
+<td>Replies with objections or next steps</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Objection pre-empt</td>
+<td>Address likely objection proactively: &quot;Most clients ask about [integration/pricing/implementation]. Here&#39;s how we handle that...&quot;</td>
+<td>Replies</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Stakeholder inclusion</td>
+<td>&quot;Should we include [CFO/VP Ops] in the next conversation? I can tailor my approach to their priorities.&quot;</td>
+<td>Expands stakeholder engagement</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Timeline check</td>
+<td>&quot;You mentioned decision timeline was [end of Q1]. Is that still accurate, or has anything shifted?&quot;</td>
+<td>Confirms or updates timeline</td>
+</tr>
+</tbody></table>
+<p><strong>Cadence:</strong> 3-4 day gaps initially, expanding to 5-7 days. Total: 7 touches over 21 days.</p>
+<p><strong>Why this works:</strong> Proposal stage is high-consideration. Prospect needs time to evaluate, socialize internally, and compare alternatives. Follow-ups provide value without pressuring.</p>
+<h3>Phase 3: Post-Proposal (Days 1-60)</h3>
+<p><strong>Context:</strong> Proposal sent. Prospect is in final decision stage, comparing vendors, negotiating internally.</p>
+<p><strong>Goal:</strong> Close deal or identify blockers</p>
+<p><strong>Sequence:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Email Type</th>
+<th>Content</th>
+<th>Exit Condition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Confirmation</td>
+<td>&quot;Proposal sent. Let me know if any questions arise as you review.&quot;</td>
+<td>Acknowledges receipt</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Availability</td>
+<td>&quot;I&#39;m available [specific times] this week if you&#39;d like to discuss any section in detail.&quot;</td>
+<td>Books review call</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Competitive positioning</td>
+<td>&quot;If you&#39;re evaluating alternatives, here&#39;s how we differ from [Competitor A] and [Competitor B]...&quot;</td>
+<td>Replies with competitive intel</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Risk reversal</td>
+<td>&quot;To de-risk this decision, we can start with [smaller pilot project / 30-day trial / phased rollout].&quot;</td>
+<td>Replies with interest or objection</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Stakeholder nudge</td>
+<td>&quot;Should I follow up with [CFO/procurement] directly, or would you prefer to coordinate internally first?&quot;</td>
+<td>Identifies internal blockers</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Timeline reality check</td>
+<td>&quot;Most deals at this stage close within [X weeks]. Are we on track, or has something changed?&quot;</td>
+<td>Reveals true timeline</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Breakup email</td>
+<td>&quot;I haven&#39;t heard back. Should I assume this isn&#39;t a priority right now? I&#39;ll close your file unless you&#39;d like to reconnect in [Q3/Q4].&quot;</td>
+<td>Gets honest response or exits</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Final close</td>
+<td>&quot;Closing your file. If circumstances change, feel free to reach out.&quot;</td>
+<td>Exits cleanly</td>
+</tr>
+</tbody></table>
+<p><strong>Cadence:</strong> 5-7 day gaps early, expanding to 10-15 days later. Total: 8 touches over 60 days.</p>
+<p><strong>Why this works:</strong> Long decision cycles require patience. Follow-ups maintain presence without pressuring. Breakup email often resurfaces deals that seemed dead.</p>
+<h2>Message Variation: Why &quot;Checking In&quot; Fails</h2>
+<p>Every follow-up must offer value or request specific action. Generic &quot;checking in&quot; emails waste the prospect&#39;s time and yours.</p>
+<h3>Bad Follow-Up Examples</h3>
+<p><strong>Example 1: The Valueless Check-In</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], just checking in to see if you had a chance to review the proposal. Let me know if you have any questions!&quot;</p>
+</blockquote>
+<p><strong>Why it fails:</strong> Provides zero value. Forces prospect to do work (review proposal, formulate questions) with no incentive.</p>
+<p><strong>Example 2: The Desperate Nudge</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], I sent the proposal last week but haven&#39;t heard back. Did you get a chance to look at it?&quot;</p>
+</blockquote>
+<p><strong>Why it fails:</strong> Centers your needs, not theirs. Implies they owe you a response.</p>
+<p><strong>Example 3: The Generic &quot;Anything?&quot;</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], wanted to follow up and see if there&#39;s anything I can help with.&quot;</p>
+</blockquote>
+<p><strong>Why it fails:</strong> Vague. No clear action requested. Easy to ignore.</p>
+<h3>Good Follow-Up Examples</h3>
+<p><strong>Example 1: Value Delivery</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], I know you&#39;re evaluating CRM options. I put together a comparison sheet showing how [our product] stacks up against [Competitor A] and [Competitor B] on the 5 criteria you mentioned in our call. Attached. No response needed unless you have questions.&quot;</p>
+</blockquote>
+<p><strong>Why it works:</strong> Delivers value without asking for anything. Demonstrates you listened and are solving their problem proactively.</p>
+<p><strong>Example 2: Specific Action Request</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], can you confirm whether [CFO Sarah] should be included in the proposal review meeting? If yes, I&#39;ll send a calendar invite for Tuesday at 2pm. If no, we can proceed with just the ops team.&quot;</p>
+</blockquote>
+<p><strong>Why it works:</strong> Binary choice, easy to answer. Moves deal forward with minimal friction.</p>
+<p><strong>Example 3: Proactive Objection Handling</strong></p>
+<blockquote>
+<p>&quot;Hi [Name], most clients at this stage ask about implementation timeline. Here&#39;s how we&#39;d phase your rollout to minimize disruption: [3-bullet plan]. Does this address your concern, or should we adjust the approach?&quot;</p>
+</blockquote>
+<p><strong>Why it works:</strong> Anticipates objection before prospect raises it. Shows you understand their world.</p>
+<h2>Cadence Rules: When to Speed Up and Slow Down</h2>
+<p>Not all follow-up sequences should run on the same cadence. Adjust based on:</p>
+<h3>Factor 1: Deal Size</h3>
+<p><strong>$5K-$25K deals:</strong> Faster cadence (2-3 day gaps). Prospects make decisions quickly. Slow follow-up loses deals to faster-moving competitors.</p>
+<p><strong>$100K+ deals:</strong> Slower cadence (5-10 day gaps). Decisions require internal socialization, legal review, procurement. Aggressive follow-up pressures prospects and triggers resistance.</p>
+<h3>Factor 2: Prospect Engagement</h3>
+<p><strong>High engagement (opens every email, clicks links, asks questions):</strong> Maintain cadence or accelerate slightly. They&#39;re interested, move them toward decision.</p>
+<p><strong>Low engagement (no opens, no clicks):</strong> Slow cadence or exit sequence. They&#39;re not engaged. More follow-ups won&#39;t change that.</p>
+<h3>Factor 3: Buying Committee Size</h3>
+<p><strong>Single decision-maker:</strong> Standard cadence.</p>
+<p><strong>3-5 stakeholders:</strong> Slower cadence + stakeholder-specific follow-ups (separate emails to CFO, VP Ops, IT lead addressing their unique concerns).</p>
+<p><strong>10+ stakeholders (enterprise):</strong> Much slower cadence (10-14 day gaps). Include account-based marketing (LinkedIn engagement, targeted ads) to maintain presence without email overload.</p>
+<h2>Exit Conditions: When to Stop Following Up</h2>
+<p>Persistence doesn&#39;t mean following up forever. Exit conditions prevent wasted effort on dead deals.</p>
+<h3>Exit Condition 1: Explicit Rejection</h3>
+<p>Prospect says &quot;not interested,&quot; &quot;going with competitor,&quot; or &quot;not a priority right now.&quot;</p>
+<p><strong>Action:</strong> Thank them, ask permission to follow up in 6-12 months, exit sequence.</p>
+<p><strong>Don&#39;t:</strong> Keep following up anyway. Respect their decision.</p>
+<h3>Exit Condition 2: Unsubscribe</h3>
+<p>Prospect unsubscribes from email list.</p>
+<p><strong>Action:</strong> Respect unsubscribe. Do not email them again.</p>
+<p><strong>Don&#39;t:</strong> Reach out via LinkedIn &quot;since they unsubscribed from email.&quot; That&#39;s circumventing their preference.</p>
+<h3>Exit Condition 3: Breakup Email No-Response</h3>
+<p>After breakup email (&quot;Should I close your file?&quot;), prospect doesn&#39;t respond for 10 days.</p>
+<p><strong>Action:</strong> Close file. Tag in CRM as &quot;Nurture - 6 months.&quot; Add to long-term nurture sequence (quarterly check-ins).</p>
+<h3>Exit Condition 4: Timeline Pushed 3+ Times</h3>
+<p>Prospect says &quot;we&#39;ll decide by end of Q1,&quot; then pushes to &quot;end of Q2,&quot; then &quot;end of Q3.&quot;</p>
+<p><strong>Action:</strong> After third timeline push, exit active follow-up. Move to nurture sequence. They&#39;re not ready to buy.</p>
+<h3>Exit Condition 5: Ghosting After Breakup Email</h3>
+<p>You send breakup email, prospect replies &quot;still interested, just need more time,&quot; then ghosts again for 30 days.</p>
+<p><strong>Action:</strong> Send final email: &quot;I&#39;ll close your file for now. When you&#39;re ready to move forward, feel free to reach out.&quot; Exit sequence.</p>
+<p><strong>Why:</strong> They&#39;re not serious. They&#39;re keeping you as backup option while they pursue other priorities.</p>
+<h2>Automation vs. Personalization: Finding the Balance</h2>
+<p>Follow-up sequences can be automated (Mailchimp, HubSpot, Outreach.io) or manual (drafted individually). The choice depends on volume and deal value.</p>
+<h3>When to Automate</h3>
+<p><strong>Scenario:</strong> 100+ prospects in follow-up sequences at any given time. Deal size: $5K-$25K.</p>
+<p><strong>Solution:</strong> Automated sequences with personalization tokens.</p>
+<p><strong>Tools:</strong> <strong>HubSpot Sequences</strong>, <strong>Outreach.io</strong>, <strong>Mailchimp Automations</strong></p>
+<p><strong>Personalization:</strong> First name, company name, specific pain point mentioned in discovery call (stored in CRM custom field, inserted via token).</p>
+<p><strong>What stays manual:</strong> Responses to prospect replies. Never auto-respond to a prospect who engages.</p>
+<h3>When to Stay Manual</h3>
+<p><strong>Scenario:</strong> 10-20 prospects in follow-up sequences. Deal size: $50K+.</p>
+<p><strong>Solution:</strong> Manually drafted follow-ups.</p>
+<p><strong>Why:</strong> High-value deals justify the time investment. Personalization at this level requires referencing specific conversation details, industry news, competitor moves — things automation can&#39;t handle.</p>
+<p><strong>Efficiency hack:</strong> Use email templates as starting points, then customize 30-50% of the content for each prospect.</p>
+<h2>CRM Integration: Tracking Follow-Up Activity</h2>
+<p>Follow-up sequences fail without tracking. The <a href="/articles/crm-optimization-b2b-sales.html">CRM optimization system</a> must log:</p>
+<ul>
+<li>Which sequence the prospect is in</li>
+<li>Which email they last received</li>
+<li>When the next follow-up is due</li>
+<li>Whether they&#39;ve engaged (opened, clicked, replied)</li>
+</ul>
+<h3>Required CRM Fields</h3>
+<p><strong>Sequence Name:</strong> &quot;Post-Demo Follow-Up,&quot; &quot;Post-Proposal Follow-Up,&quot; &quot;Nurture 90-Day&quot;
+<strong>Sequence Step:</strong> &quot;Email 3 of 7&quot;
+<strong>Last Contact Date:</strong> Date of most recent outreach
+<strong>Next Contact Due:</strong> Date of next scheduled follow-up
+<strong>Engagement Level:</strong> &quot;High&quot; (opens + clicks), &quot;Medium&quot; (opens), &quot;Low&quot; (no opens)
+<strong>Exit Reason:</strong> &quot;Closed-Won,&quot; &quot;Closed-Lost,&quot; &quot;Unsubscribed,&quot; &quot;Timeline Pushed 3x&quot;</p>
+<h3>Automation Triggers</h3>
+<p><strong>Trigger 1:</strong> Prospect books demo → enters &quot;Post-Demo Follow-Up&quot; sequence
+<strong>Trigger 2:</strong> Proposal sent → enters &quot;Post-Proposal Follow-Up&quot; sequence
+<strong>Trigger 3:</strong> Deal closed-lost → exits active sequence, enters &quot;Nurture 6-Month&quot; sequence
+<strong>Trigger 4:</strong> Prospect unsubscribes → exits all sequences, tagged &quot;Do Not Contact&quot;</p>
+<h2>FAQ</h2>
+<h3>How many follow-ups before I give up?</h3>
+<p>5-8 follow-ups over 30-60 days is standard for active deals. Beyond that, move to long-term nurture (quarterly check-ins). The breakup email (email 5-7 in most sequences) usually surfaces whether the deal is real or dead.</p>
+<h3>What if the prospect never responds to any email?</h3>
+<p>After 5 attempts with zero engagement (no opens, no clicks), exit the sequence. They&#39;re not interested or your emails aren&#39;t reaching them (spam filter, wrong email address). Tag as &quot;Unresponsive&quot; and move to annual check-in.</p>
+<h3>Should I follow up on LinkedIn if they ignore my emails?</h3>
+<p>Only if you have a legitimate reason to connect on LinkedIn (mutual connection, shared interest, industry event). Don&#39;t use LinkedIn as a workaround for email non-response. That&#39;s intrusive.</p>
+<h3>Can I send the same follow-up email to multiple prospects?</h3>
+<p>Yes for early-stage, high-volume sequences. No for post-proposal, high-value deals. Templates are starting points, not final drafts. Customize based on prospect context.</p>
+<h3>What&#39;s the best time to send follow-up emails?</h3>
+<p>Tuesday-Thursday, 8-10am or 1-3pm in prospect&#39;s timezone. Avoid Monday mornings (inbox overload) and Friday afternoons (mentally checked out). Test send times and track open rates to optimize for your audience.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

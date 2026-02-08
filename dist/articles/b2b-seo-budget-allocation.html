@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly | B2B Vic</title>
+    <meta name="description" content="How to allocate B2B SEO budgets across content, technical work, link building, and tools. Covers spend ratios, ROI tracking, and when to adjust allocation." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly" />
+    <meta property="og:description" content="How to allocate B2B SEO budgets across content, technical work, link building, and tools. Covers spend ratios, ROI tracking, and when to adjust allocation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-seo-budget-allocation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly" />
+    <meta name="twitter:description" content="How to allocate B2B SEO budgets across content, technical work, link building, and tools. Covers spend ratios, ROI tracking, and when to adjust allocation." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-seo-budget-allocation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly",
+      "description": "How to allocate B2B SEO budgets across content, technical work, link building, and tools. Covers spend ratios, ROI tracking, and when to adjust allocation.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-seo-budget-allocation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The B2B SEO Budget Allocation Framework for Companies Spending $5K-$25K Monthly</h1>
+<p>SEO budgets fail when allocated by intuition instead of strategic priority. A company spending $15K/month might waste $8K on unnecessary tools, $4K on low-impact link building, and $3K on content that doesn&#39;t rank. Another company spending the same $15K allocates $9K to high-quality content targeting buyer-intent keywords, $3K to technical SEO fixes that unlock rankings, $2K to essential tools, and $1K to strategic link building. Same budget, radically different outcomes.</p>
+<p>This article presents the budget allocation framework used to manage $60K-$300K annual SEO investments for B2B companies. The framework optimizes spend across four categories — <strong>content production, technical SEO, link building, and tools</strong> — based on business stage, competitive landscape, and revenue objectives. The Operator treats SEO budgets as capital allocation decisions, not expense line items. Every dollar deployed must generate <a href="/articles/seo-roi-measurement-b2b.html">measurable ROI</a>.</p>
+<h2>The Four Budget Categories</h2>
+<h3>Category 1: Content Production (50-65% of budget)</h3>
+<p><strong>What it includes:</strong></p>
+<ul>
+<li>Keyword research</li>
+<li>Content strategy and planning</li>
+<li>Article writing (in-house, freelance, or AI-assisted)</li>
+<li>Editing and quality control</li>
+<li>Publishing and formatting</li>
+<li>Content updates and refreshes</li>
+</ul>
+<p><strong>Why it&#39;s the largest allocation:</strong>
+Content is the vehicle for rankings. Without publishable, rankable content, technical SEO and link building have nothing to amplify. B2B companies need 50-100 articles minimum to establish topical authority. At $150-$300 per article (freelance rates), that&#39;s $7.5K-$30K in content investment alone.</p>
+<p><strong>Budget allocation by company stage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Monthly Budget</th>
+<th>Content Allocation</th>
+<th>Articles/Month</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Early (0-20 articles published)</td>
+<td>$5K-$8K</td>
+<td>65% ($3.25K-$5.2K)</td>
+<td>8-12</td>
+</tr>
+<tr>
+<td>Growth (20-100 articles)</td>
+<td>$8K-$15K</td>
+<td>55% ($4.4K-$8.25K)</td>
+<td>12-20</td>
+</tr>
+<tr>
+<td>Mature (100+ articles)</td>
+<td>$15K-$25K</td>
+<td>50% ($7.5K-$12.5K)</td>
+<td>15-25</td>
+</tr>
+</tbody></table>
+<p><strong>Why allocation decreases over time:</strong> Early-stage sites need volume to build topical authority. Mature sites focus on strategic content gaps and updates rather than raw volume.</p>
+<h3>Category 2: Technical SEO (15-25% of budget)</h3>
+<p><strong>What it includes:</strong></p>
+<ul>
+<li>Site audits (quarterly)</li>
+<li>Page speed optimization</li>
+<li>Core Web Vitals fixes</li>
+<li>Schema markup implementation</li>
+<li>Internal linking strategy</li>
+<li>Site migrations and redirects</li>
+<li>Mobile optimization</li>
+<li>Indexing and crawl optimization</li>
+</ul>
+<p><strong>Why it matters:</strong>
+Content doesn&#39;t rank if technical issues block crawling, indexing, or ranking signals. A site with 1,000 articles but 3-second load times won&#39;t outrank competitors with 100 articles and sub-1-second load times.</p>
+<p><strong>Budget allocation by company stage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Monthly Budget</th>
+<th>Technical Allocation</th>
+<th>What It Buys</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Early</td>
+<td>$5K-$8K</td>
+<td>25% ($1.25K-$2K)</td>
+<td>Foundation setup, audit, critical fixes</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>$8K-$15K</td>
+<td>20% ($1.6K-$3K)</td>
+<td>Ongoing optimization, schema, speed improvements</td>
+</tr>
+<tr>
+<td>Mature</td>
+<td>$15K-$25K</td>
+<td>15% ($2.25K-$3.75K)</td>
+<td>Maintenance, advanced optimizations</td>
+</tr>
+</tbody></table>
+<p><strong>Why allocation decreases over time:</strong> Technical foundation is built once. Maintenance requires less investment than initial setup.</p>
+<h3>Category 3: Link Building (10-20% of budget)</h3>
+<p><strong>What it includes:</strong></p>
+<ul>
+<li>Digital PR campaigns</li>
+<li>Guest posting outreach</li>
+<li>Broken link building</li>
+<li>Competitor backlink analysis</li>
+<li>Resource page outreach</li>
+<li>Partnership link acquisition</li>
+</ul>
+<p><strong>Why it&#39;s controversial:</strong>
+Link building ROI is hard to measure. A $2K/month link building campaign might secure 5 links that don&#39;t move rankings. Or it might secure 1 link from an authoritative site that unlocks 10 rankings. The variance is high.</p>
+<p><strong>Budget allocation by company stage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Monthly Budget</th>
+<th>Link Allocation</th>
+<th>Strategy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Early</td>
+<td>$5K-$8K</td>
+<td>10% ($500-$800)</td>
+<td>Low priority; focus on content and technical</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>$8K-$15K</td>
+<td>15% ($1.2K-$2.25K)</td>
+<td>Strategic digital PR, guest posts</td>
+</tr>
+<tr>
+<td>Mature</td>
+<td>$15K-$25K</td>
+<td>20% ($3K-$5K)</td>
+<td>Aggressive campaigns, competitive positioning</td>
+</tr>
+</tbody></table>
+<p><strong>Why allocation increases over time:</strong> Early-stage sites rank through content and technical optimization. Mature sites face tougher competition and need backlinks to break through.</p>
+<h3>Category 4: Tools and Software (5-10% of budget)</h3>
+<p><strong>What it includes:</strong></p>
+<ul>
+<li><strong>Ahrefs</strong> or <strong>Semrush</strong> (keyword research, backlink analysis)</li>
+<li><strong>Screaming Frog</strong> (site crawling)</li>
+<li><strong>Google Search Console</strong> (performance tracking, free)</li>
+<li><strong>Google Analytics 4</strong> (traffic analysis, free)</li>
+<li><strong>Surfer SEO</strong> or <strong>Clearscope</strong> (content optimization)</li>
+<li>CMS costs (if applicable)</li>
+</ul>
+<p><strong>Budget allocation by company stage:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Monthly Budget</th>
+<th>Tools Allocation</th>
+<th>Essential Tools</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Early</td>
+<td>$5K-$8K</td>
+<td>10% ($500-$800)</td>
+<td>Ahrefs or Semrush ($199/mo), Screaming Frog ($259/yr)</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>$8K-$15K</td>
+<td>8% ($640-$1.2K)</td>
+<td>Add Surfer SEO ($89/mo) or Clearscope ($170/mo)</td>
+</tr>
+<tr>
+<td>Mature</td>
+<td>$15K-$25K</td>
+<td>5% ($750-$1.25K)</td>
+<td>Full stack, enterprise plans</td>
+</tr>
+</tbody></table>
+<p><strong>Why allocation decreases over time:</strong> Tool costs are fixed. As budget grows, tools become smaller percentage of total spend.</p>
+<h2>Sample Budget Allocations</h2>
+<h3>Scenario 1: Early-Stage B2B SaaS ($8K/month budget)</h3>
+<p><strong>Goal:</strong> Build topical authority from 0 to 50 articles in 6 months</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Allocation</th>
+<th>Monthly Spend</th>
+<th>What You Get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content</td>
+<td>65%</td>
+<td>$5,200</td>
+<td>12 articles/month (mix of AI-assisted $150 and freelance $400)</td>
+</tr>
+<tr>
+<td>Technical</td>
+<td>25%</td>
+<td>$2,000</td>
+<td>Initial audit, Core Web Vitals fixes, schema implementation</td>
+</tr>
+<tr>
+<td>Link Building</td>
+<td>0%</td>
+<td>$0</td>
+<td>Not prioritized yet (focus on content + technical foundation)</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>10%</td>
+<td>$800</td>
+<td>Ahrefs Pro ($199), Screaming Frog ($22), Surfer SEO ($89), Grammarly ($12), buffer ($478 remaining for misc)</td>
+</tr>
+</tbody></table>
+<p><strong>Rationale:</strong> At 0 articles, content volume is the bottleneck. Technical foundation must be solid before content publishes. Link building doesn&#39;t matter yet — there&#39;s nothing to link to.</p>
+<h3>Scenario 2: Growth-Stage B2B Services ($15K/month budget)</h3>
+<p><strong>Goal:</strong> Scale from 50 to 150 articles, improve rankings for competitive keywords</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Allocation</th>
+<th>Monthly Spend</th>
+<th>What You Get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content</td>
+<td>55%</td>
+<td>$8,250</td>
+<td>18-20 articles/month ($400-$450 per article, high quality)</td>
+</tr>
+<tr>
+<td>Technical</td>
+<td>20%</td>
+<td>$3,000</td>
+<td>Quarterly audits, ongoing speed optimization, advanced schema</td>
+</tr>
+<tr>
+<td>Link Building</td>
+<td>17%</td>
+<td>$2,550</td>
+<td>3-5 guest posts/month, digital PR campaigns</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>8%</td>
+<td>$1,200</td>
+<td>Ahrefs Advanced ($399), Surfer SEO ($219), Clearscope ($170), misc tools</td>
+</tr>
+</tbody></table>
+<p><strong>Rationale:</strong> Content production continues but emphasizes quality over raw volume. Technical optimizations maintain site health. Link building accelerates competitive rankings. Tools scale with team usage.</p>
+<h3>Scenario 3: Mature B2B Enterprise ($25K/month budget)</h3>
+<p><strong>Goal:</strong> Defend rankings, capture remaining keyword opportunities, outrank competitors</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Allocation</th>
+<th>Monthly Spend</th>
+<th>What You Get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content</td>
+<td>50%</td>
+<td>$12,500</td>
+<td>20-25 articles/month ($500-$625 per article, expert writers)</td>
+</tr>
+<tr>
+<td>Technical</td>
+<td>15%</td>
+<td>$3,750</td>
+<td>Maintenance, advanced optimization, international SEO setup</td>
+</tr>
+<tr>
+<td>Link Building</td>
+<td>25%</td>
+<td>$6,250</td>
+<td>Aggressive digital PR, high-authority placements, competitive gaps</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>10%</td>
+<td>$2,500</td>
+<td>Enterprise plans (Ahrefs Agency $999, Semrush Business $449, Clearscope $350, Surfer Scale $219, CMS, analytics, misc)</td>
+</tr>
+</tbody></table>
+<p><strong>Rationale:</strong> Content production plateaus at quality threshold. Technical is maintenance mode. Link building becomes primary competitive lever. Tools support larger team and complex workflows.</p>
+<h2>When to Adjust Allocation</h2>
+<p>Budget allocation isn&#39;t static. Market conditions, competitive dynamics, and performance data should trigger reallocation.</p>
+<h3>Trigger 1: Content Saturation</h3>
+<p><strong>Signal:</strong> You&#39;ve published 200+ articles and keyword opportunities are exhausted.</p>
+<p><strong>Action:</strong> Reduce content allocation from 55% to 40%, increase link building from 15% to 30%.</p>
+<p><strong>Why:</strong> More content won&#39;t help if you&#39;ve covered all relevant topics. Link building and technical optimization become primary ranking levers.</p>
+<h3>Trigger 2: Technical Debt Accumulation</h3>
+<p><strong>Signal:</strong> Site speed degraded, crawl errors increasing, Core Web Vitals failing.</p>
+<p><strong>Action:</strong> Temporarily increase technical allocation from 20% to 35%, reduce content from 55% to 40%.</p>
+<p><strong>Why:</strong> Technical issues block rankings. Fix foundation before publishing more content.</p>
+<h3>Trigger 3: Competitive Pressure</h3>
+<p><strong>Signal:</strong> Competitors launched aggressive link building campaigns, your rankings dropping.</p>
+<p><strong>Action:</strong> Increase link building from 15% to 30%, reduce content from 55% to 40%.</p>
+<p><strong>Why:</strong> When competitors outlink you 10:1, more content won&#39;t close the gap. You need backlinks.</p>
+<h3>Trigger 4: Budget Cut</h3>
+<p><strong>Signal:</strong> Company reduces SEO budget from $15K to $10K monthly.</p>
+<p><strong>Action:</strong> Maintain content at 55% ($5.5K), cut tools to 5% ($500), cut technical to 15% ($1.5K), cut link building to 25% ($2.5K).</p>
+<p><strong>Why:</strong> Content is non-negotiable. Cut low-ROI tools first, reduce technical to essentials, maintain strategic link building.</p>
+<h3>Trigger 5: Budget Increase</h3>
+<p><strong>Signal:</strong> SEO is delivering ROI, company increases budget from $15K to $25K.</p>
+<p><strong>Action:</strong> Scale content from $8.25K to $12.5K (+50%), increase link building from $2.25K to $6.25K (+178%), maintain technical and tools.</p>
+<p><strong>Why:</strong> Scale what&#39;s working. Content and link building have room to expand. Technical and tools are fixed costs.</p>
+<h2>Tracking ROI by Category</h2>
+<p>Spend allocation means nothing without ROI measurement. Track return by category to optimize future allocation.</p>
+<h3>Content ROI</h3>
+<p><strong>Metric:</strong> Cost per ranking (total content spend ÷ # of keywords ranking top 10)</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Content spend: $8,250/month</li>
+<li>Keywords ranking top 10: 247</li>
+<li><strong>Cost per ranking:</strong> $33.40</li>
+</ul>
+<p><strong>Benchmark:</strong> $25-$50 per ranking is healthy. &gt;$75 suggests content isn&#39;t optimized or targeting wrong keywords.</p>
+<h3>Technical ROI</h3>
+<p><strong>Metric:</strong> Rankings unlocked per $ spent</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Technical spend: $3,000</li>
+<li>Rankings improved after Core Web Vitals fix: 37 keywords moved up 3+ positions</li>
+<li><strong>Cost per ranking improvement:</strong> $81</li>
+</ul>
+<p><strong>Benchmark:</strong> Hard to isolate, but technical improvements should unlock 10-20+ ranking improvements per optimization cycle.</p>
+<h3>Link Building ROI</h3>
+<p><strong>Metric:</strong> Cost per acquired link, rankings gained per link</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Link building spend: $2,550/month</li>
+<li>Links acquired: 4 (DR 50+ sites)</li>
+<li><strong>Cost per link:</strong> $637.50</li>
+<li>Rankings improved: 12 keywords moved up 2+ positions</li>
+<li><strong>Ranking improvement per link:</strong> 3</li>
+</ul>
+<p><strong>Benchmark:</strong> $300-$1,000 per high-quality link is normal. If cost exceeds $1,500/link, reevaluate strategy.</p>
+<h3>Tools ROI</h3>
+<p><strong>Metric:</strong> Cost vs. value delivered (subjective but necessary)</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Ahrefs: $399/month → Used daily for keyword research, competitor analysis. High value.</li>
+<li>Clearscope: $170/month → Used for 5 articles/month. $34 per article. Marginal value.</li>
+</ul>
+<p><strong>Action:</strong> Cancel Clearscope, reallocate $170 to content production.</p>
+<h2>Budget Allocation Mistakes</h2>
+<h3>Mistake 1: Overinvesting in Tools</h3>
+<p>B2B companies spending $1,500/month on tools ($18K annually) while only publishing 20 articles total. Tools don&#39;t rank. Content ranks. Cancel redundant tools, reallocate to content.</p>
+<h3>Mistake 2: Underinvesting in Quality Control</h3>
+<p>Publishing 40 articles/month at $50/article (AI slop) instead of 15 articles/month at $400/article (expert writers). Low-quality content doesn&#39;t rank. Prioritize quality over volume.</p>
+<h3>Mistake 3: Link Building Before Content</h3>
+<p>Spending $5K/month on link building when you only have 10 articles published. Links amplify content that already ranks. Without content, links have nothing to amplify.</p>
+<h3>Mistake 4: Ignoring Technical Foundation</h3>
+<p>Publishing 100 articles on a site with 5-second load times and broken mobile experience. Content won&#39;t rank if technical SEO is broken. Fix foundation first.</p>
+<h3>Mistake 5: Static Allocation</h3>
+<p>Using same budget split for 3 years despite market changes. Reallocation should happen quarterly based on performance data and competitive landscape.</p>
+<h2>FAQ</h2>
+<h3>What if my budget is &lt;$5K/month?</h3>
+<p>Focus 80% on content, 15% on essential technical fixes, 5% on tools. Skip link building until you have 30+ articles published.</p>
+<h3>What if my budget is &gt;$25K/month?</h3>
+<p>Scale content production, increase link building aggressively (30-35%), invest in advanced tools (enterprise plans, custom integrations), hire in-house SEO team.</p>
+<h3>Should I hire in-house or outsource?</h3>
+<p><strong>&lt;$10K/month:** Outsource everything (freelancers, agencies, AI tools).
+**$10K-$20K/month:** Hybrid (in-house strategist + outsourced execution).
+**&gt;$20K/month:</strong> Build in-house team (SEO manager, content writer, technical specialist).</p>
+<h3>How do I justify SEO budget to executives?</h3>
+<p>Track cost per MQL from organic search. Compare to paid ads. If SEO generates MQLs at $150 and paid ads cost $400/MQL, SEO wins. Show data.</p>
+<h3>Can I reallocate mid-quarter?</h3>
+<p>Yes. If performance data shows content isn&#39;t working, shift budget to technical or link building immediately. Don&#39;t wait for quarterly review if problems are obvious.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

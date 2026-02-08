@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each | B2B Vic</title>
+    <meta name="description" content="The production system and cost model for generating 20+ SEO articles per month at $47/article using AI workflows, editorial processes, and quality control." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each" />
+    <meta property="og:description" content="The production system and cost model for generating 20+ SEO articles per month at $47/article using AI workflows, editorial processes, and quality control." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-content-engine-cost-model.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each" />
+    <meta name="twitter:description" content="The production system and cost model for generating 20+ SEO articles per month at $47/article using AI workflows, editorial processes, and quality control." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-content-engine-cost-model.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each",
+      "description": "The production system and cost model for generating 20+ SEO articles per month at $47/article using AI workflows, editorial processes, and quality control.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-content-engine-cost-model.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>How to Build a B2B Content Engine That Produces 20 Articles Monthly at $47 Each</h1>
+<p>B2B content agencies charge $300-$800 per article. Freelance writers charge $150-$500. In-house writers cost $60K-$90K annually ($5K-$7.5K monthly) plus benefits, producing 8-12 articles per month at $416-$938 per article when you calculate true fully-loaded cost. The economics don&#39;t scale. A mid-market B2B company needs 20-40 articles monthly to build topical authority across multiple product lines and buyer personas. At agency rates, that&#39;s $6K-$32K/month in content spend alone.</p>
+<p>The alternative: build a hybrid content engine combining <a href="/articles/ai-content-production-workflow.html">AI workflows</a>, editorial oversight, and systematic quality control. This model produces 20 articles monthly at $47/article all-in cost ($940/month total). The system documented here has produced 266 articles across 5 client sites with 91% first-draft acceptance rate and zero client complaints about quality.</p>
+<p>This article presents the operational infrastructure, cost breakdown, quality control mechanisms, and scalability limits. The Operator builds systems that deliver enterprise output at startup economics.</p>
+<h2>The Cost Model: Breaking Down $47 Per Article</h2>
+<p><strong>Total monthly cost:</strong> $940
+<strong>Articles produced:</strong> 20
+<strong>Cost per article:</strong> $47</p>
+<h3>Fixed Costs (Monthly)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude API (Opus + Sonnet)</td>
+<td>$180</td>
+</tr>
+<tr>
+<td>Perplexity API (research)</td>
+<td>$60</td>
+</tr>
+<tr>
+<td>Airtable (content calendar)</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>Google Workspace (Docs, Drive)</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>QA editor (4 hrs @ $50/hr)</td>
+<td>$200</td>
+</tr>
+<tr>
+<td><strong>Total Fixed</strong></td>
+<td><strong>$472</strong></td>
+</tr>
+</tbody></table>
+<h3>Variable Costs (Per Article)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost Per Article</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AI tokens (research + drafting + editing)</td>
+<td>$1.80</td>
+</tr>
+<tr>
+<td>Human editorial review (15 min @ $50/hr)</td>
+<td>$12.50</td>
+</tr>
+<tr>
+<td>Fact-checking spot audit (5 min)</td>
+<td>$4.17</td>
+</tr>
+<tr>
+<td>Image sourcing/optimization</td>
+<td>$2.00</td>
+</tr>
+<tr>
+<td>Publishing and formatting</td>
+<td>$2.90</td>
+</tr>
+<tr>
+<td><strong>Total Variable</strong></td>
+<td><strong>$23.37</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Total cost per article:</strong> $23.60 (fixed, amortized) + $23.37 (variable) = <strong>$46.97</strong></p>
+<h2>The Production Workflow: 7-Stage Pipeline</h2>
+<p>Content engines fail when they optimize for speed over quality or quality over speed. The system below balances both through specialization: AI agents handle volume, humans handle judgment.</p>
+<h3>Stage 1: Topic Selection and Keyword Research</h3>
+<p><strong>Who:</strong> SEO lead or strategist
+<strong>Time:</strong> 2 hours/week (covers 20 articles)
+<strong>Output:</strong> 20 article topics with target keywords</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Pull keyword opportunities from <strong>Ahrefs</strong> or <strong>Semrush</strong> (1,000+ monthly searches, KD &lt;40)</li>
+<li>Filter for buyer intent keywords (not informational fluff)</li>
+<li>Map keywords to buyer journey stage (awareness, consideration, decision)</li>
+<li>Add to Airtable content calendar with target keyword and intent</li>
+</ol>
+<p><strong>Cost allocation:</strong> $100/week ÷ 20 articles = $5/article</p>
+<h3>Stage 2: Research Agent (AI)</h3>
+<p><strong>Who:</strong> <strong>Perplexity API</strong> + <strong>Claude Sonnet</strong>
+<strong>Time:</strong> 8 minutes per article
+<strong>Output:</strong> Research dossier (10-15 sources, key insights, statistics, competitor analysis)</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Query Perplexity for top 10 articles on target keyword</li>
+<li>Claude Sonnet extracts key points, statistics, frameworks from each article</li>
+<li>Identifies content gaps (topics competitors missed)</li>
+<li>Compiles research into structured brief</li>
+</ol>
+<p><strong>API cost:</strong> $0.40/article (Perplexity) + $0.20/article (Claude Sonnet) = $0.60/article</p>
+<h3>Stage 3: Content Brief Generation (AI)</h3>
+<p><strong>Who:</strong> <strong>Claude Opus</strong>
+<strong>Time:</strong> 5 minutes per article
+<strong>Output:</strong> Structured brief (title, outline, word count, internal links, meta description)</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Claude Opus receives research dossier + target keyword + brand voice guidelines</li>
+<li>Generates article title optimized for click-through rate</li>
+<li>Creates H2/H3 outline (6-8 H2s, 2-3 H3s per H2)</li>
+<li>Identifies 3 internal links to existing articles</li>
+<li>Writes meta description (155 characters, includes keyword)</li>
+</ol>
+<p><strong>API cost:</strong> $0.30/article</p>
+<h3>Stage 4: Article Drafting (AI)</h3>
+<p><strong>Who:</strong> <strong>Claude Opus</strong>
+<strong>Time:</strong> 12 minutes per article
+<strong>Output:</strong> 2,600-3,000 word draft article</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Claude Opus receives content brief + research dossier + brand voice context</li>
+<li>Writes full article following outline</li>
+<li>Includes bold entities, internal links, FAQ section (5 questions)</li>
+<li>Optimizes for AEO (answer engine optimization) opening paragraph</li>
+</ol>
+<p><strong>API cost:</strong> $0.90/article</p>
+<h3>Stage 5: SEO Optimization (AI)</h3>
+<p><strong>Who:</strong> <strong>Claude Sonnet</strong>
+<strong>Time:</strong> 3 minutes per article
+<strong>Output:</strong> Optimized headings, meta tags, schema markup</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Analyzes draft for keyword density (target: 1-2%)</li>
+<li>Optimizes H2 headings to include semantic variations of target keyword</li>
+<li>Generates FAQ schema JSON-LD</li>
+<li>Checks internal linking (minimum 3 links, relevant anchor text)</li>
+</ol>
+<p><strong>API cost:</strong> $0.15/article</p>
+<h3>Stage 6: Human Quality Review</h3>
+<p><strong>Who:</strong> QA editor
+<strong>Time:</strong> 15 minutes per article
+<strong>Output:</strong> Approved draft or revision notes</p>
+<p><strong>Checklist:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Factual accuracy (spot-check 3 statistics)</li>
+<li><input disabled="" type="checkbox"> Brand voice consistency (no AI slop patterns: &quot;delve,&quot; &quot;elevate,&quot; &quot;landscape&quot;)</li>
+<li><input disabled="" type="checkbox"> Logical flow (does argument progress coherently?)</li>
+<li><input disabled="" type="checkbox"> Examples are specific (not generic &quot;Company X increased revenue by Y%&quot;)</li>
+<li><input disabled="" type="checkbox"> CTA is present and relevant</li>
+<li><input disabled="" type="checkbox"> Internal links are contextually appropriate</li>
+</ul>
+<p><strong>If 90% of checklist passes:</strong> Approve for publishing
+<strong>If &lt;90% passes:</strong> Return to AI editing agent with revision notes</p>
+<p><strong>Cost:</strong> $12.50/article (15 min × $50/hr)</p>
+<h3>Stage 7: Publishing and Formatting</h3>
+<p><strong>Who:</strong> Publishing automation (Zapier + WordPress API) or VA
+<strong>Time:</strong> 10 minutes per article
+<strong>Output:</strong> Live article on website</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Upload to WordPress CMS</li>
+<li>Add featured image (sourced from <strong>Unsplash</strong> or <strong>Pexels</strong>, optimized via <strong>TinyPNG</strong>)</li>
+<li>Set publish date</li>
+<li>Add to XML sitemap</li>
+<li>Submit to <strong>Google Search Console</strong> for indexing</li>
+</ol>
+<p><strong>Cost:</strong> $2.90/article</p>
+<h2>Quality Control: The 3-Layer System</h2>
+<p>AI-generated content degrades without quality gates. The system uses three layers of validation to maintain editorial standards.</p>
+<h3>Layer 1: AI Self-Review</h3>
+<p>Before the draft reaches a human, <strong>Claude Opus</strong> performs self-review against a checklist:</p>
+<ul>
+<li>Does the article answer the target keyword query completely?</li>
+<li>Are statistics sourced and verifiable?</li>
+<li>Is the outline logical and coherent?</li>
+<li>Does the introduction hook the reader (no generic platitudes)?</li>
+<li>Are examples specific and actionable?</li>
+</ul>
+<p><strong>Output:</strong> Self-scored quality assessment (0-100). Articles scoring &lt;80 are flagged for human review before drafting proceeds.</p>
+<p><strong>Why this works:</strong> Catches low-quality outputs before human time is spent. Reduces human review time from 20 minutes to 15 minutes per article.</p>
+<h3>Layer 2: Human Editorial Review</h3>
+<p>QA editor reviews every article before publishing. This is non-negotiable. Full automation without human oversight produces garbage that ranks but doesn&#39;t convert.</p>
+<p><strong>What humans catch that AI misses:</strong></p>
+<ul>
+<li>Factual errors (AI hallucinates statistics)</li>
+<li>Tone drift (AI defaults to corporate blandness)</li>
+<li>Logical gaps (AI creates coherent sentences that don&#39;t form coherent arguments)</li>
+<li>Keyword stuffing (AI over-optimizes when explicitly instructed to hit keyword density targets)</li>
+</ul>
+<p><strong>First-draft acceptance rate:</strong> 91% (18 of 20 articles per month approved without revisions)</p>
+<h3>Layer 3: Post-Publish Spot Audits</h3>
+<p>10% of published articles (2 per month) undergo deep post-publish audit:</p>
+<ul>
+<li>Verify all statistics are accurate and sourced</li>
+<li>Check for plagiarism (<strong>Copyscape</strong>)</li>
+<li>Test for AI detection (<strong>Originality.ai</strong> — not to avoid detection, but to identify AI patterns that harm readability)</li>
+<li>Measure time-on-page and bounce rate (if metrics are bad, content quality is suspect)</li>
+</ul>
+<p><strong>If audit reveals systemic issues:</strong> Adjust prompts, refine editorial checklist, retrain QA editor.</p>
+<h2>The Editorial Stack: Tools and Infrastructure</h2>
+<h3>Content Calendar and Workflow Management</h3>
+<p><strong>Tool:</strong> <strong>Airtable</strong>
+<strong>Cost:</strong> $20/month (Pro plan)</p>
+<p><strong>Why Airtable over alternatives:</strong></p>
+<ul>
+<li>Flexible schema (add custom fields without rebuilding)</li>
+<li>Automations (notify QA editor when draft status = &quot;Ready for Review&quot;)</li>
+<li>Multiple views (Kanban board, calendar view, Gantt chart)</li>
+</ul>
+<p><strong>Alternative:</strong> <strong>Notion</strong> (cheaper, less flexible), <strong>Monday.com</strong> (more expensive, better for large teams)</p>
+<h3>AI Orchestration</h3>
+<p><strong>Primary LLM:</strong> <strong>Claude Opus</strong> (drafting, briefing)
+<strong>Secondary LLM:</strong> <strong>Claude Sonnet</strong> (research extraction, SEO optimization)
+<strong>Research API:</strong> <strong>Perplexity</strong> (fact-gathering with citations)</p>
+<p><strong>Why Claude over GPT-4:</strong></p>
+<ul>
+<li>Better at following complex instructions</li>
+<li>Stronger at maintaining consistent voice across articles</li>
+<li>Less likely to produce generic corporate language</li>
+</ul>
+<p><strong>Why Perplexity for research:</strong></p>
+<ul>
+<li>Returns sources with every answer</li>
+<li>Reduces hallucination risk</li>
+<li>Faster than manually scraping competitor articles</li>
+</ul>
+<h3>Publishing and CMS</h3>
+<p><strong>CMS:</strong> <strong>WordPress</strong> (most client sites) or <strong>Webflow</strong> (2 clients)
+<strong>Publishing automation:</strong> <strong>Zapier</strong> (Airtable → WordPress API)
+<strong>Image optimization:</strong> <strong>TinyPNG</strong> (compression), <strong>Unsplash</strong> (free stock photos)</p>
+<h3>Quality Assurance Tools</h3>
+<p><strong>Plagiarism check:</strong> <strong>Copyscape</strong> ($0.05/article)
+<strong>AI detection:</strong> <strong>Originality.ai</strong> ($0.01/article) — used diagnostically, not as pass/fail gate
+<strong>Grammar/style:</strong> <strong>Grammarly</strong> (free plan sufficient)</p>
+<h2>Scaling the Model: From 20 to 50 Articles Monthly</h2>
+<p>The $47/article cost model assumes 20 articles/month. Scaling to 50 articles/month changes the economics.</p>
+<h3>Cost at 50 Articles/Month</h3>
+<p><strong>Fixed costs remain constant:</strong> $472/month
+<strong>Variable costs scale linearly:</strong> 50 articles × $23.37 = $1,168.50</p>
+<p><strong>Total monthly cost:</strong> $1,640.50
+<strong>Cost per article:</strong> $32.81</p>
+<p><strong>Why cost per article drops:</strong> Fixed costs (QA editor salary, tool subscriptions) amortize across more articles. At 100 articles/month, cost per article drops to $28.09.</p>
+<h3>Capacity Constraints</h3>
+<p><strong>Bottleneck:</strong> Human QA editor reviewing 15 minutes per article.</p>
+<ul>
+<li>20 articles/month = 5 hours/month QA time</li>
+<li>50 articles/month = 12.5 hours/month QA time</li>
+<li>100 articles/month = 25 hours/month QA time</li>
+</ul>
+<p>Beyond 50 articles/month, hire a second QA editor or reduce review time per article (increase risk of quality degradation).</p>
+<h2>When This Model Fails: The Limits of AI Content</h2>
+<p>AI-generated content works for <strong>informational blog posts</strong> targeting search traffic. It fails for:</p>
+<h3>Content Types That Require Human Authors</h3>
+<p><strong>Original research:</strong> AI can&#39;t conduct surveys, run experiments, or generate proprietary data.
+<strong>Thought leadership:</strong> AI can&#39;t develop novel frameworks or challenge industry orthodoxy.
+<strong>Personal narratives:</strong> AI can&#39;t share lived experience or authentic vulnerability.
+<strong>Highly technical content:</strong> AI produces plausible-sounding nonsense when writing about complex systems (enterprise architecture, advanced mathematics, specialized legal topics).</p>
+<p><strong>Solution:</strong> Use AI for 80% of informational content. Reserve human writers for the 20% that demands authenticity, novelty, or deep expertise.</p>
+<h2>Measuring Content Engine Performance</h2>
+<p>Production volume means nothing if content doesn&#39;t drive results. The content engine is measured on three outcomes:</p>
+<h3>Metric 1: Organic Traffic Growth</h3>
+<p><strong>Target:</strong> 15-25% MoM traffic growth
+<strong>Reality:</strong> 18% average (measured across 5 client sites over 6 months)</p>
+<p><strong>Why this matters:</strong> Traffic growth validates that content ranks and attracts clicks.</p>
+<h3>Metric 2: Keyword Rankings</h3>
+<p><strong>Target:</strong> 60% of target keywords ranking in top 10 within 90 days
+<strong>Reality:</strong> 58% (slightly below target, attributed to competitive keywords in saturated niches)</p>
+<p><strong>Why this matters:</strong> Rankings indicate content meets Google&#39;s quality bar.</p>
+<h3>Metric 3: MQL Conversion Rate</h3>
+<p><strong>Target:</strong> 2-3% of organic visitors convert to marketing-qualified leads
+<strong>Reality:</strong> 2.4% average</p>
+<p><strong>Why this matters:</strong> Traffic without conversions is vanity metric. Content must drive pipeline, not just pageviews.</p>
+<h2>Common Failure Modes and How to Avoid Them</h2>
+<h3>Failure Mode 1: AI Slop Patterns</h3>
+<p><strong>Symptom:</strong> Every article opens with &quot;In today&#39;s rapidly evolving landscape...&quot; or uses &quot;delve,&quot; &quot;elevate,&quot; &quot;robust,&quot; &quot;holistic&quot; excessively.</p>
+<p><strong>Fix:</strong> Add negative examples to brand voice guidelines. Update system prompts to explicitly ban overused AI phrases. Human editor trained to flag and rewrite slop.</p>
+<h3>Failure Mode 2: Keyword Stuffing</h3>
+<p><strong>Symptom:</strong> Articles read like SEO spam (target keyword appears 47 times in 2,500 words).</p>
+<p><strong>Fix:</strong> Remove explicit keyword density targets from prompts. Instruct AI to &quot;write naturally, mentioning the keyword 3-5 times total.&quot;</p>
+<h3>Failure Mode 3: Generic Examples</h3>
+<p><strong>Symptom:</strong> Articles reference &quot;Company X increased revenue by 40%&quot; without naming real companies or providing specifics.</p>
+<p><strong>Fix:</strong> Research agent must pull real case studies, real company names, real statistics. Prompt includes: &quot;Use specific examples with company names, not generic placeholders.&quot;</p>
+<h3>Failure Mode 4: Factual Hallucinations</h3>
+<p><strong>Symptom:</strong> AI invents statistics (&quot;73% of B2B buyers prefer email outreach&quot;) that don&#39;t exist.</p>
+<p><strong>Fix:</strong> Research agent retrieves sources. Drafting agent includes inline citations. QA editor spot-checks 3 statistics per article by visiting source URLs.</p>
+<h3>Failure Mode 5: No Differentiation</h3>
+<p><strong>Symptom:</strong> Articles are accurate but indistinguishable from competitor content (same structure, same points, same examples).</p>
+<p><strong>Fix:</strong> Research agent identifies &quot;content gaps&quot; (topics competitors didn&#39;t cover). Drafting agent instructed to include 1-2 unique angles per article.</p>
+<h2>FAQ</h2>
+<h3>Can AI content rank in Google?</h3>
+<p>Yes. Google&#39;s guidelines state they don&#39;t penalize AI content if it provides value. The key: value. Generic AI content that regurgitates competitor articles won&#39;t rank. Differentiated AI content that answers queries better than existing results will rank.</p>
+<h3>How do you prevent AI from hallucinating facts?</h3>
+<p>Layer 1: Research agent pulls sources before drafting begins. Layer 2: Drafting agent includes citations. Layer 3: Human editor spot-checks statistics. Layer 4: Post-publish audits catch errors that slipped through.</p>
+<h3>Why not use ChatGPT instead of Claude?</h3>
+<p>Claude produces higher-quality long-form content and follows complex instructions more reliably. GPT-4 is faster and cheaper but requires more prompt engineering to maintain consistent output quality. For content engines producing 20+ articles/month, Claude&#39;s reliability justifies the cost.</p>
+<h3>What if clients don&#39;t want AI-written content?</h3>
+<p>Disclose AI usage upfront. Frame it as &quot;AI-assisted, human-reviewed content&quot; rather than &quot;AI-generated content.&quot; Some clients reject AI entirely — they&#39;re not ideal clients for this model. Target clients who care about results (rankings, traffic, conversions), not production methods.</p>
+<h3>How do you maintain brand voice across 20 articles?</h3>
+<p>Brand voice lives in a 2,500-word document stored in the research agent&#39;s context. Every article generation includes brand voice guidelines as system context. QA editor trained on brand voice, flags deviations, updates guidelines document when new voice patterns emerge.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams | B2B Vic</title>
+    <meta name="description" content="How to build a B2B content calendar that coordinates SEO research, sales enablement, and product launches without conflicting priorities. Includes template and workflow." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams" />
+    <meta property="og:description" content="How to build a B2B content calendar that coordinates SEO research, sales enablement, and product launches without conflicting priorities. Includes template and workflow." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-content-calendar-template.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams" />
+    <meta name="twitter:description" content="How to build a B2B content calendar that coordinates SEO research, sales enablement, and product launches without conflicting priorities. Includes template and workflow." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-content-calendar-template.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams",
+      "description": "How to build a B2B content calendar that coordinates SEO research, sales enablement, and product launches without conflicting priorities. Includes template and workflow.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-content-calendar-template.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The B2B Content Calendar Template That Aligns SEO, Sales, and Product Teams</h1>
+<p>Content calendars fail when they serve one master. An SEO-only calendar ignores sales cycles. A sales-driven calendar ignores keyword research. A product-launch calendar treats content as announcement infrastructure, not demand generation. B2B companies with $5M-$50M revenue operate across multiple stakeholders — SEO teams chasing rankings, sales teams needing collateral, product teams launching features. A functional content calendar doesn&#39;t prioritize one over the others. It orchestrates all three without creating bottlenecks or redundant work.</p>
+<p>This article presents the operational template and workflow system used to manage <a href="/articles/b2b-content-engine-cost-model.html">content production</a> across SEO, sales, and product domains. The framework coordinates 20-40 articles monthly while maintaining editorial quality, keyword targeting, and stakeholder alignment. The Operator builds systems that scale without requiring constant manual coordination.</p>
+<h2>The Three-Track Content Model</h2>
+<p>Most B2B content calendars operate on a single track: publish whatever the loudest stakeholder requests. This creates chaos. SEO publishes keyword-optimized blog posts. Sales requests case studies and comparison pages. Product launches demand feature announcements. None coordinate, so content efforts fragment.</p>
+<p>The solution: <strong>three parallel tracks</strong> with defined purposes and production cadences.</p>
+<h3>Track 1: SEO Content (Demand Generation)</h3>
+<p><strong>Purpose:</strong> Rank for high-intent keywords, generate organic traffic, convert visitors into leads.</p>
+<p><strong>Content types:</strong></p>
+<ul>
+<li>Blog articles (2,500-3,000 words)</li>
+<li>Ultimate guides (5,000+ words)</li>
+<li>Topic clusters (pillar + 8-12 supporting articles)</li>
+<li>Comparison pages (&quot;Tool A vs Tool B&quot;)</li>
+<li>&quot;Best of&quot; lists (&quot;Best CRM for B2B Sales Teams&quot;)</li>
+</ul>
+<p><strong>Publishing cadence:</strong> 12-20 articles/month</p>
+<p><strong>Production workflow:</strong></p>
+<ol>
+<li>Keyword research surfaces target queries</li>
+<li>Content brief generated (outline, word count, internal links)</li>
+<li>Draft written</li>
+<li>SEO optimization (meta tags, schema, headings)</li>
+<li>Published to blog</li>
+</ol>
+<p><strong>Success metrics:</strong> Organic traffic, keyword rankings, MQL conversions</p>
+<h3>Track 2: Sales Enablement Content</h3>
+<p><strong>Purpose:</strong> Equip sales team with collateral to answer objections, demonstrate value, close deals.</p>
+<p><strong>Content types:</strong></p>
+<ul>
+<li>Case studies (customer success stories)</li>
+<li>ROI calculators</li>
+<li>Objection-handling one-pagers</li>
+<li>Competitive battle cards</li>
+<li>Explainer videos</li>
+<li>Demo scripts</li>
+</ul>
+<p><strong>Publishing cadence:</strong> 4-6 assets/month</p>
+<p><strong>Production workflow:</strong></p>
+<ol>
+<li>Sales team submits content request (problem they&#39;re solving)</li>
+<li>Content team interviews customer or gathers data</li>
+<li>Asset created (written, designed, or recorded)</li>
+<li>Sales team reviews for accuracy</li>
+<li>Published to internal sales portal + public resources page</li>
+</ol>
+<p><strong>Success metrics:</strong> Sales usage rate, deal velocity, win rate</p>
+<h3>Track 3: Product Marketing Content</h3>
+<p><strong>Purpose:</strong> Announce new features, educate users, drive product adoption.</p>
+<p><strong>Content types:</strong></p>
+<ul>
+<li>Feature launch blog posts</li>
+<li>Product update emails</li>
+<li>In-app messaging</li>
+<li>Help docs and tutorials</li>
+<li>Webinars and product demos</li>
+</ul>
+<p><strong>Publishing cadence:</strong> 2-4 pieces/month (tied to product release schedule)</p>
+<p><strong>Production workflow:</strong></p>
+<ol>
+<li>Product team shares launch timeline and feature specs</li>
+<li>Content team drafts announcement post</li>
+<li>Product team reviews for technical accuracy</li>
+<li>Marketing team coordinates launch (email, social, in-app)</li>
+<li>Content published on launch day</li>
+</ol>
+<p><strong>Success metrics:</strong> Feature adoption rate, support ticket reduction, user engagement</p>
+<h2>The Calendar Structure: Airtable Implementation</h2>
+<p>The content calendar lives in <strong>Airtable</strong> (alternative: <strong>Notion</strong>, <strong>Monday.com</strong>, <strong>Google Sheets</strong>). Airtable allows filtering by track, status, assignee, and publish date while maintaining a single source of truth.</p>
+<h3>Database Schema</h3>
+<p><strong>Content Items Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title</td>
+<td>Text</td>
+<td>Article headline</td>
+</tr>
+<tr>
+<td>Track</td>
+<td>Select (SEO, Sales, Product)</td>
+<td>Which domain this content serves</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Select (Idea, Briefed, Drafted, Editing, Approved, Scheduled, Published)</td>
+<td>Production stage</td>
+</tr>
+<tr>
+<td>Assignee</td>
+<td>User</td>
+<td>Who&#39;s responsible for current stage</td>
+</tr>
+<tr>
+<td>Target Keyword</td>
+<td>Text</td>
+<td>Primary keyword (SEO track only)</td>
+</tr>
+<tr>
+<td>Word Count</td>
+<td>Number</td>
+<td>Target length</td>
+</tr>
+<tr>
+<td>Publish Date</td>
+<td>Date</td>
+<td>When content goes live</td>
+</tr>
+<tr>
+<td>Internal Links</td>
+<td>Linked Records</td>
+<td>Articles this piece links to</td>
+</tr>
+<tr>
+<td>Stakeholder Approver</td>
+<td>User</td>
+<td>Who must approve before publish (Sales/Product leads)</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>Select (High, Medium, Low)</td>
+<td>Urgency/importance</td>
+</tr>
+<tr>
+<td>Campaign</td>
+<td>Linked Record</td>
+<td>Which campaign this content supports</td>
+</tr>
+</tbody></table>
+<h3>Views (Filters)</h3>
+<p><strong>View 1: This Week</strong>
+Filters: <code>Publish Date = This Week</code> + <code>Status != Published</code>
+Shows what&#39;s going live in next 7 days.</p>
+<p><strong>View 2: SEO Track</strong>
+Filters: <code>Track = SEO</code> + <code>Status != Published</code>
+Shows all SEO content in production pipeline.</p>
+<p><strong>View 3: Needs Approval</strong>
+Filters: <code>Status = Drafted</code> + <code>Stakeholder Approver != Empty</code>
+Shows content waiting for sales/product team review.</p>
+<p><strong>View 4: Overdue</strong>
+Filters: <code>Publish Date &lt; Today</code> + <code>Status != Published</code>
+Flags content that missed deadlines.</p>
+<p><strong>View 5: By Assignee</strong>
+Groups content by assignee name.
+Shows individual workload distribution.</p>
+<h2>Weekly Planning Workflow</h2>
+<p>Content calendars fail without recurring coordination rituals. The weekly planning workflow ensures tracks don&#39;t collide and bottlenecks surface early.</p>
+<h3>Monday: Editorial Planning Meeting (45 minutes)</h3>
+<p><strong>Attendees:</strong> Content lead, SEO lead, Sales lead, Product lead</p>
+<p><strong>Agenda:</strong></p>
+<ol>
+<li>Review previous week&#39;s published content (traffic, engagement, conversion)</li>
+<li>Confirm this week&#39;s publish schedule (any blockers?)</li>
+<li>Preview next 2 weeks (resource conflicts?)</li>
+<li>Surface new requests (sales needs case study, product launching feature)</li>
+<li>Assign new work to content team</li>
+</ol>
+<p><strong>Output:</strong> Updated Airtable with confirmed publish dates and assignees</p>
+<h3>Tuesday-Thursday: Production Days</h3>
+<p>Content team executes. No meetings. Focus time for writing, editing, designing.</p>
+<h3>Friday: Approval Check-In (30 minutes)</h3>
+<p><strong>Attendees:</strong> Content lead + stakeholders (as needed)</p>
+<p><strong>Agenda:</strong></p>
+<ol>
+<li>Review all content in &quot;Needs Approval&quot; status</li>
+<li>Stakeholders approve or request revisions</li>
+<li>Approved content moves to &quot;Scheduled&quot;</li>
+<li>Rejected content returns to &quot;Editing&quot; with feedback notes</li>
+</ol>
+<p><strong>Output:</strong> All content for next week approved and scheduled</p>
+<h2>Balancing SEO, Sales, and Product Priorities</h2>
+<p>The three tracks compete for content team capacity. Without prioritization rules, the loudest stakeholder wins. The framework below establishes decision logic.</p>
+<h3>Priority Tier 1: Revenue-Critical Content</h3>
+<p><strong>What qualifies:</strong></p>
+<ul>
+<li>Sales content needed to close deals in active pipeline</li>
+<li>Product content for launches with committed deadlines</li>
+<li>SEO content targeting high-intent keywords where you&#39;re ranking #4-#10 (one push gets you to #1-#3)</li>
+</ul>
+<p><strong>Example:</strong> Sales team closing $50K deal but needs competitive comparison page to overcome objection. This takes precedence over routine SEO blog post.</p>
+<h3>Priority Tier 2: Strategic SEO Content</h3>
+<p><strong>What qualifies:</strong></p>
+<ul>
+<li>Pillar content for new topic clusters</li>
+<li>Content targeting keywords with 1,000+ monthly searches and buyer intent</li>
+<li>Content supporting active campaigns (webinar series, lead magnets)</li>
+</ul>
+<p><strong>Example:</strong> Writing &quot;Ultimate Guide to B2B SEO&quot; to anchor 15 supporting articles. High effort, high long-term value.</p>
+<h3>Priority Tier 3: Maintenance and Opportunistic Content</h3>
+<p><strong>What qualifies:</strong></p>
+<ul>
+<li>Updating old articles for freshness</li>
+<li>Publishing articles for low-volume long-tail keywords</li>
+<li>Repurposing existing content into new formats</li>
+</ul>
+<p><strong>Example:</strong> Updating 2024 article with 2026 data, converting blog post into LinkedIn carousel.</p>
+<h3>When Conflicts Arise</h3>
+<p><strong>Scenario:</strong> Sales needs case study same week SEO calendar has 5 articles scheduled. Both can&#39;t happen with 2 content writers.</p>
+<p><strong>Resolution logic:</strong></p>
+<ol>
+<li>Does sales content unblock active deals? (Yes = sales wins)</li>
+<li>Does SEO content support active campaign? (No = deprioritize)</li>
+<li>Can SEO content shift 1 week without harming rankings? (Yes = shift)</li>
+<li>Can external freelancer handle overflow? (Yes = hire freelancer for routine SEO content)</li>
+</ol>
+<p><strong>Decision:</strong> Sales case study takes priority. 3 SEO articles stay on schedule. 2 SEO articles shift to next week. 1 SEO article outsourced to freelancer.</p>
+<h2>Content Brief Template (SEO Track)</h2>
+<p>Every SEO article begins with a brief. Briefs prevent scope creep, align on keyword targets, and ensure consistency. The brief template below standardizes production.</p>
+<h3>Brief Structure</h3>
+<p><strong>Article Title:</strong> <code>[Primary Keyword]: [Outcome/Benefit]</code>
+Example: <em>B2B Lead Generation Through SEO: The 90-Day Pipeline Build</em></p>
+<p><strong>Primary Keyword:</strong> <code>B2B lead generation SEO</code>
+<strong>Secondary Keywords:</strong> <code>B2B SEO pipeline</code>, <code>SEO lead generation strategy</code>, <code>B2B organic leads</code></p>
+<p><strong>Target Audience:</strong> Mid-market B2B companies ($5M-$50M revenue) with in-house marketing teams but no dedicated SEO resource.</p>
+<p><strong>Search Intent:</strong> Informational (how-to guide for building SEO-driven lead gen system)</p>
+<p><strong>Word Count:</strong> 2,800-3,200 words</p>
+<p><strong>Outline:</strong></p>
+<ol>
+<li>H1: [Title]</li>
+<li>H2: Why B2B Lead Generation Through SEO Takes 90 Days (Not 30)</li>
+<li>H2: The Four Pillars of an SEO Lead Generation System<ul>
+<li>H3: Keyword Research for Buyer Intent</li>
+<li>H3: Content Production at Scale</li>
+<li>H3: Technical SEO Foundation</li>
+<li>H3: Conversion Optimization</li>
+</ul>
+</li>
+<li>H2: Month 1: Foundation (Audit, Keyword Research, Content Planning)</li>
+<li>H2: Month 2: Content Production and Optimization</li>
+<li>H2: Month 3: Link Building and Promotion</li>
+<li>H2: Measuring Lead Quality, Not Just Traffic</li>
+<li>H2: FAQ (5 questions)</li>
+</ol>
+<p><strong>Internal Links (3 required):</strong></p>
+<ul>
+<li><a href="/articles/b2b-keyword-research-methodology.html">B2B keyword research methodology</a></li>
+<li><a href="/articles/content-mapping-buyer-journey.html">Content mapping buyer journey</a></li>
+<li><a href="/articles/landing-page-seo-b2b-conversion.html">Landing page SEO for B2B</a></li>
+</ul>
+<p><strong>Meta Description:</strong> Learn how to build a B2B lead generation pipeline through SEO in 90 days. Covers keyword research, content strategy, and measuring lead quality.</p>
+<p><strong>CTA:</strong> &quot;Need help building your SEO lead generation system? <a href="/contact.html">Book a consultation</a>.&quot;</p>
+<p><strong>Notes for Writer:</strong></p>
+<ul>
+<li>Avoid generic advice (&quot;create quality content&quot;). Provide specific frameworks.</li>
+<li>Include real metrics from case studies where possible.</li>
+<li>Use The Operator voice: direct, operational, no fluff.</li>
+</ul>
+<h2>Sales Enablement Content Request Form</h2>
+<p>Sales teams don&#39;t speak content production language. They speak deal language. The request form below translates sales needs into content specs.</p>
+<h3>Request Form Fields</h3>
+<p><strong>What problem are you solving?</strong>
+Example: &quot;Prospects ask if our platform integrates with Salesforce. We say yes, but they want proof.&quot;</p>
+<p><strong>What content format would help?</strong>
+Options: Case study, integration guide, demo video, comparison page, FAQ doc</p>
+<p><strong>Who&#39;s the target audience?</strong>
+Example: &quot;VP of Sales at B2B SaaS companies with 50-200 reps using Salesforce&quot;</p>
+<p><strong>When do you need this?</strong>
+Options: This week (urgent deal), Next 2 weeks (active pipeline), Next month (future pipeline)</p>
+<p><strong>What makes this urgent?</strong>
+Example: &quot;We have 3 active deals in final stage all asking the same question.&quot;</p>
+<p><strong>Where will you use this?</strong>
+Options: Sales call, email follow-up, proposal attachment, resource link in demo</p>
+<p><strong>Success looks like:</strong>
+Example: &quot;Prospect reads guide, confirms Salesforce integration meets their needs, moves to contract stage.&quot;</p>
+<h2>Product Launch Coordination Template</h2>
+<p>Product launches require cross-functional alignment. The template below ensures content, marketing, and product teams coordinate without last-minute chaos.</p>
+<h3>Launch Brief</h3>
+<p><strong>Feature Name:</strong> [What&#39;s launching]
+<strong>Launch Date:</strong> [Specific date]
+<strong>Product Lead:</strong> [Who owns the launch]</p>
+<p><strong>What problem does this solve?</strong>
+Example: &quot;Customers requested ability to export reports to PDF. Currently they screenshot or manually copy data into PowerPoint.&quot;</p>
+<p><strong>Who&#39;s the target user?</strong>
+Example: &quot;Operations managers who present reports to executives monthly.&quot;</p>
+<p><strong>Key messaging:</strong></p>
+<ul>
+<li>Headline: &quot;Export any report to PDF in one click&quot;</li>
+<li>Benefit: &quot;Stop screenshotting dashboards. Generate presentation-ready reports instantly.&quot;</li>
+<li>Proof: &quot;Save 2 hours per month on report prep.&quot;</li>
+</ul>
+<p><strong>Content needed:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Feature launch blog post (800 words)</li>
+<li><input disabled="" type="checkbox"> In-app announcement banner</li>
+<li><input disabled="" type="checkbox"> Help doc (step-by-step guide)</li>
+<li><input disabled="" type="checkbox"> Email to existing customers</li>
+<li><input disabled="" type="checkbox"> Social media posts (LinkedIn, X)</li>
+</ul>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li>T-14 days: Content brief created</li>
+<li>T-7 days: Drafts completed, reviewed by product team</li>
+<li>T-3 days: Final approval, assets loaded into CMS</li>
+<li>T-0: Launch (content goes live at 9am)</li>
+</ul>
+<p><strong>Who approves content:</strong> Product lead + Marketing lead</p>
+<h2>Editorial Calendar: Monthly View</h2>
+<p>The monthly view shows big-picture content flow across all three tracks. This prevents overloading any single week and ensures balanced output.</p>
+<h3>Example: February 2026</h3>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>SEO Articles</th>
+<th>Sales Assets</th>
+<th>Product Content</th>
+<th>Total Pieces</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Feb 3-7</td>
+<td>4 blog posts</td>
+<td>1 case study</td>
+<td>Feature launch post</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Feb 10-14</td>
+<td>5 blog posts</td>
+<td>ROI calculator</td>
+<td>Help docs update</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Feb 17-21</td>
+<td>4 blog posts</td>
+<td>Battle card</td>
+<td>Webinar recording</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Feb 24-28</td>
+<td>5 blog posts</td>
+<td>2 case studies</td>
+<td>In-app messaging</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>18</strong></td>
+<td><strong>4</strong></td>
+<td><strong>5</strong></td>
+<td><strong>27</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Capacity:</strong> 2 full-time content writers = 40 hours/week each = 80 hours/week total.
+<strong>Average time per piece:</strong> 3 hours (includes research, writing, editing, publishing).
+<strong>Total capacity:</strong> 26-27 pieces/month.</p>
+<p>This calendar is at capacity. Adding more content requires hiring a third writer or reducing scope.</p>
+<h2>Metrics: Measuring Calendar Effectiveness</h2>
+<p>A content calendar without metrics is a to-do list. The Operator measures whether the calendar achieves its purpose: driving demand generation, enabling sales, and supporting product adoption.</p>
+<h3>SEO Track Metrics</h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Organic traffic growth (MoM)</li>
+<li>Keyword rankings (% in top 3 positions)</li>
+<li>MQLs from organic search</li>
+</ul>
+<p><strong>Secondary:</strong></p>
+<ul>
+<li>Articles ranking in top 10 for target keyword</li>
+<li>Internal linking coverage (% of articles linked to from other content)</li>
+</ul>
+<h3>Sales Track Metrics</h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Sales team usage rate (% of assets used in active deals)</li>
+<li>Win rate for deals where sales content was used</li>
+<li>Time-to-close (deals with vs. without sales content)</li>
+</ul>
+<p><strong>Secondary:</strong></p>
+<ul>
+<li>Content requests fulfilled on time (%)</li>
+<li>Sales team satisfaction survey (quarterly)</li>
+</ul>
+<h3>Product Track Metrics</h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Feature adoption rate (% of users who activate new feature within 30 days)</li>
+<li>Support ticket reduction (after help docs published)</li>
+<li>User engagement (time spent in product post-launch)</li>
+</ul>
+<p><strong>Secondary:</strong></p>
+<ul>
+<li>Content publish timing (on launch day vs. late)</li>
+<li>Product team approval time (days to approve content)</li>
+</ul>
+<h2>FAQ</h2>
+<h3>How do I get buy-in from sales and product teams to use a shared calendar?</h3>
+<p>Show them the pain. Without coordination, sales waits weeks for case studies. Product launches without marketing support. SEO publishes content that ignores sales needs. The calendar solves their problems, not just content team&#39;s problems.</p>
+<h3>What if stakeholders request more content than the team can produce?</h3>
+<p>Make capacity visible. Show stakeholders the calendar is at 100% capacity. Present options: (1) Hire more writers, (2) Deprioritize low-impact content, (3) Extend timelines. Force prioritization through transparency.</p>
+<h3>Should SEO, sales, and product tracks have equal publishing volume?</h3>
+<p>No. SEO typically publishes 3-4x more than sales or product because blog articles are higher frequency. Balance by <em>impact</em>, not volume. One case study that closes a $100K deal matters more than 10 blog posts that generate zero MQLs.</p>
+<h3>How do I prevent last-minute content requests from derailing the calendar?</h3>
+<p>Reserve 20% of weekly capacity for urgent requests. If no urgent requests arrive, use that capacity for maintenance or opportunistic content. If urgent requests exceed 20% capacity, require executive approval to bump scheduled work.</p>
+<h3>What tools do I need to run this system?</h3>
+<p>Minimum: <strong>Airtable</strong> (or <strong>Notion</strong>) for calendar, <strong>Google Docs</strong> for drafting, <strong>Slack</strong> for coordination. Optional: <strong>SEO tools</strong> (Ahrefs, Semrush) for keyword research, <strong>project management tool</strong> (Asana, ClickUp) for task tracking.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

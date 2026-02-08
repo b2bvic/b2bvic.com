@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration | B2B Vic</title>
+    <meta name="description" content="Automate business workflows with Claude Code. Use AI-powered file management, CRM automation, content production, and API integration for B2B operations." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration" />
+    <meta property="og:description" content="Automate business workflows with Claude Code. Use AI-powered file management, CRM automation, content production, and API integration for B2B operations." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/claude-code-business-automation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration" />
+    <meta name="twitter:description" content="Automate business workflows with Claude Code. Use AI-powered file management, CRM automation, content production, and API integration for B2B operations." />
+    <link rel="canonical" href="https://b2bvic.com/articles/claude-code-business-automation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration",
+      "description": "Automate business workflows with Claude Code. Use AI-powered file management, CRM automation, content production, and API integration for B2B operations.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/claude-code-business-automation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Claude Code for Business Automation: AI-Powered Operations and Workflow Orchestration</h1>
+<p><strong>Claude Code business automation</strong> transforms how operations teams manage files, orchestrate workflows, integrate systems, and produce content by combining <strong>Anthropic&#39;s Opus 4.6</strong> reasoning capabilities with direct filesystem access, API integration, and browser control through <strong>Model Context Protocol (MCP)</strong>. Unlike traditional business automation requiring engineering implementation and brittle scripts, Claude Code interprets operational objectives in natural language, plans multi-step execution sequences, and adapts to unexpected states without explicit programming. The operational threshold shifts from &quot;what can we afford to engineer&quot; to &quot;what workflows consume human time that AI could handle autonomously.&quot;</p>
+<h2>Why Claude Code Changes Business Automation Economics</h2>
+<p>Traditional business automation follows a predictable pattern: identify repetitive workflow, scope engineering project, build custom scripts or integrate third-party tools, maintain as systems evolve. This model works for high-volume, high-value workflows (payroll processing, inventory management, order fulfillment) but fails for long-tail operations—tasks occurring daily that consume 30-90 minutes but don&#39;t justify weeks of engineering investment.</p>
+<p><strong>The automation trough</strong> — Workflows too complex for simple tools (Zapier, IFTTT) but too low-value for custom development languish unautomated. Sales ops manually updating CRM fields from email conversations. Marketing coordinators copy-pasting analytics data into monthly reports. Finance teams downloading CSVs from vendor portals that lack export APIs. These workflows persist because automation cost exceeds manual execution cost.</p>
+<p><strong>Claude Code collapses the automation trough</strong> by eliminating engineering as a prerequisite. Operations teams describe workflows conversationally; Claude plans execution, handles errors, and adapts to edge cases. A workflow description like &quot;Read today&#39;s client emails, extract action items, update relevant CRM opportunities, send summary to Slack&quot; becomes executable without writing code.</p>
+<h2>Core Claude Code Automation Capabilities</h2>
+<h3>Filesystem Operations and Document Management</h3>
+<p>Claude Code reads, writes, searches, and reorganizes files across any directory the process can access. Unlike traditional file automation requiring exact paths and rigid logic, Claude interprets fuzzy instructions and adapts to actual filesystem state.</p>
+<p><strong>Document processing workflows:</strong></p>
+<ul>
+<li>Extract structured data from PDFs, spreadsheets, and text files</li>
+<li>Consolidate reports scattered across directories into unified dashboards</li>
+<li>Rename and reorganize files based on content analysis, not just filename patterns</li>
+<li>Sync files between cloud storage systems (Dropbox, Google Drive, OneDrive)</li>
+<li>Generate reports from data sources using templating and natural language instructions</li>
+</ul>
+<p><strong>Example workflow:</strong> &quot;Find all client proposals from Q4 2025, extract pricing tables, calculate win rates by deal size, generate summary spreadsheet.&quot;</p>
+<p>Claude searches directories matching timeframe criteria, identifies proposal documents through content analysis (not rigid filename matching), locates pricing sections using semantic understanding, performs calculations, and outputs structured results—all through conversational instruction.</p>
+<h3>CRM Automation and Data Management</h3>
+<p>Claude Code integrates with CRM platforms through APIs, enabling data entry, record updates, pipeline management, and reporting without manual clicking through interfaces.</p>
+<p><strong>CRM workflow examples:</strong></p>
+<ul>
+<li><strong>Lead enrichment</strong> — Extract company data from prospect websites, populate CRM custom fields</li>
+<li><strong>Pipeline hygiene</strong> — Identify stale opportunities (no activity &gt;30 days), send rep reminders, auto-disqualify after thresholds</li>
+<li><strong>Activity logging</strong> — Parse emails for customer interactions, create CRM activities with timestamps and summaries</li>
+<li><strong>Reporting automation</strong> — Pull weekly pipeline snapshots, calculate velocity metrics, distribute via Slack/email</li>
+<li><strong>Data deduplication</strong> — Identify duplicate contact records based on fuzzy matching, merge with data quality rules</li>
+</ul>
+<p>For teams evaluating CRM platforms that pair well with automation, see <a href="best-crm-b2b-sales-teams.html">best-crm-b2b-sales-teams.html</a> for systems with robust API access.</p>
+<p>Traditional CRM automation through Zapier or native workflow builders handles linear trigger-action sequences. Claude Code handles conditional logic, multi-step orchestration, and adaptive responses to data quality issues without pre-programming every edge case.</p>
+<h3>Content Production and Editing</h3>
+<p>Claude Code generates, edits, and publishes content across workflows—blog posts, social media, email newsletters, documentation, proposals.</p>
+<p><strong>Content automation patterns:</strong></p>
+<ul>
+<li><strong>Research synthesis</strong> — Aggregate competitor content, industry news, customer feedback into briefing documents</li>
+<li><strong>Multi-format adaptation</strong> — Convert long-form articles into social posts, email sequences, video scripts</li>
+<li><strong>SEO optimization</strong> — Audit existing content for keyword density, meta descriptions, internal linking; generate improvement recommendations</li>
+<li><strong>Brand consistency</strong> — Scan content for style guide violations, suggest edits aligning with brand voice</li>
+<li><strong>Batch production</strong> — Generate series of related articles from topical outlines using consistent structure and voice</li>
+</ul>
+<p><strong>Example workflow:</strong> &quot;Review competitor blog posts on enterprise SEO, extract key themes, generate 5 article outlines positioning our approach as superior, write first article.&quot;</p>
+<p>Claude researches sources, synthesizes insights, structures outlines, and produces initial drafts—collapsing week-long content planning into hours. For systematic content production at scale, explore <a href="ai-content-production-workflow.html">ai-content-production-workflow.html</a>.</p>
+<h3>Email and Communication Automation</h3>
+<p>Claude Code processes inbound email, generates responses, coordinates scheduling, and manages communication workflows.</p>
+<p><strong>Email automation examples:</strong></p>
+<ul>
+<li><strong>Triage and routing</strong> — Analyze inbound emails, categorize by urgency/topic, route to appropriate team members</li>
+<li><strong>Response drafting</strong> — Generate initial response drafts for common inquiry types, queue for human review</li>
+<li><strong>Follow-up sequences</strong> — Track email conversations requiring follow-up, send reminders or automated check-ins</li>
+<li><strong>Meeting coordination</strong> — Extract meeting requests from emails, propose times based on calendar availability, send confirmations</li>
+<li><strong>Digest generation</strong> — Summarize daily email volume into prioritized action item lists</li>
+</ul>
+<p>Traditional email automation (filters, auto-responders) handles simple pattern matching. Claude interprets semantic meaning, understands context across email threads, and generates contextually appropriate responses.</p>
+<h3>Browser Automation and Web Research</h3>
+<p>Through MCP integration with browser control tools, Claude Code navigates websites, extracts data, fills forms, and monitors web content without API access.</p>
+<p><strong>Browser automation scenarios:</strong></p>
+<ul>
+<li><strong>Competitive intelligence</strong> — Visit competitor websites, extract pricing/features, compare to internal offerings</li>
+<li><strong>Lead research</strong> — Navigate to prospect websites, extract company data (headcount, tech stack, funding), populate CRM</li>
+<li><strong>Vendor portal management</strong> — Login to supplier portals, extract transaction data, reconcile with internal systems</li>
+<li><strong>Content monitoring</strong> — Track competitor blog updates, industry news sites, customer review platforms</li>
+<li><strong>Form submission</strong> — Complete repetitive web forms (event registrations, vendor applications, survey responses)</li>
+</ul>
+<p>For comprehensive browser automation capabilities, see <a href="browser-automation-ai-tools.html">browser-automation-ai-tools.html</a>.</p>
+<h3>API Integration and System Orchestration</h3>
+<p>Claude Code calls REST APIs, parses responses, and chains multi-system workflows without custom integration code.</p>
+<p><strong>Integration patterns:</strong></p>
+<ul>
+<li><strong>CRM ↔ Marketing automation</strong> — Sync lead scores from HubSpot to Salesforce, trigger email sequences based on CRM stage changes</li>
+<li><strong>Accounting ↔ Project management</strong> — Extract timesheet data from project management tools, generate invoices in accounting systems</li>
+<li><strong>Customer success ↔ Support</strong> — Monitor support ticket metrics, identify at-risk accounts, create customer success tasks</li>
+<li><strong>Analytics ↔ Reporting</strong> — Pull data from Google Analytics, SEO tools, ad platforms, consolidate into unified dashboards</li>
+</ul>
+<p>Traditional integration platforms (Zapier, Workato, Make) require visual workflow configuration and handle predefined trigger-action pairs. Claude Code interprets objectives, constructs API calls dynamically, handles authentication, parses responses, and orchestrates complex multi-step sequences through natural language instructions.</p>
+<h2>Real-World Automation Workflows</h2>
+<h3>Sales Operations: Lead Enrichment Pipeline</h3>
+<p><strong>Objective:</strong> Automatically research and enrich new leads entering CRM.</p>
+<p><strong>Manual process:</strong> Sales ops team spends 15 minutes per lead visiting company websites, LinkedIn profiles, funding databases, extracting details, and populating CRM fields. With 50 leads weekly, that&#39;s 12.5 hours of manual work.</p>
+<p><strong>Claude Code automation:</strong></p>
+<ol>
+<li>Monitor CRM for new lead records</li>
+<li>Extract company domain from lead email</li>
+<li>Navigate to company website, extract headcount/funding/tech stack</li>
+<li>Search LinkedIn for company page, extract employee count and growth signals</li>
+<li>Query funding databases (Crunchbase API) for investment data</li>
+<li>Populate CRM custom fields with extracted data</li>
+<li>Calculate lead score based on enrichment data</li>
+<li>Assign high-score leads to senior reps, low-score to SDRs</li>
+</ol>
+<p><strong>Implementation:</strong> Conversational workflow description creates autonomous process that runs hourly, enriching leads without human intervention. Manual 15-minute task becomes zero-touch automation.</p>
+<h3>Marketing Operations: Content Distribution Workflow</h3>
+<p><strong>Objective:</strong> Publish weekly blog post across channels (website, social media, email newsletter).</p>
+<p><strong>Manual process:</strong> Marketing coordinator copies blog post content, reformats for each platform, schedules posts, updates content calendar. 90 minutes weekly.</p>
+<p><strong>Claude Code automation:</strong></p>
+<ol>
+<li>Detect new blog post publication on website</li>
+<li>Extract title, excerpt, URL, featured image</li>
+<li>Generate platform-specific variants:<ul>
+<li>Twitter: 280-char summary + link + hashtags</li>
+<li>LinkedIn: 3-paragraph narrative + link</li>
+<li>Email: Newsletter-formatted version with CTA</li>
+</ul>
+</li>
+<li>Schedule posts using platform APIs (Buffer, Hootsuite) or direct posting</li>
+<li>Update content calendar spreadsheet with publication details</li>
+<li>Send confirmation summary to marketing team Slack channel</li>
+</ol>
+<p><strong>Implementation:</strong> Post-publication workflow triggers automatically, distributing content across channels within minutes without coordinator involvement.</p>
+<h3>Finance Operations: Monthly Reconciliation Automation</h3>
+<p><strong>Objective:</strong> Reconcile vendor portal transactions with internal accounting system.</p>
+<p><strong>Manual process:</strong> Finance team logs into 12 vendor portals monthly, downloads CSV exports, imports into accounting software, flags discrepancies. 4 hours monthly.</p>
+<p><strong>Claude Code automation:</strong></p>
+<ol>
+<li>Navigate to each vendor portal using saved credentials</li>
+<li>Export transaction data for target month</li>
+<li>Standardize data formats across vendors (date formats, currency, line items)</li>
+<li>Import into accounting system via API or CSV upload</li>
+<li>Compare vendor data against internal purchase orders</li>
+<li>Generate discrepancy report highlighting mismatches &gt;$50</li>
+<li>Email report to finance manager for review</li>
+</ol>
+<p><strong>Implementation:</strong> Scheduled monthly execution eliminates manual portal navigation and data wrangling, reducing 4-hour workflow to 15-minute review of discrepancy report.</p>
+<p>For comprehensive operational automation strategies incorporating finance, sales, and marketing, explore <a href="automation-workflows-b2b-operations.html">automation-workflows-b2b-operations.html</a>.</p>
+<h2>Building Claude Code Automation Skills</h2>
+<p>Claude Code supports custom &quot;skills&quot;—reusable automation workflows packaged as callable commands. Skills encode domain-specific knowledge, best practices, and common operational patterns.</p>
+<p><strong>Skill structure:</strong></p>
+<pre><code class="language-markdown">---
+name: /crm-cleanup
+description: Identify and merge duplicate CRM contacts
+---
+
+# CRM Cleanup Skill
+
+1. Query CRM API for all contacts modified in last 90 days
+2. Group contacts by fuzzy email match (account for typos)
+3. Group contacts by company name + last name match
+4. Calculate data quality score (completeness, recency) for each duplicate set
+5. Propose merge keeping highest-quality record
+6. Generate merge preview for human approval
+7. Execute approved merges via CRM API
+8. Log merge actions to audit trail
+</code></pre>
+<p>Teams build skill libraries capturing institutional knowledge in executable form. New team members invoke skills without understanding implementation details. Skills evolve through usage, incorporating edge cases and refinements.</p>
+<p><strong>Common skill categories:</strong></p>
+<ul>
+<li><strong>Data hygiene</strong> — Deduplication, field standardization, completeness audits</li>
+<li><strong>Reporting</strong> — Pipeline snapshots, activity metrics, forecast accuracy</li>
+<li><strong>Content production</strong> — Article generation, social post variants, email sequences</li>
+<li><strong>Research</strong> — Competitive intelligence, lead enrichment, market analysis</li>
+<li><strong>Integration</strong> — Cross-system data sync, webhook handling, API orchestration</li>
+</ul>
+<h2>Measuring Automation ROI</h2>
+<p>Track automation impact through:</p>
+<p><strong>Time reclaimed</strong> — Calculate hours saved weekly/monthly. If sales ops automation saves 10 hours weekly across 3-person team, that&#39;s 1,560 hours annually (assuming 52 weeks). At $50/hour loaded cost, that&#39;s $78K annual value.</p>
+<p><strong>Error reduction</strong> — Manual data entry introduces 1-3% error rates. Automation approaches zero errors. Calculate cost of errors (missed opportunities, compliance violations, customer frustration) and compare pre/post automation.</p>
+<p><strong>Workflow velocity</strong> — Measure latency from trigger to completion. Manual lead enrichment completing in 24-48 hours (waiting for human availability) vs. 15-minute automated enrichment impacts speed-to-lead metrics and close rates.</p>
+<p><strong>Capacity unlocked</strong> — Quantify new workflows enabled through automation. Tracking 50 competitor pricing changes weekly is impossible manually but trivial with browser automation. Value derives from insights previously unreachable.</p>
+<p><strong>Automation cost</strong> — Claude Code API usage (input tokens + output tokens) plus infrastructure (compute, storage, integrations). A workflow consuming 50K tokens ($0.50-$1.50 depending on model tier) running daily costs $180-$540 annually—negligible against $78K time savings.</p>
+<p>ROI exceeds 300% when time savings exceed 3X annual automation cost. Most operational Claude Code automations achieve 1000%+ ROI by eliminating manual processing roles.</p>
+<h2>Common Automation Failures</h2>
+<p><strong>Failure 1: Automating Broken Processes</strong></p>
+<p>Automating inefficient workflows codifies dysfunction. If manual lead enrichment wastes time gathering irrelevant data, automated lead enrichment wastes compute gathering irrelevant data faster. Fix process before automating. Automation amplifies process quality, positive or negative.</p>
+<p><strong>Failure 2: Over-Automating High-Judgment Tasks</strong></p>
+<p>Not all workflows benefit from automation. Strategic decisions, relationship-building, creative problem-solving, and ambiguous situations require human judgment. Automate repetitive execution, not strategic thinking. Claude generates first-draft content; humans refine. Claude enriches lead data; humans qualify fit.</p>
+<p><strong>Failure 3: Neglecting Error Monitoring</strong></p>
+<p>Automated workflows fail silently without monitoring. A broken CRM sync doesn&#39;t generate user complaints—it creates data drift discovered weeks later. Implement health checks, error alerting, and periodic validation ensuring automation performs as expected.</p>
+<p><strong>Failure 4: Building Brittle Dependencies</strong></p>
+<p>Automation relying on single integration points creates fragility. If your workflow breaks when a SaaS provider changes API authentication, you&#39;ve created new operational risk. Design automation with fallback paths, alternate data sources, and graceful degradation.</p>
+<p><strong>Failure 5: Ignoring Change Management</strong></p>
+<p>Teams resist automation perceived as threatening job security or imposing rigid process. Involve operators in automation design, emphasize capacity unlocking over headcount reduction, and demonstrate value through pilot workflows before broad rollout.</p>
+<h2>Security and Compliance Considerations</h2>
+<p>Business automation with AI introduces security obligations:</p>
+<p><strong>Data access control</strong> — Claude Code operates with filesystem and API permissions of the executing process. Avoid running automation with admin credentials. Create service accounts with least-privilege access scoped to required resources.</p>
+<p><strong>Sensitive data handling</strong> — Automation processing PII, financial data, or confidential information requires encryption at rest and in transit. Audit data retention policies ensuring automation doesn&#39;t persist sensitive data beyond operational requirements.</p>
+<p><strong>API credential management</strong> — Store API keys, passwords, and tokens in secure vaults (AWS Secrets Manager, HashiCorp Vault, 1Password), not hardcoded in automation scripts. Rotate credentials regularly and revoke access when automation is deprecated.</p>
+<p><strong>Audit logging</strong> — Maintain comprehensive logs of automation actions, especially for workflows modifying production data (CRM updates, financial transactions, content publication). Logs enable compliance validation and incident forensics.</p>
+<p><strong>Human-in-the-loop gates</strong> — High-risk actions (bulk deletions, financial transfers, external communications) require human approval before execution. Claude generates proposals; humans authorize execution.</p>
+<p>For teams handling sensitive CRM data through automation, review <a href="crm-data-hygiene.html">crm-data-hygiene.html</a> for data governance frameworks compatible with automation workflows.</p>
+<h2>Integration with Existing Tools</h2>
+<p>Claude Code complements existing business automation tools rather than replacing them:</p>
+<p><strong>Zapier/Make for simple trigger-action</strong> — Use traditional integration platforms for straightforward workflows (form submission → CRM record creation). Use Claude Code when workflows require conditional logic, error handling, or multi-step orchestration.</p>
+<p><strong>RPA tools for legacy system automation</strong> — Robotic Process Automation tools (UiPath, Automation Anywhere) excel at automating desktop applications without APIs. Combine RPA for legacy system interaction with Claude Code for intelligent decision-making and natural language understanding.</p>
+<p><strong>Business intelligence for analytics</strong> — BI tools (Tableau, Looker, Power BI) visualize data; Claude Code generates the reports, consolidates data sources, and performs analysis that feeds BI dashboards.</p>
+<p><strong>Project management for workflow coordination</strong> — Project management tools (Asana, Monday.com, ClickUp) track tasks and dependencies; Claude Code automates task creation, status updates, and progress reporting based on external system states.</p>
+<p>Optimal automation architecture combines tools by strength—traditional platforms for deterministic workflows, Claude Code for adaptive intelligence, RPA for legacy integration, BI for visualization.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>What types of business workflows are best suited for Claude Code automation?</h3>
+<p><strong>High-ROI workflows</strong> involve repetitive data processing, multi-system coordination, document analysis, research synthesis, and conditional routing. Examples: CRM data enrichment, content distribution, report generation, email triage, vendor portal reconciliation. Avoid automating creative strategy, relationship-building, or high-stakes decisions requiring human judgment.</p>
+<h3>How does Claude Code automation cost compare to traditional development?</h3>
+<p>Custom automation development costs $5K-$50K depending on complexity, plus ongoing maintenance. Claude Code automation costs API usage (typically $50-$500 monthly for operational workflows) with minimal maintenance. For workflows saving $20K+ annually in labor, Claude Code achieves positive ROI within weeks. Traditional development requires months to breakeven.</p>
+<h3>Can Claude Code handle errors and unexpected states in automated workflows?</h3>
+<p>Yes, Claude applies general reasoning to problem-solve when workflows encounter unexpected states—login failures, missing data, format changes, network issues. Claude retries with variations, suggests fallback approaches, and surfaces errors requiring human intervention. This adaptive capacity surpasses brittle scripts that fail immediately on any deviation.</p>
+<h3>Is Claude Code automation secure for handling sensitive business data?</h3>
+<p>Security depends on implementation. Run Claude Code with least-privilege access, store credentials in secure vaults, encrypt data at rest and in transit, implement audit logging, and require human approval for high-risk actions. Claude Code itself doesn&#39;t access data beyond what the executing process can access, so standard security practices apply.</p>
+<h3>How do you maintain Claude Code automation as business processes evolve?</h3>
+<p>Automation through natural language instructions is more maintainable than custom code. When processes change, update workflow descriptions conversationally rather than debugging scripts. Build skill libraries that abstract common patterns, allowing process changes to propagate through single skill updates rather than scattered script modifications. Schedule quarterly automation audits to identify deprecated workflows.</p>
+<h2>Conclusion</h2>
+<p>Claude Code business automation democratizes workflow orchestration beyond engineering teams, enabling operations personnel to deploy intelligent automation through natural language instructions. The platform excels at long-tail workflows traditionally trapped in the automation trough—valuable enough to automate but not valuable enough to justify custom development. Combine Claude Code&#39;s adaptive intelligence with traditional integration platforms&#39; deterministic reliability, creating automation architectures that handle both routine execution and exceptional cases. The operational question shifts from &quot;can we afford to automate this&quot; to &quot;which workflows still justify manual execution.&quot;</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps | B2B Vic</title>
+    <meta name="description" content="How to structure B2B sales pipeline stages for clarity, forecasting accuracy, and deal velocity. Covers stage definitions, entry/exit criteria, and CRM configuration." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps" />
+    <meta property="og:description" content="How to structure B2B sales pipeline stages for clarity, forecasting accuracy, and deal velocity. Covers stage definitions, entry/exit criteria, and CRM configuration." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-sales-pipeline-stages.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps" />
+    <meta name="twitter:description" content="How to structure B2B sales pipeline stages for clarity, forecasting accuracy, and deal velocity. Covers stage definitions, entry/exit criteria, and CRM configuration." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-sales-pipeline-stages.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps",
+      "description": "How to structure B2B sales pipeline stages for clarity, forecasting accuracy, and deal velocity. Covers stage definitions, entry/exit criteria, and CRM configuration.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-sales-pipeline-stages.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>B2B Sales Pipeline Stages: From Suspect to Closed-Won in 7 Steps</h1>
+<p>Sales pipelines fail when stages are ambiguous. A deal marked &quot;Negotiation&quot; could mean &quot;reviewing contract terms&quot; or &quot;ghosting after proposal.&quot; A deal marked &quot;Qualified&quot; could mean &quot;confirmed budget and timeline&quot; or &quot;expressed vague interest.&quot; Ambiguous stages destroy forecast accuracy, hide bottlenecks, and prevent systematic pipeline management. Reps don&#39;t know when to advance deals. Managers can&#39;t identify where deals stall. Revenue projections fluctuate wildly because no one agrees on what &quot;Qualified&quot; actually means.</p>
+<p>The solution: pipeline stages with explicit entry criteria, exit criteria, and expected activities. This article documents the 7-stage pipeline framework used across B2B sales environments generating $500K-$5M annually. The system reduces forecast error from ±40% to ±12%, surfaces bottlenecks that kill 30% of deals, and enables systematic <a href="/articles/sales-velocity-optimization.html">deal velocity optimization</a>. The Operator builds systems that treat pipeline management as process engineering, not gut feeling.</p>
+<h2>The 7-Stage Pipeline Framework</h2>
+<h3>Stage 1: Suspect (Unqualified Lead)</h3>
+<p><strong>Definition:</strong> Contact exists in CRM but has not been qualified. No confirmed fit, need, or timeline.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Name + company + contact info captured</li>
+<li>Source identified (website form, cold outreach, referral, event)</li>
+<li>No prior conversation</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Initial outreach (email or phone)</li>
+<li>Research company and likely pain points</li>
+<li>Attempt to schedule discovery call</li>
+</ul>
+<p><strong>Exit criteria to Stage 2 (Qualified):</strong></p>
+<ul>
+<li>Responded to outreach AND</li>
+<li>Confirmed they have problem your solution addresses AND</li>
+<li>Agreed to discovery call</li>
+</ul>
+<p><strong>Exit criteria to Disqualified:</strong></p>
+<ul>
+<li>No response after 5 outreach attempts OR</li>
+<li>Explicitly not interested OR</li>
+<li>No budget/authority/need/timeline (BANT failure)</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Lead source</li>
+<li>First contact date</li>
+<li>Outreach attempts (count)</li>
+<li>Next follow-up due date</li>
+</ul>
+<p><strong>Typical time in stage:</strong> 7-14 days</p>
+<p><strong>Conversion rate to next stage:</strong> 15-25% (most suspects are unqualified or unresponsive)</p>
+<h3>Stage 2: Qualified (Discovery Scheduled)</h3>
+<p><strong>Definition:</strong> Prospect confirmed they have a problem and agreed to discovery call. Fit is plausible but not validated.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Discovery call scheduled OR</li>
+<li>Inbound demo request received</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Conduct discovery call using <a href="/articles/discovery-call-framework-b2b.html">discovery framework</a></li>
+<li>Qualify via BANT or MEDDIC:<ul>
+<li><strong>Budget:</strong> Do they have budget allocated or ability to secure it?</li>
+<li><strong>Authority:</strong> Are you speaking with decision-maker or influencer?</li>
+<li><strong>Need:</strong> Do they have urgent problem your solution solves?</li>
+<li><strong>Timeline:</strong> When are they looking to implement?</li>
+</ul>
+</li>
+<li>Document pain points, objectives, success criteria</li>
+</ul>
+<p><strong>Exit criteria to Stage 3 (Needs Analysis):</strong></p>
+<ul>
+<li>Discovery call completed AND</li>
+<li>BANT criteria met (or path to meeting them identified) AND</li>
+<li>Prospect agreed to next step (demo, deeper needs analysis, stakeholder meeting)</li>
+</ul>
+<p><strong>Exit criteria to Disqualified:</strong></p>
+<ul>
+<li>BANT criteria failed (no budget, wrong decision-maker, no urgent need) OR</li>
+<li>Prospect ghosted after discovery call OR</li>
+<li>Solution doesn&#39;t match need</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Discovery call date</li>
+<li>BANT score (1-5 for each criterion)</li>
+<li>Pain points identified</li>
+<li>Decision-makers identified</li>
+<li>Competition (who else are they evaluating?)</li>
+</ul>
+<p><strong>Typical time in stage:</strong> 3-7 days</p>
+<p><strong>Conversion rate to next stage:</strong> 50-60% (discovery calls surface mismatches quickly)</p>
+<h3>Stage 3: Needs Analysis (Solution Scoping)</h3>
+<p><strong>Definition:</strong> Prospect is qualified and you&#39;re working with them to scope solution requirements.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Discovery call completed</li>
+<li>BANT criteria met</li>
+<li>Prospect engaged in scoping conversation</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Deep-dive needs analysis (technical requirements, integration needs, user count, use cases)</li>
+<li>Identify stakeholders (who else needs to approve?)</li>
+<li>Present solution demo tailored to their use case</li>
+<li>Confirm success metrics (what defines a successful implementation?)</li>
+<li>Discuss implementation timeline and resource requirements</li>
+</ul>
+<p><strong>Exit criteria to Stage 4 (Proposal):</strong></p>
+<ul>
+<li>Solution scope agreed upon AND</li>
+<li>Stakeholders identified and engaged AND</li>
+<li>Prospect requested proposal/pricing</li>
+</ul>
+<p><strong>Exit criteria to Disqualified:</strong></p>
+<ul>
+<li>Requirements exceed your capabilities OR</li>
+<li>Prospect went dark during scoping OR</li>
+<li>Timeline pushed indefinitely</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Solution requirements</li>
+<li>Stakeholders (names, roles, influence level)</li>
+<li>Success metrics</li>
+<li>Estimated deal size</li>
+<li>Proposal due date</li>
+</ul>
+<p><strong>Typical time in stage:</strong> 7-14 days</p>
+<p><strong>Conversion rate to next stage:</strong> 70-80% (if you reach this stage, deal is likely to progress)</p>
+<h3>Stage 4: Proposal Sent</h3>
+<p><strong>Definition:</strong> Formal proposal delivered. Prospect is reviewing pricing, terms, and implementation plan.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Proposal sent (via email or presented in meeting)</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Schedule proposal review meeting</li>
+<li>Answer questions and address objections</li>
+<li>Provide additional case studies or references if requested</li>
+<li><a href="/articles/objection-handling-b2b-sales.html">Handle objections</a> (price, implementation complexity, risk)</li>
+<li>Identify and address internal blockers (procurement, legal, IT security)</li>
+</ul>
+<p><strong>Exit criteria to Stage 5 (Negotiation):</strong></p>
+<ul>
+<li>Prospect verbally agreed to move forward AND</li>
+<li>Contract review initiated</li>
+</ul>
+<p><strong>Exit criteria to Disqualified:</strong></p>
+<ul>
+<li>Prospect selected competitor OR</li>
+<li>Budget disappeared OR</li>
+<li>Timeline pushed &gt;6 months OR</li>
+<li>Ghosted after proposal</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Proposal sent date</li>
+<li>Proposal amount</li>
+<li>Proposal review meeting date</li>
+<li>Objections raised</li>
+<li>Competitive threats</li>
+</ul>
+<p><strong>Typical time in stage:</strong> 14-30 days (varies by deal size and decision complexity)</p>
+<p><strong>Conversion rate to next stage:</strong> 40-50% (proposal stage has highest drop-off)</p>
+<h3>Stage 5: Negotiation (Contract Review)</h3>
+<p><strong>Definition:</strong> Prospect committed to moving forward. Discussing contract terms, pricing adjustments, implementation details.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Prospect verbally committed to proceed</li>
+<li>Contract sent for review</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Negotiate contract terms (payment terms, SLAs, termination clauses)</li>
+<li>Adjust pricing if necessary (volume discounts, multi-year commitments)</li>
+<li>Coordinate with legal teams (both sides)</li>
+<li>Address procurement requirements</li>
+<li>Confirm implementation plan and timeline</li>
+<li>Secure executive sign-off if needed</li>
+</ul>
+<p><strong>Exit criteria to Stage 6 (Closed-Won):</strong></p>
+<ul>
+<li>Contract signed AND</li>
+<li>Payment received (or PO issued)</li>
+</ul>
+<p><strong>Exit criteria to Disqualified:</strong></p>
+<ul>
+<li>Deal fell apart during negotiation OR</li>
+<li>Legal/procurement blocked deal OR</li>
+<li>Prospect went with competitor</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Contract sent date</li>
+<li>Terms being negotiated</li>
+<li>Legal/procurement contacts</li>
+<li>Expected close date</li>
+<li>Deal amount (final)</li>
+</ul>
+<p><strong>Typical time in stage:</strong> 7-21 days (enterprise deals can extend to 60+ days)</p>
+<p><strong>Conversion rate to next stage:</strong> 80-90% (if you reach negotiation, deal usually closes)</p>
+<h3>Stage 6: Closed-Won</h3>
+<p><strong>Definition:</strong> Contract signed, payment received. Deal is won.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Signed contract received</li>
+<li>Payment processed or PO issued</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Hand off to implementation/onboarding team</li>
+<li>Schedule kickoff meeting</li>
+<li>Update CRM with final deal details (amount, contract length, products purchased)</li>
+<li>Thank customer and reinforce decision</li>
+<li>Request referral or case study permission</li>
+</ul>
+<p><strong>Exit criteria:</strong></p>
+<ul>
+<li>Deal archived as won</li>
+<li>Customer enters onboarding workflow</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Close date</li>
+<li>Final deal amount</li>
+<li>Contract length</li>
+<li>Products/services purchased</li>
+<li>Implementation start date</li>
+</ul>
+<h3>Stage 7: Closed-Lost (Disqualified)</h3>
+<p><strong>Definition:</strong> Deal did not close. Prospect went with competitor, budget disappeared, timeline indefinite, or not a fit.</p>
+<p><strong>Entry criteria:</strong></p>
+<ul>
+<li>Prospect explicitly rejected offer OR</li>
+<li>Deal stalled indefinitely OR</li>
+<li>Lost to competitor</li>
+</ul>
+<p><strong>Required activities:</strong></p>
+<ul>
+<li>Document loss reason (pricing, features, timing, competitor, no decision)</li>
+<li>Request feedback (why did they choose competitor?)</li>
+<li>Tag for future nurture (if appropriate)</li>
+<li>Update CRM with competitive intelligence</li>
+</ul>
+<p><strong>Exit criteria:</strong></p>
+<ul>
+<li>Deal archived as lost</li>
+<li>Contact added to long-term nurture sequence (if appropriate)</li>
+</ul>
+<p><strong>CRM fields to track:</strong></p>
+<ul>
+<li>Loss date</li>
+<li>Loss reason (dropdown: price, features, timing, competitor, no decision)</li>
+<li>Competitor name (if applicable)</li>
+<li>Nurture sequence (6-month, 12-month, or do not contact)</li>
+</ul>
+<h2>Pipeline Hygiene: Keeping Data Clean</h2>
+<p>Pipeline rot happens when deals languish in stages they&#39;ve outgrown. A deal sitting in &quot;Proposal Sent&quot; for 90 days isn&#39;t a real opportunity — it&#39;s a dead deal someone forgot to close out.</p>
+<h3>Pipeline Hygiene Rules</h3>
+<p><strong>Rule 1: Maximum time in stage</strong>
+Enforce time limits per stage. If a deal exceeds the limit, require manual review by sales manager.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Max Time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Suspect</td>
+<td>30 days</td>
+</tr>
+<tr>
+<td>Qualified</td>
+<td>14 days</td>
+</tr>
+<tr>
+<td>Needs Analysis</td>
+<td>21 days</td>
+</tr>
+<tr>
+<td>Proposal Sent</td>
+<td>45 days</td>
+</tr>
+<tr>
+<td>Negotiation</td>
+<td>30 days</td>
+</tr>
+</tbody></table>
+<p><strong>Rule 2: Weekly pipeline review</strong>
+Sales reps review every open deal weekly. Update stage, log activity, identify blockers.</p>
+<p><strong>Rule 3: Stale deal alerts</strong>
+CRM sends alerts when deals haven&#39;t been touched in 7 days. Forces reps to either advance or close out deals.</p>
+<p><strong>Rule 4: Manager spot checks</strong>
+Sales managers randomly audit 10% of pipeline weekly. Check for:</p>
+<ul>
+<li>Deals in wrong stage (e.g., proposal not actually sent but marked &quot;Proposal Sent&quot;)</li>
+<li>Missing required fields (stakeholders, close date, objections)</li>
+<li>Deals that should be disqualified but aren&#39;t</li>
+</ul>
+<h2>Forecasting With Pipeline Stages</h2>
+<p>Accurate forecasting requires knowing conversion rates between stages and average time in stage.</p>
+<h3>Forecast Formula</h3>
+<p><strong>Expected revenue = (# of deals in stage) × (stage conversion rate) × (average deal size)</strong></p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>20 deals in Proposal stage</li>
+<li>Proposal → Closed-Won conversion rate: 45%</li>
+<li>Average deal size: $18K</li>
+<li><strong>Expected revenue:</strong> 20 × 0.45 × $18K = <strong>$162K</strong></li>
+</ul>
+<h3>Forecast Confidence Levels</h3>
+<p>Assign probability weights by stage:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Win Probability</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Suspect</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>Qualified</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Needs Analysis</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>Proposal Sent</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Negotiation</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>Closed-Won</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Closed-Lost</td>
+<td>0%</td>
+</tr>
+</tbody></table>
+<p><strong>Weighted pipeline value:</strong>
+Sum of (deal amount × stage probability) across all open deals.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>10 deals in Proposal ($180K total) × 50% = $90K</li>
+<li>5 deals in Negotiation ($120K total) × 80% = $96K</li>
+<li><strong>Weighted pipeline:</strong> $186K</li>
+</ul>
+<p>This forecast is more accurate than raw pipeline value ($300K) because it accounts for likelihood of close.</p>
+<h2>CRM Configuration: Building the Pipeline</h2>
+<h3>Required CRM Fields</h3>
+<p><strong>Deal fields:</strong></p>
+<ul>
+<li>Deal name</li>
+<li>Amount</li>
+<li>Close date (expected)</li>
+<li>Stage</li>
+<li>Probability (% chance of closing)</li>
+<li>Loss reason (if closed-lost)</li>
+<li>Competition</li>
+<li>Decision criteria</li>
+<li>Next step</li>
+<li>Last activity date</li>
+</ul>
+<p><strong>Contact fields:</strong></p>
+<ul>
+<li>Role (decision-maker, influencer, blocker)</li>
+<li>BANT score</li>
+<li>Pain points</li>
+<li>Objections</li>
+</ul>
+<h3>Automation Triggers</h3>
+<p><strong>Trigger 1:</strong> Deal enters Proposal stage → Schedule task: &quot;Follow up on proposal in 5 days&quot;
+<strong>Trigger 2:</strong> Deal in stage &gt;30 days → Alert sales manager
+<strong>Trigger 3:</strong> Deal marked Closed-Won → Create onboarding task, notify customer success team
+<strong>Trigger 4:</strong> Deal marked Closed-Lost → Send to nurture sequence (if appropriate)</p>
+<h2>FAQ</h2>
+<h3>How many pipeline stages should I have?</h3>
+<p>5-7 stages. Fewer than 5 lacks granularity (can&#39;t identify bottlenecks). More than 7 creates confusion (reps can&#39;t remember definitions).</p>
+<h3>Should I customize pipeline stages by product line?</h3>
+<p>Only if sales processes differ significantly. If discovery, proposal, and negotiation are similar across products, use one pipeline. If processes diverge (e.g., enterprise vs. SMB), create separate pipelines.</p>
+<h3>How do I improve conversion rates between stages?</h3>
+<p>Identify which stage has lowest conversion. Proposal → Negotiation at 40%? Diagnose: Are proposals priced wrong? Objection handling weak? Competitive positioning unclear? Fix root cause, not symptom.</p>
+<h3>What if prospects skip stages?</h3>
+<p>Inbound demo requests might skip Suspect → Qualified. That&#39;s fine. Ensure entry criteria for the stage they enter are still met. Don&#39;t force linear progression if prospect is ready to move faster.</p>
+<h3>How do I prevent reps from inflating pipeline?</h3>
+<p>Enforce entry/exit criteria. Require manager approval to move deals to Proposal or Negotiation. Run weekly pipeline audits. Tie compensation to forecast accuracy, not raw pipeline size.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

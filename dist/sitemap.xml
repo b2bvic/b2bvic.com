@@ -193,8 +193,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/attribution-modeling-b2b-seo.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/automation-audit-framework.html</loc>
     <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/automation-roi-case-study.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -205,8 +217,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/b2b-content-calendar-template.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/b2b-content-engine-cost-model.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/b2b-discovery-call-framework.html</loc>
     <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/b2b-follow-up-sequences.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -217,8 +247,56 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/b2b-lead-generation-seo-pipeline.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/b2b-sales-pipeline-stages.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/b2b-sales-qualification-frameworks.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/b2b-seo-budget-allocation.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/best-ai-tools-b2b-marketing.html</loc>
     <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/best-crm-b2b-sales-teams.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/browser-automation-ai-tools.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/chaos-theory-business-operations.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/claude-code-business-automation.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -229,8 +307,44 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/claude-vs-chatgpt-b2b-content.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/client-onboarding-b2b-services.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/client-onboarding-system.html</loc>
     <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/client-retention-b2b-services.html</loc>
+    <lastmod>2026-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/closing-techniques-b2b-deals.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/cold-email-deliverability-guide.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/cold-email-subject-lines-b2b.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -247,14 +361,122 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/cold-outreach-email-sequences.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consultative-selling-b2b.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-boundaries-scope-creep.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/consulting-business-model-seo.html</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://b2bvic.com/articles/consulting-case-studies.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-client-acquisition.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-pipeline-seo.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-project-management.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-revenue-scaling.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/consulting-sow-template.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/content-mapping-buyer-journey.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/content-repurposing-b2b.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/content-velocity-case-study.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/conversion-rate-optimization-b2b-seo.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/core-web-vitals-b2b-2026.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/crm-contact-enrichment.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/crm-dashboards-sales-managers.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://b2bvic.com/articles/crm-data-hygiene.html</loc>
     <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/crm-data-quality-automation.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://b2bvic.com/articles/crm-migration-hubspot-fub.html</loc>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

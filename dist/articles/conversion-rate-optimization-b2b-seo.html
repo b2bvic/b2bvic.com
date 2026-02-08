@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads | B2B Vic</title>
+    <meta name="description" content="CRO tactics for B2B organic traffic. Landing page optimization, CTA placement, lead magnet design, and form friction reduction that convert visitors." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads" />
+    <meta property="og:description" content="CRO tactics for B2B organic traffic. Landing page optimization, CTA placement, lead magnet design, and form friction reduction that convert visitors." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/conversion-rate-optimization-b2b-seo.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads" />
+    <meta name="twitter:description" content="CRO tactics for B2B organic traffic. Landing page optimization, CTA placement, lead magnet design, and form friction reduction that convert visitors." />
+    <link rel="canonical" href="https://b2bvic.com/articles/conversion-rate-optimization-b2b-seo.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads",
+      "description": "CRO tactics for B2B organic traffic. Landing page optimization, CTA placement, lead magnet design, and form friction reduction that convert visitors.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/conversion-rate-optimization-b2b-seo.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Conversion Rate Optimization for B2B SEO: Turn Organic Traffic Into Qualified Leads</h1>
+<p>Organic traffic without conversions is vanity. A site ranking #1 for target keywords but converting at 0.5% generates fewer leads than a #5 ranking converting at 3%. <strong>B2B sites</strong> optimized for conversion extract 5-10x more pipeline from the same traffic by reducing friction, matching CTAs to buyer intent, and designing lead capture mechanisms that feel valuable rather than extractive.</p>
+<p>This guide covers landing page optimization, CTA frameworks, lead magnet design, and form optimization tactics that turn organic visitors into qualified leads.</p>
+<h2>Conversion Funnel for Organic Traffic</h2>
+<p>Organic visitors progress through a funnel:</p>
+<p><strong>Visit</strong> → <strong>Engage</strong> (read content) → <strong>Convert</strong> (fill form, book call) → <strong>Qualify</strong> (become sales opportunity)</p>
+<p>Optimize each stage to prevent drop-off.</p>
+<h3>Visitor Intent Matching</h3>
+<p>Not all organic traffic is equal. Conversion tactics must match visitor intent:</p>
+<p><strong>Awareness-stage visitors</strong> (searching &quot;what is lead scoring&quot;): Offer educational resources (guides, checklists). Don&#39;t push hard CTAs (&quot;Book a consultation&quot;).</p>
+<p><strong>Consideration-stage visitors</strong> (searching &quot;lead scoring best practices&quot;): Offer frameworks, templates, comparison guides.</p>
+<p><strong>Decision-stage visitors</strong> (searching &quot;HubSpot lead scoring consultant&quot;): Offer direct CTAs (consultation booking, proposal requests).</p>
+<p>Mismatch between intent and CTA kills conversion. Awareness visitors ignore &quot;Book now&quot; CTAs. Decision visitors skip lead magnets—they want to talk.</p>
+<p>For content mapping, see <a href="content-mapping-buyer-journey.html">content-mapping-buyer-journey.html</a>.</p>
+<h2>Landing Page Optimization</h2>
+<p>Landing pages convert when they answer visitor questions immediately and remove friction.</p>
+<h3>Above-the-Fold Checklist</h3>
+<p>Visitors decide in 5-10 seconds whether to stay. Above-the-fold must communicate:</p>
+<p><strong>Headline</strong>: Clear value proposition (not clever, not vague)</p>
+<p><strong>Subheadline</strong>: Expand on the headline (who it&#39;s for, what outcome)</p>
+<p><strong>Visual</strong>: Relevant image, screenshot, or diagram (not stock photos)</p>
+<p><strong>CTA</strong>: Action-oriented button (contrasting color, clear copy)</p>
+<p><strong>Trust signal</strong>: Client logos, testimonial snippet, or stat</p>
+<p><strong>Example (service page)</strong>:</p>
+<p><strong>Headline</strong>: &quot;HubSpot Lead Scoring Implementation for B2B SaaS Companies&quot;</p>
+<p><strong>Subheadline</strong>: &quot;Cut lead response time 80% with automated scoring and routing. Delivered in 4 weeks.&quot;</p>
+<p><strong>Visual</strong>: Screenshot of HubSpot dashboard showing scoring model</p>
+<p><strong>CTA</strong>: &quot;Book a Free Consultation&quot;</p>
+<p><strong>Trust signal</strong>: &quot;Used by 40+ B2B SaaS companies including [Client Logo] [Client Logo] [Client Logo]&quot;</p>
+<p>This communicates value, specificity, and credibility instantly.</p>
+<h3>Headline Formula</h3>
+<p><strong>Format</strong>: [Outcome] for [Audience] using [Method]</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;Cut Lead Response Time 80% for B2B SaaS Using Automated Scoring&quot;</li>
+<li>&quot;Salesforce Data Quality Audits for Mid-Market Companies&quot;</li>
+<li>&quot;SEO Content Strategy for Professional Services Firms&quot;</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li><strong>Generic</strong>: &quot;Welcome to Our Services&quot; (says nothing)</li>
+<li><strong>Clever</strong>: &quot;Unlock Your Potential&quot; (vague, meaningless)</li>
+<li><strong>Feature-focused</strong>: &quot;Advanced CRM Consulting&quot; (features, not outcomes)</li>
+</ul>
+<h3>Social Proof Placement</h3>
+<p>Include proof elements throughout the page:</p>
+<p><strong>Client logos</strong> (above fold): Show recognizable brands</p>
+<p><strong>Case study snippets</strong> (mid-page): &quot;Helped [ClientCo] achieve [result] in [timeline]&quot;</p>
+<p><strong>Testimonial quotes</strong> (before CTA): First-person client voice adds authenticity</p>
+<p><strong>Stats</strong> (callout boxes): &quot;200+ implementations completed,&quot; &quot;Average 55% pipeline growth&quot;</p>
+<p>Social proof reduces perceived risk (&quot;others succeeded, I can too&quot;).</p>
+<h3>Clear Page Hierarchy</h3>
+<p>Use visual hierarchy to guide attention:</p>
+<p><strong>H1</strong> (headline): Largest text, bold</p>
+<p><strong>Subheadline</strong>: Slightly smaller, under H1</p>
+<p><strong>Body copy</strong>: Standard size, readable (16-18px)</p>
+<p><strong>CTA button</strong>: Contrasting color (orange, green on blue background), large clickable area (44px × 44px minimum)</p>
+<p>Avoid visual clutter (too many fonts, colors, or CTAs). Single-column layouts outperform multi-column for conversion.</p>
+<h2>CTA Frameworks</h2>
+<p>CTAs fail when they&#39;re vague, aggressive, or poorly timed.</p>
+<h3>CTA Copy Principles</h3>
+<p><strong>Action-oriented</strong>: Start with verb (&quot;Download,&quot; &quot;Book,&quot; &quot;Get,&quot; &quot;Start&quot;)</p>
+<p><strong>Specific</strong>: State what happens (&quot;Download the Framework,&quot; not &quot;Click Here&quot;)</p>
+<p><strong>Value-focused</strong>: Emphasize benefit (&quot;Get Your Free Audit,&quot; not &quot;Submit&quot;)</p>
+<p><strong>Low-friction</strong>: Use words that reduce commitment (&quot;Free,&quot; &quot;No obligation,&quot; &quot;Cancel anytime&quot;)</p>
+<p>Examples:</p>
+<p><strong>Good</strong>:</p>
+<ul>
+<li>&quot;Download the Lead Scoring Template&quot;</li>
+<li>&quot;Book a Free 30-Minute Consultation&quot;</li>
+<li>&quot;Get Your CRM Health Report&quot;</li>
+</ul>
+<p><strong>Bad</strong>:</p>
+<ul>
+<li>&quot;Submit&quot; (no value stated)</li>
+<li>&quot;Learn More&quot; (vague)</li>
+<li>&quot;Contact Us&quot; (feels like work)</li>
+</ul>
+<h3>CTA Placement</h3>
+<p>Place CTAs where visitors expect them:</p>
+<p><strong>Primary CTA</strong> (above fold): For high-intent pages (service pages, pricing)</p>
+<p><strong>In-content CTA</strong> (mid-article): After explaining value (&quot;Want our implementation checklist? Download it here.&quot;)</p>
+<p><strong>Exit CTA</strong> (end of article): Final opportunity before leaving</p>
+<p><strong>Sticky CTA</strong> (floating bar): Follows scroll, always visible (use sparingly—can annoy mobile users)</p>
+<p>Don&#39;t bury CTAs. If visitors must scroll past 3 screens to find the CTA, conversion drops.</p>
+<h3>CTA Variations by Page Type</h3>
+<p><strong>Blog posts</strong> (awareness stage): Soft CTA (&quot;Download our framework,&quot; &quot;Subscribe for updates&quot;)</p>
+<p><strong>Comparison posts</strong> (consideration stage): Assessment CTA (&quot;Not sure which fits? Take our 2-minute quiz&quot;)</p>
+<p><strong>Service pages</strong> (decision stage): Direct CTA (&quot;Book a consultation,&quot; &quot;Request a proposal&quot;)</p>
+<p><strong>Case studies</strong> (decision stage): Contextual CTA (&quot;Facing similar challenges? Let&#39;s talk.&quot;)</p>
+<p>Match CTA intensity to visitor intent.</p>
+<h2>Lead Magnet Design</h2>
+<p>Lead magnets exchange value (template, guide, audit) for contact info. Weak lead magnets get ignored.</p>
+<h3>High-Value Lead Magnet Types</h3>
+<p><strong>Templates</strong>: Pre-built tools visitors can use immediately</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;Lead Scoring Calculator (Google Sheet)&quot;</li>
+<li>&quot;CRM Audit Checklist&quot;</li>
+<li>&quot;Cold Email Sequence Template (7 emails)&quot;</li>
+</ul>
+<p><strong>Frameworks</strong>: Step-by-step methodologies</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;The 5-Step Process for Designing Lead Scoring Models&quot;</li>
+<li>&quot;Data Quality Audit Framework&quot;</li>
+</ul>
+<p><strong>Guides</strong>: Comprehensive how-to content (10-20 pages)</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;The Complete Guide to HubSpot Implementation&quot;</li>
+<li>&quot;Salesforce Data Migration Playbook&quot;</li>
+</ul>
+<p><strong>Assessments</strong>: Interactive quizzes with personalized results</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;What&#39;s Your CRM Health Score?&quot; (10 questions → scored report)</li>
+<li>&quot;Are You Ready for Marketing Automation?&quot; (yes/no quiz → recommendation)</li>
+</ul>
+<p><strong>Audits</strong>: Custom analysis of visitor&#39;s situation</p>
+<p>Examples:</p>
+<ul>
+<li>&quot;Free CRM Audit&quot; (visitor provides portal URL → you deliver audit report)</li>
+<li>&quot;Website SEO Audit&quot; (URL → report)</li>
+</ul>
+<p>Templates and calculators perform best—they&#39;re immediately useful and require minimal effort to consume.</p>
+<h3>Lead Magnet Naming</h3>
+<p>Name lead magnets to emphasize value, not format.</p>
+<p><strong>Good</strong>:</p>
+<ul>
+<li>&quot;The Lead Scoring Blueprint&quot; (outcome-focused)</li>
+<li>&quot;7-Day Email Sequence for Cold Outreach&quot; (result + timeline)</li>
+</ul>
+<p><strong>Bad</strong>:</p>
+<ul>
+<li>&quot;Free PDF&quot; (format, no value)</li>
+<li>&quot;Our Guide&quot; (vague, generic)</li>
+</ul>
+<p>Specific names (&quot;7-Day Email Sequence&quot;) convert better than generic names (&quot;Email Templates&quot;).</p>
+<h3>Delivery Mechanism</h3>
+<p><strong>Instant delivery</strong> (automated email): Visitor fills form → receives lead magnet immediately via email</p>
+<p><strong>Manual delivery</strong> (custom audit): Visitor fills form → you deliver custom analysis within 24-48 hours</p>
+<p>Instant delivery converts higher (no waiting), but manual delivery qualifies leads better (you speak with them before delivering).</p>
+<p>For low-touch lead magnets (templates, guides), automate. For high-touch (audits, consultations), use manual delivery to open conversations.</p>
+<h2>Form Optimization</h2>
+<p>Forms create friction. Optimize to reduce abandonment.</p>
+<h3>Field Minimization</h3>
+<p><strong>Rule</strong>: Collect only fields necessary for follow-up.</p>
+<p><strong>Essential fields</strong>:</p>
+<ul>
+<li>Name (first name only, or first + last)</li>
+<li>Email</li>
+<li>Company</li>
+</ul>
+<p><strong>Optional fields</strong> (use sparingly):</p>
+<ul>
+<li>Role/Title (helps segmentation)</li>
+<li>Company size (qualifies fit)</li>
+<li>Phone (high friction—use only for high-intent CTAs like &quot;Book a call&quot;)</li>
+</ul>
+<p>Each additional field reduces conversion by 5-10%. If you need more data, collect it later (on thank-you page, in follow-up email, during sales call).</p>
+<h3>Form Design</h3>
+<p><strong>Single-column layout</strong>: Vertical stacking (name → email → company → button) converts better than multi-column</p>
+<p><strong>Large input fields</strong>: 44px height minimum (mobile-friendly)</p>
+<p><strong>Clear labels</strong>: Above or inside fields (&quot;Your Email Address,&quot; not just &quot;Email&quot;)</p>
+<p><strong>Inline validation</strong>: Show checkmarks for correctly filled fields, error messages for mistakes (reduces post-submit errors)</p>
+<p><strong>Progress indicators</strong> (multi-step forms): &quot;Step 1 of 3&quot; reduces abandonment</p>
+<h3>Submit Button Copy</h3>
+<p>Use outcome-focused copy instead of &quot;Submit.&quot;</p>
+<p><strong>Good</strong>:</p>
+<ul>
+<li>&quot;Get My Free Template&quot;</li>
+<li>&quot;Download the Guide&quot;</li>
+<li>&quot;Book My Consultation&quot;</li>
+</ul>
+<p><strong>Bad</strong>:</p>
+<ul>
+<li>&quot;Submit&quot;</li>
+<li>&quot;Send&quot;</li>
+</ul>
+<p>Button color should contrast with page background (test high-contrast colors like orange, green, red).</p>
+<h3>Privacy Reassurance</h3>
+<p>Add micro-copy near form:</p>
+<p>&quot;We respect your privacy. No spam, unsubscribe anytime.&quot;</p>
+<p>or</p>
+<p>&quot;Your email is safe with us. We&#39;ll only send relevant updates.&quot;</p>
+<p>This reduces hesitation, especially for visitors unfamiliar with your brand.</p>
+<h2>Technical Conversion Optimizations</h2>
+<h3>Page Speed</h3>
+<p>Slow pages kill conversion. Target:</p>
+<p><strong>Desktop</strong>: &lt;3 seconds load time</p>
+<p><strong>Mobile</strong>: &lt;4 seconds</p>
+<p>Use <strong>Google PageSpeed Insights</strong> to identify issues. Common fixes:</p>
+<ul>
+<li>Compress images (use WebP format)</li>
+<li>Enable browser caching</li>
+<li>Minify CSS/JS</li>
+<li>Use a CDN (<strong>Cloudflare</strong>)</li>
+</ul>
+<p>Each additional second of load time reduces conversion by 7%.</p>
+<h3>Mobile Optimization</h3>
+<p>60% of B2B searches happen on mobile. Ensure:</p>
+<p><strong>Responsive design</strong>: Content adapts to screen size</p>
+<p><strong>Tap-friendly CTAs</strong>: Buttons 44px × 44px minimum</p>
+<p><strong>Readable text</strong>: 16px font size minimum (no pinch-zooming)</p>
+<p><strong>Simplified forms</strong>: Fewer fields on mobile (name + email only for top-funnel CTAs)</p>
+<p>Test on real devices (iPhone, Android) or use <strong>BrowserStack</strong>.</p>
+<h3>Thank-You Page Strategy</h3>
+<p>After form submission, redirect to a thank-you page that:</p>
+<p><strong>Confirms delivery</strong>: &quot;Check your inbox for [Lead Magnet Name]&quot;</p>
+<p><strong>Sets expectations</strong>: &quot;It may take 2-3 minutes to arrive. Check spam if you don&#39;t see it.&quot;</p>
+<p><strong>Offers next step</strong>: &quot;While you wait, book a consultation&quot; or &quot;Explore our case studies&quot;</p>
+<p><strong>Tracks conversion</strong>: Add <strong>Google Analytics</strong> event tracking or <strong>Facebook Pixel</strong> for ad retargeting</p>
+<p>Thank-you pages keep visitors engaged and provide upsell opportunities.</p>
+<h2>A/B Testing Protocols</h2>
+<p>Intuition fails. Test systematically.</p>
+<h3>What to Test</h3>
+<p><strong>Headlines</strong>: Outcome-focused vs. method-focused</p>
+<p><strong>CTA copy</strong>: &quot;Download&quot; vs. &quot;Get&quot; vs. &quot;Access&quot;</p>
+<p><strong>CTA placement</strong>: Above fold vs. mid-page vs. both</p>
+<p><strong>Form fields</strong>: 3 fields vs. 5 fields vs. 2 fields</p>
+<p><strong>Lead magnet type</strong>: Template vs. guide vs. assessment</p>
+<p><strong>Social proof</strong>: Client logos vs. testimonial quote vs. stat</p>
+<p><strong>Page length</strong>: Long-form (2,000 words) vs. short-form (500 words)</p>
+<h3>Test Structure</h3>
+<p><strong>Traffic requirement</strong>: 1,000+ visitors per variant (2,000 total for A/B test) to reach statistical significance</p>
+<p><strong>Duration</strong>: Run tests for 2-4 weeks (accounts for weekly traffic patterns)</p>
+<p><strong>Metric</strong>: Conversion rate (form fills ÷ visitors)</p>
+<p><strong>Significance</strong>: Use <strong>Optimizely</strong>, <strong>VWO</strong>, or <strong>Google Optimize</strong> to calculate confidence (aim for 95%)</p>
+<h3>Iteration Strategy</h3>
+<p>Test one variable at a time. If you change headline AND CTA copy simultaneously, you won&#39;t know which drove the lift.</p>
+<p><strong>Example progression</strong>:</p>
+<ol>
+<li>Test headline A vs. headline B → B wins (2.5% vs. 2.0%)</li>
+<li>Test CTA copy on winning headline → &quot;Get&quot; beats &quot;Download&quot; (2.8% vs. 2.5%)</li>
+<li>Test form fields with winning headline + CTA → 3 fields beats 5 fields (3.2% vs. 2.8%)</li>
+</ol>
+<p>Compound improvements over time.</p>
+<h2>Conversion Benchmarks</h2>
+<p><strong>B2B website conversion rates</strong>:</p>
+<p><strong>Landing pages</strong> (dedicated, single-purpose): 5-15%</p>
+<p><strong>Service pages</strong>: 2-5%</p>
+<p><strong>Blog posts</strong>: 0.5-2% (awareness content converts lower)</p>
+<p><strong>Case studies</strong>: 3-8%</p>
+<p>If you&#39;re below these benchmarks, prioritize CRO before scaling traffic.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>What&#39;s a good conversion rate for B2B organic traffic?</strong></p>
+<p>2-5% site-wide (form fills + consultation bookings ÷ total visitors). Decision-stage pages (service pages, pricing) should convert 5-15%. Awareness-stage pages (blog posts) convert 0.5-2%. If site-wide conversion is below 2%, optimize CTAs, lead magnets, and forms before investing in traffic generation. Scaling traffic to a low-converting site wastes money. Fix conversion first, then scale.</p>
+<p><strong>Should I gate all content or keep it ungated for SEO?</strong></p>
+<p>Ungated content ranks better (Google can crawl it, no bounce from form friction). Gate only high-value, consideration-stage resources (frameworks, templates, assessments) where visitors perceive enough value to trade contact info. Don&#39;t gate awareness content (blog posts, guides)—it hurts SEO and reduces reach. Best practice: ungated blog post with gated lead magnet embedded mid-article. Example: &quot;Want our lead scoring template? Download it here [form].&quot; This balances SEO reach with lead capture.</p>
+<p><strong>How many CTAs should I include on a page?</strong></p>
+<p>One primary CTA (main action) + one secondary CTA (softer alternative). Example: Primary = &quot;Book a consultation,&quot; Secondary = &quot;Download our framework.&quot; Too many CTAs create decision paralysis. If you offer &quot;Book,&quot; &quot;Download,&quot; &quot;Subscribe,&quot; and &quot;Read case study&quot; on the same page, visitors pick none. Exception: long-form content can include multiple instances of the same CTA (top, middle, bottom of article) without hurting conversion—repetition works when it&#39;s the same ask.</p>
+<p><strong>What&#39;s more important: increasing traffic or improving conversion rate?</strong></p>
+<p>Improve conversion first. Doubling conversion rate (2% → 4%) doubles leads without additional traffic cost. Doubling traffic with the same conversion maintains lead volume but costs 2x in SEO/content effort. If your conversion rate is below 2%, invest in CRO before scaling traffic. If conversion is healthy (3-5%+), then scale traffic. For low-converting sites, traffic growth masks the real problem (leaky funnel). Fix leaks, then turn on the faucet.</p>
+<p><strong>How do I reduce form abandonment on mobile devices?</strong></p>
+<p>Minimize fields (name + email only for top-funnel forms), use single-column layout, increase button size (44px × 44px), enable autofill (use standard field names: &quot;email,&quot; &quot;name,&quot; &quot;company&quot;), avoid CAPTCHAs (use honeypot spam protection instead), test on real devices (not just desktop emulators). Mobile form abandonment often stems from keyboard covering submit button—ensure button is visible above keyboard. Consider two-step forms on mobile: Step 1 = email only, Step 2 = name + company (reduces perceived effort). Test with <strong>Hotjar</strong> or <strong>Microsoft Clarity</strong> to watch session recordings and identify friction points.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

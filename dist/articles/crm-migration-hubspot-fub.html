@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild | B2B Vic</title>
+    <meta name="description" content="CRM migration guide for real estate teams moving HubSpot to Follow Up Boss. Contact export, custom field mapping, workflow recreation, and data integrity verification." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild" />
+    <meta property="og:description" content="CRM migration guide for real estate teams moving HubSpot to Follow Up Boss. Contact export, custom field mapping, workflow recreation, and data integrity verification." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/crm-migration-hubspot-fub.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild" />
+    <meta name="twitter:description" content="CRM migration guide for real estate teams moving HubSpot to Follow Up Boss. Contact export, custom field mapping, workflow recreation, and data integrity verification." />
+    <link rel="canonical" href="https://b2bvic.com/articles/crm-migration-hubspot-fub.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild",
+      "description": "CRM migration guide for real estate teams moving HubSpot to Follow Up Boss. Contact export, custom field mapping, workflow recreation, and data integrity verification.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/crm-migration-hubspot-fub.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>CRM Migration from HubSpot to Follow Up Boss: Real Estate-Specific Data Transfer and Workflow Rebuild</h1>
+<p>Real estate teams outgrow <strong>HubSpot</strong> when agent-specific workflows, MLS integration, and commission tracking become critical. <strong>Follow Up Boss (FUB)</strong> dominates real estate CRM because it&#39;s purpose-built for agent teams, buyer/seller tracking, and lead distribution logic that HubSpot handles poorly. Migrating from HubSpot to FUB requires careful contact export, custom field mapping, workflow recreation, and validation—poor execution loses leads, breaks attribution, and disrupts operations for weeks.</p>
+<p>This guide covers the complete migration process: data audit, export preparation, FUB configuration, import execution, workflow rebuild, and post-migration validation that ensures zero data loss and minimal downtime.</p>
+<h2>Why Real Estate Teams Migrate to Follow Up Boss</h2>
+<h3>HubSpot Limitations for Real Estate</h3>
+<p><strong>Weak MLS integration</strong>: HubSpot doesn&#39;t natively sync MLS data (property listings, showings, offers)</p>
+<p><strong>Poor lead routing</strong>: Territory assignment in HubSpot requires complex workflows; FUB handles it natively</p>
+<p><strong>No commission tracking</strong>: HubSpot opportunities don&#39;t track buyer/seller agent splits, referral fees, or commission schedules</p>
+<p><strong>Generic lifecycle stages</strong>: HubSpot stages (Subscriber, Lead, MQL) don&#39;t map to real estate (New Lead, Contacted, Appointment Set, Under Contract, Closed)</p>
+<p><strong>Limited agent scorecards</strong>: HubSpot dashboards aren&#39;t optimized for agent KPIs (speed to lead, contact rate, conversion by source)</p>
+<h3>Follow Up Boss Advantages</h3>
+<p><strong>Real estate-native</strong>: Built for buyer/seller workflows, agent teams, and transaction management</p>
+<p><strong>MLS sync</strong>: Direct MLS integration for property data</p>
+<p><strong>Smart lead routing</strong>: Distributes leads by price range, location, agent capacity</p>
+<p><strong>Commission tracking</strong>: Tracks splits, referral fees, closing dates</p>
+<p><strong>Agent performance</strong>: Dashboards showing speed to lead, contact attempts, conversion rates</p>
+<p><strong>Text messaging</strong>: Native SMS (HubSpot requires third-party integrations)</p>
+<h2>Pre-Migration Data Audit</h2>
+<p>Before exporting, audit HubSpot data to identify what transfers and what doesn&#39;t.</p>
+<h3>Contact Count and Segmentation</h3>
+<p><strong>Total contacts</strong>: How many records exist?</p>
+<p><strong>Active contacts</strong>: Contacts engaged in last 90 days (email opens, website visits, form submissions)</p>
+<p><strong>Inactive contacts</strong>: No engagement in 180+ days</p>
+<p><strong>Leads vs. Clients</strong>: Separate prospects from closed clients</p>
+<p><strong>Decision</strong>: Migrate active contacts + clients. Archive or delete inactive contacts (no need to clutter new CRM).</p>
+<h3>Custom Fields Audit</h3>
+<p>List all custom fields in HubSpot and determine FUB equivalents.</p>
+<p><strong>Example mapping</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>HubSpot Field</th>
+<th>FUB Equivalent</th>
+<th>Migration Strategy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Lead Source</td>
+<td>Source</td>
+<td>Direct map</td>
+</tr>
+<tr>
+<td>Agent Owner</td>
+<td>Agent</td>
+<td>Direct map</td>
+</tr>
+<tr>
+<td>Property Interest (custom)</td>
+<td>Tags or Custom Field</td>
+<td>Map to FUB tags</td>
+</tr>
+<tr>
+<td>Lifecycle Stage</td>
+<td>Stage</td>
+<td>Map to FUB stages (adjust names)</td>
+</tr>
+<tr>
+<td>Last Contacted Date</td>
+<td>Last Activity</td>
+<td>Direct map</td>
+</tr>
+<tr>
+<td>Price Range (custom)</td>
+<td>Custom Field</td>
+<td>Create FUB custom field</td>
+</tr>
+</tbody></table>
+<p><strong>Non-transferable fields</strong>: HubSpot-specific data (workflow enrollment status, email campaign metrics, page views) doesn&#39;t map to FUB. Capture critical metrics in notes or spreadsheets before migration.</p>
+<h3>Deal/Opportunity Audit</h3>
+<p><strong>Open deals</strong>: Active transactions (under contract, pending close)</p>
+<p><strong>Closed-won deals</strong>: Past transactions (need for historical reporting)</p>
+<p><strong>Closed-lost deals</strong>: Lost opportunities (migrate if tracking loss reasons matters)</p>
+<p>FUB calls these &quot;deals&quot; or &quot;transactions.&quot; Map HubSpot deal stages to FUB stages.</p>
+<p><strong>Example stage mapping</strong>:</p>
+<ul>
+<li>HubSpot &quot;Qualification&quot; → FUB &quot;New Lead&quot;</li>
+<li>HubSpot &quot;Appointment Scheduled&quot; → FUB &quot;Appointment Set&quot;</li>
+<li>HubSpot &quot;Contract Sent&quot; → FUB &quot;Under Contract&quot;</li>
+<li>HubSpot &quot;Closed Won&quot; → FUB &quot;Closed&quot;</li>
+</ul>
+<h3>Activity History</h3>
+<p><strong>Calls, emails, meetings</strong>: HubSpot logs activities on contact timeline. FUB imports notes but not full activity history.</p>
+<p><strong>Strategy</strong>: Export key activities as notes attached to contacts (e.g., &quot;Called 2025-01-15: Interested in 3BR in downtown&quot;).</p>
+<p><strong>Email sequences</strong>: HubSpot sequences don&#39;t transfer. Rebuild in FUB action plans.</p>
+<h2>Data Export from HubSpot</h2>
+<h3>Contact Export</h3>
+<p><strong>Path</strong>: Contacts → Export → Select properties to export</p>
+<p><strong>Export all contacts</strong> or filter by segment (e.g., &quot;Active Leads&quot; list).</p>
+<p><strong>Required fields</strong>:</p>
+<ul>
+<li>First Name</li>
+<li>Last Name</li>
+<li>Email</li>
+<li>Phone</li>
+<li>Lead Source</li>
+<li>Owner (agent assigned)</li>
+<li>Lifecycle Stage</li>
+<li>Last Contacted Date</li>
+</ul>
+<p><strong>Custom fields</strong>: Include all custom properties relevant to FUB (price range, property interest, tags).</p>
+<p><strong>Format</strong>: CSV</p>
+<p><strong>Tip</strong>: HubSpot limits exports to 500K rows. If you have more, segment exports by list or date range.</p>
+<h3>Deal Export</h3>
+<p><strong>Path</strong>: Deals → Export → Select properties</p>
+<p><strong>Required fields</strong>:</p>
+<ul>
+<li>Deal Name</li>
+<li>Deal Stage</li>
+<li>Close Date</li>
+<li>Deal Amount (commission)</li>
+<li>Associated Contact (link deal to contact)</li>
+<li>Deal Owner (agent)</li>
+</ul>
+<p><strong>Custom fields</strong>: Include commission split, referral source, property address (if tracked).</p>
+<h3>Notes and Activity Export</h3>
+<p><strong>Path</strong>: Contacts → Export → Include &quot;Recent Note&quot; or use workflow to append recent activity to contact description.</p>
+<p>Alternatively, use <strong>HubSpot API</strong> or third-party tools (<strong>Import2</strong>, <strong>Trujay</strong>) to bulk-export activity history.</p>
+<p><strong>Format</strong>: Append activities to a &quot;Migration Notes&quot; field in contact export CSV.</p>
+<h2>Follow Up Boss Setup</h2>
+<p>Configure FUB before importing data.</p>
+<h3>Custom Field Creation</h3>
+<p>Create custom fields in FUB to match HubSpot custom properties.</p>
+<p><strong>FUB path</strong>: Settings → Custom Fields → Add Field</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li><strong>Field Name</strong>: &quot;Price Range&quot;</li>
+<li><strong>Type</strong>: Dropdown</li>
+<li><strong>Options</strong>: &quot;$0-$200K,&quot; &quot;$200K-$400K,&quot; &quot;$400K-$600K,&quot; &quot;$600K+&quot;</li>
+</ul>
+<p>Repeat for all HubSpot custom fields that don&#39;t have native FUB equivalents.</p>
+<h3>Stage Configuration</h3>
+<p><strong>FUB path</strong>: Settings → Stages → Customize</p>
+<p>Default FUB stages:</p>
+<ul>
+<li>New Lead</li>
+<li>Contacted</li>
+<li>Appointment Set</li>
+<li>Under Contract</li>
+<li>Closed</li>
+<li>Dead</li>
+</ul>
+<p>Adjust to match your team&#39;s workflow. Add intermediate stages if needed (e.g., &quot;Second Showing,&quot; &quot;Offer Submitted&quot;).</p>
+<h3>Lead Source Mapping</h3>
+<p><strong>FUB path</strong>: Settings → Lead Sources</p>
+<p>Import lead sources from HubSpot (Zillow, Realtor.com, Facebook Ads, Website, Referral).</p>
+<p>Match HubSpot source names exactly to avoid import errors.</p>
+<h3>Agent Setup</h3>
+<p><strong>FUB path</strong>: Settings → Users → Add Agents</p>
+<p>Create agent accounts matching HubSpot owners. Use identical names/emails for seamless assignment during import.</p>
+<h3>Action Plans (Workflow Equivalent)</h3>
+<p>FUB &quot;Action Plans&quot; = HubSpot workflows. Build core action plans before import:</p>
+<p><strong>Action Plan 1: New Lead Follow-Up</strong></p>
+<ul>
+<li>Day 0: Assign agent, send intro email</li>
+<li>Day 1: Task for agent to call</li>
+<li>Day 3: Send follow-up email if no response</li>
+<li>Day 7: Task for second call attempt</li>
+</ul>
+<p><strong>Action Plan 2: Appointment Follow-Up</strong></p>
+<ul>
+<li>Day 0: Confirmation email</li>
+<li>Day -1: Reminder text (day before appointment)</li>
+<li>Day +1: Post-appointment survey</li>
+</ul>
+<p>Rebuild critical HubSpot workflows as FUB action plans before migration.</p>
+<h2>Data Import to Follow Up Boss</h2>
+<h3>Contact Import</h3>
+<p><strong>FUB path</strong>: Settings → Import → Upload CSV</p>
+<p><strong>Pre-import checklist</strong>:</p>
+<ul>
+<li><input disabled="" type="checkbox"> CSV has required fields (First Name, Last Name, Email or Phone)</li>
+<li><input disabled="" type="checkbox"> Owner/Agent field matches FUB agent names exactly</li>
+<li><input disabled="" type="checkbox"> Lead Source values match FUB source list</li>
+<li><input disabled="" type="checkbox"> Custom fields exist in FUB (create before import)</li>
+</ul>
+<p><strong>Import settings</strong>:</p>
+<p><strong>Duplicate handling</strong>: &quot;Update existing, create new&quot; (merges by email)</p>
+<p><strong>Stage assignment</strong>: Map HubSpot lifecycle stage to FUB stage</p>
+<p><strong>Action plan enrollment</strong>: Optionally enroll imported leads in &quot;New Lead Follow-Up&quot; action plan</p>
+<p><strong>Execute import</strong>: Upload CSV, map columns, review preview, confirm import.</p>
+<p><strong>FUB processes imports in batches</strong> (1,000-5,000 records per batch). Large imports (50K+ records) take hours.</p>
+<h3>Deal Import</h3>
+<p><strong>Path</strong>: Settings → Import → Upload CSV (select &quot;Deals&quot; import type)</p>
+<p><strong>Required fields</strong>:</p>
+<ul>
+<li>Contact Email (links deal to contact)</li>
+<li>Deal Amount</li>
+<li>Deal Stage</li>
+<li>Close Date (if closed)</li>
+<li>Agent (owner)</li>
+</ul>
+<p><strong>Custom fields</strong>: Commission split, referral fee, property address</p>
+<p><strong>Tip</strong>: Import contacts first, then deals (deals require contacts to exist).</p>
+<h3>Notes and Activity Import</h3>
+<p>FUB doesn&#39;t support structured activity import (calls, emails). Use note imports:</p>
+<p><strong>Process</strong>:</p>
+<ol>
+<li>In HubSpot, append recent activity to contact &quot;Description&quot; or &quot;Notes&quot; field</li>
+<li>Export contacts with populated notes field</li>
+<li>Import to FUB—notes transfer as contact notes</li>
+</ol>
+<p><strong>Limitation</strong>: No timestamp preservation. Notes show import date, not original activity date. Include dates in note text (&quot;Called 2025-01-15: Discussed 3BR options&quot;).</p>
+<h2>Post-Migration Validation</h2>
+<p>After import, verify data integrity.</p>
+<h3>Contact Verification</h3>
+<p><strong>Sample check</strong>: Select 50-100 random contacts, verify:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Name, email, phone correct</li>
+<li><input disabled="" type="checkbox"> Agent assignment matches HubSpot owner</li>
+<li><input disabled="" type="checkbox"> Lead source matches</li>
+<li><input disabled="" type="checkbox"> Custom fields (price range, property interest) populated</li>
+<li><input disabled="" type="checkbox"> Stage matches HubSpot lifecycle stage</li>
+</ul>
+<p><strong>Error rate</strong>: &lt;2% is acceptable. &gt;5% signals mapping issues—review and re-import.</p>
+<h3>Deal Verification</h3>
+<p>Check 20-30 deals:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Deal linked to correct contact</li>
+<li><input disabled="" type="checkbox"> Deal amount correct</li>
+<li><input disabled="" type="checkbox"> Stage accurate</li>
+<li><input disabled="" type="checkbox"> Close date preserved (for closed deals)</li>
+</ul>
+<h3>Missing Data Identification</h3>
+<p>Run reports in FUB:</p>
+<p><strong>Report 1</strong>: Contacts missing email or phone (should be &lt;1%)</p>
+<p><strong>Report 2</strong>: Contacts missing agent assignment (should be 0%)</p>
+<p><strong>Report 3</strong>: Contacts missing lead source (target &lt;5%)</p>
+<p>Fix missing data manually or re-import corrected CSV.</p>
+<h3>Count Reconciliation</h3>
+<p><strong>HubSpot total contacts exported</strong>: 12,450</p>
+<p><strong>FUB total contacts imported</strong>: 12,448</p>
+<p><strong>Discrepancy</strong>: 2 contacts (investigate—likely duplicates merged or invalid emails)</p>
+<p>Acceptable variance: &lt;0.5%. Higher variance requires investigation.</p>
+<h2>Workflow and Automation Rebuild</h2>
+<p>HubSpot workflows don&#39;t migrate. Rebuild as FUB action plans and automation.</p>
+<h3>Email Sequences</h3>
+<p><strong>HubSpot sequence</strong>: 5-email drip for new leads</p>
+<p><strong>FUB equivalent</strong>: Action plan with email steps</p>
+<p><strong>Rebuild process</strong>:</p>
+<ol>
+<li>Copy email content from HubSpot</li>
+<li>Create FUB action plan</li>
+<li>Add email steps (Day 0, Day 2, Day 5, Day 7, Day 14)</li>
+<li>Test with 5-10 contacts before full rollout</li>
+</ol>
+<h3>Lead Routing</h3>
+<p><strong>HubSpot</strong>: Workflow assigns contacts to owners based on territory (zip code, city)</p>
+<p><strong>FUB equivalent</strong>: Smart routing rules</p>
+<p><strong>FUB path</strong>: Settings → Lead Routing → Add Rule</p>
+<p><strong>Example rule</strong>: &quot;If lead source = Zillow AND property location = &#39;San Francisco,&#39; assign to Agent A&quot;</p>
+<p>FUB routing is more granular than HubSpot (supports price range, lead score, agent capacity).</p>
+<h3>Task Automation</h3>
+<p><strong>HubSpot</strong>: Task created when deal enters &quot;Appointment Scheduled&quot; stage</p>
+<p><strong>FUB equivalent</strong>: Action plan triggered by stage change</p>
+<p><strong>FUB setup</strong>:</p>
+<ol>
+<li>Create action plan &quot;Appointment Follow-Up&quot;</li>
+<li>Trigger: Stage = &quot;Appointment Set&quot;</li>
+<li>Actions: Create task &quot;Call to confirm appointment&quot; (assigned to agent)</li>
+</ol>
+<h3>Notifications</h3>
+<p><strong>HubSpot</strong>: Slack/email notifications when leads enter certain stages</p>
+<p><strong>FUB equivalent</strong>: Native email/SMS alerts</p>
+<p><strong>FUB path</strong>: Settings → Notifications → Configure alerts</p>
+<p>Options:</p>
+<ul>
+<li>New lead assigned</li>
+<li>Lead not contacted in 24 hours</li>
+<li>Appointment set</li>
+<li>Deal closed</li>
+</ul>
+<h2>Training and Rollout</h2>
+<p>Agents need training on FUB before go-live.</p>
+<h3>Training Checklist</h3>
+<p><strong>Week 1</strong> (pre-migration):</p>
+<ul>
+<li><input disabled="" type="checkbox"> Demo FUB interface (contact view, timeline, tasks)</li>
+<li><input disabled="" type="checkbox"> Explain stage progression</li>
+<li><input disabled="" type="checkbox"> Show how to log calls, emails, texts</li>
+<li><input disabled="" type="checkbox"> Practice action plan enrollment</li>
+</ul>
+<p><strong>Week 2</strong> (post-migration):</p>
+<ul>
+<li><input disabled="" type="checkbox"> Review imported contacts (sample searches)</li>
+<li><input disabled="" type="checkbox"> Verify agent-assigned contacts</li>
+<li><input disabled="" type="checkbox"> Test action plans (enroll 5 test leads)</li>
+<li><input disabled="" type="checkbox"> Q&amp;A session</li>
+</ul>
+<h3>Rollout Strategy</h3>
+<p><strong>Soft launch</strong> (Week 1): Migrate 10% of contacts, test with 2-3 agents</p>
+<p><strong>Full launch</strong> (Week 2): Migrate all contacts, all agents switch to FUB</p>
+<p><strong>Parallel run</strong> (optional): Run HubSpot + FUB simultaneously for 1 week (log activity in both), then cut over</p>
+<p><strong>Parallel run risks</strong>: Double data entry, confusion. Only use if team is risk-averse.</p>
+<h2>Post-Migration Support</h2>
+<h3>Common Issues</h3>
+<p><strong>Issue 1</strong>: Agents can&#39;t find contacts</p>
+<p><strong>Cause</strong>: Incorrect agent assignment during import</p>
+<p><strong>Fix</strong>: Bulk reassign contacts using FUB filters + bulk actions</p>
+<p><strong>Issue 2</strong>: Email sequences not triggering</p>
+<p><strong>Cause</strong>: Action plan enrollment missing</p>
+<p><strong>Fix</strong>: Bulk enroll contacts in action plans (Settings → Action Plans → Enroll)</p>
+<p><strong>Issue 3</strong>: Duplicate contacts</p>
+<p><strong>Cause</strong>: Import merged some duplicates, missed others</p>
+<p><strong>Fix</strong>: Use FUB duplicate detection (Settings → Duplicates → Merge)</p>
+<h3>Data Cleanup</h3>
+<p><strong>Week 1 post-migration</strong>: Review for missing fields, incorrect assignments, duplicates</p>
+<p><strong>Week 4 post-migration</strong>: Audit action plan performance (are emails sending? tasks creating?)</p>
+<p><strong>Month 3 post-migration</strong>: Validate reporting accuracy (deal close rates, lead conversion)</p>
+<h2>HubSpot Decommissioning</h2>
+<p>After validating FUB, wind down HubSpot.</p>
+<p><strong>Month 1</strong>: Maintain HubSpot read-only (reference historical data)</p>
+<p><strong>Month 2</strong>: Export reports for compliance/record-keeping</p>
+<p><strong>Month 3</strong>: Cancel HubSpot subscription</p>
+<p><strong>Archive</strong>: Download full data export (contacts, deals, reports) before cancellation. Store in secure location (Google Drive, Dropbox) for 7 years (IRS requirement for transaction records).</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>How long does a HubSpot to Follow Up Boss migration take?</strong></p>
+<p>2-4 weeks for full migration. Week 1: Data audit and FUB setup. Week 2: Export, import, and validation. Week 3: Workflow rebuild and agent training. Week 4: Rollout and issue resolution. Small teams (&lt;5 agents, &lt;5K contacts) can complete in 2 weeks. Large teams (10+ agents, 50K+ contacts) need 4-6 weeks. Critical success factor: dedicate ops/admin resource full-time during migration—part-time attention extends timeline by 2-3x.</p>
+<p><strong>Can I migrate HubSpot email campaign history to Follow Up Boss?</strong></p>
+<p>No. FUB doesn&#39;t import email campaign metrics (opens, clicks, campaign enrollment). Export key campaign performance data (open rates, click rates, conversions) to spreadsheet for historical reference. Going forward, track email performance in FUB (action plan emails log opens/clicks natively). If historical email attribution is critical for commission disputes or compliance, maintain HubSpot access read-only for 6-12 months post-migration.</p>
+<p><strong>Should I clean HubSpot data before migration or after in Follow Up Boss?</strong></p>
+<p>Before. Migrating dirty data (duplicates, incomplete records, inactive contacts) pollutes FUB and wastes import time. Pre-migration cleanup: (1) Dedupe HubSpot (merge duplicates), (2) Delete/archive test records and spam contacts, (3) Enrich incomplete records (append missing phone, email, lead source), (4) Segment active vs. inactive (only migrate active + closed deals). Rule: If a record hasn&#39;t been touched in 2+ years and isn&#39;t a past client, don&#39;t migrate it. Clean data = faster import, fewer post-migration issues.</p>
+<p><strong>What if Follow Up Boss import fails or data corrupts?</strong></p>
+<p>FUB doesn&#39;t overwrite data on failed imports—records either import successfully or skip. If import fails: (1) Review FUB error log (shows which rows failed, why), (2) Fix errors in CSV (common: missing required fields, invalid email format, agent name mismatch), (3) Re-import corrected CSV (set duplicate handling to &quot;update existing&quot; to avoid doubling records). If data corrupts (wrong fields mapped, incorrect stage assignments), FUB support can roll back imports within 48 hours. Always test import with 50-100 record sample before full import—catch mapping errors early.</p>
+<p><strong>How do I handle HubSpot integrations (Zillow, Realtor.com, Facebook Ads) during migration?</strong></p>
+<p>Disconnect HubSpot integrations, reconnect to FUB before go-live. Process: (1) Identify all HubSpot integrations pulling leads (Zillow, Realtor.com, BoomTown, Facebook Lead Ads), (2) Pause integrations 1 week before migration (prevents new leads entering HubSpot during migration chaos), (3) Set up FUB integrations (FUB has native Zillow, Realtor.com connectors—easier than HubSpot), (4) Test FUB integrations with 5-10 test leads, (5) Reactivate integrations pointing to FUB on go-live day. Downside: 1-week lead flow pause. Alternative: Use Zapier to bridge HubSpot → FUB during migration (leads enter both systems until cutover).</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

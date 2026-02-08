@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects | B2B Vic</title>
+    <meta name="description" content="Cold email sequence architecture for B2B pipeline generation. Cadence timing, message differentiation, and breakup emails that salvage dormant threads." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects" />
+    <meta property="og:description" content="Cold email sequence architecture for B2B pipeline generation. Cadence timing, message differentiation, and breakup emails that salvage dormant threads." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/cold-outreach-email-sequences.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects" />
+    <meta name="twitter:description" content="Cold email sequence architecture for B2B pipeline generation. Cadence timing, message differentiation, and breakup emails that salvage dormant threads." />
+    <link rel="canonical" href="https://b2bvic.com/articles/cold-outreach-email-sequences.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects",
+      "description": "Cold email sequence architecture for B2B pipeline generation. Cadence timing, message differentiation, and breakup emails that salvage dormant threads.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/cold-outreach-email-sequences.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Cold Outreach Email Sequences: Multi-Touch Cadences That Convert B2B Prospects</h1>
+<p>Single cold emails convert at 1-3%. Multi-touch sequences convert at 8-15% when structured correctly. The difference isn&#39;t volume—it&#39;s message architecture, timing intervals, and value escalation across touchpoints that move prospects from ignore to reply.</p>
+<p><strong>Salesforce</strong> and <strong>HubSpot</strong> operators send 4-7 emails per sequence, spacing them 3-7 days apart, with each message introducing new angles rather than repeating the same ask. This guide covers sequence structure, cadence timing, message differentiation tactics, and breakup emails that salvage threads heading toward permanent silence.</p>
+<h2>Sequence Architecture: Touchpoints and Timing</h2>
+<p>A cold email sequence is a series of messages sent to the same prospect over 2-4 weeks. Each touchpoint serves a distinct purpose, and timing between messages prevents fatigue while maintaining visibility.</p>
+<h3>Optimal Sequence Length</h3>
+<p>4-7 emails converts best for B2B cold outreach. Fewer than four touchpoints abandons prospects before they&#39;ve had time to notice. More than seven emails crosses into harassment territory and increases spam complaints.</p>
+<p>Standard cadence:</p>
+<ul>
+<li><strong>Email 1</strong>: Initial value pitch (Day 0)</li>
+<li><strong>Email 2</strong>: Different angle or case study (Day 3)</li>
+<li><strong>Email 3</strong>: Question or resource share (Day 7)</li>
+<li><strong>Email 4</strong>: Social proof or insight (Day 10)</li>
+<li><strong>Email 5</strong>: Direct ask or offer (Day 14)</li>
+<li><strong>Email 6</strong>: Breakup email (Day 21)</li>
+</ul>
+<p>This structure gives prospects three weeks to engage while varying the message type to avoid repetition fatigue.</p>
+<h3>Timing Intervals</h3>
+<p><strong>Early sequence (Emails 1-3)</strong>: 3-4 days between sends. Prospects are busy, and shorter intervals keep you visible without overwhelming.</p>
+<p><strong>Mid sequence (Emails 4-5)</strong>: 4-5 days between sends. Longer gaps give prospects breathing room and reduce unsubscribe rates.</p>
+<p><strong>Late sequence (Email 6+)</strong>: 7+ days before breakup. Final emails should feel like genuine last attempts, not rushed follow-ups.</p>
+<p>Avoid:</p>
+<ul>
+<li><strong>Daily sends</strong>: Triggers spam filters and annoys recipients</li>
+<li><strong>Same day/time every send</strong>: Predictable patterns make you easy to ignore</li>
+<li><strong>Long gaps early</strong>: Waiting 10 days between emails 1 and 2 allows prospects to forget your initial message</li>
+</ul>
+<h3>Send Time Optimization</h3>
+<p><strong>Tuesday-Thursday, 8-10am recipient local time</strong> performs best for B2B cold email. Mondays bury you in weekend backlog, Fridays compete with end-of-week urgency, and afternoons lose to meeting-heavy calendars.</p>
+<p>If targeting multiple time zones, stagger sends:</p>
+<ul>
+<li>East Coast: 8am ET (Email 1), 9am ET (Email 2)</li>
+<li>Central: 8am CT</li>
+<li>Mountain: 8am MT</li>
+<li>Pacific: 8am PT</li>
+</ul>
+<p>This keeps your sequence in morning inbox real estate across regions.</p>
+<h2>Email 1: The Initial Hook</h2>
+<p>The first email establishes credibility, communicates value, and creates curiosity. It&#39;s not a sales pitch—it&#39;s an opening.</p>
+<h3>Structure</h3>
+<p><strong>Subject line</strong>: Specific, personalized, under 50 characters (see <a href="cold-email-subject-lines-b2b.html">cold-email-subject-lines-b2b.html</a> for frameworks)</p>
+<p><strong>Opening line</strong>: Personalized observation or question that proves research</p>
+<p><strong>Value statement</strong>: One sentence explaining what you do and why it matters to them</p>
+<p><strong>Social proof or insight</strong>: Client result, industry trend, or specific observation about their company</p>
+<p><strong>Call-to-action</strong>: Soft ask (question, request for feedback, offer to share resource)</p>
+<p>Example:</p>
+<pre><code>Subject: [Company]&#39;s lead scoring setup?
+
+[Name],
+
+Noticed you&#39;re using HubSpot for lead management—most teams we work with struggle to align MQL definitions between sales and marketing.
+
+We helped [SimilarCompany] cut lead response time from 4 days to 6 hours by automating their scoring model and routing logic.
+
+Curious how your team currently handles this. Worth a quick call?
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Opens with specific observation (HubSpot usage)</li>
+<li>Names a common pain point</li>
+<li>Shares relevant client result</li>
+<li>Asks a question instead of pushing a demo</li>
+</ul>
+<h3>Length</h3>
+<p>50-100 words. B2B decision-makers scan emails in 5-10 seconds. Anything longer gets skimmed or ignored.</p>
+<h3>Mistakes to Avoid</h3>
+<p><strong>Generic intros</strong>: &quot;I hope this email finds you well&quot; wastes space and signals automation.</p>
+<p><strong>Self-focused value props</strong>: &quot;We&#39;re the leading provider of...&quot; —they don&#39;t care about you yet.</p>
+<p><strong>Aggressive CTAs</strong>: &quot;Book a demo here&quot; in email one feels pushy and gets ignored.</p>
+<h2>Email 2: Different Angle or Case Study</h2>
+<p>The second email assumes they missed email one (most did). Introduce a new angle rather than resending the same pitch.</p>
+<h3>Approach</h3>
+<p><strong>Case study focus</strong>: Share a detailed client result relevant to their industry or role.</p>
+<p><strong>Content/resource share</strong>: Link to an article, tool, or framework they&#39;d find useful (no registration wall).</p>
+<p><strong>Insight or observation</strong>: Point out something specific about their company, competitor, or market.</p>
+<p>Example:</p>
+<pre><code>Subject: How [SimilarCompany] automated contact enrichment
+
+[Name],
+
+[SimilarCompany] was manually enriching 300+ contacts per week using ZoomInfo exports—taking their ops team 10 hours weekly.
+
+We built an automated flow that enriches contacts on entry, routes based on firmographics, and syncs back to Salesforce in real-time. Cut manual work to zero.
+
+Thought you might find it relevant given [Company]&#39;s contact volume. Happy to walk through the setup if useful.
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Leads with specific client outcome</li>
+<li>Describes the &quot;before&quot; state (manual enrichment)</li>
+<li>Explains the solution without pitching</li>
+<li>Offers value (walk through setup) instead of selling</li>
+</ul>
+<h3>Differentiation from Email 1</h3>
+<p>Email 1 introduced your service broadly. Email 2 zooms into one specific outcome or use case. This prevents repetition fatigue and gives prospects a second reason to engage.</p>
+<h2>Email 3: Question or Resource Share</h2>
+<p>Third touchpoint shifts from pitching to asking. Questions reverse the dynamic—instead of you seeking their attention, you&#39;re requesting their expertise.</p>
+<h3>Question Framework</h3>
+<p>Ask about their current process, toolchain, or challenges. Make the question specific enough that answering requires thought.</p>
+<p>Example:</p>
+<pre><code>Subject: Quick question about [Company]&#39;s lead routing
+
+[Name],
+
+How do you currently route inbound leads between AEs?
+
+Most teams we talk to either:
+- Round-robin (fair but inefficient)
+- Territory-based (efficient but rigid)
+- Score-based (ideal but complex to maintain)
+
+Curious which path [Company] took. 2-minute call or quick reply works.
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Opens with a direct question</li>
+<li>Provides context (three common approaches)</li>
+<li>Requests minimal effort (quick reply or short call)</li>
+</ul>
+<h3>Resource Share Approach</h3>
+<p>Alternatively, offer a framework, tool, or playbook relevant to their role.</p>
+<p>Example:</p>
+<pre><code>Subject: Lead scoring framework for [Industry]
+
+[Name],
+
+Built a lead scoring calculator for [Industry] companies using HubSpot—it accounts for fit signals (title, company size) and intent signals (page views, email engagement).
+
+No forms, no login. Just a Google Sheet you can copy: [link]
+
+Let me know if you find gaps or want help customizing it for [Company].
+
+[Your Name]
+</code></pre>
+<p>This positions you as helpful rather than salesy and gives prospects a reason to reply (feedback, questions, customization).</p>
+<h2>Email 4: Social Proof or Insight</h2>
+<p>Fourth email reintroduces credibility through client names, results, or industry insights.</p>
+<h3>Social Proof Structure</h3>
+<p>Name recognizable clients or share aggregate results from similar companies.</p>
+<p>Example:</p>
+<pre><code>Subject: How [BigClientCo] scaled pipeline without adding SDRs
+
+[Name],
+
+[BigClientCo] needed to double pipeline without doubling headcount. Their SDR team was maxed at 100 dials/day per rep.
+
+We automated their outbound stack—list building, email sequences, follow-up cadences—and their pipeline grew 160% with the same team.
+
+[Company] feels like a similar setup. Worth exploring?
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Leads with a brand-name client</li>
+<li>Describes relatable constraint (headcount, capacity)</li>
+<li>Shares specific outcome (160% growth)</li>
+<li>Connects to recipient&#39;s situation</li>
+</ul>
+<h3>Insight Approach</h3>
+<p>Share a non-obvious observation about their market, competitors, or company.</p>
+<p>Example:</p>
+<pre><code>Subject: Noticed something about [Company]&#39;s pricing page
+
+[Name],
+
+Was researching [Industry] pricing models and noticed [Company] leads with features instead of outcomes.
+
+Most buyers in this space care more about &quot;time saved&quot; or &quot;revenue impact&quot; than feature lists—we tested this with [ClientCo] and saw 40% lift in demo requests when they restructured their messaging.
+
+Thought it might be worth testing. Want the case study?
+
+[Your Name]
+</code></pre>
+<p>This demonstrates you&#39;ve studied their business and offers tactical advice, which increases reply likelihood.</p>
+<h2>Email 5: Direct Ask or Offer</h2>
+<p>Fifth email escalates to a clear call-to-action. By now, they&#39;ve seen your name four times—if they&#39;re interested, they need a push.</p>
+<h3>Direct Ask Structure</h3>
+<p>Request a specific meeting time or action.</p>
+<p>Example:</p>
+<pre><code>Subject: 15 minutes Thursday?
+
+[Name],
+
+Sent a few notes on lead routing and pipeline automation—figured I&#39;d make this easy.
+
+Open Thursday 10am or 2pm ET for a 15-minute call to walk through how [ClientCo] set this up.
+
+If timing doesn&#39;t work, let me know what does.
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Recaps prior context (lead routing, pipeline automation)</li>
+<li>Offers specific times (reduces friction)</li>
+<li>Keeps commitment small (15 minutes)</li>
+</ul>
+<h3>Offer Approach</h3>
+<p>Provide a no-strings asset (audit, framework, free consultation).</p>
+<p>Example:</p>
+<pre><code>Subject: Free CRM audit for [Company]?
+
+[Name],
+
+I&#39;ll audit your current HubSpot setup—scoring models, lifecycle stages, routing logic—and send you a 10-minute Loom walking through what&#39;s working and what&#39;s leaking pipeline.
+
+No charge, no pitch. Just tactical feedback.
+
+Interested? Reply with your HubSpot portal URL and I&#39;ll turn it around in 48 hours.
+
+[Your Name]
+</code></pre>
+<p>This gives value upfront and lowers commitment threshold. If they accept, you&#39;ve started a conversation.</p>
+<h2>Email 6: The Breakup Email</h2>
+<p>Breakup emails signal the end of the sequence and often generate the highest reply rates (12-20%) because they reverse the power dynamic.</p>
+<h3>Breakup Structure</h3>
+<p>Acknowledge silence, give an out, and offer one final value point.</p>
+<p>Example:</p>
+<pre><code>Subject: Should I stop emailing you?
+
+[Name],
+
+Sent a few notes on lead routing + pipeline automation but haven&#39;t heard back—totally fine if it&#39;s not a priority right now.
+
+Should I stop emailing you, or is this something to revisit in a few months?
+
+Either way, here&#39;s that lead scoring framework I mentioned earlier: [link]
+
+[Your Name]
+</code></pre>
+<p>This email:</p>
+<ul>
+<li>Respects their silence (builds goodwill)</li>
+<li>Offers an easy out (reduces friction)</li>
+<li>Provides value even if they disengage (scoring framework)</li>
+</ul>
+<h3>Breakup Variants</h3>
+<p><strong>Humorous approach</strong>:</p>
+<pre><code>Subject: Last one, I promise
+
+[Name],
+
+This is my last email (my manager would kill me if I sent more).
+
+If [Company]&#39;s not thinking about pipeline automation right now, all good—just hit reply with &quot;not now&quot; and I&#39;ll check back in Q3.
+
+If it is on the radar, I&#39;m around.
+
+[Your Name]
+</code></pre>
+<p><strong>Permission-based approach</strong>:</p>
+<pre><code>Subject: Can I follow up in Q2?
+
+[Name],
+
+Haven&#39;t heard back, which usually means one of three things:
+
+1. Not a priority right now
+2. Went to spam (my bad)
+3. You&#39;re just swamped
+
+If it&#39;s (1) or (3), cool if I check back in April? If (2), let me know and I&#39;ll adjust my setup.
+
+[Your Name]
+</code></pre>
+<p>Breakup emails work because they feel like genuine communication rather than automated sequences. Many prospects reply just to acknowledge the respectful approach.</p>
+<h2>Advanced Sequence Tactics</h2>
+<h3>Multi-Channel Sequences</h3>
+<p>Layer email with <strong>LinkedIn</strong> connection requests, profile views, and InMail. If email three goes unanswered, send a LinkedIn connection request mentioning your prior emails. This increases visibility and conversion.</p>
+<p>Example LinkedIn message:</p>
+<pre><code>Hey [Name], sent a few emails about lead routing at [Company] but figured they might&#39;ve hit spam. Wanted to connect here instead—happy to share that lead scoring framework I mentioned if useful.
+</code></pre>
+<h3>Video Emails</h3>
+<p>Embed a personalized <strong>Loom</strong> or <strong>Vidyard</strong> video in email three or four. Record a 60-90 second video mentioning their company, explaining your value prop, and offering next steps.</p>
+<p>Subject: &quot;[Name], quick Loom for you&quot;</p>
+<p>Video works because:</p>
+<ul>
+<li>It&#39;s unexpected (low saturation in B2B cold outreach)</li>
+<li>It humanizes you</li>
+<li>It&#39;s harder to ignore than text</li>
+</ul>
+<h3>Conditional Branches</h3>
+<p>Use engagement data to branch sequences. If they opened email one but didn&#39;t reply, send email 2A (assumes interest). If they didn&#39;t open, send email 2B (assumes missed it).</p>
+<p><strong>Opened but no reply (2A)</strong>:</p>
+<pre><code>Subject: Following up on [prior subject]
+
+[Name],
+
+Saw you opened my last email but didn&#39;t hear back—did the timing not work, or is this not a fit for [Company] right now?
+
+Happy to adjust the conversation if I missed the mark.
+
+[Your Name]
+</code></pre>
+<p><strong>Didn&#39;t open (2B)</strong>:</p>
+<pre><code>Subject: [New angle with different hook]
+
+[Name],
+
+[Completely new message with different value prop]
+</code></pre>
+<p>This prevents wasting touches on uninterested prospects and focuses energy on engaged leads.</p>
+<h2>Measurement and Optimization</h2>
+<p>Track sequence performance at each touchpoint. Aggregate data across sequences to identify patterns.</p>
+<h3>Key Metrics</h3>
+<p><strong>Open rate by email</strong>: Which touchpoints get opened most? If email one opens at 30% but email three opens at 8%, your subject lines are weakening or your list is disengaging.</p>
+<p><strong>Reply rate by email</strong>: Which emails generate responses? If email six (breakup) outperforms emails 1-5, your earlier messages are too aggressive or uncompelling.</p>
+<p><strong>Reply timeline</strong>: Do replies happen within 24 hours of send, or do prospects wait days? If most replies come 3-5 days after email one, consider lengthening your cadence to give them time.</p>
+<p><strong>Sequence completion rate</strong>: What percentage of prospects reach email six without replying or unsubscribing? Low completion (&lt;50%) suggests your sequence is too aggressive or irrelevant.</p>
+<h3>Iteration Strategy</h3>
+<p>Test one variable per sequence:</p>
+<ul>
+<li><strong>Cadence timing</strong>: 3-day intervals vs. 5-day intervals</li>
+<li><strong>Message order</strong>: Case study in email two vs. question in email two</li>
+<li><strong>CTA style</strong>: Direct ask vs. soft ask</li>
+<li><strong>Length</strong>: 50-word emails vs. 100-word emails</li>
+</ul>
+<p>Run sequences in parallel (same list split into two groups) or sequentially (test A, wait two weeks, test B). Accumulate 50+ replies per variant before declaring a winner.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>How many cold emails should I send in a sequence before giving up?</strong></p>
+<p>4-7 emails over 2-4 weeks. Fewer than four abandons prospects before they notice you. More than seven crosses into spam territory and increases complaints. If they haven&#39;t replied by email six or seven, pause and revisit in 60-90 days with a completely different angle—don&#39;t extend the same sequence past seven touches.</p>
+<p><strong>Should each email in the sequence reference the previous email, or treat each send as standalone?</strong></p>
+<p>Standalone. Most prospects won&#39;t remember or re-read prior emails, so referencing &quot;my last email&quot; wastes space and reminds them they&#39;ve been ignoring you. Each touchpoint should work independently—introduce value, share insight, or ask a question without assuming they&#39;ve read anything prior. Exception: breakup emails, which explicitly acknowledge the sequence (&quot;Sent a few notes but haven&#39;t heard back&quot;).</p>
+<p><strong>What&#39;s the ideal spacing between cold emails in a B2B sequence?</strong></p>
+<p>3-5 days for emails 1-3, 5-7 days for emails 4-5, and 7+ days before the breakup email. Early touches keep you visible, mid-sequence spacing prevents fatigue, and the long gap before breakup makes the final email feel genuine rather than automated. Avoid daily sends (triggers spam filters) and avoid gaps longer than 10 days in early sequence (prospects forget your initial message).</p>
+<p><strong>Do breakup emails actually work, or are they just a gimmick?</strong></p>
+<p>They work. Breakup emails generate 12-20% reply rates because they reverse power dynamics—you&#39;re giving prospects an out instead of pushing for a meeting. Many reply just to acknowledge the respectful approach, even if they&#39;re not interested. Keys to effective breakup emails: acknowledge silence without guilt-tripping, offer an easy exit, and provide value even if they disengage (link to resource, framework, tool). Avoid sarcasm or manipulation (&quot;I guess you&#39;re too busy...&quot;), which backfires.</p>
+<p><strong>Should I A/B test subject lines within a sequence, or test entire sequences against each other?</strong></p>
+<p>Test entire sequences. A/B testing individual subject lines within a sequence creates attribution confusion—you won&#39;t know if reply rate differences come from the subject line, message order, cadence timing, or cumulative effect of prior touches. Instead, run two full sequences with different structures (e.g., question-first vs. case-study-first) and compare overall conversion rates. Once you&#39;ve identified a winning sequence structure, then test individual elements (subject lines, email length, CTA style) one variable at a time.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

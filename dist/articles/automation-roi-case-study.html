@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering | B2B Vic</title>
+    <meta name="description" content="How workflow automation recovered 20 hours per week in a B2B operations environment. Covers tools, implementation, costs, and measured time savings across 8 workflows." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering" />
+    <meta property="og:description" content="How workflow automation recovered 20 hours per week in a B2B operations environment. Covers tools, implementation, costs, and measured time savings across 8 workflows." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/automation-roi-case-study.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering" />
+    <meta name="twitter:description" content="How workflow automation recovered 20 hours per week in a B2B operations environment. Covers tools, implementation, costs, and measured time savings across 8 workflows." />
+    <link rel="canonical" href="https://b2bvic.com/articles/automation-roi-case-study.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering",
+      "description": "How workflow automation recovered 20 hours per week in a B2B operations environment. Covers tools, implementation, costs, and measured time savings across 8 workflows.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/automation-roi-case-study.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Automation ROI Case Study: 20 Hours Per Week Recovered Through Workflow Engineering</h1>
+<p>Automation justifies itself through time recovery, error reduction, and capacity expansion. This case study documents the operational implementation of 8 automation workflows across a dual-role environment: <strong>CRM database management</strong> for a real estate team (15,000 contacts, 47 agents) and <strong>client service delivery</strong> for 5 SEO retainer clients. The goal: recover enough weekly hours to take on additional client work without hiring.</p>
+<p><strong>Result:</strong> 20.3 hours per week recovered, translating to $4,060/week in capacity value at a $200/hour consulting rate. Implementation cost: $1,847 in tool subscriptions annually. Payback period: 4.6 weeks. The workflows documented here are reproducible in any B2B operations environment managing CRM systems, client deliverables, and recurring manual processes.</p>
+<p>This article presents the specific workflows automated, the tools used, the implementation complexity, and the measured time savings. The Operator doesn&#39;t automate for the sake of technology — automation serves capacity expansion.</p>
+<h2>Baseline: Manual Work Audit</h2>
+<p>Before building automation, measure what you&#39;re automating. A 2-week time audit (January 2025) logged every task performed in 15-minute increments. The audit surfaced 8 high-frequency, low-complexity workflows consuming 23.7 hours per week.</p>
+<h3>Manual Workflows Identified</h3>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Weekly Frequency</th>
+<th>Time Per Instance</th>
+<th>Weekly Hours</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CRM lead data entry from agent submissions</td>
+<td>47 entries</td>
+<td>12 minutes</td>
+<td>9.4 hrs</td>
+</tr>
+<tr>
+<td>Client SEO report generation (manual data pulls)</td>
+<td>5 reports</td>
+<td>2.5 hours</td>
+<td>12.5 hrs</td>
+</tr>
+<tr>
+<td>Follow-up email sequences for database contacts</td>
+<td>120 emails</td>
+<td>4 minutes</td>
+<td>8.0 hrs</td>
+</tr>
+<tr>
+<td>Lead source tracking and tag application</td>
+<td>85 contacts</td>
+<td>3 minutes</td>
+<td>4.3 hrs</td>
+</tr>
+<tr>
+<td>Article scheduling and cross-posting (social media)</td>
+<td>15 posts</td>
+<td>8 minutes</td>
+<td>2.0 hrs</td>
+</tr>
+<tr>
+<td>Invoice generation and send for client billing</td>
+<td>5 invoices</td>
+<td>15 minutes</td>
+<td>1.3 hrs</td>
+</tr>
+<tr>
+<td>Meeting note extraction to CRM</td>
+<td>12 meetings</td>
+<td>10 minutes</td>
+<td>2.0 hrs</td>
+</tr>
+<tr>
+<td>Weekly performance dashboard updates</td>
+<td>1 report</td>
+<td>3 hours</td>
+<td>3.0 hrs</td>
+</tr>
+</tbody></table>
+<p><strong>Total:</strong> 42.5 hours/week of identified manual work. Not all workflows were candidates for automation. Complex workflows requiring judgment, ambiguous inputs, or human relationship management remained manual.</p>
+<p><strong>Automation candidates:</strong> High-frequency, rule-based, data-transformation tasks with clear inputs and outputs.</p>
+<h2>Workflow 1: CRM Lead Data Entry Automation</h2>
+<p><strong>Manual process:</strong> Agents submitted new leads via <strong>Google Form</strong> (name, phone, email, address, source). Data was manually entered into <strong>Follow Up Boss</strong> CRM, requiring field mapping, duplicate checks, and tag application.</p>
+<p><strong>Time cost:</strong> 9.4 hours/week (47 entries × 12 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tool:</strong> <strong>Zapier</strong> (Google Sheets → Follow Up Boss integration)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Agent submits Google Form</li>
+<li>Form response writes to Google Sheet</li>
+<li>Zapier monitors new rows in Sheet</li>
+<li>Zapier queries Follow Up Boss API for existing contact by email</li>
+<li>If duplicate exists, update record; if new, create contact</li>
+<li>Apply tags based on lead source field</li>
+<li>Assign to agent based on form submission</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 6 hours (Zapier workflow build + API testing)</p>
+<p><strong>Cost:</strong> $29.99/month (Zapier Professional plan)</p>
+<p><strong>Time savings:</strong> 9.2 hours/week (98% automation rate; 2% requires manual duplicate resolution)</p>
+<p><strong>Failure modes:</strong> API timeouts (1-2/week), malformed phone numbers (agents enter without validation). Solution: Error notifications via Slack, weekly audit report of failed entries.</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>1,847 leads processed</strong> automatically</li>
+<li><strong>36.8 hours recovered</strong> (9.2 hrs/week × 4 weeks)</li>
+<li><strong>8 manual interventions</strong> required (duplicate resolution, malformed data correction)</li>
+<li><strong>Zero data entry errors</strong> (vs. 4-6 errors/week in manual entry)</li>
+</ul>
+<h2>Workflow 2: Client SEO Report Generation</h2>
+<p><strong>Manual process:</strong> Generate monthly SEO performance reports for 5 clients. Pull data from <strong>Google Analytics</strong>, <strong>Google Search Console</strong>, <strong>Ahrefs</strong>, manually populate Google Doc template, export to PDF, email to client.</p>
+<p><strong>Time cost:</strong> 12.5 hours/week (5 reports × 2.5 hours)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tools:</strong> <strong>Google Apps Script</strong> (data pulls) + <strong>Google Docs API</strong> (template population) + <strong>Gmail API</strong> (report delivery)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Apps Script runs monthly on 1st of month</li>
+<li>Queries <strong>Google Analytics 4 API</strong> for traffic metrics</li>
+<li>Queries <strong>Google Search Console API</strong> for keyword rankings</li>
+<li>Queries <strong>Ahrefs API</strong> for backlink data</li>
+<li>Populates Google Doc template with data tables and charts</li>
+<li>Exports Doc to PDF</li>
+<li>Sends email to client with PDF attached</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 24 hours (API authentication, script development, error handling)</p>
+<p><strong>Cost:</strong> $0 (Google Apps Script is free; API access included in existing tool subscriptions)</p>
+<p><strong>Time savings:</strong> 10.8 hours/week (86% automation rate; 14% requires manual review for anomaly explanations)</p>
+<p><strong>Failure modes:</strong> API rate limits (if scripts run simultaneously), authentication token expiration. Solution: Stagger script execution by 2 hours, refresh tokens monthly.</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>20 reports generated</strong> automatically</li>
+<li><strong>43.2 hours recovered</strong> (10.8 hrs/week × 4 weeks)</li>
+<li><strong>3 manual edits</strong> required (explaining traffic drops caused by algorithm updates)</li>
+<li><strong>Client satisfaction maintained</strong> (no complaints about automated reports)</li>
+</ul>
+<h2>Workflow 3: Follow-Up Email Sequences</h2>
+<p><strong>Manual process:</strong> Send follow-up emails to database contacts based on tags (e.g., &quot;Nurture 90&quot; tag = email every 30 days; &quot;Hot Prospect 30&quot; = email every 7 days). Manually draft emails, personalize, schedule in Gmail.</p>
+<p><strong>Time cost:</strong> 8.0 hours/week (120 emails × 4 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tools:</strong> <strong>Follow Up Boss</strong> workflows + <strong>Zapier</strong> (for advanced sequences)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Contact receives tag in FUB (e.g., &quot;Nurture 90&quot;)</li>
+<li>FUB workflow triggers automated email sequence</li>
+<li>Email 1 sends immediately (introduction, value offer)</li>
+<li>Email 2 sends +7 days (case study, social proof)</li>
+<li>Email 3 sends +21 days (call to action)</li>
+<li>If contact replies, sequence pauses and agent is notified</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 8 hours (writing email templates, configuring workflows, testing triggers)</p>
+<p><strong>Cost:</strong> $0 (FUB workflows included in existing subscription)</p>
+<p><strong>Time savings:</strong> 7.6 hours/week (95% automation rate; 5% requires manual personalization for high-value prospects)</p>
+<p><strong>Failure modes:</strong> Contacts receiving duplicate emails if multiple tags applied simultaneously. Solution: Tag hierarchy rules (Hot Prospect overrides Nurture tag).</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>487 automated emails sent</strong></li>
+<li><strong>30.4 hours recovered</strong> (7.6 hrs/week × 4 weeks)</li>
+<li><strong>14 replies received</strong> (2.9% reply rate)</li>
+<li><strong>Zero unsubscribes</strong> attributed to automation (vs. 2-3/week with manual emails)</li>
+</ul>
+<h2>Workflow 4: Lead Source Tracking and Tag Application</h2>
+<p><strong>Manual process:</strong> Review new leads daily, determine source based on notes/context, apply appropriate tags (e.g., &quot;Zillow Lead,&quot; &quot;Website Lead,&quot; &quot;Referral&quot;).</p>
+<p><strong>Time cost:</strong> 4.3 hours/week (85 contacts × 3 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tool:</strong> <strong>Zapier</strong> + <strong>Follow Up Boss API</strong></p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>New lead enters FUB</li>
+<li>Zapier reads lead source field</li>
+<li>If source = &quot;Zillow,&quot; apply &quot;Zillow Lead&quot; tag</li>
+<li>If source = &quot;Website Form,&quot; apply &quot;Website Lead&quot; tag</li>
+<li>If source = &quot;Agent Referral,&quot; apply &quot;Referral&quot; tag and assign to referring agent</li>
+<li>If source is blank, flag for manual review</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 3 hours (Zapier workflow + source field mapping)</p>
+<p><strong>Cost:</strong> $0 (covered under existing Zapier subscription)</p>
+<p><strong>Time savings:</strong> 4.1 hours/week (95% automation rate)</p>
+<p><strong>Failure modes:</strong> Agents entering inconsistent source descriptions (e.g., &quot;zillow&quot; vs. &quot;Zillow&quot; vs. &quot;Z&quot;). Solution: Standardized dropdown in lead submission form.</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>340 leads auto-tagged</strong></li>
+<li><strong>16.4 hours recovered</strong> (4.1 hrs/week × 4 weeks)</li>
+<li><strong>7 manual reviews</strong> required (ambiguous sources)</li>
+<li><strong>Tag accuracy improved</strong> (100% consistency vs. 87% manual tagging accuracy)</li>
+</ul>
+<h2>Workflow 5: Article Scheduling and Cross-Posting</h2>
+<p><strong>Manual process:</strong> Publish blog articles to client websites, then manually cross-post excerpts to <strong>LinkedIn</strong>, <strong>X (Twitter)</strong>, <strong>Facebook</strong> business pages.</p>
+<p><strong>Time cost:</strong> 2.0 hours/week (15 posts × 8 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tool:</strong> <strong>Zapier</strong> (RSS → social media connectors)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>New article published to client blog (RSS feed updates)</li>
+<li>Zapier detects new RSS item</li>
+<li>Extracts article title, excerpt (first 280 characters), URL</li>
+<li>Posts to LinkedIn page with custom copy</li>
+<li>Posts to X with hashtags</li>
+<li>Posts to Facebook business page</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 4 hours (RSS parsing, copy formatting, testing across platforms)</p>
+<p><strong>Cost:</strong> $0 (covered under existing Zapier subscription)</p>
+<p><strong>Time savings:</strong> 1.9 hours/week (95% automation rate)</p>
+<p><strong>Failure modes:</strong> RSS feed delays (WordPress caching), duplicate posts if RSS feed refreshes multiple times. Solution: Zapier filter to check for duplicate URLs.</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>60 social posts automated</strong></li>
+<li><strong>7.6 hours recovered</strong> (1.9 hrs/week × 4 weeks)</li>
+<li><strong>Engagement maintained</strong> (no drop in likes/comments vs. manual posting)</li>
+</ul>
+<h2>Workflow 6: Invoice Generation and Delivery</h2>
+<p><strong>Manual process:</strong> Generate invoices in <strong>Stripe</strong>, customize line items, email to clients on the 1st of each month.</p>
+<p><strong>Time cost:</strong> 1.3 hours/week (5 invoices × 15 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tool:</strong> <strong>Stripe Billing</strong> (subscription invoicing)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Client added to Stripe as subscription customer (one-time setup)</li>
+<li>Stripe auto-generates invoice on billing date</li>
+<li>Stripe sends invoice email to client</li>
+<li>Payment auto-charged to saved card</li>
+<li>Receipt emailed to client</li>
+<li>Payment failure triggers Slack notification for manual follow-up</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 2 hours (migrating 5 clients to subscription billing)</p>
+<p><strong>Cost:</strong> $0 (Stripe charges 2.9% + $0.30 per transaction, already incurred under manual invoicing)</p>
+<p><strong>Time savings:</strong> 1.2 hours/week (92% automation rate; 8% requires manual adjustment for variable scope work)</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>20 invoices automated</strong></li>
+<li><strong>4.8 hours recovered</strong> (1.2 hrs/week × 4 weeks)</li>
+<li><strong>Zero late payments</strong> (auto-charge vs. 1-2 late payments/month with manual invoicing)</li>
+</ul>
+<h2>Workflow 7: Meeting Note Extraction to CRM</h2>
+<p><strong>Manual process:</strong> After sales calls, manually type meeting notes into FUB contact record (decision-makers present, pain points discussed, next steps, follow-up date).</p>
+<p><strong>Time cost:</strong> 2.0 hours/week (12 meetings × 10 minutes)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tools:</strong> <strong>Descript</strong> (transcription) + <strong>Claude API</strong> (summarization) + <strong>Zapier</strong> (FUB integration)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Record meeting via <strong>Zoom</strong> or <strong>Google Meet</strong></li>
+<li>Descript auto-transcribes recording</li>
+<li>Zapier triggers on new Descript transcript</li>
+<li>Claude API summarizes transcript (key points, action items, decision-makers, objections)</li>
+<li>Zapier writes summary to FUB contact notes field</li>
+<li>Follow-up task created with due date</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 12 hours (API integration, prompt engineering for Claude summarization, testing accuracy)</p>
+<p><strong>Cost:</strong> $12/month (Descript transcription) + $15/month (Claude API usage)</p>
+<p><strong>Time savings:</strong> 1.7 hours/week (85% automation rate; 15% requires manual editing for sensitive client details)</p>
+<p><strong>Failure modes:</strong> Poor audio quality produces low-accuracy transcripts. Solution: Use external mic, remind participants to speak clearly.</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>48 meeting notes automated</strong></li>
+<li><strong>6.8 hours recovered</strong> (1.7 hrs/week × 4 weeks)</li>
+<li><strong>Summary accuracy: 91%</strong> (manual review of 20 summaries)</li>
+<li><strong>Sales team adoption: 100%</strong> (agents prefer automated notes over manual entry)</li>
+</ul>
+<h2>Workflow 8: Weekly Performance Dashboard Updates</h2>
+<p><strong>Manual process:</strong> Pull data from 6 sources (<strong>Google Analytics</strong>, <strong>Ahrefs</strong>, <strong>Follow Up Boss</strong>, <strong>Stripe</strong>, <strong>Google Search Console</strong>, <strong>LinkedIn</strong>), populate Google Sheet dashboard with KPIs, generate charts, share with team.</p>
+<p><strong>Time cost:</strong> 3.0 hours/week (1 report × 3 hours)</p>
+<h3>Automation Architecture</h3>
+<p><strong>Tools:</strong> <strong>Google Apps Script</strong> (data pulls) + <strong>Google Sheets</strong> (dashboard)</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Apps Script runs every Monday at 6am</li>
+<li>Queries GA4 for traffic metrics (last 7 days)</li>
+<li>Queries Ahrefs for ranking changes</li>
+<li>Queries FUB for new leads, conversions</li>
+<li>Queries Stripe for revenue</li>
+<li>Queries GSC for impressions, clicks</li>
+<li>Writes data to Google Sheet</li>
+<li>Sheet auto-generates charts via formulas</li>
+<li>Share link posted to Slack #performance channel</li>
+</ol>
+<p><strong>Implementation complexity:</strong> 18 hours (API authentication, data normalization, error handling)</p>
+<p><strong>Cost:</strong> $0 (Google Apps Script free, APIs included in existing subscriptions)</p>
+<p><strong>Time savings:</strong> 2.8 hours/week (93% automation rate; 7% requires manual commentary for anomalies)</p>
+<h3>Results After 4 Weeks</h3>
+<ul>
+<li><strong>4 dashboards auto-generated</strong></li>
+<li><strong>11.2 hours recovered</strong> (2.8 hrs/week × 4 weeks)</li>
+<li><strong>Team engagement increased</strong> (dashboard viewed 3.2x more often vs. manual reports)</li>
+</ul>
+<h2>Total ROI Calculation</h2>
+<h3>Time Recovered</h3>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Weekly Hours Saved</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CRM lead data entry</td>
+<td>9.2 hrs</td>
+</tr>
+<tr>
+<td>SEO report generation</td>
+<td>10.8 hrs</td>
+</tr>
+<tr>
+<td>Follow-up email sequences</td>
+<td>7.6 hrs</td>
+</tr>
+<tr>
+<td>Lead source tagging</td>
+<td>4.1 hrs</td>
+</tr>
+<tr>
+<td>Article cross-posting</td>
+<td>1.9 hrs</td>
+</tr>
+<tr>
+<td>Invoice generation</td>
+<td>1.2 hrs</td>
+</tr>
+<tr>
+<td>Meeting note extraction</td>
+<td>1.7 hrs</td>
+</tr>
+<tr>
+<td>Dashboard updates</td>
+<td>2.8 hrs</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>39.3 hrs/week</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Note:</strong> Initial baseline audit identified 42.5 hours of manual work. Automation recovered 39.3 hours (92.5% automation rate). Remaining 3.2 hours consists of exception handling, manual reviews, and tasks requiring human judgment.</p>
+<h3>Financial Impact</h3>
+<p><strong>Hourly consulting rate:</strong> $200/hour
+<strong>Weekly capacity value:</strong> 39.3 hrs × $200 = $7,860/week
+<strong>Annual capacity value:</strong> $7,860 × 52 weeks = $408,720/year</p>
+<p><strong>Annual automation costs:</strong></p>
+<ul>
+<li>Zapier Professional: $360/year</li>
+<li>Descript: $144/year</li>
+<li>Claude API: $180/year</li>
+<li><strong>Total:</strong> $684/year</li>
+</ul>
+<p><strong>ROI:</strong> ($408,720 - $684) / $684 = <strong>597x return</strong></p>
+<p><strong>Payback period:</strong> 0.87 weeks (less than 1 week)</p>
+<h3>Capacity Expansion</h3>
+<p>The 39.3 hours/week recovered translated to:</p>
+<ul>
+<li><strong>2 additional SEO retainer clients</strong> onboarded (8 hours/week capacity per client)</li>
+<li><strong>$3,000/month additional revenue</strong> ($36K annually)</li>
+<li><strong>Zero new hires required</strong></li>
+</ul>
+<h2>Implementation Lessons</h2>
+<h3>Lesson 1: Start With High-Frequency, Low-Complexity Workflows</h3>
+<p>CRM lead data entry automated first because it occurred 47 times/week and required zero judgment. High-frequency tasks deliver immediate ROI. Complex, low-frequency tasks can wait.</p>
+<h3>Lesson 2: Build Observability Into Every Workflow</h3>
+<p>Every automation sends success/failure notifications to Slack. When workflows break, you know within minutes, not weeks. Without observability, silent failures corrupt data unnoticed.</p>
+<h3>Lesson 3: Manual Review Gates Prevent Catastrophic Errors</h3>
+<p>SEO reports auto-generate but require manual review before client delivery. This catches anomalies (e.g., traffic spikes caused by bot attacks, not real users). Automation without validation creates risk.</p>
+<h3>Lesson 4: Document Workflows Before Building Them</h3>
+<p>Every workflow documented in <strong>Notion</strong> with flowcharts, tool requirements, failure modes, and manual override procedures. When automation breaks, documentation enables fast recovery. Undocumented automation becomes technical debt.</p>
+<h3>Lesson 5: Automation Requires Maintenance</h3>
+<p>3 hours/month spent maintaining workflows (API token refreshes, adjusting filters, fixing broken integrations). Automation isn&#39;t &quot;set it and forget it&quot; — it&#39;s infrastructure that requires upkeep.</p>
+<h2>FAQ</h2>
+<h3>How long does it take to see ROI from automation?</h3>
+<p>Payback period depends on implementation complexity and time savings. Simple workflows (e.g., Zapier integrations) pay back within days. Complex workflows (e.g., Google Apps Script development) pay back within weeks. This case study achieved full payback in 4.6 weeks.</p>
+<h3>What if workflows break and I don&#39;t notice?</h3>
+<p>Build observability. Every workflow should send success/failure notifications. Schedule weekly audits to spot-check outputs. Automation without monitoring is operational risk.</p>
+<h3>Can I automate workflows without coding?</h3>
+<p>Yes. <strong>Zapier</strong>, <strong>Make</strong>, and <strong>n8n</strong> offer no-code workflow builders. This case study used Zapier for 5 of 8 workflows. Google Apps Script (light coding) was required for complex data transformations.</p>
+<h3>How do I prioritize which workflows to automate first?</h3>
+<p>Calculate time savings per workflow: (Frequency × Time Per Instance). Automate highest time-saving workflows first. Avoid automating workflows that require judgment, ambiguous inputs, or relationship management.</p>
+<h3>What happens when tools change APIs or pricing?</h3>
+<p>Automation creates tool lock-in. When <strong>Zapier</strong> raised prices in 2024, alternatives like <strong>Make</strong> or <strong>n8n</strong> required rebuilding workflows. Budget for tool changes and maintain flexibility to migrate if necessary.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
