@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referral Systems for B2B Services: Turn Clients Into Revenue Channels | B2B Vic</title>
+    <meta name="description" content="Build B2B referral systems with incentive structures, tracking mechanisms, and nurture sequences. Generate 20-40% of revenue from client referrals." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Referral Systems for B2B Services: Turn Clients Into Revenue Channels" />
+    <meta property="og:description" content="Build B2B referral systems with incentive structures, tracking mechanisms, and nurture sequences. Generate 20-40% of revenue from client referrals." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/referral-system-b2b-services.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Referral Systems for B2B Services: Turn Clients Into Revenue Channels" />
+    <meta name="twitter:description" content="Build B2B referral systems with incentive structures, tracking mechanisms, and nurture sequences. Generate 20-40% of revenue from client referrals." />
+    <link rel="canonical" href="https://b2bvic.com/articles/referral-system-b2b-services.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Referral Systems for B2B Services: Turn Clients Into Revenue Channels",
+      "description": "Build B2B referral systems with incentive structures, tracking mechanisms, and nurture sequences. Generate 20-40% of revenue from client referrals.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/referral-system-b2b-services.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Referral Systems for B2B Services: Turn Clients Into Revenue Channels"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Referral Systems for B2B Services: Turn Clients Into Revenue Channels</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Referral Systems for B2B Services: Turn Clients Into Revenue Channels</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Referral Systems for B2B Services: Turn Clients Into Revenue Channels</h1>
+<p>Referral systems convert satisfied clients into predictable lead sources by structuring incentives, tracking mechanisms, and ongoing nurture. B2B service businesses generating 30-40% of revenue from referrals operate referral systems, not ad-hoc &quot;tell your friends&quot; requests. This guide builds referral infrastructure: automated ask sequences, tiered incentive structures, CRM tracking, and referral-to-close workflows.</p>
+<h2>Why Ad-Hoc Referral Requests Don&#39;t Scale</h2>
+<p>Most service businesses handle referrals reactively: client mentions a peer, you send a proposal, deal closes (maybe). This works but doesn&#39;t scale. Referrals happen by luck, not system. Revenue from referrals fluctuates 0-15% because nothing prompts referrals consistently.</p>
+<p>Systematic referral programs engineer referral behavior. They identify the right time to ask (post-success milestone, not contract signing), present compelling incentives (value to referrer and referee), reduce friction (one-click referral forms, not &quot;just send them my email&quot;), and track outcomes (which clients refer most, which referrals close fastest).</p>
+<p>Referral systems also improve close rates. Referred leads close at 40-60% vs. 10-25% for cold leads. They&#39;re pre-qualified—referrer vouches for need and budget. Sales cycles compress 30-40% because trust transfers through the referral. A systematic approach multiplies these advantages across your client base.</p>
+<p>Finally, referral systems create defensible revenue streams. Paid ads stop when budget runs out. SEO traffic drops if rankings slip. Referrals compound—every new client becomes a potential referrer. Over time, referral revenue becomes the most profitable channel (zero acquisition cost, high close rates, fast cycles).</p>
+<h2>Identifying Your Best Referral Sources</h2>
+<p>Not all clients refer equally. The top 20% of clients generate 80% of referrals. Identify them, nurture them, and ask them more frequently.</p>
+<p><strong>Segment clients by referral propensity:</strong></p>
+<ol>
+<li><p><strong>Promoters (NPS 9-10):</strong> Highly satisfied, vocal advocates. Ask them first and often. They refer without prompting but refer more when asked systematically.</p>
+</li>
+<li><p><strong>High-value clients:</strong> Clients paying $10K+/year or on long retainers. They&#39;re invested, understand your value, and network with similar companies. Their referrals match ideal customer profile (ICP).</p>
+</li>
+<li><p><strong>Industry connectors:</strong> Clients with large networks—founders, executives, association board members. One connector can generate 5-10 referrals annually.</p>
+</li>
+<li><p><strong>Recent success stories:</strong> Clients who just achieved measurable results (3x traffic growth, $100K revenue increase). They&#39;re excited, grateful, and their success is fresh. Ask within 30 days of milestone.</p>
+</li>
+</ol>
+<p><strong>Identify referral sources in your CRM:</strong></p>
+<ul>
+<li>Tag clients by NPS score (run quarterly NPS surveys).</li>
+<li>Tag clients by industry and network size (LinkedIn connections, industry roles).</li>
+<li>Track &quot;recent wins&quot;—when clients hit milestones, tag them <code>#referral-ready</code>.</li>
+</ul>
+<p>Pull reports: &quot;Show all Promoters in [Industry] who&#39;ve been clients for 6+ months.&quot; These are your referral goldmine.</p>
+<p><strong>Non-client referral sources:</strong></p>
+<ul>
+<li><strong>Strategic partners:</strong> Agencies, consultants, or vendors serving your ICP who don&#39;t compete. They refer clients, you refer clients. Mutual benefit.</li>
+<li><strong>Past clients (alumni):</strong> Clients who&#39;ve churned or completed projects. If they left happy, they still refer.</li>
+<li><strong>Professional networks:</strong> Industry associations, masterminds, or peer groups. Members refer each other.</li>
+</ul>
+<h2>Structuring Incentive Models That Drive Referrals</h2>
+<p>Incentives motivate referrals but structure matters. Wrong incentives (too small, too delayed, wrong format) don&#39;t move behavior. Right incentives align value for referrer, referee, and you.</p>
+<p><strong>Incentive models:</strong></p>
+<p><strong>Model 1: Cash/credit incentives</strong>
+Pay referrers $500-$2,000 per closed referral or provide service credit (1 month free, discounted retainer).</p>
+<p>Structure:</p>
+<ul>
+<li>Referral submits lead → $0 (no payment for unqualified leads).</li>
+<li>Lead books discovery call → $100 &quot;thank you&quot; (acknowledges effort).</li>
+<li>Lead signs contract → $1,000 bonus or 10% of contract value (capped at $2,000).</li>
+</ul>
+<p>Why it works: Tangible reward, scales with referral quality. Downside: Feels transactional, may cheapen relationship.</p>
+<p><strong>Best for:</strong> Transactional service businesses, price-sensitive clients, or businesses targeting high-volume referrals.</p>
+<p><strong>Model 2: Reciprocal value</strong>
+Provide value to referrer&#39;s business—free audit, strategy session, content collaboration, or co-marketing opportunity.</p>
+<p>Structure:</p>
+<ul>
+<li>Refer one qualified lead → Free technical SEO audit ($1,500 value).</li>
+<li>Refer three qualified leads → Collaborative case study (both brands featured).</li>
+</ul>
+<p>Why it works: Strengthens relationship, feels less transactional, builds long-term partnership. Downside: Harder to scale, requires custom value creation.</p>
+<p><strong>Best for:</strong> High-touch consulting, B2B services where referrers are also power users.</p>
+<p><strong>Model 3: Tiered rewards</strong>
+Escalating rewards for multiple referrals. Gamifies referrals.</p>
+<p>Structure:</p>
+<ul>
+<li>1 referral → $500</li>
+<li>3 referrals → $2,000 total ($500 + $750 + $750)</li>
+<li>5 referrals → $4,000 total + VIP client status (priority support, exclusive access)</li>
+</ul>
+<p>Why it works: Incentivizes habitual referring. Top referrers get outsized rewards.</p>
+<p><strong>Best for:</strong> Businesses with large client bases (100+ clients) where some clients can generate 5-10 referrals annually.</p>
+<p><strong>Model 4: Dual-sided incentives</strong>
+Reward both referrer and referee. Referrer gets cash/credit, referee gets onboarding discount or bonus.</p>
+<p>Structure:</p>
+<ul>
+<li>Referrer: $1,000 per closed referral.</li>
+<li>Referee: 10% off first project or 1 month free retainer.</li>
+</ul>
+<p>Why it works: Referees feel welcomed (discount reduces initial friction), referrers feel generous (they&#39;re giving their peer a deal). Win-win.</p>
+<p><strong>Best for:</strong> Businesses with higher price points ($5K+ projects, $2K+/month retainers) where discounts don&#39;t hurt margins.</p>
+<p><strong>Payment timing:</strong>
+Don&#39;t delay rewards. Pay within 30 days of referral closing. Delayed rewards (90 days, after invoice is paid) reduce motivation. Immediate gratification drives repeat behavior.</p>
+<h2>Building the Referral Request System</h2>
+<p>Referral systems ask clients strategically—right time, right way, right frequency.</p>
+<p><strong>Timing triggers for referral asks:</strong></p>
+<ol>
+<li><strong>Post-milestone success</strong> (strongest trigger): Client achieves measurable result—traffic growth, revenue increase, successful product launch. Ask within 7-14 days while excitement is fresh.</li>
+</ol>
+<p>Example email:</p>
+<blockquote>
+<p>Subject: Quick favor after that 3x traffic growth</p>
+<p>Hi [Name],</p>
+<p>I&#39;m thrilled we hit 3x organic traffic growth this quarter. That&#39;s the result we both wanted.</p>
+<p>Quick ask: Do you know 1-2 other [Industry] companies dealing with similar growth challenges? I&#39;d love to help them see the same results.</p>
+<p>If you refer someone who becomes a client, I&#39;ll send you [Incentive]. And I&#39;ll make sure they get white-glove onboarding.</p>
+<p>Just reply with their name/email or forward this. I&#39;ll handle the rest.</p>
+<p>Thanks,
+[Your Name]</p>
+</blockquote>
+<ol start="2">
+<li><p><strong>Quarterly check-ins:</strong> For retainer clients, ask during quarterly business reviews (QBRs). Frame as: &quot;Who else in your network could benefit from [service]?&quot;</p>
+</li>
+<li><p><strong>Post-project completion:</strong> After delivering final project, send referral request as part of wrap-up: &quot;Loved working with you. Who else should I talk to?&quot;</p>
+</li>
+<li><p><strong>NPS survey follow-up:</strong> After Promoters (9-10) submit NPS surveys, auto-trigger referral request email.</p>
+</li>
+<li><p><strong>Contract renewal:</strong> When clients renew retainers or sign new projects, frame as: &quot;Great to keep working together. By the way, do you know anyone else who&#39;d benefit?&quot;</p>
+</li>
+</ol>
+<p><strong>Referral request channels:</strong></p>
+<ul>
+<li><strong>Email:</strong> Primary channel. Personalized, trackable, includes referral link/form.</li>
+<li><strong>In-person/Zoom:</strong> During calls or meetings, verbal ask: &quot;By the way, who else should I be talking to?&quot; More personal, higher conversion.</li>
+<li><strong>Automated sequences:</strong> Set up trigger-based email sequences in CRM (HubSpot, Pipedrive). When client tagged <code>#referral-ready</code>, auto-send referral request after 7 days.</li>
+<li><strong>Referral portals:</strong> Dedicated page on your site: <code>/refer-a-friend/</code>. Client enters referee contact info, submits, CRM captures lead.</li>
+</ul>
+<p><strong>Reducing friction:</strong></p>
+<p>Make referring easy. Don&#39;t ask clients to &quot;introduce me via email&quot;—that requires them to draft intros, CC you, wait for responses. Instead:</p>
+<ul>
+<li><strong>One-click referral form:</strong> Link in email goes to form. Client enters name, email, company, submits. You handle outreach.</li>
+<li><strong>Pre-written intro templates:</strong> Provide copy-paste intro template: &quot;Hey [Friend], I&#39;ve been working with [Your Company] on [Service]. They&#39;ve helped us [Result]. Thought of you. Here&#39;s their info: [Link].&quot;</li>
+<li><strong>Social sharing:</strong> &quot;Share this case study on LinkedIn and tag someone who&#39;d benefit.&quot; Social referrals feel less sales-y.</li>
+</ul>
+<h2>Tracking Referrals and Attributing Revenue</h2>
+<p>Referral systems require tracking: who referred whom, which referrals converted, referral source ROI.</p>
+<p><strong>CRM tracking setup:</strong></p>
+<p>Create custom fields in CRM:</p>
+<ul>
+<li><strong>Referral Source:</strong> Dropdown (Client Referral, Partner Referral, Other).</li>
+<li><strong>Referrer Name:</strong> Text field (who referred this lead).</li>
+<li><strong>Referral Date:</strong> Date field (when referral was submitted).</li>
+<li><strong>Referral Status:</strong> Dropdown (Submitted, Contacted, Qualified, Won, Lost).</li>
+<li><strong>Referral Incentive Paid:</strong> Checkbox + amount field.</li>
+</ul>
+<p>When referral comes in:</p>
+<ol>
+<li>Create new contact/deal in CRM.</li>
+<li>Fill referral fields.</li>
+<li>Tag deal <code>#referral</code>.</li>
+<li>Assign to sales rep with note: &quot;Referral from [Referrer Name]. Prioritize—higher close rate expected.&quot;</li>
+</ol>
+<p><strong>Reporting:</strong>
+Pull monthly reports:</p>
+<ul>
+<li>Total referrals submitted.</li>
+<li>Referrals contacted vs. not contacted (sales accountability).</li>
+<li>Referral-to-close rate (target: 40-60%).</li>
+<li>Revenue from referrals (target: 20-40% of total revenue).</li>
+<li>Top referrers (clients generating most referrals).</li>
+</ul>
+<p>Build referral dashboard in Google Sheets or Looker Studio. Track trends over time. If referral volume drops, diagnose: Are you asking less? Are incentives losing appeal? Is referral request messaging stale?</p>
+<p><strong>Attributing partner referrals:</strong>
+Partner referrals (agencies, consultants) need separate tracking. Use UTM parameters or unique referral codes. Partner sends prospects to <code>yoursite.com/partner-name</code>. Traffic to that URL auto-tags in CRM as partner referral.</p>
+<p>Track partner ROI: referrals sent vs. referrals closed. If partner sends 20 referrals but zero close, relationship isn&#39;t working—either poor fit or poor vetting. If partner sends 5 referrals and 3 close, double down on that partnership.</p>
+<h2>Nurturing Referrers and Referees Post-Introduction</h2>
+<p>Referral systems don&#39;t end at submission. Nurture both referrer and referee to maximize close rates and satisfaction.</p>
+<p><strong>Referrer nurture:</strong></p>
+<ol>
+<li><p><strong>Immediate acknowledgment:</strong> Within 24 hours of referral submission, email referrer: &quot;Got your referral for [Referee Name]. I&#39;ll reach out to them this week. Thanks for the trust.&quot;</p>
+</li>
+<li><p><strong>Progress updates:</strong> When referee books a call, send update: &quot;[Referee] and I connected today. Great conversation—thanks for the intro.&quot; When referee signs, send update + incentive: &quot;[Referee] signed! Your $1,000 referral bonus is processing. Thanks again.&quot;</p>
+</li>
+<li><p><strong>Thank-you gestures:</strong> Beyond incentives, send personal thank-yous—handwritten notes, small gifts ($50 Amazon gift card, branded swag), or public recognition (feature them in newsletter: &quot;Shoutout to [Referrer] for connecting us with [Referee]!&quot;).</p>
+</li>
+<li><p><strong>Re-engagement:</strong> Top referrers become referral partners. Check in quarterly: &quot;You&#39;ve referred 3 great clients this year. Anyone else come to mind?&quot; Make them feel like insiders—exclusive updates, early access to services.</p>
+</li>
+</ol>
+<p><strong>Referee nurture:</strong></p>
+<ol>
+<li><p><strong>Fast follow-up:</strong> Contact within 48 hours. Referrals cool fast. Mention referrer immediately: &quot;Hi [Referee], [Referrer] mentioned you&#39;re dealing with [problem]. They&#39;ve been a client for [time] and thought we could help.&quot;</p>
+</li>
+<li><p><strong>Referral discount/bonus:</strong> If offering dual-sided incentives, state it upfront: &quot;As a referral from [Referrer], we&#39;re offering [10% off first project / 1 month free]. Let&#39;s chat this week?&quot;</p>
+</li>
+<li><p><strong>VIP onboarding:</strong> Treat referrals as VIP. Faster responses, senior team involvement, white-glove service. Referrals reflect on referrer—if experience is bad, referrer looks bad. Protect the referrer relationship by over-delivering to referee.</p>
+</li>
+<li><p><strong>Post-close thank-you to referrer:</strong> After referee becomes client, loop back to referrer: &quot;[Referee] signed and we&#39;re kicking off next week. Thanks for making this happen—excited to deliver great results.&quot; This closes the loop and reinforces referrer satisfaction.</p>
+</li>
+</ol>
+<h2>Scaling Referral Systems with Automation</h2>
+<p>Manual referral outreach caps at 20-30 requests per quarter. Automation scales to 100+ without added work.</p>
+<p><strong>Automated workflows (HubSpot, Pipedrive, ActiveCampaign):</strong></p>
+<p><strong>Workflow 1: Post-success referral ask</strong></p>
+<ul>
+<li>Trigger: Deal tagged <code>#milestone-achieved</code> (custom trigger when client hits KPI).</li>
+<li>Wait 7 days.</li>
+<li>Send email: &quot;Quick favor after hitting [milestone]...&quot;</li>
+<li>If no response, wait 14 days, send follow-up: &quot;Checking in—anyone come to mind?&quot;</li>
+</ul>
+<p><strong>Workflow 2: Quarterly referral nudge</strong></p>
+<ul>
+<li>Trigger: Client has been active for 90+ days, tagged <code>#promoter</code>.</li>
+<li>Send email every 90 days: &quot;Quick check-in: Anyone in your network dealing with [problem]?&quot;</li>
+<li>Track opens and clicks. If client opens 3x but never responds, tag <code>#referral-not-interested</code>, pause workflow.</li>
+</ul>
+<p><strong>Workflow 3: NPS survey → referral request</strong></p>
+<ul>
+<li>Trigger: Client submits NPS survey with score 9-10.</li>
+<li>Wait 3 days.</li>
+<li>Send referral request: &quot;Thanks for the 10/10! Who else should we help?&quot;</li>
+</ul>
+<p><strong>Workflow 4: Partner referral welcome</strong></p>
+<ul>
+<li>Trigger: New contact tagged <code>#partner-referral</code>.</li>
+<li>Send immediate email: &quot;Hi [Name], [Partner] mentioned we should connect. Let&#39;s chat this week?&quot; with calendar link.</li>
+<li>If no booking, follow up 3 days later.</li>
+<li>If no booking after 7 days, notify partner: &quot;[Referee] hasn&#39;t responded yet. Can you nudge them?&quot;</li>
+</ul>
+<p><strong>Automation tools:</strong></p>
+<ul>
+<li><strong>Zapier/Make:</strong> Connect CRM to email tools, automate tagging and workflows.</li>
+<li><strong>HubSpot Workflows:</strong> Native automation, visual builder, no code.</li>
+<li><strong>ActiveCampaign Automations:</strong> Email-focused, strong for drip campaigns.</li>
+</ul>
+<p>Set up once, referrals run on autopilot. Review quarterly, refine messaging based on performance.</p>
+<h2>Common Referral System Mistakes That Kill Conversion</h2>
+<p><strong>Mistake 1: Asking too early</strong>
+Asking at contract signing or month one. Clients haven&#39;t seen results yet. <strong>Fix:</strong> Wait for success milestone or 3-6 months of satisfaction.</p>
+<p><strong>Mistake 2: Generic referral requests</strong>
+&quot;Do you know anyone who needs [service]?&quot; Too vague. <strong>Fix:</strong> Be specific: &quot;Do you know any [ICP description] dealing with [specific problem]?&quot;</p>
+<p><strong>Mistake 3: No incentive or unclear incentive</strong>
+Asking favors without offering value. <strong>Fix:</strong> State incentive clearly: &quot;If they sign, I&#39;ll send you $1,000 or one month free.&quot;</p>
+<p><strong>Mistake 4: Ignoring referred leads</strong>
+Referral comes in, sits in CRM for a week, goes cold. <strong>Fix:</strong> Prioritize referrals. Contact within 48 hours. Automate alerts when referrals arrive.</p>
+<p><strong>Mistake 5: Forgetting to thank referrers</strong>
+Referral closes, you forget to loop back or pay incentive. <strong>Fix:</strong> Automate thank-you emails and incentive payouts. Add to project kickoff checklist: &quot;Did we thank the referrer?&quot;</p>
+<p><strong>Mistake 6: Over-asking top referrers</strong>
+Asking same person monthly burns them out. <strong>Fix:</strong> Cap asks at quarterly for most clients. For top referrers (Promoters, connectors), limit to every 60-90 days.</p>
+<h2>FAQ: Referral Systems for B2B Services</h2>
+<h3>How much should I pay for referrals?</h3>
+<p>10-20% of first project value or $500-$2,000 flat fee. For retainers, offer 1-2 months free service or equivalent cash. Test what motivates your clients—some prefer cash, others prefer service credits.</p>
+<h3>Should I ask clients who haven&#39;t achieved results yet?</h3>
+<p>No. Wait until they&#39;ve seen measurable success (60-90 days minimum). Asking too early risks referrals from dissatisfied clients or referrals who don&#39;t convert (client can&#39;t vouch for quality yet).</p>
+<h3>Can I incentivize employees to refer clients?</h3>
+<p>Yes, but structure carefully. Tie incentives to closed deals, not just submitted leads (prevents low-quality submissions). Offer smaller incentives than client referrals ($200-$500 vs. $1,000) unless employee networks are key growth channel.</p>
+<h3>What if referred leads don&#39;t convert?</h3>
+<p>Expected. Not all referrals fit. Track referral-to-close rate. If &lt;20%, diagnose: Are referrers sending poor fits? Is your sales process failing? Is pricing misaligned? Refine referrer education—share your ICP, ask them to pre-qualify (&quot;Only refer companies with $X revenue facing Y problem&quot;).</p>
+<h3>How do I ask for referrals without sounding desperate?</h3>
+<p>Frame as helping others: &quot;I&#39;m looking to help 2-3 more [Industry] companies this quarter. Know anyone dealing with [problem]?&quot; Position referral request as value for referee, not favor for you. Confidence &gt; desperation.</p>
+<p>Related: <a href="proposal-templates-b2b-services.html">proposal-templates-b2b-services.html</a>, <a href="podcasting-b2b-lead-generation.html">podcasting-b2b-lead-generation.html</a>, <a href="outbound-sales-tech-stack.html">outbound-sales-tech-stack.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

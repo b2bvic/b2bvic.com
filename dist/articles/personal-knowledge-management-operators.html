@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Knowledge Management for Operators: Build a Second Brain That Scales | B2B Vic</title>
+    <meta name="description" content="Build a personal knowledge management system using Obsidian, Notion, or Roam. Capture decisions, SOPs, and learnings so they compound instead of decay." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Personal Knowledge Management for Operators: Build a Second Brain That Scales" />
+    <meta property="og:description" content="Build a personal knowledge management system using Obsidian, Notion, or Roam. Capture decisions, SOPs, and learnings so they compound instead of decay." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/personal-knowledge-management-operators.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Personal Knowledge Management for Operators: Build a Second Brain That Scales" />
+    <meta name="twitter:description" content="Build a personal knowledge management system using Obsidian, Notion, or Roam. Capture decisions, SOPs, and learnings so they compound instead of decay." />
+    <link rel="canonical" href="https://b2bvic.com/articles/personal-knowledge-management-operators.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Personal Knowledge Management for Operators: Build a Second Brain That Scales",
+      "description": "Build a personal knowledge management system using Obsidian, Notion, or Roam. Capture decisions, SOPs, and learnings so they compound instead of decay.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/personal-knowledge-management-operators.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Personal Knowledge Management for Operators: Build a Second Brain That Scales"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Personal Knowledge Management for Operators: Build a Second Brain That Scales</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Personal Knowledge Management for Operators: Build a Second Brain That Scales</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Personal Knowledge Management for Operators: Build a Second Brain That Scales</h1>
+<p>Personal knowledge management (PKM) captures decisions, processes, insights, and learnings in a retrievable system so operators don&#39;t re-solve the same problems monthly. Most operators rely on memory, scattered notes, or tribal knowledge. Information decays, context disappears, and velocity suffers. This guide builds PKM systems using <strong>Obsidian</strong>, <strong>Notion</strong>, or <strong>Roam Research</strong> that scale with business complexity.</p>
+<h2>Why Operators Need PKM More Than Executives</h2>
+<p>Executives delegate execution. Operators execute. That distinction creates information density. Operators handle client communication, delivery workflows, financial tracking, marketing campaigns, and operational troubleshooting—all simultaneously. Memory can&#39;t hold it. Email and Slack can&#39;t organize it. PKM systems can.</p>
+<p>Knowledge compounds only if captured. You solve a client onboarding bottleneck in January. Six months later, a new client hits the same bottleneck, and you forgot the solution. You re-solve it, wasting 3 hours. With PKM, you document the solution in January, retrieve it in July, and apply it in 10 minutes. Multiply that across 50 problems annually, and PKM saves 100+ hours.</p>
+<p>Operators also context-switch constantly—morning sales calls, afternoon delivery work, evening financials. Each context requires different information: CRM data, project specs, budget files. PKM centralizes information so context-switching doesn&#39;t require searching eight tools. One search surfaces what you need.</p>
+<p>PKM also builds institutional memory. If you&#39;re running two businesses or consulting for multiple clients, details blur. Which client requested what feature? What pricing did you quote last quarter? What process broke during the last project? PKM externalizes memory, freeing cognitive load for decisions, not recall.</p>
+<p>Finally, PKM enables knowledge transfer. If you hire, your documented processes become training materials. If you sell, your documented systems add enterprise value. If you step away, your business doesn&#39;t collapse because knowledge lives in your head.</p>
+<h2>Choosing a PKM System: Obsidian, Notion, or Roam</h2>
+<p>Three tools dominate operator PKM: <strong>Obsidian</strong> (file-based, markdown, local storage), <strong>Notion</strong> (database-driven, collaborative, cloud-hosted), and <strong>Roam Research</strong> (graph-based, bidirectional linking, daily notes). Each fits different operator profiles.</p>
+<p><strong>Obsidian</strong> stores notes as plain markdown files on your computer. No vendor lock-in, no internet required, full control. It excels at linking ideas bidirectionally—connect &quot;Client Onboarding SOP&quot; to &quot;CRM Setup Guide&quot; and &quot;Contract Template.&quot; Links create knowledge networks, not hierarchical folders. Best for operators who value data ownership, work offline, or want to integrate with automation scripts (<strong>Git</strong>, <strong>Python</strong>, CLI tools).</p>
+<p>Strengths: Speed, customization (via plugins), local storage, markdown format, graph view for idea mapping. Weaknesses: Steep learning curve, no native collaboration (requires workarounds), mobile app lags desktop.</p>
+<p><strong>Notion</strong> offers databases, kanban boards, calendars, and wikis in one workspace. You can build client dashboards, project trackers, and knowledge bases with no code. Best for operators managing teams or clients who need shared access. Notion&#39;s database views let you filter the same information multiple ways—view tasks by project, by due date, or by priority without duplicating data.</p>
+<p>Strengths: Collaboration, templates, visual organization, ease of use. Weaknesses: Slower than Obsidian, data lives on Notion servers, harder to export if you leave, limited offline functionality.</p>
+<p><strong>Roam Research</strong> pioneered bidirectional linking and daily notes. Every note is a node in a graph. Linking &quot;Client A&quot; to &quot;Proposal Template&quot; creates two-way connections—see all proposals from Client A&#39;s page, see all clients who used that template from the Proposal page. Roam&#39;s daily notes structure captures ephemeral thoughts, meeting notes, and to-dos in one chronological stream.</p>
+<p>Strengths: Graph view exposes connections between disparate ideas, daily notes reduce organizational friction, strong for research-heavy work. Weaknesses: Expensive ($15/month), UI hasn&#39;t evolved much, smaller plugin ecosystem than Obsidian, mobile experience is weak.</p>
+<p><strong>Recommendation:</strong> Obsidian for solo operators prioritizing speed and control. Notion for operators with teams or collaborative needs. Roam for operators doing framework development or conceptual work.</p>
+<h2>Core PKM Structures: PARA, Zettelkasten, or Hybrid</h2>
+<p>PKM systems need organizational structure. Two dominant frameworks: <strong>PARA (Projects, Areas, Resources, Archives)</strong> and <strong>Zettelkasten (atomic notes + linking)</strong>. Most operators use hybrids.</p>
+<p><strong>PARA Method (Tiago Forte):</strong></p>
+<ul>
+<li><strong>Projects:</strong> Finite work with deadlines (client deliverables, product launches).</li>
+<li><strong>Areas:</strong> Ongoing responsibilities (marketing, finance, client relations).</li>
+<li><strong>Resources:</strong> Reference material (templates, guides, research).</li>
+<li><strong>Archives:</strong> Completed or inactive items.</li>
+</ul>
+<p>PARA separates actionable (Projects, Areas) from reference (Resources, Archives). It&#39;s task-centric—optimized for getting things done, not deep thinking. Best for operators focused on execution velocity.</p>
+<p>Implementation: Create four top-level folders. Every note belongs in one. When a project completes, move it to Archives. When an area becomes inactive, archive it. Review quarterly to keep structure clean.</p>
+<p><strong>Zettelkasten Method (Niklas Luhmann):</strong></p>
+<ul>
+<li>Atomic notes: One idea per note.</li>
+<li>Bidirectional linking: Connect related ideas.</li>
+<li>No hierarchical folders: Organization emerges from links, not structure.</li>
+</ul>
+<p>Zettelkasten optimizes for idea synthesis—building frameworks, connecting disparate concepts, long-form writing. Best for operators creating courses, writing books, or developing methodologies.</p>
+<p>Implementation: Every note is self-contained. Use descriptive titles (&quot;Why B2B SEO requires longer timelines&quot; not &quot;Note 347&quot;). Link related notes aggressively. Use tags sparingly—links &gt; tags for organization.</p>
+<p><strong>Hybrid Approach (Most Practical):</strong></p>
+<ul>
+<li>Use PARA for project/task management.</li>
+<li>Use Zettelkasten principles for knowledge notes (insights, frameworks, learnings).</li>
+<li>Separate &quot;do&quot; from &quot;know.&quot;</li>
+</ul>
+<p>Example structure:</p>
+<pre><code>- Projects/ (client work, launches)
+- Areas/ (ongoing ops)
+- Resources/ (templates, SOPs)
+- Knowledge/ (learnings, frameworks, notes)
+- Archive/ (completed projects)
+</code></pre>
+<p>&quot;Projects&quot; and &quot;Areas&quot; are action-oriented. &quot;Knowledge&quot; is Zettelkasten-style—atomic notes, heavily linked. This balances execution (PARA) with learning (Zettelkasten).</p>
+<h2>Capturing Information: Daily Notes, Fleeting Notes, and Permanent Notes</h2>
+<p>Operators encounter information constantly—client requests, meeting insights, troubleshooting solutions, article ideas. Capture systems prevent loss.</p>
+<p><strong>Daily Notes (Roam-style):</strong>
+Every day gets a note. Dump everything there: to-dos, meeting notes, ideas, links. At day&#39;s end, process daily notes—move actionable items to project notes, move insights to permanent notes, delete ephemeral content. Daily notes are inboxes, not archives.</p>
+<p>Obsidian and Notion both support daily notes via templates or plugins. Roam does this natively. Daily notes reduce friction—no &quot;where does this go?&quot; decisions. Just capture.</p>
+<p><strong>Fleeting Notes (Zettelkasten):</strong>
+Quick captures during the day—voice memos, mobile notes, scribbles. These don&#39;t live permanently. Process within 48 hours: convert useful fleeting notes to permanent notes, discard the rest.</p>
+<p>Use mobile apps: <strong>Obsidian mobile</strong>, <strong>Notion mobile</strong>, or quick-capture tools like <strong>Drafts</strong> (iOS) or <strong>Google Keep</strong>. Sync to your PKM system, process during weekly reviews.</p>
+<p><strong>Permanent Notes (Zettelkasten):</strong>
+Refined, evergreen notes. These are insights, frameworks, or knowledge you&#39;ll reference long-term. Write permanent notes in your own words—paraphrasing ensures understanding. Link to related notes, tag if useful, file in &quot;Knowledge&quot; or equivalent folder.</p>
+<p>Permanent notes should answer: &quot;If I need this information in 6 months, can I find and understand it?&quot; If no, refine it.</p>
+<p><strong>Processing workflow:</strong></p>
+<ol>
+<li>Capture in daily notes or fleeting notes (no friction).</li>
+<li>Weekly review: process daily notes, convert fleeting → permanent.</li>
+<li>Monthly review: audit permanent notes, strengthen links, archive outdated info.</li>
+</ol>
+<p>This three-tier system balances speed (capture fast) with longevity (process deliberately).</p>
+<h2>Linking and Tagging Strategies That Scale</h2>
+<p>Folders impose hierarchy. Hierarchies break when information fits multiple categories. Links and tags create flexible organization.</p>
+<p><strong>Bidirectional linking:</strong>
+Link related notes using <code>[[Note Title]]</code> syntax (Obsidian, Roam) or @-mentions (Notion). Bidirectional links mean the relationship works both ways—clicking &quot;Client A&quot; shows all notes mentioning them, clicking &quot;Proposal Template&quot; shows all clients who received it.</p>
+<p>Link liberally. If a project note references a template, link it. If a client note mentions a team member, link them. Links create context webs—every note exists in relation to others.</p>
+<p><strong>Tagging:</strong>
+Tags categorize without folder constraints. A note can be tagged <code>#client</code>, <code>#seo</code>, and <code>#case-study</code> simultaneously. Tags surface related content across folder boundaries.</p>
+<p>Use tags sparingly. Too many tags = tag chaos. Limit to 10-15 core tags: <code>#client</code>, <code>#project</code>, <code>#process</code>, <code>#insight</code>, <code>#framework</code>, <code>#question</code>, <code>#resource</code>, <code>#idea</code>.</p>
+<p>Prefer links over tags for specific entities. Use tags for abstract categories. Link to &quot;Client A&quot; (specific), tag with <code>#retrospective</code> (abstract).</p>
+<p><strong>MOCs (Maps of Content):</strong>
+MOCs are index notes linking to related content. Think of them as dynamic tables of contents. Example: &quot;B2B SEO MOC&quot; links to all notes about B2B SEO—articles, frameworks, client case studies, keyword research.</p>
+<p>MOCs prevent link overload. Instead of linking every note to 20 related notes, link them to the MOC. The MOC becomes the hub. Update MOCs quarterly as new notes accumulate.</p>
+<h2>Templates for Common Operator Workflows</h2>
+<p>Templates reduce decision fatigue and ensure consistency. Build templates for recurring workflows: client onboarding, project kickoffs, weekly reviews, meeting notes.</p>
+<p><strong>Client Onboarding Template:</strong></p>
+<pre><code># Client: [[Client Name]]
+**Date:** YYYY-MM-DD
+**Service:** [Service Type]
+**Contact:** [[Contact Name]] | email | phone
+
+## Discovery Notes
+- Pain points:
+- Goals:
+- Budget:
+- Timeline:
+
+## Deliverables
+- [ ] Contract signed
+- [ ] CRM record created
+- [ ] Project folder setup
+- [ ] Kickoff call scheduled
+
+## Links
+- [[Contract Template]]
+- [[Service Agreement]]
+- [[Project Folder Structure]]
+</code></pre>
+<p>Fill in the blanks, link to related resources, track progress. This template becomes a checklist and documentation artifact.</p>
+<p><strong>Project Retrospective Template:</strong></p>
+<pre><code># Retrospective: [[Project Name]]
+**Date:** YYYY-MM-DD
+**Client:** [[Client Name]]
+
+## What Went Well
+-
+
+## What Didn&#39;t Go Well
+-
+
+## Lessons Learned
+-
+
+## Action Items
+- [ ]
+- [ ]
+
+## Links
+- [[Client folder]]
+- [[Project folder]]
+</code></pre>
+<p>Post-project retrospectives capture learnings. Review them before starting similar projects to avoid repeating mistakes.</p>
+<p><strong>Weekly Review Template:</strong></p>
+<pre><code># Week of YYYY-MM-DD
+
+## Completed This Week
+-
+
+## Blocked / Delayed
+-
+
+## Next Week Priorities
+1.
+2.
+3.
+
+## Notes / Insights
+-
+
+## Process Daily Notes
+- [ ] Monday
+- [ ] Tuesday
+- ...
+</code></pre>
+<p>Weekly reviews process accumulated notes and set priorities. Allocate 30-60 minutes every Friday or Sunday.</p>
+<p>Store templates in a <code>Templates/</code> folder. Duplicate and fill when needed. Over time, refine templates based on what information proves useful.</p>
+<h2>Integrating PKM with Task Management and CRM</h2>
+<p>PKM isn&#39;t a task manager or CRM, but it integrates with them. Use PKM for context and knowledge, use task managers for execution, use CRMs for client tracking.</p>
+<p><strong>PKM ↔ Task Manager:</strong>
+Link PKM notes to tasks. In <strong>Asana</strong> or <strong>Todoist</strong>, add note links in task descriptions: &quot;See [[Client Onboarding SOP]].&quot; When you complete a task, document learnings in your PKM. When you encounter recurring tasks, create SOPs in PKM and link them.</p>
+<p>Some tools integrate directly: <strong>Notion</strong> has task databases, <strong>Obsidian</strong> plugins like Tasks or Kanban create task views. Use these if you want unified systems, but don&#39;t force it. Task managers excel at due dates and reminders. PKM excels at context and knowledge. Let each do what it does best.</p>
+<p><strong>PKM ↔ CRM:</strong>
+Create client notes in PKM with links to CRM records. Example: &quot;Client A | CRM ID: 12345 | HubSpot Link.&quot; In your PKM, document client preferences, past conversations, project history, and internal notes. Your CRM holds transactional data (deals, contacts, activities). Your PKM holds contextual knowledge (why they chose you, what they value, lessons from working together).</p>
+<p>When preparing for client calls, open their PKM note. It contains context your CRM doesn&#39;t—past challenges, strategic goals, relationship notes. After calls, update the PKM note with new insights.</p>
+<p><strong>Search as the bridge:</strong>
+Good PKM systems have fast, comprehensive search. <strong>Obsidian</strong> search is instant. <strong>Notion</strong> search works across databases. Use search to surface context when switching between tools. Need client context before a call? Search their name in PKM. Need a process doc? Search the process name.</p>
+<h2>Maintaining Your PKM System Without It Becoming Another Job</h2>
+<p>PKM systems decay without maintenance. Notes accumulate, links break, structure drifts. Prevent decay with minimal recurring maintenance.</p>
+<p><strong>Daily (2-5 minutes):</strong>
+Capture in daily notes. Don&#39;t organize—just dump information. Capture is frictionless.</p>
+<p><strong>Weekly (30-60 minutes):</strong>
+Process daily notes. Move actionable items to task manager. Move insights to permanent notes. Delete ephemeral content. Review upcoming week priorities.</p>
+<p><strong>Monthly (1-2 hours):</strong>
+Audit recent permanent notes. Strengthen weak links. Update MOCs with new notes. Archive completed projects. Review areas—are they still active or should they archive?</p>
+<p><strong>Quarterly (2-4 hours):</strong>
+Deep clean. Review all permanent notes added in the quarter. Merge duplicates. Deprecate outdated notes (mark with <code>#outdated</code> tag or move to archive). Update templates based on learnings. Refine tag taxonomy if needed.</p>
+<p>Set calendar reminders for weekly and monthly reviews. Treat them as non-negotiable appointments. PKM systems fail when maintenance becomes &quot;I&#39;ll get to it later.&quot;</p>
+<p><strong>Avoid perfectionism.</strong> PKM is a tool, not an art project. Notes don&#39;t need perfect formatting. Links don&#39;t need exhaustive completeness. Good-enough PKM beats perfect-but-abandoned PKM.</p>
+<h2>Common PKM Mistakes Operators Make</h2>
+<p><strong>Mistake 1: Over-organizing upfront.</strong> Spending weeks building folder structures and tag taxonomies before capturing any information. <strong>Fix:</strong> Start messy. Capture notes in a flat structure, organize as patterns emerge. Structure should serve content, not precede it.</p>
+<p><strong>Mistake 2: Treating PKM as a content repository.</strong> Saving hundreds of articles, PDFs, and bookmarks without synthesizing them. <strong>Fix:</strong> Capture sources, but write your own summary or insight. &quot;Why this matters&quot; &gt; &quot;what the article said.&quot; Original thinking beats hoarding.</p>
+<p><strong>Mistake 3: No search strategy.</strong> Building beautiful note networks but never using them because search is slow or poorly configured. <strong>Fix:</strong> Test search regularly. If you can&#39;t find a note you know exists within 10 seconds, your system is broken. Improve note titles, tags, or tool choice.</p>
+<p><strong>Mistake 4: Siloing PKM from workflows.</strong> PKM lives in a bubble, disconnected from task management, CRM, or daily tools. <strong>Fix:</strong> Link notes to tasks, CRM records, and email threads. PKM should sit at the center of your workflow, not beside it.</p>
+<p><strong>Mistake 5: No regular reviews.</strong> Notes accumulate, but no one processes or uses them. PKM becomes a graveyard. <strong>Fix:</strong> Weekly reviews are non-negotiable. If you skip reviews for 3 weeks, your PKM is dead. Revive it or abandon it—don&#39;t let it limp along.</p>
+<p><strong>Mistake 6: Tool-hopping.</strong> Switching from Notion to Obsidian to Roam every 6 months. <strong>Fix:</strong> Pick one, commit for 12 months, then evaluate. Tool-switching erases progress. Most dissatisfaction stems from lack of usage, not tool limitations.</p>
+<h2>FAQ: Personal Knowledge Management for Operators</h2>
+<h3>How long does it take to build a functional PKM system?</h3>
+<p>2-4 weeks to set up structure and templates. 3-6 months to develop the habit of consistent capture and review. 12 months to realize compounding value. Don&#39;t expect immediate ROI—PKM pays dividends over time.</p>
+<h3>What if I don&#39;t have time for weekly reviews?</h3>
+<p>Then you don&#39;t have time for PKM. Reviews are the system. Without them, you&#39;re just hoarding notes. If time is that constrained, use simpler tools—a well-organized <strong>Google Drive</strong> folder beats an unmaintained PKM system.</p>
+<h3>Can I use PKM for team knowledge, or is it just personal?</h3>
+<p>Both. <strong>Notion</strong> and <strong>Confluence</strong> work well for team knowledge bases. <strong>Obsidian</strong> can sync via shared folders (iCloud, Dropbox) but isn&#39;t designed for real-time collaboration. Use personal PKM for private context (client notes, strategic thinking). Use team wiki for shared processes (SOPs, templates, onboarding docs).</p>
+<h3>What&#39;s the minimum viable PKM system?</h3>
+<p>One folder with markdown files, one daily note per day, one weekly review. That&#39;s it. Everything else—tags, links, MOCs, templates—adds value but isn&#39;t required to start. Begin minimal, add complexity as needed.</p>
+<h3>Should I migrate old notes into my PKM system?</h3>
+<p>Only high-value evergreen content—SOPs, frameworks, case studies, key learnings. Don&#39;t migrate meeting notes from 2019 or ephemeral to-dos. Migrating junk creates clutter. Start fresh, migrate selectively as you reference old materials.</p>
+<p>Related: <a href="operator-tech-stack-tools.html">operator-tech-stack-tools.html</a>, <a href="operator-dashboard-business-health.html">operator-dashboard-business-health.html</a>, <a href="running-two-businesses-simultaneously.html">running-two-businesses-simultaneously.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

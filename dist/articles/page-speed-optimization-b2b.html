@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions | B2B Vic</title>
+    <meta name="description" content="Optimize page speed for B2B sites by fixing LCP, CLS, and INP. Eliminate render-blocking resources, compress images, and reduce JavaScript bloat." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions" />
+    <meta property="og:description" content="Optimize page speed for B2B sites by fixing LCP, CLS, and INP. Eliminate render-blocking resources, compress images, and reduce JavaScript bloat." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/page-speed-optimization-b2b.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions" />
+    <meta name="twitter:description" content="Optimize page speed for B2B sites by fixing LCP, CLS, and INP. Eliminate render-blocking resources, compress images, and reduce JavaScript bloat." />
+    <link rel="canonical" href="https://b2bvic.com/articles/page-speed-optimization-b2b.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions",
+      "description": "Optimize page speed for B2B sites by fixing LCP, CLS, and INP. Eliminate render-blocking resources, compress images, and reduce JavaScript bloat.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/page-speed-optimization-b2b.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Page Speed Optimization for B2B Sites: Fix Core Web Vitals That Kill Conversions</h1>
+<p>Page speed determines whether prospects stay on your site or bounce before your value proposition loads. B2B sites tolerating 4-second load times lose 40% of visitors and kill conversion rates. This guide fixes Core Web Vitals—LCP, CLS, and INP—by eliminating render-blocking resources, compressing images, and reducing JavaScript execution time.</p>
+<h2>Why B2B Sites Ignore Page Speed Until Conversions Drop</h2>
+<p>B2B operators assume page speed matters less than content quality. The logic: &quot;Our prospects are serious buyers doing research. They&#39;ll wait for the page to load.&quot; Data refutes this. <strong>Google</strong> research shows 53% of mobile users abandon sites that take longer than 3 seconds to load. B2B prospects browse on phones between meetings, during commutes, and in coffee shops. Slow sites lose them.</p>
+<p>Conversion rate correlates inversely with load time. Sites loading in under 2 seconds convert at 9-12%. Sites loading in 4-5 seconds convert at 4-6%. The difference isn&#39;t just user patience—it&#39;s signal quality. <strong>Google</strong> uses page speed as a ranking factor. Slow sites rank lower, get less traffic, and convert worse. Speed compounds across the funnel.</p>
+<p>Most B2B sites accumulate technical debt: uncompressed images, render-blocking CSS, third-party scripts for analytics and chat widgets, bloated JavaScript frameworks. Each element adds 200-800ms load time. Multiply by eight scripts and load time balloons from 1.2 seconds to 4.8 seconds. Operators don&#39;t notice because they browse on fast office Wi-Fi. Prospects notice on 4G networks.</p>
+<p>Core Web Vitals—Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP)—quantify user experience. <strong>Google Search Console</strong> flags pages failing thresholds. Sites ignoring these metrics see organic traffic decline as competitors with faster sites outrank them.</p>
+<h2>Measuring Page Speed with Core Web Vitals</h2>
+<p>Core Web Vitals measure three performance dimensions: loading speed (LCP), visual stability (CLS), and interactivity (INP). Each threshold distinguishes &quot;good,&quot; &quot;needs improvement,&quot; and &quot;poor&quot; experiences. Passing thresholds improves rankings. Failing them throttles organic visibility.</p>
+<p><strong>Largest Contentful Paint (LCP)</strong> measures how long the largest above-the-fold element takes to render. Good LCP is under 2.5 seconds. LCP over 4 seconds is poor. Common culprits: unoptimized hero images, slow server response times, render-blocking CSS and JavaScript. If your homepage hero image is 2MB, LCP will fail.</p>
+<p><strong>Cumulative Layout Shift (CLS)</strong> measures visual stability—how much elements shift during page load. Good CLS is under 0.1. CLS above 0.25 is poor. Common culprits: images without width/height attributes, ads or embeds that load late and push content down, web fonts that cause layout reflow. If your CTA button moves 50px down as fonts load, users click the wrong element.</p>
+<p><strong>Interaction to Next Paint (INP)</strong> replaced First Input Delay (FID) in 2024. It measures responsiveness—how long the browser takes to react to user interactions (clicks, taps, key presses). Good INP is under 200ms. INP over 500ms is poor. Common culprits: heavy JavaScript execution, long tasks blocking the main thread, unoptimized third-party scripts.</p>
+<p>Use <strong>PageSpeed Insights</strong>, <strong>Chrome DevTools Lighthouse</strong>, and <strong>Google Search Console</strong> to measure Core Web Vitals. PageSpeed Insights provides lab data (simulated) and field data (real user metrics). Lab data shows potential. Field data shows reality. Optimize for field data—it&#39;s what Google uses for rankings.</p>
+<p>Run tests from multiple locations and devices. A site loading fast on desktop in New York might fail on mobile in rural areas. <strong>WebPageTest</strong> lets you test from different regions and connection speeds (3G, 4G, cable). B2B buyers increasingly browse on mobile—optimize accordingly.</p>
+<h2>Optimizing Images: Compression, Modern Formats, and Lazy Loading</h2>
+<p>Images account for 50-70% of page weight on B2B sites. Hero images, team photos, client logos, and case study visuals accumulate fast. One unoptimized 3MB hero image destroys LCP. Image optimization means compression, modern formats, responsive sizing, and lazy loading.</p>
+<p>Compress images before uploading. Tools like <strong>TinyPNG</strong>, <strong>Squoosh</strong>, or <strong>ImageOptim</strong> reduce file size by 60-80% without visible quality loss. A 2.4MB image compresses to 400KB. That&#39;s 2 seconds of load time saved on a 4G connection.</p>
+<p>Convert images to modern formats: <strong>WebP</strong> or <strong>AVIF</strong>. These formats deliver 30-50% smaller file sizes than JPEG or PNG at equivalent quality. Most browsers support WebP (96%+ coverage). Serve WebP with JPEG fallback using <code>&lt;picture&gt;</code> tags:</p>
+<pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;hero.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;img src=&quot;hero.jpg&quot; alt=&quot;Hero image&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+<p><strong>WordPress</strong> sites can use plugins like <strong>ShortPixel</strong> or <strong>Imagify</strong> to automate conversion and compression. Static sites can use build tools like <strong>Eleventy</strong> or <strong>Next.js</strong> to process images during deployment.</p>
+<p>Implement responsive images with <code>srcset</code>. Serve 400px-wide images to mobile, 1200px to desktop. Don&#39;t send 2400px images to phones—it wastes bandwidth and slows LCP:</p>
+<pre><code class="language-html">&lt;img src=&quot;image-800.jpg&quot;
+     srcset=&quot;image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w&quot;
+     sizes=&quot;(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px&quot;
+     alt=&quot;Responsive image&quot;&gt;
+</code></pre>
+<p>Lazy load images below the fold. Images that aren&#39;t immediately visible shouldn&#39;t block page load. Use native lazy loading:</p>
+<pre><code class="language-html">&lt;img src=&quot;below-fold.jpg&quot; loading=&quot;lazy&quot; alt=&quot;Lazy loaded image&quot;&gt;
+</code></pre>
+<p>This defers loading until the user scrolls near the image. Don&#39;t lazy load above-the-fold images—it delays LCP.</p>
+<h2>Eliminating Render-Blocking CSS and JavaScript</h2>
+<p>Render-blocking resources prevent the browser from displaying content until the resource loads and executes. CSS and JavaScript files in the <code>&lt;head&gt;</code> block rendering. If your homepage loads 8 CSS files and 12 JavaScript files before showing content, LCP suffers.</p>
+<p>Inline critical CSS. Critical CSS styles above-the-fold content. Inline it in the <code>&lt;head&gt;</code> so the page renders immediately. Defer non-critical CSS using <code>media</code> or <code>preload</code>:</p>
+<pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;styles.css&quot; as=&quot;style&quot; onload=&quot;this.onload=null;this.rel=&#39;stylesheet&#39;&quot;&gt;
+&lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;&lt;/noscript&gt;
+</code></pre>
+<p>This loads critical styles immediately and defers the rest. Tools like <strong>Critical</strong> or <strong>PurgeCSS</strong> extract critical CSS automatically.</p>
+<p>Remove unused CSS. Most sites load entire CSS frameworks (<strong>Bootstrap</strong>, <strong>Tailwind</strong>) but use only 20% of the classes. <strong>PurgeCSS</strong> scans your HTML and removes unused styles, shrinking CSS files by 70-90%. Configure PurgeCSS in your build process to run automatically.</p>
+<p>Defer JavaScript that doesn&#39;t affect above-the-fold content. Use <code>defer</code> or <code>async</code> attributes:</p>
+<pre><code class="language-html">&lt;script src=&quot;analytics.js&quot; defer&gt;&lt;/script&gt;
+</code></pre>
+<p><code>defer</code> loads the script in parallel with HTML parsing and executes after DOM is ready. <code>async</code> executes immediately after download, which can block rendering. Prefer <code>defer</code> unless the script must run immediately.</p>
+<p>Minify CSS and JavaScript. Minification removes whitespace, comments, and shortens variable names. <strong>Terser</strong> minifies JavaScript, <strong>cssnano</strong> minifies CSS. Most build tools (<strong>Webpack</strong>, <strong>Vite</strong>, <strong>Parcel</strong>) minify automatically in production mode.</p>
+<h2>Reducing JavaScript Execution Time and Bundle Size</h2>
+<p>JavaScript is the primary performance bottleneck for modern B2B sites. Frameworks like <strong>React</strong>, <strong>Vue</strong>, and <strong>Angular</strong> ship hundreds of kilobytes of JavaScript. Chat widgets, analytics tags, and marketing scripts add more. The browser must download, parse, and execute all of it. Heavy JavaScript delays INP and slows Time to Interactive (TTI).</p>
+<p>Audit JavaScript bundles with <strong>Webpack Bundle Analyzer</strong> or <strong>Next.js Bundle Analyzer</strong>. These tools visualize what&#39;s in your bundle. Often, you&#39;ll find entire libraries imported when only one function is used. Tree-shaking removes unused code, but many dependencies don&#39;t support it well.</p>
+<p>Code-split by route. If your site has 15 pages, don&#39;t send JavaScript for all 15 on page one. <strong>Next.js</strong>, <strong>Gatsby</strong>, and <strong>Nuxt</strong> handle this automatically. Static sites can manually split bundles:</p>
+<pre><code class="language-javascript">// Dynamic import for heavy component
+const HeavyComponent = () =&gt; import(&#39;./HeavyComponent&#39;);
+</code></pre>
+<p>This defers loading until the component is needed.</p>
+<p>Remove or defer third-party scripts. <strong>Google Tag Manager</strong>, <strong>Hotjar</strong>, <strong>Intercom</strong>, <strong>Drift</strong>—each adds 50-200KB and delays INP. Audit which scripts are critical. Marketing tags can load after page interactive. Chat widgets can wait 3 seconds. Use <strong>Partytown</strong> to run third-party scripts in web workers, freeing the main thread.</p>
+<p>Replace heavy frameworks with lightweight alternatives. If your site is content-focused (blog, resources, case studies), you don&#39;t need <strong>React</strong>. Static site generators like <strong>Eleventy</strong>, <strong>Hugo</strong>, or <strong>Astro</strong> ship zero JavaScript by default. Astro supports &quot;islands&quot;—hydrate interactive components only where needed, leaving the rest static.</p>
+<p>Reduce polyfills. Modern browsers support ES6+ natively. If you&#39;re shipping polyfills for IE11, stop—IE11 is dead. Use <strong>module/nomodule</strong> pattern to ship modern code to modern browsers and legacy code only to old browsers:</p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot; src=&quot;modern.js&quot;&gt;&lt;/script&gt;
+&lt;script nomodule src=&quot;legacy.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>This cuts bundle size by 30-40% for 95% of users.</p>
+<h2>Optimizing Server Response Time and Hosting Infrastructure</h2>
+<p>Fast code means nothing if the server takes 2 seconds to respond. Server response time (Time to First Byte, TTFB) should be under 200ms. Slow TTFB delays everything—HTML, CSS, JavaScript, images. Common causes: slow hosting, unoptimized databases, lack of caching.</p>
+<p>Use fast hosting. Shared hosting ($5/month plans) often delivers 800ms-1.5s TTFB. Managed hosting (<strong>WP Engine</strong>, <strong>Kinsta</strong> for WordPress) or cloud platforms (<strong>Vercel</strong>, <strong>Netlify</strong> for static sites) deliver 50-150ms TTFB. The difference is server resources, CDN integration, and caching infrastructure.</p>
+<p>Enable server-side caching. For <strong>WordPress</strong>, use <strong>WP Rocket</strong>, <strong>W3 Total Cache</strong>, or <strong>Redis</strong> object caching. This stores rendered pages in memory so repeat requests skip PHP execution and database queries. TTFB drops from 800ms to 80ms.</p>
+<p>Use a CDN. <strong>Cloudflare</strong>, <strong>Fastly</strong>, and <strong>AWS CloudFront</strong> cache static assets (images, CSS, JavaScript) at edge locations globally. When a user in Tokyo requests your page, the CDN serves cached assets from Tokyo servers, not your origin server in Virginia. Latency drops from 250ms to 20ms.</p>
+<p>Optimize database queries. Slow database queries delay server response. Use query monitoring tools (<strong>Query Monitor</strong> for WordPress, <strong>APM tools</strong> like <strong>New Relic</strong> for custom apps) to identify slow queries. Add indexes, optimize joins, or cache query results.</p>
+<p>Implement HTTP/2 or HTTP/3. These protocols multiplex requests, reducing connection overhead. Most modern hosting supports HTTP/2 automatically. Verify with <strong>KeyCDN HTTP/2 Test</strong>. If your host doesn&#39;t support it, switch hosts.</p>
+<h2>Fixing Cumulative Layout Shift with Dimension Attributes</h2>
+<p>CLS frustrates users. They click a button, then the page shifts and they hit an ad instead. Or they start reading, then content jumps 300px down because an image loaded late. CLS under 0.1 is imperceptible. CLS above 0.25 ruins UX.</p>
+<p>Set explicit width and height on images. The browser reserves space before the image loads, preventing layout shift:</p>
+<pre><code class="language-html">&lt;img src=&quot;image.jpg&quot; width=&quot;800&quot; height=&quot;600&quot; alt=&quot;Image&quot;&gt;
+</code></pre>
+<p>For responsive images, use aspect ratio CSS:</p>
+<pre><code class="language-css">img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+</code></pre>
+<p>This maintains aspect ratio while allowing fluid width.</p>
+<p>Reserve space for ads and embeds. If you load ads or YouTube embeds, set a min-height container:</p>
+<pre><code class="language-css">.ad-container {
+  min-height: 250px;
+}
+</code></pre>
+<p>This prevents content below the ad from shifting when the ad loads.</p>
+<p>Avoid inserting content above existing content. If you dynamically load alerts, banners, or notices, insert them at the top without pushing content down. Use fixed positioning or transform animations:</p>
+<pre><code class="language-css">.alert {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+.alert.show {
+  transform: translateY(0);
+}
+</code></pre>
+<p>This slides the alert in without shifting page content.</p>
+<p>Preload fonts to prevent font-swap shift. Web fonts cause layout shifts when they load because fallback fonts have different dimensions. Use <code>font-display: optional</code> to prevent swaps, or preload fonts:</p>
+<pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;font.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
+</code></pre>
+<p>This loads fonts early, reducing swap flicker.</p>
+<h2>Monitoring Page Speed and Preventing Regressions</h2>
+<p>Page speed isn&#39;t &quot;fix once, forget forever.&quot; New features, third-party scripts, and content updates introduce regressions. Continuous monitoring catches degradation before it impacts traffic and conversions.</p>
+<p>Set up <strong>Google Search Console</strong> monitoring. GSC reports Core Web Vitals issues at scale, showing which pages fail thresholds and how many users are affected. Check GSC monthly. If new pages appear in &quot;Poor&quot; status, investigate immediately.</p>
+<p>Use <strong>Lighthouse CI</strong> in your deployment pipeline. Lighthouse CI runs performance audits on every deployment. If a new script or image degrades performance, the build fails before deploying. Configure thresholds:</p>
+<pre><code class="language-json">{
+  &quot;ci&quot;: {
+    &quot;assert&quot;: {
+      &quot;assertions&quot;: {
+        &quot;categories:performance&quot;: [&quot;error&quot;, {&quot;minScore&quot;: 0.9}],
+        &quot;first-contentful-paint&quot;: [&quot;error&quot;, {&quot;maxNumericValue&quot;: 2000}],
+        &quot;largest-contentful-paint&quot;: [&quot;error&quot;, {&quot;maxNumericValue&quot;: 2500}]
+      }
+    }
+  }
+}
+</code></pre>
+<p>This prevents shipping code that breaks LCP or FCP.</p>
+<p>Set performance budgets. Define maximum sizes for JavaScript, CSS, and images. Use <strong>Bundlesize</strong> or <strong>Webpack Performance Budgets</strong> to enforce them:</p>
+<pre><code class="language-javascript">module.exports = {
+  performance: {
+    maxAssetSize: 300000, // 300KB
+    maxEntrypointSize: 500000, // 500KB
+  }
+};
+</code></pre>
+<p>Builds exceeding budgets fail, forcing developers to optimize before merging.</p>
+<p>Monitor real user metrics with <strong>Google Analytics 4</strong> or <strong>SpeedCurve</strong>. Lab tests simulate performance. Real User Monitoring (RUM) captures actual user experience across devices, networks, and geographies. If field data degrades, investigate even if lab tests pass.</p>
+<h2>Common B2B Site Performance Mistakes and How to Avoid Them</h2>
+<p><strong>Mistake 1: Loading full frameworks for static content.</strong> B2B sites often use <strong>React</strong> or <strong>Vue</strong> for blogs and resource pages that don&#39;t need interactivity. This ships 200KB+ JavaScript for pages that could be pure HTML/CSS. Solution: Use static site generators or <strong>Astro</strong> for content, save frameworks for apps.</p>
+<p><strong>Mistake 2: Ignoring third-party script impact.</strong> Marketing teams add <strong>Hotjar</strong>, <strong>Crazy Egg</strong>, <strong>Drift</strong>, <strong>Intercom</strong>, and five analytics tags without realizing each adds 50-150KB and delays INP by 200-500ms. Solution: Audit scripts quarterly, remove unused ones, defer non-critical scripts, use tag managers to consolidate.</p>
+<p><strong>Mistake 3: Uploading unoptimized images directly from designers.</strong> Designers export PNGs at 300dpi, operators upload 4MB files, and LCP dies. Solution: Automate image optimization in the CMS or build process. No manual compression step = no forgotten compression.</p>
+<p><strong>Mistake 4: Hosting videos directly instead of using CDNs.</strong> Embedding 50MB video files directly on pages destroys bandwidth and load time. Solution: Use <strong>YouTube</strong>, <strong>Vimeo</strong>, or <strong>Wistia</strong> for video hosting. Embed with lazy loading so videos load only when users click play.</p>
+<p><strong>Mistake 5: Skipping mobile testing.</strong> Developers test on fast desktop connections, miss mobile performance issues. Mobile users get 2-4x slower load times. Solution: Use <strong>Lighthouse</strong> mobile mode, test on real devices with 4G, use <strong>WebPageTest</strong> with mobile profiles.</p>
+<h2>FAQ: Page Speed Optimization for B2B Sites</h2>
+<h3>What&#39;s the biggest performance bottleneck for B2B sites?</h3>
+<p>JavaScript—both first-party and third-party. Heavy frameworks, analytics tags, chat widgets, and marketing scripts account for 60-70% of load time. Audit JavaScript bundles first. Defer, remove, or replace heavy scripts.</p>
+<h3>Do Core Web Vitals actually affect rankings?</h3>
+<p>Yes. <strong>Google</strong> confirmed Core Web Vitals as a ranking factor in 2021. Sites with poor CWV scores see 10-20% organic traffic declines compared to faster competitors. It&#39;s not the strongest ranking factor, but it&#39;s a tiebreaker among similar content quality.</p>
+<h3>Should I prioritize mobile or desktop performance?</h3>
+<p>Mobile. 60%+ of B2B traffic comes from mobile devices. <strong>Google</strong> uses mobile-first indexing—mobile performance affects rankings more than desktop. Optimize mobile first, desktop performance follows.</p>
+<h3>What&#39;s a realistic page load time target for B2B sites?</h3>
+<p>Under 2.5 seconds LCP on mobile (4G connection). Under 1.5 seconds on desktop. Anything faster improves conversion rates, but diminishing returns kick in under 1 second—focus on content quality and UX at that point.</p>
+<h3>Can I fix page speed without a developer?</h3>
+<p>Partially. Image optimization, lazy loading, caching plugins, and CDN setup don&#39;t require code. Reducing JavaScript, eliminating render-blocking resources, and code-splitting require development skills. Start with no-code wins, hire a developer for deeper optimizations.</p>
+<p>Related: <a href="programmatic-seo-b2b.html">programmatic-seo-b2b.html</a>, <a href="saas-content-hub-architecture.html">saas-content-hub-architecture.html</a>, <a href="redirect-mapping-large-scale-migrations.html">redirect-mapping-large-scale-migrations.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation | B2B Vic</title>
+    <meta name="description" content="Build programmatic SEO systems that generate thousands of location, product, or comparison pages automatically. Scale B2B organic traffic without scaling headcount." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation" />
+    <meta property="og:description" content="Build programmatic SEO systems that generate thousands of location, product, or comparison pages automatically. Scale B2B organic traffic without scaling headcount." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/programmatic-seo-b2b.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation" />
+    <meta name="twitter:description" content="Build programmatic SEO systems that generate thousands of location, product, or comparison pages automatically. Scale B2B organic traffic without scaling headcount." />
+    <link rel="canonical" href="https://b2bvic.com/articles/programmatic-seo-b2b.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation",
+      "description": "Build programmatic SEO systems that generate thousands of location, product, or comparison pages automatically. Scale B2B organic traffic without scaling headcount.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/programmatic-seo-b2b.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Programmatic SEO for B2B: Scale Content to Thousands of Pages with Automation</h1>
+<p>Programmatic SEO generates thousands of unique, SEO-optimized pages automatically using templates, data sources, and code. This scales organic traffic without scaling content teams. B2B companies use programmatic SEO for location pages, product comparison pages, glossary terms, and category landing pages. Done well, programmatic SEO captures long-tail traffic at 1/10th the cost of manual content. Done poorly, it creates thin content that tanks rankings.</p>
+<h2>Why Programmatic SEO Works for B2B Scalability</h2>
+<p>Manual content production caps at 8-12 articles per month with one writer. Programmatic SEO produces 1,000+ pages in a weekend. The difference is automation—combine templates with structured data, and you generate unique pages programmatically.</p>
+<p>B2B buyers search long-tail variations: &quot;SEO agency in Raleigh,&quot; &quot;HubSpot vs. Salesforce for manufacturing,&quot; &quot;project management software for remote teams.&quot; Manual content can&#39;t cover every variation. Programmatic SEO can. Generate 500 location pages, 200 comparison pages, 300 glossary entries—each targeting a distinct long-tail keyword.</p>
+<p>Programmatic pages rank because they satisfy specific search intent. Someone searching &quot;CRM for real estate agencies&quot; doesn&#39;t want a generic &quot;best CRM&quot; article. They want information specific to real estate. Programmatic templates customize content per niche, location, or product, delivering relevance at scale.</p>
+<p>Programmatic SEO also builds topical authority. <strong>Google</strong> favors sites with comprehensive coverage. A site with 1,000 pages about &quot;project management software&quot; signals deeper expertise than a site with 10. Programmatic approaches build this breadth systematically.</p>
+<p>Finally, programmatic SEO leverages existing data. Most B2B companies have structured data: customer lists, product catalogs, service areas, pricing tiers. Programmatic SEO turns data into content. Instead of writing 50 location pages manually, you template once and generate 50 pages from a spreadsheet.</p>
+<h2>Identifying Programmatic SEO Opportunities in Your Business</h2>
+<p>Programmatic SEO works when you have repeatable content patterns and structured data. Identify opportunities by analyzing search volume for variations of your core keywords.</p>
+<p><strong>Use case 1: Location-based pages</strong>
+If you serve multiple cities, regions, or countries, create location-specific landing pages. Example: &quot;SEO agency in [City]&quot; or &quot;Marketing consultant in [Region].&quot; Use <strong>Ahrefs</strong> or <strong>Semrush</strong> to check search volume for &quot;[Service] in [Location].&quot; If 50+ locations each have 100+ monthly searches, programmatic location pages work.</p>
+<p>Data needed: List of locations (city, state, zip code, region), local statistics (population, industries, average business size), local landmarks or case studies if available.</p>
+<p><strong>Use case 2: Product or service comparison pages</strong>
+B2B buyers compare solutions before purchasing. &quot;Notion vs. Asana,&quot; &quot;HubSpot vs. Salesforce,&quot; &quot;[Your Product] vs. [Competitor].&quot; These comparisons drive high-intent traffic. If you have 10 competitors and 10 product features, that&#39;s 100 comparison permutations.</p>
+<p>Data needed: Competitor names, product features, pricing, pros/cons, use cases.</p>
+<p><strong>Use case 3: Category and niche landing pages</strong>
+Create pages for every industry, use case, or persona you serve. &quot;Project management for construction,&quot; &quot;CRM for real estate,&quot; &quot;Email marketing for SaaS.&quot; Each targets a distinct keyword and audience segment.</p>
+<p>Data needed: List of industries, use cases, personas. Industry-specific pain points and solutions.</p>
+<p><strong>Use case 4: Glossary and definition pages</strong>
+Build glossary pages for every term in your domain. &quot;What is [Term]?&quot; or &quot;[Term] definition.&quot; These rank well for informational queries and build topical authority. Example: An SEO agency could create 300 glossary pages for SEO terms.</p>
+<p>Data needed: List of terms, definitions, related terms, examples, FAQs.</p>
+<p><strong>Use case 5: Directory or listing pages</strong>
+If your business model includes listings (agencies, tools, resources), create pages for each listing. &quot;Top [Category] tools in [Location]&quot; or &quot;Best [Service] providers in [Industry].&quot; These aggregate pages rank for &quot;best,&quot; &quot;top,&quot; and &quot;list&quot; queries.</p>
+<p>Data needed: List of tools/agencies/resources, descriptions, features, pricing, reviews.</p>
+<p>Validate opportunities before building. Search target keywords manually, analyze top 10 results. If competitors use programmatic pages and rank well, opportunity exists. If top results are manually-written deep-dives, programmatic may not compete—searcher intent requires depth, not breadth.</p>
+<h2>Building Templates That Pass Google&#39;s Quality Standards</h2>
+<p>Programmatic SEO fails when pages feel robotic or thin. <strong>Google</strong> penalizes low-quality programmatic content. Templates must generate unique, valuable pages that satisfy searcher intent.</p>
+<p><strong>Template anatomy:</strong></p>
+<ul>
+<li><strong>Title tag:</strong> <code>[Service] in [City] | [Unique Value Proposition]</code> Example: &quot;SEO Services in Austin | Data-Driven Growth for SaaS Companies&quot;</li>
+<li><strong>H1:</strong> <code>[Service] in [City]: [Outcome or Benefit]</code> Example: &quot;SEO Services in Austin: Scale Organic Traffic Without Scaling Headcount&quot;</li>
+<li><strong>Meta description:</strong> <code>[Service] in [City]. We help [Target Audience] achieve [Outcome]. [CTA].</code> Example: &quot;SEO services in Austin for B2B SaaS companies. We help you scale organic traffic 3x in 12 months. Book a free audit.&quot;</li>
+</ul>
+<p><strong>Page structure:</strong></p>
+<ol>
+<li><p><strong>Intro (150-200 words):</strong> Explain what the service is, why it matters for [City/Niche], and who it&#39;s for. Include primary keyword 2-3 times naturally.</p>
+</li>
+<li><p><strong>Core content (800-1,200 words):</strong> Divide into 3-5 H2 sections:</p>
+<ul>
+<li>What makes [Service] in [City] unique?</li>
+<li>How [Service] helps [Target Audience]</li>
+<li>Case study or success story from [City] (if data available)</li>
+<li>Pricing or packages</li>
+<li>Why choose us?</li>
+</ul>
+</li>
+<li><p><strong>FAQ section:</strong> 3-5 common questions specific to [City/Niche]. Format as H3s under H2 &quot;Frequently Asked Questions.&quot;</p>
+</li>
+<li><p><strong>CTA section:</strong> Clear call-to-action with button/link to contact, demo, or booking page.</p>
+</li>
+</ol>
+<p><strong>Uniqueness factors:</strong></p>
+<ul>
+<li><strong>Local data:</strong> Inject location-specific stats. &quot;Austin has 5,000+ tech startups, 60% struggle with organic visibility.&quot;</li>
+<li><strong>Dynamic examples:</strong> Pull case studies or testimonials relevant to the location/niche. If none exist, use generalized examples but frame them contextually.</li>
+<li><strong>Related terms:</strong> Include location-specific or niche-specific vocabulary. Mention local landmarks, industries, or events where relevant.</li>
+</ul>
+<p>Avoid template tells: &quot;Welcome to our [City] page!&quot; or &quot;We offer [Service] in [City].&quot; These scream programmatic. Write naturally: &quot;Austin&#39;s competitive SaaS market requires aggressive SEO strategies.&quot;</p>
+<p><strong>Quality thresholds:</strong></p>
+<ul>
+<li>Minimum 800 words per page (below this risks thin content penalties).</li>
+<li>Unique content ratio: 60%+ of page content should be unique (not duplicated across pages). Use variable sections—case studies, FAQs, local data—to differentiate.</li>
+<li>Readability: Write at 8th-10th grade reading level (check with <strong>Hemingway Editor</strong> or <strong>Grammarly</strong>).</li>
+</ul>
+<p>Test templates on 10-20 pages before scaling to 1,000. Manually review generated pages. Do they read naturally? Do they answer searcher intent? Would you click them in search results? If no, refine templates.</p>
+<h2>Data Sources and Content Population Strategies</h2>
+<p>Programmatic SEO requires structured data. Templates are shells—data fills them.</p>
+<p><strong>Data sources:</strong></p>
+<ul>
+<li><strong>Internal databases:</strong> Customer lists, service locations, product catalogs, pricing sheets, case studies. Export to CSV or JSON.</li>
+<li><strong>Public APIs:</strong> <strong>Google Places API</strong> (location data), <strong>Census Bureau API</strong> (demographics), industry databases (company counts, revenue data).</li>
+<li><strong>Web scraping:</strong> Scrape competitor listings, directories, or public databases. Use <strong>BeautifulSoup</strong> (Python), <strong>Cheerio</strong> (Node.js), or tools like <strong>Apify</strong>. Respect robots.txt and ToS.</li>
+<li><strong>Third-party data providers:</strong> <strong>Crunchbase</strong> (company data), <strong>LinkedIn Sales Navigator</strong> (industry stats), <strong>DataUSA</strong> (demographic data).</li>
+<li><strong>Manual data entry:</strong> For small-scale projects (&lt;100 pages), manually curate data in <strong>Google Sheets</strong> or <strong>Airtable</strong>.</li>
+</ul>
+<p><strong>Data structure example (location pages):</strong></p>
+<pre><code class="language-csv">city,state,population,industry_focus,case_study,cta_url
+Austin,TX,950000,SaaS,Helped TechCo scale traffic 3x,/contact?loc=austin
+Raleigh,NC,480000,Biotech,Enabled BioStartup to rank #1,/contact?loc=raleigh
+</code></pre>
+<p>Each row generates one page. Columns populate template variables: <code>{{city}}</code>, <code>{{state}}</code>, <code>{{population}}</code>, <code>{{industry_focus}}</code>, etc.</p>
+<p><strong>Content population workflow:</strong></p>
+<ol>
+<li><strong>Prepare data:</strong> Clean data, standardize formats, remove duplicates. One row = one page.</li>
+<li><strong>Write template:</strong> Use placeholder variables for dynamic content.</li>
+<li><strong>Generate pages:</strong> Use static site generators (<strong>Eleventy</strong>, <strong>Hugo</strong>, <strong>Next.js</strong>), CMS plugins (<strong>WordPress Advanced Custom Fields</strong> + custom code), or custom scripts (Python + Jinja2 templates).</li>
+<li><strong>Review output:</strong> Manually check 10-20 generated pages for quality, uniqueness, and readability.</li>
+<li><strong>Deploy:</strong> Publish pages to your site in batches (100-200 per week to avoid indexation spikes that trigger manual reviews).</li>
+</ol>
+<p><strong>Advanced: AI-assisted content generation:</strong>
+Use <strong>GPT-4</strong> or <strong>Claude</strong> to enhance template uniqueness. For each page, feed the model: &quot;Write 200 words explaining why SEO is important for [Industry] companies in [City]. Include local context.&quot; This injects AI-generated unique content into each page. Cost: ~$0.02-$0.05 per page.</p>
+<h2>Technical Implementation: Static Site Generators vs. WordPress</h2>
+<p>Programmatic SEO implementation depends on your tech stack. Two common approaches: static site generators (code-heavy, fast) or WordPress (plugin-assisted, accessible).</p>
+<p><strong>Static site generators (Next.js, Eleventy, Hugo):</strong>
+Best for developers or teams comfortable with code. Pages generate at build time, resulting in fast load speeds and clean URLs.</p>
+<p><strong>Next.js example:</strong></p>
+<ol>
+<li>Store data in <code>data/locations.json</code>.</li>
+<li>Create a dynamic route: <code>pages/locations/[slug].js</code>.</li>
+<li>Use <code>getStaticPaths()</code> to generate routes for each location.</li>
+<li>Use <code>getStaticProps()</code> to populate page content from data.</li>
+<li>Build site: <code>next build</code>. Outputs static HTML for each location.</li>
+</ol>
+<p>Pros: Fast page speed, clean architecture, scales to 100K+ pages. Cons: Requires development skills, harder to edit content post-generation.</p>
+<p><strong>WordPress with plugins:</strong>
+Best for non-technical teams. Use <strong>Advanced Custom Fields (ACF)</strong> + <strong>Custom Post Types</strong> + custom template files.</p>
+<p><strong>WordPress workflow:</strong></p>
+<ol>
+<li>Create custom post type: &quot;Locations.&quot;</li>
+<li>Add custom fields via ACF: city, state, population, etc.</li>
+<li>Import data via CSV (use <strong>WP All Import</strong> plugin).</li>
+<li>Create custom template file: <code>single-location.php</code>. Use ACF functions to populate fields: <code>&lt;?php echo get_field(&#39;city&#39;); ?&gt;</code>.</li>
+<li>Publish posts in batches.</li>
+</ol>
+<p>Pros: Non-technical editors can manage, plugins simplify imports, extensive ecosystem. Cons: Slower page speed at scale, requires hosting optimization, higher risk of plugin conflicts.</p>
+<p><strong>Headless CMS (Contentful, Sanity, Strapi):</strong>
+Middle ground. Store data in headless CMS, build front-end with static generator. Editors manage content via CMS, developers control front-end.</p>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Model content in CMS (fields for city, state, etc.).</li>
+<li>Import data via CMS API or CSV.</li>
+<li>Fetch data in static generator via API at build time.</li>
+<li>Generate pages.</li>
+</ol>
+<p>Pros: Combines speed (static sites) with editorial ease (CMS). Cons: More complex setup, two systems to maintain.</p>
+<p>Choose based on team composition. Developers → static generators. Non-technical teams → WordPress. Hybrid teams → headless CMS.</p>
+<h2>Avoiding Google Penalties: Quality Control and Indexation Strategy</h2>
+<p>Programmatic SEO risks thin content penalties if executed poorly. <strong>Google</strong>&#39;s algorithms detect low-quality programmatic pages and penalize entire sites.</p>
+<p><strong>Quality control checklist:</strong></p>
+<ul>
+<li><strong>Uniqueness:</strong> Each page must have 60%+ unique content. Duplicate pages (same template, minimal variation) get flagged.</li>
+<li><strong>Depth:</strong> Pages must exceed 800 words and answer searcher intent comprehensively.</li>
+<li><strong>User value:</strong> Would a human find this page useful? If it&#39;s just keyword-stuffed fluff, don&#39;t publish it.</li>
+<li><strong>Internal linking:</strong> Programmatic pages must integrate into site architecture. Don&#39;t create orphan silos. Link from main navigation, category pages, or relevant blog posts.</li>
+</ul>
+<p><strong>Indexation strategy:</strong>
+Don&#39;t submit 1,000 pages to Google simultaneously. This triggers manual reviews. Stagger indexation:</p>
+<ul>
+<li>Week 1: Publish 100 pages.</li>
+<li>Week 2: Publish 100 more.</li>
+<li>Repeat until catalog is live.</li>
+</ul>
+<p>Use <strong>XML sitemaps</strong> to control indexation pace. Submit 100-page batches to <strong>Google Search Console</strong> weekly. Monitor Index Coverage report for errors or excluded pages.</p>
+<p><strong>Noindex low-value pages:</strong>
+Not every page deserves indexation. If location has &lt;50 monthly searches or you lack unique data, noindex it. Use meta tag: <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex, follow&quot;&gt;</code>. This keeps low-quality pages out of Google&#39;s index while preserving internal link value.</p>
+<p><strong>Monitor for penalties:</strong>
+Track organic traffic and rankings weekly. Sudden drops signal penalties. Check <strong>Google Search Console</strong> for manual actions. If penalized:</p>
+<ol>
+<li>Identify low-quality pages (thin content, duplicates).</li>
+<li>Improve or deindex them.</li>
+<li>Request reconsideration via GSC.</li>
+</ol>
+<p><strong>User engagement signals:</strong>
+Programmatic pages with high bounce rates and low dwell time signal low quality to Google. Improve engagement with:</p>
+<ul>
+<li>Embedded videos or images (location-specific where possible).</li>
+<li>Interactive elements (cost calculators, comparison tools).</li>
+<li>Strong CTAs (book calls, download resources).</li>
+</ul>
+<p>Track engagement via <strong>Google Analytics</strong>. Pages with &lt;30% bounce rate and &gt;2-minute dwell time are healthy. Pages above 70% bounce rate need improvement.</p>
+<h2>Scaling Content Operations With Programmatic Workflows</h2>
+<p>Programmatic SEO unlocks scalability, but operations must support it. Build workflows for data updates, template iterations, and performance monitoring.</p>
+<p><strong>Data maintenance:</strong>
+Programmatic pages rely on accurate data. Outdated data tanks trust. Establish update cadences:</p>
+<ul>
+<li><strong>Location data:</strong> Update annually or when opening/closing locations.</li>
+<li><strong>Pricing data:</strong> Update quarterly or when pricing changes.</li>
+<li><strong>Product comparisons:</strong> Update quarterly or when competitors launch features.</li>
+</ul>
+<p>Automate updates where possible. Use APIs to pull real-time data (pricing, product features). Use cron jobs or <strong>GitHub Actions</strong> to rebuild site weekly, pulling fresh data.</p>
+<p><strong>Template iteration:</strong>
+Templates evolve. New SEO best practices, algorithm updates, or UX improvements require template changes. Version control templates (use <strong>Git</strong>). Test template changes on 10-20 pages before redeploying to entire catalog.</p>
+<p><strong>Performance tracking:</strong>
+Track programmatic pages separately from manually-created content. Create <strong>Google Analytics</strong> segments or use UTM parameters. Monitor:</p>
+<ul>
+<li>Organic traffic to programmatic pages.</li>
+<li>Rankings for target long-tail keywords.</li>
+<li>Conversion rates (leads, sign-ups, purchases).</li>
+</ul>
+<p>If programmatic pages underperform, diagnose: Are rankings low (SEO issue)? Is bounce rate high (content quality issue)? Is conversion rate low (CTA or offer issue)?</p>
+<p><strong>Content refresh cycles:</strong>
+Programmatic pages stagnate without updates. Schedule annual refreshes:</p>
+<ol>
+<li>Export data from data source.</li>
+<li>Update with new stats, case studies, or features.</li>
+<li>Regenerate pages.</li>
+<li>Request reindexing via GSC.</li>
+</ol>
+<p>Refreshed content ranks better than stale content. Updates signal to Google that pages remain relevant.</p>
+<h2>Programmatic SEO Use Cases and Success Stories</h2>
+<p><strong>Use case 1: Zapier (Integration pages)</strong>
+<strong>Zapier</strong> generated 25,000+ pages for integration combinations: &quot;Connect [App A] to [App B].&quot; Each page targets long-tail keywords like &quot;Connect Gmail to Slack.&quot; These pages drive 50%+ of Zapier&#39;s organic traffic. Template includes: integration overview, use cases, setup guide, and CTA to sign up.</p>
+<p><strong>Use case 2: Nomad List (Location pages)</strong>
+<strong>Nomad List</strong> created pages for 1,000+ cities with cost-of-living, internet speed, weather, and safety data. Each page targets &quot;digital nomad [City]&quot; or &quot;cost of living [City].&quot; Data sourced from APIs and user submissions. Drives high-intent traffic from location-independent workers.</p>
+<p><strong>Use case 3: G2 (Software comparison pages)</strong>
+<strong>G2</strong> built 100,000+ comparison pages: &quot;[Software A] vs [Software B].&quot; Each page includes feature comparison tables, user reviews, and pricing. These rank for high-intent commercial keywords. Template dynamically pulls data from G2&#39;s database.</p>
+<p><strong>Use case 4: Canva (Design template pages)</strong>
+<strong>Canva</strong> generates pages for every template type and use case: &quot;Instagram post templates,&quot; &quot;Resume templates for nurses.&quot; Each page includes template previews, use cases, and CTAs to use templates. Programmatic approach scales to 10,000+ pages covering every design intent.</p>
+<p><strong>B2B application:</strong>
+A B2B SaaS company offering CRM software creates programmatic pages for:</p>
+<ul>
+<li>200 locations: &quot;CRM for [Industry] in [City]&quot;</li>
+<li>50 industries: &quot;CRM for [Industry]&quot;</li>
+<li>100 comparisons: &quot;[Our CRM] vs [Competitor CRM]&quot;</li>
+<li>150 use cases: &quot;CRM for [Use Case]&quot;</li>
+</ul>
+<p>Total: 500 pages covering long-tail keywords. Result: 40% increase in organic traffic, 3x more qualified leads from organic search.</p>
+<h2>FAQ: Programmatic SEO for B2B</h2>
+<h3>Is programmatic SEO spammy or against Google&#39;s guidelines?</h3>
+<p>Not if done well. Google penalizes thin, duplicate, or low-value content—not programmatic generation itself. Sites like <strong>Zapier</strong>, <strong>TripAdvisor</strong>, and <strong>Yelp</strong> use programmatic SEO successfully. Focus on quality: unique content, valuable information, good UX.</p>
+<h3>How many pages can I generate before triggering a penalty?</h3>
+<p>No hard limit. Quality matters more than quantity. 100 high-quality pages outperform 10,000 low-quality pages. Start small (100-200 pages), monitor performance, scale if results are positive. Avoid publishing 1,000+ pages overnight—this triggers manual review risk.</p>
+<h3>Do programmatic pages rank as well as manually-written content?</h3>
+<p>For long-tail, specific queries, yes. For competitive head terms, manually-written depth usually wins. Use programmatic for long-tail volume, manual content for high-value head terms.</p>
+<h3>What tools do I need to build programmatic SEO pages?</h3>
+<p>Data source (<strong>Google Sheets</strong>, API, database), template system (<strong>Jinja2</strong>, <strong>Handlebars</strong>, <strong>Liquid</strong>), static site generator (<strong>Next.js</strong>, <strong>Eleventy</strong>, <strong>Hugo</strong>) or CMS (<strong>WordPress</strong> + plugins), and deployment platform (<strong>Vercel</strong>, <strong>Netlify</strong>, <strong>WP Engine</strong>). Total cost: $0-$100/month.</p>
+<h3>How do I measure ROI of programmatic SEO?</h3>
+<p>Track organic traffic and conversions from programmatic pages separately from main site. Compare cost of generating 1,000 programmatic pages (<del>$500-$2,000 for setup + data) vs. writing 1,000 manual articles (</del>$100K+ at $100/article). If programmatic pages drive qualified traffic and convert, ROI is positive.</p>
+<p>Related: <a href="page-speed-optimization-b2b.html">page-speed-optimization-b2b.html</a>, <a href="saas-content-hub-architecture.html">saas-content-hub-architecture.html</a>, <a href="redirect-mapping-large-scale-migrations.html">redirect-mapping-large-scale-migrations.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

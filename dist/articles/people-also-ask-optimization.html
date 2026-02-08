@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People Also Ask Optimization: How to Capture PAA Featured Snippets | B2B Vic</title>
+    <meta name="description" content="Optimize for People Also Ask boxes by structuring content with question-focused H2s, concise answers, and semantic depth. Increase SERP real estate by 300%." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="People Also Ask Optimization: How to Capture PAA Featured Snippets" />
+    <meta property="og:description" content="Optimize for People Also Ask boxes by structuring content with question-focused H2s, concise answers, and semantic depth. Increase SERP real estate by 300%." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/people-also-ask-optimization.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="People Also Ask Optimization: How to Capture PAA Featured Snippets" />
+    <meta name="twitter:description" content="Optimize for People Also Ask boxes by structuring content with question-focused H2s, concise answers, and semantic depth. Increase SERP real estate by 300%." />
+    <link rel="canonical" href="https://b2bvic.com/articles/people-also-ask-optimization.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "People Also Ask Optimization: How to Capture PAA Featured Snippets",
+      "description": "Optimize for People Also Ask boxes by structuring content with question-focused H2s, concise answers, and semantic depth. Increase SERP real estate by 300%.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/people-also-ask-optimization.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "People Also Ask Optimization: How to Capture PAA Featured Snippets"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">People Also Ask Optimization: How to Capture PAA Featured Snippets</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">People Also Ask Optimization: How to Capture PAA Featured Snippets</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>People Also Ask Optimization: How to Capture PAA Featured Snippets</h1>
+<p>People Also Ask (PAA) boxes appear in 85% of Google search results, expanding SERP real estate and driving 3-8% additional CTR. PAA optimization structures content to answer related questions concisely, triggering inclusion in these expandable boxes. Most sites ignore PAA opportunities, leaving traffic on the table. This guide surfaces PAA questions, structures answers, and tracks performance.</p>
+<h2>Why PAA Boxes Matter More Than Traditional Featured Snippets</h2>
+<p>Traditional featured snippets answer the primary query. PAA boxes answer secondary and tertiary questions searchers ask after viewing initial results. A search for &quot;B2B SEO strategy&quot; might trigger PAAs: &quot;What is B2B SEO?&quot; &quot;How long does B2B SEO take?&quot; &quot;What&#39;s the ROI of B2B SEO?&quot; Each PAA represents a separate ranking opportunity.</p>
+<p>PAA boxes stack vertically and expand dynamically. When a user clicks one question, 2-4 additional questions appear. A single page can occupy multiple PAA slots, dominating the SERP. Traditional snippets cap at one per page. PAA allows multi-position visibility.</p>
+<p><strong>Google</strong> pulls PAA answers from pages ranking on page 1-3 for related queries, not just the primary keyword. This lowers the barrier to entry. A page ranking #18 for &quot;B2B SEO strategy&quot; won&#39;t get a featured snippet, but it can snag a PAA slot for &quot;How to measure B2B SEO ROI?&quot; if the answer is well-structured.</p>
+<p>CTR from PAA varies by intent. Informational queries (&quot;how to,&quot; &quot;what is&quot;) see 8-12% CTR from PAA. Transactional queries (&quot;best,&quot; &quot;tool,&quot; &quot;service&quot;) see 3-5%. Even at the low end, that&#39;s 300-500 additional monthly visitors for a page getting 10K impressions.</p>
+<p>PAA also feeds voice search. <strong>Google Assistant</strong>, <strong>Alexa</strong>, and <strong>Siri</strong> source answers from PAA-optimized content. Optimizing for PAA positions your content for voice queries—a growing share of search volume.</p>
+<h2>Finding PAA Questions for Your Target Keywords</h2>
+<p>PAA questions surface in Google SERPs, but manual collection doesn&#39;t scale. Use tools to extract hundreds of PAA questions per seed keyword, then prioritize by search volume and relevance.</p>
+<p><strong>Method 1: Manual SERP scraping.</strong> Search your target keyword in Google (incognito mode). Scroll to PAA boxes, expand each question (this reveals additional questions), screenshot or note them. Repeat for variations of your keyword. Time-consuming but free.</p>
+<p><strong>Method 2: AlsoAsked.com.</strong> Enter a seed keyword, the tool maps PAA questions in a visual tree. Each branch represents related questions. Export up to 100 questions per keyword. Free tier allows 3 searches/day. Paid tier ($15/month) offers unlimited searches and exports.</p>
+<p><strong>Method 3: AnswerThePublic.</strong> Generates questions (how, what, why, when, where) around a keyword. Data sourced from autocomplete suggestions and PAA boxes. Visualizes question clusters. Free tier offers 3 searches/day. Pro tier ($99/month) for unlimited.</p>
+<p><strong>Method 4: Semrush or Ahrefs Keyword Explorer.</strong> Both tools display PAA questions under keyword reports. <strong>Semrush</strong> shows questions in the &quot;Questions&quot; tab, includes search volume estimates. <strong>Ahrefs</strong> shows questions in &quot;Also Rank For&quot; section. Best for prioritizing high-volume PAA opportunities.</p>
+<p>Collect 50-100 PAA questions per pillar keyword. Group by theme: basics (what is, definition), process (how to, steps), comparison (vs., alternatives), ROI (cost, benefits), troubleshooting (common problems, fixes). Each theme becomes a content cluster or FAQ section.</p>
+<p>Prioritize questions by: (1) search volume (target questions with 100+ monthly searches), (2) relevance to your offer (questions that lead to conversion), (3) difficulty (low-competition questions you can realistically rank for). Skip vague or overly broad questions—focus on specific, answerable queries.</p>
+<h2>Structuring Content to Trigger PAA Inclusion</h2>
+<p><strong>Google</strong> favors content with clear question-answer structure, concise responses, and semantic depth. Format answers to match PAA display requirements: 40-60 words per answer, direct response in first sentence, supporting context in following sentences.</p>
+<p>Use H2 or H3 headings formatted as questions. &quot;How to optimize for People Also Ask boxes?&quot; beats &quot;PAA Optimization Techniques.&quot; Question-formatted headings signal to Google that the section answers a specific query.</p>
+<p>Answer the question in the first 1-2 sentences after the heading. This paragraph becomes your PAA snippet. Format: [Direct answer]. [One sentence of context]. Example:</p>
+<blockquote>
+<p><strong>What is People Also Ask optimization?</strong></p>
+<p>People Also Ask optimization structures content to answer related questions that appear in Google&#39;s PAA boxes, increasing SERP visibility and CTR. These boxes expand dynamically as users click, allowing one page to occupy multiple SERP positions.</p>
+</blockquote>
+<p>Follow the concise answer with 2-4 paragraphs of depth: how it works, why it matters, how to implement, common mistakes. The initial 40-60 words satisfy PAA requirements. The following paragraphs satisfy user intent for those who click through.</p>
+<p>Include 5-10 PAA-targeted questions per article. More than 10 makes content feel like a Q&amp;A dump. Fewer than 5 misses opportunities. Balance PAA optimization with narrative flow—don&#39;t force questions where they don&#39;t fit.</p>
+<p>Use schema markup to signal Q&amp;A structure. <strong>FAQPage schema</strong> explicitly tells Google &quot;this page answers multiple questions.&quot; Implement in JSON-LD:</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [{
+    &quot;@type&quot;: &quot;Question&quot;,
+    &quot;name&quot;: &quot;What is People Also Ask optimization?&quot;,
+    &quot;acceptedAnswer&quot;: {
+      &quot;@type&quot;: &quot;Answer&quot;,
+      &quot;text&quot;: &quot;People Also Ask optimization structures content to answer related questions that appear in Google&#39;s PAA boxes, increasing SERP visibility and CTR.&quot;
+    }
+  }]
+}
+</code></pre>
+<p>Validate schema with <strong>Google Rich Results Test</strong>. Proper implementation increases PAA eligibility by signaling structured Q&amp;A content.</p>
+<h2>Writing PAA Answers That Google Selects</h2>
+<p><strong>Google</strong> selects PAA answers based on clarity, authority, and structure. Winning answers share characteristics: directness, brevity, semantic relevance, and supporting evidence.</p>
+<p><strong>Directness:</strong> Answer the question in the first sentence. No preamble, no context-setting. &quot;How long does SEO take to show results?&quot; gets answered &quot;SEO typically shows measurable results in 4-6 months for competitive industries, with initial improvements appearing after 60-90 days.&quot; Not &quot;SEO timelines vary depending on many factors. Let&#39;s explore...&quot;</p>
+<p><strong>Brevity:</strong> Target 40-60 words for the core answer. Google truncates longer answers. Exceed 60 words and your answer gets cut mid-sentence, reducing clarity. If you need more space, put the extended explanation after the concise answer.</p>
+<p><strong>Semantic relevance:</strong> Use language that mirrors the question. If the PAA asks &quot;What&#39;s the difference between B2B and B2C SEO?&quot; use &quot;B2B SEO&quot; and &quot;B2C SEO&quot; in your answer, not vague terms like &quot;these strategies&quot; or &quot;this approach.&quot;</p>
+<p><strong>Supporting evidence:</strong> Mention data, sources, or examples within the answer. &quot;Studies show B2B SEO generates 3x ROI compared to paid ads&quot; is stronger than &quot;B2B SEO delivers strong ROI.&quot; Specificity signals authority.</p>
+<p>Avoid filler words: &quot;essentially,&quot; &quot;basically,&quot; &quot;generally speaking,&quot; &quot;in most cases.&quot; These pad word count without adding information. Every word should contribute meaning.</p>
+<p>Write in second person (&quot;you&quot;) or neutral voice. &quot;You can expect SEO results in 4-6 months&quot; or &quot;SEO typically delivers results in 4-6 months&quot; both work. First person (&quot;we recommend waiting 4-6 months&quot;) feels promotional and reduces PAA eligibility.</p>
+<p>Test answer quality by reading it aloud. If it sounds robotic or incomplete, rewrite. PAA answers should feel like verbal responses—natural, complete, and helpful.</p>
+<h2>Optimizing Existing Content for PAA Opportunities</h2>
+<p>Most sites already rank for keywords that trigger PAA boxes but aren&#39;t capturing them. Audit existing content, identify PAA gaps, and retrofit answers.</p>
+<p><strong>Step 1: Identify PAA-eligible pages.</strong> Use <strong>Google Search Console</strong> to find pages ranking positions 5-20 for queries with PAA boxes. These pages are close but not winning PAA slots. Export query data, filter by impressions &gt;100/month and average position 5-20.</p>
+<p><strong>Step 2: Extract PAA questions for those queries.</strong> Use <strong>AlsoAsked</strong> or <strong>Semrush</strong> to pull PAA questions for each target query. Note questions that your page doesn&#39;t currently answer.</p>
+<p><strong>Step 3: Add FAQ sections to existing articles.</strong> At the end of your article (or mid-article if thematically relevant), add an H2 section titled &quot;Frequently Asked Questions&quot; or &quot;Common Questions About [Topic].&quot; Under this, add H3 questions with concise answers.</p>
+<p><strong>Step 4: Implement FAQPage schema.</strong> Add structured data for each question-answer pair. This signals to Google that the page now contains multiple Q&amp;A elements.</p>
+<p><strong>Step 5: Request re-indexing.</strong> Submit updated URLs to Google Search Console for re-crawling. PAA inclusion can happen within 3-7 days of indexing the updated content.</p>
+<p>Monitor GSC for changes in impressions and clicks. PAA inclusion typically increases impressions by 20-40% (more SERP visibility) and clicks by 3-8% (additional entry point). If impressions rise but clicks don&#39;t, your PAA answers aren&#39;t compelling—refine them.</p>
+<h2>Tracking PAA Performance and Measuring Impact</h2>
+<p>Unlike traditional featured snippets, <strong>Google</strong> doesn&#39;t explicitly report PAA wins in Search Console. Track PAA performance using SERP monitoring tools and GSC impression/click data.</p>
+<p><strong>SERP tracking tools:</strong> Use <strong>SEMrush Position Tracking</strong>, <strong>Ahrefs Rank Tracker</strong>, or <strong>AccuRanker</strong> to monitor SERP features. These tools flag when your page appears in PAA boxes for tracked keywords. Set up weekly reports to catch new PAA wins.</p>
+<p><strong>GSC impression spikes:</strong> PAA inclusion triggers impression increases without major rank changes. If a page at position #8 suddenly gains 30% more impressions with no rank movement, it likely captured a PAA slot. Cross-reference with SERP checks to confirm.</p>
+<p><strong>Manual SERP checks:</strong> Search your target keywords in incognito mode, expand PAA boxes, verify your page appears. Tedious at scale but accurate for critical keywords. Do this monthly for top 20 keywords.</p>
+<p><strong>AlsoAsked or AnswerSocrates:</strong> These tools track PAA questions over time. If your page starts appearing as the source for specific questions, you&#39;ve won those PAA slots. Use these tools to identify new PAA opportunities as Google updates question sets.</p>
+<p>Build a PAA dashboard in <strong>Google Sheets</strong> or <strong>Looker Studio</strong>:</p>
+<ul>
+<li>Column 1: Target keyword</li>
+<li>Column 2: PAA question</li>
+<li>Column 3: Your page URL</li>
+<li>Column 4: PAA win status (Yes/No)</li>
+<li>Column 5: Date captured</li>
+<li>Column 6: Impressions (pre/post PAA)</li>
+<li>Column 7: Clicks (pre/post PAA)</li>
+</ul>
+<p>Update monthly. Calculate aggregate impact: total impressions gained, total clicks gained, CTR change. This quantifies PAA optimization ROI for stakeholders or clients.</p>
+<h2>PAA Content Strategy for Topical Authority</h2>
+<p>PAA optimization isn&#39;t isolated Q&amp;A—it&#39;s topical authority signaling. Answering 40 related questions about &quot;B2B SEO&quot; signals to <strong>Google</strong> that your site is an authoritative source. Structure your content strategy around PAA question clusters.</p>
+<p><strong>Step 1: Build question clusters.</strong> Group PAA questions by subtopic. For &quot;B2B SEO,&quot; clusters might include: basics (what, why, definition), strategy (how to, best practices), tools (software, platforms), metrics (KPIs, ROI), case studies (examples, results).</p>
+<p><strong>Step 2: Map questions to content.</strong> Decide whether each question deserves a standalone article or belongs in a FAQ section. High-volume questions (500+ monthly searches) warrant dedicated articles. Lower-volume questions fit FAQ sections.</p>
+<p><strong>Step 3: Interlink aggressively.</strong> Link between related questions. If your article answers &quot;What is B2B SEO?&quot; link to pages answering &quot;How long does B2B SEO take?&quot; and &quot;What&#39;s the cost of B2B SEO?&quot; Internal linking reinforces topical relationships.</p>
+<p><strong>Step 4: Update pillar content with cluster links.</strong> Your main &quot;B2B SEO Guide&quot; should link to every PAA-optimized article in the cluster. This creates hub-spoke structure, concentrating authority.</p>
+<p><strong>Step 5: Publish consistently.</strong> Add 2-4 PAA-optimized articles monthly. Consistent publishing signals active topical coverage. <strong>Google</strong> favors sites that continuously update and expand topic clusters.</p>
+<p>Over 6-12 months, this strategy builds topical authority, increasing PAA win rates and overall rankings. Sites that answer 50+ PAA questions in a topic cluster rank higher for all related queries, not just PAA-targeted ones.</p>
+<h2>Advanced PAA Tactics: Expanding Boxes and Dynamic Questions</h2>
+<p>PAA boxes expand when users click questions, revealing 2-4 additional questions. These secondary questions represent deep-funnel opportunities—users engaged enough to expand boxes are high-intent.</p>
+<p><strong>Tactic 1: Answer secondary PAA questions.</strong> When you expand a PAA question manually, note the new questions that appear. These are algorithmically related. Answer them in your content to capture secondary PAA slots.</p>
+<p><strong>Tactic 2: Anticipate related questions.</strong> Use <strong>AnswerThePublic</strong> or <strong>Semrush</strong> to find questions one level deeper. If primary PAA is &quot;What is B2B SEO?&quot; secondary questions might be &quot;Is B2B SEO different from B2C?&quot; or &quot;Do I need an agency for B2B SEO?&quot; Answer both primary and secondary in your article.</p>
+<p><strong>Tactic 3: Target dynamic PAA variations.</strong> PAA questions change based on user location, device, and search history. Test your target keyword in different contexts (mobile vs. desktop, logged-in vs. incognito, different regions). Note variations, optimize for the most common versions.</p>
+<p><strong>Tactic 4: Use &quot;Related Searches.&quot;</strong> At the bottom of Google SERPs, &quot;Related Searches&quot; often overlap with PAA questions or suggest logical next questions. Integrate these into your content strategy.</p>
+<p><strong>Tactic 5: Monitor PAA evolution.</strong> PAA questions change as search behavior shifts. Quarterly, re-scrape PAA questions for your target keywords. Update content to reflect new questions. This keeps your content aligned with current searcher intent.</p>
+<h2>Common PAA Optimization Mistakes and How to Fix Them</h2>
+<p><strong>Mistake 1: Treating PAA as keyword stuffing.</strong> Forcing 20 barely-related questions into an article for PAA coverage. <strong>Fix:</strong> Prioritize relevance over volume. Answer 5-8 highly relevant questions well instead of 20 poorly.</p>
+<p><strong>Mistake 2: Answers too long or too vague.</strong> Responses exceeding 100 words or lacking directness don&#39;t get selected. <strong>Fix:</strong> Trim to 40-60 words, lead with the direct answer, add depth in subsequent paragraphs.</p>
+<p><strong>Mistake 3: No schema markup.</strong> Relying on structure alone without FAQPage schema reduces eligibility. <strong>Fix:</strong> Implement JSON-LD schema for every question-answer pair.</p>
+<p><strong>Mistake 4: Ignoring user experience.</strong> Pages that are pure Q&amp;A lists with no narrative flow feel robotic. <strong>Fix:</strong> Weave questions into natural article structure. Use FAQ sections at the end for non-critical questions.</p>
+<p><strong>Mistake 5: Not updating for PAA changes.</strong> Google updates PAA questions as search trends shift. Static content becomes misaligned. <strong>Fix:</strong> Quarterly PAA audits, update content to reflect current question sets.</p>
+<p><strong>Mistake 6: Targeting impossible questions.</strong> &quot;What&#39;s the meaning of life?&quot; isn&#39;t winnable. Neither is &quot;What&#39;s the best B2B SEO strategy?&quot;—too subjective. <strong>Fix:</strong> Focus on factual, answerable questions with definitive responses.</p>
+<h2>FAQ: People Also Ask Optimization</h2>
+<h3>How long does it take to see PAA results after optimization?</h3>
+<p>3-7 days if the page is already indexed and ranking page 1-3 for related keywords. 4-6 weeks if the page needs to climb from lower positions. PAA inclusion happens faster than ranking improvements because it doesn&#39;t require displacing competitors—just answering questions they don&#39;t.</p>
+<h3>Can one page win multiple PAA slots?</h3>
+<p>Yes. A single page can appear in 3-5 PAA boxes for related questions if it answers each clearly. This is how you dominate a SERP—answer the primary query, capture featured snippet, win multiple PAA slots.</p>
+<h3>Do PAA clicks count as organic traffic?</h3>
+<p>Yes. PAA clicks register in <strong>Google Search Console</strong> as organic clicks, attributed to the specific query that triggered the PAA. They appear in your click and impression reports alongside standard organic clicks.</p>
+<h3>What&#39;s the ideal number of PAA-targeted questions per article?</h3>
+<p>5-8 for standard blog posts (1,500-2,500 words), 10-15 for comprehensive guides (3,000-5,000 words). More than 15 makes content feel like a Q&amp;A database. Balance PAA optimization with readability.</p>
+<h3>Can PAA optimization hurt rankings?</h3>
+<p>Only if done poorly. Forcing irrelevant questions, adding low-quality answers, or creating pure Q&amp;A content with no depth can reduce dwell time and hurt rankings. Done well—answering relevant questions concisely with depth available—PAA optimization improves rankings by enhancing content comprehensiveness.</p>
+<p>Related: <a href="personal-brand-seo-strategy.html">personal-brand-seo-strategy.html</a>, <a href="programmatic-seo-b2b.html">programmatic-seo-b2b.html</a>, <a href="saas-content-hub-architecture.html">saas-content-hub-architecture.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

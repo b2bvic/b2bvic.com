@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue | B2B Vic</title>
+    <meta name="description" content="Compare retainer and project-based consulting models. Learn when to use each, how to price them, and how to transition clients between models." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue" />
+    <meta property="og:description" content="Compare retainer and project-based consulting models. Learn when to use each, how to price them, and how to transition clients between models." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/retainer-vs-project-consulting.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue" />
+    <meta name="twitter:description" content="Compare retainer and project-based consulting models. Learn when to use each, how to price them, and how to transition clients between models." />
+    <link rel="canonical" href="https://b2bvic.com/articles/retainer-vs-project-consulting.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue",
+      "description": "Compare retainer and project-based consulting models. Learn when to use each, how to price them, and how to transition clients between models.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/retainer-vs-project-consulting.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Retainer vs Project-Based Consulting: Structure Services for Predictable Revenue</h1>
+<p>Retainer and project-based consulting models solve different problems. Retainers provide recurring revenue and long-term client relationships but require ongoing value demonstration. Projects deliver fixed-scope outcomes with clear endpoints but create revenue volatility. Most consultants default to one model without understanding the strategic tradeoffs. This guide maps when to use each, how to price them, and how to transition clients between models for maximum profitability and satisfaction.</p>
+<h2>Retainer Model: Recurring Revenue with Relationship Depth</h2>
+<p>Retainers charge monthly fees for ongoing services—advisory, execution, or hybrid. Clients pay $2K-$15K/month for defined scopes: monthly SEO management, fractional CMO services, ongoing technical support, or strategic advisory.</p>
+<p><strong>Retainer advantages:</strong></p>
+<ol>
+<li><p><strong>Predictable revenue.</strong> Ten $5K/month retainers = $50K MRR. Forecast revenue 3-6 months ahead. This enables hiring, investment, and growth planning. Project-based revenue fluctuates—$80K one month, $15K the next.</p>
+</li>
+<li><p><strong>Client retention and LTV.</strong> Average retainer lasts 12-18 months. LTV for a $5K/month retainer = $60K-$90K. Projects average $10K-$25K. Retainers generate 3-6x more lifetime value per client.</p>
+</li>
+<li><p><strong>Compounding results.</strong> Monthly work compounds. SEO retainers build authority month-over-month. Advisory retainers deepen strategic impact. Projects deliver one-time fixes that decay without maintenance.</p>
+</li>
+<li><p><strong>Relationship depth.</strong> Regular touchpoints (weekly calls, monthly reviews) build trust and position you as partner, not vendor. This unlocks referrals, expansions, and renewals.</p>
+</li>
+</ol>
+<p><strong>Retainer disadvantages:</strong></p>
+<ol>
+<li><p><strong>Ongoing value demonstration.</strong> Clients ask &quot;What did I pay for this month?&quot; If deliverables feel light, churn risk increases. You must prove value monthly, not just once.</p>
+</li>
+<li><p><strong>Scope creep.</strong> Clients treat retainers as &quot;all-you-can-eat&quot; plans unless scope is strictly defined. Vague retainers (&quot;ongoing support&quot;) invite unbounded requests.</p>
+</li>
+<li><p><strong>Commitment anxiety.</strong> Prospects hesitate to sign 6-12 month retainers without proof. Retainers require trust that projects don&#39;t.</p>
+</li>
+<li><p><strong>Client success dependency.</strong> If client results stall (market conditions, internal issues), they blame the retainer and cancel. Your revenue depends on factors outside your control.</p>
+</li>
+</ol>
+<p><strong>When to use retainers:</strong></p>
+<ul>
+<li>Services requiring continuous effort (SEO, PPC management, content marketing, fractional exec roles).</li>
+<li>Clients with ongoing needs (growing companies needing strategic guidance monthly).</li>
+<li>When you want predictable revenue and can deliver consistent monthly value.</li>
+</ul>
+<h2>Project-Based Model: Fixed Scope with Clear Endpoints</h2>
+<p>Projects charge flat fees for defined outcomes: &quot;Technical SEO audit for $8K,&quot; &quot;Website redesign for $25K,&quot; &quot;CRM implementation for $15K.&quot; Clear start and end dates. Defined deliverables.</p>
+<p><strong>Project advantages:</strong></p>
+<ol>
+<li><p><strong>Clear scope boundaries.</strong> Clients know exactly what they&#39;re paying for. You know when the project ends. No ongoing value demonstration required.</p>
+</li>
+<li><p><strong>Easier to sell.</strong> Lower commitment barrier. &quot;Pay $10K, receive X outcome in 60 days&quot; is simpler than &quot;Pay $3K/month indefinitely, we&#39;ll optimize ongoing.&quot;</p>
+</li>
+<li><p><strong>Higher profit margins on expertise.</strong> Projects price value, not time. Experts charge $20K for work that takes 40 hours ($500/hour effective rate). Retainers often price closer to $150-$250/hour equivalents.</p>
+</li>
+<li><p><strong>Portfolio diversity.</strong> Run 5-10 projects simultaneously for different clients. Retainers cap at 5-8 clients (ongoing work limits capacity).</p>
+</li>
+</ol>
+<p><strong>Project disadvantages:</strong></p>
+<ol>
+<li><p><strong>Revenue volatility.</strong> Close 3 projects in January ($60K), 0 in February ($0K). Feast-or-famine cycles stress cash flow and hiring.</p>
+</li>
+<li><p><strong>Constant prospecting.</strong> Projects end. You must continuously prospect, propose, and close new deals. Retainers renew, reducing sales load.</p>
+</li>
+<li><p><strong>No compounding client value.</strong> Deliver project, client leaves, relationship ends. No ongoing touchpoints to build loyalty or upsell.</p>
+</li>
+<li><p><strong>Scope expansion requests.</strong> Clients request &quot;just one more thing&quot; post-project. Projects lack mechanisms for ongoing requests (retainers have monthly budgets; projects don&#39;t).</p>
+</li>
+</ol>
+<p><strong>When to use projects:</strong></p>
+<ul>
+<li>Services with finite outcomes (audits, migrations, website builds, system implementations).</li>
+<li>Clients with one-time needs (launching new product, fixing specific problem).</li>
+<li>When you prefer variety over continuity (working with many clients on different challenges).</li>
+</ul>
+<h2>Hybrid Model: Project Onboarding + Retainer Maintenance</h2>
+<p>Most successful consultants use hybrids: project-based onboarding followed by optional retainer for ongoing support or advisory.</p>
+<p><strong>Phase 1: Discovery/Audit Project ($5K-$15K)</strong>
+Fixed-scope diagnostic: audit current state, identify issues, deliver prioritized roadmap. This builds trust and demonstrates expertise without long-term commitment.</p>
+<p><strong>Phase 2: Implementation Project ($15K-$50K)</strong>
+Execute fixes from Phase 1. Clear deliverables, timeline, and milestones. Client sees tangible results before considering retainer.</p>
+<p><strong>Phase 3: Ongoing Retainer ($2K-$10K/month)</strong>
+After project success, offer retainer for maintenance, optimization, or ongoing advisory. Frame as &quot;protect your investment&quot; or &quot;continue growth momentum.&quot;</p>
+<p><strong>Why hybrids work:</strong></p>
+<ul>
+<li>Projects de-risk retainer commitment. Clients experience your work before signing recurring agreements.</li>
+<li>Projects generate upfront cash flow. Retainers provide recurring baseline.</li>
+<li>Natural upsell path. 40-60% of project clients convert to retainers if results are strong.</li>
+</ul>
+<p><strong>Example hybrid offer:</strong></p>
+<blockquote>
+<p><strong>Phase 1: Technical SEO Audit</strong> – $8K, 2 weeks. We&#39;ll crawl your site, analyze indexation, and deliver prioritized fix list.</p>
+<p><strong>Phase 2: Implementation</strong> – $18K, 8 weeks. We&#39;ll execute fixes, monitor results, and provide handoff documentation.</p>
+<p><strong>Phase 3: Ongoing Optimization (Optional)</strong> – $3K/month. Monthly audits, incremental fixes, performance monitoring. Optional—only if you want continued growth.</p>
+</blockquote>
+<p>Presenting Phase 3 as optional reduces pressure. Many clients opt in after seeing Phase 2 results.</p>
+<h2>Pricing Strategies for Retainers vs. Projects</h2>
+<p>Retainers and projects price differently. Retainers price ongoing time/availability. Projects price outcomes.</p>
+<p><strong>Retainer pricing models:</strong></p>
+<p><strong>Model 1: Hourly bank</strong>
+Client pays for X hours monthly. Example: $5K/month = 20 hours ($250/hour). Unused hours roll over (capped at 1 month) or expire.</p>
+<p>Pros: Transparent, clients understand what they&#39;re paying for. Cons: Incentivizes slow work, clients micromanage hours.</p>
+<p><strong>Model 2: Scope-based</strong>
+Flat monthly fee for defined scope. Example: $5K/month includes monthly site audit, 3 blog posts, weekly check-ins. No hourly tracking.</p>
+<p>Pros: Predictable for both parties, incentivizes efficiency. Cons: Scope disputes if deliverables feel light.</p>
+<p><strong>Model 3: Value-based</strong>
+Price tied to outcomes, not inputs. Example: $8K/month for fractional CMO services valued at generating $50K+ additional pipeline monthly.</p>
+<p>Pros: Aligns incentives, justifies premium pricing. Cons: Hard to measure, requires strong client trust.</p>
+<p><strong>Best practice for retainers:</strong>
+Use <strong>Model 2 (scope-based)</strong> with clear monthly deliverables. Example:</p>
+<blockquote>
+<p><strong>$5K/month includes:</strong></p>
+<ul>
+<li>Weekly 1-hour strategy call</li>
+<li>Monthly performance report</li>
+<li>Up to 5 hours of ad-hoc support</li>
+<li>Quarterly strategic planning session</li>
+</ul>
+</blockquote>
+<p>This sets expectations and prevents scope creep.</p>
+<p><strong>Project pricing models:</strong></p>
+<p><strong>Model 1: Fixed fee</strong>
+Flat fee for defined outcome. Example: &quot;Website redesign: $25K.&quot; Client knows total cost upfront.</p>
+<p>Pros: Simplicity, client budgeting ease. Cons: Scope expansion requests require change orders.</p>
+<p><strong>Model 2: Milestone-based</strong>
+Split project into phases, price each. Example: Discovery ($5K), Design ($8K), Development ($12K). Client pays per milestone.</p>
+<p>Pros: De-risks large upfront payments, allows client to pause after phases. Cons: More invoicing overhead.</p>
+<p><strong>Model 3: Value-based</strong>
+Price tied to expected ROI. Example: SEO implementation project priced at $50K because expected traffic increase = $200K additional revenue.</p>
+<p>Pros: Captures more value, justifies premium pricing. Cons: Requires strong proof of ROI, not all clients accept this.</p>
+<p><strong>Best practice for projects:</strong>
+Use <strong>Model 2 (milestone-based)</strong> for projects &gt;$20K. Breaks large payments into digestible chunks, aligns payment with delivered value.</p>
+<h2>Transitioning Clients from Projects to Retainers</h2>
+<p>Converting project clients to retainers increases LTV by 3-5x. The key is timing and framing.</p>
+<p><strong>Step 1: Plant the seed early</strong>
+During project kickoff, mention: &quot;After we complete this project, many clients opt for ongoing optimization. We can discuss that later.&quot; This primes them for the upsell.</p>
+<p><strong>Step 2: Deliver exceptional project results</strong>
+Results drive retainer conversions. If project outcomes are &quot;meh,&quot; retainer offers fail. Aim for quantifiable wins: 3x traffic, $50K revenue increase, 40% cost reduction.</p>
+<p><strong>Step 3: Present retainer 2-4 weeks before project end</strong>
+Don&#39;t wait until final delivery. Present retainer option during final implementation phase:</p>
+<blockquote>
+<p>&quot;We&#39;re wrapping up the project in 3 weeks. You&#39;ll see [results]. To maintain momentum and continue improving, I recommend our ongoing optimization retainer. Here&#39;s what that includes...&quot;</p>
+</blockquote>
+<p><strong>Step 4: Frame retainer as protection, not upsell</strong>
+Position retainer as safeguarding their investment: &quot;This project laid the foundation. The retainer ensures competitors don&#39;t catch up and you continue growing.&quot; Fear of loss (competitors gaining ground) &gt; desire for gain.</p>
+<p><strong>Step 5: Offer trial retainer (1-3 months, no commitment)</strong>
+Reduce commitment anxiety: &quot;Try it for 90 days. If you don&#39;t see value, cancel anytime.&quot; Trial retainers convert 70-80% to long-term after 3 months.</p>
+<p><strong>Step 6: Bundle retainer with project discount</strong>
+&quot;Sign the retainer today and we&#39;ll discount the project by 10%.&quot; Bundling incentivizes immediate decision.</p>
+<p><strong>Conversion rate benchmarks:</strong></p>
+<ul>
+<li>Strong project results + proactive offer: 50-70% convert to retainer.</li>
+<li>Mediocre results or reactive offer (client asks): 20-30%.</li>
+<li>Poor results: &lt;10%.</li>
+</ul>
+<h2>Managing Retainer Scope and Preventing Burnout</h2>
+<p>Retainers fail when scope drifts. Clients request &quot;quick favors&quot; that accumulate into unbounded work. Manage scope strictly or burn out.</p>
+<p><strong>Tactics to manage retainer scope:</strong></p>
+<p><strong>1. Define deliverables explicitly</strong>
+Vague: &quot;Ongoing SEO support.&quot;
+Specific: &quot;Monthly: 1 site audit, 3 blog posts, 10 backlink placements, 1 strategy call, 1 performance report.&quot;</p>
+<p>Specific scopes prevent scope creep. Clients know exactly what&#39;s included.</p>
+<p><strong>2. Track time (internally)</strong>
+Even if retainer isn&#39;t hourly, track time internally. If you&#39;re spending 30 hours on a $5K/month retainer ($167/hour), you&#39;re underpricing or overdelivering. Adjust scope or pricing.</p>
+<p><strong>3. Define &quot;ad-hoc hours&quot; caps</strong>
+Include 2-5 hours monthly for small requests. Anything beyond requires change order or rolls to next month.</p>
+<p><strong>4. Use &quot;tickets&quot; or &quot;request queues&quot;</strong>
+Clients submit requests via form or project management tool. You batch-process requests during designated time blocks. This prevents constant interruptions.</p>
+<p><strong>5. Say no (or &quot;yes, but&quot;)</strong>
+Client requests outside scope: &quot;That&#39;s outside our current retainer scope. Happy to handle it as an add-on project for $X&quot; or &quot;I can add that to next month&#39;s scope if we deprioritize Y.&quot;</p>
+<p><strong>6. Quarterly scope reviews</strong>
+Every 90 days, review: Is scope still aligned? Are we overdelivering? Are client needs changing? Adjust scope or pricing to match reality.</p>
+<p><strong>7. Cap retainer clients at 5-8</strong>
+Beyond 8 retainers, delivery quality suffers. If demand exceeds capacity, raise prices or hire.</p>
+<h2>When to Fire a Retainer Client</h2>
+<p>Not all retainers are worth keeping. Toxic clients, non-payers, or perpetually dissatisfied clients drain more value than they provide.</p>
+<p><strong>Red flags for firing:</strong></p>
+<ol>
+<li><strong>Chronic non-payment.</strong> Late payments 3+ months in a row despite reminders.</li>
+<li><strong>Scope creep battles.</strong> Every month, client disputes scope or requests free extras.</li>
+<li><strong>Abusive behavior.</strong> Yelling, threats, disrespect toward you or your team.</li>
+<li><strong>No results despite your best efforts.</strong> Client&#39;s internal dysfunction (ignores recommendations, doesn&#39;t implement) prevents results. They blame you anyway.</li>
+<li><strong>Misaligned expectations.</strong> Client expects 40 hours of work monthly for $2K retainer. No amount of communication fixes this.</li>
+</ol>
+<p><strong>How to fire a client:</strong></p>
+<ol>
+<li><strong>Give 30-60 days notice.</strong> &quot;After this month, we&#39;ll be transitioning off the retainer. Here&#39;s what we&#39;ll deliver in the final month.&quot;</li>
+<li><strong>Provide transition documentation.</strong> Leave them with reports, access credentials, and documentation so they can continue without you.</li>
+<li><strong>Remain professional.</strong> Don&#39;t burn bridges. Industry is small. Bad breakup stories spread.</li>
+<li><strong>Refund partial month (optional).</strong> If firing mid-month, consider prorating refund. Costs you short-term but preserves reputation.</li>
+</ol>
+<p><strong>Opportunity cost math:</strong>
+Toxic $3K/month client consuming 25 hours = $120/hour effective rate + stress. Fire them, replace with $5K/month client consuming 15 hours = $333/hour + no stress. Revenue drops short-term but profitability and sanity improve.</p>
+<h2>Structuring Contracts for Retainers and Projects</h2>
+<p>Contracts protect both parties. Retainers and projects need different terms.</p>
+<p><strong>Retainer contract essentials:</strong></p>
+<ul>
+<li><strong>Monthly fee and payment terms:</strong> &quot;$5K/month, due 1st of month via ACH/credit card.&quot;</li>
+<li><strong>Scope of services:</strong> Detailed list of monthly deliverables.</li>
+<li><strong>Term and renewal:</strong> &quot;6-month initial term, auto-renews monthly thereafter.&quot;</li>
+<li><strong>Cancellation policy:</strong> &quot;Either party may cancel with 30 days written notice.&quot;</li>
+<li><strong>Price adjustment clause:</strong> &quot;Pricing subject to annual review and adjustment with 30 days notice.&quot;</li>
+<li><strong>Termination for non-payment:</strong> &quot;If payment is 15 days late, services pause. If 30 days late, contract terminates.&quot;</li>
+</ul>
+<p><strong>Project contract essentials:</strong></p>
+<ul>
+<li><strong>Fixed fee and payment schedule:</strong> &quot;$25K total. $10K upon signing, $10K at midpoint, $5K upon completion.&quot;</li>
+<li><strong>Scope of work:</strong> Detailed deliverables with acceptance criteria.</li>
+<li><strong>Timeline and milestones:</strong> &quot;12 weeks. Discovery (weeks 1-2), Design (weeks 3-6), Development (weeks 7-11), Launch (week 12).&quot;</li>
+<li><strong>Change order process:</strong> &quot;Changes to scope require written change order with adjusted timeline and pricing.&quot;</li>
+<li><strong>Acceptance criteria:</strong> &quot;Client has 7 days to review deliverables. Acceptance assumed if no feedback provided.&quot;</li>
+<li><strong>Termination clause:</strong> &quot;Either party may terminate with 14 days notice. Client pays for completed work to date.&quot;</li>
+</ul>
+<p>Use contract templates from <strong>Bonsai</strong>, <strong>HelloSign</strong>, or <strong>PandaDoc</strong>. Customize per client, but maintain core terms.</p>
+<h2>FAQ: Retainer vs Project Consulting</h2>
+<h3>Can I offer both retainers and projects simultaneously?</h3>
+<p>Yes. Segment by service type: projects for finite work (audits, implementations), retainers for ongoing work (advisory, management). Many consultants run 3-5 retainers + 2-4 projects concurrently.</p>
+<h3>What&#39;s the ideal retainer length: 6 months or 12 months?</h3>
+<p>6 months for new clients (reduces commitment anxiety). 12 months for proven relationships (locks in revenue, often with discount: &quot;Pay annually, save 10%&quot;). Avoid month-to-month—too easy to cancel, too unpredictable.</p>
+<h3>How do I justify $10K/month retainers when competitors charge $3K?</h3>
+<p>Value-based positioning. Show ROI: &quot;Our clients average $120K additional revenue from our work. Paying $120K annually to generate $1.2M is 10x ROI.&quot; Also, differentiate on deliverables or expertise—why are you worth 3x more?</p>
+<h3>Should I allow clients to pause retainers (e.g., vacation, budget freeze)?</h3>
+<p>Short pauses (1 month) are reasonable for long-term clients. Longer pauses (3+ months) treat you as on-call, which doesn&#39;t work. Set policy: &quot;One 1-month pause per year with 30 days notice. Longer pauses require termination and re-onboarding.&quot;</p>
+<h3>What if a project runs over scope/timeline?</h3>
+<p>Define in contract: &quot;Scope changes require change order. Timeline delays caused by client (late feedback, unavailable stakeholders) extend deadline proportionally.&quot; Communicate delays early: &quot;We&#39;re waiting on X from your team. This will delay final delivery by 2 weeks.&quot; Protect yourself contractually and via clear communication.</p>
+<p>Related: <a href="proposal-templates-b2b-services.html">proposal-templates-b2b-services.html</a>, <a href="referral-system-b2b-services.html">referral-system-b2b-services.html</a>, <a href="reporting-automation-b2b-services.html">reporting-automation-b2b-services.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

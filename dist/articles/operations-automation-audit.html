@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operations Automation Audit Framework for B2B Companies | B2B Vic</title>
+    <meta name="description" content="Systematic methodology for identifying automatable workflows, calculating ROI per automation, and prioritizing implementation to eliminate 20-40 hours of weekly manual work." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Operations Automation Audit Framework for B2B Companies" />
+    <meta property="og:description" content="Systematic methodology for identifying automatable workflows, calculating ROI per automation, and prioritizing implementation to eliminate 20-40 hours of weekly manual work." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/operations-automation-audit.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Operations Automation Audit Framework for B2B Companies" />
+    <meta name="twitter:description" content="Systematic methodology for identifying automatable workflows, calculating ROI per automation, and prioritizing implementation to eliminate 20-40 hours of weekly manual work." />
+    <link rel="canonical" href="https://b2bvic.com/articles/operations-automation-audit.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Operations Automation Audit Framework for B2B Companies",
+      "description": "Systematic methodology for identifying automatable workflows, calculating ROI per automation, and prioritizing implementation to eliminate 20-40 hours of weekly manual work.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/operations-automation-audit.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Operations Automation Audit Framework for B2B Companies"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Operations Automation Audit Framework for B2B Companies</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Operations Automation Audit Framework for B2B Companies</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Operations Automation Audit Framework for B2B Companies</h1>
+<p>B2B operations hemorrhage time through manual processes that could be automated. Your team spends 15 hours per week copying data between systems, generating reports by hand, sending templated emails individually, and updating spreadsheets that could sync automatically. The cost: $40K-$80K annually in wasted labor per employee, plus opportunity cost—what revenue-generating work isn&#39;t happening because people are stuck on admin.</p>
+<p>Most companies know they should automate but don&#39;t know where to start. They&#39;ve heard of <strong>Zapier</strong>, <strong>Make</strong>, and <strong>Python scripts</strong> but lack a systematic framework for identifying which workflows to automate first and whether ROI justifies the investment.</p>
+<p>An <strong>operations automation audit</strong> inventories all repetitive manual tasks, scores them by automation potential and business impact, calculates time savings and implementation costs, and produces a prioritized roadmap. The output: eliminate 20-40 hours of weekly manual work within 90 days by targeting high-ROI automations first.</p>
+<p>This framework provides the audit methodology, ROI calculation models, and decision criteria used to automate operations for 50+ B2B companies without over-engineering or creating brittle systems that break when business processes change.</p>
+<h2>The Automation Opportunity Matrix</h2>
+<p>Not all manual work is worth automating. Some tasks are too complex, too infrequent, or too variable. The decision framework evaluates tasks across four dimensions:</p>
+<p><strong>Frequency:</strong> How often does this task occur? Daily, weekly, monthly, quarterly?</p>
+<p><strong>Time per execution:</strong> How long does one iteration take? 5 minutes, 30 minutes, 2 hours?</p>
+<p><strong>Complexity:</strong> How many steps? How many decision points? How much human judgment required?</p>
+<p><strong>Variability:</strong> Does the task follow consistent steps, or does it change each time?</p>
+<p><strong>Automation candidates:</strong></p>
+<ul>
+<li><strong>High frequency + high time + low complexity + low variability</strong> = Automate immediately (e.g., daily report generation, lead routing, invoice processing)</li>
+<li><strong>High frequency + moderate time + moderate complexity</strong> = Automate with tools (e.g., multi-step approval workflows)</li>
+<li><strong>Low frequency + high time + high complexity</strong> = Improve process first, automate later (e.g., annual strategic planning)</li>
+<li><strong>Low frequency + low time + high variability</strong> = Keep manual (e.g., ad-hoc client requests)</li>
+</ul>
+<p><strong>Opportunity matrix scoring:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Frequency (1-5)</th>
+<th>Time/Task (1-5)</th>
+<th>Complexity (1-5)</th>
+<th>Variability (1-5)</th>
+<th>Automation Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Daily sales report</td>
+<td>5 (daily)</td>
+<td>3 (30 min)</td>
+<td>1 (simple)</td>
+<td>1 (consistent)</td>
+<td><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td>Lead assignment</td>
+<td>5 (daily)</td>
+<td>2 (10 min)</td>
+<td>2 (moderate)</td>
+<td>1 (consistent)</td>
+<td><strong>HIGH</strong></td>
+</tr>
+<tr>
+<td>Monthly invoicing</td>
+<td>2 (monthly)</td>
+<td>4 (2 hrs)</td>
+<td>3 (complex)</td>
+<td>2 (some variation)</td>
+<td><strong>MEDIUM</strong></td>
+</tr>
+<tr>
+<td>Annual budget</td>
+<td>1 (annually)</td>
+<td>5 (8+ hrs)</td>
+<td>5 (very complex)</td>
+<td>5 (highly variable)</td>
+<td><strong>LOW</strong></td>
+</tr>
+</tbody></table>
+<p>Score calculation: <code>(Frequency × Time) / (Complexity × Variability)</code></p>
+<p>Higher score = higher automation priority.</p>
+<h2>Step 1: Task Inventory</h2>
+<p>Conduct interviews with every operational role (ops manager, sales ops, marketing ops, finance, customer success) to catalog repetitive tasks.</p>
+<p><strong>Interview questions:</strong></p>
+<ol>
+<li>Walk me through your typical week. What tasks do you do every day? Every week?</li>
+<li>Which tasks feel like &quot;busy work&quot; or are mentally draining?</li>
+<li>What tasks require copying data between systems?</li>
+<li>What reports or dashboards do you generate manually?</li>
+<li>What emails or messages do you send repeatedly with minor variations?</li>
+<li>What approval workflows or handoffs require manual follow-up?</li>
+<li>If you could eliminate one task entirely, what would it be?</li>
+</ol>
+<p><strong>Document each task:</strong></p>
+<ul>
+<li>Task name</li>
+<li>Description (step-by-step)</li>
+<li>Frequency (times per day/week/month)</li>
+<li>Time per execution (minutes/hours)</li>
+<li>Person responsible</li>
+<li>Systems involved (CRM, email, spreadsheets, etc.)</li>
+<li>Pain points (errors, delays, frustration)</li>
+</ul>
+<p><strong>Example task inventory entry:</strong></p>
+<pre><code>Task: Lead assignment from form submissions
+Description:
+1. Check form submission in HubSpot
+2. Identify lead&#39;s industry and company size
+3. Assign to appropriate sales rep based on territory
+4. Send email to rep with lead details
+5. Update lead status to &quot;Assigned&quot;
+Frequency: 10x per day
+Time per execution: 5 minutes
+Person: Sales Ops Manager
+Systems: HubSpot, Gmail
+Pain points: Manual lookups slow, reps sometimes don&#39;t get notified, assignments get missed if sales ops is out
+</code></pre>
+<p><strong>Typical B2B task categories:</strong></p>
+<ul>
+<li><strong>Lead management:</strong> Lead routing, scoring, enrichment, follow-up sequencing</li>
+<li><strong>Reporting:</strong> Sales dashboards, pipeline reports, marketing attribution, financial summaries</li>
+<li><strong>Data entry:</strong> CRM updates, contact imports, manual data transfers between systems</li>
+<li><strong>Approvals:</strong> Contract approvals, PO approvals, discount approvals</li>
+<li><strong>Customer onboarding:</strong> Welcome emails, access provisioning, document collection</li>
+<li><strong>Billing:</strong> Invoice generation, payment reminders, receipt sending</li>
+</ul>
+<p>Aim for 30-50 tasks in the initial inventory. More than 100 = analysis paralysis. Fewer than 20 = missing opportunities.</p>
+<h2>Step 2: ROI Calculation</h2>
+<p>For each task, calculate:</p>
+<p><strong>Annual time cost:</strong></p>
+<p><code>Frequency per year × Time per execution = Total annual hours</code></p>
+<p>Example: Lead assignment occurs 10x per day × 250 work days = 2,500 times per year. At 5 minutes per task = 2,500 × 5/60 = 208 hours per year.</p>
+<p><strong>Annual labor cost:</strong></p>
+<p><code>Total annual hours × Fully-loaded hourly rate = Annual labor cost</code></p>
+<p>Example: 208 hours × $75/hr (sales ops manager rate) = <strong>$15,600 per year</strong></p>
+<p><strong>Automation implementation cost:</strong></p>
+<ul>
+<li><strong>Low complexity (1-3 steps, no logic):</strong> $100-$500 (DIY with Zapier/Make, 2-5 hours)</li>
+<li><strong>Medium complexity (4-10 steps, basic branching):</strong> $500-$2,000 (consultant or in-house, 10-20 hours)</li>
+<li><strong>High complexity (10+ steps, advanced logic, custom code):</strong> $2,000-$10,000 (developer, 40-100 hours)</li>
+</ul>
+<p><strong>Ongoing cost:</strong></p>
+<ul>
+<li>Tool subscriptions (Zapier, Make, etc.): $20-$100/month</li>
+<li>Maintenance (updates, fixes): 2-5 hours per year</li>
+</ul>
+<p><strong>Payback period:</strong></p>
+<p><code>Implementation cost / Annual labor savings = Payback period (years)</code></p>
+<p>Example: $1,000 implementation cost / $15,600 annual savings = <strong>0.06 years = 0.7 months</strong></p>
+<p><strong>ROI:</strong></p>
+<p><code>(Annual savings - Ongoing costs) / Implementation cost × 100 = ROI %</code></p>
+<p>Example: ($15,600 - $240 annual subscription) / $1,000 × 100 = <strong>1,536% annual ROI</strong></p>
+<p><strong>Priority scoring:</strong></p>
+<p>Combine automation score (from matrix) with ROI.</p>
+<p><code>Priority Score = Automation Score × (Annual Savings / Implementation Cost)</code></p>
+<p>Sort tasks by Priority Score descending. Top 10 tasks become your automation roadmap.</p>
+<h2>Step 3: Feasibility Analysis</h2>
+<p>High-ROI tasks may still be infeasible due to technical or organizational constraints.</p>
+<p><strong>Technical feasibility:</strong></p>
+<ul>
+<li><strong>Are the systems involved API-accessible?</strong> Most modern SaaS tools have APIs. Legacy systems may not.</li>
+<li><strong>Is the data structured or unstructured?</strong> Structured data (forms, databases) automates easily. Unstructured data (PDFs, emails, images) requires OCR or AI.</li>
+<li><strong>How many decision points?</strong> Simple if/then logic is easy. Complex multi-variable logic requires scripting or AI.</li>
+</ul>
+<p><strong>Organizational feasibility:</strong></p>
+<ul>
+<li><strong>Who owns the process?</strong> If 3 departments touch the workflow, you need buy-in from all 3.</li>
+<li><strong>How often does the process change?</strong> If the workflow changes monthly, automation becomes brittle and high-maintenance.</li>
+<li><strong>Is there resistance to automation?</strong> If stakeholders fear job loss or distrust automation, implementation will stall.</li>
+</ul>
+<p><strong>Classify each task:</strong></p>
+<ul>
+<li><strong>Green (go):</strong> High ROI, technically feasible, organizational buy-in exists</li>
+<li><strong>Yellow (proceed with caution):</strong> High ROI but technical challenges or change management needed</li>
+<li><strong>Red (skip for now):</strong> Low ROI, technically infeasible, or high organizational resistance</li>
+</ul>
+<p>Focus on green tasks first. Yellow tasks require more planning. Red tasks stay manual.</p>
+<h2>Step 4: Automation Design</h2>
+<p>For each green-light task, design the automation workflow.</p>
+<p><strong>Workflow components:</strong></p>
+<p><strong>Trigger:</strong> What event starts the automation? (Form submission, scheduled time, status change, email received, etc.)</p>
+<p><strong>Actions:</strong> What steps execute? (Create record, send email, update field, generate report, etc.)</p>
+<p><strong>Logic:</strong> What decisions are made? (If industry = manufacturing, assign to Rep A. If deal value &gt; $50K, route to senior rep.)</p>
+<p><strong>Error handling:</strong> What happens if a step fails? (Send alert, log error, retry, continue anyway)</p>
+<p><strong>Example automation design (lead assignment):</strong></p>
+<pre><code>Trigger: New form submission in HubSpot
+
+Actions:
+1. Extract form data (name, email, company, industry, company size)
+2. Enrich contact with Clearbit (get company revenue, employee count)
+3. Score lead based on:
+   - Industry match: +20 points
+   - Company size 100-500 employees: +15 points
+   - Revenue $10M-$50M: +15 points
+4. Route lead:
+   - Score 40+: Assign to Senior Rep (send email + Slack notification)
+   - Score 20-39: Assign to Standard Rep
+   - Score &lt;20: Add to nurture campaign (no sales assignment)
+5. Update HubSpot:
+   - Set lead status to &quot;Assigned&quot; or &quot;Nurturing&quot;
+   - Log assignment details
+6. Error handling:
+   - If enrichment fails, assign based on form data alone
+   - If all reps at capacity, alert sales manager via Slack
+</code></pre>
+<p><strong>Choosing automation tools:</strong></p>
+<ul>
+<li><strong>Zapier:</strong> Best for simple workflows (trigger + 1-5 actions), non-technical users</li>
+<li><strong>Make:</strong> Best for complex workflows (branching, loops, arrays), cost-effective at scale</li>
+<li><strong>n8n:</strong> Open-source alternative, self-hostable, technical setup required</li>
+<li><strong>Custom scripts (Python, Node.js):</strong> Maximum flexibility, requires developers</li>
+</ul>
+<p>For most B2B companies: Start with Make (cost-effective, powerful). Use Zapier for one-off simple automations. Build custom scripts only for highly specialized workflows.</p>
+<h2>Step 5: Implementation</h2>
+<p><strong>Pilot approach:</strong></p>
+<p>Don&#39;t automate all 10 tasks simultaneously. Implement in phases:</p>
+<p><strong>Phase 1 (Week 1-2):</strong> Automate top 3 tasks. Monitor for errors. Gather feedback.</p>
+<p><strong>Phase 2 (Week 3-4):</strong> Automate next 3 tasks. Refine Phase 1 automations based on feedback.</p>
+<p><strong>Phase 3 (Week 5-6):</strong> Automate remaining tasks. Optimize all workflows.</p>
+<p><strong>Implementation checklist per automation:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Map workflow in automation tool</li>
+<li><input disabled="" type="checkbox"> Configure triggers and actions</li>
+<li><input disabled="" type="checkbox"> Test with real data (use test accounts, not production)</li>
+<li><input disabled="" type="checkbox"> Add error handling and notifications</li>
+<li><input disabled="" type="checkbox"> Document workflow (what it does, when it runs, how to troubleshoot)</li>
+<li><input disabled="" type="checkbox"> Train stakeholders (who&#39;s affected, what changes, how to report issues)</li>
+<li><input disabled="" type="checkbox"> Deploy to production</li>
+<li><input disabled="" type="checkbox"> Monitor for 1 week (check logs daily, fix errors immediately)</li>
+<li><input disabled="" type="checkbox"> Validate time savings (compare manual time before vs. after)</li>
+</ul>
+<p><strong>Common implementation pitfalls:</strong></p>
+<ul>
+<li><strong>Over-automation:</strong> Automating before standardizing the process. If the manual process is broken, automation just makes it faster to produce bad outcomes. Fix the process first.</li>
+<li><strong>Under-testing:</strong> Deploying without testing edge cases. Always test with bad data, missing fields, and error scenarios.</li>
+<li><strong>No documentation:</strong> Team forgets automation exists. When it breaks, no one knows how to fix it. Document every automation.</li>
+<li><strong>No monitoring:</strong> Automation fails silently, no one notices for weeks. Set up error alerts (email, Slack, PagerDuty).</li>
+</ul>
+<h2>Step 6: Monitoring and Optimization</h2>
+<p>Post-implementation, track:</p>
+<p><strong>Time savings:</strong> Compare hours spent on task before vs. after automation. Example: Lead assignment took 208 hours/year manually. Post-automation: 10 hours/year (monitoring and exceptions). Savings: 198 hours.</p>
+<p><strong>Error rates:</strong> How often does the automation produce incorrect results? Target: &lt;1% error rate. Above 5% = needs refinement.</p>
+<p><strong>User satisfaction:</strong> Survey stakeholders. Are they happy with the automation? Are there frustrations? Use feedback to optimize.</p>
+<p><strong>Cost tracking:</strong> Monitor tool subscription costs. As automation volume grows, costs may increase. Optimize workflows to reduce operation counts.</p>
+<p><strong>Quarterly automation review:</strong></p>
+<p>Every 90 days:</p>
+<ol>
+<li>Pull logs for all automations</li>
+<li>Identify which ones have high error rates or low usage</li>
+<li>Interview stakeholders for feedback</li>
+<li>Update workflows as business processes change</li>
+<li>Identify new automation opportunities</li>
+</ol>
+<h2>Avoiding Automation Debt</h2>
+<p><strong>Automation debt</strong> accumulates when automations become brittle, undocumented, or unmaintained.</p>
+<p><strong>Prevention strategies:</strong></p>
+<p><strong>Version control:</strong> Store automation configs in Git (for code-based automations) or document changes in a changelog.</p>
+<p><strong>Ownership assignment:</strong> Every automation has a designated owner responsible for monitoring and updates.</p>
+<p><strong>Documentation standard:</strong> Every automation has a one-pager explaining: What it does, when it runs, systems involved, how to troubleshoot, who to contact if it breaks.</p>
+<p><strong>Sunsetting protocol:</strong> If a business process changes and an automation becomes obsolete, disable it rather than leaving it running. Review disabled automations quarterly and delete permanently if no longer needed.</p>
+<h2>Advanced Automation Opportunities</h2>
+<p><strong>AI-powered automations (2026+):</strong></p>
+<ul>
+<li><strong>Email triage:</strong> AI reads inbound emails, categorizes by urgency, routes to appropriate person, drafts responses for approval</li>
+<li><strong>Document extraction:</strong> AI extracts data from invoices, contracts, receipts and populates databases</li>
+<li><strong>Lead qualification:</strong> AI analyzes lead behavior, call transcripts, and firmographic data to score leads</li>
+<li><strong>Content generation:</strong> AI generates draft reports, summaries, or client communications from data inputs</li>
+</ul>
+<p><strong>Integration patterns:</strong></p>
+<ul>
+<li><strong>CRM ↔ Accounting:</strong> Auto-create invoices when deals close, sync payment status back to CRM</li>
+<li><strong>Support ↔ Product:</strong> Auto-create bug tickets when support identifies product issues</li>
+<li><strong>Marketing ↔ Sales:</strong> Auto-assign leads from campaigns to sales reps based on scoring rules</li>
+</ul>
+<h2>FAQ</h2>
+<p><strong>How much time should I spend on the audit?</strong></p>
+<p>1-2 weeks for a thorough audit. Week 1: Interviews and task inventory. Week 2: ROI calculations and prioritization. Rushed audits miss opportunities or prioritize wrong tasks.</p>
+<p><strong>What if stakeholders resist automation?</strong></p>
+<p>Frame automation as &quot;eliminating busy work so you can focus on high-value work,&quot; not &quot;replacing jobs.&quot; Involve stakeholders in design. Start with automations they request, not ones imposed on them.</p>
+<p><strong>How do I calculate fully-loaded hourly rate?</strong></p>
+<p><code>(Annual salary + benefits + overhead) / 2,080 hours = Fully-loaded rate</code></p>
+<p>Example: $80K salary + $20K benefits + $10K overhead = $110K / 2,080 = <strong>$53/hr</strong>. Use this for ROI calculations.</p>
+<p><strong>What if the automation breaks?</strong></p>
+<p>Set up error notifications immediately. All automations should email or Slack when errors occur. Include fallback logic (e.g., if API is down, log to spreadsheet for manual processing).</p>
+<p><strong>Should I hire an automation consultant or DIY?</strong></p>
+<p>DIY for simple workflows (3-5 steps, no coding). Hire consultant for complex workflows (10+ steps, custom logic, integration challenges). Budget $100-$200/hr for experienced automation consultants.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

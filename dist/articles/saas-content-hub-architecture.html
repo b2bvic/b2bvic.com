@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaaS Content Hub Architecture: Build Topical Authority at Scale | B2B Vic</title>
+    <meta name="description" content="Design content hub architectures for SaaS sites with pillar pages, cluster content, and internal linking. Capture 50K+ monthly organic visitors systematically." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="SaaS Content Hub Architecture: Build Topical Authority at Scale" />
+    <meta property="og:description" content="Design content hub architectures for SaaS sites with pillar pages, cluster content, and internal linking. Capture 50K+ monthly organic visitors systematically." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/saas-content-hub-architecture.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SaaS Content Hub Architecture: Build Topical Authority at Scale" />
+    <meta name="twitter:description" content="Design content hub architectures for SaaS sites with pillar pages, cluster content, and internal linking. Capture 50K+ monthly organic visitors systematically." />
+    <link rel="canonical" href="https://b2bvic.com/articles/saas-content-hub-architecture.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "SaaS Content Hub Architecture: Build Topical Authority at Scale",
+      "description": "Design content hub architectures for SaaS sites with pillar pages, cluster content, and internal linking. Capture 50K+ monthly organic visitors systematically.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/saas-content-hub-architecture.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SaaS Content Hub Architecture: Build Topical Authority at Scale"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">SaaS Content Hub Architecture: Build Topical Authority at Scale</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">SaaS Content Hub Architecture: Build Topical Authority at Scale</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>SaaS Content Hub Architecture: Build Topical Authority at Scale</h1>
+<p>Content hub architecture organizes SaaS websites around pillar pages (comprehensive guides on core topics) supported by cluster content (specific subtopics) interconnected through strategic internal linking. This structure signals topical authority to <strong>Google</strong>, improves crawlability, and captures long-tail traffic at scale. Most SaaS sites publish blog posts randomly without architecture, diluting SEO impact. This guide maps hub-and-spoke structures that drive 50K+ monthly organic visitors.</p>
+<h2>Why Random Blog Publishing Fails for SaaS SEO</h2>
+<p>SaaS companies publish 2-4 blog posts weekly hoping for traffic. Topics scatter: product updates, industry news, how-tos, case studies. No thematic coherence. This approach fails because:</p>
+<ol>
+<li><p><strong>No topical authority.</strong> Publishing one article about &quot;project management&quot; and another about &quot;remote work tools&quot; doesn&#39;t establish expertise in either. <strong>Google</strong> sees surface-level coverage, not depth.</p>
+</li>
+<li><p><strong>Weak internal linking.</strong> Articles exist in isolation. No connections between related content. <strong>Google</strong> can&#39;t understand topic relationships, diluting page authority.</p>
+</li>
+<li><p><strong>Keyword cannibalization.</strong> Multiple articles target similar keywords unintentionally (&quot;best project management software,&quot; &quot;top project management tools&quot;). They compete against each other, splitting rankings.</p>
+</li>
+<li><p><strong>Poor user experience.</strong> Visitors land on one article, find no related content, leave. Low dwell time signals low quality to <strong>Google</strong>.</p>
+</li>
+</ol>
+<p>Content hub architecture fixes this. Hub-and-spoke structure:</p>
+<ul>
+<li><strong>Pillar page:</strong> Comprehensive guide covering broad topic (3,000-8,000 words). Example: &quot;Complete Guide to Project Management Software.&quot;</li>
+<li><strong>Cluster content:</strong> 10-30 supporting articles covering subtopics (1,500-2,500 words each). Examples: &quot;Project Management for Remote Teams,&quot; &quot;Gantt Charts vs. Kanban Boards,&quot; &quot;Project Management Pricing Models.&quot;</li>
+<li><strong>Internal links:</strong> Cluster articles link to pillar. Pillar links to all clusters. This creates topic web.</li>
+</ul>
+<p>This structure signals to <strong>Google</strong>: &quot;We&#39;re the definitive resource on this topic.&quot; Rankings improve, traffic compounds.</p>
+<h2>Identifying Core Topics and Pillar Opportunities</h2>
+<p>SaaS content hubs start with identifying 3-5 core topics central to your product and audience.</p>
+<p><strong>Step 1: Product-market analysis</strong>
+What problems does your product solve? List 5-10. Each problem = potential hub.</p>
+<p>Example (<strong>Asana</strong>, project management tool):</p>
+<ul>
+<li>Project planning and execution</li>
+<li>Team collaboration and communication</li>
+<li>Task and workflow management</li>
+<li>Remote team coordination</li>
+<li>Agile project management</li>
+</ul>
+<p><strong>Step 2: Keyword research</strong>
+For each problem, find high-volume keywords (1K-10K monthly searches) with informational intent.</p>
+<p>Use <strong>Ahrefs</strong>, <strong>Semrush</strong>, or <strong>Google Keyword Planner</strong>:</p>
+<ul>
+<li>&quot;Project management&quot; (50K searches/month)</li>
+<li>&quot;Task management&quot; (20K searches/month)</li>
+<li>&quot;Agile methodology&quot; (15K searches/month)</li>
+<li>&quot;Remote team collaboration&quot; (8K searches/month)</li>
+</ul>
+<p>High-volume keywords become pillar topics.</p>
+<p><strong>Step 3: Subtopic identification</strong>
+For each pillar topic, find 20-50 related long-tail keywords (100-1,000 searches/month). These become cluster topics.</p>
+<p>Example pillar: &quot;Project Management&quot;
+Cluster keywords:</p>
+<ul>
+<li>&quot;Project management methodologies&quot; (1,200/month)</li>
+<li>&quot;Project management software for small business&quot; (800/month)</li>
+<li>&quot;Project management vs. task management&quot; (600/month)</li>
+<li>&quot;Project management certification&quot; (4,000/month)</li>
+<li>&quot;Gantt chart tutorial&quot; (2,500/month)</li>
+</ul>
+<p>Each long-tail keyword = one cluster article.</p>
+<p><strong>Step 4: Competitor gap analysis</strong>
+Audit top 5 competitors&#39; content. Use <strong>Ahrefs Content Gap</strong> tool:</p>
+<ol>
+<li>Enter your domain + 3 competitor domains.</li>
+<li>Tool surfaces keywords competitors rank for that you don&#39;t.</li>
+<li>Prioritize high-volume, low-difficulty keywords.</li>
+</ol>
+<p>These gaps = cluster content opportunities.</p>
+<p><strong>Step 5: Prioritize hubs by business impact</strong>
+Not all hubs matter equally. Rank by:</p>
+<ul>
+<li><strong>Search volume:</strong> Higher volume = more traffic potential.</li>
+<li><strong>Commercial intent:</strong> Topics closer to purchase decisions rank higher. &quot;Project management software comparison&quot; &gt; &quot;History of project management.&quot;</li>
+<li><strong>Product alignment:</strong> Topics that naturally lead to your product rank higher.</li>
+</ul>
+<p>Choose 3-5 hubs to start. Build one at a time. Hubs take 6-12 months to mature (publish pillar + 15-25 clusters). Launching 5 hubs simultaneously spreads resources thin.</p>
+<h2>Designing Pillar Pages That Rank and Convert</h2>
+<p>Pillar pages are comprehensive, long-form guides (3,000-8,000 words) that cover topics exhaustively. They&#39;re designed to rank for high-volume head terms and serve as navigation hubs for cluster content.</p>
+<p><strong>Pillar page structure:</strong></p>
+<p><strong>1. Introduction (200-300 words)</strong>
+Define the topic, explain why it matters, preview what the guide covers. Include primary keyword in H1 and first paragraph.</p>
+<p><strong>2. Table of Contents</strong>
+Jump links to H2 sections. Improves UX, increases dwell time, qualifies for &quot;Jump to&quot; SERP features.</p>
+<p><strong>3. Core sections (8-12 H2s, each 300-500 words)</strong>
+Cover every major subtopic. Examples for &quot;Project Management&quot; pillar:</p>
+<ul>
+<li>What is project management?</li>
+<li>Project management methodologies (Agile, Waterfall, Scrum, Kanban)</li>
+<li>Project management lifecycle (Initiation, Planning, Execution, Monitoring, Closure)</li>
+<li>Essential project management skills</li>
+<li>Project management tools and software</li>
+<li>Best practices and common mistakes</li>
+</ul>
+<p>Each H2 section provides foundational knowledge + links to cluster article for depth. Example:</p>
+<blockquote>
+<p><strong>Project Management Methodologies</strong></p>
+<p>Project management methodologies define structured approaches to planning and executing projects. The four most common are Agile, Waterfall, Scrum, and Kanban. Each suits different project types and team structures.</p>
+<p><strong>Agile</strong> emphasizes iterative development and flexibility. Best for software projects with evolving requirements. <a href="agile-project-management.html">Learn more about Agile project management →</a></p>
+<p><strong>Waterfall</strong> follows linear, sequential phases. Best for construction or manufacturing projects with fixed requirements. <a href="waterfall-methodology.html">Learn more about Waterfall methodology →</a></p>
+</blockquote>
+<p>This pattern repeats for every H2: overview + link to cluster.</p>
+<p><strong>4. Comparison tables</strong>
+Visual comparisons (methodologies, tools, approaches) improve scannability and engagement. Use HTML tables or images.</p>
+<p><strong>5. FAQ section (H2)</strong>
+Answer 5-10 common questions. Targets &quot;People Also Ask&quot; boxes. Format questions as H3s under FAQ H2.</p>
+<p><strong>6. CTA section</strong>
+Include 2-3 CTAs throughout pillar:</p>
+<ul>
+<li>Early CTA (after intro): &quot;Try [Product] free for 30 days.&quot;</li>
+<li>Mid-page CTA (after core sections): &quot;See how [Product] handles [topic].&quot;</li>
+<li>Bottom CTA: &quot;Ready to improve your [outcome]? Start free trial.&quot;</li>
+</ul>
+<p><strong>7. Related resources</strong>
+Link to cluster content at bottom. &quot;Explore related topics: [Cluster 1], [Cluster 2], [Cluster 3].&quot;</p>
+<p><strong>Pillar page SEO optimization:</strong></p>
+<ul>
+<li><strong>Title tag:</strong> <code>[Topic]: The Complete Guide | [Brand]</code> (55-60 chars).</li>
+<li><strong>Meta description:</strong> 150-160 chars summarizing guide value + CTA.</li>
+<li><strong>URL:</strong> <code>/topic-guide/</code> (short, keyword-rich).</li>
+<li><strong>Internal links:</strong> Link from homepage, main navigation, and footer. Pillar pages are top-level resources—treat them prominently.</li>
+<li><strong>External links:</strong> Cite authoritative sources (Wikipedia, industry reports, academic studies). Outbound links signal quality.</li>
+<li><strong>Images and media:</strong> Include 5-10 images, diagrams, or screenshots. Alt text with keywords. Compress for speed.</li>
+</ul>
+<p><strong>Pillar page performance targets:</strong></p>
+<ul>
+<li>3,000+ words minimum</li>
+<li>8-12 H2 sections</li>
+<li>15-30 internal links (to cluster content)</li>
+<li>3-5 CTAs</li>
+<li>Load time &lt;3 seconds</li>
+</ul>
+<h2>Building Cluster Content That Supports Pillars</h2>
+<p>Cluster articles are focused, 1,500-2,500 word pieces targeting long-tail keywords. Each cluster links to its pillar and to related clusters.</p>
+<p><strong>Cluster content structure:</strong></p>
+<p><strong>1. Optimized title and intro (150-200 words)</strong>
+Target keyword in H1 and first paragraph. Hook reader immediately. Example:</p>
+<blockquote>
+<p><strong>H1:</strong> How to Use Gantt Charts for Project Management</p>
+<p>Gantt charts visualize project timelines, task dependencies, and milestones, helping teams track progress and allocate resources. This guide explains how to create and use Gantt charts effectively, including tool recommendations and common mistakes to avoid.</p>
+</blockquote>
+<p><strong>2. Core content (1,200-2,000 words)</strong>
+Break into 4-6 H2 sections. Provide actionable depth. Examples:</p>
+<ul>
+<li>What is a Gantt chart? (definition, history, use cases)</li>
+<li>How to create a Gantt chart (step-by-step)</li>
+<li>Best Gantt chart tools (comparison)</li>
+<li>Gantt chart best practices</li>
+<li>Common mistakes and how to avoid them</li>
+</ul>
+<p><strong>3. Link to pillar page (contextual)</strong>
+Midway through cluster, link to pillar with contextual anchor:</p>
+<blockquote>
+<p>For a comprehensive overview of project management methodologies, see our <a href="project-management-guide.html">Complete Guide to Project Management</a>.</p>
+</blockquote>
+<p><strong>4. Link to related clusters (2-3 links)</strong>
+End of article, suggest related topics:</p>
+<blockquote>
+<p><strong>Related articles:</strong></p>
+<ul>
+<li><a href="kanban-vs-gantt.html">Kanban Boards vs. Gantt Charts</a></li>
+<li><a href="pm-software-comparison.html">Project Management Software Comparison</a></li>
+</ul>
+</blockquote>
+<p><strong>5. CTA (1-2 per article)</strong>
+Mid-article CTA (after providing value): &quot;Try [Product]&#39;s Gantt chart feature free.&quot;
+Bottom CTA: &quot;Start planning projects visually. Try [Product] free.&quot;</p>
+<p><strong>Cluster SEO optimization:</strong></p>
+<ul>
+<li><strong>Title tag:</strong> <code>[Cluster Topic] | [Brand]</code> (55-60 chars).</li>
+<li><strong>Meta description:</strong> 150-160 chars, includes target keyword and value prop.</li>
+<li><strong>URL:</strong> <code>/cluster-topic/</code> (short slug, keyword-focused).</li>
+<li><strong>Internal links:</strong> Link to pillar, 2-3 related clusters, and product pages where natural.</li>
+<li><strong>Word count:</strong> 1,500-2,500 words (comprehensive but focused).</li>
+</ul>
+<p><strong>Cluster publishing cadence:</strong>
+Publish 2-4 cluster articles weekly. At 2/week, a 20-article cluster takes 10 weeks. At 4/week, 5 weeks. Faster is better—dense topical coverage in short periods signals authority.</p>
+<h2>Internal Linking Strategy: Connecting Hubs and Spokes</h2>
+<p>Internal links distribute page authority and signal topic relationships. Without strategic internal linking, content hubs fail.</p>
+<p><strong>Linking rules:</strong></p>
+<p><strong>1. Pillar → Cluster (1-way links)</strong>
+Pillar links to every cluster in its hub. Use contextual anchor text:</p>
+<blockquote>
+<p>For project teams using Agile, <a href="agile-project-management.html">Agile project management</a> provides iterative frameworks.</p>
+</blockquote>
+<p>Don&#39;t use generic anchors like &quot;click here&quot; or &quot;read more.&quot; Use keyword-rich anchors.</p>
+<p><strong>2. Cluster → Pillar (1-way links)</strong>
+Every cluster links back to its pillar. Place link in intro or mid-article:</p>
+<blockquote>
+<p>This article is part of our <a href="project-management-guide.html">Complete Guide to Project Management</a>.</p>
+</blockquote>
+<p><strong>3. Cluster ↔ Cluster (2-way links where relevant)</strong>
+Clusters within the same hub can link to each other if topics relate. Example: &quot;Gantt Charts&quot; cluster links to &quot;Kanban Boards&quot; cluster in comparison section.</p>
+<p>Avoid forced linking. Only link when contextually relevant.</p>
+<p><strong>4. Cross-hub linking (sparingly)</strong>
+Link hubs together when topics overlap. Example: &quot;Project Management&quot; hub links to &quot;Remote Work&quot; hub when discussing remote project management.</p>
+<p>Overuse dilutes topical focus. Limit cross-hub links to 1-2 per article.</p>
+<p><strong>5. Product page links</strong>
+Clusters link to relevant product pages naturally. Example: &quot;Best Gantt Chart Tools&quot; cluster links to your product&#39;s Gantt chart feature page.</p>
+<p><strong>Internal linking audit:</strong>
+Use <strong>Screaming Frog</strong> or <strong>Ahrefs Site Audit</strong> to:</p>
+<ul>
+<li>Identify orphan pages (pages with zero internal links).</li>
+<li>Detect excessive internal links (&gt;100/page signals link spam).</li>
+<li>Verify pillar-cluster link structure.</li>
+</ul>
+<p>Run quarterly audits, fix broken links and orphans.</p>
+<h2>URL Structure and Site Architecture for Hubs</h2>
+<p>URL structure impacts crawlability and user experience. Use clean, hierarchical URLs.</p>
+<p><strong>Hub-based URL structure:</strong></p>
+<pre><code>/project-management-guide/  (Pillar)
+  /agile-project-management/  (Cluster)
+  /gantt-chart-tutorial/  (Cluster)
+  /project-management-software-comparison/  (Cluster)
+
+/remote-work-guide/  (Pillar)
+  /remote-team-communication/  (Cluster)
+  /remote-work-tools/  (Cluster)
+</code></pre>
+<p><strong>Flat vs. nested URLs:</strong></p>
+<ul>
+<li><strong>Flat:</strong> <code>/agile-project-management/</code> (all clusters at root level).</li>
+<li><strong>Nested:</strong> <code>/project-management-guide/agile-project-management/</code> (clusters under pillar).</li>
+</ul>
+<p><strong>Recommendation: Flat URLs.</strong> Nested URLs create longer URLs, no SEO benefit. Flat URLs are cleaner, easier to manage.</p>
+<p><strong>Avoid:</strong></p>
+<ul>
+<li>Date-based URLs: <code>/2026/02/article-name/</code> (dates age content, hurt CTR).</li>
+<li>Category slugs: <code>/blog/category/article/</code> (adds unnecessary path depth).</li>
+<li>Numeric IDs: <code>/post-12345/</code> (no keyword signal).</li>
+</ul>
+<p><strong>Breadcrumbs:</strong>
+Implement breadcrumbs to show hierarchy visually:</p>
+<pre><code>Home &gt; Resources &gt; Project Management Guide &gt; Agile Project Management
+</code></pre>
+<p>Breadcrumbs improve UX and appear in SERPs as rich snippets.</p>
+<h2>Measuring Content Hub Performance</h2>
+<p>Content hubs take 6-12 months to mature. Track performance monthly to identify what works.</p>
+<p><strong>Key metrics:</strong></p>
+<p><strong>1. Organic traffic to hub (pillar + clusters)</strong>
+Use <strong>Google Analytics</strong> or <strong>Google Search Console</strong> to segment traffic by URL path. Example: All URLs containing <code>/project-management</code> = hub traffic.</p>
+<p>Target: 30-50% traffic growth month-over-month during build phase (months 1-6). Stabilization at 50K+ visits/month after 12 months (for hubs targeting 10K+ volume keywords).</p>
+<p><strong>2. Keyword rankings</strong>
+Track pillar keyword (head term) + 10-20 cluster keywords. Use <strong>Ahrefs Rank Tracker</strong> or <strong>Semrush Position Tracking</strong>.</p>
+<p>Target: Pillar ranks page 1 within 6-12 months. Clusters rank page 1-3 within 3-6 months.</p>
+<p><strong>3. Internal link click-through rate</strong>
+Measure how often users click internal links from pillar to clusters. High CTR (15-25%) signals strong relevance and UX. Low CTR (&lt;5%) signals poor anchor text or weak cluster topics.</p>
+<p><strong>4. Dwell time and engagement</strong>
+Hubs with high engagement (3-5 minute dwell time, 2+ pages/session) rank better. Track in <strong>GA4</strong> or <strong>Hotjar</strong>.</p>
+<p><strong>5. Backlinks to pillar pages</strong>
+Pillar pages attract backlinks naturally if comprehensive. Track referring domains via <strong>Ahrefs</strong> or <strong>Majestic</strong>.</p>
+<p>Target: 10-20 referring domains within 12 months for well-promoted pillars.</p>
+<p><strong>6. Conversion rate (CTA clicks)</strong>
+Measure pillar/cluster traffic → trial sign-ups or demo requests. Content hubs generate top-of-funnel traffic—expect 1-3% conversion rates (lower than bottom-funnel pages but high volume).</p>
+<p><strong>Dashboard setup:</strong>
+Build content hub dashboard in <strong>Looker Studio</strong> or <strong>Google Sheets</strong>:</p>
+<ul>
+<li>Hub traffic (monthly trend)</li>
+<li>Ranking positions (pillar + top 10 clusters)</li>
+<li>Backlinks (monthly growth)</li>
+<li>Conversions from hub traffic</li>
+</ul>
+<p>Review monthly, adjust strategy based on data.</p>
+<h2>Promoting Pillar Pages to Accelerate Rankings</h2>
+<p>Publishing pillar pages isn&#39;t enough. Promote them to build backlinks and social signals.</p>
+<p><strong>Promotion tactics:</strong></p>
+<p><strong>1. Email existing audience</strong>
+Announce pillar launch to email list: &quot;We just published our definitive guide to [topic]. Check it out: [link].&quot;</p>
+<p><strong>2. Outreach to industry publications</strong>
+Pitch pillar as resource. Example email:</p>
+<blockquote>
+<p>Hi [Editor],</p>
+<p>We just published a 6,000-word guide to project management covering methodologies, tools, and best practices. Thought it might be a valuable resource for your readers.</p>
+<p>Would you consider linking to it from your [related article]? Happy to reciprocate.</p>
+</blockquote>
+<p>Target: 5-10 backlinks from industry blogs or publications within first 90 days.</p>
+<p><strong>3. Social media promotion</strong>
+Share pillar on <strong>LinkedIn</strong>, <strong>Twitter</strong>, <strong>Reddit</strong> (relevant subreddits). Break into tweetstorms or LinkedIn carousels highlighting key insights.</p>
+<p><strong>4. Paid promotion (optional)</strong>
+Run <strong>LinkedIn Ads</strong> or <strong>Facebook Ads</strong> promoting pillar to target audience. $500-$1,000 budget drives 2,000-5,000 visits, kickstarting engagement signals for <strong>Google</strong>.</p>
+<p><strong>5. Internal promotion</strong>
+Link pillar from:</p>
+<ul>
+<li>Homepage (if top-priority topic)</li>
+<li>Main navigation (Resources → [Pillar])</li>
+<li>Blog sidebar</li>
+<li>Footer</li>
+</ul>
+<p>Prominent internal links signal importance to <strong>Google</strong>.</p>
+<h2>Common Content Hub Mistakes That Kill SEO</h2>
+<p><strong>Mistake 1: Shallow pillar pages (&lt;2,000 words)</strong>
+Pillar pages must be comprehensive. Thin pillars don&#39;t rank. <strong>Fix:</strong> Expand to 3,000+ words, cover every major subtopic.</p>
+<p><strong>Mistake 2: No cluster content</strong>
+Publishing pillar without clusters creates orphaned page with no supporting authority. <strong>Fix:</strong> Publish pillar + 10-15 clusters within 90 days.</p>
+<p><strong>Mistake 3: Weak internal linking</strong>
+Clusters don&#39;t link back to pillar, or pillar doesn&#39;t link to clusters. <strong>Fix:</strong> Audit and fix links using <strong>Screaming Frog</strong>.</p>
+<p><strong>Mistake 4: Targeting overlapping keywords</strong>
+Pillar and clusters target same keyword, cannibalizing rankings. <strong>Fix:</strong> Differentiate keywords. Pillar targets head term (&quot;project management&quot;). Clusters target long-tail (&quot;Agile project management,&quot; &quot;Gantt chart tutorial&quot;).</p>
+<p><strong>Mistake 5: Ignoring CTA placement</strong>
+No CTAs = traffic doesn&#39;t convert. <strong>Fix:</strong> Add 2-3 CTAs per pillar, 1-2 per cluster.</p>
+<p><strong>Mistake 6: Abandoning hubs after launch</strong>
+Publish pillar + clusters, never update. Content ages, rankings drop. <strong>Fix:</strong> Refresh hubs annually—update stats, add new clusters, improve internal links.</p>
+<h2>FAQ: SaaS Content Hub Architecture</h2>
+<h3>How many content hubs should a SaaS site have?</h3>
+<p>Start with 1-2, validate performance (rankings, traffic), then expand. Mature SaaS sites have 5-10 hubs. More than 10 dilutes focus unless you have large content teams.</p>
+<h3>How long until content hubs drive meaningful traffic?</h3>
+<p>6-12 months. First 3 months: publish and index. Months 4-6: rankings improve. Months 7-12: traffic compounds. Patience required—hubs aren&#39;t quick wins.</p>
+<h3>Can I build content hubs on Webflow, Framer, or WordPress?</h3>
+<p>Yes. Platform doesn&#39;t matter. Focus on content quality, internal linking, and URL structure. <strong>WordPress</strong> (with Yoast or RankMath) is easiest for SEO. <strong>Webflow</strong> and <strong>Framer</strong> work but require manual SEO setup.</p>
+<h3>Should I hire writers or use AI for cluster content?</h3>
+<p>Hybrid approach: AI drafts (via <strong>GPT-4</strong> or <strong>Claude</strong>), human editors refine. Saves 60-70% of writing time while maintaining quality. Pure AI content risks generic outputs. Pure human content is slow and expensive.</p>
+<h3>What if competitors already have established content hubs?</h3>
+<p>Build better hubs: deeper content, better UX, more visuals, updated data. Or target adjacent topics competitors missed (keyword gap analysis via <strong>Ahrefs</strong> or <strong>Semrush</strong>). Don&#39;t compete head-on with dominant hubs unless you can 10x the quality.</p>
+<p>Related: <a href="programmatic-seo-b2b.html">programmatic-seo-b2b.html</a>, <a href="page-speed-optimization-b2b.html">page-speed-optimization-b2b.html</a>, <a href="people-also-ask-optimization.html">people-also-ask-optimization.html</a></p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
