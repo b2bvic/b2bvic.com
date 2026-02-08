@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Cold Email Framework That Books 12+ Meetings Per Month | B2B Vic</title>
+    <meta name="description" content="A proven cold email system for B2B sales that consistently books 12+ discovery calls monthly. Includes templates, sequencing, and deliverability tactics." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The Cold Email Framework That Books 12+ Meetings Per Month" />
+    <meta property="og:description" content="A proven cold email system for B2B sales that consistently books 12+ discovery calls monthly. Includes templates, sequencing, and deliverability tactics." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/cold-email-that-books-meetings.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Cold Email Framework That Books 12+ Meetings Per Month" />
+    <meta name="twitter:description" content="A proven cold email system for B2B sales that consistently books 12+ discovery calls monthly. Includes templates, sequencing, and deliverability tactics." />
+    <link rel="canonical" href="https://b2bvic.com/articles/cold-email-that-books-meetings.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The Cold Email Framework That Books 12+ Meetings Per Month",
+      "description": "A proven cold email system for B2B sales that consistently books 12+ discovery calls monthly. Includes templates, sequencing, and deliverability tactics.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/cold-email-that-books-meetings.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Cold Email Framework That Books 12+ Meetings Per Month"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The Cold Email Framework That Books 12+ Meetings Per Month</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The Cold Email Framework That Books 12+ Meetings Per Month</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The Cold Email Framework That Books 12+ Meetings Per Month</h1>
+<p>Cold email works when you engineer it as a system, not when you craft individual messages hoping one lands. I book 12-15 discovery calls per month from outbound email alone, and the framework behind that number has nothing to do with clever subject lines or &quot;pattern interrupt&quot; gimmicks you see on LinkedIn.</p>
+<p>The system has four layers: targeting, messaging, sequencing, and deliverability infrastructure. Remove any one layer and the whole mechanism stalls. Most sales teams obsess over messaging — the copywriting — while ignoring the three layers that determine whether anyone reads that copy in the first place.</p>
+<h2>Why Most Cold Email Campaigns Fail Before the First Send</h2>
+<p>The failure rate for cold outbound hovers around 95%. Not because cold email is dead — it generates pipeline for thousands of B2B companies daily. The failure happens in the engineering phase, weeks before the first message leaves the outbox.</p>
+<h3>Deliverability Is Infrastructure, Not an Afterthought</h3>
+<p>Sending 200 cold emails from your primary <strong>Google Workspace</strong> domain is arson. You&#39;re torching the deliverability reputation you&#39;ve built over years of legitimate correspondence. One spam complaint flags the domain. Three complaints trigger throttling. Ten complaints and your proposals to existing clients start landing in promotions tabs.</p>
+<p>The infrastructure requirement:</p>
+<ul>
+<li>Separate sending domains (3-5 domains that redirect to your primary site)</li>
+<li>Dedicated <strong>Google Workspace</strong> or <strong>Microsoft 365</strong> accounts on each domain</li>
+<li>DNS authentication: SPF, DKIM, and DMARC records configured per domain</li>
+<li>14-day warmup period before any outbound volume</li>
+<li>Maximum 30 sends per mailbox per day during the first month</li>
+</ul>
+<p>Tools like <strong>Instantly</strong>, <strong>Smartlead</strong>, and <strong>Warmbox</strong> automate warmup by exchanging emails between accounts in their network. The emails get opened, replied to, and moved out of spam — signals that train inbox providers to trust your sending domain.</p>
+<p>I run five sending domains, each with two mailboxes. That&#39;s ten mailboxes producing 25-30 sends daily after warmup. Total daily capacity: 250-300 emails. Monthly reach: 5,000-6,000 unique prospects. At a 2.5% positive reply rate, that&#39;s 125-150 warm responses. Of those, roughly 10% convert to booked calls.</p>
+<p>The math works because the infrastructure supports the volume. Skip the infrastructure, and that same volume destroys your sending reputation within a week.</p>
+<h3>Targeting Precision Eliminates 80% of Wasted Sends</h3>
+<p>Every email sent to someone who will never buy costs you deliverability reputation and sender credibility. The targeting layer isn&#39;t about building big lists — it&#39;s about building accurate ones.</p>
+<p>My targeting stack:</p>
+<ol>
+<li><strong>Apollo.io</strong> for initial list building — filtering by company size, industry, tech stack, and job title</li>
+<li><strong>Clay</strong> for enrichment — pulling in recent funding rounds, job postings, tech stack changes, and LinkedIn activity</li>
+<li>Manual review of the top 20% — checking company websites, recent press, and LinkedIn content</li>
+</ol>
+<p>The enrichment step separates amateurs from operators. A raw <strong>Apollo</strong> export gives you name, title, email, company. <strong>Clay</strong> transforms that into signal-rich profiles: &quot;This company just posted three SEO job openings, raised a Series B, and their VP Marketing started two months ago.&quot; That signal informs personalization that feels researched because it is.</p>
+<p>I reject 40-50% of initial list pulls during the enrichment phase. The prospect looks right on paper — correct title, correct company size, correct industry — but the signals say wrong timing. No hiring activity. No growth indicators. No content suggesting they care about the problem I solve.</p>
+<p>Sending to them anyway is how you get a 0.5% reply rate and conclude that cold email doesn&#39;t work.</p>
+<h3>The ICP Document Most Teams Never Build</h3>
+<p>Before any list building, you need an Ideal Customer Profile document that goes beyond demographics. Demographics tell you who to target. Psychographics tell you when and why they buy.</p>
+<p>My ICP document includes:</p>
+<p><strong>Demographics:</strong></p>
+<ul>
+<li>Revenue: $5M-$50M</li>
+<li>Headcount: 20-200</li>
+<li>Industry: B2B SaaS, professional services, real estate (portfolio operators)</li>
+<li>Geography: US-based, English-primary markets</li>
+</ul>
+<p><strong>Trigger Events (the &quot;when&quot;):</strong></p>
+<ul>
+<li>New VP Marketing or CMO hired within 90 days</li>
+<li>Series A/B funding in last 6 months</li>
+<li>Competitor just launched aggressive content marketing</li>
+<li>Website traffic declining 3+ consecutive months (visible via <strong>SimilarWeb</strong>)</li>
+<li>Job posting for SEO manager or content strategist</li>
+</ul>
+<p><strong>Pain Signals (the &quot;why&quot;):</strong></p>
+<ul>
+<li>Current agency relationship 12+ months with flat organic traffic</li>
+<li>Blog exists but no topical structure visible</li>
+<li>Technical SEO issues visible in public crawl data</li>
+<li>Zero or minimal schema markup on key pages</li>
+</ul>
+<p>Each signal increases the probability of a positive response. A prospect matching three or more signals gets personalized outreach. A prospect matching one signal goes into a nurture sequence. A prospect matching zero signals gets cut from the list entirely.</p>
+<h2>The Three-Email Sequence That Produces 2.5% Reply Rates</h2>
+<p>Three emails. Not seven. Not twelve. Three messages, spaced strategically, each with a distinct purpose. Every email after the third produces diminishing returns and increasing annoyance.</p>
+<h3>Email 1: The Problem Email (Day 1)</h3>
+<p>The first email names a specific problem the prospect likely faces. No introduction, no company pitch, no &quot;I hope this finds you well.&quot; The entire email exists to make the prospect think &quot;yes, that&#39;s exactly what&#39;s happening.&quot;</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Opening line: Reference a specific signal from enrichment (2 seconds of personalization that proves you researched them)</li>
+<li>Problem statement: Name the operational pain in their language, not yours</li>
+<li>Proof point: One sentence describing a result you produced for a similar company</li>
+<li>CTA: Low-commitment question, not a meeting request</li>
+</ul>
+<p><strong>Example:</strong></p>
+<blockquote>
+<p>Subject: {company}&#39;s blog architecture</p>
+</blockquote>
+<blockquote>
+<p>{First name} — noticed {company} published 40+ articles last year but organic traffic on <strong>SimilarWeb</strong> shows flat growth since Q2.</p>
+</blockquote>
+<blockquote>
+<p>That pattern usually means the content is solid but the information architecture isn&#39;t distributing authority to the pages that should rank. I rebuilt the IA for a similar-sized SaaS company last quarter and their organic leads went from 23/month to 89/month with the same content library.</p>
+</blockquote>
+<blockquote>
+<p>Is content-driven growth something your team is actively working on, or is it on the back burner right now?</p>
+</blockquote>
+<p>That email is 82 words. It names a specific problem, proves I looked at their data, offers a relevant proof point, and asks a question that&#39;s easy to answer. No attachments. No links. No HTML formatting. Plain text that looks like one human writing to another.</p>
+<h3>Email 2: The Angle Shift (Day 4)</h3>
+<p>If email one gets no response, email two attacks the same problem from a different direction. Not a follow-up. Not &quot;just bumping this to the top of your inbox.&quot; A genuinely different perspective.</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>New subject line (not a reply to email 1)</li>
+<li>Different entry point to the same core problem</li>
+<li>Different proof point or a tactical insight they can use immediately</li>
+<li>Same low-commitment CTA</li>
+</ul>
+<p>The angle shift matters because silence doesn&#39;t mean rejection. It means the first frame didn&#39;t resonate. Maybe they don&#39;t see their blog architecture as a problem. But they do see their competitor outranking them for key terms. Same underlying issue, different emotional trigger.</p>
+<h3>Email 3: The Breakup (Day 10)</h3>
+<p>The third email serves two purposes: it creates urgency through scarcity, and it gives the prospect explicit permission to say no. Both actions increase reply rates.</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Acknowledge the silence without guilt-tripping</li>
+<li>Restate the core value proposition in one sentence</li>
+<li>Offer a specific, time-bound resource (not a meeting — an audit, a teardown, a benchmarking report)</li>
+<li>Close the loop: &quot;If the timing isn&#39;t right, no worries — I won&#39;t follow up again.&quot;</li>
+</ul>
+<p>The breakup email consistently produces the highest reply rate in the sequence — typically 35-40% of all positive replies come from email three. The psychology is straightforward: people respond to closing windows.</p>
+<h2>Personalization at Scale Without Burning 40 Hours Weekly</h2>
+<p>True personalization — hand-researching each prospect and writing custom emails — caps at 15-20 sends per day. That&#39;s 300-400 monthly sends. At 2.5% reply rates, you get 7-10 responses. Not enough to sustain a pipeline.</p>
+<p>The solution is layered personalization: custom elements inserted into tested frameworks.</p>
+<h3>The Three Personalization Tiers</h3>
+<p><strong>Tier 1: Signal-Based (automated via Clay)</strong></p>
+<ul>
+<li>Company name, prospect name, title</li>
+<li>Recent funding, hiring signals, tech stack</li>
+<li>Competitor mentions, industry vertical</li>
+</ul>
+<p>This tier handles 80% of personalization. <strong>Clay</strong> pulls the signals, populates merge fields, and the email assembles itself. Time per prospect: 0 seconds (after initial workflow build).</p>
+<p><strong>Tier 2: Research-Based (30 seconds per prospect)</strong></p>
+<ul>
+<li>Recent LinkedIn post or article they published</li>
+<li>Specific page on their website with a visible problem</li>
+<li>A metric from their public data (<strong>SimilarWeb</strong> traffic, <strong>BuiltWith</strong> tech stack)</li>
+</ul>
+<p>This tier applies to the top 30% of prospects — the ones with the strongest signal matches. Time per prospect: 30 seconds of scanning plus a custom first line.</p>
+<p><strong>Tier 3: Deep Custom (5 minutes per prospect)</strong></p>
+<ul>
+<li>Full website audit finding</li>
+<li>Specific competitive gap analysis</li>
+<li>Personalized video recorded via <strong>Loom</strong></li>
+</ul>
+<p>This tier applies to the top 5% — dream accounts worth significant effort. Time per prospect: 5 minutes. These emails produce 8-12% reply rates because the personalization is unmistakably genuine.</p>
+<h3>Using AI for Personalization Without Sounding Like AI</h3>
+<p><strong>Claude</strong> excels at transforming enrichment data into natural personalization lines. The key is constraining the output.</p>
+<p>Bad prompt: &quot;Write a personalized cold email to the VP Marketing at TechCorp.&quot;</p>
+<p>Good prompt: &quot;Given these signals — TechCorp raised $12M Series B in October, posted 3 content marketing roles on LinkedIn, and their blog has 200+ articles with declining organic traffic — write a 15-word opening line that references one signal naturally.&quot;</p>
+<p>The constraint — 15 words, one signal, natural tone — prevents the AI from producing something that reads like AI wrote it. I generate 50-100 personalization lines per batch, review them in under 10 minutes, and reject about 20% that sound too polished or too generic.</p>
+<h2>Deliverability Monitoring: The Dashboard You Check Daily</h2>
+<p>Sending emails without monitoring deliverability is driving without a speedometer. You won&#39;t know you&#39;re in trouble until you&#39;ve already crashed.</p>
+<h3>The Five Metrics That Predict Campaign Health</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Healthy Range</th>
+<th>Warning</th>
+<th>Critical</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open rate</td>
+<td>55-75%</td>
+<td>40-55%</td>
+<td>Below 40%</td>
+</tr>
+<tr>
+<td>Reply rate</td>
+<td>2-5%</td>
+<td>1-2%</td>
+<td>Below 1%</td>
+</tr>
+<tr>
+<td>Bounce rate</td>
+<td>Below 2%</td>
+<td>2-5%</td>
+<td>Above 5%</td>
+</tr>
+<tr>
+<td>Spam complaint rate</td>
+<td>Below 0.1%</td>
+<td>0.1-0.3%</td>
+<td>Above 0.3%</td>
+</tr>
+<tr>
+<td>Unsubscribe rate</td>
+<td>Below 0.5%</td>
+<td>0.5-1%</td>
+<td>Above 1%</td>
+</tr>
+</tbody></table>
+<p>Open rates below 40% signal deliverability problems, not messaging problems. Your emails aren&#39;t reaching the inbox. Before rewriting subject lines, check your domain health with <strong>Google Postmaster Tools</strong> and <strong>MXToolbox</strong>.</p>
+<p>Reply rates below 1% with healthy open rates signal messaging problems. The emails arrive, get opened, and get ignored. That&#39;s a targeting or copy issue worth investigating.</p>
+<h3>Domain Rotation and Warmup Cycles</h3>
+<p>Each sending domain has a lifespan. After 3-4 months of outbound volume, deliverability naturally degrades. The solution is rotation:</p>
+<ul>
+<li>Month 1-2: Warmup Domain A and Domain B</li>
+<li>Month 3-6: Send from Domain A and Domain B, warmup Domain C and Domain D</li>
+<li>Month 7-10: Retire Domain A, send from B, C, D, warmup Domain E</li>
+<li>Ongoing: Always have two domains warming while two-three domains are active</li>
+</ul>
+<p>This rotation maintains fresh sending reputations continuously. When a domain&#39;s deliverability drops below threshold, it enters a rest period (60-90 days of no outbound) before re-warmup.</p>
+<p>The entire infrastructure costs roughly $30-50 per domain per year for registration plus $6/month per <strong>Google Workspace</strong> mailbox. Total infrastructure cost for a five-domain setup: approximately $500/year. The ROI on one booked meeting covers six months of infrastructure.</p>
+<h2>Subject Lines: What Actually Gets Opened</h2>
+<p>Subject lines receive outsized attention in cold email advice. The truth: subject lines matter less than sender reputation and preview text, but they still influence open rates by 10-15% at the margins.</p>
+<h3>What Works</h3>
+<ul>
+<li><strong>Lowercase, casual:</strong> &quot;quick question about {company}&#39;s content strategy&quot; — reads like a human email, not a marketing broadcast</li>
+<li><strong>Specific reference:</strong> &quot;{company}&#39;s blog architecture&quot; — signals you know something about their business</li>
+<li><strong>Curiosity without clickbait:</strong> &quot;noticed something on your site&quot; — creates mild intrigue without overselling</li>
+<li><strong>Direct relevance:</strong> &quot;{first_name} — saw your SEO job posting&quot; — ties to a signal they&#39;ll recognize</li>
+</ul>
+<h3>What Doesn&#39;t Work</h3>
+<ul>
+<li><strong>ALL CAPS or excessive punctuation:</strong> Instant spam filter trigger</li>
+<li><strong>Generic value propositions:</strong> &quot;Increase your revenue by 300%&quot; — everyone claims this</li>
+<li><strong>Question format overuse:</strong> &quot;Want more leads?&quot; — prospects see this subject line 20 times per day</li>
+<li><strong>Name-only subjects:</strong> &quot;{first_name}&quot; — worked in 2020, spam-flagged in 2026</li>
+</ul>
+<h3>Testing Subject Lines at Scale</h3>
+<p>With 5,000+ monthly sends, I can A/B test subject lines with statistical significance within a week. The testing protocol:</p>
+<ol>
+<li>Write 3 subject line variants per campaign</li>
+<li>Send each variant to an equal segment (200 sends each)</li>
+<li>Measure open rates after 72 hours</li>
+<li>Deploy the winning variant to the remaining sends</li>
+</ol>
+<p>The typical variance between best and worst subject lines in my tests: 8-15 percentage points of open rate. On a 5,000-send campaign, that&#39;s 400-750 additional opens, producing 10-19 additional replies, converting to 1-2 additional meetings. The testing investment (30 minutes) produces measurable pipeline impact.</p>
+<h2>Tracking and Attribution: Connecting Emails to Revenue</h2>
+<p>Every cold email that produces a meeting gets tracked from first send through closed deal. The pipeline visibility reveals which messaging, which signals, and which prospect segments convert at the highest rates.</p>
+<h3>The Attribution Stack</h3>
+<ul>
+<li><strong>Instantly</strong> or <strong>Smartlead</strong> for send tracking, opens, and replies</li>
+<li><strong>Calendly</strong> with UTM parameters for meeting bookings</li>
+<li><strong>Follow Up Boss</strong> or <strong>HubSpot</strong> for pipeline stage tracking</li>
+<li><strong>Google Sheets</strong> dashboard connecting campaign data to revenue outcomes</li>
+</ul>
+<p>The attribution clarity compounds over time. After three months, you know which industries reply fastest, which titles book most reliably, which trigger events predict closed deals, and which email angles produce the highest-quality conversations.</p>
+<p>That data feeds back into the targeting layer. The ICP document evolves from educated guesses to empirical patterns. The messaging evolves from intuition to tested frameworks. The system self-improves because the feedback loop is closed.</p>
+<h2>FAQ</h2>
+<h3>How many cold emails should I send per day?</h3>
+<p>Start with 25-30 per mailbox per day after a 14-day warmup period. Scale to 40-50 per mailbox after 30 days if deliverability metrics remain healthy. Never exceed 50 per mailbox regardless of temptation — inbox providers throttle aggressive senders and the damage takes weeks to repair.</p>
+<h3>What&#39;s a realistic reply rate for B2B cold email?</h3>
+<p>Industry average sits around 1-3% for cold outbound. Well-targeted campaigns with strong personalization consistently hit 2.5-5%. Campaigns targeting prospects with active trigger events (new hire, funding, visible pain) can reach 8-12%. If your reply rate falls below 1%, the problem is usually targeting accuracy, not copywriting.</p>
+<h3>Should I use cold email tools like Instantly or Smartlead?</h3>
+<p>Yes, for any volume above 50 sends per day. <strong>Instantly</strong> and <strong>Smartlead</strong> handle multi-mailbox rotation, warmup automation, reply detection, and deliverability monitoring. Manual sending from Gmail works for very low volume but becomes unsustainable and error-prone above 20 sends daily. The tooling cost ($97-200/month) pays for itself with one booked meeting.</p>
+<h3>How do I avoid landing in spam?</h3>
+<p>Three non-negotiable practices: (1) authenticate every sending domain with SPF, DKIM, and DMARC records, (2) warm up new mailboxes for 14+ days before any outbound, and (3) keep email copy clean — no images, no HTML, no links in the first email, no attachments, no spam trigger words. Plain text that reads like a human wrote it to a colleague.</p>
+<h3>Is cold email still legal under CAN-SPAM?</h3>
+<p>B2B cold email is legal under <strong>CAN-SPAM</strong> in the United States provided you include a valid physical address, offer a clear opt-out mechanism, and honor unsubscribe requests within 10 business days. GDPR in Europe has stricter requirements — legitimate interest must be documented, and B2B exemptions vary by country. If you&#39;re targeting EU prospects, consult legal counsel before launching campaigns.</p>
+<hr>
+<p><em>Victor Valentine Romo operates B2B Vic, where cold outbound email generates 40% of new client pipeline. Current framework version has been refined across 50,000+ sends over 18 months. [Book a pipeline audit at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/crm-data-hygiene.html">CRM Database Cleanup: The System That Makes Every Other Sales Tool Work</a></li>
+<li><a href="/articles/b2b-discovery-call-framework.html">Running Discovery Calls That Qualify Fast and Close Faster</a></li>
+<li><a href="/articles/speed-to-lead-data.html">Why 5-Minute Response Time 10x Your Conversion Rate</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

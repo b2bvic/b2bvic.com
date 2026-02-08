@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Weekly Review System That Keeps Solo Operators on Track | B2B Vic</title>
+    <meta name="description" content="A weekly review framework for solo consultants, freelancers, and one-person agencies. Covers the 5-section review, tracking metrics, and the cadence that prevents drift." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The Weekly Review System That Keeps Solo Operators on Track" />
+    <meta property="og:description" content="A weekly review framework for solo consultants, freelancers, and one-person agencies. Covers the 5-section review, tracking metrics, and the cadence that prevents drift." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/weekly-review-framework.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Weekly Review System That Keeps Solo Operators on Track" />
+    <meta name="twitter:description" content="A weekly review framework for solo consultants, freelancers, and one-person agencies. Covers the 5-section review, tracking metrics, and the cadence that prevents drift." />
+    <link rel="canonical" href="https://b2bvic.com/articles/weekly-review-framework.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The Weekly Review System That Keeps Solo Operators on Track",
+      "description": "A weekly review framework for solo consultants, freelancers, and one-person agencies. Covers the 5-section review, tracking metrics, and the cadence that prevents drift.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/weekly-review-framework.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Weekly Review System That Keeps Solo Operators on Track"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The Weekly Review System That Keeps Solo Operators on Track</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The Weekly Review System That Keeps Solo Operators on Track</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The Weekly Review System That Keeps Solo Operators on Track</h1>
+<p>Solo operators don&#39;t have managers, team meetings, or quarterly reviews imposed by organizational structure. Without external accountability, priorities drift, tasks accumulate, and weeks blur into months of reactive work that feels busy but doesn&#39;t compound into progress. A weekly review is the structural intervention that replaces organizational accountability with self-directed discipline.</p>
+<p>I run a weekly review every Sunday evening that takes 45-60 minutes and governs the entire following week. This practice has survived 18 months of consistent use across two businesses, a legal dispute, and the kind of financial pressure that destroys routines. The system works because it&#39;s concrete, time-boxed, and produces an actionable artifact — not because it&#39;s pleasant or inspirational.</p>
+<h2>Why Weekly Frequency Beats Daily or Monthly</h2>
+<p>Daily reviews are too granular. You&#39;re tracking tasks, not trajectories. Missing one daily review creates guilt that compounds into abandoning the practice. The overhead of a daily system exceeds its value for anyone running fewer than 20 concurrent projects.</p>
+<p>Monthly reviews are too infrequent. A month of drift before course correction means 4 weeks of misallocated effort. Problems that were manageable at week 1 become crises at week 4. Monthly cadence works for strategic review but fails for operational control.</p>
+<p>Weekly hits the productive middle. Enough granularity to catch drift early. Enough span to observe trends. If you miss one week, the system self-corrects the following week without accumulated debt.</p>
+<h2>The Five-Section Review</h2>
+<p>The review has five sections, each addressing a different aspect of operational health. The sections are ordered deliberately — review the past before planning the future, and surface constraints before allocating resources.</p>
+<h3>Section 1: The Rearview (10 Minutes)</h3>
+<p>What happened last week. Not a journal entry — a structured assessment of what you planned versus what occurred.</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>What were the top 3 priorities I set last week?</li>
+<li>Did I complete them? If not, why?</li>
+<li>What unexpected work consumed time?</li>
+<li>What did I learn or discover that changes my trajectory?</li>
+</ul>
+<p>The rearview prevents the selective memory that distorts self-assessment. Without it, you remember the wins and forget the dropped balls. The written record is honest even when your memory isn&#39;t.</p>
+<p><strong>Format:</strong> Three bullet points for planned priorities (with completion status) and three bullet points for unplanned work that consumed more than 2 hours. The format forces brevity. A rearview that takes more than 10 minutes has become a journal.</p>
+<h3>Section 2: Financial Pulse (5 Minutes)</h3>
+<p>Cash position, receivables, and obligations for the coming week. Solo operators who separate financial awareness from operational planning make poor resource allocation decisions — accepting a $500 project when they have $12,000 in receivables versus when they have $200 in checking produce different rational decisions.</p>
+<p><strong>Numbers to check:</strong></p>
+<ul>
+<li>Current liquid cash</li>
+<li>Outstanding invoices (who owes what, when)</li>
+<li>Upcoming obligations (subscriptions, tools, taxes, personal expenses)</li>
+<li>Net position (liquid + receivables - obligations)</li>
+</ul>
+<p>The financial pulse takes 5 minutes if you track these numbers in a spreadsheet or <strong>Obsidian</strong> vault. If it takes longer, you don&#39;t have a system for financial visibility — and building one is this week&#39;s highest priority.</p>
+<h3>Section 3: Client Status (10 Minutes)</h3>
+<p>For each active client, a one-line assessment:</p>
+<ul>
+<li><strong>Client name:</strong> Current deliverable status | Relationship health | Any blockers</li>
+<li>Example: &quot;Tyler: Content briefs in progress | Healthy | Needs brand guide access&quot;</li>
+<li>Example: &quot;Cryo: Retainer follow-up due | At risk — no response to last 2 emails | Escalate to phone call&quot;</li>
+</ul>
+<p>The one-line format forces you to assess quickly rather than ruminate. A client you can&#39;t summarize in one line is a client you don&#39;t have enough clarity on — which itself is valuable information.</p>
+<p><strong>Traffic light system:</strong></p>
+<ul>
+<li>Green: On track, no concerns</li>
+<li>Yellow: Minor issue that needs attention this week</li>
+<li>Red: Significant risk requiring immediate action</li>
+</ul>
+<p>If more than one client is Red, you have a capacity or delivery problem that supersedes all other priorities.</p>
+<h3>Section 4: Priority Stack (15 Minutes)</h3>
+<p>The week&#39;s priorities, ranked by impact. Not a task list — a priority hierarchy. The distinction matters: a task list is a to-do. A priority stack determines what gets done when everything can&#39;t.</p>
+<p><strong>Priority stack rules:</strong></p>
+<ol>
+<li><p><strong>Maximum 5 priorities.</strong> More than 5 means you haven&#39;t made real decisions about what matters. Cutting to 5 forces tradeoffs that reveal actual priorities.</p>
+</li>
+<li><p><strong>Each priority has a completion criteria.</strong> &quot;Work on the Tyler proposal&quot; is not a priority. &quot;Send Tyler the proposal with pricing tiers and case study&quot; is. Completion criteria eliminate ambiguity about whether the priority was achieved.</p>
+</li>
+<li><p><strong>Priorities are ranked.</strong> If you can only accomplish one thing this week, it&#39;s priority 1. If two, it&#39;s priorities 1 and 2. The ranking determines what happens when Monday&#39;s plan meets Wednesday&#39;s reality.</p>
+</li>
+<li><p><strong>Priority 5 is disposable.</strong> If the week goes sideways, priority 5 gets pushed to next week without guilt. Building this disposability into the system prevents the demoralization of chronically unfinished lists.</p>
+</li>
+</ol>
+<p><strong>Example stack:</strong></p>
+<ol>
+<li>Deliver Cryo&#39;s Q1 technical audit report (due Thursday)</li>
+<li>Close Tyler retainer — send proposal, follow up if no response by Wednesday</li>
+<li>Publish 10 articles to aifirstsearch.com batch</li>
+<li>FUB database: Complete February tag audit</li>
+<li>(Disposable) Record Loom walkthrough of the content pipeline for b2bvic.com</li>
+</ol>
+<h3>Section 5: The Horizon Check (5 Minutes)</h3>
+<p>What&#39;s coming in the next 2-4 weeks that requires preparation now. This section prevents the &quot;I forgot about the deadline&quot; crises that plague operators who only plan one week at a time.</p>
+<p><strong>Horizon items:</strong></p>
+<ul>
+<li>Deadlines within 14 days that haven&#39;t started</li>
+<li>Client renewals or contract milestones</li>
+<li>Financial obligations (quarterly taxes, annual subscriptions)</li>
+<li>Personal commitments that affect work capacity (travel, appointments, family events)</li>
+</ul>
+<p>Horizon items don&#39;t become this week&#39;s priorities unless they&#39;re urgent. They sit in awareness, informing decisions without consuming action capacity. A tax deadline 12 days out means you might allocate 2 hours this week to organize documents — but it doesn&#39;t displace client deliverables.</p>
+<h2>The Review Artifact: What Gets Written Down</h2>
+<p>The review produces a single document — a markdown file dated with the week ending date. The document becomes the operating plan for the following week and the rearview data for the next review.</p>
+<p><strong>File format:</strong></p>
+<pre><code># Weekly Review — Week Ending 2026.02.09
+
+## Rearview
+- [x] Completed: Cryo technical audit
+- [ ] Incomplete: Tyler proposal (delayed — needed updated case study)
+- [ ] Incomplete: Database tag audit (deprioritized for client emergency)
+- Unplanned: 4 hours on legal document prep for mediation
+- Unplanned: 2 hours on FUB agent escalation
+
+## Financial Pulse
+- Liquid: $1,500
+- Receivables: $7,500 (Limitless Feb, Tyler deposit)
+- Obligations: $2,200 (GEICO, tools, phone)
+- Net: $6,800
+
+## Client Status
+- Limitless: February deliverables on track | Green
+- Tyler: Proposal pending | Yellow — follow up Monday
+- Cryo: Retainer conversation stalled | Yellow — phone call this week
+- Ke&#39;ale: Webflow fix due Feb 15 | Green — on schedule
+
+## Priority Stack
+1. Close Tyler retainer ($350 CC + Obsidian this week)
+2. Cryo follow-up — phone call, present retainer terms
+3. Ke&#39;ale Webflow deliverable (due Feb 15)
+4. Publish browserprompt.com content batch
+5. (Disposable) Update b2bvic.com articles page
+
+## Horizon
+- Feb 15: Ke&#39;ale deliverable deadline
+- Feb 25: Mediation — strategy prep needed by Feb 20
+- Mar 1: Tyler retainer starts if closed this week
+- Mar 15: Q1 estimated taxes
+</code></pre>
+<p>The document is the single source of truth for the week. When Monday morning hits and the inbox is full of competing demands, the priority stack determines what gets attention first.</p>
+<h2>Making the Review Habit Stick</h2>
+<p>The most sophisticated review system fails if you don&#39;t do it. Habit formation requires reducing friction and creating anchoring triggers.</p>
+<h3>Anchor to an Existing Routine</h3>
+<p>My review happens Sunday evening after dinner. The anchor: clearing the dinner table triggers opening the laptop and starting the review. The association between table clearing and review has become automatic after 18 months. I don&#39;t decide to do the review — I find myself doing it because the trigger fired.</p>
+<p>Choose your own anchor: after morning coffee on Saturday, after Sunday gym session, after Friday&#39;s last client call. The specific time matters less than the consistency.</p>
+<h3>Time-Box Ruthlessly</h3>
+<p>The review takes 45-60 minutes. If it&#39;s taking longer, you&#39;re journaling, not reviewing. Set a timer. The constraint forces efficiency and prevents the review from becoming a processing session for every loose end.</p>
+<h3>Protect Against Skip Cascades</h3>
+<p>Missing one review is normal. Missing two in a row is the start of a skip cascade — the third week becomes easier to skip, and by week four the habit is dead. Build a recovery protocol: if you miss a week, the next review starts with a 2-week rearview that takes 5 extra minutes. The recovery review is slightly longer but prevents the cascade.</p>
+<h3>Review the Reviews Monthly</h3>
+<p>Once per month, read the last four weekly reviews consecutively. Patterns emerge that individual reviews obscure: Are the same priorities repeating week after week without completion? Are unplanned items from the same source? Is the financial pulse trending up or down?</p>
+<p>The monthly meta-review takes 15 minutes and produces strategic insights that weekly reviews can&#39;t surface.</p>
+<h2>Adapting the Review for Different Operator Types</h2>
+<p>The five-section framework works for solo consultants, but different operator types need different emphasis.</p>
+<h3>Freelancers With Variable Project Work</h3>
+<p>Freelancers without retainer income need a heavier emphasis on Section 2 (Financial Pulse) and the pipeline portion of Section 4 (Priority Stack). The rearview should track hours billed per project because freelance economics depend on time allocation accuracy. Add a sixth section: Pipeline Health — tracking active proposals, follow-up needed, and conversion rates.</p>
+<h3>Agency Owners With Small Teams</h3>
+<p>When you manage even 2-3 people, the review needs a team performance section. Track each team member&#39;s output against expectations, flag capacity issues, and note any quality concerns that need addressing. The client status section should include team member assignments so you can see load distribution at a glance.</p>
+<h3>Operators Running Multiple Revenue Streams</h3>
+<p>Multiple businesses or revenue streams require domain-specific status sections. I run five weekly status checks — one per business domain — in addition to the consolidated financial pulse. Each domain gets a one-line assessment identical to the client status format. The consolidated view reveals whether you&#39;re allocating effort proportional to each domain&#39;s revenue contribution.</p>
+<h3>Digital Nomads or Operators With Variable Schedules</h3>
+<p>When your schedule changes weekly (travel, family obligations, seasonal shifts), add a capacity forecast to Section 4. Estimate available hours for the coming week before setting priorities. Five priorities with 30 available hours looks very different from five priorities with 50 available hours. The capacity constraint should inform the priority stack, not discover it mid-week.</p>
+<h2>The Compound Effect: What Changes After 3 Months</h2>
+<p>Measurable changes I observed after 12 consecutive weekly reviews:</p>
+<p><strong>Decision speed increased.</strong> When priorities are pre-decided on Sunday, Monday morning doesn&#39;t start with &quot;what should I work on?&quot; It starts with work. The 30-45 minutes of daily decision-making about priorities collapsed to zero.</p>
+<p><strong>Dropped balls decreased by 70%.</strong> The horizon check catches commitments before they become emergencies. The rearview catches incomplete work before it accumulates. The combined effect: fewer things fall through the cracks.</p>
+<p><strong>Financial anxiety decreased.</strong> Checking the financial pulse weekly removes the &quot;I don&#39;t want to look&quot; avoidance that lets small problems become large ones. Weekly visibility means no financial surprises.</p>
+<p><strong>Capacity utilization improved.</strong> Before the weekly review, I&#39;d overcommit some weeks and underutilize others. The priority stack with its horizon check creates even distribution of work across weeks. Overcommitment dropped because the capacity constraint became visible during planning rather than discovered during execution.</p>
+<p><strong>Strategic drift disappeared.</strong> Without weekly accountability, it&#39;s easy to spend three months on tactical work that doesn&#39;t advance quarterly goals. The rearview section catches this drift early — when the same strategic priority appears incomplete three weeks in a row, the pattern forces a decision: either prioritize it genuinely or admit it&#39;s not actually a priority and remove it.</p>
+<p><strong>Client relationships improved.</strong> The one-line status assessment forces honesty about relationship health. Yellow flags get addressed the week they appear, not the month they become Red flags. Early intervention preserves relationships that deterioration would have ended.</p>
+<h2>FAQ</h2>
+<h3>What tool should I use for weekly reviews?</h3>
+<p>Use whatever you&#39;ll actually use consistently. I write reviews in <strong>Obsidian</strong> because my entire operational vault lives there. A plain text file, a <strong>Notion</strong> page, a physical notebook — all work if the habit sticks. The tool is 5% of the system&#39;s value. Consistency is 95%.</p>
+<h3>How do I handle weeks where everything is on fire?</h3>
+<p>The review still happens, but Section 4 (Priority Stack) might contain only 2-3 items instead of 5. Crisis weeks benefit most from the review because the process forces you to decide what matters most when everything feels urgent. Without the review, you react to whatever&#39;s loudest. With it, you react to whatever&#39;s most important.</p>
+<h3>Should I share my weekly review with clients or teammates?</h3>
+<p>The full review contains financial and personal information that&#39;s inappropriate to share. Create a client-facing summary derived from Section 3 (Client Status) that shares what the client needs to know: what&#39;s done, what&#39;s in progress, and what&#39;s next. The internal review is for your operational clarity. The client summary is for their confidence.</p>
+<h3>How do I handle the review when my priorities change mid-week?</h3>
+<p>Mid-week priority changes are normal, not failures. When a new urgent item appears — a client emergency, a time-sensitive opportunity, a personal crisis — the priority stack provides the decision framework: what gets displaced? If the urgent item outranks priority 1, everything shifts down and priority 5 (the disposable item) drops off. If it outranks priority 3 but not priority 1-2, insert it at position 3 and push 3-5 down. The key is making the displacement decision explicitly rather than allowing the urgent item to consume unstructured time that erodes all five priorities indistinguishably. Write the adjustment down. The rearview in next week&#39;s review should reflect &quot;priority 3 displaced by client emergency on Wednesday&quot; — this data prevents you from blaming yourself for incomplete priority stacks when external events caused the shift.</p>
+<h3>Can the weekly review replace project management tools?</h3>
+<p>For solo operators, yes. The weekly review&#39;s priority stack, client status section, and horizon check contain every data point a solo operator needs to manage active work. Adding <strong>Asana</strong>, <strong>Monday.com</strong>, or <strong>ClickUp</strong> on top creates duplicate tracking that adds overhead without adding information. The review is simpler, faster, and requires no tool subscription. For operators managing 2-3 collaborators or contractors, the review supplements project management tools — the review provides strategic context while the tool handles task-level coordination. For teams above 5 people, dedicated project management tools become necessary and the weekly review becomes the executive layer that synthesizes tool data into strategic decisions.</p>
+<h3>What&#39;s the difference between a weekly review and a daily standup?</h3>
+<p>A daily standup answers &quot;what am I doing today?&quot; A weekly review answers &quot;what matters this week, and am I spending time on things that matter?&quot; The daily standup without a weekly review produces busy days that don&#39;t accumulate into productive weeks. The weekly review without daily standups works fine — the priority stack guides daily decisions even without a formal daily practice.</p>
+<hr>
+<p><em>Victor Valentine Romo has conducted weekly reviews for 18 consecutive months across two businesses. The framework described here governs operations for Scale With Search (SEO consulting) and real estate database management at The Jim Allen Group. [Discuss operational systems at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/one-person-agency-model.html">Running a Profitable One-Person Agency: Tools, Systems, and Pricing</a></li>
+<li><a href="/articles/automation-audit-framework.html">Auditing Business Processes for Automation Opportunities</a></li>
+<li><a href="/articles/client-onboarding-system.html">Client Onboarding That Reduces Churn by 40%</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

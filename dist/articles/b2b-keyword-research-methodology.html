@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume | B2B Vic</title>
+    <meta name="description" content="A complete B2B keyword research methodology prioritizing buyer intent over search volume. Covers seed expansion, intent mapping, and cluster architecture." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume" />
+    <meta property="og:description" content="A complete B2B keyword research methodology prioritizing buyer intent over search volume. Covers seed expansion, intent mapping, and cluster architecture." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-keyword-research-methodology.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume" />
+    <meta name="twitter:description" content="A complete B2B keyword research methodology prioritizing buyer intent over search volume. Covers seed expansion, intent mapping, and cluster architecture." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-keyword-research-methodology.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume",
+      "description": "A complete B2B keyword research methodology prioritizing buyer intent over search volume. Covers seed expansion, intent mapping, and cluster architecture.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-keyword-research-methodology.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>B2B Keyword Research Methodology: Finding Terms With Buyer Intent, Not Just Volume</h1>
+<p>The keyword research methodology taught in most SEO courses optimizes for volume. Find high-volume keywords, create content targeting them, build links, rank, profit. That logic works for media sites monetizing through advertising where traffic equals revenue. It fails catastrophically for B2B companies where a single qualified lead matters more than ten thousand unqualified visitors.</p>
+<p>B2B keyword research requires inverting the hierarchy. Intent first. Qualification second. Volume third. A keyword searched 50 times per month by procurement managers evaluating your exact solution category is worth more than a keyword searched 50,000 times by students writing research papers. The methodology below builds keyword strategies that fill pipelines, not just traffic dashboards.</p>
+<h2>The Volume Trap in B2B SEO</h2>
+<p><strong>Ahrefs</strong> shows &quot;CRM software&quot; at 23,000 monthly searches. A B2B CRM company sees that number and decides it&#39;s the target keyword. Six months and $40K later, they&#39;ve produced a 5,000-word comparison guide, built 30 backlinks, and reached position 14. The page generates 200 monthly visitors. Two inquire. Neither matches their ideal customer profile.</p>
+<p>Meanwhile, &quot;follow up boss vs hubspot for real estate teams&quot; gets 140 monthly searches. The same company ignores it — the volume looks insignificant. But every person searching that phrase is actively evaluating CRM solutions for a specific use case. The intent is unmistakable. A well-positioned article targeting that query converts at 8-12% because the searcher is already in buying mode.</p>
+<p>The volume trap costs B2B companies their most valuable resource: time. The months spent chasing high-volume generic terms produce brand awareness (maybe) and pipeline (almost never). The same effort directed at <a href="/articles/long-tail-keyword-strategy-b2b.html">intent-rich long-tail queries</a> produces qualified conversations.</p>
+<h2>Phase 1: Seed Keyword Development</h2>
+<p>Seed keywords don&#39;t come from keyword tools. They come from conversations with buyers.</p>
+<h3>Mining Sales Conversations</h3>
+<p>Your sales team holds the most valuable keyword data in the company — the exact words prospects use when describing their problems, evaluating solutions, and comparing options. Those words are your seed keywords.</p>
+<p>Sources to mine:</p>
+<ul>
+<li><strong>Discovery call recordings</strong> — listen for how prospects describe their current situation and desired outcome</li>
+<li><strong>Email inquiries</strong> — the subject lines and opening sentences reveal natural language patterns</li>
+<li><strong>Chat transcripts</strong> — live chat captures unfiltered vocabulary</li>
+<li><strong>Lost deal reasons</strong> — why prospects chose competitors reveals comparison queries</li>
+<li><strong>Support tickets</strong> — existing customer language reveals post-purchase query patterns</li>
+</ul>
+<p>From one month of sales conversation analysis, I typically extract 50-80 seed keywords that no tool would have surfaced. &quot;How to clean up messy CRM data&quot; doesn&#39;t appear in <strong>SEMrush</strong>&#39;s suggestions for the &quot;CRM&quot; seed. But three prospects in a month phrased their problem exactly that way.</p>
+<h3>Competitor Gap Mining</h3>
+<p>Pull the organic keyword profiles of 5-8 competitors using <strong>Ahrefs</strong> or <strong>SEMrush</strong>. Filter for:</p>
+<ul>
+<li>Keywords where they rank positions 1-10 and you don&#39;t rank at all (gaps)</li>
+<li>Keywords where they rank 4-10 (weakly held positions you can challenge)</li>
+<li>Keywords driving their highest-value pages (identified by backlink count or estimated traffic value)</li>
+</ul>
+<p>The gap analysis reveals the topics your competitors have validated through investment. They spent time and money ranking for those terms, which signals market demand. You don&#39;t need to guess — their keyword portfolio is a tested roadmap.</p>
+<h3>The Seed Expansion Loop</h3>
+<p>Each seed keyword feeds an expansion process:</p>
+<ol>
+<li>Enter seed into <strong>Ahrefs</strong> Keywords Explorer → extract &quot;also rank for&quot; keywords</li>
+<li>Enter seed into <strong>Google</strong> → capture People Also Ask questions</li>
+<li>Enter seed into <strong>AlsoAsked</strong> → map the question tree</li>
+<li>Enter seed into <strong>Claude</strong> → generate semantic variations and related concepts</li>
+<li>Compile all expansions into a master keyword list</li>
+</ol>
+<p>A single seed like &quot;CRM data quality&quot; expands to 40-60 related keywords: &quot;CRM data cleanup checklist,&quot; &quot;how to deduplicate CRM contacts,&quot; &quot;CRM tag management best practices,&quot; &quot;dirty CRM data cost,&quot; and dozens more. Each expansion branch represents a potential article targeting a specific searcher need.</p>
+<h2>Phase 2: Intent Classification</h2>
+<p>Every keyword gets classified by the intent behind the search. This classification determines content format, funnel position, and conversion potential.</p>
+<h3>The Four B2B Intent Categories</h3>
+<p><strong>Informational-Educational:</strong> The searcher wants to understand a concept. They&#39;re early in the journey, building mental models.</p>
+<ul>
+<li>Examples: &quot;what is topical authority in SEO,&quot; &quot;CRM data quality best practices,&quot; &quot;how AI content production works&quot;</li>
+<li>Content format: Comprehensive guides, how-tos, explainers</li>
+<li>Funnel position: Top of funnel</li>
+<li>Conversion potential: Low direct, high for list building and nurture entry</li>
+</ul>
+<p><strong>Informational-Tactical:</strong> The searcher wants to accomplish a specific task. They know what they need — they need the how.</p>
+<ul>
+<li>Examples: &quot;how to set up SPF DKIM DMARC,&quot; &quot;CRM deduplication process,&quot; &quot;content brief template&quot;</li>
+<li>Content format: Step-by-step tutorials, checklists, templates</li>
+<li>Funnel position: Middle of funnel</li>
+<li>Conversion potential: Medium — they may need help implementing</li>
+</ul>
+<p><strong>Commercial-Investigation:</strong> The searcher is evaluating options. They&#39;re comparing solutions, reading reviews, assessing fit.</p>
+<ul>
+<li>Examples: &quot;hubspot vs salesforce for B2B,&quot; &quot;<a href="/articles/best-ai-tools-b2b-marketing.html">best AI tools for B2B marketing</a>,&quot; &quot;fractional SEO consultant cost&quot;</li>
+<li>Content format: Comparisons, reviews, cost breakdowns, case studies</li>
+<li>Funnel position: Bottom of funnel</li>
+<li>Conversion potential: High — they&#39;re actively shopping</li>
+</ul>
+<p><strong>Transactional:</strong> The searcher is ready to act. They want to buy, book, sign up, or contact.</p>
+<ul>
+<li>Examples: &quot;SEO consultant near me,&quot; &quot;CRM audit service,&quot; &quot;hire fractional CMO&quot;</li>
+<li>Content format: Service pages, landing pages, contact forms</li>
+<li>Funnel position: Bottom of funnel</li>
+<li>Conversion potential: Highest</li>
+</ul>
+<h3>Intent Signals in the Keyword Itself</h3>
+<p>Certain keyword modifiers reliably indicate intent:</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Intent Signal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&quot;how to,&quot; &quot;guide,&quot; &quot;tutorial&quot;</td>
+<td>Informational-tactical</td>
+</tr>
+<tr>
+<td>&quot;what is,&quot; &quot;definition,&quot; &quot;meaning&quot;</td>
+<td>Informational-educational</td>
+</tr>
+<tr>
+<td>&quot;best,&quot; &quot;top,&quot; &quot;vs,&quot; &quot;comparison,&quot; &quot;review&quot;</td>
+<td>Commercial-investigation</td>
+</tr>
+<tr>
+<td>&quot;buy,&quot; &quot;pricing,&quot; &quot;cost,&quot; &quot;hire,&quot; &quot;near me&quot;</td>
+<td>Transactional</td>
+</tr>
+<tr>
+<td>&quot;template,&quot; &quot;checklist,&quot; &quot;framework&quot;</td>
+<td>Informational-tactical (high conversion)</td>
+</tr>
+<tr>
+<td>&quot;case study,&quot; &quot;results,&quot; &quot;ROI&quot;</td>
+<td>Commercial-investigation (high conversion)</td>
+</tr>
+</tbody></table>
+<p>Template and checklist keywords deserve special attention. They signal a searcher who is about to take action and wants a structured approach. These searchers convert to email subscribers, resource downloaders, and consultation bookers at 3-5x the rate of general informational searchers.</p>
+<h2>Phase 3: Keyword Qualification</h2>
+<p>Not every keyword with buyer intent warrants content production. Qualification filters the expanded list down to the keywords worth investing in.</p>
+<h3>The Qualification Matrix</h3>
+<p>Each keyword gets scored across four dimensions:</p>
+<p><strong>Intent strength (1-5):</strong> How strong is the buying signal? &quot;Best CRM for real estate teams&quot; scores 5. &quot;What is a CRM&quot; scores 1.</p>
+<p><strong>Competition viability (1-5):</strong> Can you realistically rank? Check the top 10 results — if they&#39;re all DR 80+ sites with 100+ linking domains, a newer site won&#39;t break through. If positions 4-10 show DR 30-50 sites, there&#39;s room.</p>
+<p><strong>Business alignment (1-5):</strong> Does ranking for this keyword attract your ideal buyer? &quot;Free CRM software&quot; attracts budget-constrained buyers. &quot;CRM optimization for B2B sales teams&quot; attracts sophisticated operators with budget.</p>
+<p><strong>Content investment (1-5, inverted):</strong> How much effort does ranking require? A keyword needing a 5,000-word guide plus 20 backlinks scores lower than one needing a 2,500-word article with strong topical support.</p>
+<p>Keywords scoring 16+ out of 20 enter the production priority queue. Keywords scoring 12-15 enter the secondary queue. Below 12: archive for later or discard.</p>
+<h3>Volume Recalibration for B2B</h3>
+<p><strong>Ahrefs</strong> and <strong>SEMrush</strong> volume estimates are directional, not precise. More importantly, they measure total search volume — not qualified search volume.</p>
+<p>For B2B keywords, I apply a qualification multiplier:</p>
+<ul>
+<li>Transactional keywords: 80%+ of searchers are potential buyers</li>
+<li>Commercial-investigation keywords: 50-70% are potential buyers</li>
+<li>Informational-tactical keywords: 20-40% are potential buyers</li>
+<li>Informational-educational keywords: 5-15% are potential buyers</li>
+</ul>
+<p>A keyword showing 200 monthly searches with transactional intent delivers ~160 potential buyer visits. A keyword showing 5,000 monthly searches with educational intent delivers ~250-750 potential buyer visits. The volume-obsessed analysis says target the 5,000-search keyword. The intent-weighted analysis says the 200-search keyword delivers comparable qualified traffic at 1/10th the competition.</p>
+<h2>Phase 4: Cluster Architecture</h2>
+<p>Individual keywords don&#39;t build authority. Clusters do. <a href="/articles/topical-authority-building-b2b.html">Topical authority</a> emerges when a site demonstrates comprehensive coverage of a subject through interlinked content organized in hierarchical clusters.</p>
+<h3>The Hub-and-Spoke Model</h3>
+<p>Each cluster has a pillar page (the hub) surrounded by supporting articles (the spokes):</p>
+<p><strong>Hub:</strong> &quot;CRM Optimization for B2B Sales Teams&quot; — comprehensive, 3,000+ words, targeting the cluster&#39;s head keyword
+<strong>Spokes:</strong></p>
+<ul>
+<li>&quot;CRM Data Quality Automation&quot;</li>
+<li>&quot;CRM Tag Management System&quot;</li>
+<li>&quot;Smart List Architecture for Sales&quot;</li>
+<li>&quot;CRM Workflow Automation&quot;</li>
+<li>&quot;CRM Contact Enrichment&quot;</li>
+</ul>
+<p>Each spoke links back to the hub. The hub links out to every spoke. Spokes link to adjacent spokes where topically relevant. This internal linking architecture signals to search engines that the hub page deserves authority for the cluster&#39;s core topic because the site demonstrates comprehensive coverage through its supporting content.</p>
+<h3>The Cluster Map</h3>
+<p>A complete keyword strategy for a B2B site organizes 100-300 keywords into 8-12 clusters. Each cluster maps to a business offering or expertise area:</p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>Pillar Keyword</th>
+<th>Spokes</th>
+<th>Business Alignment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CRM Optimization</td>
+<td>CRM optimization B2B sales</td>
+<td>12-15</td>
+<td>Direct service offering</td>
+</tr>
+<tr>
+<td>SEO Strategy</td>
+<td>B2B SEO strategy</td>
+<td>20-25</td>
+<td>Core expertise</td>
+</tr>
+<tr>
+<td>AI Content</td>
+<td>AI content production</td>
+<td>15-20</td>
+<td>Differentiator</td>
+</tr>
+<tr>
+<td>Cold Outreach</td>
+<td>cold email B2B</td>
+<td>10-12</td>
+<td>Client acquisition methodology</td>
+</tr>
+<tr>
+<td>Consulting</td>
+<td>consulting business model</td>
+<td>10-12</td>
+<td>Thought leadership</td>
+</tr>
+</tbody></table>
+<p>The <a href="/articles/topical-map-b2b-websites.html">topical map</a> that results from this process becomes the content roadmap for 12-24 months of production.</p>
+<h2>Phase 5: Prioritization and Sequencing</h2>
+<p>Not all keywords should be targeted simultaneously. Sequencing determines which keywords to pursue first to build momentum and <a href="/articles/b2b-lead-generation-seo-pipeline.html">generate early results</a>.</p>
+<h3>The Priority Stack</h3>
+<p><strong>Priority 1:</strong> Low-competition, high-intent keywords. These rank fastest and convert best. Target them first to generate early pipeline while building authority for harder terms.</p>
+<p><strong>Priority 2:</strong> Supporting articles that strengthen existing pillar pages. Each new spoke article boosts the hub&#39;s authority, creating compound effects across the cluster.</p>
+<p><strong>Priority 3:</strong> Medium-competition keywords where you have topical support. Once a cluster has 5+ spokes, the pillar page can compete for more challenging keywords that it couldn&#39;t have ranked for in isolation.</p>
+<p><strong>Priority 4:</strong> High-competition head terms. These are the last targets, not the first — because they require the accumulated authority of an established cluster to rank.</p>
+<h2>FAQ</h2>
+<h3>How many keywords should a B2B company target?</h3>
+<p>A new B2B site should start with 100-150 keywords organized into 6-8 clusters. An established site with existing content should audit current rankings first, then expand to 200-300 keywords covering gaps and new clusters. Beyond 300, the management overhead increases without proportional returns unless you have a dedicated SEO team and <a href="/articles/ai-content-production-workflow.html">production workflow</a> that sustains the volume.</p>
+<h3>Should B2B companies target zero-volume keywords?</h3>
+<p>Frequently, yes. Many B2B keywords show zero volume in tools because the search volume is too low for <strong>Google</strong>&#39;s Keyword Planner to report. But &quot;zero volume&quot; doesn&#39;t mean zero searches — it means fewer than 10-50 monthly searches depending on the tool&#39;s threshold. A zero-volume keyword with strong transactional intent can generate 3-5 monthly visits that convert at 15-20%. Those 1-2 monthly conversions may represent $10K+ in deal value.</p>
+<h3>How often should keyword research be refreshed?</h3>
+<p>Quarterly for the full methodology. Monthly for competitive gap monitoring and SERP tracking. Markets shift, competitors launch new content, and search behavior evolves. A keyword strategy that was optimal six months ago may have gaps today. The quarterly refresh catches strategic drift before it accumulates into lost market share.</p>
+<h3>What tools are essential for B2B keyword research?</h3>
+<p><strong>Ahrefs</strong> or <strong>SEMrush</strong> for competitive analysis and keyword metrics (pick one — both work). <strong>Google Search Console</strong> for first-party search data on existing content. <strong>AlsoAsked</strong> for People Also Ask mapping. <strong>Claude</strong> or <strong>ChatGPT</strong> for semantic expansion and intent analysis. <strong>Google Sheets</strong> for the qualification matrix and cluster map. Total tool cost: $200-400/month.</p>
+<hr>
+<p><em>Victor Valentine Romo builds keyword strategies for B2B companies through Scale With Search. The methodology here has been applied to sites generating 100-500 monthly organic leads across real estate, SaaS, and professional services verticals. [Start a keyword strategy project at b2bvic.com/services]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/topical-authority-building-b2b.html">How to Build Topical Authority in Boring B2B Industries</a></li>
+<li><a href="/articles/search-intent-mapping-b2b-funnel.html">Search Intent Mapping Across the B2B Funnel</a></li>
+<li><a href="/articles/long-tail-keyword-strategy-b2b.html">Long-Tail Keyword Strategy for B2B: Queries That Convert</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

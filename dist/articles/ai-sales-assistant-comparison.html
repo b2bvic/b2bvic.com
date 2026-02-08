@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude | B2B Vic</title>
+    <meta name="description" content="Head-to-head comparison of AI sales tools — Salesken, Gong, Chorus, Clay, and Claude — across pricing, features, integration, and real performance data for B2B teams." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude" />
+    <meta property="og:description" content="Head-to-head comparison of AI sales tools — Salesken, Gong, Chorus, Clay, and Claude — across pricing, features, integration, and real performance data for B2B teams." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-sales-assistant-comparison.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude" />
+    <meta name="twitter:description" content="Head-to-head comparison of AI sales tools — Salesken, Gong, Chorus, Clay, and Claude — across pricing, features, integration, and real performance data for B2B teams." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-sales-assistant-comparison.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude",
+      "description": "Head-to-head comparison of AI sales tools — Salesken, Gong, Chorus, Clay, and Claude — across pricing, features, integration, and real performance data for B2B teams.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-sales-assistant-comparison.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>AI Sales Tools Compared: Salesken, Gong, Chorus, Clay, and Claude</h1>
+<p>The AI sales tools market exploded into a $4.8 billion category by 2025, and buying the wrong tool wastes $15,000-$50,000 annually on a solution that doesn&#39;t match your sales motion. I&#39;ve used or evaluated all five tools in this comparison across real B2B sales operations — not demo environments, not free trials, but production deployments where the tool either delivers pipeline or doesn&#39;t.</p>
+<p>The five tools serve fundamentally different functions despite all carrying the &quot;AI sales&quot; label. <strong>Gong</strong> and <strong>Chorus</strong> analyze conversations. <strong>Salesken</strong> coaches in real-time. <strong>Clay</strong> enriches and automates outbound. <strong>Claude</strong> handles everything the specialized tools don&#39;t. Choosing between them requires understanding which sales problem you&#39;re actually solving.</p>
+<h2>The Comparison Framework</h2>
+<p>I evaluate AI sales tools across six dimensions that predict real-world value:</p>
+<ol>
+<li><strong>Core function</strong> — What does it actually do?</li>
+<li><strong>Data requirements</strong> — What does it need to work?</li>
+<li><strong>Integration depth</strong> — How well does it connect to your existing stack?</li>
+<li><strong>Time-to-value</strong> — How quickly does it produce measurable results?</li>
+<li><strong>Pricing model</strong> — What does it cost at your scale?</li>
+<li><strong>Limitation reality</strong> — What can&#39;t it do that marketing suggests it can?</li>
+</ol>
+<h2>Gong: Conversation Intelligence for Deal Analysis</h2>
+<p><strong>Gong</strong> records, transcribes, and analyzes sales calls, demos, and meetings. It identifies patterns in successful and unsuccessful conversations, providing data-driven coaching insights.</p>
+<h3>What Gong Actually Does Well</h3>
+<p><strong>Deal intelligence:</strong> Gong tracks deal health based on conversation signals — stakeholder engagement, competitor mentions, objection frequency, next-step commitments. The deal board shows which opportunities are progressing and which are stalling based on what actually happened in meetings, not what the rep logged in the CRM.</p>
+<p><strong>Coaching insights:</strong> Gong measures talk-to-listen ratios, question frequency, monologue lengths, and topic distribution per rep. Managers see that their top closer asks 2.3x more discovery questions than the team average, or that underperformers spend 70% of calls pitching instead of diagnosing.</p>
+<p><strong>Competitive intelligence:</strong> When prospects mention competitors by name, Gong flags the mentions and aggregates them into competitive trends. &quot;CompetitorX was mentioned in 34% of lost deals this quarter, primarily around pricing&quot; — actionable data that traditional win/loss analysis takes months to surface.</p>
+<h3>Where Gong Falls Short</h3>
+<p><strong>Small team overhead:</strong> Gong&#39;s enterprise focus means implementation requires dedicated admin time, CRM integration configuration, and team training. For teams under 10 reps, the implementation overhead rivals the tool&#39;s annual cost.</p>
+<p><strong>Recording dependency:</strong> Gong only works when meetings are recorded. Prospects who decline recording — common in regulated industries, enterprise security-conscious orgs, and certain cultural contexts — create blind spots in your data.</p>
+<p><strong>Pricing opacity:</strong> Gong doesn&#39;t publish pricing. Reported costs range from $100-$150 per user per month on annual contracts, with minimum seat counts. A 10-person team budgets $15,000-$18,000 annually before implementation costs.</p>
+<h3>Best For</h3>
+<p>Teams of 15+ reps running complex B2B sales cycles with multiple meetings per deal. The ROI materializes when you have enough conversation data for Gong&#39;s analytics to identify statistically meaningful patterns.</p>
+<h2>Chorus (by ZoomInfo): Conversation Intelligence With Data Enrichment</h2>
+<p><strong>Chorus</strong> provides conversation intelligence similar to Gong, with the advantage of native integration into <strong>ZoomInfo&#39;s</strong> contact database. After ZoomInfo acquired Chorus, the product became the conversation layer of ZoomInfo&#39;s broader sales intelligence platform.</p>
+<h3>What Chorus Does Differently Than Gong</h3>
+<p><strong>ZoomInfo integration:</strong> Chorus connects conversation insights to ZoomInfo&#39;s B2B contact database. When a prospect mentions a colleague by name on a call, Chorus can surface that person&#39;s contact information, title, and engagement history from ZoomInfo. This bridges the gap between conversation intelligence and prospecting automation.</p>
+<p><strong>Market intelligence aggregation:</strong> Chorus aggregates conversation topics across all customers anonymously. You see what topics are trending in your industry&#39;s sales conversations — emerging objections, new competitor mentions, shifting priorities. This market-level data is unique to Chorus&#39;s large customer base.</p>
+<h3>Where Chorus Falls Short</h3>
+<p><strong>ZoomInfo lock-in:</strong> Maximum value from Chorus requires a ZoomInfo subscription ($15,000-$35,000 annually). Chorus standalone is functional but misses the integration advantage that differentiates it from Gong.</p>
+<p><strong>Post-acquisition feature pace:</strong> Some users report that Chorus development has slowed since the ZoomInfo acquisition, with resources shifting toward integration rather than standalone feature advancement.</p>
+<h3>Best For</h3>
+<p>Teams already using or considering <strong>ZoomInfo</strong> for prospecting data. The combined platform provides end-to-end visibility from prospect identification through conversation analysis to deal close.</p>
+<h2>Salesken: Real-Time Conversation Coaching</h2>
+<p><strong>Salesken</strong> differentiates by providing real-time, in-call coaching rather than post-call analysis. The AI listens to live conversations and surfaces prompts, objection responses, and competitive battlecards while the rep is still on the phone.</p>
+<h3>What Salesken Does That Others Don&#39;t</h3>
+<p><strong>Live coaching prompts:</strong> When a prospect raises an objection, Salesken surfaces a recommended response in the rep&#39;s sidebar within seconds. The rep sees &quot;Customer mentioned budget concerns — here are three responses that converted in similar situations&quot; while the conversation continues.</p>
+<p><strong>Script adherence scoring:</strong> Salesken evaluates how closely reps follow prescribed conversation flows in real-time. If a rep skips the discovery phase and jumps to demo, the tool flags the deviation immediately — not in a post-call review three days later.</p>
+<p><strong>Sentiment analysis during calls:</strong> Real-time analysis of prospect tone, pace, and word choice identifies when a conversation is going positive or negative. The rep sees signals that might otherwise require years of sales intuition to recognize.</p>
+<h3>Where Salesken Falls Short</h3>
+<p><strong>Cognitive overload risk:</strong> Reading AI prompts while actively listening to a prospect requires significant multitasking ability. Junior reps — the ones who most need coaching — are most likely to be distracted by the sidebar, creating awkward pauses or disconnected responses.</p>
+<p><strong>Limited post-call analytics:</strong> Salesken&#39;s post-call analysis is thinner than Gong&#39;s or Chorus&#39;s. The tool optimizes for real-time assistance at the expense of retrospective pattern analysis.</p>
+<p><strong>Smaller customer base:</strong> Fewer customers means less aggregate data for training the AI, which affects the quality of coaching suggestions compared to Gong&#39;s larger dataset.</p>
+<h3>Best For</h3>
+<p>Teams with high call volumes and relatively standardized sales conversations — SDR teams making 50+ calls daily, insurance sales, inside sales teams with established playbooks. The real-time coaching delivers most value when conversations follow predictable patterns.</p>
+<h2>Clay: Prospect Enrichment and Outbound Automation</h2>
+<p><strong>Clay</strong> occupies a different category entirely. It&#39;s not conversation intelligence — it&#39;s a data enrichment and automation platform that transforms prospect lists into multi-dimensional profiles using dozens of data sources.</p>
+<h3>What Clay Actually Does</h3>
+<p><strong>Waterfall enrichment:</strong> Clay connects to 50+ data providers (<strong>Apollo</strong>, <strong>Clearbit</strong>, <strong>Hunter</strong>, <strong>LinkedIn</strong>, <strong>Crunchbase</strong>, and more) and enriches prospect records by cascading through sources until it finds the data point you need. If Apollo doesn&#39;t have a prospect&#39;s email, Clay tries Hunter. If Hunter doesn&#39;t have it, Clay tries Clearbit. The waterfall approach produces higher data completeness than any single provider.</p>
+<p><strong>AI-powered research at scale:</strong> Clay runs AI research tasks per prospect — summarizing their LinkedIn activity, analyzing their company&#39;s recent news, identifying technology stack changes, and generating personalized talking points. At 500+ prospects, this represents hundreds of hours of manual research compressed into an automated workflow.</p>
+<p><strong>Workflow automation:</strong> Clay connects enrichment to action. Enriched prospects flow automatically into email sequences via <strong>Instantly</strong> or <strong>Smartlead</strong>, CRM records in <strong>HubSpot</strong> or <strong>Salesforce</strong>, or Slack notifications for high-priority prospects.</p>
+<h3>Where Clay Falls Short</h3>
+<p><strong>Learning curve:</strong> Clay&#39;s spreadsheet-like interface with formula-based enrichment workflows requires a different mental model than traditional sales tools. Non-technical users need 2-3 weeks to become productive.</p>
+<p><strong>Credit-based pricing:</strong> Clay charges credits per enrichment action. Heavy usage across thousands of prospects can escalate costs beyond initial estimates. A team enriching 5,000 prospects monthly might spend $500-$1,500 on credits alone, plus the base subscription.</p>
+<p><strong>No conversation intelligence:</strong> Clay doesn&#39;t record or analyze calls. It&#39;s a pre-conversation tool — everything it does happens before the prospect picks up the phone.</p>
+<h3>Best For</h3>
+<p>Outbound-heavy teams that need to scale prospecting beyond what manual research allows. Particularly valuable for teams running account-based marketing (ABM) where deep prospect research drives personalized outreach.</p>
+<h2>Claude: The General-Purpose AI That Fills Every Gap</h2>
+<p><strong>Claude</strong> (via <strong>Claude Code</strong> or the API) doesn&#39;t compete directly with the specialized tools above. It competes with the $3,000-$5,000 monthly spend on tasks none of those tools cover — proposal writing, email drafting, competitive analysis, meeting preparation, CRM data cleanup, and the hundred other knowledge-work tasks that consume sales team hours.</p>
+<h3>What Claude Handles in Sales Operations</h3>
+<p><strong>Proposal generation:</strong> Given a discovery call summary and client context, Claude produces first drafts of proposals in 5-10 minutes. Not generic templates — proposals that reference specific prospect pain points, include relevant case studies, and use the prospect&#39;s language from the call.</p>
+<p><strong>Email personalization at scale:</strong> Claude transforms enrichment data from Clay into personalized email copy that reads like hand-written correspondence. The prompt engineering matters — constrained prompts with specific output requirements produce dramatically better emails than &quot;write a cold email to this prospect.&quot;</p>
+<p><strong>Competitive battlecards:</strong> Feed Claude competitor websites, pricing pages, and review content. It produces structured battlecards that reps reference during calls. Updates take minutes instead of the hours required for manual competitor monitoring.</p>
+<p><strong>CRM data operations:</strong> Claude cleans contact data, standardizes tags, identifies duplicates, scores contacts, and generates reports. I use Claude Code for monthly database audits that would take 8-10 hours manually.</p>
+<h3>Where Claude Falls Short</h3>
+<p><strong>No native call recording or analysis.</strong> Claude doesn&#39;t replace Gong or Chorus for conversation intelligence. You&#39;d need to feed it transcripts after the fact, which lacks the automatic workflow integration.</p>
+<p><strong>No persistent real-time connection.</strong> Claude processes requests per interaction. It doesn&#39;t continuously monitor your CRM or email inbox unless you build webhook integrations.</p>
+<p><strong>Requires prompt engineering skill.</strong> Claude&#39;s output quality is proportional to input quality. Sales teams that treat it as &quot;write me an email&quot; get mediocre results. Teams that build structured prompts with context, constraints, and examples get exceptional results.</p>
+<h3>Best For</h3>
+<p>Every sales team, regardless of size. Claude handles the knowledge work that specialized tools don&#39;t cover. It&#39;s the gap-filler, the force multiplier, and the most cost-effective AI investment at $20-$100/month for capabilities that touch every aspect of the sales operation.</p>
+<h2>Head-to-Head Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Gong</th>
+<th>Chorus</th>
+<th>Salesken</th>
+<th>Clay</th>
+<th>Claude</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Core function</td>
+<td>Post-call analytics</td>
+<td>Post-call analytics + data</td>
+<td>Real-time coaching</td>
+<td>Prospect enrichment</td>
+<td>General knowledge work</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>~$1,500/user/yr</td>
+<td>~$1,200/user/yr + ZoomInfo</td>
+<td>~$1,000/user/yr</td>
+<td>$149-$800/mo + credits</td>
+<td>$20-$100/mo</td>
+</tr>
+<tr>
+<td>Time to value</td>
+<td>60-90 days</td>
+<td>60-90 days</td>
+<td>30-45 days</td>
+<td>14-21 days</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>Team size sweet spot</td>
+<td>15+ reps</td>
+<td>15+ reps</td>
+<td>10+ reps (high volume)</td>
+<td>1-50 (outbound focus)</td>
+<td>Any size</td>
+</tr>
+<tr>
+<td>Integration complexity</td>
+<td>High</td>
+<td>High</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Unique strength</td>
+<td>Deal intelligence</td>
+<td>ZoomInfo synergy</td>
+<td>Live coaching</td>
+<td>Waterfall enrichment</td>
+<td>Flexibility</td>
+</tr>
+</tbody></table>
+<h2>Integration Complexity: The Hidden Cost Nobody Mentions</h2>
+<p>Every AI sales tool claims &quot;seamless integration.&quot; In practice, integration ranges from 2-hour setup (Clay connecting to a CRM via API) to 3-month enterprise deployment (Gong configuring custom meeting recording rules across 50+ calendars). Understanding the real integration cost prevents budget and timeline surprises.</p>
+<h3>CRM Integration Depth</h3>
+<p><strong>Gong</strong> and <strong>Chorus</strong> both offer native <strong>Salesforce</strong> and <strong>HubSpot</strong> integrations. The integrations sync call data, deal associations, and coaching insights bidirectionally. Setup takes 1-2 weeks with a CRM admin involved. For other CRMs — <strong>Pipedrive</strong>, <strong>Zoho</strong>, <strong>Follow Up Boss</strong> — integration requires <strong>Zapier</strong> or custom API work, adding complexity and potential points of failure.</p>
+<p><strong>Clay</strong> integrates with CRMs primarily as a data destination — enriched prospect data pushes to your CRM as new or updated records. The integration is one-directional and relatively simple. Clay&#39;s complexity lives in its internal enrichment workflows, not in the CRM connection.</p>
+<p><strong>Claude</strong> has no native CRM integration. Integration requires API scripting or <strong>Zapier</strong> middleware. For teams using <strong>Claude Code</strong>, the file-based approach bypasses traditional CRM integration entirely — Claude reads and writes to local files that can be synced to CRM systems through scheduled scripts.</p>
+<h3>Data Quality Dependencies</h3>
+<p>AI tools produce garbage from garbage inputs. <strong>Gong&#39;s</strong> coaching insights are only as good as its transcription accuracy (which struggles with accents, background noise, and overlapping speakers). <strong>Clay&#39;s</strong> enrichment is only as accurate as its data providers (email verification rates vary from 85-95% depending on the provider mix). <strong>Claude&#39;s</strong> output quality depends entirely on prompt quality and the context you provide.</p>
+<p>Before deploying any AI sales tool, audit the quality of data you&#39;ll feed it. Clean your CRM data first (see <a href="/articles/crm-data-hygiene.html">CRM Database Cleanup</a>). Verify that your calendar and communication tools are configured to provide clean inputs to conversation intelligence tools. The tool won&#39;t fix bad data — it will confidently analyze bad data and produce misleading insights.</p>
+<h3>Training Investment</h3>
+<p>Every tool requires team training to produce ROI. Budget the following training time:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Initial Training</th>
+<th>Ongoing Training</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gong</td>
+<td>4-8 hours per user</td>
+<td>1 hour/month (new features, best practices)</td>
+</tr>
+<tr>
+<td>Chorus</td>
+<td>4-8 hours per user</td>
+<td>1 hour/month</td>
+</tr>
+<tr>
+<td>Salesken</td>
+<td>2-4 hours per user</td>
+<td>30 min/month</td>
+</tr>
+<tr>
+<td>Clay</td>
+<td>8-16 hours per admin</td>
+<td>2 hours/month (workflow maintenance)</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>2-4 hours per user</td>
+<td>Ongoing prompt refinement</td>
+</tr>
+</tbody></table>
+<p>Clay&#39;s training investment is front-loaded on the admin who builds the workflows. Other team members interact with Clay&#39;s output (enriched data in the CRM), not the tool itself. Gong and Chorus require broader training because every rep needs to use the platform for coaching insights to affect behavior.</p>
+<h2>The Recommended Stack by Team Size</h2>
+<p><strong>Solo or 2-3 person team:</strong> Claude + Clay. Total cost: $250-$400/month. Claude handles all knowledge work and email personalization. Clay handles prospect enrichment. No call recording needed at this scale — you remember your own conversations.</p>
+<p><strong>Team of 5-10:</strong> Claude + Clay + Gong or Chorus. Total cost: $1,500-$2,500/month. Add conversation intelligence when you have enough call volume to generate meaningful patterns and enough reps to benefit from coaching insights.</p>
+<p><strong>Team of 15+:</strong> All five tools serve distinct functions at this scale. Total cost: $4,000-$8,000/month. The investment pays for itself if it improves close rates by even 5% on an enterprise deal pipeline.</p>
+<h2>FAQ</h2>
+<h3>Can I replace Gong with Claude by feeding it call transcripts?</h3>
+<p>Partially. If you record calls via <strong>Zoom</strong> or <strong>Google Meet</strong> and feed transcripts to Claude, you get summarization, action item extraction, and basic conversational analysis. You lose Gong&#39;s pattern analysis across hundreds of calls, its CRM integration, and its benchmark data. For teams under 10 reps, Claude-with-transcripts is 80% of Gong&#39;s value at 5% of the cost.</p>
+<h3>Is Clay worth it if I already have Apollo?</h3>
+<p>Yes, if your outbound volume exceeds 1,000 prospects monthly. <strong>Apollo</strong> is a single data source. <strong>Clay</strong> aggregates 50+ sources through waterfall enrichment, producing higher email accuracy and richer prospect profiles. Below 1,000 prospects monthly, Apollo&#39;s built-in data is sufficient and Clay&#39;s additional cost isn&#39;t justified.</p>
+<h3>Which AI sales tool has the fastest ROI?</h3>
+<p><strong>Claude</strong> — it costs the least, requires zero implementation time, and delivers value on day one. Among the specialized tools, <strong>Clay</strong> typically shows ROI fastest (2-3 weeks) because enriched outbound campaigns produce measurable pipeline activity quickly. Conversation intelligence tools (Gong, Chorus, Salesken) take 60-90 days because they need data accumulation before insights emerge.</p>
+<h3>Are these tools GDPR compliant for EU prospects?</h3>
+<p><strong>Gong</strong> and <strong>Chorus</strong> require explicit recording consent notifications. <strong>Clay</strong> pulls data from publicly available sources but EU enrichment falls under GDPR data processing rules. <strong>Claude</strong> processes data per API call without storing it long-term. All tools require GDPR compliance configuration — none are compliant by default. Consult your data protection officer before deploying any AI tool that processes EU prospect data.</p>
+<hr>
+<p><em>Victor Valentine Romo evaluates and deploys AI sales tools across consulting and real estate sales operations. This comparison reflects production usage, not demo evaluations. [Discuss your AI sales stack at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/claude-code-for-business.html">Claude Code as an Operating System for Business Automation</a></li>
+<li><a href="/articles/cold-email-that-books-meetings.html">The Cold Email Framework That Books 12+ Meetings Per Month</a></li>
+<li><a href="/articles/ai-seo-tools-stack.html">The AI-First SEO Stack: Research, Writing, Optimization, Monitoring</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

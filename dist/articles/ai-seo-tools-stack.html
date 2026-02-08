@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring | B2B Vic</title>
+    <meta name="description" content="The complete AI-powered SEO tool stack covering keyword research, content production, technical optimization, and rank monitoring. Built for practitioners, not theorists." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring" />
+    <meta property="og:description" content="The complete AI-powered SEO tool stack covering keyword research, content production, technical optimization, and rank monitoring. Built for practitioners, not theorists." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-seo-tools-stack.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring" />
+    <meta name="twitter:description" content="The complete AI-powered SEO tool stack covering keyword research, content production, technical optimization, and rank monitoring. Built for practitioners, not theorists." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-seo-tools-stack.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring",
+      "description": "The complete AI-powered SEO tool stack covering keyword research, content production, technical optimization, and rank monitoring. Built for practitioners, not theorists.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-seo-tools-stack.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The AI-First SEO Stack: Research, Writing, Optimization, and Monitoring</h1>
+<p>An AI-first SEO stack replaces manual workflows at every stage of the SEO process — not by swapping humans for machines, but by making every human hour produce 5-10x the output. I manage SEO for six active websites using a stack that costs under $500/month in tooling and produces the throughput that agencies charge $8,000/month to deliver. The stack has four layers: research, writing, optimization, and monitoring. Each layer has a primary tool and an AI integration that multiplies its effectiveness.</p>
+<h2>Layer 1: Research — From Keyword Ideas to Content Strategy</h2>
+<p>Research is where most SEO practitioners spend excessive time because they explore topics instead of extracting data. An AI-first research workflow treats keyword research as data collection with a clear output spec, not open-ended exploration.</p>
+<h3>Primary Tool: Ahrefs</h3>
+<p><strong>Ahrefs</strong> remains the most comprehensive SEO data platform. Its keyword database, backlink index, and content explorer provide the raw data that everything else builds on. No AI tool replaces Ahrefs&#39;s data — they all consume it.</p>
+<p>Key Ahrefs workflows:</p>
+<ul>
+<li><strong>Keywords Explorer:</strong> Seed keyword → related terms, questions, SERP overview, traffic potential</li>
+<li><strong>Content Gap:</strong> Your domain vs. 3 competitors → keywords they rank for that you don&#39;t</li>
+<li><strong>Site Explorer:</strong> Any domain → backlink profile, organic keywords, traffic estimates</li>
+<li><strong>Content Explorer:</strong> Topic → highest-performing content by traffic, links, shares</li>
+</ul>
+<h3>AI Integration: Claude for Research Synthesis</h3>
+<p>Raw keyword data from Ahrefs is information. Research synthesis — clustering keywords into topics, identifying content gaps, prioritizing by business impact — is analysis. <strong>Claude</strong> handles the analysis layer.</p>
+<p>My workflow: Export keyword data from Ahrefs as CSV. Feed the CSV to Claude with the prompt: &quot;Cluster these keywords into topical groups. For each group, identify the pillar keyword (highest volume), supporting keywords, and recommended content types. Prioritize groups by composite score of volume, difficulty, and commercial intent.&quot;</p>
+<p>Claude produces a structured topical map from raw data in 2-3 minutes. Manual analysis of the same dataset takes 2-3 hours. The AI doesn&#39;t replace judgment about which clusters to pursue — it accelerates the mechanical work of organizing and scoring hundreds of keywords.</p>
+<h3>Secondary Tool: AlsoAsked</h3>
+<p><strong>AlsoAsked</strong> maps the &quot;People Also Ask&quot; hierarchy for any query. The hierarchical structure reveals how Google relates questions — which questions branch from which parent topics. This structure mirrors how topical maps should organize content.</p>
+<p>AI integration: Feed AlsoAsked output to Claude with instructions to identify question clusters that map to article topics and FAQ sections. The output directly populates content briefs.</p>
+<h2>Layer 2: Writing — From Briefs to Published Articles</h2>
+<p>Writing is the highest-volume stage. An AI-first writing workflow produces 10-15 articles per day with quality that passes editorial standards. I covered the full pipeline in <a href="/articles/ai-content-pipeline.html">Building an AI Content Pipeline: From Brief to Publish in 45 Minutes</a> — here&#39;s how the tools fit together.</p>
+<h3>Primary Tool: Claude (API or Claude Code)</h3>
+<p><strong>Claude</strong> is the writing engine. Not because it&#39;s the only capable model, but because its instruction-following precision produces the most consistent outputs when constrained by detailed prompts. <strong>ChatGPT</strong> generates comparable quality for many topics but deviates from formatting specifications more frequently in my testing.</p>
+<p>The prompt architecture matters more than the model choice. A well-engineered prompt produces publishable content from Claude Sonnet. A generic prompt produces mediocre content from Claude Opus. Invest in prompts, not in upgrading to the most expensive model.</p>
+<h3>AI Integration: Voice Calibration Layer</h3>
+<p>The difference between generic AI content and content that reads like a subject matter expert wrote it: voice calibration. My writing stack includes a voice specification layer that constrains Claude&#39;s output to match specific brand voices.</p>
+<p>The Observer Protocol — five rules that strip AI fingerprints from content — forms the base layer. Brand-specific calibration adds industry vocabulary, sentence rhythm preferences, perspective (first-person operator vs. third-person analyst), and authority level (practitioner sharing experience vs. educator explaining concepts).</p>
+<p>This calibration layer is a persistent system prompt, not something rebuilt per article. The voice specification loads automatically and applies consistently across all content production.</p>
+<h3>Secondary Tool: Grammarly or Hemingway</h3>
+<p>Post-AI editing benefits from readability analysis. <strong>Grammarly</strong> catches grammatical errors that slip through AI generation (rare but possible). <strong>Hemingway</strong> identifies overly complex sentences that damage readability. Neither replaces human editing — they flag issues the editor might miss during a 15-minute review pass.</p>
+<h2>Layer 3: Optimization — Technical SEO and On-Page Refinement</h2>
+<p>Optimization covers the technical foundation and on-page refinement that determine whether content actually ranks. AI accelerates the analysis; the fixes still require human implementation or scripted automation.</p>
+<h3>Primary Tool: Screaming Frog</h3>
+<p><strong>Screaming Frog</strong> crawls websites and surfaces technical SEO issues with granularity that no other tool matches. Crawlability, indexation, redirects, schema validation, content analysis, internal linking structure — all visible in a single crawl.</p>
+<p>For sites under 500 URLs, the free version suffices. Above 500, the paid license ($259/year) is the single most cost-effective investment in any SEO stack.</p>
+<h3>AI Integration: Automated Issue Prioritization</h3>
+<p>A Screaming Frog crawl of a 2,000-page site produces hundreds of issues. Manually reviewing and prioritizing each issue takes hours. AI accelerates this.</p>
+<p>My workflow: Export Screaming Frog reports (errors, warnings, content issues) as CSV. Feed to Claude with: &quot;Prioritize these technical SEO issues into three tiers: Critical (blocks indexation or rankings), Important (measurably suppresses performance), and Optimization (incremental improvement). For each Critical issue, provide a one-sentence fix recommendation.&quot;</p>
+<p>The AI-generated priority report becomes the technical SEO action plan. The prioritization saves 2-3 hours per audit and ensures Critical issues get addressed before optimizations.</p>
+<h3>Primary Tool: Google Search Console</h3>
+<p><strong>Google Search Console</strong> provides first-party data about how Google sees your site. No third-party tool matches its accuracy for impression data, click-through rates, indexation status, and Core Web Vitals metrics.</p>
+<p>Key GSC workflows:</p>
+<ul>
+<li><strong>Performance report:</strong> Track impressions, clicks, CTR, and average position per query</li>
+<li><strong>Pages report:</strong> Monitor indexation status and identify coverage issues</li>
+<li><strong>Core Web Vitals:</strong> Track LCP, INP, CLS at page and site level</li>
+<li><strong>Links report:</strong> Internal and external link data from Google&#39;s perspective</li>
+</ul>
+<h3>AI Integration: GSC Data Analysis</h3>
+<p>Export GSC query data monthly. Feed to Claude with: &quot;Identify queries where average position is 4-10 (striking distance of top 3). For each, recommend whether to (a) optimize the existing page, (b) create a dedicated new page, or (c) merge with another page targeting a similar query.&quot;</p>
+<p>This analysis surfaces the highest-ROI optimization opportunities — queries where small improvements in ranking produce significant traffic increases because you&#39;re already close to positions that receive clicks.</p>
+<h3>Schema Markup Generation</h3>
+<p><strong>Schema.org</strong> structured data tells search engines explicitly what your content is about. Implementing schema across hundreds of pages manually is tedious. AI generates it.</p>
+<p>Prompt: &quot;Generate FAQPage schema markup in JSON-LD format for the following questions and answers: [paste FAQ section].&quot;</p>
+<p>Claude produces valid JSON-LD that you paste into the page&#39;s head. Verify with <strong>Google&#39;s Rich Results Test</strong> before deployment. For programmatic sites, the schema generation integrates into the build pipeline — every page gets schema automatically based on its content type and structured data.</p>
+<h2>Layer 4: Monitoring — Tracking Rankings, Traffic, and Competitive Movement</h2>
+<p>Monitoring closes the feedback loop. Without monitoring, you&#39;re optimizing blind — producing content and hoping it ranks without data to guide iteration.</p>
+<h3>Primary Tool: Ahrefs Rank Tracker</h3>
+<p><strong>Ahrefs</strong> Rank Tracker monitors daily position changes for target keywords. Daily granularity reveals ranking volatility (a signal of competitive SERP dynamics) and trend direction (ascending, stable, declining).</p>
+<p>Configuration: Track all target keywords from your content calendar. Group by topical cluster. Set alerts for movement beyond +/- 5 positions. The alerts surface both wins (capitalize on momentum) and losses (diagnose and fix before further decline).</p>
+<h3>AI Integration: Weekly Performance Synthesis</h3>
+<p>Every Monday, I export ranking data and feed it to Claude with: &quot;Analyze this week&#39;s ranking changes. Identify: (1) keywords that improved 5+ positions (what changed?), (2) keywords that declined 5+ positions (what might explain it?), (3) keywords in positions 4-10 that could reach top 3 with optimization. Recommend specific actions for each category.&quot;</p>
+<p>The AI-generated weekly report replaces the manual analysis that most SEO practitioners skip because it takes too long. Skipping the analysis means missing opportunities and failing to catch problems early. Automating it means the analysis happens consistently, every week, with zero additional time investment beyond the 3-minute prompt.</p>
+<h3>Secondary Tool: Google Analytics 4</h3>
+<p><strong>GA4</strong> tracks on-site behavior — how visitors from organic search behave after landing. Bounce rate, session duration, pages per session, conversion events, and attribution modeling.</p>
+<p>AI integration: Export GA4 landing page data monthly. Feed to Claude with: &quot;Identify organic landing pages with above-average traffic but below-average conversion rate. For each, hypothesize why conversion is low and recommend a specific change to test.&quot;</p>
+<p>The output feeds into a CRO (conversion rate optimization) queue — pages that attract visitors but fail to convert them. These pages represent the highest-ROI optimization targets because the traffic already exists; only the on-page experience needs improvement.</p>
+<h2>Implementation: Building the Stack in the Right Order</h2>
+<p>The stack has dependencies. Installing all four layers simultaneously creates configuration chaos. The implementation sequence matters.</p>
+<h3>Week 1: Research Layer</h3>
+<p>Set up <strong>Ahrefs</strong> (or your chosen research tool) first. Without research data, every other layer operates on assumptions. Configure keyword tracking for your existing target terms. Run a content gap analysis against your top 3 competitors. Export the initial keyword universe that will feed content production.</p>
+<p>Build the Claude prompt for research synthesis during this week. Test it against your first keyword export. Iterate the prompt until the topical clustering output matches your strategic judgment. This prompt becomes a permanent asset — invest the time to refine it.</p>
+<h3>Week 2: Writing Layer</h3>
+<p>Configure your content production workflow. Build the drafting prompt with voice specifications, entity requirements, and structural constraints. Test across 5 articles spanning different topic categories. Evaluate output quality and edit each draft to establish your baseline edit time.</p>
+<p>If you&#39;re using <strong>Claude Code</strong>, build the content brief and article expansion skills during this week. The skills encode your writing workflow into repeatable commands that produce consistent output.</p>
+<h3>Week 3: Optimization Layer</h3>
+<p>Run your first <strong>Screaming Frog</strong> crawl. Build the Claude prompt for issue prioritization. Cross-reference crawl findings with <strong>Google Search Console</strong> data to identify the highest-impact technical issues.</p>
+<p>Implement schema markup generation as an automated step in your deployment pipeline. Every new article should deploy with appropriate structured data without manual intervention.</p>
+<h3>Week 4: Monitoring Layer</h3>
+<p>Configure rank tracking for all target keywords. Set up the weekly performance synthesis prompt. Build the GA4 landing page analysis workflow. Establish the monitoring cadence — weekly ranking review, monthly traffic analysis, quarterly strategic assessment.</p>
+<h3>Ongoing: Cross-Layer Integration</h3>
+<p>The layers become more powerful when integrated. Research findings feed writing briefs. Writing output feeds optimization audits (new content needs technical verification). Optimization fixes feed monitoring (track the impact of changes). Monitoring data feeds research (identify new opportunities from performance patterns).</p>
+<p>The integration happens naturally as you run the stack for 2-3 months. By month 3, the workflow feels like a single system rather than four separate tools.</p>
+<h2>Mistakes That Waste Money and Time</h2>
+<h3>Buying Tools You Don&#39;t Use</h3>
+<p>The average SEO professional subscribes to 6-8 tools and actively uses 3. Every unused subscription is wasted budget. Before adding a tool to your stack, define the specific workflow it enables. If you can&#39;t name the workflow, you don&#39;t need the tool.</p>
+<p>Start minimal. <strong>Ahrefs</strong> + <strong>Claude</strong> + <strong>Screaming Frog</strong> + <strong>Google Search Console</strong> covers 90% of operational needs. Add tools only when a specific workflow requirement emerges that existing tools can&#39;t address.</p>
+<h3>Over-Relying on AI Without Verification</h3>
+<p>AI-generated keyword analysis, content briefs, and optimization recommendations are starting points — not final answers. Every AI output in the SEO stack should pass through human verification before influencing strategy.</p>
+<p>The verification doesn&#39;t need to be exhaustive. Spot-check 20% of AI recommendations against your professional judgment. If the spot checks consistently pass, the AI output is reliable for that specific workflow. If you catch errors in more than 10% of spot checks, the prompt needs refinement.</p>
+<h3>Ignoring the Learning Curve</h3>
+<p>Each tool in the stack has a proficiency curve. <strong>Ahrefs</strong> alone has features that take months to master. Trying to learn four layers simultaneously means mastering none of them. Focus on one layer per week during implementation, and allocate 30 minutes daily to tool proficiency during the first month.</p>
+<h2>The Complete Stack and Monthly Costs</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Primary Tool</th>
+<th>Monthly Cost</th>
+<th>AI Integration Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research</td>
+<td>Ahrefs</td>
+<td>$99-$199</td>
+<td>~$10 (Claude API)</td>
+</tr>
+<tr>
+<td>Writing</td>
+<td>Claude</td>
+<td>$20-$100</td>
+<td>Included in Claude sub</td>
+</tr>
+<tr>
+<td>Optimization</td>
+<td>Screaming Frog + GSC</td>
+<td>$22 (SF annual/12) + Free</td>
+<td>~$5 (Claude API)</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>Ahrefs Rank Tracker</td>
+<td>Included in Ahrefs</td>
+<td>~$5 (Claude API)</td>
+</tr>
+</tbody></table>
+<p><strong>Total monthly cost: $146-$326</strong> for a complete SEO stack that produces the throughput of a 3-person team.</p>
+<h2>FAQ</h2>
+<h3>Can I use free alternatives to Ahrefs?</h3>
+<p><strong>Google Search Console</strong> (free), <strong>Google Keyword Planner</strong> (free with Ads account), and <strong>Ubersuggest</strong> (limited free tier) cover basic keyword research. You lose Ahrefs&#39;s backlink index, competitive analysis, and content explorer. For budget-constrained operations, start with free tools and add Ahrefs when revenue justifies the investment. The jump in capability from free tools to Ahrefs is substantial.</p>
+<h3>Is Surfer SEO worth adding to this stack?</h3>
+<p><strong>Surfer SEO</strong> provides content optimization scores based on SERP analysis — suggesting keyword density, content length, and structural elements based on what top-ranking pages contain. For teams that need prescriptive optimization guidance, Surfer adds value. For teams comfortable analyzing SERPs directly and building their own briefs, Surfer duplicates work you&#39;re already doing. I don&#39;t use it because my brief process produces the same output.</p>
+<h3>How do I choose between Claude and ChatGPT for SEO content?</h3>
+<p>Test both with identical prompts and evaluate the outputs. In my testing, <strong>Claude</strong> produces more consistent instruction-following (formatting, entity bolding, structural requirements) while <strong>ChatGPT</strong> produces more creative variation. For systematic content production at scale, consistency matters more than variation. For one-off creative pieces, either works. Use whichever produces output that requires less editing for your specific content type.</p>
+<h3>How often should I update my AI prompts for SEO work?</h3>
+<p>Review prompts monthly. Search algorithms evolve, model capabilities improve, and your understanding of what produces good output deepens with experience. A prompt that produced excellent content briefs in January may need adjustment by March if you&#39;ve noticed patterns in what the AI gets wrong, if Google has released a significant algorithm update, or if your content strategy has shifted. The monthly review takes 30-60 minutes: test each active prompt against a recent use case, evaluate output quality, and adjust constraints or context as needed.</p>
+<h3>What&#39;s missing from this stack?</h3>
+<p>Link building tools. This stack doesn&#39;t include dedicated link building platforms like <strong>Pitchbox</strong>, <strong>BuzzStream</strong>, or <strong>Respona</strong> because my SEO approach prioritizes topical authority over link acquisition. Teams with active link building programs need to add outreach tooling separately. Budget $50-$200/month for link building tools.</p>
+<hr>
+<p><em>Victor Valentine Romo manages SEO operations across six websites using the AI-first stack described here. Total monthly tooling costs: under $500. Monthly content output: 50-80 articles. [Discuss your SEO stack at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/ai-content-pipeline.html">Building an AI Content Pipeline: From Brief to Publish in 45 Minutes</a></li>
+<li><a href="/articles/seo-content-production-at-scale.html">Producing 50+ SEO Articles Per Month Without Burning Out</a></li>
+<li><a href="/articles/claude-code-for-business.html">Claude Code as an Operating System for Business Automation</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

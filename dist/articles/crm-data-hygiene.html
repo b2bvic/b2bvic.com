@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring | B2B Vic</title>
+    <meta name="description" content="A systematic approach to CRM data hygiene — deduplication workflows, tag taxonomy design, and contact scoring models that make your database a revenue asset." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring" />
+    <meta property="og:description" content="A systematic approach to CRM data hygiene — deduplication workflows, tag taxonomy design, and contact scoring models that make your database a revenue asset." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/crm-data-hygiene.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring" />
+    <meta name="twitter:description" content="A systematic approach to CRM data hygiene — deduplication workflows, tag taxonomy design, and contact scoring models that make your database a revenue asset." />
+    <link rel="canonical" href="https://b2bvic.com/articles/crm-data-hygiene.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring",
+      "description": "A systematic approach to CRM data hygiene — deduplication workflows, tag taxonomy design, and contact scoring models that make your database a revenue asset.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/crm-data-hygiene.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring</h1>
+<p>Every sales tool in your stack — your email sequences, your smart lists, your lead scoring, your automated workflows — depends on one thing working: clean data. A CRM with 15,000 contacts and dirty data is 15,000 lies your team makes decisions against. Duplicate records inflate pipeline counts. Inconsistent tags break automated filters. Missing fields disqualify contacts from workflows that would have converted them.</p>
+<p>I inherited a <strong>Follow Up Boss</strong> database with 15,000 contacts, 847 unique tags, 2,300+ duplicate records, and no naming conventions. Fourteen months later, the same database runs on 156 standardized tags, zero duplicates, and a contact scoring model that surfaces the 200 highest-probability prospects every Monday morning. The cleanup produced a 3.2x improvement in lead-to-appointment conversion — not because the leads got better, but because the system stopped losing them.</p>
+<h2>The True Cost of Dirty CRM Data</h2>
+<p>Dirty data doesn&#39;t announce itself. It manifests as symptoms that teams misdiagnose: &quot;our lead sources are getting worse,&quot; &quot;email open rates are declining,&quot; &quot;agents aren&#39;t following up.&quot; The root cause hides in the database.</p>
+<h3>Duplicate Records Fragment Contact History</h3>
+<p>A prospect named Jennifer Martinez submits an inquiry through <strong>Zillow</strong>. A record is created. Two weeks later, she calls the office directly. A second record is created under &quot;Jenny Martinez.&quot; Three months later, she attends an open house and signs in with her email. A third record appears as &quot;J. Martinez.&quot;</p>
+<p>Agent A calls the Zillow record. No answer, leaves voicemail. Agent B calls the phone inquiry record the same day. Jennifer answers, annoyed that she&#39;s getting multiple calls from the same company. Agent C sends a drip email to the open house record. Jennifer unsubscribes because she already spoke to Agent B.</p>
+<p>Three agents. Three records. Three wasted touches. One irritated prospect.</p>
+<p>Multiply this by the 2,300 duplicates we found in our initial audit. The wasted agent hours, the degraded prospect experience, the attribution confusion — each duplicate costs somewhere between $15 and $50 in operational inefficiency. At 2,300 duplicates, that&#39;s $34,500-$115,000 in annual friction.</p>
+<h3>Inconsistent Tags Poison Automated Workflows</h3>
+<p>Before our cleanup, the tag &quot;seller lead&quot; existed in 23 variations. A smart list filtering on <code>tag = &quot;Seller Lead&quot;</code> captured only one variant — missing the 22 others. Agents looking at that smart list believed they had 40 seller leads. They actually had 340. Three hundred seller leads sat outside every automated workflow because their tags didn&#39;t match the filter criteria.</p>
+<p>The agents didn&#39;t know. The team leaders didn&#39;t know. The smart list showed 40, so they worked 40. The other 300 decayed in the database, contacted sporadically or not at all.</p>
+<p>This is how CRM systems become expensive Rolodexes. The automation exists. The contacts exist. The data layer between them is broken.</p>
+<h3>Missing Fields Disqualify Contacts From Revenue-Generating Workflows</h3>
+<p>Our speed-to-lead automation routes leads based on geographic area. The routing rule: if <code>area_tag</code> contains &quot;north-raleigh,&quot; route to Agent Sarah. If <code>area_tag</code> is blank, the lead enters the default round-robin pool.</p>
+<p>In the initial audit, 38% of contacts had no area tag. These weren&#39;t unknown contacts — many had full addresses in their notes field. But the area tag was empty because nobody had a process for populating it. Thirty-eight percent of the database bypassed geographic-intelligent routing and fell into round-robin. The agents best suited to convert those leads never saw them.</p>
+<h2>The Deduplication Playbook</h2>
+<p>Deduplication is the first priority in any cleanup operation. Every other improvement — tags, scoring, automation — gets contaminated by duplicates.</p>
+<h3>Step 1: Identify Duplicate Clusters</h3>
+<p>Duplicates cluster around three matching fields:</p>
+<ol>
+<li><strong>Email match:</strong> Same email across multiple records (highest confidence — email addresses are nearly unique)</li>
+<li><strong>Phone match:</strong> Same phone number across multiple records (high confidence — phone sharing is rare in B2B)</li>
+<li><strong>Name + company match:</strong> Same first name, last name, and associated company (medium confidence — requires manual review for common names)</li>
+</ol>
+<p><strong>Follow Up Boss</strong> has a built-in duplicate detection tool that catches exact email and phone matches. For fuzzy matches — &quot;Jenny&quot; vs. &quot;Jennifer,&quot; &quot;(919) 555-1234&quot; vs. &quot;919.555.1234&quot; — I export the database to <strong>Google Sheets</strong> and run matching formulas that normalize formats before comparison.</p>
+<p>The export-and-match approach found 800+ duplicates that FUB&#39;s built-in tool missed. Fuzzy matching catches the name variations, phone format differences, and email typos that exact matching skips.</p>
+<h3>Step 2: Define Merge Rules</h3>
+<p>When two records merge, which data survives? Without explicit rules, agents make arbitrary choices that destroy information.</p>
+<p><strong>Merge rules we enforce:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Name</td>
+<td>Keep the most complete version (full legal name over nickname)</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Keep all unique emails; mark primary</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>Keep all unique numbers; mark primary</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Keep the earliest source (first attribution)</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>Combine all tags from both records</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>Concatenate all notes with timestamps</td>
+</tr>
+<tr>
+<td>Communication history</td>
+<td>Merge all calls, texts, emails into single timeline</td>
+</tr>
+<tr>
+<td>Agent assignment</td>
+<td>Keep the most recent active assignment</td>
+</tr>
+<tr>
+<td>Stage</td>
+<td>Keep the most advanced pipeline stage</td>
+</tr>
+</tbody></table>
+<p>The &quot;keep everything&quot; philosophy protects against data loss during merge. Tags from both records combine rather than one overwriting the other. Notes concatenate rather than the shorter record disappearing. The merged record should contain more information than either source record alone.</p>
+<h3>Step 3: Execute in Batches</h3>
+<p>Merging 2,300 duplicates in one afternoon is reckless. Errors in merge logic compound — one wrong rule applied to 2,300 records creates 2,300 problems.</p>
+<p>Our cadence:</p>
+<ul>
+<li><strong>Week 1:</strong> Merge exact email matches (highest confidence, lowest risk) — approximately 900 pairs</li>
+<li><strong>Week 2:</strong> Merge exact phone matches not already caught by email — approximately 600 pairs</li>
+<li><strong>Week 3-4:</strong> Review and merge fuzzy matches with manual verification — approximately 800 clusters</li>
+<li><strong>Week 5:</strong> Audit merged records for data integrity (spot-check 10% of merges)</li>
+</ul>
+<p>Each batch gets spot-checked before the next begins. If the week-1 merge introduced errors, we catch them before week-2 compounds the damage.</p>
+<h2>Tag Taxonomy: The Architecture of Findability</h2>
+<p>After deduplication, tag taxonomy is the highest-leverage cleanup task. Tags are how your CRM organizes contacts into actionable groups. Without taxonomy, tags are graffiti — everyone sprays their own on the wall until nobody can read anything.</p>
+<h3>The Naming Convention</h3>
+<p>Every tag follows a <code>category:value</code> format in lowercase with hyphens for multi-word values:</p>
+<ul>
+<li><code>source:zillow</code> (not &quot;Zillow Lead,&quot; &quot;zillow,&quot; &quot;Source - Zillow&quot;)</li>
+<li><code>stage:hot-prospect</code> (not &quot;Hot,&quot; &quot;HP,&quot; &quot;Hot Prospect!!!&quot;)</li>
+<li><code>type:buyer</code> (not &quot;Buyer Lead,&quot; &quot;buyer,&quot; &quot;BUYER&quot;)</li>
+<li><code>area:north-raleigh</code> (not &quot;N Raleigh,&quot; &quot;North Raleigh area,&quot; &quot;NR&quot;)</li>
+</ul>
+<p>The colon separator enables programmatic parsing. Smart lists can filter on <code>source:*</code> to find all source-tagged contacts, or <code>area:north-*</code> to find all northern geographic areas. Consistent formatting turns tags from text labels into structured data.</p>
+<h3>The Tag Category Hierarchy</h3>
+<p>Six categories cover 95% of tagging needs:</p>
+<p><strong>1. Source tags</strong> — How the contact entered the database</p>
+<ul>
+<li><code>source:zillow</code>, <code>source:realtor-com</code>, <code>source:sphere</code>, <code>source:sign-call</code>, <code>source:open-house</code>, <code>source:website</code>, <code>source:referral</code>, <code>source:cold-outreach</code></li>
+</ul>
+<p><strong>2. Stage tags</strong> — Current pipeline position</p>
+<ul>
+<li><code>stage:new</code>, <code>stage:hot-prospect</code>, <code>stage:nurture</code>, <code>stage:active-deal</code>, <code>stage:under-contract</code>, <code>stage:closed</code>, <code>stage:dead</code></li>
+</ul>
+<p><strong>3. Type tags</strong> — Contact classification</p>
+<ul>
+<li><code>type:buyer</code>, <code>type:seller</code>, <code>type:investor</code>, <code>type:renter</code>, <code>type:agent</code>, <code>type:vendor</code>, <code>type:past-client</code></li>
+</ul>
+<p><strong>4. Area tags</strong> — Geographic relevance</p>
+<ul>
+<li><code>area:north-raleigh</code>, <code>area:cary</code>, <code>area:downtown</code>, <code>area:wake-forest</code>, <code>area:durham</code></li>
+</ul>
+<p><strong>5. Behavior tags</strong> — Actions the contact has taken</p>
+<ul>
+<li><code>behavior:website-visit</code>, <code>behavior:open-house-attended</code>, <code>behavior:listing-alert-active</code>, <code>behavior:replied-to-drip</code></li>
+</ul>
+<p><strong>6. System tags</strong> — Operational markers</p>
+<ul>
+<li><code>system:do-not-call</code>, <code>system:bad-email</code>, <code>system:deceased</code>, <code>system:duplicate-review</code>, <code>system:data-incomplete</code></li>
+</ul>
+<h3>Migration: From 847 Tags to 156</h3>
+<p>The migration process:</p>
+<ol>
+<li><strong>Export all tags</strong> with contact counts for each</li>
+<li><strong>Map old tags to new taxonomy</strong> — every existing tag gets mapped to exactly one new tag (many-to-one mapping for consolidation)</li>
+<li><strong>Build a reference spreadsheet</strong> agents can consult during transition</li>
+<li><strong>Apply new tags in bulk</strong> using CRM&#39;s tag management or API</li>
+<li><strong>Remove old tags</strong> only after confirming the new tags populated correctly</li>
+<li><strong>Lock tag creation</strong> — new tags require approval through a request process</li>
+</ol>
+<p>The migration took three weeks of part-time work. The ongoing maintenance takes 30 minutes weekly: reviewing any new tags created, checking for convention violations, and updating the reference spreadsheet.</p>
+<h2>Contact Scoring: Surfacing Revenue-Ready Contacts</h2>
+<p>With clean data and consistent tags, contact scoring becomes reliable. The scoring model assigns numerical values to contact attributes and behaviors, producing a ranked list that tells agents where to spend their time.</p>
+<h3>The Scoring Model</h3>
+<p>Points accumulate across four dimensions:</p>
+<p><strong>Engagement Score (0-40 points)</strong></p>
+<ul>
+<li>Replied to email in last 30 days: +15</li>
+<li>Answered phone call in last 30 days: +20</li>
+<li>Attended open house in last 60 days: +10</li>
+<li>Clicked listing alert in last 14 days: +8</li>
+<li>Visited website in last 7 days: +5</li>
+<li>No engagement in 90+ days: -10</li>
+</ul>
+<p><strong>Fit Score (0-30 points)</strong></p>
+<ul>
+<li>Type matches current campaign focus: +10</li>
+<li>Geographic area in team&#39;s service zone: +10</li>
+<li>Price range matches current inventory: +10</li>
+<li>Source from high-converting channel: +5</li>
+</ul>
+<p><strong>Recency Score (0-20 points)</strong></p>
+<ul>
+<li>Contact created in last 30 days: +20</li>
+<li>Contact created 30-90 days ago: +10</li>
+<li>Contact created 90-180 days ago: +5</li>
+<li>Contact created 180+ days ago: +0</li>
+</ul>
+<p><strong>Completeness Score (0-10 points)</strong></p>
+<ul>
+<li>Has phone number: +3</li>
+<li>Has email: +3</li>
+<li>Has area tag: +2</li>
+<li>Has source tag: +2</li>
+</ul>
+<p>Maximum score: 100. Contacts scoring 70+ appear on the &quot;Priority Call&quot; smart list. Contacts scoring 40-69 appear on the &quot;Active Nurture&quot; list. Below 40: long-term drip only.</p>
+<h3>Scoring in Practice</h3>
+<p>The scoring model runs weekly via a <strong>Google Sheets</strong> export, formula calculation, and re-import of scores. <strong>Follow Up Boss</strong> doesn&#39;t natively support custom scoring, so the workflow bridges the gap:</p>
+<ol>
+<li>Sunday night: Automated export of all active contacts with relevant fields</li>
+<li>Monday morning: <strong>Google Sheets</strong> formulas calculate scores based on field values</li>
+<li>Monday 8 AM: Score results imported back to FUB as a custom field</li>
+<li>Monday 9 AM: Agents pull their &quot;Priority Call&quot; smart list, now ranked by score</li>
+</ol>
+<p>The manual-ish nature of this workflow isn&#39;t ideal. Teams using <strong>HubSpot</strong> or <strong>Salesforce</strong> can build scoring natively. For <strong>Follow Up Boss</strong> users, the weekly export-calculate-import cycle works until the platform adds native scoring.</p>
+<h2>Building a Data Quality Culture</h2>
+<p>Technical cleanup solves the current mess. Culture prevents the next one. Without cultural change, the database re-decays to its pre-cleanup state within 6-12 months because the behaviors that created the mess haven&#39;t changed.</p>
+<h3>Agent Training on Data Entry Standards</h3>
+<p>Every agent on the team completes a 30-minute data entry training session covering:</p>
+<ul>
+<li>How to enter new contacts with complete required fields</li>
+<li>The tag taxonomy and how to select correct tags</li>
+<li>Why duplicate records are damaging (with specific examples from the cleanup)</li>
+<li>How to flag suspected duplicates for review instead of creating new records</li>
+<li>The standard for note-taking (structured format with dates and outcomes, not free-form commentary)</li>
+</ul>
+<p>The training happens during onboarding for new agents and annually for existing agents. Annual refreshers catch standards drift — the gradual loosening of conventions that happens when nobody reinforces them.</p>
+<h3>Error Tracking and Accountability</h3>
+<p>I track data entry errors per agent. When an agent creates a contact with incorrect tags, missing required fields, or duplicate records, the error gets logged:</p>
+<ul>
+<li>Agent name</li>
+<li>Error type (bad tag, missing field, duplicate created, wrong stage)</li>
+<li>Date</li>
+<li>Whether the agent self-corrected or required intervention</li>
+</ul>
+<p>Monthly error rates get discussed in team meetings — not punitively, but as operational data. An agent averaging 3 errors per week needs coaching on the specific error type. An agent averaging zero errors demonstrates the standard everyone should match.</p>
+<p>The error tracking creates a feedback loop: agents who know their data quality is measured produce better data. Agents who believe nobody notices produce whatever is fastest.</p>
+<h3>Automated Data Validation</h3>
+<p>Where possible, automate the enforcement of data standards:</p>
+<ul>
+<li>Required fields on the lead creation form prevent blank records</li>
+<li>Tag dropdowns (where supported) prevent free-text tag creation</li>
+<li>Duplicate detection alerts on email/phone match during new contact creation</li>
+<li>Automated reminders when a contact in &quot;Hot Prospect&quot; stage hasn&#39;t been contacted in 72 hours</li>
+</ul>
+<p>The automation catches errors at the point of creation — before they enter the database and require cleanup. Every error caught at input saves 5-10 minutes of cleanup later.</p>
+<h2>Maintenance: Preventing the Database From Re-Decaying</h2>
+<p>Cleanup without maintenance is temporary. The database re-decays at a predictable rate: roughly 2-3% of contact data becomes stale or inaccurate per month. Email addresses bounce. Phone numbers disconnect. People move, change jobs, change names.</p>
+<h3>The Monthly Hygiene Routine</h3>
+<p>Four tasks, 2-3 hours total:</p>
+<ol>
+<li><p><strong>Bounce and disconnect scan:</strong> Export contacts with hard email bounces or disconnected phone indicators. Tag with <code>system:bad-email</code> or <code>system:bad-phone</code>. Remove from active workflows.</p>
+</li>
+<li><p><strong>Duplicate re-scan:</strong> New duplicates accumulate from ongoing lead generation. Run the matching process monthly to catch new entries before they fragment contact history.</p>
+</li>
+<li><p><strong>Tag audit:</strong> Review any tags created in the past month. Confirm they follow naming conventions. Merge or rename violations.</p>
+</li>
+<li><p><strong>Stage accuracy review:</strong> Pull contacts in &quot;Hot Prospect&quot; stage with no activity in 60+ days. These contacts aren&#39;t hot — they&#39;re stale and need re-evaluation. Either re-engage or downgrade to &quot;Nurture.&quot;</p>
+</li>
+</ol>
+<h3>Annual Deep Clean</h3>
+<p>Once per year, the full audit runs again:</p>
+<ul>
+<li>Complete duplicate scan with fuzzy matching</li>
+<li>Tag taxonomy review and consolidation</li>
+<li>Contact scoring model recalibration (do the weights still predict conversion?)</li>
+<li>Data completeness audit (what percentage of contacts have all critical fields?)</li>
+<li>Dead contact archival (contacts with no engagement in 12+ months, no deal activity)</li>
+</ul>
+<p>The annual deep clean takes 15-20 hours. Skipping it means the monthly maintenance gradually becomes insufficient as accumulated drift exceeds what surface-level checks can catch.</p>
+<h2>FAQ</h2>
+<h3>How long does a full CRM cleanup take?</h3>
+<p>For a database of 10,000-20,000 contacts, expect 80-120 hours spread over 6-8 weeks. The work breaks down roughly as: deduplication (30%), tag taxonomy design and migration (30%), contact scoring model build (20%), documentation and training (20%). Rushing the process introduces errors that cost more to fix than the time saved.</p>
+<h3>Should I clean the CRM myself or hire someone?</h3>
+<p>If your database is under 5,000 contacts and your CRM is <strong>HubSpot</strong> or <strong>Salesforce</strong> with built-in tools, an operations-minded team member can handle it with guidance. Above 5,000 contacts, or in CRMs like <strong>Follow Up Boss</strong> that require more manual workflows, a dedicated database manager or consultant produces faster results with fewer errors. The cost of a consultant ($3,000-$8,000 for a full cleanup) pays back in recovered pipeline within the first quarter.</p>
+<h3>What&#39;s the most common CRM data problem?</h3>
+<p>Duplicate records, by volume and by impact. Duplicates fragment communication history, confuse agents, annoy prospects, and inflate metrics. In every database audit I&#39;ve conducted, duplicates account for 12-18% of total records. Eliminating them produces the largest immediate improvement in CRM usability and automation accuracy.</p>
+<h3>How do I prevent agents from creating rogue tags?</h3>
+<p>Lock tag creation permissions if your CRM supports it. <strong>Salesforce</strong> and <strong>HubSpot</strong> allow admin-only tag/label creation. <strong>Follow Up Boss</strong> doesn&#39;t have granular permissions, so enforcement requires a cultural solution: weekly tag audits plus a documented request process for new tags. When agents see unapproved tags getting cleaned up every week, compliance improves because the path of least resistance becomes following the convention.</p>
+<h3>Does contact scoring work for small databases under 1,000 contacts?</h3>
+<p>Scoring adds marginal value below 1,000 contacts because a skilled rep can mentally triage a small database. The scoring model becomes essential above 3,000 contacts — the point where no human can maintain a mental model of who&#39;s hot, who&#39;s nurturing, and who&#39;s gone cold. Between 1,000 and 3,000, scoring is helpful but not transformative.</p>
+<hr>
+<p><em>Victor Valentine Romo manages CRM data operations for a 37-agent real estate team with 15,000+ contacts. The cleanup methodology described here was developed over 14 months of hands-on database management. [Schedule a CRM audit at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/follow-up-boss-automation.html">Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems</a></li>
+<li><a href="/articles/speed-to-lead-data.html">Why 5-Minute Response Time 10x Your Conversion Rate</a></li>
+<li><a href="/articles/cold-email-that-books-meetings.html">The Cold Email Framework That Books 12+ Meetings Per Month</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

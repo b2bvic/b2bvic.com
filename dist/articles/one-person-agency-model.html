@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running a Profitable One-Person Agency: Tools, Systems, and Pricing | B2B Vic</title>
+    <meta name="description" content="The operating model for a profitable one-person agency — tools, automation systems, pricing strategy, and capacity management. Real numbers from a solo SEO consultancy." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Running a Profitable One-Person Agency: Tools, Systems, and Pricing" />
+    <meta property="og:description" content="The operating model for a profitable one-person agency — tools, automation systems, pricing strategy, and capacity management. Real numbers from a solo SEO consultancy." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/one-person-agency-model.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Running a Profitable One-Person Agency: Tools, Systems, and Pricing" />
+    <meta name="twitter:description" content="The operating model for a profitable one-person agency — tools, automation systems, pricing strategy, and capacity management. Real numbers from a solo SEO consultancy." />
+    <link rel="canonical" href="https://b2bvic.com/articles/one-person-agency-model.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Running a Profitable One-Person Agency: Tools, Systems, and Pricing",
+      "description": "The operating model for a profitable one-person agency — tools, automation systems, pricing strategy, and capacity management. Real numbers from a solo SEO consultancy.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/one-person-agency-model.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Running a Profitable One-Person Agency: Tools, Systems, and Pricing"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Running a Profitable One-Person Agency: Tools, Systems, and Pricing</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Running a Profitable One-Person Agency: Tools, Systems, and Pricing</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Running a Profitable One-Person Agency: Tools, Systems, and Pricing</h1>
+<p>A one-person agency isn&#39;t a freelance practice with aspirations. It&#39;s a deliberately constrained business model where one operator delivers premium services to a small number of clients using systems and automation that would traditionally require a team of 3-5 people. The constraint isn&#39;t a limitation — it&#39;s the competitive advantage. Lower overhead means higher margins. Fewer clients means deeper attention. No employees means no management overhead eating into productive hours.</p>
+<p>I run Scale With Search as a one-person SEO consulting agency. Five retainer clients maximum, $2,500-$8,000 per month per client, zero employees, zero office lease, and margins north of 80% after tool costs. The model works because systems handle the operational complexity that would otherwise require hiring. Remove the systems and you&#39;re back to freelancing — trading hours for dollars with no leverage.</p>
+<h2>The Economics of One</h2>
+<p>Understanding the economics clarifies why the one-person model outperforms traditional agency economics for the operator.</p>
+<h3>Revenue Ceiling and Why It&#39;s Okay</h3>
+<p>Maximum realistic revenue for a one-person agency: $30,000-$50,000 per month. This assumes 4-5 retainer clients at $6,000-$10,000 each, or a larger portfolio of smaller engagements. Above $50,000/month, service quality degrades because the operator is the bottleneck for all high-judgment work.</p>
+<p>Many operators hear &quot;$50K/month ceiling&quot; and want to hire. Consider the alternative math:</p>
+<p><strong>One-person model at $40K/month:</strong></p>
+<ul>
+<li>Revenue: $40,000</li>
+<li>Tool costs: $1,500</li>
+<li>AI/API costs: $400</li>
+<li>Miscellaneous: $600</li>
+<li>Net profit: $37,500 (94% margin)</li>
+<li>Owner take-home: $37,500</li>
+</ul>
+<p><strong>Agency model at $80K/month with 2 employees:</strong></p>
+<ul>
+<li>Revenue: $80,000</li>
+<li>Employee salaries (2): $12,000</li>
+<li>Benefits and taxes: $3,600</li>
+<li>Tool costs: $3,000</li>
+<li>Office/overhead: $2,500</li>
+<li>AI/API costs: $800</li>
+<li>Miscellaneous: $1,500</li>
+<li>Net profit: $56,600 (71% margin)</li>
+<li>Owner take-home after retained earnings: $45,000</li>
+</ul>
+<p>Double the revenue. Twenty percent more take-home. Plus management responsibilities, employment liability, hiring risk, and the constant stress of covering payroll. The one-person model isn&#39;t the path to a $10M agency. It&#39;s the path to a $450K/year lifestyle business with 94% margins and no employees to manage.</p>
+<h3>Capacity Management: The 50-Hour Week</h3>
+<p>My weekly time allocation:</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Hours</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Client deliverables</td>
+<td>25</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Client communication</td>
+<td>5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Business development</td>
+<td>5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>System maintenance</td>
+<td>5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Content production (own brand)</td>
+<td>5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Admin and finance</td>
+<td>3</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>Learning and skill development</td>
+<td>2</td>
+<td>4%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>50</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody></table>
+<p>Client deliverables get 50% of available time. This is the billable work. At 5 clients averaging 5 hours per week each, every client gets genuine attention — not the 1.2 senior hours they&#39;d receive from an agency charging the same rate.</p>
+<p>The 10% for business development isn&#39;t optional even when fully booked. Pipeline development prevents the feast-famine cycle that kills solo operators. When a client churns (and they will, eventually), the replacement should already be in conversation.</p>
+<h2>The Tool Stack That Replaces a Team</h2>
+<p>A one-person agency needs tools that automate coordination, production, and delivery. The wrong tools create more work. The right tools eliminate categories of work entirely.</p>
+<h3>Client Management</h3>
+<p><strong>Notion</strong> — Client workspaces with shared dashboards, project timelines, and document repositories. Each client gets a workspace template with standardized sections: Strategy, Deliverables, Reports, Communication Log. Notion replaces a project manager.</p>
+<p><strong>Calendly</strong> — Scheduling without email ping-pong. Strategy calls, check-ins, and onboarding sessions book against my availability without manual coordination. Calendly replaces an executive assistant for scheduling.</p>
+<p><strong>Slack Connect</strong> — Async communication with clients in dedicated channels. Replaces the status calls that agencies use to justify retainers. A Slack message takes 30 seconds. A status call takes 30 minutes.</p>
+<h3>Production</h3>
+<p><strong>Claude Code</strong> — The operational backbone. Content production, data analysis, report generation, CRM operations, and file management. One AI agent replacing 2-3 task-oriented team members.</p>
+<p><strong>Ahrefs</strong> — SEO research, competitive analysis, rank tracking, and site auditing. One tool covering what agencies spread across 3-4 specialized platforms.</p>
+<p><strong>Screaming Frog</strong> — Technical SEO auditing. The most efficient tool for crawl-based diagnostics.</p>
+<p><strong>Obsidian</strong> — Knowledge management. Client notes, standard operating procedures, templates, and the operational vault that gives Claude Code its institutional memory.</p>
+<h3>Delivery</h3>
+<p><strong>Loom</strong> — Video walkthroughs of deliverables. A 5-minute Loom replacing a 30-minute presentation call. Clients watch on their schedule, rewatch sections they need to reference, and save the video for their team.</p>
+<p><strong>Google Data Studio / Looker Studio</strong> — Automated reporting dashboards. Connect to <strong>Google Search Console</strong>, <strong>Google Analytics</strong>, and <strong>Ahrefs</strong> data. Reports update automatically — no manual slide deck assembly.</p>
+<p><strong>GitHub + Cloudflare Pages</strong> — For clients whose deliverable is a website or technical implementation. Version-controlled code deployed automatically. The client gets a live site, not a specification document.</p>
+<h3>Monthly Tool Cost</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Monthly Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notion</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>Calendly</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>Slack</td>
+<td>Free (Slack Connect)</td>
+</tr>
+<tr>
+<td>Claude (Max or API)</td>
+<td>$100-$200</td>
+</tr>
+<tr>
+<td>Ahrefs</td>
+<td>$99</td>
+</tr>
+<tr>
+<td>Screaming Frog</td>
+<td>$22 (annual/12)</td>
+</tr>
+<tr>
+<td>Obsidian</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Loom</td>
+<td>$15</td>
+</tr>
+<tr>
+<td>Looker Studio</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Cloudflare</td>
+<td>Free tier</td>
+</tr>
+<tr>
+<td>Domain/email</td>
+<td>$15</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>$273-$373</strong></td>
+</tr>
+</tbody></table>
+<p>Under $400/month in tooling. At $25,000/month revenue, tool costs represent 1.5% of revenue. The leverage ratio — revenue per dollar of tool cost — exceeds 60:1.</p>
+<h2>Pricing Strategy: Retainers Over Projects</h2>
+<p>One-person agencies live and die by pricing structure. Project pricing creates revenue volatility. Retainer pricing creates predictable income that enables planning, investment, and stability.</p>
+<h3>Why Retainers Win</h3>
+<p><strong>Predictable revenue:</strong> Five clients at $6,000/month is $30,000/month. Every month. No proposals, no scope creep negotiations, no feast-famine cycles. The predictability alone is worth the occasional month where a client requires more hours than the retainer justifies.</p>
+<p><strong>Relationship depth:</strong> Retainer clients become embedded partnerships. You understand their business, their competitors, their team dynamics, their constraints. This understanding compounds into better recommendations over time. Project clients get your generic best. Retainer clients get your informed best.</p>
+<p><strong>Lower acquisition cost:</strong> Acquiring a new retainer client costs $500-$2,000 in business development time. That client pays $72,000 over a 12-month engagement. Customer acquisition cost is 1-3% of lifetime value. Project clients have acquisition costs of 10-20% of project value because each project requires a new sales cycle.</p>
+<h3>The Pricing Framework</h3>
+<p>Three pricing tiers, each designed for a different client profile:</p>
+<p><strong>Tier 1: Advisory ($2,500/month)</strong></p>
+<ul>
+<li>5 hours/month of strategic consulting</li>
+<li>Monthly strategy session (60 minutes)</li>
+<li>Async Slack access for questions</li>
+<li>Monthly performance report</li>
+<li>Best for: Companies with internal execution capability that need strategic direction</li>
+</ul>
+<p><strong>Tier 2: Strategic ($5,000/month)</strong></p>
+<ul>
+<li>10 hours/month of strategy + oversight</li>
+<li>Bi-weekly strategy sessions</li>
+<li>Content brief development (8-10 briefs/month)</li>
+<li>Technical SEO audit quarterly</li>
+<li>Async Slack access</li>
+<li>Best for: Mid-market companies needing fractional SEO leadership</li>
+</ul>
+<p><strong>Tier 3: Embedded ($8,000/month)</strong></p>
+<ul>
+<li>15 hours/month of strategy + execution</li>
+<li>Weekly strategy sessions</li>
+<li>Full content production management</li>
+<li>Technical implementation oversight</li>
+<li>Competitive monitoring and reporting</li>
+<li>Best for: Companies treating the fractional consultant as their SEO department</li>
+</ul>
+<p>Each tier includes a 6-month minimum commitment. Month-to-month arrangements attract clients who aren&#39;t serious about results and churn before the work produces measurable outcomes. The minimum commitment filters for clients who understand SEO timelines and are committed to the investment.</p>
+<h2>Standard Operating Procedures: The Systems That Scale You</h2>
+<p>Without SOPs, every client engagement is improvised. With SOPs, 80% of the work follows documented processes and only 20% requires creative problem-solving. The SOPs are the force multiplier that prevents the one-person model from becoming a one-person burnout machine.</p>
+<h3>Client Onboarding SOP</h3>
+<p>Every new client follows the same onboarding sequence:</p>
+<ol>
+<li><strong>Day 1:</strong> Welcome email with onboarding checklist, <strong>Notion</strong> workspace invitation, <strong>Slack Connect</strong> channel creation</li>
+<li><strong>Day 1-3:</strong> Access provisioning — <strong>Google Search Console</strong>, <strong>Google Analytics</strong>, CMS access, social profiles</li>
+<li><strong>Day 3-5:</strong> Discovery audit — 4-hour technical and content audit using the <a href="/articles/technical-seo-audit-checklist.html">47-point checklist</a></li>
+<li><strong>Day 5-7:</strong> Strategy document — 90-day roadmap based on audit findings</li>
+<li><strong>Day 7-10:</strong> Kickoff session — Present strategy, confirm priorities, align expectations</li>
+<li><strong>Day 10-14:</strong> First deliverable — Quick win implementation (usually technical fixes or content optimization)</li>
+</ol>
+<p>The quick win in the first two weeks is strategic. It demonstrates immediate value, builds trust, and creates momentum before the longer-term strategy work begins.</p>
+<h3>Monthly Delivery SOP</h3>
+<p>Each client receives the same monthly cycle:</p>
+<ul>
+<li><strong>Week 1:</strong> Performance review + strategy adjustment. Pull data, analyze trends, adjust priorities.</li>
+<li><strong>Week 2-3:</strong> Deliverable production. Content briefs, technical fixes, optimization work, whatever the current strategy requires.</li>
+<li><strong>Week 4:</strong> Reporting + communication. Monthly report via <strong>Looker Studio</strong>, Loom walkthrough of key findings, scheduling next month&#39;s priorities.</li>
+</ul>
+<p>The monthly cycle repeats identically. Clients know what to expect and when. The operator knows what to produce and when. Predictability eliminates the &quot;what should I be doing for this client right now?&quot; paralysis that derails productivity.</p>
+<h3>Offboarding SOP</h3>
+<p>When a client engagement ends (contract completion, budget changes, or mutual decision), a clean offboarding protects the relationship and your reputation:</p>
+<ol>
+<li>Final deliverable — comprehensive documentation of all work performed, strategies implemented, and recommendations for continuation</li>
+<li>Access transfer — all accounts, dashboards, and assets transferred to client ownership</li>
+<li>Knowledge transfer session — 60-minute walkthrough with the client&#39;s internal team or next consultant</li>
+<li>Feedback request — structured questionnaire about the engagement experience</li>
+<li>Referral ask — if the experience was positive, request a testimonial and referral</li>
+</ol>
+<p>A clean offboarding generates more future business than aggressive retention attempts. The client who leaves well refers two others.</p>
+<h2>Growth Without Hiring: Expanding Revenue Within the Model</h2>
+<p>The one-person model has a revenue ceiling, but the ceiling is higher than most operators realize. Three expansion strategies increase revenue without adding headcount.</p>
+<h3>Strategy 1: Productize Your Expertise</h3>
+<p>Transform repeatable consulting deliverables into products. A technical SEO audit that takes you 6 hours and charges $3,000 as a service can become a self-service audit tool, a template kit, or a course that generates revenue without consuming your time.</p>
+<p>I productized content brief creation into a template system and SEO audit methodology into a checklist-based framework. These products generate $1,000-$3,000/month in passive revenue alongside retainer work. The products don&#39;t compete with consulting — they serve the market segment that can&#39;t afford retainer pricing.</p>
+<h3>Strategy 2: Raise Prices Annually</h3>
+<p>The simplest growth strategy: charge more. If your results are documented and your pipeline is full, your pricing is too low. Annual price increases of 10-15% for new clients compound significantly: $5,000/month in year 1 becomes $6,655/month by year 4 at 10% annual increases. Same work. Same hours. Thirty-three percent more revenue.</p>
+<p>Existing clients receive increases after their current commitment period ends. The framing matters: &quot;The rate for new engagements is now $6,000/month. As an existing client, you&#39;ll transition to the new rate at your next renewal.&quot; This respects the relationship while maintaining pricing integrity.</p>
+<h3>Strategy 3: Add Asymmetric Revenue Streams</h3>
+<p>Revenue streams where income isn&#39;t proportional to time invested: affiliate relationships with tools you genuinely recommend, referral fees for introductions to complementary service providers, equity stakes in client businesses (rare but powerful for long-term relationships), and digital assets (websites, content libraries) that generate traffic and ad revenue independently.</p>
+<p>My affiliate income from recommending <strong>Ahrefs</strong>, <strong>Screaming Frog</strong>, and various SaaS tools covers my entire tool stack cost and then some. The recommendations are genuine — I&#39;d recommend these tools regardless. The affiliate layer means the recommendation also generates revenue.</p>
+<h2>The Mindset Shift: From Freelancer to Operator</h2>
+<p>The distinction between freelancing and running a one-person agency is mindset, not legal structure. Freelancers sell time. Operators sell outcomes. Freelancers react to client requests. Operators proactively manage client strategy. Freelancers build skills. Operators build systems.</p>
+<p>The tangible difference: when a freelancer gets sick for a week, revenue stops. When an operator gets sick for a week, automated systems handle email responses, scheduled content publishes on time, reporting dashboards update automatically, and the only thing that pauses is the high-judgment strategic work that can wait.</p>
+<p>Building those systems takes deliberate investment — the 10% of weekly time allocated to system maintenance in the capacity model isn&#39;t optional. It&#39;s the investment that transforms time-for-money into a business that operates even when you don&#39;t.</p>
+<h2>FAQ</h2>
+<h3>How do I get my first retainer clients?</h3>
+<p>Start with project work that converts to retainers. Deliver a one-time audit ($2,000-$5,000) that surfaces enough work to justify ongoing engagement. During the audit presentation, outline the 6-month roadmap that would address everything you found. The roadmap naturally leads to &quot;how much would it cost for you to execute this?&quot; which is your retainer pitch. My first three retainer clients all started as audit projects.</p>
+<h3>What happens when a client needs more hours than the retainer covers?</h3>
+<p>Two options: (1) Absorb occasional overages as relationship investment — if a client needs 12 hours in a month where the retainer covers 10, the 2 extra hours build goodwill that extends the engagement. (2) For systematic overages, propose a tier upgrade with clear justification of additional deliverables. Never silently reduce quality to fit the hours — that&#39;s how retainer clients become former clients.</p>
+<h3>How do I handle scope creep in a one-person model?</h3>
+<p>Document scope explicitly in the engagement agreement. When a request falls outside scope, respond with: &quot;That&#39;s outside our current agreement, but I can handle it two ways — I can add it to next month&#39;s priorities by displacing [specific deliverable], or we can add it as a one-time project at my hourly rate.&quot; This response acknowledges the request, offers solutions, and protects your capacity without confrontation.</p>
+<h3>How do I handle vacations and sick days as a one-person agency?</h3>
+<p>Build buffer into your delivery calendar. Client deliverables are scheduled one week earlier than the actual deadline. This buffer absorbs vacation days, sick days, and unexpected emergencies without clients noticing any delay. For planned vacations (2 weeks annually), front-load deliverables before departure and schedule automated check-in emails via <strong>Slack</strong> or email scheduler. Inform clients 30 days in advance: &quot;I&#39;ll be out [dates]. All deliverables for that period will be completed before I leave, and I&#39;ll have limited email access for urgent items.&quot; Clients respect proactive communication about availability far more than they respect performative always-on availability.</p>
+<h3>Is the one-person model sustainable long-term?</h3>
+<p>If you build the systems, yes. The model is designed for longevity, not sprints. If you rely on willpower and hustle, no. The operators who burn out are the ones who scale by working more hours instead of building better systems. The ones who sustain are the ones who invest 10% of their time in system maintenance — updating SOPs, refining prompts, automating repetitive tasks, and improving the tools that multiply their output.</p>
+<hr>
+<p><em>Victor Valentine Romo runs Scale With Search as a one-person SEO consulting agency. Current capacity: 4/5 retainer clients. Revenue per month: $25,000+. Overhead: under $400/month. [Inquire about availability at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/pricing-consulting-services.html">How to Price Consulting: Hourly vs Retainer vs Value-Based</a></li>
+<li><a href="/articles/client-onboarding-system.html">Client Onboarding That Reduces Churn by 40%</a></li>
+<li><a href="/articles/weekly-review-framework.html">The Weekly Review System That Keeps Solo Operators on Track</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

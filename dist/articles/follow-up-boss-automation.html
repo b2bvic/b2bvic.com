@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems | B2B Vic</title>
+    <meta name="description" content="How to configure Follow Up Boss for maximum automation — smart lists, action plans, lead routing, and speed-to-lead workflows that convert 3x more leads." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems" />
+    <meta property="og:description" content="How to configure Follow Up Boss for maximum automation — smart lists, action plans, lead routing, and speed-to-lead workflows that convert 3x more leads." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/follow-up-boss-automation.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems" />
+    <meta name="twitter:description" content="How to configure Follow Up Boss for maximum automation — smart lists, action plans, lead routing, and speed-to-lead workflows that convert 3x more leads." />
+    <link rel="canonical" href="https://b2bvic.com/articles/follow-up-boss-automation.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems",
+      "description": "How to configure Follow Up Boss for maximum automation — smart lists, action plans, lead routing, and speed-to-lead workflows that convert 3x more leads.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/follow-up-boss-automation.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Follow Up Boss Automation: Smart Lists, Action Plans, and Speed-to-Lead Systems</h1>
+<p><strong>Follow Up Boss</strong> becomes a revenue engine or an expensive Rolodex depending entirely on how you configure it. Most real estate teams use maybe 15% of what FUB offers — contact storage, basic call logging, the occasional drip campaign. Meanwhile, the automation layer sits untouched, and leads die in the database because nobody built the system to surface them at the right moment.</p>
+<p>I manage a 15,000-contact FUB database for a top-producing real estate team in Raleigh. Over 14 months, we&#39;ve built an automation architecture that reduced average speed-to-lead from 47 minutes to under 3, cut agent follow-up gaps from 11 days to 2, and increased lead-to-appointment conversion by 3.2x. The system runs on three pillars: smart lists that surface the right contacts at the right time, action plans that automate sequencing, and lead routing rules that match prospects to agents based on data, not guesswork.</p>
+<h2>Smart Lists: The Heartbeat of a Working Database</h2>
+<p>Smart lists in <strong>Follow Up Boss</strong> are dynamic filters. They repopulate in real time based on conditions you define. A static list is a snapshot — it captures contacts once and fossilizes. A smart list breathes, pulling in new contacts as they meet criteria and releasing them when conditions change.</p>
+<p>The difference between a team that uses smart lists and one that doesn&#39;t is the difference between proactive selling and reactive scrambling.</p>
+<h3>The &quot;Get to Zero&quot; System</h3>
+<p>Every agent on the team has two mandatory smart lists they must clear daily:</p>
+<p><strong>Hot Prospect 30-Day List:</strong></p>
+<ul>
+<li>Criteria: Stage = &quot;Hot Prospect&quot; AND last communication &gt; 2 days AND created within last 30 days</li>
+<li>Purpose: Surfaces hot leads who haven&#39;t heard from their assigned agent in 48+ hours</li>
+<li>Daily requirement: Agent calls or texts every contact on this list before end of shift</li>
+</ul>
+<p><strong>Nurture 90-Day List:</strong></p>
+<ul>
+<li>Criteria: Stage = &quot;Nurture&quot; AND last communication &gt; 7 days AND last activity within 90 days</li>
+<li>Purpose: Prevents nurture contacts from going cold beyond the 7-day window</li>
+<li>Daily requirement: Agent works through the list, making attempts or updating disposition</li>
+</ul>
+<p>The &quot;Get to Zero&quot; directive means the list count must hit zero by end of day. Not &quot;work through most of them.&quot; Zero. The system creates accountability because the numbers are visible — team leaders can check any agent&#39;s smart list count at any time and immediately see who&#39;s falling behind.</p>
+<h3>Building Smart Lists That Actually Drive Action</h3>
+<p>The mistake most FUB users make: building smart lists that are too broad. A list of &quot;all contacts who haven&#39;t been contacted in 30 days&quot; might contain 3,000 records. No agent is working through 3,000 contacts. The list becomes background noise, ignored like every other notification competing for attention.</p>
+<p>Effective smart lists are narrow and actionable. My rule: if a smart list contains more than 30 contacts, the criteria aren&#39;t specific enough.</p>
+<p><strong>Smart List Architecture by Purpose:</strong></p>
+<table>
+<thead>
+<tr>
+<th>List Name</th>
+<th>Criteria</th>
+<th>Target Count</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Speed-to-Lead Alerts</td>
+<td>New lead, uncontacted, &lt; 5 min old</td>
+<td>0-3</td>
+<td>Real-time</td>
+</tr>
+<tr>
+<td>Hot Prospect Follow-Up</td>
+<td>Hot stage, no contact 48+ hours</td>
+<td>5-15</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td>Nurture Re-engagement</td>
+<td>Nurture stage, no contact 7+ days</td>
+<td>10-25</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td>Stale Pipeline</td>
+<td>Active deal, no contact 14+ days</td>
+<td>5-10</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>Birthday/Anniversary</td>
+<td>Key date within 7 days</td>
+<td>3-8</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>Past Client Check-In</td>
+<td>Closed 11-13 months ago</td>
+<td>5-15</td>
+<td>Monthly</td>
+</tr>
+</tbody></table>
+<p>Each list has a clear action associated with it. The agent doesn&#39;t open the list and wonder &quot;what do I do with these?&quot; The list name implies the action. The criteria define the urgency. The target count ensures manageability.</p>
+<h3>Tag Taxonomy: The Foundation Smart Lists Depend On</h3>
+<p>Smart lists filter on fields. If your fields are dirty, your lists are useless. Tag taxonomy — the standardized vocabulary for categorizing contacts — is the unglamorous foundation that makes everything else work.</p>
+<p>We spent three months cleaning our tag system. Before cleanup:</p>
+<ul>
+<li>847 unique tags across 15,000 contacts</li>
+<li>23 variations of &quot;seller lead&quot; (Seller Lead, seller_lead, Seller-Lead, SELLER, Seller lead, SellerLead...)</li>
+<li>Tags created by individual agents with no naming convention</li>
+<li>Duplicate contacts with conflicting tags</li>
+</ul>
+<p>After cleanup:</p>
+<ul>
+<li>156 standardized tags with enforced naming convention</li>
+<li>Source tags: <code>source:zillow</code>, <code>source:realtor.com</code>, <code>source:sphere</code>, <code>source:sign-call</code></li>
+<li>Stage tags mapped to pipeline: <code>stage:new</code>, <code>stage:hot-prospect</code>, <code>stage:nurture</code>, <code>stage:active-deal</code></li>
+<li>Property tags: <code>type:buyer</code>, <code>type:seller</code>, <code>type:investor</code>, <code>type:renter</code></li>
+<li>Geographic tags: <code>area:north-raleigh</code>, <code>area:cary</code>, <code>area:downtown</code></li>
+</ul>
+<p>The naming convention uses lowercase with colons separating category from value. No spaces, no mixed case, no abbreviations. When a new tag is needed, it goes through a request process — no agent creates tags autonomously.</p>
+<p>This discipline sounds bureaucratic until you try to build a smart list filtering on &quot;all seller leads from Zillow in North Raleigh&quot; and discover you need to account for 14 tag variations to capture the same population.</p>
+<h2>Action Plans: Automated Sequencing That Doesn&#39;t Feel Robotic</h2>
+<p><strong>Follow Up Boss</strong> action plans automate communication sequences — emails, texts, and task reminders that trigger based on events or timelines. The automation frees agents from remembering follow-up schedules while maintaining the appearance of personal attention.</p>
+<h3>The New Lead Action Plan (First 72 Hours)</h3>
+<p>The first 72 hours after a lead enters the system determine conversion probability more than anything an agent does in month three. Our new lead action plan fires immediately on lead creation:</p>
+<p><strong>Minute 0:</strong> Automated text — &quot;Hi {first_name}, this is {agent_name} with The Jim Allen Group. I see you were looking at properties in {area}. What&#39;s your timeline for making a move?&quot;</p>
+<p><strong>Minute 2:</strong> Task assigned to agent — &quot;CALL NOW: New lead {first_name} {last_name} from {source}. Phone: {phone}.&quot;</p>
+<p><strong>Minute 5:</strong> If no agent call logged — escalation task to team lead.</p>
+<p><strong>Minute 15:</strong> If still no contact — automated email with value content (neighborhood guide, market report) relevant to their search area.</p>
+<p><strong>Hour 1:</strong> If no agent contact — second text from agent profile: &quot;I don&#39;t want to miss you — would tomorrow morning work better for a quick call?&quot;</p>
+<p><strong>Hour 4:</strong> Task reminder — &quot;Attempt #2 call to {first_name}.&quot;</p>
+<p><strong>Day 2 (9 AM):</strong> Task reminder — &quot;Day 2 follow-up: {first_name} from {source}.&quot;</p>
+<p><strong>Day 3 (2 PM):</strong> Automated email — market insights for their target area.</p>
+<p><strong>Day 7:</strong> If no live contact achieved — lead automatically moves to nurture stage, enters long-term nurture action plan.</p>
+<p>The first five minutes are the most automated and the most critical. The initial text goes out whether the agent is available or not. The call task creates urgency. The escalation at five minutes ensures no lead sits unattended during business hours.</p>
+<h3>Long-Term Nurture: 90-Day Drip Architecture</h3>
+<p>Not every lead is ready to transact. The nurture action plan maintains presence without being annoying. The cadence:</p>
+<ul>
+<li><strong>Week 1-2:</strong> Two touchpoints per week (text + email, alternating)</li>
+<li><strong>Week 3-4:</strong> One touchpoint per week</li>
+<li><strong>Month 2-3:</strong> Bi-weekly touchpoints</li>
+<li><strong>Month 3+:</strong> Monthly market update + quarterly personal check-in</li>
+</ul>
+<p>Content rotates between four categories:</p>
+<ol>
+<li>Market data (new listings, price trends, days on market)</li>
+<li>Educational content (homebuying process, financing options, neighborhood guides)</li>
+<li>Social proof (recent closings, client testimonials)</li>
+<li>Personal touch (holiday messages, local event recommendations)</li>
+</ol>
+<p>The automation handles scheduling and delivery. The agent&#39;s job: when a nurture contact replies or shows activity (opens email, visits website, clicks listing link), the smart list surfaces them for immediate personal follow-up. The system handles the boring consistency. The agent handles the moments that matter.</p>
+<h2>Lead Routing: Matching Prospects to the Right Agent</h2>
+<p>Default lead routing in most CRMs is round-robin — leads distribute evenly regardless of agent expertise, availability, or capacity. Round-robin is fair. Fair is different from effective.</p>
+<h3>Weighted Routing Based on Performance Data</h3>
+<p>Our routing rules consider three factors:</p>
+<p><strong>Speed-to-Lead Score:</strong> Agents who consistently contact leads within 5 minutes get priority routing. The system tracks average response time over 30 days. Agents averaging under 5 minutes get 40% more leads than agents averaging 15+ minutes.</p>
+<p><strong>Conversion Rate by Source:</strong> Some agents convert Zillow leads at 2x the team average. Others excel with sign calls or sphere referrals. Routing matches lead source to agent strength. <strong>Follow Up Boss</strong> doesn&#39;t natively support this level of routing sophistication, so we layer in <strong>Zapier</strong> triggers that evaluate source and assign accordingly.</p>
+<p><strong>Geographic Expertise:</strong> Buyer leads searching North Raleigh neighborhoods route to agents who live in and know North Raleigh. The agent&#39;s familiarity produces better conversations, faster rapport, and higher conversion. Geographic routing overrides round-robin when the lead&#39;s search area matches an agent&#39;s designated territory.</p>
+<h3>Overflow and Escalation Rules</h3>
+<p>What happens when the designated agent doesn&#39;t respond? The system has cascading fallbacks:</p>
+<ul>
+<li><strong>3 minutes:</strong> Alert sent to backup agent</li>
+<li><strong>7 minutes:</strong> Lead reassigned to team leader for immediate contact</li>
+<li><strong>15 minutes:</strong> Automated &quot;warm handoff&quot; text sent from team leader&#39;s profile</li>
+<li><strong>30 minutes:</strong> Lead flagged in the daily accountability report</li>
+</ul>
+<p>These escalation rules exist because speed-to-lead data is unambiguous: a lead contacted within 5 minutes is 21x more likely to convert than one contacted at 30 minutes. Every minute of delay costs money. The escalation system treats uncontacted leads as emergencies, not tasks to get around to.</p>
+<h2>Integrations That Extend FUB&#39;s Native Capabilities</h2>
+<p><strong>Follow Up Boss</strong> is deliberately simple in its core feature set. The power comes from integrations that extend its capabilities without adding complexity to the base system.</p>
+<h3>Zapier Bridges</h3>
+<p><strong>Zapier</strong> connects FUB to tools it doesn&#39;t natively integrate with:</p>
+<ul>
+<li><strong>New lead in FUB → Slack notification</strong> — Team leaders see every new lead in real-time without living inside FUB</li>
+<li><strong>Lead stage change → Google Sheets logging</strong> — Historical stage transition data for pipeline velocity analysis</li>
+<li><strong>Missed call in FUB → SMS via Twilio</strong> — Automated &quot;sorry I missed you&quot; text when an agent doesn&#39;t answer</li>
+<li><strong>Form submission on website → FUB lead creation</strong> — Custom website forms bypass the need for third-party lead capture tools</li>
+</ul>
+<p>Each Zap costs nothing beyond the Zapier subscription. The implementation takes 15-30 minutes per integration. The cumulative effect: FUB becomes the hub of a connected system rather than an isolated contact database.</p>
+<h3>Website Visitor Tracking</h3>
+<p>FUB&#39;s pixel tracking identifies when known contacts visit your website. When Jennifer Martinez — who submitted an inquiry three months ago and went quiet — suddenly visits your listing page, the system can trigger an automatic alert to her assigned agent: &quot;Jennifer is browsing properties again. Call now.&quot;</p>
+<p>Configuring the pixel takes 5 minutes. The behavioral data it produces — who&#39;s browsing, what they&#39;re looking at, how recently — transforms the nurture process from guesswork into data-driven re-engagement.</p>
+<h3>API Workflows for Advanced Operations</h3>
+<p>The <strong>Follow Up Boss API</strong> enables custom operations that neither the native interface nor Zapier can handle. I built API scripts for:</p>
+<ul>
+<li><strong>Bulk tag operations:</strong> Updating hundreds of tags simultaneously during taxonomy migration</li>
+<li><strong>Custom reporting:</strong> Extracting data that FUB&#39;s built-in reports don&#39;t surface (e.g., time between stage transitions per lead source)</li>
+<li><strong>Automated stage management:</strong> Moving contacts between stages based on activity rules more complex than FUB&#39;s native automation supports</li>
+</ul>
+<p>The API is read-only for our current implementation after a 2026 incident where a write operation caused unintended data changes. Read-only API access still enables powerful reporting and analysis workflows without the risk of bulk data modification.</p>
+<h2>Reporting: The Numbers That Expose Problems Before They Metastasize</h2>
+<p><strong>Follow Up Boss</strong> reporting reveals operational health if you build the right dashboards. Default reports show vanity metrics — total calls made, total emails sent. Operational reports show efficiency metrics that predict revenue.</p>
+<h3>The Weekly Accountability Dashboard</h3>
+<p>Five metrics per agent, reviewed every Monday:</p>
+<ol>
+<li><strong>Speed-to-Lead Average:</strong> Target under 5 minutes. Anything above 10 triggers coaching.</li>
+<li><strong>Contact Rate:</strong> Percentage of assigned leads with live conversation within 48 hours. Target: 65%+.</li>
+<li><strong>Smart List Compliance:</strong> Percentage of days the agent cleared &quot;Get to Zero&quot; lists. Target: 90%+.</li>
+<li><strong>Pipeline Velocity:</strong> Average days from lead creation to appointment set. Target: under 14 days.</li>
+<li><strong>Nurture Re-engagement:</strong> Percentage of nurture contacts with touchpoint in last 14 days. Target: 80%+.</li>
+</ol>
+<p>These five metrics surface problems early. An agent whose speed-to-lead average creeps from 4 minutes to 9 minutes isn&#39;t in crisis yet — but the trend line predicts one. A nurture re-engagement rate dropping from 85% to 60% means the agent is abandoning long-term pipeline to chase new leads. The dashboard makes the invisible visible.</p>
+<h3>Data Hygiene Audits: Monthly Maintenance</h3>
+<p>Once monthly, I run a database health audit:</p>
+<ul>
+<li><strong>Duplicate scan:</strong> Identify contacts sharing phone number or email across multiple records</li>
+<li><strong>Stage accuracy:</strong> Contacts in &quot;Hot Prospect&quot; stage with no activity in 60+ days get re-evaluated</li>
+<li><strong>Tag consistency:</strong> New tags created in the month get reviewed against naming convention</li>
+<li><strong>Source attribution:</strong> Leads with missing or incorrect source tags get corrected</li>
+<li><strong>Dead contact removal:</strong> Contacts with hard bounces, disconnected numbers, and explicit opt-outs get archived</li>
+</ul>
+<p>The monthly audit takes 2-3 hours. Skipping it creates compounding data debt. After three months without cleanup, smart list accuracy degrades noticeably. After six months, the lists are producing enough false positives that agents stop trusting them — and once trust breaks, the entire system collapses.</p>
+<h2>FAQ</h2>
+<h3>How long does it take to set up Follow Up Boss automation properly?</h3>
+<p>Full implementation takes 4-6 weeks. Week one: tag taxonomy cleanup and standardization. Week two: smart list architecture design and testing. Week three: action plan creation and trigger configuration. Week four onward: agent training, monitoring, and iteration. The setup is front-loaded — once built, maintenance requires 3-5 hours weekly.</p>
+<h3>Can Follow Up Boss handle teams with 20+ agents?</h3>
+<p>Yes, but complexity scales with headcount. Teams above 15 agents need a dedicated database manager or operations person — someone whose job is system maintenance, not sales. The smart lists, action plans, and routing rules that work for 8 agents need reconfiguration for 25. Without a system owner, larger teams inevitably drift back to using FUB as a basic contact manager.</p>
+<h3>What&#39;s the ROI of Follow Up Boss automation versus manual follow-up?</h3>
+<p>Our team&#39;s data over 14 months: automated workflows produced 3.2x more appointments per lead than manual follow-up alone. The primary driver isn&#39;t the automation itself — it&#39;s the consistency. Manual follow-up has gaps. Agents forget, get busy, prioritize hot leads over nurture contacts. Automation fills those gaps. The 3.2x multiplier represents recovered revenue from leads that would have died in a manual-only system.</p>
+<h3>How does Follow Up Boss compare to other real estate CRMs?</h3>
+<p><strong>Follow Up Boss</strong> excels at speed-to-lead workflows and team accountability features. <strong>kvCORE</strong> offers stronger marketing automation and website integration. <strong>Sierra Interactive</strong> provides better IDX integration. <strong>LionDesk</strong> costs less but lacks FUB&#39;s smart list sophistication. For teams where speed-to-lead and agent accountability are primary concerns, FUB remains the strongest option in the real estate CRM space.</p>
+<hr>
+<p><em>Victor Valentine Romo manages a 15,000-contact Follow Up Boss database for The Jim Allen Group in Raleigh, NC. The automation systems described here generated a 3.2x increase in lead-to-appointment conversion over 14 months. [Schedule a CRM audit at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/crm-data-hygiene.html">CRM Database Cleanup: Deduplication, Tag Taxonomy, and Contact Scoring</a></li>
+<li><a href="/articles/speed-to-lead-data.html">Why 5-Minute Response Time 10x Your Conversion Rate</a></li>
+<li><a href="/articles/cold-email-that-books-meetings.html">The Cold Email Framework That Books 12+ Meetings Per Month</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

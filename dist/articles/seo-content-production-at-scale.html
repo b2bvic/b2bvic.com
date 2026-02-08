@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producing 50+ SEO Articles Per Month Without Burning Out | B2B Vic</title>
+    <meta name="description" content="The production system behind publishing 50+ SEO-optimized articles monthly using AI assistance, content briefs, and batch workflows. Sustainable scale without quality collapse." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Producing 50+ SEO Articles Per Month Without Burning Out" />
+    <meta property="og:description" content="The production system behind publishing 50+ SEO-optimized articles monthly using AI assistance, content briefs, and batch workflows. Sustainable scale without quality collapse." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/seo-content-production-at-scale.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Producing 50+ SEO Articles Per Month Without Burning Out" />
+    <meta name="twitter:description" content="The production system behind publishing 50+ SEO-optimized articles monthly using AI assistance, content briefs, and batch workflows. Sustainable scale without quality collapse." />
+    <link rel="canonical" href="https://b2bvic.com/articles/seo-content-production-at-scale.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Producing 50+ SEO Articles Per Month Without Burning Out",
+      "description": "The production system behind publishing 50+ SEO-optimized articles monthly using AI assistance, content briefs, and batch workflows. Sustainable scale without quality collapse.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/seo-content-production-at-scale.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Producing 50+ SEO Articles Per Month Without Burning Out"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Producing 50+ SEO Articles Per Month Without Burning Out</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Producing 50+ SEO Articles Per Month Without Burning Out</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Producing 50+ SEO Articles Per Month Without Burning Out</h1>
+<p>Publishing 50+ SEO articles per month sounds like a content mill operation. It doesn&#39;t have to be. The difference between a content mill and a scaled content operation is systems — specifically, whether quality gates exist at each stage or whether volume is the only metric.</p>
+<p>I produce 50-80 articles monthly across my own sites and client properties. The aifirstsearch.com launch required 266 pages of original content deployed in a single push. That output isn&#39;t sustainable through manual writing — it requires a production pipeline where AI handles the heavy lifting, humans handle quality control, and systems handle the logistics.</p>
+<p>The pipeline has five stages: research, briefing, drafting, editing, and deployment. Each stage has its own tooling, quality standards, and throughput constraints. Bottleneck any single stage and the entire pipeline stalls. Optimize all five and you produce volume that looks impossible from the outside while maintaining standards that pass editorial review.</p>
+<h2>Stage 1: Research (2 Hours Per 50 Articles)</h2>
+<p>Research at scale means batch keyword research, not individual article ideation. You&#39;re not asking &quot;what should I write about next?&quot; You&#39;re building a prioritized content calendar that represents 3-6 months of production.</p>
+<h3>Batch Keyword Research</h3>
+<p>The research stack:</p>
+<ol>
+<li><strong>Ahrefs</strong> Content Explorer — Surface topics with traffic potential and beatable competition</li>
+<li><strong>Semrush</strong> Keyword Magic Tool — Expand seed keywords into topical clusters</li>
+<li><strong>Google Search Console</strong> — Identify existing ranking opportunities (positions 5-20) worth optimization</li>
+<li><strong>AlsoAsked</strong> — Map question hierarchies for FAQ sections</li>
+<li><strong>Claude</strong> — Generate semantic variations and identify content gaps competitors miss</li>
+</ol>
+<p>The research session produces a spreadsheet with 100-200 target keywords, grouped by topical cluster, prioritized by a composite score of search volume, keyword difficulty, and commercial intent. From this master list, I pull 50-80 keywords per month based on current priorities.</p>
+<p>Time investment: approximately 2 hours produces 3 months of content targets. The upfront research batch eliminates daily &quot;what should I write?&quot; decisions that drain creative energy and introduce inconsistency.</p>
+<h3>Content Gap Analysis</h3>
+<p>Before adding new topics, identify gaps in existing content. <strong>Ahrefs</strong> Content Gap tool reveals keywords your competitors rank for that you don&#39;t. These gaps are production opportunities — the search demand exists, the competitive landscape is mapped, and the user intent is validated by competitor rankings.</p>
+<p>Content gap articles consistently outperform net-new topic articles in my data. The target keyword is proven (competitors rank for it), the user intent is clear (existing SERP shows what Google rewards), and the competitive benchmark is visible (you can see exactly what quality level is needed to rank).</p>
+<h2>Stage 2: Content Briefs (1 Hour Per 10 Briefs)</h2>
+<p>A content brief is the blueprint that transforms a keyword target into a structured article plan. Without briefs, every article requires fresh strategic thinking. With briefs, production becomes execution against a defined spec.</p>
+<h3>Brief Components</h3>
+<p>Each brief contains:</p>
+<ul>
+<li><strong>Target keyword</strong> and 3-5 secondary keywords</li>
+<li><strong>Search intent classification</strong> (informational, commercial, navigational, transactional)</li>
+<li><strong>SERP analysis</strong> — What the top 5 results cover, their word counts, their structural patterns</li>
+<li><strong>Required sections</strong> — H2/H3 outline based on topical coverage gaps in existing SERP results</li>
+<li><strong>Named entities to include</strong> — Specific tools, companies, people, and concepts that signal topical authority</li>
+<li><strong>Internal linking targets</strong> — Existing pages on the site that this article should link to</li>
+<li><strong>FAQ questions</strong> — 3-5 questions sourced from &quot;People Also Ask&quot; and keyword research</li>
+<li><strong>Unique angle</strong> — What this article offers that current SERP results don&#39;t</li>
+</ul>
+<h3>Batch Brief Production</h3>
+<p>I produce briefs in batches of 10, using a templated workflow:</p>
+<ol>
+<li>Pull SERP data for all 10 keywords simultaneously (parallel <strong>Ahrefs</strong> queries)</li>
+<li>Populate brief templates with keyword data, competitor analysis, and structural requirements</li>
+<li>Use <strong>Claude</strong> to generate outline suggestions based on SERP analysis and topical gaps</li>
+<li>Human review each outline — adjust depth, add unique angles, confirm internal link targets</li>
+<li>Finalize all 10 briefs and queue for drafting</li>
+</ol>
+<p>The batch approach produces 10 briefs in approximately 1 hour. Individual brief creation takes 15-20 minutes each — batching reduces context-switching overhead and produces more consistent quality.</p>
+<h2>Stage 3: Drafting (15-25 Minutes Per Article)</h2>
+<p>This is where AI transforms the economics. A 2,500-word article that takes a human writer 4-6 hours to produce takes 15-25 minutes with AI-assisted drafting — 15 minutes for the AI generation pass and 10 minutes for structural review.</p>
+<h3>The Drafting Prompt Architecture</h3>
+<p>AI drafting quality depends entirely on prompt engineering. A generic &quot;write an article about {keyword}&quot; produces generic content that requires extensive rewriting. A structured prompt with voice constraints, content brief integration, and quality guardrails produces a draft that needs editing, not rewriting.</p>
+<p>My drafting prompt includes:</p>
+<ul>
+<li><strong>The full content brief</strong> (injected as context)</li>
+<li><strong>Voice specifications</strong> (first-person, authoritative, no hedging, specific data over generalizations)</li>
+<li><strong>Structural requirements</strong> (H2/H3 hierarchy from the brief, FAQ section, internal link placement)</li>
+<li><strong>Anti-AI-slop rules</strong> (no &quot;in today&#39;s digital landscape,&quot; no &quot;it&#39;s worth noting,&quot; no bullet-point-then-explanation rhythm, no conclusions that restate the introduction)</li>
+<li><strong>Entity requirements</strong> (bold all named entities, include specific tools and companies)</li>
+<li><strong>Word count targets</strong> per section (prevents AI from front-loading content and thinning out toward the end)</li>
+</ul>
+<p><strong>Claude</strong> with this level of prompt specification produces drafts that are 70-80% publication-ready. The remaining 20-30% is editing work — adding personal experience, correcting factual details, tightening prose, and ensuring the voice isn&#39;t slipping into AI defaults.</p>
+<h3>Batch Drafting Sessions</h3>
+<p>I draft in batches of 10-15 articles per session. The batch workflow:</p>
+<ol>
+<li>Load all briefs for the batch</li>
+<li>Generate first drafts sequentially, spending 2-3 minutes per prompt refining as needed</li>
+<li>Quick structural review of each draft (correct section count, adequate word count, entities present)</li>
+<li>Save all drafts to the staging directory</li>
+<li>Queue for editing</li>
+</ol>
+<p>A batch of 15 articles takes approximately 4-5 hours including structural review. That&#39;s 15 articles ready for editing in a single focused session.</p>
+<h2>Stage 4: Editing (20-30 Minutes Per Article)</h2>
+<p>Editing is where human judgment earns its keep. AI generates; humans verify, refine, and authenticate. The editing pass transforms a competent draft into a publishable article.</p>
+<h3>The Three-Pass Editing Process</h3>
+<p><strong>Pass 1: Factual Verification (5-10 minutes)</strong></p>
+<ul>
+<li>Are all statistics cited accurately? (AI confabulates statistics — every number gets verified)</li>
+<li>Are tool names and features current? (SaaS products change rapidly)</li>
+<li>Do internal links point to real, published pages?</li>
+<li>Are named entities correctly identified and bolded?</li>
+</ul>
+<p><strong>Pass 2: Voice Calibration (10-15 minutes)</strong></p>
+<ul>
+<li>Does the article sound like a human expert wrote it?</li>
+<li>Are there AI tells? (predictable rhythm, hedging language, over-explaining basics)</li>
+<li>Is there first-person experience woven through the analysis?</li>
+<li>Does the opening answer the core question directly? (AEO optimization)</li>
+</ul>
+<p><strong>Pass 3: SEO Technical Review (5 minutes)</strong></p>
+<ul>
+<li>Target keyword in H1, first paragraph, and at least one H2?</li>
+<li>Meta description within 150-160 characters and includes target keyword?</li>
+<li>Internal links present (minimum 3 per article)?</li>
+<li>FAQ section structured with clear question-and-answer format?</li>
+<li>Image alt text descriptive and keyword-relevant?</li>
+</ul>
+<p>The three-pass system catches different error types at each stage. Combining all three into a single pass produces oversight — the brain focuses on one type of evaluation at a time more effectively than juggling fact-checking, voice editing, and technical SEO simultaneously.</p>
+<h3>Building an Editing Team</h3>
+<p>At 50+ articles monthly, solo editing becomes the bottleneck. My solution: train one editor on the three-pass system and the voice specifications.</p>
+<p>Editor requirements:</p>
+<ul>
+<li>Subject matter familiarity (they need to catch factual errors)</li>
+<li>AI content detection experience (they need to recognize and fix AI tells)</li>
+<li>SEO fundamentals (they need to verify technical optimization without being told what to check)</li>
+</ul>
+<p>I pay editors $30-$50 per article for the full three-pass review. At 50 articles monthly, editing costs $1,500-$2,500. The alternative — editing everything yourself — caps your production at roughly 20 articles before quality degrades from fatigue.</p>
+<h2>Stage 5: Deployment (5 Minutes Per Article)</h2>
+<p>Deployment is logistics, not creativity. But logistics at scale requires automation or it becomes the hidden time sink that destroys your production schedule.</p>
+<h3>Automated Deployment Pipeline</h3>
+<p>My deployment stack:</p>
+<ol>
+<li><strong>Markdown files</strong> with frontmatter (metadata, slugs, categories) → stored in a GitHub repository</li>
+<li><strong>Build script</strong> that converts markdown to HTML, applies templates, generates sitemaps</li>
+<li><strong>Cloudflare Pages</strong> deployment triggered by git push</li>
+<li><strong>Google Search Console</strong> URL submission via Indexing API</li>
+<li><strong>Internal linking audit</strong> — post-deployment crawl with <strong>Screaming Frog</strong> to verify all internal links resolve</li>
+</ol>
+<p>The pipeline deploys 15-20 articles in a single batch. Push the markdown files, the build script runs, and the pages are live within 3 minutes. Manual deployment of 15 articles — copying to CMS, formatting, setting metadata, submitting to GSC — takes 2-3 hours.</p>
+<h3>Publication Cadence</h3>
+<p>Frequency doesn&#39;t matter to Google. Freshness signals matter. Whether you publish 10 articles on Monday or 2 per day across the week, the SEO impact is equivalent. I publish in weekly batches — 12-15 articles deployed every Monday. The batch approach simplifies production scheduling (research Monday, brief Tuesday, draft Wednesday-Thursday, edit Friday, deploy Monday).</p>
+<h2>Quality at Scale: How to Ensure Article 47 Is as Good as Article 1</h2>
+<p>The greatest risk of scaled production isn&#39;t output volume — it&#39;s quality decay. The first 10 articles get careful attention. Articles 40-50 get produced on fumes. Building quality infrastructure prevents this decay.</p>
+<h3>The Quality Scorecard</h3>
+<p>Every article gets scored against five criteria before publication:</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Weight</th>
+<th>Scoring</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Answers target query in first 2 sentences</td>
+<td>25%</td>
+<td>Yes = full points, No = 0</td>
+</tr>
+<tr>
+<td>Contains unique insight or data</td>
+<td>25%</td>
+<td>Original = full, Derivative = half, Generic = 0</td>
+</tr>
+<tr>
+<td>Voice matches brand specification</td>
+<td>20%</td>
+<td>On-voice = full, Minor drift = half, AI-default = 0</td>
+</tr>
+<tr>
+<td>Technical SEO requirements met</td>
+<td>15%</td>
+<td>All met = full, 1-2 missing = half, 3+ missing = 0</td>
+</tr>
+<tr>
+<td>Proper internal linking</td>
+<td>15%</td>
+<td>3+ relevant links = full, 1-2 = half, 0 = 0</td>
+</tr>
+</tbody></table>
+<p>Articles scoring below 70% go back for revision. In my production data, first-draft articles average 72% (passing but barely), which is why the editing stage exists. Post-edit articles average 88%.</p>
+<h3>The Calibration Read</h3>
+<p>Every 10th article, I do a deep calibration read — reading the article as if I were the target searcher discovering it for the first time. Does it answer my question? Does it hold my attention? Does it make me trust the author? Would I share it?</p>
+<p>The calibration read takes 15 minutes — longer than the standard edit — but it recalibrates my quality intuition. Without periodic calibration, the &quot;acceptable quality&quot; threshold drifts downward because familiarity breeds acceptance.</p>
+<h3>Content Audits at 30 and 90 Days</h3>
+<p>Thirty days post-publication, check whether the article has been indexed and what queries it&#39;s attracting in <strong>Google Search Console</strong>. If the article isn&#39;t indexed after 30 days, something is wrong — thin content, duplicate content, or technical blocking issue.</p>
+<p>Ninety days post-publication, evaluate ranking performance against the target keyword. Articles that haven&#39;t reached positions 1-30 for any relevant query may need content enrichment, additional internal links, or query retargeting. The 90-day audit produces a &quot;refresh list&quot; of underperforming articles that gets prioritized in the next production cycle.</p>
+<h2>Preventing Burnout: The Human Side of Scale</h2>
+<p>Producing 50+ articles monthly is operationally straightforward once the pipeline is built. The burnout risk isn&#39;t in the volume — it&#39;s in the cognitive load of maintaining quality while systems pressure you toward speed.</p>
+<h3>Rotate Topics Weekly</h3>
+<p>Writing about the same subject for 50 articles in a month degrades quality through boredom. I rotate topical clusters weekly:</p>
+<ul>
+<li>Week 1: AI tools cluster (15 articles)</li>
+<li>Week 2: SEO strategy cluster (12 articles)</li>
+<li>Week 3: Sales operations cluster (13 articles)</li>
+<li>Week 4: Business operations cluster (10 articles) + overflow</li>
+</ul>
+<p>The rotation keeps the work intellectually varied. Each week&#39;s cluster benefits from focused immersion — by article 5 in a cluster, the domain knowledge is primed and the writing flows faster. By article 15, diminishing returns set in. Switching clusters at that point refreshes engagement.</p>
+<h3>Batch Social Media Alongside Content</h3>
+<p>Published articles need distribution. Rather than treating social media as a separate workflow, batch social post creation alongside the editing phase. As you edit each article, write a LinkedIn post, a Twitter thread hook, and a newsletter excerpt simultaneously. The article is fresh in your mind — the social content flows naturally. The alternative — returning to 15 articles two weeks later to write social posts — requires rereading each article and produces disjointed promotion.</p>
+<p>My batch: 15 articles produces 15 LinkedIn posts, 15 tweet threads, and 15 newsletter excerpts in an additional 90 minutes. <strong>Claude</strong> handles the initial social content generation from the article; I edit for platform-specific voice and constraints.</p>
+<h3>Protect the Editing Energy</h3>
+<p>Editing requires sharper cognitive function than drafting. I schedule editing sessions in the morning (peak mental clarity) and drafting sessions in the afternoon (creative work tolerates lower energy). Reversing this — editing when tired — produces missed errors that damage quality and require re-editing, wasting more time than the &quot;efficient&quot; scheduling saved.</p>
+<h2>FAQ</h2>
+<h3>Can AI-produced content rank on Google?</h3>
+<p>Yes, if it meets Google&#39;s quality standards. <strong>Google</strong> has stated that AI-generated content is not inherently penalized — content is evaluated on quality, relevance, and helpfulness regardless of production method. The risk is producing generic AI content that doesn&#39;t differentiate from the thousands of other AI-generated pages targeting the same query. The editing pass exists specifically to elevate AI drafts above the commodity threshold.</p>
+<h3>What&#39;s the minimum team size for 50+ articles per month?</h3>
+<p>One person plus AI can produce 50 articles monthly with the pipeline described. The bottleneck is editing time — approximately 25-35 hours monthly at 30 minutes per article. Adding one part-time editor doubles capacity to 100+ articles while keeping the single producer managing research, briefs, and drafting.</p>
+<h3>How do you maintain consistent voice across 50+ articles?</h3>
+<p>The voice specification in the drafting prompt does 80% of the work. The editing pass catches the remaining 20%. Consistency improves over time as your prompt library matures — prompts get refined based on which outputs required the least editing, converging on a specification that reliably produces on-voice drafts.</p>
+<h3>How do I know if my production volume is too high for my domain?</h3>
+<p>Monitor your indexation rate in <strong>Google Search Console</strong>. If fewer than 70% of published articles get indexed within 30 days, you may be exceeding the quality threshold Google expects from your domain. Either the individual article quality needs improvement or the publication volume is triggering quality filters. Reduce volume temporarily, improve article quality, and monitor whether indexation rates recover. A domain with strong topical authority can sustain higher publication rates than a new domain because Google has already established trust in the content quality. For new domains, start with 10-15 articles per month and scale only after achieving consistent 90%+ indexation rates.</p>
+<h3>What&#39;s the cost per article with this system?</h3>
+<p>Fully loaded cost per article: $35-$75. That includes AI API costs ($2-5 per article), editor fees ($30-50 per article), hosting ($0.01 per article amortized), and tool subscriptions ($3-5 per article amortized). Compare to freelance writer rates of $250-$800 per article for equivalent length and quality. The 5-10x cost reduction is the economic engine of scaled content production.</p>
+<hr>
+<p><em>Victor Valentine Romo produces 50-80 SEO articles monthly across personal and client properties. The pipeline described here powered the 266-page launch of aifirstsearch.com. [Discuss content production at scale at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/ai-content-pipeline.html">Building an AI Content Pipeline: From Brief to Publish in 45 Minutes</a></li>
+<li><a href="/articles/topical-authority-strategy.html">How Topical Maps Build Authority Faster Than Link Building</a></li>
+<li><a href="/articles/programmatic-seo-guide.html">Building 200+ Page Sites With Template-Driven Programmatic SEO</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

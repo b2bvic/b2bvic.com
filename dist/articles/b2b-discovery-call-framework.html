@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running Discovery Calls That Qualify Fast and Close Faster | B2B Vic</title>
+    <meta name="description" content="A B2B discovery call framework that qualifies prospects in 15 minutes and sets up a close in the same conversation. Includes scripts, disqualification triggers, and objection handling." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="Running Discovery Calls That Qualify Fast and Close Faster" />
+    <meta property="og:description" content="A B2B discovery call framework that qualifies prospects in 15 minutes and sets up a close in the same conversation. Includes scripts, disqualification triggers, and objection handling." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/b2b-discovery-call-framework.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Running Discovery Calls That Qualify Fast and Close Faster" />
+    <meta name="twitter:description" content="A B2B discovery call framework that qualifies prospects in 15 minutes and sets up a close in the same conversation. Includes scripts, disqualification triggers, and objection handling." />
+    <link rel="canonical" href="https://b2bvic.com/articles/b2b-discovery-call-framework.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Running Discovery Calls That Qualify Fast and Close Faster",
+      "description": "A B2B discovery call framework that qualifies prospects in 15 minutes and sets up a close in the same conversation. Includes scripts, disqualification triggers, and objection handling.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/b2b-discovery-call-framework.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Running Discovery Calls That Qualify Fast and Close Faster"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">Running Discovery Calls That Qualify Fast and Close Faster</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">Running Discovery Calls That Qualify Fast and Close Faster</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>Running Discovery Calls That Qualify Fast and Close Faster</h1>
+<p>A discovery call that runs 45 minutes and ends with &quot;let me think about it&quot; isn&#39;t a discovery call. It&#39;s a consultation you gave away for free. The purpose of discovery isn&#39;t education — it&#39;s triage. Determine fit in 15 minutes, disqualify fast, and for the prospects that qualify, transition into close mechanics in the same conversation.</p>
+<p>I run 12-15 discovery calls monthly for SEO consulting engagements ranging from $2,500 to $8,000 per month. My close rate from discovery to signed proposal sits at 38%. The framework behind that number has three phases: qualification (5 minutes), diagnosis (5 minutes), and prescription with close (5 minutes). Fifteen minutes total. If a call runs past 20 minutes without a clear next step, something broke in the framework.</p>
+<h2>Why Most Discovery Calls Waste Both Parties&#39; Time</h2>
+<p>The default discovery call follows a pattern that feels productive but isn&#39;t. The rep asks open-ended questions for 20 minutes. The prospect talks about their business for 20 minutes. Both parties feel good about the conversation. Then the rep sends a proposal that sits untouched because the prospect never had buying intent — they had curiosity.</p>
+<h3>The &quot;Learn About Your Business&quot; Trap</h3>
+<p>Sales training teaches reps to &quot;understand the prospect&#39;s business before pitching.&quot; Sound advice corrupted into practice. Understanding doesn&#39;t require 25 minutes of exploratory questions about org structure, market positioning, and company history. Understanding requires knowing three things:</p>
+<ol>
+<li>What specific outcome do they want?</li>
+<li>What have they tried that didn&#39;t work?</li>
+<li>What&#39;s the cost of the problem continuing?</li>
+</ol>
+<p>Everything else is conversation filler that makes the rep feel diligent while the prospect grows impatient. B2B buyers in 2026 have done their research before the call. They&#39;ve read your content, checked your case studies, scanned your LinkedIn. They didn&#39;t book a call to explain their business. They booked a call to determine whether you can solve a specific problem.</p>
+<h3>The Demo Disguised as Discovery</h3>
+<p>SaaS sales teams are the worst offenders. The &quot;discovery call&quot; becomes a 30-minute product demo with 5 minutes of questions at the front. The rep asks about pain points only to use them as transition hooks into feature presentations.</p>
+<p>The prospect knows what&#39;s happening. They&#39;ve been on this call before. The result: they stop sharing real information because everything they say becomes ammunition for the pitch. The discovery call degrades into mutual performance — the prospect performing interest, the rep performing expertise.</p>
+<p>Genuine discovery requires holding your solution until you&#39;ve confirmed the problem warrants it. If you&#39;re talking about your product before minute 10, you&#39;re demoing, not discovering.</p>
+<h2>Phase 1: Qualification (Minutes 0-5)</h2>
+<p>The first five minutes determine whether this conversation should continue. Qualification isn&#39;t about gathering information — it&#39;s about filtering. Three questions, asked directly, without small talk.</p>
+<h3>The Three Qualification Questions</h3>
+<p><strong>Question 1: &quot;What specifically prompted you to book this call now?&quot;</strong></p>
+<p>This question reveals trigger events. The answer exposes whether the prospect is actively seeking a solution (high intent) or casually exploring options (low intent). Listen for:</p>
+<ul>
+<li><strong>High intent signals:</strong> &quot;Our current agency&#39;s contract is up next month,&quot; &quot;We just lost our internal SEO person,&quot; &quot;Our CEO saw a competitor outranking us and asked me to fix it by Q3&quot;</li>
+<li><strong>Low intent signals:</strong> &quot;Just doing research,&quot; &quot;My boss asked me to get some quotes,&quot; &quot;We&#39;re thinking about investing in SEO next year&quot;</li>
+</ul>
+<p>Low intent doesn&#39;t mean disqualification. It means adjusting expectations. A &quot;researching for next year&quot; prospect gets a 10-minute call and a follow-up in their buying window, not a 30-minute deep dive today.</p>
+<p><strong>Question 2: &quot;What have you tried so far, and what happened?&quot;</strong></p>
+<p>This eliminates prospects who have unrealistic expectations based on zero experience, and it reveals what approaches have already failed. A prospect who spent $5K/month with an agency for a year and saw no results has context for evaluating your proposal. A prospect who&#39;s never invested in SEO might balk at your pricing regardless of value.</p>
+<p>The answer also surfaces competitive intelligence: which agencies they&#39;ve worked with, what deliverables they received, what they liked and disliked. You don&#39;t need to ask about competitors directly. The prospect tells you through their history of failed solutions.</p>
+<p><strong>Question 3: &quot;If this works exactly as planned, what does that mean for your business in dollar terms?&quot;</strong></p>
+<p>This question establishes value anchor. If the prospect can articulate &quot;$200K in additional pipeline&quot; or &quot;saves me 20 hours per week which I&#39;d spend on revenue activities,&quot; your pricing conversation has a reference frame. If they can&#39;t articulate value, they haven&#39;t built an internal business case and will struggle to get budget approval regardless of how good your solution is.</p>
+<p>A prospect who can&#39;t quantify the value of solving their problem is not ready to buy. They might be ready in 90 days after more pain accumulates. They&#39;re not ready today.</p>
+<h3>Disqualification Triggers</h3>
+<p>Five signals that should end the call within 7 minutes:</p>
+<ol>
+<li><strong>No budget authority:</strong> The person on the call can&#39;t approve spending. Politely ask to include the decision-maker in a follow-up call. Don&#39;t pitch to gatekeepers.</li>
+<li><strong>Timeline mismatch:</strong> They want results in 30 days. SEO doesn&#39;t work that way. Educating them on realistic timelines during a discovery call is charity work.</li>
+<li><strong>Scope mismatch:</strong> They need execution capacity (40 hours/month of content production) and you offer strategic consulting (10 hours/month). Different service category entirely.</li>
+<li><strong>Price anchoring at 10% of your rate:</strong> &quot;We were paying $500/month for SEO.&quot; Your rate is $8,000. The gap is too wide to bridge with value selling.</li>
+<li><strong>No pain:</strong> Everything is fine. Traffic is okay. Revenue is stable. They&#39;re exploring proactively. Admirable, but there&#39;s no urgency driving a buying decision. Nurture them.</li>
+</ol>
+<p>When a disqualification trigger fires, name it directly: &quot;Based on what you&#39;ve shared, I don&#39;t think we&#39;re the right fit for your situation right now. Here&#39;s what I&#39;d recommend instead...&quot; Then give them a genuine recommendation — a lower-cost alternative, a timeline for when to reconsider, a resource they can use in the meantime.</p>
+<p>Direct disqualification earns trust. The prospect tells three colleagues about the consultant who told them not to buy. Two of those colleagues eventually need what you sell.</p>
+<h2>Phase 2: Diagnosis (Minutes 5-10)</h2>
+<p>Qualification confirmed, the prospect passes the filter. Now you diagnose. Diagnosis is not asking more questions — it&#39;s sharing observations that demonstrate expertise while uncovering the specific problem you&#39;ll solve.</p>
+<h3>The &quot;I Already Know&quot; Approach</h3>
+<p>Before the call, you should have spent 10-15 minutes reviewing:</p>
+<ul>
+<li>Their website (architecture, content, technical issues visible in a <strong>Screaming Frog</strong> crawl)</li>
+<li><strong>Google Search Console</strong> patterns if they&#39;ve shared access (or <strong>SimilarWeb</strong> estimates if they haven&#39;t)</li>
+<li>Their top 5 competitors&#39; organic performance</li>
+<li>Recent content published and its ranking trajectory</li>
+</ul>
+<p>Arrive at the call with a preliminary diagnosis. Don&#39;t ask &quot;tell me about your SEO challenges.&quot; Instead, present what you&#39;ve already found:</p>
+<p>&quot;I pulled your site through <strong>Ahrefs</strong> before this call. You&#39;re ranking for about 340 keywords, but 280 of them are positions 11-50 — visible to Google but invisible to searchers. Your blog has 85 posts but no topical clustering, which means each post competes independently instead of building compound authority. And your page speed scores suggest a technical debt problem that&#39;s suppressing crawl efficiency.&quot;</p>
+<p>This approach accomplishes three things simultaneously:</p>
+<ol>
+<li>Demonstrates you did homework (separates you from every other discovery call they&#39;re having)</li>
+<li>Establishes authority (you identified problems they may not have known about)</li>
+<li>Creates urgency (specific, quantified problems feel more actionable than vague &quot;we could do better&quot;)</li>
+</ol>
+<h3>Diagnosis Questions That Surface the Real Problem</h3>
+<p>After presenting your preliminary observations, two targeted questions:</p>
+<p><strong>&quot;Which of these issues is your team most aware of?&quot;</strong></p>
+<p>This reveals internal politics. If the VP Marketing knows about the topical clustering problem but the CEO only cares about page speed, your proposal needs to address both audiences differently. The answer tells you who you&#39;re really selling to and what language they use internally.</p>
+<p><strong>&quot;What would need to happen in the first 90 days for you to consider this investment successful?&quot;</strong></p>
+<p>This question sets measurable expectations before money changes hands. If the prospect says &quot;I want to rank #1 for our main keyword in 90 days,&quot; you can calibrate that expectation immediately. If they say &quot;I want a clear roadmap, the first batch of optimized content live, and measurable improvement in crawl metrics,&quot; you&#39;ve got a realistic buyer.</p>
+<p>The 90-day frame matters. Long enough to demonstrate real progress. Short enough to create accountability. The answer to this question becomes your proposal&#39;s success criteria section, quoted verbatim.</p>
+<h2>Phase 3: Prescription and Close (Minutes 10-15)</h2>
+<p>If the prospect passes qualification and you&#39;ve diagnosed the core problem, you&#39;ve earned the right to prescribe. Prescription is not a pitch. It&#39;s a direct recommendation based on what you learned in the previous ten minutes.</p>
+<h3>The Prescription Formula</h3>
+<p>&quot;Based on what I&#39;ve seen in your site data and what you&#39;ve shared about your goals, here&#39;s what I&#39;d recommend:</p>
+<p><strong>First 30 days:</strong> [specific action] that addresses [specific problem from diagnosis]. This is the highest-leverage move because [reason tied to their stated goal].</p>
+<p><strong>Days 30-60:</strong> [specific action] building on the foundation. This is where [measurable outcome they defined] starts becoming visible.</p>
+<p><strong>Days 60-90:</strong> [specific action]. By this point, you should see [their stated success criteria] materializing in the data.&quot;</p>
+<p>The prescription mirrors their language from the diagnosis phase. If they said &quot;we need topical authority,&quot; your prescription uses that phrase. If they said &quot;our content isn&#39;t driving pipeline,&quot; your prescription frames actions in pipeline terms.</p>
+<h3>The Close: Direct, Not Aggressive</h3>
+<p>&quot;I have availability to start this engagement March 1. The retainer is $X per month for a minimum 6-month commitment. I&#39;ll send a proposal with everything we discussed — the diagnosis, the 90-day roadmap, and the pricing breakdown. If it looks right, we can sign and start onboarding next week.&quot;</p>
+<p>No &quot;what do you think?&quot; No &quot;does this sound interesting?&quot; No &quot;would you like to move forward?&quot; These questions invite hesitation. Instead, state the logistics and assume the next step.</p>
+<p>If the prospect needs more time, they&#39;ll say so. If they have objections, they&#39;ll raise them. Your job is to present the path forward clearly enough that the only response options are &quot;yes,&quot; &quot;I need to discuss with my team,&quot; or &quot;the price doesn&#39;t work.&quot;</p>
+<h3>Handling the Three Common Objections</h3>
+<p><strong>&quot;I need to discuss with my team.&quot;</strong>
+&quot;Absolutely. Who else needs to weigh in? I&#39;d like to set up a 15-minute call with them this week so I can answer their questions directly — it&#39;s usually more efficient than secondhand relay.&quot;</p>
+<p><strong>&quot;The price is higher than expected.&quot;</strong>
+&quot;What were you expecting?&quot; [Listen.] Then: &quot;The gap between $X and $Y usually comes down to the scope of what&#39;s included. Let me walk through what I&#39;d cut at your target budget and what that would mean for the 90-day outcome.&quot;</p>
+<p><strong>&quot;We&#39;re talking to other consultants too.&quot;</strong>
+&quot;Good — you should be. What criteria are you using to decide? I want to make sure my proposal addresses the factors that matter most to your evaluation.&quot;</p>
+<p>None of these responses are defensive. Each moves the conversation forward by collecting information that helps you close or disqualify cleanly.</p>
+<h2>Adapting the Framework for Different Sales Contexts</h2>
+<p>The 15-minute framework scales to different engagement types by adjusting the qualification criteria and prescription specificity.</p>
+<h3>High-Ticket Retainers ($5,000+/month)</h3>
+<p>High-ticket prospects require more trust-building within the same compressed timeframe. The adaptation: your diagnosis phase carries more weight. Arrive with a preliminary audit that demonstrates 30+ minutes of pre-call research. The research investment signals that you take their business seriously, justifying the premium price.</p>
+<p>The close mechanics shift too. High-ticket prospects rarely close on the first call. The discovery call&#39;s objective becomes securing the diagnostic session — a paid 90-minute deep dive ($500-$1,000) that naturally transitions into the retainer conversation. The diagnostic session is a commitment escalation ladder: free discovery call → paid diagnostic → retainer proposal.</p>
+<h3>Low-Ticket Services ($500-$2,000)</h3>
+<p>Below $2,000, the full discovery framework costs more in your time than the engagement justifies. The adaptation: pre-qualify with a form before the call. The form captures the three qualification questions in writing. Only prospects who pass the written filter get a live call. The call itself compresses to 10 minutes: confirm the form answers, present the solution, name the price.</p>
+<h3>Product-Led Sales</h3>
+<p>If you&#39;re selling a product (SaaS, course, template) rather than a service, the discovery call becomes a demonstration with embedded qualification. You&#39;re not diagnosing a custom problem — you&#39;re verifying that the product fits their use case. The three qualification questions still apply: why now, what have you tried, what&#39;s it worth. But the prescription is standardized: &quot;Here&#39;s the product. Here&#39;s how it solves your specific situation. Here&#39;s the price.&quot;</p>
+<h2>The Post-Call System</h2>
+<p>What happens after the call determines whether the 15-minute investment converts into revenue. The post-call system is as structured as the call itself.</p>
+<h3>Within 60 Minutes: Send the Proposal</h3>
+<p>Proposals sent same-day close at 2.4x the rate of proposals sent &quot;early next week&quot; in my data. The prospect&#39;s enthusiasm peaks during and immediately after the call. Every hour that passes without a proposal in their inbox reduces commitment.</p>
+<p>The proposal isn&#39;t a new document. It&#39;s a template populated with:</p>
+<ul>
+<li>Diagnosis (quoted from the call — their words, your observations)</li>
+<li>90-day roadmap (the prescription from Phase 3)</li>
+<li>Success criteria (their answer to the 90-day question)</li>
+<li>Pricing and terms</li>
+<li>Case study matching their industry or problem type</li>
+</ul>
+<p>Template-based proposals sent within 60 minutes. Custom proposals sent three days later. The math favors speed.</p>
+<h3>Day 2: Value-Add Follow-Up</h3>
+<p>Not &quot;checking in on the proposal.&quot; Instead, send something useful: a competitive analysis you didn&#39;t cover on the call, a relevant article, a specific finding from deeper site research. The follow-up demonstrates continued attention without creating pressure.</p>
+<h3>Day 5: Decision Check</h3>
+<p>&quot;I want to respect your timeline — are you still evaluating this week, or has the decision window shifted?&quot;</p>
+<p>Direct, non-needy, and it surfaces whether the deal is alive or stalled. Stalled deals get a reason and a future date. Dead deals get a graceful exit and a note in the CRM for future outreach.</p>
+<h2>FAQ</h2>
+<h3>How do I prepare for a discovery call in under 15 minutes?</h3>
+<p>Five-minute checklist: (1) Run their URL through <strong>Ahrefs</strong> or <strong>Semrush</strong> for organic performance snapshot, (2) check <strong>SimilarWeb</strong> for traffic trends, (3) scan their LinkedIn for recent posts and company announcements, (4) note 2-3 specific observations about their site architecture or content, (5) review their form submission or inquiry notes for context on what prompted outreach. This preparation produces the raw material for the diagnosis phase.</p>
+<h3>What if the prospect wants to keep talking past 15 minutes?</h3>
+<p>Let them. The 15-minute framework is a minimum structure, not a hard cutoff. If the prospect is engaged and moving toward a decision, extend. The framework prevents calls from running 45 minutes without direction — it doesn&#39;t require cutting off a prospect mid-sentence at minute 16.</p>
+<h3>Should I charge for discovery calls?</h3>
+<p>Not for the initial 15-minute qualification call. If a prospect needs a deeper diagnostic session — a 60-minute technical audit or competitive analysis — that&#39;s consulting, not discovery. Price it accordingly ($200-500 for a diagnostic session with deliverable). The diagnostic session often becomes the close mechanism: the deliverable demonstrates your expertise and naturally transitions into a retainer conversation.</p>
+<h3>How do I handle discovery calls for low-ticket offers under $1,000/month?</h3>
+<p>Below $1,000/month, discovery calls are often negative ROI. Your 15 minutes of call time plus 10 minutes of prep plus 30 minutes of proposal work costs you roughly $150-200 in opportunity cost. For low-ticket offers, replace discovery calls with qualifying forms and self-service proposals. Reserve live discovery for engagements above your opportunity cost threshold.</p>
+<hr>
+<p><em>Victor Valentine Romo closes 38% of discovery calls into signed retainers ranging from $2,500 to $8,000/month. The framework above was refined across 200+ B2B sales conversations over 24 months. [Book a discovery call at b2bvic.com/calendar]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/cold-email-that-books-meetings.html">The Cold Email Framework That Books 12+ Meetings Per Month</a></li>
+<li><a href="/articles/pricing-consulting-services.html">How to Price Consulting: Hourly vs Retainer vs Value-Based</a></li>
+<li><a href="/articles/client-onboarding-system.html">Client Onboarding That Reduces Churn by 40%</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,26 +1,18 @@
+/**
+ * Markdown-to-HTML processor for b2bvic.com articles.
+ * Reads Articles/*.md, parses frontmatter, renders to dist/articles/*.html.
+ *
+ * Usage: node scripts/md-to-html.js (standalone) or require('./md-to-html').processArticles()
+ */
+
 const fs = require('fs');
 const path = require('path');
 const { marked } = require('marked');
+const { megaNavHtml, megaNavStyles, megaNavScript, footerHtml, headIncludes, SAME_AS_ARRAY } = require('./shared');
 
 const SKIP_FILES = ['README.md', '_brief.md', '_content-stack.md'];
 const ARTICLES_DIR = path.join(__dirname, '..', 'Articles');
 const DIST_DIR = path.join(__dirname, '..', 'dist', 'articles');
-
-const ENTITY_DOMAINS = [
-  'scalewithsearch.com',
-  'victorvalentineromo.com',
-  'aifirstsearch.com',
-  'browserprompt.com',
-  'creatinepedia.com',
-  'polytraffic.com',
-  'tattooremovalnear.com',
-  'comicstripai.com',
-  'b2bvic.com',
-  'aipaypercrawl.com',
-  'b2bvic.com',
-  'seobyrole.com',
-  'quickfixseo.com'
-];
 
 function parseFrontmatter(content) {
   const meta = {};
@@ -43,30 +35,47 @@ function slugify(filename) {
   return filename.replace(/\.md$/, '');
 }
 
-function buildArticleHTML(title, description, body, slug, date) {
+function escapeAttr(str) {
+  return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function buildArticleHTML(title, description, body, slug, date, keywords) {
   const htmlBody = marked(body);
-  const entityLinks = ENTITY_DOMAINS.map(d => `    <link rel="me" href="https://${d}" />`).join('\n');
 
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": description,
-    "author": {
-      "@type": "Person",
-      "name": "Victor Valentine Romo",
-      "url": "https://victorvalentineromo.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "B2B Vic",
-      "url": "https://b2bvic.com"
-    },
-    "datePublished": date || "2026-01-19",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://b2bvic.com/articles/${slug}.html`
-    }
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "author": {
+          "@type": "Person",
+          "name": "Victor Valentine Romo",
+          "url": "https://victorvalentineromo.com",
+          "jobTitle": "Fractional SEO Consultant",
+          "sameAs": SAME_AS_ARRAY
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "B2B Vic",
+          "url": "https://b2bvic.com"
+        },
+        "datePublished": date || "2026-01-19",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://b2bvic.com/articles/${slug}.html`
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://b2bvic.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://b2bvic.com/articles.html" },
+          { "@type": "ListItem", "position": 3, "name": title }
+        ]
+      }
+    ]
   }, null, 2);
 
   return `<!DOCTYPE html>
@@ -74,69 +83,74 @@ function buildArticleHTML(title, description, body, slug, date) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title} | B2B Vic</title>
-    <meta name="description" content="${description}" />
+    <title>${escapeAttr(title)} | B2B Vic</title>
+    <meta name="description" content="${escapeAttr(description)}" />
     <meta name="author" content="Victor Valentine Romo" />
-    <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="${description}" />
+    <meta property="og:title" content="${escapeAttr(title)}" />
+    <meta property="og:description" content="${escapeAttr(description)}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://b2bvic.com/articles/${slug}.html" />
     <meta property="og:site_name" content="B2B Vic" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${title}" />
-    <meta name="twitter:description" content="${description}" />
+    <meta name="twitter:title" content="${escapeAttr(title)}" />
+    <meta name="twitter:description" content="${escapeAttr(description)}" />
     <link rel="canonical" href="https://b2bvic.com/articles/${slug}.html" />
-${entityLinks}
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              emerald: {
-                50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7',
-                400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857',
-                800: '#065f46', 900: '#064e3b', 950: '#022c22'
-              }
-            }
-          }
-        }
-      }
-    </script>
+${headIncludes}
+    <style>
+${megaNavStyles}
+    </style>
     <script type="application/ld+json">
 ${jsonLd}
     </script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
 
-    <!-- Nav -->
-    <nav class="border-b border-gray-200 bg-white">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold text-slate-600 hover:text-slate-700 transition-colors">B2B Vic</a>
-            <div class="flex gap-6 text-sm font-medium text-gray-600">
-                <a href="/articles.html" class="hover:text-slate-600 transition-colors">Articles</a>
-                <a href="/#about" class="hover:text-slate-600 transition-colors">About</a>
-            </div>
-        </div>
-    </nav>
+${megaNavHtml}
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">${escapeAttr(title)}</span>
+      </nav>
+    </div>
 
     <!-- Article -->
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <article class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-h1:text-3xl prose-h1:font-bold prose-h2:text-2xl prose-h2:font-semibold prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-3 prose-a:text-slate-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-slate-500 prose-blockquote:bg-slate-50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r-lg">
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">${escapeAttr(title)}</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="${date}">${date}</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
             ${htmlBody}
+            </div>
         </article>
 
-        <div class="mt-16 pt-8 border-t border-gray-200">
-            <a href="/articles.html" class="text-slate-600 hover:text-slate-700 font-medium">&larr; All Articles</a>
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-200 bg-gray-50 mt-16">
-        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
-            &copy; 2026 B2B Vic. A <a href="https://scalewithsearch.com" class="text-slate-600 hover:underline">Scale With Search</a> property.
-        </div>
-    </footer>
+${footerHtml}
+
+${megaNavScript}
 
 </body>
 </html>`;
@@ -163,7 +177,7 @@ function processArticles() {
     const date = (meta.date || meta.created || '2026.01.19').replace(/\./g, '-');
     const keywords = meta.keywords || meta.focus_keyword || '';
 
-    const html = buildArticleHTML(title, description, body, slug, date);
+    const html = buildArticleHTML(title, description, body, slug, date, keywords);
     fs.writeFileSync(path.join(DIST_DIR, `${slug}.html`), html);
     console.log(`  Built: articles/${slug}.html`);
 

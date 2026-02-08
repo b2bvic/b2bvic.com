@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse | B2B Vic</title>
+    <meta name="description" content="A production-tested AI content workflow producing 50+ articles weekly at consistent quality. Covers briefing, drafting, editing, and deployment systems." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse" />
+    <meta property="og:description" content="A production-tested AI content workflow producing 50+ articles weekly at consistent quality. Covers briefing, drafting, editing, and deployment systems." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-content-production-workflow.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse" />
+    <meta name="twitter:description" content="A production-tested AI content workflow producing 50+ articles weekly at consistent quality. Covers briefing, drafting, editing, and deployment systems." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-content-production-workflow.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse",
+      "description": "A production-tested AI content workflow producing 50+ articles weekly at consistent quality. Covers briefing, drafting, editing, and deployment systems.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-content-production-workflow.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>The AI Content Production Workflow That Generates 50 Articles Per Week Without Quality Collapse</h1>
+<p>Fifty articles per week sounds like content mill territory. The phrase conjures images of $15 freelancers churning out 500-word filler that ranks for nothing and converts nobody. That assumption is exactly why the workflow described here creates competitive advantage — because most operators dismiss it as impossible at quality, leaving the territory wide open.</p>
+<p>I produce 50+ articles weekly across multiple domains using an AI-driven workflow that maintains editorial standards strict enough for B2B buyers making five- and six-figure purchasing decisions. The system doesn&#39;t depend on a single brilliant prompt or a magic model setting. It depends on architecture — a six-stage pipeline where each stage has explicit inputs, outputs, and quality gates.</p>
+<h2>Why Content Velocity Matters More Than Content Perfection</h2>
+<p>Topical authority in search demands volume. <strong>Google</strong> rewards sites that demonstrate comprehensive coverage of a subject. A site with 15 articles about CRM optimization gets outranked by a site with 200 articles covering every dimension of CRM strategy, implementation, and troubleshooting — even when the 15-article site has better individual pieces.</p>
+<p>This isn&#39;t a theory. I watched it happen with <a href="https://aifirstsearch.com">aifirstsearch.com</a>, a site I built from zero to 266 pages in 30 days. Within six weeks, pages were indexing and ranking for long-tail queries that established competitors with thinner content couldn&#39;t touch. The volume created a topical footprint that search engines interpreted as authority.</p>
+<p>The calculus shifts when you realize that perfection per article matters less than coverage per topic. A 2,800-word article scoring 85/100 on editorial quality, published today, beats a 4,000-word article scoring 98/100 published three months from now. The market doesn&#39;t wait for perfection. Your competitors certainly don&#39;t.</p>
+<h3>The Quality Floor, Not the Quality Ceiling</h3>
+<p>The workflow enforces a quality floor — a minimum standard every article must clear before deployment. Articles below the floor get recycled through editing. Articles above the floor ship. Chasing the ceiling for every piece is how production pipelines stall.</p>
+<p>The quality floor criteria:</p>
+<ul>
+<li>Accurate factual claims with no hallucinated statistics</li>
+<li>Proper keyword targeting in title, H2s, and first 100 words</li>
+<li>Internal links to at least three related articles</li>
+<li>FAQ section with 3-5 questions matching People Also Ask queries</li>
+<li>First-person operator voice — not generic, not academic, not robotic</li>
+<li>Entity bolding for products, tools, and brands mentioned</li>
+<li>Meta description between 150-160 characters</li>
+</ul>
+<p>Every article clearing these seven gates publishes. The 85/100 article that meets all seven gates outperforms the 60/100 article that hallucinated a statistic and forgot internal links.</p>
+<h2>Stage 1: Topical Map and Queue Management</h2>
+<p>Production starts weeks before any article gets drafted. The topical map defines what gets written, in what order, and why.</p>
+<h3>Building the Topical Map</h3>
+<p>A topical map for a B2B site organizes 100-300 articles into clusters around core themes. Each cluster has a pillar article (comprehensive, 3,000+ words) supported by 10-25 spoke articles targeting more specific queries.</p>
+<p>My mapping process:</p>
+<ol>
+<li><strong>Seed keywords</strong> from client conversations, sales calls, and competitor analysis</li>
+<li><strong>Keyword expansion</strong> using <strong>Ahrefs</strong>, <strong>SEMrush</strong>, or <strong>Google Search Console</strong> data</li>
+<li><strong>Intent classification</strong> — each keyword tagged as informational, commercial, or navigational</li>
+<li><strong>Cluster grouping</strong> — keywords grouped by parent topic</li>
+<li><strong>Priority scoring</strong> — articles ranked by: (a) supports existing pillar? (b) commercial intent? (c) keyword difficulty? (d) fills a topical gap?</li>
+</ol>
+<p>The map lives as a markdown file with every article listed: title, slug, target keyword, intent, and internal linking targets. The file serves as the single source of truth for what gets produced and in what order.</p>
+<h3>Queue Management</h3>
+<p>Each week, I pull the next 50 articles from the topical map based on priority score. The queue feeds into the briefing stage. No article enters production without being on the map first — this prevents reactive, unfocused content that doesn&#39;t serve the overall authority strategy.</p>
+<p>The queue rotates across clusters. Instead of producing 50 articles in one cluster (which creates an unnatural publishing pattern), I distribute: 10-12 from cluster A, 8-10 from cluster B, 8-10 from cluster C, and so on. This distributes topical signals across the site evenly.</p>
+<h2>Stage 2: Content Briefing</h2>
+<p>Briefs are the most important artifact in the pipeline. A mediocre article from a strong brief beats a strong article from no brief. The brief constrains the AI&#39;s output space, channeling its generation toward specific structure, keywords, and angles.</p>
+<h3>The Brief Template</h3>
+<p>Every brief contains:</p>
+<p><strong>Target specs:</strong></p>
+<ul>
+<li>Primary keyword and secondary keywords (3-5)</li>
+<li>Search intent (informational, commercial, transactional)</li>
+<li>Target word count (2,400-3,200 for most B2B articles)</li>
+<li>Target audience (job title, industry, problem they&#39;re solving)</li>
+</ul>
+<p><strong>Structural specs:</strong></p>
+<ul>
+<li>Required H2 sections (4-7 per article)</li>
+<li>Required H3 subsections under key H2s</li>
+<li>FAQ questions (pulled from <strong>AlsoAsked</strong> or People Also Ask data)</li>
+<li>Internal linking targets (3 specific articles with slugs)</li>
+</ul>
+<p><strong>Voice specs:</strong></p>
+<ul>
+<li>First-person operator perspective</li>
+<li>No sycophantic openings, no filler phrases, no insight bows</li>
+<li>Bold entity names (<strong>HubSpot</strong>, <strong>Salesforce</strong>, <strong>Claude</strong>)</li>
+<li>Concrete specifics over abstract claims</li>
+</ul>
+<p><strong>Competitive specs:</strong></p>
+<ul>
+<li>Top 3 ranking articles for the target keyword (URLs)</li>
+<li>Gaps in competitor coverage (what they missed that we should include)</li>
+<li>Differentiation angle (what makes our take unique)</li>
+</ul>
+<p>Generating 50 briefs takes 3-4 hours using <a href="/articles/ai-prompt-engineering-seo.html">AI-assisted research workflows</a>. <strong>Claude</strong> handles the keyword expansion, competitor gap analysis, and structural recommendations. I handle the differentiation angle and voice specifications.</p>
+<h2>Stage 3: Drafting</h2>
+<p>Drafting is where AI does the heavy lifting — and where most workflows fail because they give the AI too little guidance or too much freedom.</p>
+<h3>The Constrained Generation Method</h3>
+<p>I don&#39;t prompt the AI with &quot;write an article about X.&quot; That produces generic, interchangeable content that reads like every other AI-generated piece on the internet. The <a href="/articles/observer-protocol-ai-content-voice-homogenization.html">Observer Protocol</a> solves this by constraining every dimension of the output:</p>
+<p><strong>Prompt architecture for each article:</strong></p>
+<ol>
+<li>Load the full brief (target specs, structural specs, voice specs)</li>
+<li>Load 2-3 reference articles from the site for voice matching</li>
+<li>Load the topical map context showing where this article sits in the cluster</li>
+<li>Specify anti-patterns: no bullet-then-explanation rhythm, no sycophancy, no filler tokens</li>
+<li>Request the full article in one generation, not section by section</li>
+</ol>
+<p>Single-generation is key. Section-by-section generation introduces tonal inconsistencies at every join. The article reads like a committee wrote it — because, effectively, multiple generation contexts did. A single generation maintains voice consistency throughout.</p>
+<h3>Model Selection for Drafting</h3>
+<p><strong>Claude Opus</strong> handles all drafting. <strong>Sonnet</strong> and <strong>Haiku</strong> excel at research and verification, but drafting demands the nuance that only the top-tier model delivers. The cost difference is marginal relative to the quality gap. A single Opus-drafted article costs $0.30-$0.80 in API tokens depending on length. At 50 articles, that&#39;s $15-$40 weekly for drafting — less than one hour of freelancer time at market rates.</p>
+<h3>Batch Drafting</h3>
+<p>I draft in batches of 10. Each batch shares a cluster context, which means the AI maintains thematic coherence across related articles. Batch drafting also enables internal link awareness — the AI knows which articles in the batch reference each other and can weave natural cross-references.</p>
+<p>A 10-article batch takes 45-60 minutes of active work: loading briefs, triggering generation, and triaging outputs. The AI handles the 2,500-3,000 words per article. I handle the quality assessment.</p>
+<h2>Stage 4: Editorial Quality Gate</h2>
+<p>Every article passes through a quality gate before deployment. The gate catches the failure modes that AI content production is prone to.</p>
+<h3>The Seven-Point Check</h3>
+<ol>
+<li><p><strong>Factual verification:</strong> Any statistics, data points, or claims checked against source material. AI hallucinates numbers. Every number gets verified or removed.</p>
+</li>
+<li><p><strong>Keyword compliance:</strong> Primary keyword appears in the title, first H2, first 100 words, and meta description. Secondary keywords appear in at least one H2 each.</p>
+</li>
+<li><p><strong>Internal link audit:</strong> Minimum three internal links present, pointing to correct slugs, using natural anchor text (not &quot;click here&quot;).</p>
+</li>
+<li><p><strong>Voice consistency:</strong> Read the opening paragraph. Does it sound like a human operator wrote it, or does it sound like AI? Check for banned phrases: &quot;In today&#39;s landscape,&quot; &quot;It&#39;s worth noting,&quot; &quot;Let me break this down.&quot;</p>
+</li>
+<li><p><strong>Structure compliance:</strong> H2/H3 hierarchy matches the brief. FAQ section present with 3-5 questions. No orphan sections (H3 without a parent H2).</p>
+</li>
+<li><p><strong>Entity formatting:</strong> Brand names, tools, and products bolded on first mention per section.</p>
+</li>
+<li><p><strong>Meta completeness:</strong> Frontmatter populated — title, description (150-160 chars), focus keyword, category, author, date.</p>
+</li>
+</ol>
+<p>Articles failing any check return to the drafting stage with specific revision instructions. Typically, 10-15% of articles need one revision pass. Less than 2% need two passes. Zero articles have required three passes — if an article fails twice, the brief was the problem.</p>
+<h3>Editing Efficiency</h3>
+<p>The quality gate takes 3-5 minutes per article for a trained editor. At 50 articles weekly, that&#39;s 2.5-4 hours of editorial time. This is the irreducible human cost in the workflow — the gate where a person confirms the AI didn&#39;t fabricate, drift, or default to generic patterns.</p>
+<h2>Stage 5: Deployment and Indexing</h2>
+<p>Articles that clear the quality gate enter the deployment pipeline.</p>
+<h3>File Generation</h3>
+<p>Each article deploys as a markdown file with standardized frontmatter. The build system converts markdown to HTML with proper meta tags, <strong>Open Graph</strong> data, and schema markup. Deployment is a git commit and push — the site builds automatically from the repository.</p>
+<h3>Indexing Acceleration</h3>
+<p>Publishing 50 articles weekly requires active indexing management. <strong>Google</strong> doesn&#39;t crawl new pages instantly, and passive indexing can take weeks.</p>
+<p>The indexing protocol:</p>
+<ol>
+<li>Submit new URLs via <strong>Google Search Console</strong> Indexing API</li>
+<li>Internal link each new article from at least one existing indexed page</li>
+<li>Generate and submit an updated sitemap</li>
+<li>Monitor indexing status daily for the first week</li>
+</ol>
+<p>Active indexing management reduces average time-to-index from 2-3 weeks to 2-5 days. For time-sensitive content targeting current trends, this acceleration determines whether the article captures traffic or arrives after the window closes.</p>
+<h2>Stage 6: Performance Monitoring and Feedback</h2>
+<p>The pipeline doesn&#39;t end at publication. Performance data feeds back into the topical map, briefs, and voice calibration.</p>
+<h3>The 30-Day Review</h3>
+<p>Each article gets a performance review 30 days after indexing:</p>
+<ul>
+<li><strong>Indexed?</strong> If not after 30 days, investigate technical issues</li>
+<li><strong>Ranking position</strong> for primary keyword</li>
+<li><strong>Impressions and clicks</strong> from <strong>Google Search Console</strong></li>
+<li><strong>User engagement</strong> — time on page, scroll depth, bounce rate</li>
+</ul>
+<p>Articles ranking on page 2-3 get a content refresh: expanded sections, updated data, additional FAQ questions. Articles ranking on page 1 get left alone. Articles not indexed get a technical audit.</p>
+<h3>Pattern Recognition</h3>
+<p>After 200+ articles through the pipeline, patterns emerge:</p>
+<ul>
+<li>Articles with specific data points rank faster than articles with generic advice</li>
+<li>FAQ sections that mirror exact <strong>People Also Ask</strong> queries earn featured snippets at 3x the base rate</li>
+<li>Articles in tightly-linked clusters outrank isolated articles at every keyword difficulty level</li>
+<li>First-person operational narratives engage longer than third-person instructional content</li>
+</ul>
+<p>These patterns refine every stage of the pipeline. The briefs get sharper. The drafting constraints get tighter. The quality gates evolve. The system improves because it&#39;s designed to learn from its own output.</p>
+<h2>The Economics of AI Content Production</h2>
+<p>The full cost model for 50 articles per week:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Weekly Hours</th>
+<th>Weekly Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Topical map maintenance</td>
+<td>1</td>
+<td>$0 (my time)</td>
+</tr>
+<tr>
+<td>Brief generation</td>
+<td>3-4</td>
+<td>$10-15 (API costs)</td>
+</tr>
+<tr>
+<td>Drafting</td>
+<td>1</td>
+<td>$15-40 (API costs)</td>
+</tr>
+<tr>
+<td>Editorial quality gate</td>
+<td>3-4</td>
+<td>$0 (my time)</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>0.5</td>
+<td>$0 (automated)</td>
+</tr>
+<tr>
+<td>Indexing management</td>
+<td>0.5</td>
+<td>$0 (my time)</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>9-11 hours</strong></td>
+<td><strong>$25-55</strong></td>
+</tr>
+</tbody></table>
+<p>Effective cost per article: $0.50-$1.10. Effective time per article: 11-13 minutes.</p>
+<p>Compare this to traditional content production: a freelance writer producing 2 articles per week at $200-400 per article. To match 50 articles weekly, you&#39;d need 25 freelancers at a cost of $5,000-$10,000 weekly, plus an editor to manage them.</p>
+<p>The AI workflow doesn&#39;t replace quality. It replaces the bottleneck that made quality-at-volume impossible for individual operators and small teams.</p>
+<h2>FAQ</h2>
+<h3>Can AI content rank in Google in 2026?</h3>
+<p><strong>Google</strong> has stated that AI-generated content is not inherently penalized. The ranking criteria remain quality, relevance, and helpfulness — regardless of how the content was produced. In practice, AI content that passes a rigorous editorial quality gate ranks equivalently to human-written content targeting the same keywords. The <a href="/articles/helpful-content-update-b2b.html">Helpful Content Update</a> targets low-value content, not AI content specifically.</p>
+<h3>How do you maintain consistent voice across 50 articles?</h3>
+<p>Voice consistency comes from constraints, not talent. The brief specifies voice parameters. The drafting prompt loads reference articles for style matching. The quality gate checks for voice drift. And the <a href="/articles/observer-protocol-ai-content-voice-homogenization.html">Observer Protocol</a> defines anti-patterns that kill homogenization. The system produces consistent voice because every stage reinforces the same specifications.</p>
+<h3>What AI model do you use for content production?</h3>
+<p><strong>Claude Opus</strong> for all drafting — it handles nuance, first-person voice, and complex argumentation better than any other model I&#39;ve tested. <strong>Claude Sonnet</strong> for research, formatting, and deployment tasks. <strong>ChatGPT</strong> occasionally for competitive analysis where its web browsing capabilities add value. The model matters less than the system around it.</p>
+<h3>How do you handle topics you&#39;re not an expert in?</h3>
+<p>Every article goes through a research phase that pulls from authoritative sources, competitor analysis, and domain-specific data. For topics outside my direct experience, I interview subject matter experts (30-minute calls that inform 5-10 briefs) and cite their insights. The AI synthesizes the research into prose, but the raw inputs come from verified sources.</p>
+<h3>Does this workflow work for regulated industries like healthcare or finance?</h3>
+<p>Regulated industries require an additional compliance review stage between the editorial quality gate and deployment. The AI does not generate medical advice, financial recommendations, or legal guidance without human expert review. For YMYL (Your Money or Your Life) content, the editorial gate expands to include fact-checking against peer-reviewed sources and disclosures where required.</p>
+<hr>
+<p><em>Victor Valentine Romo operates a multi-site SEO content engine producing 200+ articles monthly across B2B verticals. The workflow described here powers <a href="https://aifirstsearch.com">aifirstsearch.com</a> (266 pages), <a href="https://b2bvic.com">b2bvic.com</a>, and four additional domains. [Discuss content production systems at b2bvic.com/services]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/ai-prompt-engineering-seo.html">Custom AI System Prompts That Produce Rankable Content</a></li>
+<li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html">Observer Protocol: Fixing AI Content Voice Homogenization</a></li>
+<li><a href="/articles/ai-content-editing-checklist.html">AI Content Editing Checklist: 23 Patterns That Reveal Machine Text</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

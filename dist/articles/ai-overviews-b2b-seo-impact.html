@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To | B2B Vic</title>
+    <meta name="description" content="How Google AI Overviews are reshaping B2B search strategy. Covers traffic impact, optimization tactics, entity signals, and what replaces Position 1 as the goal." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To" />
+    <meta property="og:description" content="How Google AI Overviews are reshaping B2B search strategy. Covers traffic impact, optimization tactics, entity signals, and what replaces Position 1 as the goal." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-overviews-b2b-seo-impact.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To" />
+    <meta name="twitter:description" content="How Google AI Overviews are reshaping B2B search strategy. Covers traffic impact, optimization tactics, entity signals, and what replaces Position 1 as the goal." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-overviews-b2b-seo-impact.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To",
+      "description": "How Google AI Overviews are reshaping B2B search strategy. Covers traffic impact, optimization tactics, entity signals, and what replaces Position 1 as the goal.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-overviews-b2b-seo-impact.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>AI Overviews and the Death of Position 1: What B2B Marketers Must Adapt To</h1>
+<p>Position 1 in <strong>Google</strong> search results used to mean something concrete: the first organic listing, commanding 28-32% click-through rate, generating the bulk of organic traffic for a given query. That metric is becoming unreliable. <strong>Google AI Overviews</strong> — the AI-generated summary boxes that appear above organic results for an expanding percentage of queries — are intercepting clicks before users reach the traditional results.</p>
+<p>For B2B marketers who&#39;ve spent years and budgets pursuing Position 1, the landscape inversion demands operational adaptation. The goal isn&#39;t dead. The goal has changed. Traffic from Position 1 is declining for certain query types. Traffic from being cited by AI Overviews is emerging as a parallel acquisition channel. Optimizing for both requires different content architectures, different entity signals, and different measurement frameworks.</p>
+<p>I manage organic search strategy across multiple B2B domains. The data patterns I&#39;m observing — and the strategic shifts they require — form the basis of this analysis. This isn&#39;t prediction. It&#39;s operational adjustment informed by six months of AI Overview impact data across sites generating 100-500 monthly organic leads.</p>
+<h2>What AI Overviews Actually Do to B2B Traffic</h2>
+<h3>The Traffic Reallocation Pattern</h3>
+<p>AI Overviews don&#39;t eliminate search traffic uniformly. They redistribute it. Understanding the redistribution pattern determines which content to protect and which to reimagine.</p>
+<p><strong>Queries losing organic CTR to AI Overviews:</strong></p>
+<ul>
+<li>Definitional queries (&quot;what is E-E-A-T,&quot; &quot;CRM definition&quot;)</li>
+<li>Simple how-to queries (&quot;how to set up Google Analytics&quot;)</li>
+<li>Factual lookups (&quot;average B2B sales cycle length&quot;)</li>
+<li>Comparison summaries (&quot;HubSpot vs Salesforce features&quot;)</li>
+</ul>
+<p>These queries get answered sufficiently by the AI Overview. The user reads the summary, gets what they need, and doesn&#39;t click through. For B2B sites that depended on informational traffic from these query types, the volume decline is measurable: 15-40% CTR reduction on queries where AI Overviews appear.</p>
+<p><strong>Queries retaining organic CTR despite AI Overviews:</strong></p>
+<ul>
+<li>Complex evaluation queries (&quot;which CRM is best for my 50-person sales team&quot;)</li>
+<li>Implementation queries (&quot;how to migrate from HubSpot to Salesforce without data loss&quot;)</li>
+<li>Experience-based queries (&quot;is fractional SEO worth it for mid-market companies&quot;)</li>
+<li>Template/framework queries (&quot;B2B content calendar template&quot;)</li>
+</ul>
+<p>These queries require depth, nuance, or downloadable assets that AI Overviews can&#39;t adequately provide. The user reads the summary, determines they need more, and clicks through to the most promising result.</p>
+<h3>The Citation Opportunity</h3>
+<p>AI Overviews cite sources. The citation links appear within or below the AI-generated summary, and they receive clicks — not at the volume of traditional Position 1, but at meaningful rates for B2B where lead quality matters more than traffic volume.</p>
+<p>Getting cited by AI Overviews requires content characteristics that differ from traditional SEO ranking factors:</p>
+<ul>
+<li><strong>Entity clarity:</strong> The content must be unambiguously associated with a recognizable entity (person, brand, product)</li>
+<li><strong>Direct answers:</strong> The content must provide clear, extractable answers to specific questions — not buried in paragraphs of preamble</li>
+<li><strong>Structured data:</strong> <a href="/articles/schema-markup-b2b-strategy.html">Schema markup</a> helps AI systems parse and attribute content</li>
+<li><strong>Authority signals:</strong> Author credentials, publication history, and <a href="/articles/eeat-b2b-websites.html">E-E-A-T signals</a> influence citation selection</li>
+</ul>
+<h2>The Strategic Shift: From Rankings to Signals</h2>
+<h3>Entity SEO Replaces Keyword SEO</h3>
+<p>Traditional keyword SEO optimizes pages for specific search terms. Entity SEO optimizes your entire digital presence to be recognizable to AI systems as an authoritative source on specific topics.</p>
+<p>The distinction matters because AI Overviews don&#39;t rank pages — they synthesize information from entities they recognize as authorities. If <strong>Google</strong>&#39;s <a href="/articles/entity-seo-knowledge-graphs.html">knowledge graph</a> recognizes &quot;Victor Valentine Romo&quot; as an entity associated with &quot;B2B SEO&quot; and &quot;CRM optimization,&quot; content from my properties is more likely to be cited in AI Overviews for those topics.</p>
+<p><strong>Building entity recognition:</strong></p>
+<ol>
+<li><strong>Consistent entity naming</strong> across all digital properties — same name format, same credentials, same bio</li>
+<li><strong>Structured data</strong> on every page — Person schema, Article schema, Organization schema with sameAs links to all properties</li>
+<li><strong>Cross-platform presence</strong> — LinkedIn profile, industry publications, speaking appearances, and owned properties all reinforcing the same topical associations</li>
+<li><strong>Author pages</strong> with credentials, publication history, and expertise qualifiers visible and crawlable</li>
+</ol>
+<h3>Content Architecture for AI Citation</h3>
+<p>AI Overviews extract information from content differently than traditional search indexes. The optimization adjustments:</p>
+<p><strong>Front-load answers.</strong> Traditional SEO content often builds to an answer — providing context, background, and then the actionable information. AI Overviews prefer content that states the answer immediately, then provides supporting context. The inverted pyramid from journalism applies: conclusion first, evidence second, background third.</p>
+<p><strong>Use definitional structures.</strong> Sentences formatted as &quot;[Term] is [definition]&quot; or &quot;[Process] involves [steps]&quot; are extractable. AI systems can parse these structures into summary content. Meandering explanations that never crystallize into a clear statement are harder to extract.</p>
+<p><strong>Provide data density.</strong> Numbers, percentages, timeframes, and costs are AI Overview magnets. &quot;B2B email open rates average 15-25%&quot; is extractable. &quot;B2B email campaigns perform differently depending on various factors&quot; is not.</p>
+<p><strong>Create FAQ sections.</strong> FAQ schemas directly match AI Overview query patterns. A well-structured FAQ section with <a href="/articles/people-also-ask-optimization.html">People Also Ask</a>-aligned questions gives AI systems pre-formatted Q&amp;A pairs to surface.</p>
+<h2>Measuring Impact: Beyond Rankings and Traffic</h2>
+<h3>The New Metric Stack</h3>
+<p>Traditional SEO metrics — organic sessions, keyword rankings, click-through rate — still matter but no longer tell the complete story.</p>
+<p><strong>New metrics to track:</strong></p>
+<p><strong>AI Overview citation frequency:</strong> How often does your content appear as a cited source in AI Overviews? Currently measurable through manual SERP monitoring for target queries. Automated tracking tools are emerging but not yet reliable.</p>
+<p><strong>Brand search lift:</strong> When AI Overviews cite your content, some users search your brand name directly rather than clicking the citation link. Monitor <strong>Google Search Console</strong> for branded query impressions and clicks — increases that correlate with AI Overview presence indicate citation impact.</p>
+<p><strong><a href="/articles/zero-click-search-b2b-strategy.html">Zero-click value</a>:</strong> Brand impressions that don&#39;t produce clicks still produce awareness. A VP Marketing who sees your brand cited in three AI Overviews this week hasn&#39;t visited your site, but your name now occupies mental real estate. This value is real but not directly measurable through analytics — it manifests as higher cold email response rates, faster trust establishment in sales conversations, and more branded searches over time.</p>
+<p><strong>Citation click-through:</strong> When your content is cited in an AI Overview, what percentage of AI Overview impressions produce clicks to your site? This metric reveals the quality of your citation presence — generic mentions produce low CTR; actionable, curiosity-driving citations produce meaningful CTR.</p>
+<h3>Attribution Adjustment</h3>
+<p>Marketing attribution models need updating to account for AI Overview touchpoints. A buyer journey might now look like:</p>
+<ol>
+<li>Prospect searches &quot;best CRM for real estate teams&quot;</li>
+<li>AI Overview summarizes options, citing your comparison article</li>
+<li>Prospect doesn&#39;t click through (zero-click exposure)</li>
+<li>Three days later, prospect searches your brand name</li>
+<li>Prospect visits your site via branded search</li>
+<li>Prospect converts via contact form</li>
+</ol>
+<p>Traditional attribution credits the branded search (last touch) or the comparison article (first touch). Neither captures that the AI Overview citation was the actual influence event. The attribution gap means many organic conversions influenced by AI Overviews appear as &quot;direct&quot; or &quot;branded search&quot; in analytics — making organic SEO look less effective than it actually is.</p>
+<h2>Tactical Adaptations for B2B Sites</h2>
+<h3>Content Type Prioritization</h3>
+<p>Reallocate content production away from query types that AI Overviews answer fully, and toward query types where human-depth content remains essential:</p>
+<p><strong>Reduce investment in:</strong></p>
+<ul>
+<li>Glossary/definition pages</li>
+<li>Simple comparison tables</li>
+<li>Basic how-to content with straightforward steps</li>
+<li>Statistical compilation pages</li>
+</ul>
+<p><strong>Increase investment in:</strong></p>
+<ul>
+<li>Deep implementation guides with expert commentary</li>
+<li>Experience-based analysis with first-person operational data</li>
+<li><a href="/articles/jim-allen-group-seo-case-study.html">Case studies</a> with specific metrics and timelines</li>
+<li>Interactive tools, templates, and frameworks</li>
+<li>Multi-step processes requiring judgment and context</li>
+</ul>
+<h3>Schema Markup Expansion</h3>
+<p>Expand structured data implementation beyond the minimum:</p>
+<ul>
+<li><strong>Article schema</strong> with author, datePublished, dateModified</li>
+<li><strong>Person schema</strong> for author pages with credentials and sameAs links</li>
+<li><strong>FAQ schema</strong> on every article with an FAQ section</li>
+<li><strong>HowTo schema</strong> on instructional content</li>
+<li><strong>Organization schema</strong> on the homepage with sameAs links to all entity properties</li>
+</ul>
+<p>The schema investment pays dividends across both traditional search and AI systems. Structured data makes content machine-parseable — and as search becomes increasingly AI-mediated, machine-parseability determines visibility.</p>
+<h3>Content Refresh Cadence</h3>
+<p>AI Overviews prefer recent, updated content. The recency signal that mildly influenced traditional rankings becomes a stronger factor in AI citation selection. Pages that haven&#39;t been updated in 12+ months are less likely to be cited than recently refreshed pages covering the same topic.</p>
+<p><strong>Refresh protocol:</strong></p>
+<ul>
+<li>Quarterly review of top 50 pages by traffic</li>
+<li>Update statistics, examples, and tool references</li>
+<li>Add new FAQ questions aligned with current People Also Ask data</li>
+<li>Update dateModified in schema markup</li>
+<li>Monitor AI Overview citation rates pre- and post-refresh</li>
+</ul>
+<h2>FAQ</h2>
+<h3>Are AI Overviews killing organic traffic?</h3>
+<p>Not uniformly. They&#39;re reducing click-through on simple informational queries while having minimal impact on complex, evaluation, and implementation queries. For B2B sites where commercial and implementation content drives pipeline, the net impact is a reallocation — not an elimination. The sites losing meaningful traffic are those that depended on informational content for brand awareness without converting that traffic into pipeline.</p>
+<h3>Should I stop creating informational content?</h3>
+<p>No — but adjust its purpose. Informational content builds topical authority that influences both traditional rankings and AI citation selection. The change: don&#39;t count on informational content to drive clicks directly. Instead, measure its contribution to entity recognition, topical authority signals, and internal linking architecture that supports commercial pages.</p>
+<h3>How do I get cited in AI Overviews?</h3>
+<p>Focus on entity strength, content clarity, structured data, and direct answers. Pages that clearly state the answer to a question in the first paragraph, back it with specific data, and are associated with a recognized entity get cited at higher rates. There&#39;s no guaranteed formula — AI Overview citation is probabilistic, not deterministic — but the signals above tilt probability in your favor.</p>
+<h3>Will AI Overviews expand to all search queries?</h3>
+<p>The expansion trajectory suggests broader coverage over time, but complex, subjective, and high-stakes queries will likely retain traditional result formats longer. <strong>Google</strong> has economic incentive to preserve some click-through — their advertising revenue depends on users visiting websites. The equilibrium will likely be AI Overviews for simple queries and traditional results for complex ones, with a gradually expanding middle ground.</p>
+<hr>
+<p><em>Victor Valentine Romo manages organic search strategy across twelve domains, monitoring AI Overview impact on B2B traffic patterns since the feature&#39;s rollout. The adaptations described here are based on six months of operational data. [Discuss AI search strategy at b2bvic.com/services]</em></p>
+<hr>
+<p><strong>Related Reading:</strong></p>
+<ul>
+<li><a href="/articles/zero-click-search-b2b-strategy.html">Zero-Click Search Strategy for B2B: Winning When Nobody Visits</a></li>
+<li><a href="/articles/entity-seo-knowledge-graphs.html">Entity SEO and Knowledge Graphs: Machine-Readable Brand Authority</a></li>
+<li><a href="/articles/ai-search-optimization-guide.html">How to Optimize Content for AI Search Engines</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
