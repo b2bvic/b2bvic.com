@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Train AI on Your Brand Voice (Without Losing Authenticity) | B2B Vic</title>
+    <meta name="description" content="Master AI brand voice training with systematic prompt architecture, example libraries, and validation frameworks that preserve authenticity at scale." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Train AI on Your Brand Voice (Without Losing Authenticity)" />
+    <meta property="og:description" content="Master AI brand voice training with systematic prompt architecture, example libraries, and validation frameworks that preserve authenticity at scale." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/train-ai-brand-voice.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Train AI on Your Brand Voice (Without Losing Authenticity)" />
+    <meta name="twitter:description" content="Master AI brand voice training with systematic prompt architecture, example libraries, and validation frameworks that preserve authenticity at scale." />
+    <link rel="canonical" href="https://b2bvic.com/articles/train-ai-brand-voice.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Train AI on Your Brand Voice (Without Losing Authenticity)",
+      "description": "Master AI brand voice training with systematic prompt architecture, example libraries, and validation frameworks that preserve authenticity at scale.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/train-ai-brand-voice.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Train AI on Your Brand Voice (Without Losing Authenticity)"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">How to Train AI on Your Brand Voice (Without Losing Authenticity)</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">How to Train AI on Your Brand Voice (Without Losing Authenticity)</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-08">2026-02-08</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>How to Train AI on Your Brand Voice (Without Losing Authenticity)</h1>
+<p>Brand voice consistency fractures when teams scale. One writer captures your directness. Another defaults to corporate hedging. AI amplifies this problem—until you architect voice as a system, not a style guide buried in Google Docs.</p>
+<p>Training AI on brand voice isn&#39;t about feeding it adjectives like &quot;conversational&quot; or &quot;professional.&quot; It&#39;s about encoding decision patterns: when you use second person, how you structure authority claims, which metaphors recur, what qualifiers you strip. This guide maps the architecture.</p>
+<h2>Why Brand Voice Training Fails (And How to Fix It)</h2>
+<p>Most brand voice attempts collapse into one of three failure modes:</p>
+<p><strong>Vague directive poisoning.</strong> &quot;Write in a friendly, professional tone&quot; generates nothing. AI interprets &quot;friendly&quot; through training data—which means customer service scripts and lifestyle blogs. Your brand voice isn&#39;t an average of the internet.</p>
+<p><strong>Example starvation.</strong> A single before/after pair doesn&#39;t establish patterns. AI needs volume to extract rules. Ten examples start to surface structure. Thirty crystallize it.</p>
+<p><strong>Validation blindness.</strong> Without measurable criteria, every output &quot;feels close enough.&quot; You need rejection rules: prohibited phrases, banned constructions, structural red flags that signal drift.</p>
+<p>Voice training operates through three mechanisms: <strong>pattern libraries</strong> (what it looks like), <strong>constraint architecture</strong> (what it avoids), <strong>validation gates</strong> (how you measure). Build all three or watch consistency evaporate under production load.</p>
+<h2>Building a Pattern Library from Existing Content</h2>
+<p>Your brand voice already exists in artifacts: emails, proposals, recorded calls, published content. Extract it systematically.</p>
+<h3>Audit Your Best Performers</h3>
+<p>Identify 15-20 pieces of content that <em>sound like you</em>. Not your most viral posts—your most <strong>authentic</strong> ones. The email that closed the deal. The blog post customers quote back. The proposal that didn&#39;t require revisions.</p>
+<p>Read them aloud. Mark sentences that carry your fingerprint. You&#39;re hunting for:</p>
+<ul>
+<li><strong>Sentence rhythm.</strong> Do you front-load context or dive straight to claims? Long sentences with embedded clauses, or staccato declarations?</li>
+<li><strong>Authority structure.</strong> How do you introduce credentials? &quot;I&#39;ve worked with 47 B2B SaaS companies&quot; vs. &quot;In my experience&quot; vs. unstated expertise that emerges through specificity.</li>
+<li><strong>Transition mechanics.</strong> Do you use conjunctions, rhetorical questions, or direct topic shifts?</li>
+<li><strong>Metaphor families.</strong> Architecture language (scaffold, foundation, framework), physical systems (heartbeat, circulation), conflict (battle, friction, resistance)?</li>
+</ul>
+<p>Document 30+ examples with <strong>context annotations</strong>: &quot;When introducing a contrarian opinion, I front-load credentials then state the claim.&quot; Not just the sentence—the <em>situation</em> that triggered it.</p>
+<h3>Extract Anti-Patterns (What You Never Do)</h3>
+<p>Voice definition is 50% negative space. List prohibited constructions:</p>
+<ul>
+<li>Hedge phrases: &quot;It&#39;s worth noting,&quot; &quot;Generally speaking,&quot; &quot;In most cases&quot;</li>
+<li>Qualifier stacking: &quot;We&#39;re really quite focused on...&quot;</li>
+<li>Passive constructions: &quot;It was determined that...&quot; instead of &quot;We determined...&quot;</li>
+<li>Corporate euphemisms: &quot;Synergistic alignment,&quot; &quot;Best-in-class,&quot; &quot;Thought leadership&quot;</li>
+<li>Question loops: Multiple rhetorical questions per paragraph</li>
+</ul>
+<p>Build a <strong>rejection library</strong>. When AI output contains these markers, it failed—regardless of content accuracy.</p>
+<h3>Create Contrast Pairs</h3>
+<p>AI learns faster from <strong>before/after transformations</strong> than from standalone examples. Take generic content and rewrite it in your voice. Show the delta.</p>
+<p><strong>Generic:</strong> &quot;Our platform helps businesses improve their customer engagement through data-driven insights.&quot;</p>
+<p><strong>Your voice:</strong> &quot;Most CRM dashboards bury the signal. We surface the three metrics that predict churn 14 days out.&quot;</p>
+<p>Annotate what changed: vague value prop → specific outcome, passive helping verb → active prediction, corporate speak → concrete claim. Build 20+ pairs across different content types (intro paragraphs, CTAs, objection handling, feature descriptions).</p>
+<h2>Encoding Voice as Prompt Architecture</h2>
+<p>Pattern libraries feed prompt systems. Transform observations into executable instructions.</p>
+<h3>System-Level Voice Injection</h3>
+<p>Most teams drop voice guidelines into user prompts. Wrong layer. Voice belongs in <strong>system instructions</strong>—the context that persists across every request.</p>
+<p>Structure system prompts in three sections:</p>
+<p><strong>1. Core Voice Identity</strong> (50-100 words)
+Define the essence: &quot;You write like a systems architect explaining infrastructure to engineers. Direct, specific, zero hedging. You name exact tools, cite precise metrics, and strip qualifiers. When others say &#39;best practice,&#39; you say &#39;this works because.&#39;&quot;</p>
+<p><strong>2. Structural Rules</strong> (bullet list)</p>
+<ul>
+<li>Second person for instructions, first for experience claims</li>
+<li>Lead with the payoff, then justify</li>
+<li>One idea per sentence, three sentences max per paragraph</li>
+<li>Bold entity names and key metrics</li>
+<li>No rhetorical questions in opening paragraphs</li>
+</ul>
+<p><strong>3. Prohibited Constructions</strong> (explicit list)
+List the anti-patterns from your rejection library verbatim. AI responds better to &quot;Never write &#39;It&#39;s worth noting&#39;&quot; than &quot;Avoid filler phrases.&quot;</p>
+<p>System prompts establish baseline. Individual requests add context.</p>
+<h3>Request-Level Refinement</h3>
+<p>Each generation request includes:</p>
+<p><strong>Closest example match.</strong> &quot;Write this like the [specific artifact] from the pattern library.&quot; Reference exact documents, not categories. &quot;Write like the proposal that closed [ClientName]&quot; beats &quot;Write like our proposals.&quot;</p>
+<p><strong>Specific constraints.</strong> &quot;Use manufacturing metaphors. Keep authority unstated. Lead with the objection.&quot; Narrow the possibility space.</p>
+<p><strong>Output format specification.</strong> &quot;Five H2 sections, 300 words each, one bold stat per section, two internal links minimum.&quot; Structure is part of voice.</p>
+<p>Layer system-level consistency with request-level precision. Generic voice + specific context = authentic output.</p>
+<h3>Multi-Shot Example Injection</h3>
+<p>For high-stakes content (sales pages, key articles, pitch decks), inject 3-5 <strong>full examples</strong> of the target format into the request context.</p>
+<p>Not summaries. Not links. Actual text. Show the AI three complete introductions from past proposals. It&#39;ll extract patterns you didn&#39;t consciously know you followed—sentence length variance, parenthetical aside frequency, how you build to claims.</p>
+<p>This balloons token usage but collapses revision cycles. One authentic first draft beats five rounds of &quot;make it sound more like me.&quot;</p>
+<h2>Validation Frameworks That Catch Voice Drift</h2>
+<p>AI output quality degrades silently. Validation must be <strong>systematic</strong>, not vibes-based editorial review.</p>
+<h3>Automated Voice Scoring</h3>
+<p>Build a lightweight scoring rubric tied to measurable criteria:</p>
+<p><strong>Lexical density</strong> (tokens per idea): Count unique meaningful words vs. filler. If your voice targets 65% density and output scores 48%, it&#39;s hedging or repeating.</p>
+<p><strong>Sentence length distribution</strong>: Plot sentence lengths. Your voice might cluster 12-18 words with occasional 30+ word constructions. AI defaults to 15-20 word uniformity. Distribution shape = voice fingerprint.</p>
+<p><strong>Forbidden phrase detection</strong>: Grep for rejection library terms. &quot;It&#39;s important to note&quot; presence = instant revision flag.</p>
+<p><strong>Metaphor family adherence</strong>: If you use systems metaphors (architecture, circulation, networks), flag biological or military metaphors as drift.</p>
+<p>Run outputs through automated checks before human review. This catches mechanical failure (wrong constraints applied) vs. judgment failure (constraints correct but results still off).</p>
+<h3>Comparison Sampling</h3>
+<p>Periodically generate the same content brief <strong>with and without voice training</strong>. Compare outputs side-by-side:</p>
+<ul>
+<li>Which one ships without edits?</li>
+<li>Which one you&#39;d send to a client unchanged?</li>
+<li>Where does voice-trained output still drift?</li>
+</ul>
+<p>Document specific drift patterns. &quot;AI defaults to &#39;helping businesses&#39; framing instead of direct outcome claims.&quot; Feed that observation back into system prompts or anti-pattern lists.</p>
+<p>Voice training is <strong>iterative</strong>. Each drift pattern refines constraints.</p>
+<h3>Human Validation Protocol</h3>
+<p>Editors need rejection criteria, not vague &quot;this feels off&quot; instincts.</p>
+<p><strong>Pass/fail gates:</strong></p>
+<ol>
+<li>Contains zero prohibited phrases (rejection library)</li>
+<li>Matches sentence rhythm distribution (avg length + variance)</li>
+<li>Uses preferred metaphor families (systems, not biological)</li>
+<li>Authority structure matches examples (specific credentials, not hedged experience)</li>
+<li>No qualifier stacking (really, quite, very, just)</li>
+</ol>
+<p>If output fails any gate, reject—don&#39;t revise. Revision teaches AI that &quot;close enough&quot; passes. Rejection with specific failure reason improves next generation.</p>
+<p>Train editors to <strong>annotate failure modes</strong>: &quot;Failed gate 4: hedged expertise with &#39;in my experience&#39; instead of citing project count.&quot; Feed annotations into training refinement.</p>
+<h2>Common Training Mistakes and How to Avoid Them</h2>
+<h3>Over-Indexing on Tone Adjectives</h3>
+<p>&quot;Conversational,&quot; &quot;authoritative,&quot; &quot;approachable&quot;—these collapse under execution. Five writers produce five interpretations of &quot;conversational.&quot; AI pulls from millions more.</p>
+<p><strong>Fix:</strong> Replace adjectives with structural rules. Not &quot;conversational&quot;—&quot;use contractions, address reader as &#39;you,&#39; reference shared context.&quot; Not &quot;authoritative&quot;—&quot;cite specific client results, name tools/frameworks, avoid hedging language.&quot;</p>
+<h3>Training on Competitor Content</h3>
+<p>Teams scrape competitor blog posts thinking &quot;write like this industry.&quot; You inherit their voice, not yours. Worse: you train on content optimized for their audience, their offer, their market position.</p>
+<p><strong>Fix:</strong> Train exclusively on <em>your</em> content. Competitor research informs topic selection and keyword targeting, not voice. If you lack volume, generate 20 pieces manually first, then train AI on those.</p>
+<h3>Ignoring Context Variation</h3>
+<p>Your brand voice isn&#39;t monolithic. Email voice differs from longform articles. Sales copy hits different than educational content. One system prompt can&#39;t cover all contexts.</p>
+<p><strong>Fix:</strong> Build <strong>voice profiles per content type</strong>. Email profile strips formality, uses more &quot;I&quot; statements, shorter paragraphs. Article profile allows longer constructions, embedded research, cited frameworks. Map contexts to profiles, select during generation.</p>
+<h3>Static Training Libraries</h3>
+<p>Voice evolves. You acquire new clients, enter new markets, refine positioning. Last year&#39;s voice examples drift from current reality.</p>
+<p><strong>Fix:</strong> <strong>Quarterly voice audits.</strong> Review pattern library, add recent high-performers, prune outdated examples. Track which examples get referenced most in generation requests—those are your canon. Which never get used? Delete them.</p>
+<h3>Skipping Feedback Loops</h3>
+<p>AI generates content. Editor reviews. Changes get made. AI never learns what changed or why. Every revision is manual labor.</p>
+<p><strong>Fix:</strong> Log revision patterns. &quot;Added specific client name to authority claim&quot; → update system prompt to require client examples. &quot;Stripped &#39;It&#39;s worth noting&#39; from paragraph 3&quot; → add to prohibited phrase list. Feed editorial labor back into training architecture.</p>
+<h2>Advanced Voice Training: Multi-Agent Orchestration</h2>
+<p>Single-pass generation caps quality. Voice-critical content benefits from <strong>agent specialization</strong>.</p>
+<h3>Three-Agent Voice Pipeline</h3>
+<p><strong>Agent 1: Content Generation</strong> (no voice constraints)
+Generate raw content optimized for information density and SEO structure. Focus on facts, research, completeness. Ignore voice entirely.</p>
+<p><strong>Agent 2: Voice Transformation</strong>
+Takes Agent 1 output, applies full voice training (system prompts, example library, constraints). Rewrites for brand consistency while preserving information structure.</p>
+<p><strong>Agent 3: Validation</strong>
+Runs automated voice scoring, checks prohibited phrase presence, flags drift. Passes clean content, rejects failures with specific gate violations.</p>
+<p>Failed outputs loop back to Agent 2 with rejection reasons. This segregates concerns: research accuracy, voice consistency, quality validation operate independently.</p>
+<h3>Dynamic Example Selection</h3>
+<p>Instead of static pattern libraries, build <strong>semantic search over voice examples</strong>. When generating content:</p>
+<ol>
+<li>Extract topic and intent from request</li>
+<li>Search example library for closest semantic matches</li>
+<li>Inject top 3-5 matches into generation context</li>
+<li>Generate with relevant examples in-context</li>
+</ol>
+<p>A pricing page request surfaces pricing-related voice examples. A case study request surfaces narrative structures. This keeps context relevant without manual example curation per request.</p>
+<p>Requires embedding your voice library (OpenAI embeddings, local vector DB), but automates &quot;which examples apply here&quot; decisions.</p>
+<h2>Measuring Voice Training ROI</h2>
+<p>Voice consistency is measurable:</p>
+<p><strong>Revision rate</strong>: Track percentage of AI outputs that ship without human edits. Baseline untrained AI, measure post-training. Target: 70%+ ship-ready content.</p>
+<p><strong>Editor time per piece</strong>: Time from draft delivery to publication. Voice training should compress editorial cycles, not just reduce writing time.</p>
+<p><strong>Client feedback specificity</strong>: Do clients say &quot;this doesn&#39;t sound like us&quot; or do they suggest content changes? Voice complaints = training failure. Content suggestions = training success.</p>
+<p><strong>Internal consistency scores</strong>: Sample 10 random pieces per quarter. Strip identifying info, ask team to identify which came from AI vs. humans. If they can&#39;t tell reliably, voice training succeeded.</p>
+<p>ROI compounds. Early voice training requires 20-40 hours of library building and prompt architecture. Maintenance drops to 2-3 hours monthly. But every piece generated afterward carries that investment—multiplied across 50, 100, 500 pieces annually.</p>
+<h2>Implementation Roadmap: First 30 Days</h2>
+<p><strong>Week 1: Pattern Library Construction</strong></p>
+<ul>
+<li>Audit 20 high-performing content pieces</li>
+<li>Extract 30+ voice pattern examples with annotations</li>
+<li>Build rejection library (20+ prohibited constructions)</li>
+<li>Create 10 before/after contrast pairs</li>
+</ul>
+<p><strong>Week 2: System Prompt Architecture</strong></p>
+<ul>
+<li>Draft core voice identity (100 words)</li>
+<li>List structural rules (10-15 items)</li>
+<li>Encode prohibited constructions</li>
+<li>Map content types to voice profile variations</li>
+</ul>
+<p><strong>Week 3: Validation Framework</strong></p>
+<ul>
+<li>Define pass/fail gates (5-7 criteria)</li>
+<li>Build automated checks (lexical density, phrase detection)</li>
+<li>Create editor annotation protocol</li>
+<li>Generate 10 test pieces, measure baseline</li>
+</ul>
+<p><strong>Week 4: Iteration and Refinement</strong></p>
+<ul>
+<li>Review validation failures, categorize drift patterns</li>
+<li>Refine system prompts based on failure modes</li>
+<li>Add new examples from successful generations</li>
+<li>Re-test, measure improvement vs. baseline</li>
+</ul>
+<p>Voice training isn&#39;t a one-time setup. It&#39;s a <strong>living system</strong> that learns from every generation, every revision, every editorial decision. Build the feedback loops, and AI becomes a more consistent voice carrier than human teams ever achieve.</p>
+<h2>FAQ</h2>
+<p><strong>How many examples do I need to train AI on brand voice effectively?</strong>
+Minimum 20-30 annotated examples across different content types. Thirty examples establish patterns; fewer than that and AI extrapolates incorrectly. Quality matters more than quantity—one well-annotated example (showing <em>why</em> you made specific word choices) beats five raw samples.</p>
+<p><strong>Can AI maintain brand voice across different content formats?</strong>
+Yes, but only with format-specific training. Build separate voice profiles for emails, articles, sales pages, and social posts. Your voice shifts contextually—formal in proposals, direct in emails. Single-profile training creates awkward mismatches.</p>
+<p><strong>What&#39;s the difference between brand voice and writing style?</strong>
+Writing style covers grammar and structure (sentence length, punctuation habits). Brand voice encompasses decision patterns: how you claim authority, which metaphors recur, what you deliberately avoid saying. Style is mechanical; voice is philosophical. Train both.</p>
+<p><strong>How do I prevent AI from drifting back to generic corporate language?</strong>
+Build a <strong>rejection library</strong> of prohibited phrases and constructions. Run every output through automated phrase detection before human review. AI defaults to training data patterns (corporate speak) unless you explicitly encode what to avoid. Negative constraints prevent drift better than positive examples alone.</p>
+<p><strong>Should I train AI on competitor content to match industry norms?</strong>
+Never. Competitor content trains you to sound like competitors. Industry norms exist because everyone copies everyone. Your brand voice is a <strong>differentiation asset</strong>—train exclusively on your authentic content. Use competitor research for topic gaps and keyword targeting, not voice.</p>
+<p><strong>How long does it take to see ROI from voice training investment?</strong>
+Setup requires 20-40 hours over 4 weeks. Maintenance drops to 2-3 hours monthly. ROI hits at ~30 pieces of content—where time saved on revisions exceeds setup investment. For teams producing 5+ pieces weekly, ROI surfaces within 6-8 weeks.</p>
+<p><strong>What if my brand voice isn&#39;t consistent enough to train AI?</strong>
+Fix that first. Inconsistent human voice produces inconsistent AI voice. Spend 2-4 weeks <strong>creating</strong> 15-20 pieces manually that exemplify your target voice. Use those as training corpus. You can&#39;t automate consistency you haven&#39;t defined.</p>
+<p><strong>Can I use AI to help define my brand voice initially?</strong>
+Yes, but only as pattern extraction, not creation. Feed AI your existing content and ask it to identify recurring patterns (sentence structures, metaphor families, authority framing). Use that analysis to make explicit what you do intuitively. Don&#39;t let AI invent your voice from scratch.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
