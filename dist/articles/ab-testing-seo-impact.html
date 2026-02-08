@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams | B2B Vic</title>
+    <meta name="description" content="How to run A/B tests on B2B websites without harming SEO — canonical tags, JavaScript rendering, split-URL testing, and Google&#39;s official guidance on testing." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams" />
+    <meta property="og:description" content="How to run A/B tests on B2B websites without harming SEO — canonical tags, JavaScript rendering, split-URL testing, and Google&#39;s official guidance on testing." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ab-testing-seo-impact.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams" />
+    <meta name="twitter:description" content="How to run A/B tests on B2B websites without harming SEO — canonical tags, JavaScript rendering, split-URL testing, and Google&#39;s official guidance on testing." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ab-testing-seo-impact.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams",
+      "description": "How to run A/B tests on B2B websites without harming SEO — canonical tags, JavaScript rendering, split-URL testing, and Google's official guidance on testing.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ab-testing-seo-impact.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>A/B Testing Without Killing SEO: Protocols for B2B Marketing Teams</h1>
+<p>A/B testing increases conversion rates. SEO drives organic traffic. Both are revenue-critical for B2B marketing teams. The conflict emerges when testing implementations violate <strong>Google</strong>&#39;s duplicate content policies, create cloaking signals, or fragment ranking authority across test variations. A poorly executed test can tank rankings for high-value commercial pages while the test runs — and sometimes permanently.</p>
+<p>I&#39;ve watched B2B teams lose 40% of organic traffic to a landing page because their testing platform served different content to <strong>Googlebot</strong> than to users. I&#39;ve debugged why a company&#39;s pricing page dropped from position 3 to position 18 during a month-long test that created three separate URL variations without proper canonicalization. The damage wasn&#39;t intentional — it was operational ignorance of how search engines interpret testing infrastructure.</p>
+<p>This article documents the protocols for running <a href="/articles/conversion-rate-optimization-b2b-seo.html">conversion rate optimization</a> tests on B2B websites without harming SEO. It covers <strong>Google</strong>&#39;s official testing guidance, the three safe testing methods, the specific mistakes that trigger penalties, and the technical implementation patterns that preserve rankings during testing.</p>
+<h2>Why A/B Tests Break SEO</h2>
+<p>A/B tests break SEO when the testing mechanism creates signals that <strong>Google</strong> interprets as manipulation. The three most common violations:</p>
+<h3>Cloaking</h3>
+<p>Cloaking occurs when the content served to <strong>Googlebot</strong> differs from the content served to users. Most A/B testing platforms achieve variation delivery by detecting the user agent and serving different HTML based on whether the request comes from a bot or a browser. If your testing platform serves the control version to <strong>Googlebot</strong> and the treatment version to users, <strong>Google</strong> classifies this as cloaking — even though the intent is testing, not manipulation.</p>
+<p><strong>Google</strong>&#39;s position: testing platforms must serve <strong>Googlebot</strong> the same variations that users see, in the same proportions. If 50% of users see variation A and 50% see variation B, <strong>Googlebot</strong> should encounter the same 50/50 split.</p>
+<h3>Duplicate Content Across Variations</h3>
+<p>Split-URL testing creates separate URLs for each variation (e.g., <code>/pricing</code> for control, <code>/pricing-test</code> for treatment). Without proper canonicalization, <strong>Google</strong> indexes both URLs and fragments ranking authority between them. If the test runs for 30 days, <strong>Google</strong> may decide that <code>/pricing-test</code> is the primary version and index it instead of <code>/pricing</code>. When the test ends and <code>/pricing-test</code> is removed, the rankings don&#39;t automatically transfer back to <code>/pricing</code> — you&#39;ve created an indexation mess.</p>
+<h3>Rendering Delays That Block Googlebot</h3>
+<p>JavaScript-based testing platforms inject variations client-side. If the JavaScript takes 800ms to execute, <strong>Googlebot</strong> may render the page before the variation loads and index only the pre-variation HTML. The result: <strong>Google</strong> indexes the control even though 50% of users see the treatment. This creates ranking fragility when the winning variation becomes permanent and <strong>Google</strong> hasn&#39;t indexed it.</p>
+<h2>Google&#39;s Official Guidance on Testing</h2>
+<p><strong>Google</strong> published explicit A/B testing guidelines in the <strong>Search Console</strong> documentation. The key directives:</p>
+<ol>
+<li><strong>Don&#39;t cloak.</strong> Serve <strong>Googlebot</strong> the same content variations that users see.</li>
+<li><strong>Use rel=canonical properly.</strong> If testing creates multiple URLs, all variations must canonical to the original URL.</li>
+<li><strong>Use 302 redirects for temporary tests, not 301 redirects.</strong> 301 signals permanent relocation. 302 signals temporary testing.</li>
+<li><strong>Run tests only as long as necessary.</strong> The longer a test runs, the higher the risk of indexation confusion.</li>
+<li><strong>Don&#39;t rely on noindex to hide variations.</strong> Noindexed pages still dilute internal link equity and create crawl bloat.</li>
+</ol>
+<p>The guidance is permissive: <strong>Google</strong> explicitly allows A/B testing when implemented correctly. The violations occur when marketing teams deploy testing tools without understanding how those tools interact with crawlers.</p>
+<h2>Safe Testing Method 1: Client-Side JavaScript Testing (Recommended)</h2>
+<p>Client-side testing delivers both variations from the same URL using JavaScript to modify the DOM after the page loads. This is the safest method for most B2B sites.</p>
+<h3>How It Works</h3>
+<ol>
+<li>The server delivers the same HTML to all users and <strong>Googlebot</strong>.</li>
+<li>The testing platform&#39;s JavaScript executes in the browser.</li>
+<li>JavaScript detects which variation the user should see and modifies the page content accordingly.</li>
+<li><strong>Googlebot</strong> sees the base HTML plus any critical variation content injected server-side for crawlers.</li>
+</ol>
+<h3>Implementation Pattern</h3>
+<p><strong>Control version (base HTML):</strong></p>
+<pre><code class="language-html">&lt;div id=&quot;hero-headline&quot;&gt;Automate Your B2B Sales Pipeline&lt;/div&gt;
+</code></pre>
+<p><strong>Variation delivered via JavaScript:</strong></p>
+<pre><code class="language-javascript">if (variation === &#39;B&#39;) {
+  document.getElementById(&#39;hero-headline&#39;).innerText = &#39;Close More Deals With AI-Powered Automation&#39;;
+}
+</code></pre>
+<p><strong>Googlebot handling:</strong> Configure the testing platform to inject a <code>&lt;noscript&gt;</code> fallback or server-side render hints so <strong>Googlebot</strong> can index both variations proportionally.</p>
+<h3>Advantages</h3>
+<ul>
+<li>Single URL — no canonicalization complexity</li>
+<li>No duplicate content issues</li>
+<li>No cloaking risk if implemented correctly</li>
+<li>Works with all major testing platforms (<strong>Optimizely</strong>, <strong>VWO</strong>, <strong>Google Optimize</strong>)</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li><strong>Googlebot</strong> may not fully render JavaScript variations if rendering times out</li>
+<li>Complex variations (entire page redesigns) are harder to implement client-side</li>
+<li>Page flicker if JavaScript loads slowly</li>
+</ul>
+<h3>SEO Safety Checklist</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Variations render within <strong>Googlebot</strong>&#39;s 5-second JavaScript execution window</li>
+<li><input disabled="" type="checkbox"> Testing script is loaded in <code>&lt;head&gt;</code> to minimize render delay</li>
+<li><input disabled="" type="checkbox"> Critical content exists in base HTML before JavaScript modification</li>
+<li><input disabled="" type="checkbox"> Testing platform is configured to serve <strong>Googlebot</strong> proportional variations</li>
+</ul>
+<h2>Safe Testing Method 2: Server-Side Testing with Proper Canonicals</h2>
+<p>Server-side testing serves different HTML from the server based on user cohort assignment. When implemented with proper canonical tags, this method is SEO-safe.</p>
+<h3>How It Works</h3>
+<ol>
+<li>User requests the URL (e.g., <code>/pricing</code>).</li>
+<li>Server checks the user&#39;s cohort assignment (via cookie or session).</li>
+<li>Server generates and serves the appropriate HTML variation.</li>
+<li>The page includes a <code>rel=canonical</code> tag pointing to the original URL.</li>
+</ol>
+<h3>Implementation Pattern</h3>
+<p><strong>Control version (<code>/pricing</code>):</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/pricing&quot; /&gt;
+&lt;h1&gt;Pricing Plans&lt;/h1&gt;
+</code></pre>
+<p><strong>Variation served from the same URL:</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/pricing&quot; /&gt;
+&lt;h1&gt;Choose Your Plan&lt;/h1&gt;
+</code></pre>
+<p>Both variations return from the same URL. The canonical tag ensures <strong>Google</strong> consolidates ranking signals to the primary URL.</p>
+<h3>Advantages</h3>
+<ul>
+<li>Fast rendering — no JavaScript dependency</li>
+<li><strong>Googlebot</strong> sees fully-rendered HTML immediately</li>
+<li>Supports complex variations (entire page redesigns)</li>
+<li>No flicker for users</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Requires backend development resources</li>
+<li>Harder to deploy for non-technical marketing teams</li>
+<li>Server-side logic adds operational complexity</li>
+</ul>
+<h3>SEO Safety Checklist</h3>
+<ul>
+<li><input disabled="" type="checkbox"> All variations include <code>rel=canonical</code> pointing to the original URL</li>
+<li><input disabled="" type="checkbox"> Server logs confirm <strong>Googlebot</strong> receives variations proportionally</li>
+<li><input disabled="" type="checkbox"> Variations are served from a single URL (not separate <code>/pricing-test</code> URLs)</li>
+<li><input disabled="" type="checkbox"> Test duration is limited to the minimum required for statistical significance</li>
+</ul>
+<h2>Safe Testing Method 3: Split-URL Testing with 302 Redirects</h2>
+<p>Split-URL testing creates separate URLs for each variation and uses 302 redirects to route users to the appropriate version. This is the least recommended method but necessary for testing structural changes like subdomain migrations.</p>
+<h3>How It Works</h3>
+<ol>
+<li>Original URL (e.g., <code>/pricing</code>) remains the canonical version.</li>
+<li>Test variation is published at a different URL (e.g., <code>/pricing-variation-b</code>).</li>
+<li>A 302 redirect sends a percentage of users from <code>/pricing</code> to <code>/pricing-variation-b</code>.</li>
+<li>The variation URL includes a canonical tag pointing back to <code>/pricing</code>.</li>
+</ol>
+<h3>Implementation Pattern</h3>
+<p><strong>Original URL (<code>/pricing</code>):</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/pricing&quot; /&gt;
+</code></pre>
+<p><strong>Variation URL (<code>/pricing-variation-b</code>):</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/pricing&quot; /&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;noindex, follow&quot; /&gt;
+</code></pre>
+<p><strong>Redirect logic:</strong></p>
+<pre><code>If user in test cohort B:
+  302 redirect from /pricing to /pricing-variation-b
+Else:
+  Serve /pricing normally
+</code></pre>
+<h3>Advantages</h3>
+<ul>
+<li>Supports testing entirely different URL structures or domains</li>
+<li>Useful for staging environment tests before migrations</li>
+<li>Clear separation between control and treatment for analytics tracking</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>High risk of duplicate content if canonicals are misconfigured</li>
+<li>Redirects add latency and can impact conversion rates</li>
+<li><strong>Google</strong> may still index the variation URL if the test runs too long</li>
+</ul>
+<h3>SEO Safety Checklist</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Variation URL includes <code>rel=canonical</code> pointing to the original URL</li>
+<li><input disabled="" type="checkbox"> Variation URL includes <code>noindex</code> meta tag</li>
+<li><input disabled="" type="checkbox"> 302 redirect is used (NOT 301)</li>
+<li><input disabled="" type="checkbox"> Test duration is limited to 2-4 weeks maximum</li>
+<li><input disabled="" type="checkbox"> Variation URL is excluded from XML sitemap</li>
+</ul>
+<h2>Common Mistakes That Trigger SEO Damage</h2>
+<h3>Mistake 1: Running Tests Indefinitely</h3>
+<p>Tests that run for 60+ days give <strong>Google</strong> time to re-crawl and re-index variations. A test that should determine a winner in 2 weeks but runs for 3 months creates sustained duplicate content signals. Set statistical significance thresholds before launching the test and end it as soon as the threshold is reached.</p>
+<h3>Mistake 2: Serving Googlebot Only the Control</h3>
+<p>Testing platforms that detect <strong>Googlebot</strong> and always serve the control version are cloaking. <strong>Google</strong>&#39;s algorithms have become sophisticated at detecting bot-targeted content delivery. If your analytics show that &quot;Bot traffic&quot; sees 0% treatment exposure while human traffic is 50/50, your implementation is non-compliant.</p>
+<h3>Mistake 3: Using 301 Redirects for Split-URL Tests</h3>
+<p>301 redirects signal permanent moves. If you 301 redirect from <code>/pricing</code> to <code>/pricing-variation-b</code> during a test, <strong>Google</strong> will transfer ranking authority to the variation URL. When the test ends and you remove the variation, you&#39;ve orphaned the ranking signals.</p>
+<h3>Mistake 4: Not Implementing Canonical Tags on Variations</h3>
+<p>Split-URL tests without canonicals create duplicate content. <strong>Google</strong> sees two pages with 95% identical content and must decide which to index. Often, it chooses the wrong one. Always canonical the variation back to the original URL.</p>
+<h3>Mistake 5: Testing on High-Value SEO Pages Without Monitoring</h3>
+<p>Running tests on pages that drive significant organic traffic without active <strong>Google Search Console</strong> monitoring is reckless. Monitor impressions, clicks, and average position daily during tests. If you see a 20% drop in impressions on day 3 of a test, pause the test and investigate before the damage compounds.</p>
+<h2>Technical Implementation Checklist</h2>
+<p>Before launching any A/B test that touches SEO-critical pages:</p>
+<h3>Pre-Launch Validation</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Testing method selected (client-side, server-side, or split-URL)</li>
+<li><input disabled="" type="checkbox"> Canonical tags implemented correctly</li>
+<li><input disabled="" type="checkbox"> <strong>Googlebot</strong> will receive proportional variation exposure (verified in testing platform settings)</li>
+<li><input disabled="" type="checkbox"> Redirects are 302, not 301 (if using split-URL method)</li>
+<li><input disabled="" type="checkbox"> Variation URLs excluded from XML sitemap (if using split-URL method)</li>
+<li><input disabled="" type="checkbox"> JavaScript rendering validated in <strong>Google Search Console</strong> URL Inspection tool</li>
+</ul>
+<h3>During Test Monitoring</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>Google Search Console</strong> impressions and clicks monitored daily</li>
+<li><input disabled="" type="checkbox"> Average position tracked for target keywords</li>
+<li><input disabled="" type="checkbox"> Server logs reviewed to confirm <strong>Googlebot</strong> crawl behavior</li>
+<li><input disabled="" type="checkbox"> Indexation status checked for variation URLs (should remain non-indexed)</li>
+</ul>
+<h3>Post-Test Cleanup</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Winning variation made permanent</li>
+<li><input disabled="" type="checkbox"> Losing variation removed from codebase</li>
+<li><input disabled="" type="checkbox"> Any variation URLs deindexed via <strong>Search Console</strong> URL Removal tool</li>
+<li><input disabled="" type="checkbox"> 302 redirects removed</li>
+<li><input disabled="" type="checkbox"> Final canonical verification</li>
+</ul>
+<h2>Testing on Landing Pages vs. Blog Content</h2>
+<p>The SEO risk tolerance differs between <a href="/articles/landing-page-seo-b2b-conversion.html">landing pages</a> and blog content.</p>
+<p><strong>Landing pages</strong> (e.g., <code>/pricing</code>, <code>/demo</code>, <code>/services</code>) typically rank for high-intent commercial keywords and drive pipeline. A/B tests on these pages carry higher SEO risk because ranking drops directly impact revenue. Use server-side testing or well-implemented client-side testing. Monitor rankings daily.</p>
+<p><strong>Blog content</strong> ranks for informational keywords and drives top-of-funnel traffic. Tests on blog posts carry lower SEO risk because individual post rankings matter less than aggregate traffic. Client-side testing is sufficient. Weekly monitoring is acceptable.</p>
+<h2>Platform-Specific Guidance</h2>
+<h3>Google Optimize (Sunset)</h3>
+<p><strong>Google Optimize</strong> was shut down in September 2023. If you&#39;re still running legacy Optimize tests, migrate to <strong>Optimizely</strong>, <strong>VWO</strong>, or <strong>AB Tasty</strong>. Optimize tests that weren&#39;t cleaned up may still be injecting JavaScript that conflicts with current page rendering.</p>
+<h3>Optimizely</h3>
+<p><strong>Optimizely</strong> supports both client-side and server-side testing. The client-side implementation is SEO-safe when the JavaScript snippet is loaded in <code>&lt;head&gt;</code> and variations render within <strong>Googlebot</strong>&#39;s execution window. Verify in <strong>Search Console</strong> that <strong>Googlebot</strong> is rendering the variations.</p>
+<h3>VWO</h3>
+<p><strong>VWO</strong> defaults to client-side testing. Enable the &quot;SmartCode&quot; asynchronous loading to prevent flicker. For high-value SEO pages, use VWO&#39;s server-side testing tier to eliminate JavaScript dependency.</p>
+<h3>Unbounce</h3>
+<p><strong>Unbounce</strong> landing pages are often hosted on subdomains (e.g., <code>lp.example.com</code>), which isolates SEO impact from the main domain. A/B tests on Unbounce pages don&#39;t risk main domain rankings but also don&#39;t benefit from main domain authority. Use Unbounce for paid traffic landing pages, not organic <a href="/articles/landing-page-seo-b2b-conversion.html">landing page optimization</a>.</p>
+<h2>FAQ</h2>
+<h3>Can I run A/B tests on pages that rank #1 for commercial keywords?</h3>
+<p>Yes, but with extreme caution. Monitor rankings daily. Use server-side testing to eliminate JavaScript rendering risk. Limit test duration to 2 weeks. Consider testing only headline or CTA variations rather than full page redesigns.</p>
+<h3>How long should I run a test before it impacts SEO?</h3>
+<p>Tests under 2 weeks rarely cause indexation issues. Tests running 4+ weeks increase the risk of <strong>Google</strong> re-indexing variations. Tests running 8+ weeks almost always create duplicate content problems. Run tests to statistical significance, then end them.</p>
+<h3>What if my testing platform can&#39;t serve variations to Googlebot?</h3>
+<p>Switch platforms. Any testing tool that cloaks by default is an SEO liability. Modern platforms (<strong>Optimizely</strong>, <strong>VWO</strong>, <strong>AB Tasty</strong>) support bot-inclusive variation delivery. Legacy tools that rely on user-agent detection should be deprecated.</p>
+<h3>Do I need to tell Google I&#39;m running a test?</h3>
+<p>No formal notification is required. <strong>Google</strong> expects sites to test. As long as you follow the guidelines (no cloaking, proper canonicals, limited duration), testing is compliant. If you&#39;re running a large-scale test that might look like a site migration, consider posting in <strong>Google Search Central</strong> forums to document intent.</p>
+<h3>Can I test meta titles and descriptions without harming SEO?</h3>
+<p>Yes, but <strong>Google</strong> must be able to see the variations. If you&#39;re using JavaScript to modify the <code>&lt;title&gt;</code> tag, ensure the modification happens before <strong>Googlebot</strong> renders the page. Server-side meta tag testing is safer. Monitor click-through rates in <strong>Search Console</strong> to validate that variation changes are indexed.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

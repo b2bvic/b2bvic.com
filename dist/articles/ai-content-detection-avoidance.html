@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Avoid AI Content Detection Without Sacrificing Quality or Speed | B2B Vic</title>
+    <meta name="description" content="How to avoid AI content detection while maintaining quality and production speed — voice frameworks, editing patterns, and anti-detection strategies that preserve SEO value." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Avoid AI Content Detection Without Sacrificing Quality or Speed" />
+    <meta property="og:description" content="How to avoid AI content detection while maintaining quality and production speed — voice frameworks, editing patterns, and anti-detection strategies that preserve SEO value." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-content-detection-avoidance.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Avoid AI Content Detection Without Sacrificing Quality or Speed" />
+    <meta name="twitter:description" content="How to avoid AI content detection while maintaining quality and production speed — voice frameworks, editing patterns, and anti-detection strategies that preserve SEO value." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-content-detection-avoidance.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Avoid AI Content Detection Without Sacrificing Quality or Speed",
+      "description": "How to avoid AI content detection while maintaining quality and production speed — voice frameworks, editing patterns, and anti-detection strategies that preserve SEO value.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-content-detection-avoidance.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Avoid AI Content Detection Without Sacrificing Quality or Speed"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">How to Avoid AI Content Detection Without Sacrificing Quality or Speed</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">How to Avoid AI Content Detection Without Sacrificing Quality or Speed</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>How to Avoid AI Content Detection Without Sacrificing Quality or Speed</h1>
+<p>AI content detection is a cat-and-mouse game. Detection tools (Originality.ai, GPTZero, Turnitin) improve at identifying machine-generated text. Content producers adapt by tuning prompts, adding human editing layers, and deploying anti-detection techniques. The cycle continues.</p>
+<p>The strategic question isn&#39;t whether AI-generated content <em>can</em> be detected — it often can, with 70-90% accuracy on unedited <strong>GPT-4</strong> or <strong>Claude</strong> output. The question is whether detection matters for your use case and how to minimize detection risk without destroying the production efficiency that makes AI valuable in the first place.</p>
+<p>This article documents the operational framework for producing AI content that evades detection tools while maintaining quality and speed. It covers why detection matters (and when it doesn&#39;t), the specific patterns detectors flag, voice frameworks that reduce AI fingerprints, and the editing workflows that transform machine-generated drafts into human-indistinguishable final articles. The methodology is built from production experience generating 500+ articles per month across B2B sites where detection would harm credibility.</p>
+<h2>Why AI Detection Matters (And When It Doesn&#39;t)</h2>
+<p>AI detection matters when your audience or platform penalizes AI content. It doesn&#39;t matter when the content serves its purpose regardless of origin.</p>
+<h3>Scenarios Where Detection Risk Matters</h3>
+<p><strong>Academic submissions:</strong> Universities penalize AI-generated essays. Detection tools are integrated into grading workflows. High detection scores trigger academic integrity reviews.</p>
+<p><strong>Client-facing content where AI disclosure harms trust:</strong> Some B2B audiences view AI content as lower-quality or inauthentic. If your positioning depends on &quot;handcrafted expertise,&quot; detectable AI content damages brand credibility.</p>
+<p><strong>Platforms with AI content policies:</strong> Some publications, guest post opportunities, or content marketplaces ban AI-generated content. Detectable submissions get rejected.</p>
+<p><strong>SEO contexts where Google might penalize:</strong> While <strong>Google</strong> claims AI content isn&#39;t inherently penalized, there&#39;s circumstantial evidence that algorithmically-detectable AI content with low E-E-A-T signals may rank worse. The risk is speculative but non-zero.</p>
+<h3>Scenarios Where Detection Risk Doesn&#39;t Matter</h3>
+<p><strong>Internal documentation:</strong> SOPs, process docs, technical guides used internally don&#39;t need to evade detection. Efficiency trumps authenticity.</p>
+<p><strong>High-volume, low-stakes content:</strong> Product descriptions, category pages, FAQ entries — functional content where the value is completeness, not artistry.</p>
+<p><strong>Content where AI use is disclosed:</strong> If you&#39;re transparent about AI assistance and your audience accepts it, detection is irrelevant.</p>
+<p><strong>Draft stages:</strong> AI-generated first drafts that will undergo heavy human editing don&#39;t need to evade detection in draft form — only the final published version matters.</p>
+<p>The framework below assumes you&#39;re in a scenario where detection matters.</p>
+<h2>What AI Detection Tools Actually Detect</h2>
+<p>AI detectors don&#39;t identify content as &quot;AI-generated&quot; through magic. They detect statistical patterns correlated with LLM output. Understanding these patterns enables countermeasures.</p>
+<h3>Pattern 1: Low Perplexity (Predictable Word Choices)</h3>
+<p><strong>Perplexity</strong> measures how surprising the next word is given the previous words. Human writing has higher perplexity — humans use unexpected word choices, creative phrasing, and stylistic variation. AI defaults to the most probable next word, creating low-perplexity text.</p>
+<p><strong>Example of low-perplexity (AI-typical) text:</strong></p>
+<blockquote>
+<p>&quot;Implementing effective SEO strategies requires careful planning and execution. Organizations must focus on both technical optimization and content quality to achieve sustainable results.&quot;</p>
+</blockquote>
+<p>Every word is the most statistically likely next word. The phrasing is grammatically perfect but creatively inert.</p>
+<p><strong>Example of high-perplexity (human-typical) text:</strong></p>
+<blockquote>
+<p>&quot;SEO doesn&#39;t reward caution. The operators who win are the ones who built 200-page sites in 30 days, ignored best practices, and watched their traffic compound while the careful planners were still in strategy meetings.&quot;</p>
+</blockquote>
+<p>The word choices are less predictable. &quot;SEO doesn&#39;t reward caution&quot; is a stronger, less common opening than &quot;Implementing effective SEO strategies requires careful planning.&quot;</p>
+<h3>Pattern 2: Uniform Sentence Structure</h3>
+<p>AI outputs tend toward consistent sentence structures. Humans vary sentence length and complexity more dramatically.</p>
+<p><strong>AI-typical:</strong></p>
+<blockquote>
+<p>&quot;Content marketing requires consistent effort. Businesses must publish regularly. Audience engagement depends on quality. SEO benefits from topical authority.&quot;</p>
+</blockquote>
+<p>Four sentences, similar length, parallel structure. Monotonous.</p>
+<p><strong>Human-typical:</strong></p>
+<blockquote>
+<p>&quot;Content marketing requires consistent effort — which most businesses can&#39;t sustain. They publish sporadically, wonder why engagement flatlines, and conclude that &#39;content doesn&#39;t work for us.&#39; The real issue: they never built the topical authority that makes SEO compound.&quot;</p>
+</blockquote>
+<p>Varied sentence length (20 words → 11 words → 17 words). Mix of declarative, explanatory, and diagnostic structures.</p>
+<h3>Pattern 3: Hedging and Qualifier Overuse</h3>
+<p>AI models are trained to avoid absolute statements and prefer hedged language (&quot;may,&quot; &quot;can,&quot; &quot;often,&quot; &quot;typically&quot;). Human experts make bolder claims.</p>
+<p><strong>AI-typical:</strong></p>
+<blockquote>
+<p>&quot;This approach can often lead to improved results in many cases, though individual outcomes may vary depending on specific circumstances.&quot;</p>
+</blockquote>
+<p><strong>Human-typical:</strong></p>
+<blockquote>
+<p>&quot;This approach works. I&#39;ve deployed it across 40 client sites. It doesn&#39;t work for every business model, but if you&#39;re B2B SaaS selling to mid-market, it compounds.&quot;</p>
+</blockquote>
+<p>The human version makes specific claims backed by experience. The AI version hedges everything.</p>
+<h3>Pattern 4: Lexical Diversity Collapse</h3>
+<p>AI models overuse certain &quot;safe&quot; words — transition phrases like &quot;However,&quot; &quot;Moreover,&quot; &quot;Furthermore,&quot; and verbs like &quot;leverage,&quot; &quot;utilize,&quot; &quot;implement.&quot; This creates detectable lexical fingerprints.</p>
+<p><strong>AI-typical word clusters:</strong></p>
+<ul>
+<li>However, Moreover, Furthermore, Additionally, In addition</li>
+<li>Leverage, Utilize, Implement, Optimize, Enhance</li>
+<li>Robust, Comprehensive, Effective, Efficient, Strategic</li>
+</ul>
+<p><strong>Human writers</strong> rotate vocabulary more aggressively and use more precise, uncommon verbs.</p>
+<h3>Pattern 5: Lack of Personal Voice and Anecdotes</h3>
+<p>AI struggles to generate authentic first-person experience. It can <em>simulate</em> anecdotes (&quot;In my experience...&quot;) but they lack the specificity and texture of real stories.</p>
+<p><strong>AI-simulated anecdote:</strong></p>
+<blockquote>
+<p>&quot;In my experience working with clients, I&#39;ve found that SEO strategies work best when they&#39;re tailored to specific business needs and implemented consistently over time.&quot;</p>
+</blockquote>
+<p>Generic, vague, could apply to anyone.</p>
+<p><strong>Real anecdote:</strong></p>
+<blockquote>
+<p>&quot;Last month I rebuilt a client&#39;s 180-page site structure after their developer nested everything five directories deep. Google was crawling the homepage and stopping. We flattened the URL structure to two clicks max, resubmitted the sitemap, and watched 140 pages index in 8 days. The developer was furious. The client&#39;s traffic doubled.&quot;</p>
+</blockquote>
+<p>Specific numbers, named actors, concrete actions, observable outcomes.</p>
+<h2>Anti-Detection Framework: Observer Protocol</h2>
+<p>The <a href="/articles/observer-protocol-ai-content-voice-homogenization.html">Observer Protocol</a> is a voice framework designed to eliminate AI detection patterns while maintaining production speed. It operates by constraining AI outputs away from default LLM behavior.</p>
+<h3>Rule 1: No Sycophancy (Eliminate Validation Patterns)</h3>
+<p>AI models default to agreement and affirmation. Humans challenge, contradict, and question.</p>
+<p><strong>AI default:</strong></p>
+<blockquote>
+<p>&quot;That&#39;s a great question. You&#39;re right to be concerned about AI detection. Let me help you understand the best practices.&quot;</p>
+</blockquote>
+<p><strong>Observer Protocol:</strong></p>
+<blockquote>
+<p>&quot;AI detection tools work because most operators produce content that sounds like a committee wrote it. You can&#39;t out-think the detector by trying to &#39;humanize&#39; AI slop. You evade detection by writing differently from the start.&quot;</p>
+</blockquote>
+<p>The second version doesn&#39;t validate the reader. It asserts a position.</p>
+<h3>Rule 2: No Bullet-Then-Explanation Rhythm</h3>
+<p>AI loves this pattern:</p>
+<blockquote>
+<p><strong>Strategy 1: Implement regular content audits</strong>
+Regular content audits help identify opportunities for improvement and ensure your content remains relevant and effective over time.</p>
+</blockquote>
+<p>The structure is predictable. Every heading gets a paragraph of explanation.</p>
+<p><strong>Observer alternative:</strong>
+Vary structure. Sometimes a heading stands alone. Sometimes it gets three paragraphs. Sometimes it gets a list, a quote, a case study, or nothing.</p>
+<h3>Rule 3: No Lexical Entropy (Rotate Vocabulary Deliberately)</h3>
+<p>Ban the AI&#39;s favorite words. Force synonym rotation. Every time you would write &quot;implement,&quot; write &quot;deploy,&quot; &quot;execute,&quot; &quot;build,&quot; or &quot;provision&quot; instead.</p>
+<p><strong>Banned terms:</strong></p>
+<ul>
+<li>Leverage, utilize, optimize, robust, comprehensive, seamless, streamline</li>
+</ul>
+<p><strong>Replacement strategy:</strong>
+Use precise, concrete verbs. Instead of &quot;implement the strategy,&quot; write &quot;build the system,&quot; &quot;execute the workflow,&quot; or &quot;deploy the framework.&quot;</p>
+<h3>Rule 4: Specificity Over Abstraction</h3>
+<p>AI defaults to abstract generalities. Humans use concrete examples, numbers, and named entities.</p>
+<p><strong>AI abstract:</strong></p>
+<blockquote>
+<p>&quot;Many businesses struggle with content production efficiency.&quot;</p>
+</blockquote>
+<p><strong>Observer specific:</strong></p>
+<blockquote>
+<p>&quot;I spoke to a SaaS founder last week who hired three freelance writers, paid $18,000 over four months, and got 22 usable articles. That&#39;s $818 per article for content that ranked for zero commercial keywords.&quot;</p>
+</blockquote>
+<p>The second version names actors, cites numbers, and provides observable outcomes.</p>
+<h3>Rule 5: Victor&#39;s Narrative is Victor&#39;s (For Personal Content)</h3>
+<p>When writing as a named author, AI should never center its own contribution. The content is the author&#39;s experience filtered through AI as a tool.</p>
+<p><strong>AI self-referential:</strong></p>
+<blockquote>
+<p>&quot;As an AI assistant, I can help you understand these concepts.&quot;</p>
+</blockquote>
+<p><strong>Observer Protocol:</strong></p>
+<blockquote>
+<p>&quot;I&#39;ve tested this framework across 15 client sites. It works when the operator commits to execution depth, not when they half-deploy and wonder why results don&#39;t materialize.&quot;</p>
+</blockquote>
+<p>The human author is the protagonist. AI is invisible.</p>
+<h2>Anti-Detection Editing Workflow</h2>
+<p>Even with Observer Protocol prompts, AI outputs require editing to fully evade detection. The editing workflow:</p>
+<h3>Pass 1: Perplexity Injection (5-10 minutes per 2,500 words)</h3>
+<p>Identify sentences with low perplexity — overly predictable phrasing. Rewrite with unexpected word choices.</p>
+<p><strong>Before:</strong></p>
+<blockquote>
+<p>&quot;Effective SEO requires a comprehensive approach that addresses both technical and content-related factors.&quot;</p>
+</blockquote>
+<p><strong>After:</strong></p>
+<blockquote>
+<p>&quot;SEO rewards operators who build fast sites packed with hundreds of interlinked articles. The &#39;comprehensive approach&#39; crowd publishes 12 thoughtful pieces per year and wonders why they don&#39;t rank.&quot;</p>
+</blockquote>
+<p>The rewrite introduces unexpectedness (&quot;SEO rewards operators,&quot; &quot;the comprehensive approach crowd&quot;) and specificity (&quot;12 thoughtful pieces per year&quot;).</p>
+<h3>Pass 2: Sentence Rhythm Variation (5 minutes per 2,500 words)</h3>
+<p>Break monotonous sentence structures. Add short, punchy sentences after long, complex ones. Vary from 5-word sentences to 30-word sentences.</p>
+<p><strong>Before (monotonous):</strong></p>
+<blockquote>
+<p>&quot;Content production is challenging. Many businesses struggle with consistency. Quality often suffers when volume increases. Editing is frequently neglected.&quot;</p>
+</blockquote>
+<p><strong>After (varied):</strong></p>
+<blockquote>
+<p>&quot;Content production is challenging. Most businesses publish sporadically, then ghost their blog for six months when the initial burst of energy fades. Quality collapses when operators prioritize volume over editing. The result: 40 mediocre articles that generate zero traffic.&quot;</p>
+</blockquote>
+<p>The rhythm now alternates between 4 words → 22 words → 13 words → 13 words.</p>
+<h3>Pass 3: Hedging Removal (3 minutes per 2,500 words)</h3>
+<p>Delete qualifiers and hedges. Replace &quot;may,&quot; &quot;can,&quot; &quot;often,&quot; &quot;typically&quot; with definitive statements.</p>
+<p><strong>Before:</strong></p>
+<blockquote>
+<p>&quot;This strategy can often lead to improved rankings in many cases, though results may vary.&quot;</p>
+</blockquote>
+<p><strong>After:</strong></p>
+<blockquote>
+<p>&quot;This strategy works. I&#39;ve deployed it on 30 sites. It doesn&#39;t work for every niche, but for B2B SaaS targeting mid-funnel keywords, it compounds.&quot;</p>
+</blockquote>
+<h3>Pass 4: Lexical Diversity Enforcement (5 minutes per 2,500 words)</h3>
+<p>Search for overused AI vocabulary. Replace with precise alternatives.</p>
+<p>Find: &quot;leverage&quot;
+Replace with: &quot;use,&quot; &quot;deploy,&quot; &quot;exploit,&quot; &quot;harness&quot;</p>
+<p>Find: &quot;implement&quot;
+Replace with: &quot;build,&quot; &quot;execute,&quot; &quot;deploy,&quot; &quot;provision&quot;</p>
+<p>Find: &quot;However&quot;
+Replace with: &quot;But,&quot; &quot;Yet,&quot; or delete entirely and start a new sentence</p>
+<h3>Pass 5: Anecdote Injection (10 minutes per 2,500 words)</h3>
+<p>Add 1-2 specific, first-person anecdotes with concrete details. These don&#39;t need to be long — 2-3 sentences with numbers, names, and outcomes.</p>
+<p><strong>Example anecdote:</strong></p>
+<blockquote>
+<p>&quot;Last quarter I rebuilt topical maps for a client in the HR software space. Their content was decent but scattered — 60 articles with no clustering. We reorganized into 5 pillar-spoke clusters, added 30 supporting articles, and internal linking density went from 1.2 links/article to 4.7. Their average position for target keywords improved from 18 to 9 within 90 days.&quot;</p>
+</blockquote>
+<p>Anecdotes are the strongest anti-detection signal because AI cannot generate authentic experience.</p>
+<h2>Testing Your Content Against Detectors</h2>
+<p>Before publishing high-stakes content, test it against detection tools.</p>
+<p><strong>Detection tools:</strong></p>
+<ul>
+<li><strong>Originality.ai</strong> (paid, most commonly used)</li>
+<li><strong>GPTZero</strong> (free tier available)</li>
+<li><strong>Turnitin</strong> (academic context)</li>
+<li><strong>Writer.com AI Content Detector</strong> (free)</li>
+</ul>
+<p><strong>Threshold targets:</strong></p>
+<ul>
+<li><strong>Below 30% AI probability:</strong> Safe for most use cases</li>
+<li><strong>Below 20% AI probability:</strong> Indistinguishable from human content</li>
+<li><strong>Above 50% AI probability:</strong> High detection risk, requires more editing</li>
+</ul>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li>Generate AI draft with Observer Protocol prompts</li>
+<li>Run initial detection test (expect 60-80% AI probability)</li>
+<li>Apply editing passes 1-5</li>
+<li>Re-test (expect 20-40% AI probability)</li>
+<li>If still above 40%, add more anecdotes and perplexity injection</li>
+<li>Publish when below 30%</li>
+</ol>
+<h2>Production Efficiency vs. Detection Trade-Off</h2>
+<p>The more editing you apply, the harder content is to detect — but the slower your production. The optimal balance depends on your risk tolerance and content volume.</p>
+<p><strong>High-risk, low-volume content (client white papers, thought leadership):</strong></p>
+<ul>
+<li>Heavy editing (15-20 minutes per 2,500 words)</li>
+<li>Target: &lt;20% detection probability</li>
+<li>Anecdote-rich, high perplexity, maximum voice customization</li>
+</ul>
+<p><strong>Medium-risk, medium-volume content (blog articles, guides):</strong></p>
+<ul>
+<li>Moderate editing (8-12 minutes per 2,500 words)</li>
+<li>Target: &lt;30% detection probability</li>
+<li>Observer Protocol prompts + 3-4 editing passes</li>
+</ul>
+<p><strong>Low-risk, high-volume content (product pages, FAQs):</strong></p>
+<ul>
+<li>Minimal editing (2-3 minutes per article)</li>
+<li>Target: &lt;50% detection probability acceptable</li>
+<li>Focus on factual accuracy and formatting, not voice</li>
+</ul>
+<h2>FAQ</h2>
+<h3>Does Google penalize AI-detected content?</h3>
+<p><strong>Google</strong>&#39;s official stance: AI content isn&#39;t penalized if it&#39;s helpful and meets quality standards. Anecdotal evidence suggests that low-quality, detectable AI content may rank worse — but correlation isn&#39;t causation. High-quality AI content that evades detection seems to rank fine. The safest approach: produce AI content that humans can&#39;t distinguish from human-written content.</p>
+<h3>Can I just run AI output through a &quot;humanizer&quot; tool?</h3>
+<p>Humanizer tools (Undetectable.ai, StealthWriter) add noise to evade detection but often destroy coherence and introduce grammatical errors. They&#39;re less effective than skilled human editing. Use them only for low-stakes content where quality doesn&#39;t matter.</p>
+<h3>What if I disclose AI use in my content?</h3>
+<p>Disclosure (&quot;This article was written with AI assistance&quot;) eliminates ethical concerns but doesn&#39;t eliminate detection risk. Platforms that ban AI content will still reject disclosed AI articles. Audiences that distrust AI will still discount your credibility. Disclosure is appropriate when your audience values transparency over perceived authenticity.</p>
+<h3>How much does AI content editing cost if I outsource it?</h3>
+<p>Skilled editors who can transform AI drafts into human-indistinguishable content charge $50-$150 per 2,500-word article. Offshore editors charge $15-$40 but often lack the native voice fluency required for strong anti-detection editing. Factor editing costs into your AI content economics.</p>
+<h3>Will detection tools keep improving?</h3>
+<p>Yes. The arms race continues. Today&#39;s anti-detection techniques may be detectable tomorrow. The long-term strategy: build genuine expertise and editorial voice, use AI to accelerate production, and invest in human editorial oversight. Pure AI content with zero human input will always be detectable at some probability threshold.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

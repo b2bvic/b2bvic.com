@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Audit Your AI Content Pipeline for Quality Drift | B2B Vic</title>
+    <meta name="description" content="How to audit AI content production pipelines for quality drift — detection metrics, editorial degradation patterns, and systems to maintain standards at scale." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Audit Your AI Content Pipeline for Quality Drift" />
+    <meta property="og:description" content="How to audit AI content production pipelines for quality drift — detection metrics, editorial degradation patterns, and systems to maintain standards at scale." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-content-quality-audit.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Audit Your AI Content Pipeline for Quality Drift" />
+    <meta name="twitter:description" content="How to audit AI content production pipelines for quality drift — detection metrics, editorial degradation patterns, and systems to maintain standards at scale." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-content-quality-audit.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Audit Your AI Content Pipeline for Quality Drift",
+      "description": "How to audit AI content production pipelines for quality drift — detection metrics, editorial degradation patterns, and systems to maintain standards at scale.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-content-quality-audit.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Audit Your AI Content Pipeline for Quality Drift"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">How to Audit Your AI Content Pipeline for Quality Drift</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">How to Audit Your AI Content Pipeline for Quality Drift</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>How to Audit Your AI Content Pipeline for Quality Drift</h1>
+<p>AI content quality drifts. The phenomenon is gradual and insidious. Week one of production yields 95% publishable articles with minimal editing. Week eight yields 70% publishable articles with significant rework required. By week twelve, you&#39;re rejecting 40% of outputs and questioning whether AI content production still delivers ROI.</p>
+<p>The drift isn&#39;t random. It&#39;s caused by prompt degradation (prompts that worked for <strong>GPT-4</strong> fail on <strong>GPT-4 Turbo</strong>), editorial fatigue (editors stop catching errors that early reviewers flagged), systemic hallucination (AI models confidently fabricate statistics that slip through review), and compounding voice inconsistency (each generation drifts slightly from brand voice until the cumulative deviation becomes obvious).</p>
+<p>This article documents the audit framework for detecting and correcting quality drift in AI content pipelines. It covers the metrics that surface drift early, the specific patterns that indicate degradation, and the systemic fixes that restore quality without abandoning AI production efficiency. The methodology is built from managing <a href="/articles/ai-content-production-workflow.html">AI content workflows</a> producing 50+ articles per week across multiple client sites.</p>
+<h2>Why Quality Drift Happens</h2>
+<p>Quality drift isn&#39;t a failure of AI models. It&#39;s a failure of production systems. The causes:</p>
+<h3>Cause 1: Prompt Decay</h3>
+<p>Prompts that produce excellent outputs in February produce mediocre outputs in May — not because the model changed, but because your content needs evolved and the prompt didn&#39;t.</p>
+<p><strong>Example:</strong> Your original prompt specified &quot;2,500-word articles with 5 H2 sections.&quot; Your editorial team now wants 3,000-word articles with 7 H2 sections and FAQ components. But the prompt wasn&#39;t updated. AI continues producing 2,500-word articles without FAQs, which then require manual expansion.</p>
+<p><strong>Result:</strong> More editorial work, lower throughput, drift from target quality.</p>
+<h3>Cause 2: Editorial Fatigue</h3>
+<p>Human editors review 10 AI articles per day. Early in the production cycle, they catch every factual error, voice inconsistency, and structural flaw. After 300 articles, they skim. Small errors compound into large quality degradation.</p>
+<p><strong>Example:</strong> Week 1, editor flags every instance of &quot;leverage&quot; and &quot;utilize&quot; (AI slop markers). Week 8, editor is reviewing 12 articles per day and stops flagging lexical tells. By week 12, 60% of articles contain detectable AI patterns because the quality gate weakened.</p>
+<p><strong>Result:</strong> Published content drifts toward unedited AI outputs.</p>
+<h3>Cause 3: Context Window Contamination</h3>
+<p>If your AI production workflow uses conversation history or maintains context across articles, errors in one article can propagate to future articles.</p>
+<p><strong>Example:</strong> You&#39;re producing a series on SEO tactics. Article 12 contains a hallucinated statistic: &quot;87% of B2B companies rank technical SEO as their top priority.&quot; The AI includes this stat in its context. Articles 13-18 reference the same fabricated statistic because it&#39;s now part of the conversation memory.</p>
+<p><strong>Result:</strong> Compounding factual errors that spread across content inventory.</p>
+<h3>Cause 4: Model Updates</h3>
+<p>AI providers update models without warning. <strong>GPT-4</strong> becomes <strong>GPT-4 Turbo</strong>. <strong>Claude 3.5</strong> becomes <strong>Claude 3.7</strong>. Prompts optimized for the old model behave differently on the new model.</p>
+<p><strong>Example:</strong> Your prompt for <strong>Claude 3.5</strong> produced 2,800-word articles. After the update to <strong>Claude 3.7</strong>, the same prompt produces 2,200-word articles. You don&#39;t notice for two weeks. By then, you&#39;ve published 20 under-length articles.</p>
+<p><strong>Result:</strong> Silent degradation because the prompt-model fit changed.</p>
+<h3>Cause 5: Editorial Standard Drift</h3>
+<p>Your quality bar changes over time. What was acceptable in month one (basic SEO articles) isn&#39;t acceptable in month six (in-depth thought leadership). But your prompts and review process didn&#39;t evolve.</p>
+<p><strong>Example:</strong> Early articles needed to be &quot;2,500 words, SEO-optimized, factually accurate.&quot; Six months later, you need &quot;3,000 words, with original data insights, expert quotes, and case study integration.&quot; But your AI pipeline still produces the month-one standard.</p>
+<p><strong>Result:</strong> Content quality stagnates while expectations rise.</p>
+<h2>Audit Phase 1: Baseline Metrics Collection</h2>
+<p>Before you can detect drift, you need baseline quality metrics from your early production period.</p>
+<h3>Metric 1: Edit Time Per Article</h3>
+<p>Track how long editors spend on each AI-generated article.</p>
+<p><strong>Baseline (first 50 articles):</strong> Average 12 minutes per 2,500-word article
+<strong>Drift indicator:</strong> Edit time increases to 25+ minutes per article</p>
+<p><strong>What it signals:</strong> AI outputs require more human correction, indicating quality degradation.</p>
+<p><strong>How to track:</strong> Time-tracking software (<strong>Toggl</strong>, <strong>Harvest</strong>) or manual logging per article.</p>
+<h3>Metric 2: Rejection Rate</h3>
+<p>What percentage of AI outputs are rejected entirely and require full regeneration?</p>
+<p><strong>Baseline:</strong> 2-5% rejection rate
+<strong>Drift indicator:</strong> 15%+ rejection rate</p>
+<p><strong>What it signals:</strong> AI is producing fundamentally flawed outputs (wrong tone, factual errors, structural failures) at higher rates.</p>
+<p><strong>How to track:</strong> Log &quot;regenerate&quot; vs. &quot;edit and publish&quot; decisions per article.</p>
+<h3>Metric 3: Factual Error Frequency</h3>
+<p>How many factual errors (hallucinated statistics, incorrect product names, outdated information) appear per article?</p>
+<p><strong>Baseline:</strong> 0.2 errors per article (1 error per 5 articles)
+<strong>Drift indicator:</strong> 1+ errors per article</p>
+<p><strong>What it signals:</strong> AI is hallucinating more or your fact-checking process has weakened.</p>
+<p><strong>How to track:</strong> Editors flag and log factual errors during review. Calculate errors per article monthly.</p>
+<h3>Metric 4: AI Detection Score</h3>
+<p>Run articles through detection tools (Originality.ai, GPTZero) to measure how &quot;AI-like&quot; published content reads.</p>
+<p><strong>Baseline:</strong> &lt;30% AI probability
+**Drift indicator:** &gt;50% AI probability</p>
+<p><strong>What it signals:</strong> Editorial process isn&#39;t adequately removing AI fingerprints (<a href="/articles/ai-content-editing-checklist.html">editing checklist</a> not being applied).</p>
+<p><strong>How to track:</strong> Spot-check 10% of published articles monthly with detection tools.</p>
+<h3>Metric 5: Internal Link Accuracy</h3>
+<p>How often do AI-generated internal links point to the correct slugs?</p>
+<p><strong>Baseline:</strong> 95% accuracy
+<strong>Drift indicator:</strong> &lt;80% accuracy</p>
+<p><strong>What it signals:</strong> AI&#39;s understanding of your site structure is degrading, or your prompt&#39;s internal linking instructions are outdated.</p>
+<p><strong>How to track:</strong> Editors verify internal links and log broken or incorrect links per article.</p>
+<h2>Audit Phase 2: Pattern Detection</h2>
+<p>Metrics show <em>that</em> quality is drifting. Pattern analysis shows <em>why</em>.</p>
+<h3>Pattern 1: Word Count Variance</h3>
+<p>Compare published word counts to target specifications.</p>
+<p><strong>Analysis:</strong> Calculate mean and standard deviation of word counts across 50-article batches.</p>
+<p><strong>Healthy variance:</strong> Mean = 2,750 words, SD = 200 words (target: 2,500-3,000 words)
+<strong>Drift signal:</strong> Mean = 2,100 words, SD = 450 words (AI producing inconsistent, under-length content)</p>
+<p><strong>Diagnosis:</strong> Prompt degradation or model update changed output length behavior.</p>
+<h3>Pattern 2: Heading Structure Consistency</h3>
+<p>Do articles follow the H2/H3 structure specified in your content brief?</p>
+<p><strong>Analysis:</strong> Count H2 and H3 tags per article. Compare to target structure (e.g., 6 H2s, 12-18 H3s).</p>
+<p><strong>Healthy consistency:</strong> 90% of articles hit target structure ± 1 heading
+<strong>Drift signal:</strong> &lt;70% of articles hit target structure</p>
+<p><strong>Diagnosis:</strong> Prompt doesn&#39;t enforce structure, or AI is interpreting structure instructions differently.</p>
+<h3>Pattern 3: FAQ Quality</h3>
+<p>Do FAQ sections answer real user questions or generic placeholder questions?</p>
+<p><strong>Analysis:</strong> Sample 20 FAQ sections. Classify questions as &quot;specific and valuable&quot; vs. &quot;generic and obvious.&quot;</p>
+<p><strong>Healthy baseline:</strong> 80%+ specific questions
+<strong>Drift signal:</strong> &lt;50% specific questions</p>
+<p><strong>Diagnosis:</strong> AI defaulting to generic FAQs because prompt doesn&#39;t provide People Also Ask data or specific question examples.</p>
+<h3>Pattern 4: Voice Consistency</h3>
+<p>How consistently does content match your brand voice and <a href="/articles/observer-protocol-ai-content-voice-homogenization.html">Observer Protocol</a> constraints?</p>
+<p><strong>Analysis:</strong> Run 20 random articles through a voice rubric (e.g., scores for directness, specificity, opinion strength, lexical density).</p>
+<p><strong>Healthy baseline:</strong> Average voice score 8/10
+<strong>Drift signal:</strong> Average voice score &lt;6/10</p>
+<p><strong>Diagnosis:</strong> Editors aren&#39;t enforcing voice constraints, or prompt voice instructions have degraded.</p>
+<h3>Pattern 5: First-Person Experience Integration</h3>
+<p>Do articles include specific, first-person anecdotes and case studies, or are they abstract and generic?</p>
+<p><strong>Analysis:</strong> Count first-person anecdotes per article (stories with specific numbers, client names, outcomes).</p>
+<p><strong>Healthy baseline:</strong> 2+ anecdotes per article
+<strong>Drift signal:</strong> &lt;0.5 anecdotes per article</p>
+<p><strong>Diagnosis:</strong> AI generating generic content without human-injected experience, or prompt not requiring anecdote integration.</p>
+<h2>Audit Phase 3: Root Cause Analysis</h2>
+<p>Once patterns are identified, trace them to systemic causes.</p>
+<h3>Diagnostic Question 1: Has the Prompt Changed?</h3>
+<p><strong>Test:</strong> Compare current prompt to baseline prompt from week one. Identify modifications.</p>
+<p><strong>Common drift sources:</strong></p>
+<ul>
+<li>Instructions were removed to &quot;simplify&quot; the prompt</li>
+<li>Constraints were loosened to &quot;give AI more flexibility&quot;</li>
+<li>Model-specific phrasing was changed when switching providers</li>
+</ul>
+<p><strong>Fix:</strong> Revert to baseline prompt or systematically test which changes caused degradation.</p>
+<h3>Diagnostic Question 2: Has Editorial Process Changed?</h3>
+<p><strong>Test:</strong> Interview editors. Ask: &quot;What checks did you perform in week one that you don&#39;t perform now?&quot;</p>
+<p><strong>Common drift sources:</strong></p>
+<ul>
+<li>Editors stopped using the <a href="/articles/ai-content-editing-checklist.html">editing checklist</a></li>
+<li>Time pressure led to skimming instead of thorough review</li>
+<li>Turnover introduced new editors who weren&#39;t trained on quality standards</li>
+</ul>
+<p><strong>Fix:</strong> Reinforce editorial SOPs. Require checklist sign-off before publication.</p>
+<h3>Diagnostic Question 3: Has the Model Changed?</h3>
+<p><strong>Test:</strong> Check API version logs. Confirm which model version is currently in use vs. baseline.</p>
+<p><strong>Common drift sources:</strong></p>
+<ul>
+<li>Provider auto-updated to new model version</li>
+<li>You switched from <strong>GPT-4</strong> to <strong>GPT-4 Turbo</strong> for cost savings</li>
+<li>You switched from <strong>Claude 3.5 Sonnet</strong> to <strong>Claude 3.5 Haiku</strong> for speed</li>
+</ul>
+<p><strong>Fix:</strong> Lock to specific model versions or re-optimize prompts for new model behavior.</p>
+<h3>Diagnostic Question 4: Has Content Scope Changed?</h3>
+<p><strong>Test:</strong> Compare topic complexity of current articles to baseline articles.</p>
+<p><strong>Common drift sources:</strong></p>
+<ul>
+<li>Early articles were foundational (e.g., &quot;What is SEO?&quot;), current articles are advanced (e.g., &quot;Enterprise Technical SEO for Multi-Domain Architectures&quot;)</li>
+<li>Baseline prompt was optimized for beginner content, current articles require expert depth</li>
+</ul>
+<p><strong>Fix:</strong> Create tiered prompts — beginner, intermediate, advanced — and route topics accordingly.</p>
+<h2>Corrective Actions</h2>
+<h3>Fix 1: Prompt Refresh</h3>
+<p>Rebuild prompts from baseline quality examples.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Select 5 high-quality articles from baseline period</li>
+<li>Analyze what made them excellent (structure, voice, depth, examples)</li>
+<li>Update prompt to explicitly require those attributes</li>
+<li>Test on 10 new articles</li>
+<li>Compare quality metrics to baseline</li>
+<li>Iterate until metrics match or exceed baseline</li>
+</ol>
+<h3>Fix 2: Editorial Checklist Enforcement</h3>
+<p>Make quality gates non-negotiable.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Require editors to sign off on <a href="/articles/ai-content-editing-checklist.html">editing checklist</a> completion before publishing</li>
+<li>Add checklist compliance to editor performance reviews</li>
+<li>Implement spot-checks: QA team reviews 10% of published articles for checklist compliance</li>
+</ul>
+<h3>Fix 3: Automated Quality Monitoring</h3>
+<p>Deploy automated checks that flag degraded outputs before human review.</p>
+<p><strong>Automation examples:</strong></p>
+<ul>
+<li>Word count validator (rejects outputs &lt;2,400 or &gt;3,200 words)</li>
+<li>Heading structure validator (flags articles missing required H2 sections)</li>
+<li>AI detection scorer (flags articles &gt;40% AI probability for additional editing)</li>
+<li>Internal link validator (checks that all internal links resolve to valid pages)</li>
+</ul>
+<p><strong>Tools:</strong> Custom scripts, <strong>n8n</strong> workflows, <strong>Zapier</strong> validation steps</p>
+<h3>Fix 4: Periodic Re-Calibration</h3>
+<p>Schedule monthly audits to catch drift early.</p>
+<p><strong>Monthly audit checklist:</strong></p>
+<ul>
+<li>Review last 50 articles&#39; edit time, rejection rate, error frequency</li>
+<li>Spot-check 10 articles for voice consistency and FAQ quality</li>
+<li>Compare metrics to baseline</li>
+<li>If drift detected (&gt;15% degradation), initiate root cause analysis and corrective action</li>
+</ul>
+<h3>Fix 5: Model Version Pinning</h3>
+<p>Lock to specific model versions to prevent silent degradation from updates.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Anthropic API: Specify <code>model: &quot;claude-3-5-sonnet-20240620&quot;</code> instead of <code>model: &quot;claude-3-5-sonnet&quot;</code></li>
+<li>OpenAI API: Specify <code>model: &quot;gpt-4-0613&quot;</code> instead of <code>model: &quot;gpt-4&quot;</code></li>
+<li>Test new model versions in staging before production deployment</li>
+</ul>
+<h2>Case Study: Reversing 40% Quality Drift</h2>
+<p><strong>Context:</strong> B2B SaaS client producing 40 SEO articles/month using AI. After 4 months (160 articles), edit time increased from 15 minutes/article to 35 minutes/article. Rejection rate rose from 3% to 18%.</p>
+<p><strong>Audit findings:</strong></p>
+<ul>
+<li>Prompt had been &quot;simplified&quot; in month 2, removing voice constraints and example requirements</li>
+<li>Editorial team switched from checklist-based review to freeform editing</li>
+<li>Model auto-updated from <strong>GPT-4</strong> to <strong>GPT-4 Turbo</strong>, changing output length behavior</li>
+<li>Content topics had become more technical (enterprise features) but prompt still targeted beginner audience</li>
+</ul>
+<p><strong>Corrective actions:</strong></p>
+<ol>
+<li>Reverted to baseline prompt with voice constraints restored</li>
+<li>Created advanced-topic prompt variant for enterprise content</li>
+<li>Locked model to <strong>GPT-4</strong> (accepted higher cost for quality)</li>
+<li>Reinstated mandatory editing checklist with spot-check enforcement</li>
+</ol>
+<p><strong>Results:</strong></p>
+<ul>
+<li>Edit time dropped to 18 minutes/article within 2 weeks</li>
+<li>Rejection rate returned to 5%</li>
+<li>Factual error rate dropped from 1.2 errors/article to 0.3 errors/article</li>
+</ul>
+<p><strong>ROI:</strong> 17 minutes saved per article × 40 articles/month = 680 minutes (11.3 hours) saved monthly. At $75/hour editor cost, the fixes saved $850/month in editorial labor.</p>
+<h2>FAQ</h2>
+<h3>How often should I audit AI content quality?</h3>
+<p>Monthly for high-volume production (20+ articles/month). Quarterly for low-volume (5-10 articles/month). After any major change (new model, new editor, prompt updates, topic shifts) — audit immediately.</p>
+<h3>What if drift is caused by the AI model itself degrading?</h3>
+<p>Model degradation (providers making models worse over time) is rare but possible. If metrics show degradation and prompt/editorial factors are ruled out, test alternative models. Switch to <strong>Claude</strong> if <strong>GPT-4</strong> degraded, or vice versa.</p>
+<h3>Can I automate the entire audit process?</h3>
+<p>Partially. Metrics (edit time, word count, rejection rate) can be tracked automatically. Pattern detection (voice quality, anecdote integration, FAQ specificity) requires human review or advanced AI evaluation.</p>
+<h3>What&#39;s an acceptable level of quality drift?</h3>
+<p>&lt;10% degradation from baseline is normal variance. 10-20% degradation warrants investigation. &gt;20% degradation requires immediate corrective action. If drift exceeds 30%, consider pausing AI production until root cause is resolved.</p>
+<h3>Should I discard drifted content or try to fix it?</h3>
+<p>Fix high-value content (commercial pages, pillar articles). Discard or unpublish low-value content if fixing costs more than regenerating. For borderline content, compare cost of editing vs. regenerating — choose the cheaper option.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

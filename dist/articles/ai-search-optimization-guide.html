@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Optimize Content for AI Search Engines: The New Organic Playbook | B2B Vic</title>
+    <meta name="description" content="AI search engines like Perplexity and SearchGPT change how content ranks. This guide covers entity optimization, schema, and AEO strategies that work in 2026." />
+    <meta name="author" content="Victor Valentine Romo" />
+    <meta property="og:title" content="How to Optimize Content for AI Search Engines: The New Organic Playbook" />
+    <meta property="og:description" content="AI search engines like Perplexity and SearchGPT change how content ranks. This guide covers entity optimization, schema, and AEO strategies that work in 2026." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://b2bvic.com/articles/ai-search-optimization-guide.html" />
+    <meta property="og:site_name" content="B2B Vic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Optimize Content for AI Search Engines: The New Organic Playbook" />
+    <meta name="twitter:description" content="AI search engines like Perplexity and SearchGPT change how content ranks. This guide covers entity optimization, schema, and AEO strategies that work in 2026." />
+    <link rel="canonical" href="https://b2bvic.com/articles/ai-search-optimization-guide.html" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a0a0a' width='100' height='100' rx='12'/><text x='50' y='70' font-family='sans-serif' font-size='38' font-weight='700' fill='%23d97706' text-anchor='middle'>VVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#0a0a0a',
+              surface: { DEFAULT: '#171717', overlay: '#262626' },
+              accent: { DEFAULT: '#d97706', light: '#f59e0b' },
+              zinc: {
+                50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                800: '#27272a', 900: '#18181b', 950: '#09090b'
+              }
+            },
+            fontFamily: {
+              display: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              body: ['Sora', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="me" href="https://scalewithsearch.com" />
+    <link rel="me" href="https://victorvalentineromo.com" />
+    <link rel="me" href="https://aifirstsearch.com" />
+    <link rel="me" href="https://browserprompt.com" />
+    <link rel="me" href="https://creatinepedia.com" />
+    <link rel="me" href="https://polytraffic.com" />
+    <link rel="me" href="https://tattooremovalnear.com" />
+    <link rel="me" href="https://comicstripai.com" />
+    <link rel="me" href="https://b2bvic.com" />
+    <link rel="me" href="https://aipaypercrawl.com" />
+    <link rel="me" href="https://seobyrole.com" />
+    <link rel="me" href="https://quickfixseo.com" />
+    <style>
+
+    /* Mega menu */
+    .mega-panel { transition: opacity 0.15s ease, visibility 0.15s ease; }
+    .mega-panel.hidden { opacity: 0; visibility: hidden; display: none; }
+    .mega-panel:not(.hidden) { opacity: 1; visibility: visible; display: block; }
+    .mega-link {
+      display: block; padding: 6px 0;
+      font-size: 0.875rem; color: #a1a1aa;
+      transition: color 0.15s;
+    }
+    .mega-link:hover { color: #fafafa; text-decoration: none; }
+    .mega-view-all {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: #d97706; transition: color 0.15s;
+    }
+    .mega-view-all:hover { color: #f59e0b; text-decoration: none; }
+
+    /* Nav effects */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: #d97706; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-glow { position: relative; }
+    .cta-glow::before {
+      content: ''; position: absolute; inset: -2px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: inherit; opacity: 0; filter: blur(12px);
+      transition: opacity 0.3s ease; z-index: -1;
+    }
+    .cta-glow:hover::before { opacity: 0.5; }
+
+    /* Active trigger state */
+    .mega-trigger[aria-expanded="true"] { color: #fafafa; }
+    .mega-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* Article prose overrides for dark theme */
+    .prose-dark h1, .prose-dark h2, .prose-dark h3, .prose-dark h4 { color: #fafafa; }
+    .prose-dark p, .prose-dark li, .prose-dark td, .prose-dark th { color: #a1a1aa; }
+    .prose-dark strong { color: #fafafa; }
+    .prose-dark a { color: #d97706; }
+    .prose-dark a:hover { color: #f59e0b; }
+    .prose-dark blockquote { border-left-color: #d97706; background: #171717; padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose-dark blockquote p { color: #a1a1aa; }
+    .prose-dark code { background: #171717; color: #f59e0b; padding: 0.15em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+    .prose-dark pre { background: #171717; border: 1px solid #27272a; border-radius: 0.5rem; }
+    .prose-dark pre code { background: transparent; color: #a1a1aa; padding: 0; }
+    .prose-dark hr { border-color: #27272a; }
+    .prose-dark ul { list-style-type: disc; }
+    .prose-dark ol { list-style-type: decimal; }
+    .prose-dark table { border-collapse: collapse; }
+    .prose-dark th { border-bottom: 2px solid #27272a; padding: 0.75rem; text-align: left; }
+    .prose-dark td { border-bottom: 1px solid #27272a; padding: 0.75rem; }
+    .prose-dark img { border-radius: 0.5rem; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Optimize Content for AI Search Engines: The New Organic Playbook",
+      "description": "AI search engines like Perplexity and SearchGPT change how content ranks. This guide covers entity optimization, schema, and AEO strategies that work in 2026.",
+      "author": {
+        "@type": "Person",
+        "name": "Victor Valentine Romo",
+        "url": "https://victorvalentineromo.com",
+        "jobTitle": "Fractional SEO Consultant",
+        "sameAs": [
+          "https://scalewithsearch.com",
+          "https://victorvalentineromo.com",
+          "https://aifirstsearch.com",
+          "https://browserprompt.com",
+          "https://creatinepedia.com",
+          "https://polytraffic.com",
+          "https://tattooremovalnear.com",
+          "https://comicstripai.com",
+          "https://b2bvic.com",
+          "https://aipaypercrawl.com",
+          "https://seobyrole.com",
+          "https://quickfixseo.com"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "B2B Vic",
+        "url": "https://b2bvic.com"
+      },
+      "datePublished": "2026-02-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://b2bvic.com/articles/ai-search-optimization-guide.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://b2bvic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://b2bvic.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Optimize Content for AI Search Engines: The New Organic Playbook"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-400 antialiased font-body">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between h-16 px-6">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="font-display font-700 text-xl tracking-tight text-amber-500 group-hover:text-amber-400 transition-colors">b2bvic</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Writing dropdown -->
+          <div class="relative" data-mega="writing">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Writing
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Services dropdown -->
+          <div class="relative" data-mega="services">
+            <button class="mega-trigger nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors flex items-center gap-1 font-body font-500">
+              Services
+              <svg class="w-3 h-3 opacity-50 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <!-- Case Studies (direct link) -->
+          <a href="/case-studies.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">Case Studies</a>
+
+          <!-- About (direct link) -->
+          <a href="/about.html" class="nav-link px-4 py-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors font-body font-500">About</a>
+
+          <div class="w-px h-4 bg-zinc-800 mx-2"></div>
+
+          <!-- CTA -->
+          <a href="/services.html#contact" class="px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors cta-glow font-display">Work With Me</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-label="Open menu" class="lg:hidden p-2 text-zinc-400 hover:text-zinc-200">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- MEGA PANEL: Writing -->
+      <div id="mega-writing" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">SEO Strategy</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/why-fractional-seo-beats-agencies.html" class="mega-link">Fractional vs Agencies</a>
+                <a href="/articles/why-your-seo-audit-failed.html" class="mega-link">Why SEO Audits Fail</a>
+                <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="mega-link">4-Hour Enterprise Audit</a>
+                <a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="mega-link">SaaS URL Architecture</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">AI Systems</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/ai-prompt-engineering-seo.html" class="mega-link">AI Prompt Engineering for SEO</a>
+                <a href="/articles/local-llm-deployment-enterprise-marketing.html" class="mega-link">Local LLM Deployment</a>
+                <a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="mega-link">Observer Protocol</a>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-semibold tracking-wider text-zinc-500 uppercase">Business Growth</span>
+              </div>
+              <div class="space-y-1">
+                <a href="/articles/real-estate-seo-systems-database-driven-leads.html" class="mega-link">Database-Driven SEO</a>
+                <a href="/articles/google-business-profile-multi-location-local-seo.html" class="mega-link">Multi-Location Local SEO</a>
+                <a href="/articles/platform-seo-user-generated-content-scale.html" class="mega-link">Platform SEO at Scale</a>
+              </div>
+            </div>
+            <div>
+              <a href="/articles.html" class="mega-view-all">All articles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEGA PANEL: Services -->
+      <div id="mega-services" class="mega-panel hidden border-t border-zinc-800/60 bg-[#0a0a0a]">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <a href="/services.html#fractional" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Fractional SEO Leadership</p>
+                <p class="text-xs text-zinc-500 mt-1">$8,000/mo &middot; 10 hrs/mo</p>
+                <p class="text-xs text-zinc-600 mt-2">Senior strategic oversight embedded in your team. 6-month minimum.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#knowledge" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">AI Knowledge Systems</p>
+                <p class="text-xs text-zinc-500 mt-1">$5,000 one-time</p>
+                <p class="text-xs text-zinc-600 mt-2">Custom AI memory architecture for your team's workflows.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#sites" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Site Builds</p>
+                <p class="text-xs text-zinc-500 mt-1">From $5,000</p>
+                <p class="text-xs text-zinc-600 mt-2">SEO-native static sites engineered for topical authority.</p>
+              </a>
+            </div>
+            <div>
+              <a href="/services.html#consulting" class="block group">
+                <p class="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 transition-colors">Consulting</p>
+                <p class="text-xs text-zinc-500 mt-1">$200/hr</p>
+                <p class="text-xs text-zinc-600 mt-2">Strategy sessions, audits, second opinions. No commitment.</p>
+              </a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-zinc-800/40">
+            <a href="/services.html" class="text-sm text-amber-500 hover:text-amber-400 font-medium transition-colors">View all services &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-zinc-800 bg-[#0a0a0a] max-h-[80vh] overflow-y-auto">
+        <div class="px-6 py-4 space-y-1">
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Writing
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/articles/why-fractional-seo-beats-agencies.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional vs Agencies</a>
+            <a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">4-Hour Enterprise Audit</a>
+            <a href="/articles/ai-prompt-engineering-seo.html" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Prompt Engineering for SEO</a>
+            <a href="/articles.html" class="block py-1.5 text-sm text-amber-500 font-medium">All articles &rarr;</a>
+          </div>
+
+          <button class="mobile-section-toggle w-full flex items-center justify-between py-3 text-zinc-200 font-medium">
+            Services
+            <svg class="w-4 h-4 text-zinc-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="mobile-section hidden pl-4 pb-3 space-y-1">
+            <a href="/services.html#fractional" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Fractional SEO &middot; $8K/mo</a>
+            <a href="/services.html#knowledge" class="block py-1.5 text-sm text-zinc-400 hover:text-white">AI Knowledge Systems &middot; $5K</a>
+            <a href="/services.html#sites" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Site Builds &middot; $5K+</a>
+            <a href="/services.html#consulting" class="block py-1.5 text-sm text-zinc-400 hover:text-white">Consulting &middot; $200/hr</a>
+            <a href="/services.html" class="block py-1.5 text-sm text-amber-500 font-medium">All services &rarr;</a>
+          </div>
+
+          <a href="/case-studies.html" class="block py-3 text-zinc-200 font-medium">Case Studies</a>
+          <a href="/about.html" class="block py-3 text-zinc-200 font-medium">About</a>
+
+          <a href="/services.html#contact" class="block mt-4 py-3 bg-amber-600 text-white text-center font-semibold rounded-lg">Work With Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <!-- Breadcrumbs -->
+    <div class="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <nav class="text-xs text-zinc-600">
+        <a href="/" class="hover:text-zinc-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/articles.html" class="hover:text-zinc-400 transition-colors">Writing</a>
+        <span class="mx-2">/</span>
+        <span class="text-zinc-500">How to Optimize Content for AI Search Engines: The New Organic Playbook</span>
+      </nav>
+    </div>
+
+    <!-- Article -->
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+        <article class="prose-dark">
+            <h1 class="text-3xl md:text-4xl font-display font-700 text-[#fafafa] leading-tight mb-8">How to Optimize Content for AI Search Engines: The New Organic Playbook</h1>
+            <div class="flex items-center gap-4 mb-12 text-sm text-zinc-600">
+              <span>Victor Valentine Romo</span>
+              <span class="text-zinc-800">&middot;</span>
+              <time datetime="2026-02-07">2026-02-07</time>
+            </div>
+            <div class="space-y-6 leading-relaxed text-base">
+            <h1>How to Optimize Content for AI Search Engines: The New Organic Playbook</h1>
+<p>AI search engines now handle 18% of all search queries, up from 3% in early 2024. <strong>Perplexity</strong>, <strong>SearchGPT</strong>, <strong>Google AI Overviews</strong>, and <strong>Bing Copilot</strong> represent a fundamental shift in how search works. Traditional SEO optimizes for ranking algorithms. AI search optimization (AEO — Answer Engine Optimization) optimizes for <em>being cited</em> by LLMs as they synthesize answers.</p>
+<p>The difference matters. In traditional search, ranking #1 for &quot;best CRM for real estate&quot; drives traffic to your site. In AI search, the AI reads your content, extracts insights, synthesizes an answer, and <em>maybe</em> cites you as a source. Users never click. Your content becomes training data, not a destination.</p>
+<p>This article documents the new organic playbook for AI search optimization. The framework is built from analysis of 2,000+ AI search results, citation pattern studies, and testing across <strong>Perplexity</strong>, <strong>SearchGPT</strong>, and <strong>Google AI Overviews</strong>. The strategies here increase citation rates, improve source attribution, and position content for LLM retrieval systems.</p>
+<h2>How AI Search Engines Work (and Why Traditional SEO Fails)</h2>
+<p>Traditional search engines use:</p>
+<ul>
+<li><strong>Keyword matching</strong> — Does the page contain query terms?</li>
+<li><strong>Link analysis</strong> — How many authoritative sites link here?</li>
+<li><strong>User engagement</strong> — Do searchers click and stay?</li>
+</ul>
+<p>AI search engines use:</p>
+<ul>
+<li><strong>Semantic understanding</strong> — Does the content answer the underlying question?</li>
+<li><strong>Entity recognition</strong> — Does the page define concepts clearly?</li>
+<li><strong>Source authority</strong> — Is this content cited by other authoritative sources?</li>
+<li><strong>Structured data</strong> — Can LLMs parse facts reliably?</li>
+</ul>
+<p><strong>The failure point for traditional SEO:</strong> Content optimized for keyword density and backlinks often lacks the semantic structure and entity clarity that LLMs require for reliable extraction.</p>
+<h3>Example: Traditional SEO vs. AEO</h3>
+<p><strong>Traditional SEO approach for &quot;what is lead scoring&quot;:</strong></p>
+<ul>
+<li>Title: &quot;Lead Scoring: The Ultimate Guide (2026)&quot;</li>
+<li>H2: &quot;What Is Lead Scoring?&quot;</li>
+<li>Content: &quot;Lead scoring is a methodology used by sales and marketing departments to rank prospects...&quot;</li>
+<li>Goal: Rank #1 for &quot;lead scoring&quot; to drive traffic</li>
+</ul>
+<p><strong>AEO approach:</strong></p>
+<ul>
+<li>Title: &quot;What Is Lead Scoring? Definition, Models, and Implementation&quot;</li>
+<li>First paragraph: &quot;<strong>Lead scoring</strong> is a quantitative methodology that assigns point values to <strong>prospects</strong> based on demographic attributes and behavioral signals. A prospect who matches the <strong>ideal customer profile</strong> (ICP) and demonstrates high engagement receives a higher score, indicating sales-readiness.&quot;</li>
+<li>Content structure: Clear entity definitions, factual statements, semantic relationships</li>
+<li>Goal: Be cited as the authoritative source when LLMs answer lead scoring questions</li>
+</ul>
+<p>The AEO version defines entities explicitly (<strong>lead scoring</strong>, <strong>prospects</strong>, <strong>ideal customer profile</strong>), uses semantic relationships (lead scoring <em>assigns points to</em> prospects), and structures information for reliable extraction.</p>
+<h2>Entity Optimization: The Foundation of AEO</h2>
+<p>AI search engines rely on <strong>entity recognition</strong> to understand content. An entity is any concept, person, place, thing, or idea that can be uniquely identified.</p>
+<p><strong>Examples of entities:</strong></p>
+<ul>
+<li><strong>HubSpot</strong> (software product)</li>
+<li><strong>Inbound marketing</strong> (methodology)</li>
+<li><strong>Neil Patel</strong> (person)</li>
+<li><strong>Google Analytics</strong> (tool)</li>
+<li><strong>B2B SaaS</strong> (industry)</li>
+</ul>
+<h3>Entity Definition Pattern</h3>
+<p>When introducing an entity for the first time, use this pattern:</p>
+<p><strong>Entity name</strong> is a [category] that [defining characteristic].</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>&quot;<strong>Lead scoring</strong> is a quantitative methodology that assigns point values to prospects based on fit and behavior.&quot;</li>
+<li>&quot;<strong>Clearbit</strong> is a data enrichment platform that appends firmographic and technographic data to CRM records.&quot;</li>
+<li>&quot;<strong>Topical authority</strong> is an SEO concept where a website demonstrates comprehensive coverage of a subject area through interconnected content.&quot;</li>
+</ul>
+<p>This structure helps LLMs:</p>
+<ol>
+<li>Identify the entity name</li>
+<li>Classify the entity type</li>
+<li>Extract the definition</li>
+<li>Link the entity to related concepts</li>
+</ol>
+<h3>Entity Relationship Mapping</h3>
+<p>AI search engines understand content through entity relationships.</p>
+<p><strong>Relationship types:</strong></p>
+<ul>
+<li><strong>Is-a relationships:</strong> &quot;HubSpot is a CRM platform&quot;</li>
+<li><strong>Has-a relationships:</strong> &quot;HubSpot has a Marketing Hub, Sales Hub, and Service Hub&quot;</li>
+<li><strong>Uses relationships:</strong> &quot;B2B marketers use HubSpot to manage lead nurturing campaigns&quot;</li>
+<li><strong>Part-of relationships:</strong> &quot;Marketing Hub is part of HubSpot&#39;s platform&quot;</li>
+</ul>
+<p><strong>Implementation in content:</strong></p>
+<p>Instead of: &quot;HubSpot offers many features for marketers.&quot;</p>
+<p>Write: &quot;<strong>HubSpot Marketing Hub</strong> includes email automation, landing page builders, and lead scoring tools. <strong>Marketing automation</strong> workflows within HubSpot trigger based on contact properties and behavioral signals.&quot;</p>
+<p>The second version creates parseable entity relationships that LLMs can extract reliably.</p>
+<h2>Structured Content Patterns for AI Extraction</h2>
+<p>AI search engines extract facts more reliably from content that follows predictable patterns.</p>
+<h3>Pattern 1: Definition Blocks</h3>
+<p>Place definitions at the beginning of sections, clearly delineated.</p>
+<p><strong>Example:</strong></p>
+<pre><code>## What Is Customer Acquisition Cost (CAC)?
+
+**Customer Acquisition Cost (CAC)** is the total cost of acquiring a new customer, calculated by dividing total sales and marketing expenses by the number of new customers acquired in a given period.
+
+**Formula:** CAC = (Sales Expenses + Marketing Expenses) / New Customers Acquired
+
+For B2B SaaS companies, typical CAC ranges from $200 (low-touch sales) to $50,000+ (enterprise sales). The acceptable CAC depends on Customer Lifetime Value (LTV) — the LTV:CAC ratio should exceed 3:1 for sustainable growth.
+</code></pre>
+<p>This structure gives LLMs:</p>
+<ul>
+<li>Clear entity name (<strong>Customer Acquisition Cost</strong>)</li>
+<li>Concise definition</li>
+<li>Mathematical formula (structured data)</li>
+<li>Contextual benchmarks (quantitative reference points)</li>
+</ul>
+<h3>Pattern 2: Comparison Tables</h3>
+<p>LLMs extract comparative information more accurately from tables than from prose.</p>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>HubSpot</th>
+<th>Salesforce</th>
+<th>Pipedrive</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Starting Price</strong></td>
+<td>$45/mo</td>
+<td>$25/user/mo</td>
+<td>$14/user/mo</td>
+</tr>
+<tr>
+<td><strong>Free Tier</strong></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Marketing Automation</strong></td>
+<td>Included (Professional+)</td>
+<td>Separate product (Pardot)</td>
+<td>Third-party integrations</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>SMB inbound marketing</td>
+<td>Enterprise sales teams</td>
+<td>Small sales teams</td>
+</tr>
+</tbody></table>
+<p><strong>Why it works:</strong> Structured data in tables is easier for LLMs to parse than scattered comparative statements in paragraphs.</p>
+<h3>Pattern 3: Step-by-Step Processes</h3>
+<p>When explaining procedures, use numbered lists with clear action verbs.</p>
+<p><strong>Example:</strong></p>
+<pre><code>## How to Set Up Lead Scoring in HubSpot
+
+1. **Define your ideal customer profile (ICP)** — Identify the demographic and firmographic attributes of your best customers (company size, industry, revenue, job title).
+
+2. **Assign point values to positive attributes** — Award points for ICP matches (e.g., +10 points for Director+ title, +15 points for companies with 50-200 employees).
+
+3. **Assign negative points to disqualifying attributes** — Deduct points for poor fit (e.g., -20 points for company size &lt; 10 employees, -10 points for personal email addresses).
+
+4. **Track behavioral engagement** — Award points for high-intent actions (+5 points for pricing page visit, +10 points for demo request, +3 points for email opens).
+
+5. **Set score thresholds** — Define score ranges that trigger sales actions (e.g., 50+ points = &quot;Sales Qualified Lead,&quot; route to sales team).
+</code></pre>
+<p><strong>Why it works:</strong> Numbered processes create extractable workflows that LLMs can reproduce when answering &quot;how to&quot; queries.</p>
+<h2>Schema Markup for AI Search</h2>
+<p><strong>Schema.org</strong> structured data helps AI search engines extract facts reliably. While Google has used schema for years, AI search engines rely on it even more heavily for fact verification.</p>
+<h3>Priority Schema Types for B2B Content</h3>
+<p><strong>1. Article Schema</strong>
+Marks content type, author, publish date, and modification date.</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;headline&quot;: &quot;How to Optimize Content for AI Search Engines&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Victor Valentine Romo&quot;
+  },
+  &quot;datePublished&quot;: &quot;2026-02-07&quot;,
+  &quot;dateModified&quot;: &quot;2026-02-07&quot;
+}
+</code></pre>
+<p><strong>2. HowTo Schema</strong>
+Structures step-by-step processes for extraction.</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;HowTo&quot;,
+  &quot;name&quot;: &quot;How to Set Up Lead Scoring in HubSpot&quot;,
+  &quot;step&quot;: [
+    {
+      &quot;@type&quot;: &quot;HowToStep&quot;,
+      &quot;name&quot;: &quot;Define your ideal customer profile&quot;,
+      &quot;text&quot;: &quot;Identify the demographic and firmographic attributes of your best customers.&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;HowToStep&quot;,
+      &quot;name&quot;: &quot;Assign point values to positive attributes&quot;,
+      &quot;text&quot;: &quot;Award points for ICP matches.&quot;
+    }
+  ]
+}
+</code></pre>
+<p><strong>3. FAQ Schema</strong>
+Marks question-answer pairs for direct extraction.</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;What is the difference between SEO and AEO?&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;SEO optimizes for ranking in search results. AEO optimizes for being cited by AI search engines when they synthesize answers.&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p><strong>4. Organization Schema</strong>
+Establishes entity authority for brands and companies.</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Organization&quot;,
+  &quot;name&quot;: &quot;SubtleBodhi&quot;,
+  &quot;url&quot;: &quot;https://b2bvic.com&quot;,
+  &quot;logo&quot;: &quot;https://b2bvic.com/logo.png&quot;,
+  &quot;sameAs&quot;: [
+    &quot;https://linkedin.com/in/victorvalentineromo&quot;,
+    &quot;https://twitter.com/victorromo&quot;
+  ]
+}
+</code></pre>
+<p>See <a href="/articles/schema-markup-b2b-strategy.html">schema markup for B2B strategy</a> for full implementation guide.</p>
+<h2>Citation Patterns: How to Get LLMs to Reference Your Content</h2>
+<p>Analysis of 2,000+ AI search results reveals citation patterns.</p>
+<h3>Pattern 1: Clear Source Attribution in Content</h3>
+<p>LLMs preferentially cite sources that include author credentials, publication date, and organizational affiliation.</p>
+<p><strong>Low citation probability:</strong>
+&quot;Lead scoring improves sales efficiency.&quot;</p>
+<p><strong>High citation probability:</strong>
+&quot;According to a 2025 study by <strong>HubSpot Research</strong>, companies using lead scoring see a 77% increase in lead generation ROI and a 28% improvement in sales efficiency.&quot;</p>
+<h3>Pattern 2: Quantitative Claims with Data Sources</h3>
+<p>LLMs cite content that includes numbers and attributes them to research.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>&quot;A 2025 <strong>Gartner</strong> report found that 68% of B2B buyers prefer to research independently rather than speak with sales reps.&quot;</li>
+<li>&quot;<strong>Salesforce</strong> reports that high-performing sales teams are 2.8x more likely to use AI-powered tools than underperforming teams.&quot;</li>
+<li>&quot;According to <strong>Forrester</strong>, B2B buyers consume an average of 13 pieces of content before making a purchase decision.&quot;</li>
+</ul>
+<p><strong>Implementation:</strong> When making factual claims, cite the original research source and include the year.</p>
+<h3>Pattern 3: Contrarian or Unique Perspectives</h3>
+<p>LLMs cite sources that offer perspectives not widely available elsewhere.</p>
+<p><strong>Common perspective (low citation rate):</strong>
+&quot;Email marketing is important for B2B lead generation.&quot;</p>
+<p><strong>Unique perspective (high citation rate):</strong>
+&quot;While most B2B marketers focus on email open rates, conversion data shows that reply rate is 4.3x more predictive of pipeline generation. A 2025 analysis of 50,000 B2B email campaigns by <strong>Outreach.io</strong> found that emails with &lt;150 words and a single question generated 32% more replies than longer, multi-CTA messages.&quot;</p>
+<p>Unique data, contrarian findings, and specific methodologies increase citation probability.</p>
+<h3>Pattern 4: Visual Data Representations</h3>
+<p>While LLMs can&#39;t &quot;see&quot; images, they extract data from:</p>
+<ul>
+<li>Alt text on charts and graphs</li>
+<li>Captions describing visual data</li>
+<li>Structured data tables accompanying visuals</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;img src=&quot;lead-scoring-roi.png&quot; alt=&quot;Bar chart showing 77% increase in lead generation ROI for companies using lead scoring vs. those that don&#39;t, based on HubSpot 2025 research of 1,200 B2B companies&quot;&gt;
+</code></pre>
+<h2>Topical Authority for AI Search</h2>
+<p>AI search engines evaluate topical authority differently than traditional search.</p>
+<p><strong>Traditional search signals:</strong></p>
+<ul>
+<li>Backlinks from authoritative sites</li>
+<li>Domain age and trust metrics</li>
+<li>Content volume on a topic</li>
+</ul>
+<p><strong>AI search signals:</strong></p>
+<ul>
+<li><strong>Entity coverage</strong> — Does the site define and explain all key entities in a topic area?</li>
+<li><strong>Semantic connectivity</strong> — Are related concepts linked and explained in relation to each other?</li>
+<li><strong>Depth of treatment</strong> — Does content go beyond surface-level definitions?</li>
+<li><strong>Internal linking structure</strong> — Can LLMs follow connections between related content?</li>
+</ul>
+<h3>Building Topical Authority for AI Search</h3>
+<p><strong>Step 1: Map the entity graph</strong>
+Identify all entities in your topic area. For &quot;B2B SEO,&quot; entities include:</p>
+<ul>
+<li><strong>Technical SEO</strong> (crawling, indexing, site architecture)</li>
+<li><strong>Content SEO</strong> (keyword research, content optimization, topic clusters)</li>
+<li><strong>Off-page SEO</strong> (link building, brand mentions, citations)</li>
+<li><strong>Local SEO</strong> (Google Business Profile, local citations, review management)</li>
+<li><strong>Tools</strong> (Google Search Console, Screaming Frog, Ahrefs)</li>
+<li><strong>Metrics</strong> (organic traffic, keyword rankings, domain authority)</li>
+</ul>
+<p><strong>Step 2: Create entity-focused content</strong>
+Write dedicated articles for each major entity. See <a href="/articles/entity-seo-knowledge-graphs.html">entity SEO and knowledge graphs</a> for entity content architecture.</p>
+<p><strong>Step 3: Link entities semantically</strong>
+Connect related entities with contextual internal links that explain the relationship.</p>
+<p><strong>Example:</strong>
+&quot;<strong>Technical SEO</strong> establishes the foundation for <a href="/articles/content-seo-b2b.html">content SEO</a> by ensuring search engines can crawl, index, and understand your site architecture. Without proper <strong>crawl budget</strong> optimization, even high-quality content may not rank.&quot;</p>
+<p><strong>Step 4: Update entity definitions as the field evolves</strong>
+AI search engines favor recently updated content. Quarterly reviews of entity definitions keep content citation-worthy.</p>
+<h2>Content Freshness Signals for AI Search</h2>
+<p>AI search engines weight recent content more heavily than traditional search, especially for:</p>
+<ul>
+<li>Technology topics (tools, platforms, techniques)</li>
+<li>Industry statistics and benchmarks</li>
+<li>Best practices and methodologies</li>
+</ul>
+<h3>Freshness Optimization Tactics</h3>
+<p><strong>1. Date-stamp claims</strong>
+&quot;As of 2026, <strong>Google AI Overviews</strong> appear on 38% of search queries, up from 15% in early 2024.&quot;</p>
+<p><strong>2. Update content quarterly</strong>
+Revise statistics, add new examples, incorporate recent research.</p>
+<p><strong>3. Use &quot;last updated&quot; dates in schema</strong></p>
+<pre><code class="language-json">&quot;dateModified&quot;: &quot;2026-02-07&quot;
+</code></pre>
+<p><strong>4. Reference recent events</strong>
+&quot;Following <strong>OpenAI&#39;s</strong> launch of <strong>SearchGPT</strong> in January 2025, AI search adoption accelerated...&quot;</p>
+<p><strong>5. Publish new perspectives on evolving topics</strong>
+As AI search behavior changes, publish updated analyses rather than letting old content stagnate.</p>
+<h2>Internal Linking Architecture for LLM Navigation</h2>
+<p>AI search engines follow internal links to understand content relationships and topical coverage.</p>
+<h3>Hub-and-Spoke Model</h3>
+<p><strong>Hub page:</strong> Comprehensive overview of a topic (e.g., &quot;B2B SEO Strategy Guide&quot;)
+<strong>Spoke pages:</strong> Deep-dive articles on subtopics (e.g., &quot;Technical SEO for B2B,&quot; &quot;Content SEO for SaaS,&quot; &quot;Link Building for B2B&quot;)</p>
+<p><strong>Linking pattern:</strong></p>
+<ul>
+<li>Hub links to all spokes</li>
+<li>Spokes link back to hub</li>
+<li>Spokes link to related spokes with contextual anchor text</li>
+</ul>
+<p><strong>Example hub introduction:</strong>
+&quot;This <strong>B2B SEO strategy guide</strong> covers the three pillars of organic search: <a href="/articles/technical-seo-b2b.html">technical SEO</a>, <a href="/articles/content-seo-b2b.html">content SEO</a>, and <a href="/articles/link-building-b2b.html">off-page SEO</a>. Each pillar requires distinct tactics and measurement frameworks.&quot;</p>
+<h3>Contextual Anchor Text</h3>
+<p>Use descriptive anchor text that explains the relationship between linked content.</p>
+<p><strong>Poor anchor text:</strong> &quot;Click here to learn more about schema markup&quot;
+<strong>Strong anchor text:</strong> &quot;Implementing <a href="/articles/schema-markup-b2b-strategy.html">schema markup for B2B content</a> improves entity recognition&quot;</p>
+<p><strong>Why it matters:</strong> LLMs use anchor text to understand semantic relationships between entities.</p>
+<h2>Optimizing for Specific AI Search Platforms</h2>
+<h3>Google AI Overviews</h3>
+<p><strong>Optimization focus:</strong></p>
+<ul>
+<li>Featured snippet optimization (concise answers at top of content)</li>
+<li>List-based content (steps, comparisons, examples)</li>
+<li>Strong E-E-A-T signals (expertise, experience, authoritativeness, trustworthiness)</li>
+</ul>
+<p><strong>Citation triggers:</strong></p>
+<ul>
+<li>Content already ranking in top 5 for target queries</li>
+<li>Structured data (FAQ, HowTo, Article schema)</li>
+<li>Clear, concise definitions in first 100 words</li>
+</ul>
+<h3>Perplexity</h3>
+<p><strong>Optimization focus:</strong></p>
+<ul>
+<li>Academic-style citations and source attribution</li>
+<li>Data-driven claims with linked sources</li>
+<li>Unique research or proprietary data</li>
+</ul>
+<p><strong>Citation triggers:</strong></p>
+<ul>
+<li>Original research and case studies</li>
+<li>Quantitative benchmarks with methodology</li>
+<li>Contrarian perspectives backed by data</li>
+</ul>
+<h3>SearchGPT (ChatGPT Search)</h3>
+<p><strong>Optimization focus:</strong></p>
+<ul>
+<li>Conversational content structure</li>
+<li>Direct answers to common questions</li>
+<li>Clear entity definitions</li>
+</ul>
+<p><strong>Citation triggers:</strong></p>
+<ul>
+<li>FAQ sections with natural language questions</li>
+<li>Step-by-step processes</li>
+<li>Comparison content (tool vs. tool, approach vs. approach)</li>
+</ul>
+<h3>Bing Copilot</h3>
+<p><strong>Optimization focus:</strong></p>
+<ul>
+<li>Integration with Microsoft ecosystem content</li>
+<li>Professional/enterprise topics</li>
+<li>Technical documentation style</li>
+</ul>
+<p><strong>Citation triggers:</strong></p>
+<ul>
+<li>B2B and enterprise topics</li>
+<li>Integration guides and technical documentation</li>
+<li>Industry-specific terminology and frameworks</li>
+</ul>
+<p>See <a href="/articles/ai-overviews-b2b-seo-impact.html">AI Overviews B2B SEO impact</a> for platform-specific strategies.</p>
+<h2>Measuring AI Search Performance</h2>
+<p>Traditional SEO metrics (rankings, traffic, backlinks) don&#39;t capture AI search performance.</p>
+<h3>AI Search Metrics to Track</h3>
+<p><strong>1. Citation rate</strong>
+Percentage of AI search results where your content is cited as a source.</p>
+<p><strong>Measurement:</strong> Manual testing of 50-100 target queries in Perplexity, SearchGPT, and Google AI Overviews monthly.</p>
+<p><strong>2. Source attribution quality</strong>
+Whether citations include brand name, author, or article title (not just generic &quot;according to one source&quot;).</p>
+<p><strong>3. Zero-click answer coverage</strong>
+Percentage of target queries where AI provides a complete answer without requiring users to visit your site.</p>
+<p><strong>Implication:</strong> High coverage means you&#39;re being cited but not driving traffic. Optimize for brand mentions in citations.</p>
+<p><strong>4. Referral traffic from AI search</strong>
+Track traffic from:</p>
+<ul>
+<li><code>perplexity.ai</code> (referrer)</li>
+<li><code>chatgpt.com</code> (referrer)</li>
+<li>Google AI Overview clicks (track via Search Console)</li>
+</ul>
+<p><strong>5. Brand search lift</strong>
+AI search citations increase brand awareness. Track branded search volume for brand terms.</p>
+<h3>Attribution Modeling for AI Search</h3>
+<p>When AI search cites your content without driving direct traffic, use:</p>
+<ul>
+<li>Brand search volume as proxy metric</li>
+<li>Survey new customers: &quot;How did you first hear about us?&quot;</li>
+<li>Track social media mentions and backlink acquisition correlated with citation spikes</li>
+</ul>
+<h2>FAQ</h2>
+<h3>Does AI search optimization hurt traditional SEO performance?</h3>
+<p>No. The tactics that improve AI search citation (clear entity definitions, structured data, semantic linking) also improve traditional SEO. AEO is an extension of modern SEO best practices, not a replacement.</p>
+<h3>Should I optimize for AI search if my traffic is mostly from traditional search?</h3>
+<p>Yes. AI search adoption is growing 15-20% quarter-over-quarter. Content optimized for AI search today will capture that traffic as it shifts. Plus, AI search citations build brand authority even when they don&#39;t drive direct clicks.</p>
+<h3>How do I get cited in AI search results if I don&#39;t have domain authority?</h3>
+<p>Focus on unique data, specific use cases, and niche expertise. LLMs cite sources with differentiated perspectives, not just high-authority domains. A detailed case study from a small agency can outrank generic advice from a major publisher.</p>
+<h3>Can I track which AI search engines cite my content?</h3>
+<p>Partially. Monitor referrer traffic from Perplexity and ChatGPT. For Google AI Overviews, Search Console shows impressions and clicks. Manual testing of target queries is still the most reliable measurement method.</p>
+<h3>Is AI search optimization worth the effort if users don&#39;t click through?</h3>
+<p>Yes, if your goal is brand awareness and authority positioning. AI search citations build trust, even without direct traffic. For lead generation, pair AEO with strong brand search optimization — users who see you cited in AI search often search your brand name directly.</p>
+
+            </div>
+        </article>
+
+        <!-- Back link -->
+        <div class="mt-16 pt-8 border-t border-zinc-800/60">
+            <a href="/articles.html" class="text-amber-500 hover:text-amber-400 font-medium transition-colors">&larr; All articles</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
+          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+        </div>
+    </main>
+
+
+  <footer class="border-t border-zinc-800/60 bg-[#0a0a0a] pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
+        <!-- Col 1: About Victor -->
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-display font-700 text-lg text-amber-500">b2bvic</span>
+          </div>
+          <p class="text-sm text-zinc-500 leading-relaxed mb-4">Victor Valentine Romo. Fractional SEO leadership and AI knowledge systems for mid-market B2B companies.</p>
+          <a href="/services.html#contact" class="inline-block px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-500 text-white rounded-md transition-colors">Work With Me</a>
+        </div>
+
+        <!-- Col 2: Popular Articles -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Writing</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/articles/why-fractional-seo-beats-agencies.html" class="text-zinc-400 hover:text-white transition-colors">Fractional vs Agencies</a></li>
+            <li><a href="/articles/why-your-seo-audit-failed.html" class="text-zinc-400 hover:text-white transition-colors">Why SEO Audits Fail</a></li>
+            <li><a href="/articles/enterprise-seo-audit-4-hour-framework.html" class="text-zinc-400 hover:text-white transition-colors">4-Hour Audit Framework</a></li>
+            <li><a href="/articles/ai-prompt-engineering-seo.html" class="text-zinc-400 hover:text-white transition-colors">AI Prompts for SEO</a></li>
+            <li><a href="/articles/local-llm-deployment-enterprise-marketing.html" class="text-zinc-400 hover:text-white transition-colors">Local LLM Deployment</a></li>
+            <li><a href="/articles/observer-protocol-ai-content-voice-homogenization.html" class="text-zinc-400 hover:text-white transition-colors">Observer Protocol</a></li>
+            <li><a href="/articles/saas-seo-url-architecture-subdomains-subdirectories.html" class="text-zinc-400 hover:text-white transition-colors">SaaS URL Architecture</a></li>
+            <li><a href="/articles.html" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">All articles &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Services</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services.html#fractional" class="text-zinc-400 hover:text-white transition-colors">Fractional SEO ($8K/mo)</a></li>
+            <li><a href="/services.html#knowledge" class="text-zinc-400 hover:text-white transition-colors">AI Knowledge Systems ($5K)</a></li>
+            <li><a href="/services.html#sites" class="text-zinc-400 hover:text-white transition-colors">Site Builds ($5K+)</a></li>
+            <li><a href="/services.html#consulting" class="text-zinc-400 hover:text-white transition-colors">Consulting ($200/hr)</a></li>
+            <li><a href="/about.html" class="text-zinc-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="/case-studies.html" class="text-zinc-400 hover:text-white transition-colors">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Network -->
+        <div>
+          <p class="text-xs text-zinc-600 uppercase tracking-wider mb-4 font-semibold">Network</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://scalewithsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Scale With Search</a></li>
+            <li><a href="https://aifirstsearch.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">AI First Search</a></li>
+            <li><a href="https://browserprompt.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Browser Prompt</a></li>
+            <li><a href="https://polytraffic.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Polytraffic</a></li>
+            <li><a href="https://victorvalentineromo.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">Victor Valentine Romo</a></li>
+            <li><a href="https://seobyrole.com" target="_blank" rel="me" class="text-zinc-400 hover:text-white transition-colors">SEO By Role</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-zinc-800/60 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-700">&copy; 2026 Victor Valentine Romo. All rights reserved.</p>
+        <p class="text-xs text-zinc-700">A <a href="https://scalewithsearch.com" target="_blank" class="text-zinc-500 hover:text-amber-500 transition-colors">Scale With Search</a> property.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Mega menu
+    (function() {
+      const triggers = document.querySelectorAll('.mega-trigger');
+      const panels = document.querySelectorAll('.mega-panel');
+      let closeTimeout = null;
+
+      function openPanel(id) {
+        clearTimeout(closeTimeout);
+        panels.forEach(p => p.classList.add('hidden'));
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        const panel = document.getElementById('mega-' + id);
+        const trigger = document.querySelector('[data-mega="' + id + '"] .mega-trigger');
+        if (panel) panel.classList.remove('hidden');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }, 200);
+      }
+
+      function cancelClose() { clearTimeout(closeTimeout); }
+
+      triggers.forEach(btn => {
+        const wrapper = btn.closest('[data-mega]');
+        const id = wrapper.getAttribute('data-mega');
+        btn.addEventListener('mouseenter', () => openPanel(id));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const panel = document.getElementById('mega-' + id);
+          if (panel && !panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            openPanel(id);
+          }
+        });
+        wrapper.addEventListener('mouseleave', scheduleClose);
+      });
+
+      panels.forEach(panel => {
+        panel.addEventListener('mouseenter', cancelClose);
+        panel.addEventListener('mouseleave', scheduleClose);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-mega]') && !e.target.closest('.mega-panel')) {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          panels.forEach(p => p.classList.add('hidden'));
+          triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        }
+      });
+    })();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile accordion sections
+    document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.nextElementSibling;
+        const chevron = btn.querySelector('svg');
+        section.classList.toggle('hidden');
+        chevron.style.transform = section.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+
+    // Self-link neutralizer
+    (function() {
+      const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        if (href === currentPath) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-current', 'page');
+          a.style.opacity = '0.5';
+          a.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
