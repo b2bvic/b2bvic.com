@@ -142,9 +142,12 @@ ${megaNavHtml}
 
         <!-- CTA -->
         <div class="mt-12 bg-[#171717] border border-zinc-800 rounded-xl p-8">
-          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">Need this implemented?</h3>
-          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build the search infrastructure behind mid-market B2B growth. If you want these systems running inside your company, not just on your reading list.</p>
-          <a href="/services.html#contact" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">Work With Me</a>
+          <h3 class="text-xl font-display font-600 text-[#fafafa] mb-3">This is one piece of the system.</h3>
+          <p class="text-zinc-400 text-sm mb-6 max-w-lg">I build AI memory systems for people who run businesses. Claude Code + Obsidian vault architecture with persistent memory across conversations. The open-source repo is the architecture. The service is making it yours.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://scalewithsearch.com" target="_blank" class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-lg transition-colors text-sm">See The Full System</a>
+            <a href="https://github.com/b2bvic/scale-with-search" target="_blank" class="inline-block px-6 py-3 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 font-semibold rounded-lg transition-colors text-sm">View Repo</a>
+          </div>
         </div>
     </main>
 
